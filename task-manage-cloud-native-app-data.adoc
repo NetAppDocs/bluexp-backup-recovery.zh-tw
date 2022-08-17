@@ -1,0 +1,162 @@
+---
+sidebar: sidebar 
+permalink: task-manage-cloud-native-app-data.html 
+keywords: manage, view backup, monitor jobs, monitor 
+summary: 檢視備份詳細資料、並監控所有工作的狀態。 
+---
+= 管理雲端原生應用程式資料的保護
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+
+
+== 監控工作
+
+您可以監控已在工作環境中初始化的工作狀態。這可讓您查看已成功完成的工作、目前進行中的工作、以及已失敗的工作、以便診斷及修正任何問題。
+
+您可以檢視所有作業及其狀態的清單。每個作業或工作都有唯一的ID和狀態。狀態可以是：
+
+* 成功
+* 進行中
+* 已佇列
+* 警告
+* 失敗
+
+
+*步驟*
+
+. 按一下*備份與還原*。
+. 按一下*工作監控*
++
+您可以按一下工作名稱、以檢視與該作業對應的詳細資料。如果您正在尋找特定工作、您可以：
+
++
+** 使用頁面頂端的時間選取器來檢視特定時間範圍內的工作
+** 在「搜尋」欄位中輸入部分工作名稱
+** 使用每個欄標題中的篩選條件來排序結果
+
+
+
+
+
+
+== 檢視備份詳細資料
+
+您可以檢視建立的備份總數、用於建立備份的原則、資料庫版本和代理程式ID。
+
+. 按一下*備份與還原*>*應用程式*。
+. 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*檢視詳細資料*。
+
+
+
+IMPORTANT: 代理程式ID與Connector相關聯。如果登錄Oracle資料庫主機時使用的連接器不再存在、則該應用程式的後續備份將會失敗、因為新連接器的代理程式ID不同。您應該執行*連接器更新* API來修改代理程式ID。
+
+
+
+== 更新連接器詳細資料
+
+如果在註冊Oracle資料庫主機時所使用的連接器不再存在或在AWS中毀損、您應該部署新的連接器。部署新的連接器之後、您應該執行* Connector-update-* API來更新連接器詳細資料。
+
+[listing]
+----
+curl --location --request PATCH 'https://snapcenter.cloudmanager.cloud.netapp.com/api/oracle/databases/connector-update' \
+--header 'x-account-id: <CM account-id>' \
+--header 'x-agent-id: <connector Agent ID >' \
+--header 'Authorization: Bearer token' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"old_connector_id": "Old connector id that no longer exist",
+"new_connector_id": "New connector Id"
+}
+----
+更新Connector詳細資料之後、您應該連線至Oracle資料庫主機、然後執行下列步驟：
+
+. 取得在Oracle資料庫主機上執行的外掛程式資訊。"rpm -Qi NetApp-snapcenter-plugin-oracle"
+. 解除安裝外掛程式。「Udo /opt/NetApp/snapcenter/spl/install/plugins/uninstall」
+. 確認外掛程式已成功解除安裝。"rpm -Qi NetApp-snapcenter-plugin-oracle"
+
+
+解除安裝外掛程式之後、您可以部署外掛程式。 link:reference-prereq-protect-cloud-native-app-data.html#deploy-snapcenter-plug-in-for-oracle["深入瞭解"]。
+
+
+
+== 設定CA簽署的憑證
+
+如果您想要為環境提供額外的安全性、可以設定CA簽署的憑證。
+
+
+
+=== 設定CA簽署憑證以進行用戶端憑證驗證
+
+連接器使用自我簽署的憑證來與外掛程式通訊。自我簽署的憑證會透過安裝指令碼匯入至Keystore。您可以執行下列步驟、以CA簽署的憑證取代自我簽署的憑證。
+
+*您需要的是什麼*
+
+您可以執行下列命令來取得_<base_mount_path>_：「'Udo dDocker volume ls | grep scs_Cloud | awk｛'print $2'｝| xargs sudo dark volume det檢查| grep mountpoint」
+
+*步驟*
+
+. 登入Connector。
+. 刪除連接器虛擬機器中位於_<base_mount_path>/用戶端/憑證_的所有現有檔案。
+. 將CA簽署的憑證和金鑰檔複製到Connector虛擬機器中的_<base_mount_path>/用戶端/憑證_。
++
+檔案名稱應為憑證.pem和key.pem。certificate.pem應該擁有中繼CA和根CA等整個憑證鏈結。
+
+. 使用名稱為credentite.p12建立憑證的PKCS12格式、並保留在_<base _mount_path>/用戶端/憑證_。
+. 將所有中繼CA和根CA的憑證.p12和憑證複製到位在_/var/opt/snapcenter/spl/etc/_的外掛程式主機。
+. 登入外掛程式主機。
+. 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入認證.p12檔案。「keytool-v -importkeystore -srckeystore CERT.p12 -srcstoretype pkcs12 -destkeystore keyKeystore .jks -deststoretype JKS -rcsstorepass SnapCenter sore-ascalias SnapCenter agentcert -noprompt」
+. 匯入根CA和中繼憑證。「keytool-import-caclacerts -keystore keystor.jks -storepass SnapCenter -alias cedca -file <ima.crt>'
++
+
+NOTE: certfile.crt是指根CA和中繼CA的憑證。
+
+. 重新啟動SPL：「系統重新啟動spl」
+
+
+
+
+=== 設定外掛程式伺服器憑證的CA簽署憑證
+
+CA憑證應具有連接器虛擬機器與其通訊之Oracle外掛程式主機的確切名稱。
+
+*您需要的是什麼*
+
+您可以執行下列命令來取得_<base_mount_path>_：「'Udo dDocker volume ls | grep scs_Cloud | awk｛'print $2'｝| xargs sudo dark volume det檢查| grep mountpoint」
+
+*步驟*
+
+. 在外掛程式主機上執行下列步驟：
++
+.. 瀏覽至內含SPL Keystore的資料夾：/var/opt/snapcenter/spl/etc/_。
+.. 建立同時具有憑證和金鑰的憑證、並使用別名_splkeyKeystore _的PKCS12格式。
+.. 新增CA憑證。「keytool-importkeystore -srckeystore <Certificate PathToimport>-srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype JKS -srcalias splkeystore -destalias splkeystore -nosmpt」
+.. 驗證憑證。「keytool-list -v -keystore keystore .jks」
+.. 重新啟動SPL：「系統重新啟動spl」
+
+
+. 在Connector上執行下列步驟：
++
+.. 以非root使用者身分登入Connector。
+.. 將整個CA憑證鏈結複製到位於_<base _mount_path>/server_的持續磁碟區。
++
+如果伺服器資料夾不存在、請建立該資料夾。
+
+.. 連線至cloudmanager_SCs_cloud、並將_config.yml_中的* enableCACert*修改為* true*。「Udo Docker執行-t cloudmanager_SCs_clCloud sed -I 's/enableCACert:假/enableCACert:真/g'/opp/netapp/cloudmanager-SCS-cloue/config/config.yml」
+.. 重新啟動cloudmanager_SCs_cloud Container。「Udo Docker重新啟動cloudmanager_SCs_cloud'
+
+
+
+
+
+
+== 存取REST API
+
+其餘的API可用來保護應用程式至雲端 https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/["請按這裡"]。
+
+您應該取得具有聯盟驗證的使用者權杖、以存取REST API。如需取得使用者權杖的資訊、請參閱 https://docs.netapp.com/us-en/cloud-manager-automation/platform/create_user_token.html#create-a-user-token-with-federated-authentication["使用同盟驗證建立使用者權杖"]。

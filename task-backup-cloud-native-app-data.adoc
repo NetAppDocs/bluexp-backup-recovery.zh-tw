@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: task-backup-cloud-native-app-data.html 
+keywords: cloud native, application data, back up, policy, pre-canned policies, scheduled backups, on-demand backups 
+summary: 指派原則並備份資料庫。 
+---
+= 備份雲端原生應用程式資料
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以指派預先整合的原則、或是建立原則、然後將其指派給資料庫。一旦指派原則、便會依照原則中定義的排程建立備份。您也可以建立隨需備份。
+
+
+NOTE: 為Oracle建立ASM磁碟群組時、請確定磁碟群組之間沒有通用磁碟區。每個磁碟群組都需要有專屬的磁碟區。
+
+*步驟*
+
+. 在「應用程式」頁面中、如果資料庫未使用任何原則加以保護、請按一下*指派原則*。
++
+如果資料庫受到一或多個原則的保護、您可以按一下來指派更多原則 image:icon-action.png["圖示以選取動作"] >*指派原則*。
+
+. 選取原則、然後按一下*指派*。
++
+備份將依照原則中定義的排程建立。
+
++
+
+NOTE: 服務帳戶（_SnapCenter-account-<account_id>_）用於執行排程的備份作業。
+
+
+
+
+
+== 建立隨需備份
+
+指派原則之後、您可以建立應用程式的隨需備份。
+
+*步驟*
+
+. 在「應用程式」頁面中、按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*隨需備份*。
+. 如果有多個原則指派給應用程式、請選取原則、保留值、然後按一下*建立備份*。
+
+
+*瞭解更多資訊*
+
+還原大型資料庫（250 GB以上）之後、如果您在同一個資料庫上執行完整的線上備份、作業可能會失敗、並顯示下列錯誤：
+
+「失敗、狀態代碼為500、錯誤｛\「錯誤」：｛\「代碼」：\「app_inters_error\」、「訊息」：\「無法建立快照」。原因：由於快照備份的複本、因此不允許執行快照作業。稍後再試一次
+
+如需如何修正此問題的相關資訊、請參閱： https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Snapshot_operation_not_allowed_due_to_clones_backed_by_snapshots["由於複本以快照做為備份、因此不允許執行Snapshot作業"]。

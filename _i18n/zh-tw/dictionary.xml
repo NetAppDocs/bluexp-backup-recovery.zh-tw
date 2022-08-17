@@ -2298,4 +2298,245 @@
   <block id="7600e0a33882cda0be97bd2356d39bbe" category="paragraph"><block ref="7600e0a33882cda0be97bd2356d39bbe" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1487a5e00d27aaaa91d1643104c20943" category="paragraph">勒索軟體掃描欄會顯示掃描正在進行中。</block>
   <block id="b01329b7279f4fcf0943153819def90d" category="sidebar">雲端備份原則設定</block>
+  <block id="15471566ffb385e256937957990dd60d" category="section-title">2022年8月18日</block>
+  <block id="d583f1393e45db7abf2dbb15da48eaad" category="section-title">新增支援以保護雲端原生應用程式資料</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="inline-link">深入瞭解</block>
+  <block id="2593a2c9363d8a2c041c1dbe83f9c15d" category="paragraph">Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在NetApp Cloud Manager中啟用的雲端應用程式備份、可提供高效、應用程式一致、原則型的備份、並還原位於Amazon FSX for NetApp ONTAP 的Oracle資料庫。<block ref="2ad7e7ba91bbada48f344044ccececc1" category="inline-link-rx"></block>。</block>
+  <block id="d1e18cf16b83a90a2911458097d3358c" category="summary">檢視備份詳細資料、並監控所有工作的狀態。</block>
+  <block id="a0535e3da7a79865ac35aff6cbcd9919" category="doc">管理雲端原生應用程式資料的保護</block>
+  <block id="4639d0e2e2909a747265c2f704128bca" category="section-title">監控工作</block>
+  <block id="a5cae278ab84c15ead127cbc4d6b2fc5" category="paragraph">您可以監控已在工作環境中初始化的工作狀態。這可讓您查看已成功完成的工作、目前進行中的工作、以及已失敗的工作、以便診斷及修正任何問題。</block>
+  <block id="728798e20e00a4c55a8af203c396664a" category="paragraph">您可以檢視所有作業及其狀態的清單。每個作業或工作都有唯一的ID和狀態。狀態可以是：</block>
+  <block id="f74780adaddcb04bf72bf42279df012b" category="list-text">按一下*備份與還原*。</block>
+  <block id="2594a4aa0a4a9233f3cf8e1c4caa4a95" category="list-text">按一下*工作監控*</block>
+  <block id="fe3d15e8bd4366923e66dfe06213a1c5" category="paragraph">您可以按一下工作名稱、以檢視與該作業對應的詳細資料。如果您正在尋找特定工作、您可以：</block>
+  <block id="e645e09bf2ae6466ce5a92513bf9c99b" category="section-title">檢視備份詳細資料</block>
+  <block id="2026cd9f3452451ebd9f1826ae957f07" category="paragraph">您可以檢視建立的備份總數、用於建立備份的原則、資料庫版本和代理程式ID。</block>
+  <block id="8307ee93b8170aa8987b3d6f8e51aac8" category="admonition">代理程式ID與Connector相關聯。如果登錄Oracle資料庫主機時使用的連接器不再存在、則該應用程式的後續備份將會失敗、因為新連接器的代理程式ID不同。您應該執行*連接器更新* API來修改代理程式ID。</block>
+  <block id="f9b1747cec7918dca1e5047effaf3259" category="section-title">更新連接器詳細資料</block>
+  <block id="134a60e3938317ff562685b10b8fee90" category="paragraph">如果在註冊Oracle資料庫主機時所使用的連接器不再存在或在AWS中毀損、您應該部署新的連接器。部署新的連接器之後、您應該執行* Connector-update-* API來更新連接器詳細資料。</block>
+  <block id="2905997274c538c5d6fbdf755bc6d755" category="paragraph">更新Connector詳細資料之後、您應該連線至Oracle資料庫主機、然後執行下列步驟：</block>
+  <block id="c95619f13c61aceb9ca308ac5737d119" category="list-text">取得在Oracle資料庫主機上執行的外掛程式資訊。"rpm -Qi NetApp-snapcenter-plugin-oracle"</block>
+  <block id="2db8ac6fb57f3dfda7f67af0f01e9870" category="list-text">解除安裝外掛程式。「Udo /opt/NetApp/snapcenter/spl/install/plugins/uninstall」</block>
+  <block id="84021a7592384dc15cd1c59ce7051645" category="list-text">確認外掛程式已成功解除安裝。"rpm -Qi NetApp-snapcenter-plugin-oracle"</block>
+  <block id="204818d35e6544dbc49720fa428fc2b7" category="paragraph">解除安裝外掛程式之後、您可以部署外掛程式。 <block ref="7a9fe936bc0ede19b4e4e3b90573cf6b" category="inline-link-macro-rx"></block>。</block>
+  <block id="f713a5b618a13e567bd48c7c23bc1831" category="section-title">設定CA簽署的憑證</block>
+  <block id="134db136339131109beaeb48cea408f5" category="paragraph">如果您想要為環境提供額外的安全性、可以設定CA簽署的憑證。</block>
+  <block id="1be049720f3ffb604fc52816a938bb11" category="section-title">設定CA簽署憑證以進行用戶端憑證驗證</block>
+  <block id="dbb66d78c3928dbc0e61b7f884e7d152" category="paragraph">連接器使用自我簽署的憑證來與外掛程式通訊。自我簽署的憑證會透過安裝指令碼匯入至Keystore。您可以執行下列步驟、以CA簽署的憑證取代自我簽署的憑證。</block>
+  <block id="d428ebb7ac02e1484781b38a799a4f99" category="paragraph">*您需要的是什麼*</block>
+  <block id="adf00ddb8543fe1ed45bb8de32ba885b" category="paragraph">您可以執行下列命令來取得_&lt;base_mount_path&gt;_：「'Udo dDocker volume ls | grep scs_Cloud | awk｛'print $2'｝| xargs sudo dark volume det檢查| grep mountpoint」</block>
+  <block id="699212d80ab09d05f5a9a391baf6d544" category="list-text">登入Connector。</block>
+  <block id="1845b86db638eeab64b5ff3ab9dbc93c" category="list-text">刪除連接器虛擬機器中位於_&lt;base_mount_path&gt;/用戶端/憑證_的所有現有檔案。</block>
+  <block id="a56e5be369d447142981b8da49d7d841" category="list-text">將CA簽署的憑證和金鑰檔複製到Connector虛擬機器中的_&lt;base_mount_path&gt;/用戶端/憑證_。</block>
+  <block id="267fab2c93ee78a5b7b7c5cd3347f95d" category="paragraph">檔案名稱應為憑證.pem和key.pem。certificate.pem應該擁有中繼CA和根CA等整個憑證鏈結。</block>
+  <block id="2efb3f1040cc3f0d3c2dd66f4495b045" category="list-text">使用名稱為credentite.p12建立憑證的PKCS12格式、並保留在_&lt;base _mount_path&gt;/用戶端/憑證_。</block>
+  <block id="6ae468147810acf5e01353e631db6d2e" category="list-text">將所有中繼CA和根CA的憑證.p12和憑證複製到位在_/var/opt/snapcenter/spl/etc/_的外掛程式主機。</block>
+  <block id="49bcc463a5065066b6e686b906f3e34e" category="list-text">登入外掛程式主機。</block>
+  <block id="2ded4a2cc80040552b54bdd308ecb919" category="list-text">瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入認證.p12檔案。「keytool-v -importkeystore -srckeystore CERT.p12 -srcstoretype pkcs12 -destkeystore keyKeystore .jks -deststoretype JKS -rcsstorepass SnapCenter sore-ascalias SnapCenter agentcert -noprompt」</block>
+  <block id="0444de9e3c28e6b65560b207e6ea6eb4" category="list-text">匯入根CA和中繼憑證。「keytool-import-caclacerts -keystore keystor.jks -storepass SnapCenter -alias cedca -file &lt;ima.crt&gt;'</block>
+  <block id="0921a876e3fa3f2a29244d7daddce0fa" category="admonition">certfile.crt是指根CA和中繼CA的憑證。</block>
+  <block id="22dfbb640fee5a33dc6e592f121a4423" category="list-text">重新啟動SPL：「系統重新啟動spl」</block>
+  <block id="e597c85c46a1bdddfd490c7ba2439138" category="section-title">設定外掛程式伺服器憑證的CA簽署憑證</block>
+  <block id="0b941bbfead62c679ca6504257b497f7" category="paragraph">CA憑證應具有連接器虛擬機器與其通訊之Oracle外掛程式主機的確切名稱。</block>
+  <block id="b4d963286fa28cbb5370437141cd0168" category="list-text">在外掛程式主機上執行下列步驟：</block>
+  <block id="7b852943c0907b3e2fc8ff580b6818ca" category="list-text">瀏覽至內含SPL Keystore的資料夾：/var/opt/snapcenter/spl/etc/_。</block>
+  <block id="7dc3629efca54d7a3c55707ca70b7456" category="list-text">建立同時具有憑證和金鑰的憑證、並使用別名_splkeyKeystore _的PKCS12格式。</block>
+  <block id="f27e74c2f479d5c696c1f6493a57f9c3" category="list-text">新增CA憑證。「keytool-importkeystore -srckeystore &lt;Certificate PathToimport&gt;-srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype JKS -srcalias splkeystore -destalias splkeystore -nosmpt」</block>
+  <block id="12fd234da34dd31a3a662ea38cd44d31" category="list-text">驗證憑證。「keytool-list -v -keystore keystore .jks」</block>
+  <block id="cb65bf79095d2a603886a95f598ed792" category="list-text">在Connector上執行下列步驟：</block>
+  <block id="a1aa9a792f7ca33ea1abf648a0ec7fdd" category="list-text">以非root使用者身分登入Connector。</block>
+  <block id="d1d5554a7a17586d4b526340b2b6eb45" category="list-text">將整個CA憑證鏈結複製到位於_&lt;base _mount_path&gt;/server_的持續磁碟區。</block>
+  <block id="be7eb785752c931973f4e426afdaa737" category="paragraph">如果伺服器資料夾不存在、請建立該資料夾。</block>
+  <block id="d435e298ecd3e81d33c28c2ac5aaa9cf" category="list-text">連線至cloudmanager_SCs_cloud、並將_config.yml_中的* enableCACert*修改為* true*。「Udo Docker執行-t cloudmanager_SCs_clCloud sed -I 's/enableCACert:假/enableCACert:真/g'/opp/netapp/cloudmanager-SCS-cloue/config/config.yml」</block>
+  <block id="beed6a355a0f3c2fec57e272c4df9a9b" category="list-text">重新啟動cloudmanager_SCs_cloud Container。「Udo Docker重新啟動cloudmanager_SCs_cloud'</block>
+  <block id="56221c5b2b531b839a3cd5c7e9c9cd9f" category="section-title">存取REST API</block>
+  <block id="e9d91293c5b15aa3d5a1944f0f3de884" category="paragraph">其餘的API可用來保護應用程式至雲端<block ref="34be8f96bca8ea568f4cd28ef35bb6b3" category="inline-link-rx"></block>。</block>
+  <block id="4512b12288e7290cb279f814b15ba5dc" category="inline-link">使用同盟驗證建立使用者權杖</block>
+  <block id="8753ca0304fc4dd31beb83f4a57f7b41" category="paragraph">您應該取得具有聯盟驗證的使用者權杖、以存取REST API。如需取得使用者權杖的資訊、請參閱<block ref="0eb587a835d0db317e25e938408a4ed2" category="inline-link-rx"></block>。</block>
+  <block id="4547c1343318e001ea786267b3cf7b84" category="summary">在建立備份之前、請先完成先決條件。</block>
+  <block id="2b6b05a9503cc9277cb58c848aaebedb" category="paragraph">您應該可以存取Cloud Manager、建立Cloud Manager帳戶、建立工作環境和Connector、並部署SnapCenter 適用於Oracle的「支援Oracle的支援程式」。</block>
+  <block id="e9f869a1fe63e475451ec5f9939329d0" category="section-title">存取Cloud Manager</block>
+  <block id="63785c950a9f3cb1e82193ec1f7e49ee" category="inline-link-macro">註冊NetApp Cloud Central</block>
+  <block id="5970bd5da21d70901770347c11bbaaaf" category="inline-link-macro">登入Cloud Manager</block>
+  <block id="0997707eec0eae6135d1ef326c72b2cc" category="paragraph">您應該 <block ref="dcf5e53b033259383f405d7eb45d19f3" category="inline-link-macro-rx"></block>、 <block ref="183b44bd60add234aecf2ffe975eddd7" category="inline-link-macro-rx"></block>，然後設定 <block ref="8a2a59f9ec508dc199624b6dfabe5c9f" category="inline-link-macro-rx"></block>。</block>
+  <block id="bea93ac0c50dbd01324ebd42ff666cd8" category="section-title">建立FSX以利ONTAP 執行不工作環境</block>
+  <block id="bf7ec532103402eaed4653738655f6ad" category="inline-link-macro">Amazon FSX for ONTAP Sfor Sf.入門</block>
+  <block id="fdd19953ce3013e133d600a251e48a61" category="inline-link-macro">建立及管理Amazon FSX以利ONTAP 實現不工作環境</block>
+  <block id="231a24195067c2a2f27e2450ea7e64ed" category="paragraph">您應該建立Amazon FSX、以利ONTAP 資料庫所在的不中斷作業環境。如需相關資訊、請參閱 <block ref="44e37fc8d2d76ee1d15cd4a20acb0e0e" category="inline-link-macro-rx"></block> 和 <block ref="0e7e3006696ac3877ee032d5edb264d7" category="inline-link-macro-rx"></block>。</block>
+  <block id="e55bd0bd62587a7135a26e431bf28961" category="paragraph">您可以使用Cloud Manager或AWS來建立NetApp FSX。如果您是使用AWS建立、那麼您應該在ONTAP Cloud Manager中探索FSX for the Sfor the Sfor the System。</block>
+  <block id="94ee7072c2750da1997438a715efb7d4" category="section-title">建立連接器</block>
+  <block id="3b6afa275397b4b253570f5eabb9a2a1" category="paragraph">客戶管理員需要在AWS中部署Connector、讓Cloud Manager能夠管理公有雲環境中的資源和程序。</block>
+  <block id="669d0dea66a5583967d79cc40bcc2eeb" category="inline-link-macro">從 Cloud Manager 在 AWS 中建立連接器</block>
+  <block id="7929752d74ca66c9fd44a2ac7f86c9bd" category="paragraph">如需相關資訊、請參閱 <block ref="ec863d21fd023d992dac42777c6a3d19" category="inline-link-macro-rx"></block>。</block>
+  <block id="f6b8c8d4c527eaebdea85ded6d8cc15a" category="list-text">您應該使用相同的連接器來管理FSX工作環境和Oracle資料庫。</block>
+  <block id="9f69e13234533744e815d263723a5cd0" category="list-text">如果您在同一個VPC上有FSX工作環境和Oracle資料庫、您可以在同一個VPC上部署連接器。</block>
+  <block id="fafa58ae12f83200fd5e76519a291a56" category="list-text">如果您在不同的VPC上有FSX工作環境和Oracle資料庫：</block>
+  <block id="cf0a8805abc36f57c061b63fdb27c4af" category="list-text">如果您在FSX上設定NAS（NFS）工作負載、則可以在任一VPC上建立連接器。</block>
+  <block id="4a2c2d38801ece7b96f22f796f2462e0" category="list-text">如果您只設定SAN工作負載、而不打算使用任何NAS（NFS）工作負載、則應在建立FSX系統的VPC中建立連接器。</block>
+  <block id="ba6b286f0b29e48621c9d0bf4a77e627" category="admonition">若要使用NAS（NFS）工作負載、您應該在Oracle資料庫VPC和FSXVPC之間擁有傳輸閘道。NFS IP位址是浮動IP位址、只能透過傳輸閘道從其他VPC存取。我們無法透過對等處理VPC來存取浮動IP位址。</block>
+  <block id="7306372a8e221f9cbdc865504b72b173" category="paragraph">建立連接器之後、按一下* Canvas*&gt;* Add Working Environment*、然後依照提示新增工作環境。確保連接器與Oracle資料庫主機和FSX工作環境之間有連線。連接器應能連線至FSX工作環境的叢集管理IP位址。</block>
+  <block id="b45b202ba2cef5a8e5349896310f7f9d" category="admonition">建立連接器之後、按一下*連接器&gt;管理連接器*；選取連接器名稱、然後複製連接器ID。</block>
+  <block id="5e61bf82718531b748f39eb54b38c9be" category="section-title">部署SnapCenter 適用於Oracle的支援功能外掛程式</block>
+  <block id="e3582eb6307d182c5a2887fd0369d1bd" category="paragraph">您應該在SnapCenter 每個Oracle資料庫主機上部署適用於Oracle的支援功能。視Oracle主機是否啟用SSH金鑰型驗證而定、您可以遵循其中一種方法來部署外掛程式。</block>
+  <block id="62dd90a4b8081cb4845caa73814d10a0" category="admonition">請確定每個Oracle資料庫主機上都安裝了Java 8、且已適當設定Java_Home變數。</block>
+  <block id="8bc030f1e919bad0129c5b3d55584aba" category="section-title">使用SSH金鑰型驗證的外掛程式部署</block>
+  <block id="8e838fded7b6768a9db83ab9aae95068" category="paragraph">如果在Oracle主機上啟用SSH金鑰型驗證、您可以執行下列步驟來部署外掛程式。在執行這些步驟之前、請先確認已啟用連接器的SSH連線。</block>
+  <block id="d521743e97719d8ad5608d4bc9d5a2e7" category="list-text">以非root使用者身分登入Connector VM。</block>
+  <block id="da60bfd3c8edf7a67f3978209e164121" category="list-text">取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」</block>
+  <block id="b53dbefef323a5c9bc3bba42f6ed328f" category="list-text">部署外掛程式。</block>
+  <block id="619078802916ca61a0299d0ee6490aa7" category="paragraph">「&lt;base_mount_path&gt;/scripts/oracle_plugin_copy_and_install.sh --host &lt;host_name&gt;--sshkey &lt;ssh金鑰_key_file&gt;--userName &lt;user_name&gt;--port &lt;ssh連接埠&gt;--pluginport &lt;plugin_port&gt;--installdir &lt;install目錄&gt;'</block>
+  <block id="d633b044fd8a9ca45f4d615327cbf109" category="list-text">host_name是Oracle主機的名稱、這是必要的參數。</block>
+  <block id="246e8001a4e784b85b078008797310ff" category="list-text">SSH_KEY_file是用於連接Oracle主機的SSH金鑰、這是必要的參數。</block>
+  <block id="6dfc5d97de9ba63a607347a005f0ae81" category="list-text">使用者名稱：在Oracle主機上具有SSH權限的使用者、此為選用參數。預設值為EC2使用者。</block>
+  <block id="3dbc2a858555e80cf398377571556499" category="list-text">SSH_port：Oracle主機上的SSH連接埠、此為選用參數。預設值為22</block>
+  <block id="e5a8e97642efe29ef958c3cafde091c8" category="list-text">plugin_port：外掛程式使用的連接埠、這是選用參數。預設值為8145</block>
+  <block id="5e0c9d9b775ad3565e6649bfa8ec9800" category="list-text">安裝目錄：要部署外掛程式的目錄、此為選用參數。預設值為/opt。</block>
+  <block id="1f4958a9fbdaa34d782046987faf9553" category="paragraph">例如：「sUdo /var/lib/dred/voles/service-manager-2_cloudmanager_scs_cloud_volate_volue/_data/scripts/oracle_plugin_copy_and_install.sh - host xxx.xxx.xxx.-sshkey /keys/NetApp-ssh．pk」</block>
+  <block id="19ce75ba7f615466dfa40bd305eda913" category="section-title">手動部署外掛程式</block>
+  <block id="1744dd19db9c80afac565572fb28289c" category="paragraph">如果未在Oracle主機上啟用SSH金鑰型驗證、您應該執行下列手動步驟來部署外掛程式。</block>
+  <block id="e67d4d64b1a45fd340729c74de84b847" category="list-text">登入Connector VM。</block>
+  <block id="274f1ac526644b363a1660f91b59759a" category="list-text">下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get <block ref="b6b73f503ca62442f11ad4b84cc2f0bc" category="inline-link-rx"></block></block>
+  <block id="5f46deee08d4b3d1d62d6ffaf5f1db1c" category="list-text">取得下載外掛程式的二進位路徑。「Udo ls &lt;base_mount_path&gt;$(sudo dod泊 塢視窗ps | grep -po" cloudmanager_SCs_clou:.*？"| sed -e 's/*$/'| cut -F2 -d":")/sc-Linux主機外掛程式/snapcenter_Linux主機外掛程式_scsscs.bin"</block>
+  <block id="b63053825a0c4e3a09fd276fe30a743b" category="list-text">使用scp或其他替代方法、將_snapcenter_Linux主機_plugin_scs.bin_複製到每個Oracle資料庫主機。</block>
+  <block id="24d579b70f755c08c217e309587abc2c" category="list-text">在Oracle資料庫主機上、執行下列命令以啟用二進位檔案的執行權限。"chmod+x snapcenter_Linux主機_plugin_SCs.bin"</block>
+  <block id="c510a3598a8d1d8d28dc58297002b1f2" category="list-text">以root使用者身分部署Oracle外掛程式。如欲瞭解更多資訊、請參閱：snapcenter_linux_host_plugin_scs.bin -I silent</block>
+  <block id="e83ebe810e7607148882f52b5e3b71fd" category="list-text">從連接器VM的_&lt;base_mount_path&gt;/用戶端/憑證/_路徑、複製_imple.p12_到外掛主機的_/var/opt/snapcenter/spl/etc/_。</block>
+  <block id="7550e76395e0f500b3d970b6fa0ec73f" category="list-text">瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入憑證。「keytool-v -importkeystore -srckeystore CERT.p12 -srcstoretype pkcs12 -destkeystore keyKeystore .jks -deststoretype JKS -rcsstorepass SnapCenter sore-ascalias SnapCenter agentcert -noprompt」</block>
+  <block id="c02273a1ac5db69a391d107c30235e7c" category="summary">指派原則並備份資料庫。</block>
+  <block id="7e51ebaa71d2b6cbf4e46bba9bf8da43" category="doc">備份雲端原生應用程式資料</block>
+  <block id="4e7585fe5b33c787cec609e7fe6c85fb" category="paragraph">您可以指派預先整合的原則、或是建立原則、然後將其指派給資料庫。一旦指派原則、便會依照原則中定義的排程建立備份。您也可以建立隨需備份。</block>
+  <block id="6aa308344acc0039bf47948542fd4e82" category="admonition">為Oracle建立ASM磁碟群組時、請確定磁碟群組之間沒有通用磁碟區。每個磁碟群組都需要有專屬的磁碟區。</block>
+  <block id="aeec20fb97ec5b367b439351c1c00204" category="list-text">在「應用程式」頁面中、如果資料庫未使用任何原則加以保護、請按一下*指派原則*。</block>
+  <block id="114872d03378e25021c3cc928e318e8a" category="paragraph">如果資料庫受到一或多個原則的保護、您可以按一下來指派更多原則 <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> &gt;*指派原則*。</block>
+  <block id="3c7ba9b9e3e6cc576a0786913d32d5df" category="list-text">選取原則、然後按一下*指派*。</block>
+  <block id="098e4b45417a1ec0fafb90bed28e6424" category="paragraph">備份將依照原則中定義的排程建立。</block>
+  <block id="7ab4624b685848aa66b27397a83a5988" category="admonition">服務帳戶（_SnapCenter-account-&lt;account_id&gt;_）用於執行排程的備份作業。</block>
+  <block id="c91ff5b89781f9b20673d63d2fbc4481" category="section-title">建立隨需備份</block>
+  <block id="556daa2892e6c333b040f2f9ed98a222" category="paragraph">指派原則之後、您可以建立應用程式的隨需備份。</block>
+  <block id="ca46a9979585fdf43309efe203535615" category="list-text">在「應用程式」頁面中、按一下 <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> 與應用程式對應、然後按一下*隨需備份*。</block>
+  <block id="7fd7a0a5300dbc1f2454a34738c54d80" category="list-text">如果有多個原則指派給應用程式、請選取原則、保留值、然後按一下*建立備份*。</block>
+  <block id="fad3dbbe9841f42de249b688f1d47a80" category="paragraph">*瞭解更多資訊*</block>
+  <block id="52d2104ff7f549558d1d92a9a7a2a1a3" category="paragraph">還原大型資料庫（250 GB以上）之後、如果您在同一個資料庫上執行完整的線上備份、作業可能會失敗、並顯示下列錯誤：</block>
+  <block id="f1019737785319ac86fe55929c140c9b" category="paragraph">「失敗、狀態代碼為500、錯誤｛\「錯誤」：｛\「代碼」：\「app_inters_error\」、「訊息」：\「無法建立快照」。原因：由於快照備份的複本、因此不允許執行快照作業。稍後再試一次</block>
+  <block id="fe0a0332700b9a067272058245b48946" category="inline-link">由於複本以快照做為備份、因此不允許執行Snapshot作業</block>
+  <block id="d78d082537913dac6697dabddff374dc" category="paragraph">如需如何修正此問題的相關資訊、請參閱：<block ref="66c6329b50c8e15e4ce55612532f0653" category="inline-link-rx"></block>。</block>
+  <block id="a6c7c4de1c97d05aea18992c4dcc7774" category="summary">探索應用程式以指派原則並建立備份。</block>
+  <block id="b6a000d0b1cdbc32d0bef6d0258fa2f0" category="doc">探索應用程式</block>
+  <block id="b26de0535d797545cac86720fd096445" category="paragraph">您應該探索主機上的資料庫、以指派原則並建立備份。</block>
+  <block id="f0ddc428cd7c3cf4949f9edfb049cb33" category="list-text">您應該已經建立FSX,以利ONTAP 進行不工作的環境和連接器。</block>
+  <block id="5ff3ca14a716aed6cd7b9b8433daa620" category="list-text">確保Connector可連線至FSX、以利ONTAP 執行不中斷作業的環境和Oracle資料庫主機。</block>
+  <block id="07ac90068ab0b822a2eb368ff5b4a890" category="list-text">確保Cloud Manager使用者具有「帳戶管理員」角色。</block>
+  <block id="b284b4e1502b1e8b45eca415d2efe3b2" category="list-text">您應該已經部署SnapCenter 了適用於Oracle的不支援功能外掛程式。 <block ref="7a9fe936bc0ede19b4e4e3b90573cf6b" category="inline-link-macro-rx"></block>。</block>
+  <block id="b86ebb4cc0bc3f74e54b9778132535d7" category="list-text">在Cloud Manager UI中、按一下*備份與還原*&gt;*應用程式*。</block>
+  <block id="fe4137061bd2c33fe1c02ad6b9570b0e" category="list-text">按一下「探索應用程式」。</block>
+  <block id="d20aa4d7347d2818451332f0d49b2253" category="list-text">選取* Cloud Native *、然後按一下* Next*。</block>
+  <block id="63000a0fa2dbdc9bced04917b9fb5014" category="paragraph">我們建立了一個具有「_SURFSystem_ SnapCenter 」角色的服務帳戶、以針對此帳戶中的所有使用者執行排程的資料保護作業。</block>
+  <block id="2f1527fabf6b15b2c246b08aca9ef8a4" category="list-text">按一下*帳戶*&gt;*管理帳戶*&gt;*成員*以檢視服務帳戶。</block>
+  <block id="0e0ba396f0687ce7517d861db155fb10" category="admonition">服務帳戶（_SnapCenter-account-&lt;accounttid&gt;_）用於執行排程的備份作業。切勿刪除服務帳戶。</block>
+  <block id="60b7fc487a9e8ffb8c92bd61f1e6f991" category="list-text">在「指定主機詳細資料」頁面中、輸入Oracle資料庫主機的詳細資料、勾選核取方塊以確認外掛程式已安裝在主機上、然後按一下*「Discover」（探索）*。</block>
+  <block id="0f450d6f93fc8c049d1423515f582f2d" category="list-text">顯示主機上的所有資料庫。如果已停用資料庫的OS驗證、您應該按一下「*設定*」來設定資料庫驗證。如需詳細資訊、請參閱 <block ref="eb69440615f98753d53a91f4eeab39c2" category="inline-xref-macro-rx"></block>。</block>
+  <block id="3b8ee60b6a282d08697fd8cf49f22e98" category="list-text">按一下*管理應用程式*、選取*新增*以新增主機、*重新整理*以探索新資料庫、或*移除*以移除資料庫主機。</block>
+  <block id="16ed5cca317a8c59c781bc402c31999b" category="list-text">按一下*設定*、然後選取*原則*以檢視預設原則。檢閱預先設定的原則、如果您想要編輯這些原則以符合您的需求、或是建立新的原則。</block>
+  <block id="fd9cc0fdcc5cde5efec19c54d871da3a" category="section-title">設定Oracle資料庫認證</block>
+  <block id="94c3f93d78fcc4e31f273d4f220cd703" category="paragraph">您應該設定用於在Oracle資料庫上執行資料保護作業的認證資料。</block>
+  <block id="7809974cdd1cd4eb76ad1dcf91a3f425" category="list-text">如果已停用資料庫的OS驗證、您應該按一下「*設定*」來設定資料庫驗證。</block>
+  <block id="f285aa5a9da3baa99905c087902b8e87" category="list-text">在Database Settings（資料庫設定）或ASM Settings（ASM設定）區段中、指定使用者名稱、密碼及連接埠詳細資料。</block>
+  <block id="8c204149f6ffccc490e6b851431463a6" category="paragraph">Oracle使用者應該擁有Sysdba權限、而ASM使用者應該擁有Sysasm權限。</block>
+  <block id="3b5c5ae54533da138be94559c533a510" category="list-text">按一下「*設定*」。</block>
+  <block id="af4141cf3fb8179af4deac9547c01278" category="section-title">建立原則</block>
+  <block id="91808c1a7549a55c53468ea4a50927d4" category="paragraph">如果您不想編輯預先安裝的原則、可以建立原則。</block>
+  <block id="0afc66e0d31a963ebe19ebef4f887a60" category="list-text">在「應用程式」頁面的「設定」下拉式清單中、選取「*原則*」。</block>
+  <block id="ab899735d36938b4c6cb8edd18a222e5" category="list-text">按一下「*建立原則*」。</block>
+  <block id="d14a88e73f059d5716e327a50ec863a3" category="list-text">指定原則名稱。</block>
+  <block id="478ed3048c4d215862134df0ae0d59db" category="list-text">（選用）編輯備份名稱的格式。</block>
+  <block id="241958803b06afbd6f6eb3ef7dbbe9d8" category="list-text">指定排程和保留詳細資料。</block>
+  <block id="f2a42a68e067e481d094b018459ef895" category="list-text">按一下「 * 建立 * 」。</block>
+  <block id="2d60a7d5505e967af6be4b947aa60ea2" category="summary">在NetApp Cloud Manager中啟用的雲端應用程式備份、可提供高效、應用程式一致、原則型的備份、並還原位於Amazon FSX for NetApp ONTAP 的Oracle®資料庫。</block>
+  <block id="eb5668f5c3459c84cc715cf197e7c91a" category="doc">保護雲端原生應用程式資料</block>
+  <block id="ab1b44a5ff1afc799f4afe758f73f4db" category="paragraph">Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在NetApp Cloud Manager中啟用的雲端應用程式備份、可提供高效、應用程式一致、原則型的備份、並還原位於Amazon FSX for NetApp ONTAP 的Oracle資料庫。</block>
+  <block id="2d242bb36ec91b32005f9296ff03a912" category="section-title">架構</block>
+  <block id="5e106a25aff8402c9cb720536f4f9763" category="paragraph">Cloud Backup for Applications架構包含下列元件。</block>
+  <block id="1de5da66f12460beeb95e94fe3acf74c" category="list-text">Cloud Backup for Applications是一組由NetApp代管的SaaS服務、以Cloud Manager SaaS平台為基礎。</block>
+  <block id="5aa6aa9ade143b785fa0243d0138a6b5" category="paragraph">它能協調NetApp雲端儲存設備上的應用程式資料保護工作流程。</block>
+  <block id="ed5f69fb9dcefc7c8d1ea57498acc62d" category="list-text">Cloud Backup for Applications UI與Cloud Manager UI整合。</block>
+  <block id="64293a907ed741e8f0a2b7508ac14fb6" category="paragraph">Cloud Backup for Applications UI提供多種儲存與資料管理功能。</block>
+  <block id="e632fbfcf1324b1d2160076cbffec929" category="list-text">Cloud Manager Connector是Cloud Manager的元件、可在您的雲端網路中執行、並與在SnapCenter Oracle資料庫主機上執行的Amazon FSX儲存檔案系統和適用於Oracle的Sfxin外掛程式互動。</block>
+  <block id="5c4f5775352fba72f33e34817f09707e" category="list-text">適用於Oracle的零組件可在每個Oracle資料庫主機上執行、並與主機上執行的Oracle資料庫互動、同時執行資料保護作業。SnapCenter</block>
+  <block id="8fd81e906c023a2c3e318d13769fd642" category="inline-image-macro">顯示Cloud Backup如何與不同元件通訊的圖表</block>
+  <block id="c078c5cf04e16bf64233c82b0f994bcf" category="paragraph"><block ref="c078c5cf04e16bf64233c82b0f994bcf" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="28749d90f4cd68e33b1b408d538e85ce" category="paragraph">對於任何使用者啟動的要求、Cloud Backup for Applications UI會與Cloud Manager SaaS進行通訊、而Cloud Manager SaaS會在驗證要求時處理相同的程序。如果要求執行工作流程（例如備份或還原）、SaaS服務會啟動工作流程、並在必要時將通話轉接至Cloud Manager Connector。然後Connector會與Amazon FSX for NetApp ONTAP 的支援Oracle和SnapCenter 支援Oracle的支援功能進行通訊、以執行工作流程工作。</block>
+  <block id="ce820eb6e1b6a8cd96fc07f753a32646" category="paragraph">連接器可部署在與Oracle資料庫相同的VPC上、或部署在不同的VPC上。如果Connector和Oracle資料庫位於不同的網路上、您應該在兩者之間建立網路連線。</block>
+  <block id="1f0b82560627b660c6c6958a1df834b8" category="section-title">支援的組態</block>
+  <block id="0f0f84cb9775a6f4ad6b4796bfcedfe9" category="list-text">作業系統：</block>
+  <block id="70cfb8b329ca692c676669ef294b37c0" category="list-text">RHEL 7.5或更新版本及8.x</block>
+  <block id="0d9cfc701256d81666be8cc96e8482b8" category="list-text">ol 7.5或更新版本及8.x</block>
+  <block id="3a9b89e47751d4cfc28a55ca7c5efa97" category="list-text">儲存系統：Amazon FSX for ONTAP Sf</block>
+  <block id="fc2b0bcc44ac9f8bef7ad04de353a902" category="list-text">儲存配置：NFS v3和v4.1（支援DNFS）、iSCSI搭配ASM（ASMfd、ASMLib和ASMUdev)</block>
+  <block id="477deb60a679be8d3ed7fc83c4ab4b80" category="list-text">應用程式：Oracle Standard和Oracle Enterprise–獨立式（舊型和多租戶–CDB和PDB）</block>
+  <block id="9a8f7463386e75f032fb3eacb8e8b03c" category="list-text">Oracle版本：12cR2、18c和19c</block>
+  <block id="e277e42688a9f44945fa8c1919bab726" category="section-title">支援的功能</block>
+  <block id="24952b37ce88035adf02c3d53375aee0" category="list-text">自動探索Oracle資料庫</block>
+  <block id="7758fa39945c61d871cb2e22cbfde4ac" category="list-text">備份位於Amazon FSX for NetApp ONTAP 的Oracle資料庫</block>
+  <block id="a638d70a88de180abe34c16291fad0fe" category="list-text">完整（資料+控制+歸檔記錄檔）備份</block>
+  <block id="f689f1139e089e78a96f2e9b69a62df4" category="list-text">隨需備份</block>
+  <block id="4384c9d45fd41e6afb3574ea75e591da" category="list-text">根據系統定義或自訂原則排程備份</block>
+  <block id="4daab712a81f483acc692f943dfe93d2" category="paragraph">您可以在原則中指定不同的排程頻率、例如每小時、每日、每週和每月。</block>
+  <block id="6e8413d03b75fe5c129c80ecf66704ec" category="list-text">根據原則保留備份</block>
+  <block id="e3252f42a980c18b105121b0076b45f4" category="list-text">從指定的備份還原完整的Oracle資料庫（資料檔案+控制檔）</block>
+  <block id="be778790451ccfabb8b767b1ff36bbb6" category="list-text">僅還原資料檔案、並僅從指定的備份控制檔案</block>
+  <block id="87f86331009f36ac6fc42b85e89dc536" category="list-text">使用恢復Oracle資料庫、直到SCN、直到時間、所有可用的記錄、而且沒有恢復選項</block>
+  <block id="60d9a229099000fec5710894db8b263b" category="list-text">監控備份和其他工作</block>
+  <block id="083c7158412d040e003ac1e9a9528d97" category="list-text">在儀表板上顯示保護摘要</block>
+  <block id="2dbc045edb5a2f6faf0c411d7f5f750f" category="list-text">透過電子郵件傳送警示</block>
+  <block id="73dc94ffcc0a567690b7ed44ade89743" category="list-text">不支援Oracle 11g和21c版</block>
+  <block id="4f3dd1c11e04e3e830625603ea3a0656" category="list-text">不支援備份的掛載、複製、目錄及驗證作業</block>
+  <block id="9c1f3568b85ef3ac4da7fc528340d6ba" category="list-text">不支援RAC和Data Guard上的Oracle</block>
+  <block id="1814ab6cc8fc9cc32c4f16d1da6094aa" category="list-text">備份限制：</block>
+  <block id="9be91e24e83b7b8d24aef393ff8a2381" category="list-text">不支援線上資料或僅記錄備份</block>
+  <block id="d190910a195191d85f25127df0bbb86a" category="list-text">不支援離線備份</block>
+  <block id="45f390722d9189860abe14e4e14ebb87" category="list-text">不支援備份位於循環掛載點上的Oracle資料庫</block>
+  <block id="5a9da4bd1ffdd301898f827c866a6242" category="list-text">不支援位於多個ASM磁碟群組中、且與FSX磁碟區重疊的Oracle資料庫之一致性群組快照</block>
+  <block id="ce28a32d76b140c048ecb6813395af67" category="list-text">如果您的Oracle資料庫是在ASM上設定、請確認您的SVM名稱在FSX系統中是唯一的。如果您在FSX系統中擁有相同的SVM名稱、則不支援備份位於這些SVM上的Oracle資料庫。</block>
+  <block id="a0ff33890b3fd2f4c96ec82fd7574fa7" category="list-text">還原限制：</block>
+  <block id="4ef14390cecf5f2e8db0ad715ba85c82" category="list-text">不支援精細還原、例如還原資料表空間和PDF</block>
+  <block id="f1efd5bb401cc568920943debec0ceaa" category="list-text">僅支援在NAS和SAN配置上就地還原Oracle資料庫</block>
+  <block id="670750d3f8fb7d80a85c296423b52da5" category="list-text">不支援僅還原控制檔或SAN配置上的資料檔案+ Oracle資料庫控制檔</block>
+  <block id="4984eae824218c2ee5b053a837308d1c" category="list-text">在SAN配置中、如果SnapCenter Oracle的支援使用的支援功能不支援使用Oracle的任何外部檔案、則還原作業將會失敗、而非ASM磁碟群組上的Oracle資料檔案。外部檔案可以是下列一種或多種類型：</block>
+  <block id="83f499a540b1323009c200d6f8cc9396" category="list-text">參數</block>
+  <block id="dc647eb65e6711e155375218212b3964" category="list-text">密碼</block>
+  <block id="9358ddcf018549ad07e3696f1dff8b4c" category="list-text">歸檔記錄</block>
+  <block id="bb139ed204a522e52c14c36896034ef9" category="list-text">線上記錄</block>
+  <block id="84e9072345f79cd7577657ba68cc442b" category="list-text">ASM參數檔案。</block>
+  <block id="64fe13c3daed1e3027d8bb4b94298917" category="paragraph">您應該選取「強制就地還原」核取方塊、覆寫類型為「參數」、「密碼」和「歸檔記錄」的外部檔案。</block>
+  <block id="7315764c2569272b1e380ace938a3acf" category="admonition">如果有其他類型的外部檔案、還原作業會失敗、而且資料庫無法還原。如果您有其他類型的外部檔案、則在執行還原作業之前、應先將其刪除或移至其他位置。</block>
+  <block id="290277c5012b9ace7fefb7c22949f0d8" category="paragraph">由於已知問題、UI中的工作頁面不會顯示因有外部檔案而導致的失敗訊息。如果SAN預先還原階段發生故障、請檢查連接器記錄、以瞭解問題的原因。</block>
+  <block id="bc75c7043b8e7365f3c8207f2cc978cc" category="summary">還原資料檔案、控制檔或兩者、然後還原資料庫。</block>
+  <block id="2f82b783d7870b8b5a512057018fe6a5" category="doc">還原雲端原生應用程式資料</block>
+  <block id="c48a955b9e2bd6b7c7d520e85a16d929" category="paragraph">在資料遺失的情況下、您可以還原資料檔案、控制檔或兩者、然後還原資料庫。</block>
+  <block id="878f99c91be407d0f28af03c6c58cc11" category="list-text">按一下 <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> 與您要還原的資料庫相對應、然後按一下「*檢視詳細資料*」。</block>
+  <block id="0b666df245a6202aced91c7640467d2f" category="list-text">按一下 <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> 與您要用於還原的資料備份相對應、然後按一下*還原*。</block>
+  <block id="843aa7f2a542d8c13efb89db29c10118" category="list-text">在「還原範圍」區段中、執行下列動作：</block>
+  <block id="abad8f3214f3a57c46ff8ce273f3c2fa" category="paragraph">只想還原資料檔案</block>
+  <block id="4bd405105ed225109f203541f762ba53" category="paragraph">選擇*所有資料檔案*。</block>
+  <block id="5e3a6b0deb07b1f0d86f9fd4c25d5341" category="paragraph">只想還原控制檔</block>
+  <block id="2b027c3e8a91495aa95819b2d3c346af" category="paragraph">選擇*控制檔案*</block>
+  <block id="e2409461f6ea701da10170dad92c38fc" category="paragraph">想要同時還原資料檔案和控制檔</block>
+  <block id="d05b716bffd64ec8e96499377d58a7b2" category="paragraph">選擇*所有資料檔案*和*控制檔案*。</block>
+  <block id="ad174c635135b0241d2c6d4374969f66" category="admonition">在ASM配置上、iSCSI不支援使用控制檔或僅控制檔來還原資料檔案。</block>
+  <block id="7d2ceeaac74ba98c2f8e824aabd0befa" category="paragraph">您也可以選取*強制就地還原*核取方塊。</block>
+  <block id="47834d28e751dd7e5975a028525b14e9" category="paragraph">「*強制就地還原*」選項會覆寫來自資料檔案磁碟群組的spfile、密碼檔及封存記錄檔。選取「*強制就地還原*」選項時、您應該使用最新的備份。</block>
+  <block id="be7f025709fbae3f80cb8db551628640" category="list-text">在「恢復範圍」區段中、執行下列動作：</block>
+  <block id="a536fe88f851033ec6d2f5f6c128564d" category="paragraph">選擇*直到系統變更編號*、然後指定SCN。</block>
+  <block id="263cdfe5686f3877131daa2473fd6436" category="paragraph">想要恢復到特定的日期和時間</block>
+  <block id="763290a7946a18694b0c5a20d1e9772f" category="paragraph">對於選取的還原範圍、您可以在*歸檔記錄檔位置*欄位中、選擇性地指定包含還原所需之歸檔記錄的位置。</block>
+  <block id="1c4f2e7b048fcee5d429a4ba9afe4175" category="paragraph">如果您想要在恢復後以讀寫模式開啟資料庫、請選取此核取方塊。</block>
+  <block id="4b077d1c7e93e91ee6d4fb4a8eacdf33" category="list-text">單擊* Next*（下一步）並查看詳細資料。</block>
+  <block id="357a35aedd0c37deb3a881df778a9bb4" category="list-text">按一下 * 還原 * 。</block>
+  <block id="4a5a82686ba9941f1667cdca6777b901" category="sidebar">備份及還原應用程式資料</block>
+  <block id="084829803f52f86aee9d787cb2c3581d" category="sidebar">備份及還原雲端原生應用程式資料</block>
+  <block id="b5604ed88817894a6aea9dc218c45b8e" category="sidebar">備份雲端原生應用程式資料</block>
+  <block id="e8a9eeac14cf83695d7d066f82b9ba23" category="sidebar">將Oracle資料庫從雲端還原至內部部署</block>
+  <block id="0affc637f33b3e47ec0c95c6c88db865" category="sidebar">將SQL Server資料庫從雲端還原至內部部署</block>
+  <block id="3a3684473cd3bbadce768d553de06b92" category="sidebar">還原雲端原生應用程式資料</block>
 </blocks>

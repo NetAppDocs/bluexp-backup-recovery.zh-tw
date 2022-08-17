@@ -1,0 +1,131 @@
+---
+sidebar: sidebar 
+permalink: concept-protect-cloud-app-data-to-cloud.html 
+keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites 
+summary: 在NetApp Cloud Manager中啟用的雲端應用程式備份、可提供高效、應用程式一致、原則型的備份、並還原位於Amazon FSX for NetApp ONTAP 的Oracle®資料庫。 
+---
+= 保護雲端原生應用程式資料
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在NetApp Cloud Manager中啟用的雲端應用程式備份、可提供高效、應用程式一致、原則型的備份、並還原位於Amazon FSX for NetApp ONTAP 的Oracle資料庫。
+
+
+
+== 架構
+
+Cloud Backup for Applications架構包含下列元件。
+
+* Cloud Backup for Applications是一組由NetApp代管的SaaS服務、以Cloud Manager SaaS平台為基礎。
++
+它能協調NetApp雲端儲存設備上的應用程式資料保護工作流程。
+
+* Cloud Backup for Applications UI與Cloud Manager UI整合。
++
+Cloud Backup for Applications UI提供多種儲存與資料管理功能。
+
+* Cloud Manager Connector是Cloud Manager的元件、可在您的雲端網路中執行、並與在SnapCenter Oracle資料庫主機上執行的Amazon FSX儲存檔案系統和適用於Oracle的Sfxin外掛程式互動。
+* 適用於Oracle的零組件可在每個Oracle資料庫主機上執行、並與主機上執行的Oracle資料庫互動、同時執行資料保護作業。SnapCenter
++
+下圖顯示每個元件及其之間需要準備的連線：
+
++
+image:diagram_nativecloud_backup_app.png["顯示Cloud Backup如何與不同元件通訊的圖表"]
+
++
+對於任何使用者啟動的要求、Cloud Backup for Applications UI會與Cloud Manager SaaS進行通訊、而Cloud Manager SaaS會在驗證要求時處理相同的程序。如果要求執行工作流程（例如備份或還原）、SaaS服務會啟動工作流程、並在必要時將通話轉接至Cloud Manager Connector。然後Connector會與Amazon FSX for NetApp ONTAP 的支援Oracle和SnapCenter 支援Oracle的支援功能進行通訊、以執行工作流程工作。
+
++
+連接器可部署在與Oracle資料庫相同的VPC上、或部署在不同的VPC上。如果Connector和Oracle資料庫位於不同的網路上、您應該在兩者之間建立網路連線。
+
+
+
+
+
+== 支援的組態
+
+* 作業系統：
++
+** RHEL 7.5或更新版本及8.x
+** ol 7.5或更新版本及8.x
+
+
+* 儲存系統：Amazon FSX for ONTAP Sf
+* 儲存配置：NFS v3和v4.1（支援DNFS）、iSCSI搭配ASM（ASMfd、ASMLib和ASMUdev)
+* 應用程式：Oracle Standard和Oracle Enterprise–獨立式（舊型和多租戶–CDB和PDB）
+* Oracle版本：12cR2、18c和19c
+
+
+
+
+== 支援的功能
+
+* 自動探索Oracle資料庫
+* 備份位於Amazon FSX for NetApp ONTAP 的Oracle資料庫
++
+** 完整（資料+控制+歸檔記錄檔）備份
+** 隨需備份
+** 根據系統定義或自訂原則排程備份
++
+您可以在原則中指定不同的排程頻率、例如每小時、每日、每週和每月。
+
+
+
+* 根據原則保留備份
+* 從指定的備份還原完整的Oracle資料庫（資料檔案+控制檔）
+* 僅還原資料檔案、並僅從指定的備份控制檔案
+* 使用恢復Oracle資料庫、直到SCN、直到時間、所有可用的記錄、而且沒有恢復選項
+* 監控備份和其他工作
+* 在儀表板上顯示保護摘要
+* 透過電子郵件傳送警示
+
+
+
+
+== 限制
+
+* 不支援Oracle 11g和21c版
+* 不支援備份的掛載、複製、目錄及驗證作業
+* 不支援RAC和Data Guard上的Oracle
+* 備份限制：
++
+** 不支援線上資料或僅記錄備份
+** 不支援離線備份
+** 不支援備份位於循環掛載點上的Oracle資料庫
+** 不支援位於多個ASM磁碟群組中、且與FSX磁碟區重疊的Oracle資料庫之一致性群組快照
+** 如果您的Oracle資料庫是在ASM上設定、請確認您的SVM名稱在FSX系統中是唯一的。如果您在FSX系統中擁有相同的SVM名稱、則不支援備份位於這些SVM上的Oracle資料庫。
+
+
+* 還原限制：
++
+** 不支援精細還原、例如還原資料表空間和PDF
+** 僅支援在NAS和SAN配置上就地還原Oracle資料庫
+** 不支援僅還原控制檔或SAN配置上的資料檔案+ Oracle資料庫控制檔
+** 在SAN配置中、如果SnapCenter Oracle的支援使用的支援功能不支援使用Oracle的任何外部檔案、則還原作業將會失敗、而非ASM磁碟群組上的Oracle資料檔案。外部檔案可以是下列一種或多種類型：
++
+*** 參數
+*** 密碼
+*** 歸檔記錄
+*** 線上記錄
+*** ASM參數檔案。
++
+您應該選取「強制就地還原」核取方塊、覆寫類型為「參數」、「密碼」和「歸檔記錄」的外部檔案。
+
++
+
+NOTE: 如果有其他類型的外部檔案、還原作業會失敗、而且資料庫無法還原。如果您有其他類型的外部檔案、則在執行還原作業之前、應先將其刪除或移至其他位置。
+
++
+由於已知問題、UI中的工作頁面不會顯示因有外部檔案而導致的失敗訊息。如果SAN預先還原階段發生故障、請檢查連接器記錄、以瞭解問題的原因。
+
+
+
+
+
+

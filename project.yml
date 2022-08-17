@@ -83,20 +83,38 @@ sidebar:
       url: "/task-manage-backups-kubernetes.html"
     - title: 從Kubernetes備份還原
       url: "/task-restore-backups-kubernetes.html"
-  - title: 備份及還原內部部署應用程式資料
+  - title: 備份及還原應用程式資料
     entries:
-    - title: 保護內部部署的應用程式資料
-      url: "/concept-protect-app-data-to-cloud.html"
-    - title: 將內部部署應用程式資料備份到雲端
-      url: "/task-backup-app-data-to-cloud.html"
-    - title: 管理應用程式保護
-      url: "/task-manage-app-backups.html"
-    - title: 還原應用程式資料
+    - title: 備份及還原內部部署應用程式資料
       entries:
-      - title: 還原Oracle資料庫
-        url: "/task-restore-oracle-data.html"
-      - title: 還原SQL Server資料庫
-        url: "/task-restore-sql-data.html"
+      - title: 保護內部部署的應用程式資料
+        url: "/concept-protect-app-data-to-cloud.html"
+      - title: 將內部部署應用程式資料備份到雲端
+        url: "/task-backup-app-data-to-cloud.html"
+      - title: 管理應用程式保護
+        url: "/task-manage-app-backups.html"
+      - title: 還原應用程式資料
+        entries:
+        - title: 還原Oracle資料庫
+          url: "/task-restore-oracle-data.html"
+        - title: 還原SQL Server資料庫
+          url: "/task-restore-sql-data.html"
+    - title: 備份及還原雲端原生應用程式資料
+      entries:
+      - title: 保護雲端原生應用程式資料
+        url: "/concept-protect-cloud-app-data-to-cloud.html"
+      - title: 先決條件
+        url: "/reference-prereq-protect-cloud-native-app-data.html"
+      - title: 備份雲端原生應用程式資料
+        entries:
+        - title: 探索應用程式
+          url: "/task-discover-applications.html"
+        - title: 備份雲端原生應用程式資料
+          url: "/task-backup-cloud-native-app-data.html"
+      - title: 管理雲端原生應用程式資料的保護
+        url: "/task-manage-cloud-native-app-data.html"
+      - title: 還原雲端原生應用程式資料
+        url: "/task-restore-cloud-native-app-data.html"
   - title: 備份及還原虛擬機器資料
     entries:
     - title: 保護您的虛擬機器資料
@@ -173,14 +191,18 @@ homepage:
     - title: Kubernetes叢集至Google Cloud
       url: task-backup-kubernetes-to-gcp.html
       flavor: gcp
-  - title: 備份及還原內部部署應用程式資料
+  - title: 備份及還原應用程式資料
     links:
     - title: 將內部部署應用程式資料備份到雲端
       url: task-backup-app-data-to-cloud.html
-    - title: 還原Oracle資料庫
+    - title: 將Oracle資料庫從雲端還原至內部部署
       url: task-restore-oracle-data.html
-    - title: 還原SQL Server資料庫
+    - title: 將SQL Server資料庫從雲端還原至內部部署
       url: task-restore-sql-data.html
+    - title: 備份雲端原生應用程式資料
+      url: task-backup-cloud-native-app-data.html
+    - title: 還原雲端原生應用程式資料
+      url: task-restore-cloud-native-app-data.html
   - title: 備份及還原虛擬機器資料
     links:
     - title: 將資料存放區備份至雲端
