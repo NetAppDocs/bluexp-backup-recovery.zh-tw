@@ -24,6 +24,8 @@ Cloud Backup可支援兩個S3歸檔儲存類別和大部分地區。
 
 如果您的來源叢集執行ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在特定天數（通常超過30天）之後、將備份分層至_S3 Glacier Deep Archive_或_S3儲存設備、以進一步最佳化成本。這些階層中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您需要考量從這些歸檔備份檔案還原資料的頻率。請參閱相關章節 <<Restoring data from archival storage,從歸檔儲存設備還原資料>>。
 
+如果您在啟動Cloud Backup時、在第一備份原則中選擇「_S3 Glacier」或「_S3 Glacier Deep Archive_」、則該層將是該叢集未來備份原則唯一可用的歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。
+
 請注意、當您使用此類型的生命週期規則設定Cloud Backup時、在AWS帳戶中設定儲存庫時、不得設定任何生命週期規則。
 
 https://aws.amazon.com/s3/storage-classes/["瞭解 S3 儲存課程"^]。

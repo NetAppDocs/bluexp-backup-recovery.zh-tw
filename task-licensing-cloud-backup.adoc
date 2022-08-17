@@ -48,12 +48,12 @@ link:concept-ontap-backup-to-cloud.html#cost["深入瞭解使用雲端備份的�
 有幾項PAYGO雲端備份計畫：
 
 * 「Cloud Backup Cloud Volumes ONTAP 」套件可讓您備份內部部署ONTAP 的各種資料。
-* 「CVO專業人員」套件可讓您搭售Cloud Volumes ONTAP 各種解決方案、包括這包括Cloud Volumes ONTAP 不受限制地備份此授權所收取的所有數量（備份容量不計入授權）。此選項無法讓您備份內部部署ONTAP 的支援資料。
+* 「CVO專業人員」套件可讓您搭售Cloud Volumes ONTAP 各種解決方案、包括這包括Cloud Volumes ONTAP 使用授權對整個過程進行無限的備份（備份容量不計入授權容量）。此選項無法讓您備份內部部署ONTAP 的支援資料。
 
 
 ifdef::azure[]
 
-* 「CVO Edge Cache」套件的功能與「CVO Professional」套件相同、但也支援 https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["全域檔案快取"]。您有權在Cloud Volumes ONTAP 整個作業系統上、為3個已配置容量的TiB部署一個Global File Cache Edge系統。此選項僅可透過Azure Marketplace取得、無法備份內部部署ONTAP 的整套功能。
+* 「CVO Edge Cache」套件的功能與「CVO Professional」套件相同、但也支援 https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["全域檔案快取"^]。您有權在Cloud Volumes ONTAP 整個作業系統上、為3個已配置容量的TiB部署一個Global File Cache Edge系統。此選項僅可透過Azure Marketplace取得、無法備份內部部署ONTAP 的整套功能。
 
 
 endif::azure[]
@@ -97,7 +97,7 @@ ifdef::aws[]
 +
 如果您要使用此選項、請從「市場」頁面設定您的訂閱、然後再進行設定 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["將訂閱與AWS認證資料建立關聯"^]。請注意Cloud Volumes ONTAP 、您也需要使用這份年度合約訂閱來支付您的不二系統費用、因為您只能在Cloud Manager中指派一個有效訂閱給AWS認證資料。
 
-* 「CVO專業人員」計畫、可讓您搭售Cloud Volumes ONTAP 各種解決方案、以供搭配使用。這包括Cloud Volumes ONTAP 不受限制地備份此授權所收取的所有數量（備份容量不計入授權）。此選項無法讓您備份內部部署ONTAP 的支援資料。
+* 「CVO專業人員」計畫、可讓您搭售Cloud Volumes ONTAP 各種解決方案、以供搭配使用。這包括Cloud Volumes ONTAP 使用授權對整個過程進行無限的備份（備份容量不計入授權容量）。此選項無法讓您備份內部部署ONTAP 的支援資料。
 +
 請參閱 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["介紹授權主題Cloud Volumes ONTAP"^] 以深入瞭解此授權選項。
 
@@ -126,7 +126,7 @@ endif::gcp[]
 
 NetApp自帶授權、提供1年、2年或3年期限。您只需支付所保護資料的費用、計算方式為ONTAP 正在備份的來源供應區的邏輯使用容量（_fore_任何效率）。此容量也稱為前端TB（FTB）。
 
-BYOL Cloud Backup授權為浮動授權、可在與Cloud Manager帳戶相關的所有系統之間共享總容量。對於流通系統、您可以執行CLI命令「Volume show-space -logical-used」（Volume show-space -logical-used）、針對您打算備份的磁碟區、取得所需容量的粗略預估。ONTAP
+BYOL Cloud Backup授權為浮動授權、可在與Cloud Manager帳戶相關的所有系統之間共享總容量。對於流通系統、您可以執行CLI命令「Volume show -Fields logical-used by the AFFS」（Volume show -Fields logical-used by the AFFS）、針對您打算備份的磁碟區、粗略估計所需的容量。ONTAP
 
 如果您沒有Cloud Backup BYOL授權、請按一下Cloud Manager右下角的聊天圖示以購買。
 

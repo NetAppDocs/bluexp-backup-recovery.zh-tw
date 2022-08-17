@@ -26,8 +26,9 @@ Cloud Backup提供備份與還原功能、可保護ONTAP 及長期歸檔您的�
 
 * 將獨立的資料磁碟區複本備份到低成本的物件儲存設備。
 * 將單一備份原則套用至叢集中的所有磁碟區、或將不同的備份原則指派給具有獨特還原點目標的磁碟區。
-* 命名備份原則、以便輕鬆查看每個原則的用途。
-* 將較舊的備份檔案分層歸檔儲存設備、以節省成本（ONTAP 使用支援的版本為
+* 製作不可變的備份檔案、以便在保留期間鎖定。
+* 掃描備份檔案以找出可能的勒索軟體攻擊、並自動移除/取代受感染的備份。
+* 將較舊的備份檔案分層至歸檔儲存設備、以節省成本。
 * 從雲端備份到雲端、從內部部署系統備份到公有雲或私有雲。
 * 對於NetApp系統、您的備份可以存放在不同的訂閱/帳戶或不同的地區。Cloud Volumes ONTAP
 * 備份資料會以 AES-256 位元加密的閒置和 TLS 1.2 HTTPS 傳輸連線加以保護。
@@ -97,13 +98,26 @@ Cloud Backup可在沒有網際網路連線的站台（也稱為「離線」或�
 
 
 
+== 支援的磁碟區
+
+Cloud Backup支援下列類型的磁碟區：
+
+* 可讀寫的磁碟區FlexVol
+* SnapMirror資料保護（DP）目的地磁碟區
+* 《企業版》（需使用更新版本的版本）SnapLock ONTAP
+
+
+目前不支援使用各種適用的資料量和不符合要求的資料量。FlexGroup SnapLock
+
+
+
 == 成本
 
 搭配ONTAP 使用Cloud Backup搭配使用各種系統有兩種相關成本：資源費用和服務費用。
 
 * 資源費用 *
 
-資源費用會支付給雲端供應商、以取得物件儲存容量、以及在雲端執行虛擬機器/執行個體。
+資源費用會支付給雲端供應商、用於物件儲存容量、以及將備份檔案寫入和讀取至雲端。
 
 * 對於備份、您需要支付雲端供應商的物件儲存成本。
 +
@@ -117,6 +131,16 @@ ifdef::aws[]
 ** 在AWS中、 https://aws.amazon.com/athena/faqs/["Amazon Athena"^] 和 https://aws.amazon.com/glue/faqs/["AWS黏著劑"^] 資源部署在新的S3儲存區。
 +
 endif::aws[]
+
+
+
++
+ifdef::azure[]
+
++
+** 在Azure中 https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapse工作區"^] 和 https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure Data Lake儲存設備"^] 可在您的儲存帳戶中進行資源配置、以儲存及分析您的資料。
++
+endif::azure[]
 
 
 
@@ -259,44 +283,7 @@ endif::gcp[]
 
 
 
-=== 支援的儲存類別或存取層
-
-ifdef::aws[]
-
-* 在AWS中、備份是從_Standard_儲存類別開始、30天後轉換至_Standard-in頻繁 存取_儲存類別。
-+
-如果您的叢集使用ONTAP 的是版本號為S還原9.10.1或更新版本、您可以選擇在特定天數後、將舊版備份分層至_S3 Glacier或_S3 Glacier Deep Archive_儲存設備、以進一步最佳化成本。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔儲存設備"^]。
-
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* 在Azure中、備份會與_cool存取層建立關聯。
-+
-如果您的叢集使用ONTAP 的是版本號為S還原9.10.1或更新版本、您可以選擇在特定天數後、將舊版備份分層至_Azure Archive_儲存設備、以進一步最佳化成本。 link:reference-azure-backup-tiers.html["深入瞭解Azure歸檔儲存設備"^]。
-
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* 在GCP中、預設會將備份與_Standard_儲存類別相關聯。
-+
-您也可以使用成本較低的_Nearlin__儲存類別、或_Coldlin__或_Archive_儲存類別。請參閱Google主題 link:https://cloud.google.com/storage/docs/storage-classes["儲存類別"^] 以取得變更儲存類別的相關資訊。
-
-
-
-endif::gcp[]
-
-* 在本產品中、備份會與_Standard_儲存類別相關聯。StorageGRID
-
-
-
-
-=== 每個叢集可自訂的備份排程和保留設定
+=== 可自訂的備份排程和保留設定
 
 在工作環境中啟用Cloud Backup時、您最初選取的所有磁碟區都會使用您定義的預設備份原則進行備份。如果您想要將不同的備份原則指派給具有不同恢復點目標（RPO）的特定磁碟區、您可以為該叢集建立其他原則、並在啟動備份之後將這些原則指派給其他磁碟區。
 
@@ -329,6 +316,70 @@ TIP: 資料保護磁碟區備份的保留期間與來源SnapMirror關係中所�
 
 
 
+=== 備份檔案保護設定
+
+如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以保護備份、避免遭到刪除和勒索軟體攻擊。每個備份原則都提供_DataLock和勒索軟體Protection的區段、可在特定時間段（_保留期間_）內套用至備份檔案。_DataLock_可保護您的備份檔案、避免遭到修改或刪除。_勒索 軟體保護_會掃描您的備份檔案、尋找建立備份檔案時、以及從備份檔案還原資料時、勒索軟體攻擊的證據。
+
+您可以針對每個備份原則從下列設定中選擇：
+
+* 無。DataLock保護和勒索軟體保護已停用。
+* 企業：DataLock模式設為_Enterprise_、在保留期間內、具有特定權限的使用者可以覆寫或刪除備份檔案。已啟用勒索軟體保護。
+* 法規遵循：DataLock模式設為_Compliance、使用者在保留期間內無法覆寫或刪除備份檔案。已啟用勒索軟體保護。
+
+
+保留期間與排程保留期間相同、加上14天。例如、使用_5_份複本的每週備份會鎖定每個備份檔案5週。_每月_備份加上_6_份複本、將會鎖定每個備份檔案6個月。
+
+當您的備份目的地是Amazon S3時、目前可提供支援。其他儲存供應商目的地將會新增至未來版本。
+
+
+TIP: 如果您要將備份分層至歸檔儲存設備、則無法啟用DataLock。
+
+請參閱 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLock和勒索軟體保護"^] 如需DataLock和勒索軟體保護功能運作方式的詳細資訊、請參閱。
+
+
+
+=== 舊備份檔案的歸檔儲存設備
+
+使用特定雲端儲存設備時、您可以在一定天數後、將舊的備份檔案移至較便宜的儲存類別/存取層。請注意、如果您已啟用DataLock、則無法使用歸檔儲存設備。
+
+ifdef::aws[]
+
+* 在AWS中、備份是從_Standard_儲存類別開始、30天後轉換至_Standard-in頻繁 存取_儲存類別。
++
+如果您的叢集使用ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在一定天數後、將舊版備份分層至Cloud Backup UI中的_S3 Glacier深度歸檔_或_S3 Glacier Deep Archive_儲存設備、以進一步最佳化成本。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔儲存設備"^]。
+
++
+請注意、如果您在啟動Cloud Backup時、在第一個備份原則中選擇「_S3 Glacier」或「_S3 Glacier Deep Archive_」、則該層將是該叢集未來備份原則唯一可用的歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* 在Azure中、備份會與_cool存取層建立關聯。
++
+如果您的叢集使用ONTAP 的是版本為SURF9.10.1或更新版本、您可以選擇在一定天數後、將舊版備份分層至Cloud Backup UI中的_Azure Archive_儲存設備、以進一步最佳化成本。 link:reference-azure-backup-tiers.html["深入瞭解Azure歸檔儲存設備"^]。
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* 在GCP中、預設會將備份與_Standard_儲存類別相關聯。
++
+您也可以使用成本較低的_Nearlin__儲存類別、或_Coldlin__或_Archive_儲存類別。您可以透過Google設定這些其他儲存類別。請參閱Google主題 link:https://cloud.google.com/storage/docs/storage-classes["儲存類別"^] 以取得變更儲存類別的相關資訊。
+
+
+
+endif::gcp[]
+
+* 在本產品中、備份會與_Standard_儲存類別相關聯。StorageGRID
+
+
+
+
 == 分層原則考量FabricPool
 
 當您要備份的磁碟區位於FabricPool 某個物件上時、您需要注意某些事項、而且該磁碟區有一個指派的原則、而不是「無」：
@@ -347,27 +398,23 @@ TIP: 資料保護磁碟區備份的保留期間與來源SnapMirror關係中所�
 
 
 
-== 支援的磁碟區
-
-Cloud Backup支援下列類型的磁碟區：
-
-* 可讀寫的磁碟區FlexVol
-* SnapMirror資料保護（DP）目的地磁碟區
-* 《企業版》（需使用更新版本的版本）SnapLock ONTAP
-
-
-目前不支援使用各種適用的資料量和不符合要求的資料量。FlexGroup SnapLock
-
-
-
 == 限制
+
+以下是未來版本將修正的已知問題：
+
+* 在還原作業期間、如果備份是在執行ONTAP 版本9.10.1或更新版本的系統上建立、而正在還原磁碟區的系統執行ONTAP 版本為版本9.10.0或更早版本、則還原會在系統中斷或在某些情況下成功、而失敗。 但磁碟區已毀損。
+
+
+
+
+=== 備份限制
 
 * 若要將較舊的備份檔案分層至歸檔儲存設備、叢集必須執行ONTAP 的是版本不支援的版本。若要從歸檔儲存設備中的備份檔案還原磁碟區、也需要目的地叢集執行ONTAP 版本為《支援資料》的版本。
 * 建立或編輯備份原則時、若未將任何磁碟區指派給原則、則保留備份的數量最多可達1018個。因應措施是減少建立原則所需的備份數量。然後您可以編輯原則、在指派磁碟區至原則之後、建立最多4000個備份。
-* 備份資料保護（DP）磁碟區時、與下列SnapMirror標籤的關係將不會備份到雲端：
+* 備份資料保護（DP）磁碟區時：
 +
-** 應用程式一致
-** all_source_snapshot
+** 與SnapMirror標籤「app_nistent」和「all_source_snapshot」的關係將不會備份到雲端。
+** 如果您在SnapMirror目的地磁碟區上建立Snapshot的本機複本（無論使用的是SnapMirror標籤）、這些Snapshot將不會作為備份移至雲端。此時、您需要建立Snapshot原則、並在來源DP磁碟區中加上所需的標籤、以便Cloud Backup備份這些標籤。
 
 
 * SVM-DR磁碟區備份受到下列限制的支援：
@@ -380,7 +427,7 @@ Cloud Backup支援下列類型的磁碟區：
 * 不支援SM至BC組態。
 * 僅支援從不含支援的物件資料來源進行的資料（MCC）備份：MCC > SnapMirror >物件式備份> Cloud Backup。MetroCluster ONTAP ONTAP
 * 不支援從單一磁碟區到多個物件存放區的SnapMirror關係、因此Cloud Backup不支援此組態。ONTAP
-* 不支援物件存放區上的 WORM / 法規遵循模式。
+* 物件存放區上的WORM /法規遵循模式目前僅在Amazon S3上受支援。
 
 
 

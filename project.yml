@@ -7,6 +7,7 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: false
+  rss_page: whats-new.html
   filter:
     label: 雲端供應商
     default: 所有雲端供應商
@@ -34,7 +35,9 @@ sidebar:
     - title: 設定授權
       url: "/task-licensing-cloud-backup.html"
     - title: 監控備份與還原工作的狀態
-      url: task-monitor-backup-jobs.html
+      url: "/task-monitor-backup-jobs.html"
+    - title: 雲端備份原則設定
+      url: "/concept-cloud-backup-policies.html"
   - title: 備份及還原ONTAP 資料
     entries:
     - title: 保護ONTAP 您的資料

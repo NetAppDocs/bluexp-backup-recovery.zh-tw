@@ -51,7 +51,7 @@ image:screenshot_restore_dashboard.png["「還原儀表板」顯示使用瀏覽&
 | 瀏覽資料夾樣式的結構、在單一備份檔案中尋找磁碟區或檔案 | 依部分或完整磁碟區名稱、部分或完整檔案名稱、大小範圍及其他搜尋篩選器、在*所有備份檔案*之間搜尋磁碟區或檔案 
 
 
-| Volume與檔案還原可搭配儲存在Amazon S3、Azure Blob、Google Cloud和NetApp StorageGRID 的備份檔案使用。 | Volume與檔案還原可與儲存在Amazon S3和Google Cloud中的備份檔案搭配使用 
+| Volume與檔案還原可搭配儲存在Amazon S3、Azure Blob、Google Cloud和NetApp StorageGRID 的備份檔案使用。 | Volume與檔案還原可與儲存在Amazon S3、Azure Blob和Google Cloud中的備份檔案搭配使用 
 
 
 | 從StorageGRID 無法存取網際網路的站台還原磁碟區和檔案 | 在黑暗站台不受支援 
@@ -153,7 +153,10 @@ image:screenshot_restore_volume_selection.png["從「還原儀表板」選取「
 +
 image:screenshot_restore_select_volume_snapshot.png["選取您要還原的工作環境、Volume和Volume備份檔案的快照。"]
 
-. 按一下 * 繼續 * 。
+. 單擊 * 下一步 * 。
++
+請注意、如果備份檔案啟用勒索軟體保護（如果您在備份原則中啟用了DataLock和勒索軟體保護）、則系統會在還原資料之前、提示您在備份檔案上執行額外的勒索軟體掃描。我們建議您掃描備份檔案以尋找勒索軟體。
+
 . 在「選取目的地」頁面中、選取您要還原磁碟區的*工作環境*。
 +
 image:screenshot_restore_select_work_env_volume.png["為您要還原的磁碟區選取目的地工作環境的快照。"]
@@ -222,7 +225,7 @@ Cloud Backup會根據您選取的備份建立新的磁碟區。您可以 link:ta
 
 
 
-=== 使用瀏覽與還原還原ONTAP 還原功能還原各種檔案
+=== 使用「瀏覽與還原」還原檔案
 
 如果您只需要從ONTAP 一個還原磁碟區備份中還原幾個檔案、您可以選擇還原個別檔案、而非還原整個磁碟區。您可以將檔案還原至原始工作環境中的現有磁碟區、或還原至使用相同雲端帳戶的不同工作環境。您也可以將檔案還原至內部部署 ONTAP 的作業系統上的 Volume 。
 
@@ -282,7 +285,10 @@ image:screenshot_restore_files_selection.png["從「還原儀表板」選取「�
 +
 image:screenshot_restore_select_source.png["選取要還原之檔案的磁碟區與備份的快照。"]
 
-. 按一下*繼續*、即會顯示Volume備份中的資料夾和檔案清單。
+. 單擊* Next*（下一步），將顯示Volume備份中的文件夾和文件列表。
++
+請注意、如果備份檔案啟用勒索軟體保護（如果您在備份原則中啟用了DataLock和勒索軟體保護）、則系統會在還原資料之前、提示您在備份檔案上執行額外的勒索軟體掃描。我們建議您掃描備份檔案以尋找勒索軟體。
+
 +
 image:screenshot_restore_select_files.png["「選取檔案」頁面的快照、可讓您瀏覽至要還原的檔案。"]
 
@@ -374,6 +380,8 @@ endif::aws[]
 
 ifdef::azure[]
 
+link:reference-azure-backup-tiers.html["深入瞭解如何從Azure歸檔儲存設備還原"]。
+
 endif::azure[]
 
 在開始之前、您應該先瞭解要還原的磁碟區或檔案名稱或位置。
@@ -398,16 +406,15 @@ video::RZktLe32hhQ[youtube,width=848,height=480]
 | Amazon S3 | AWS 內部部署的內部系統 Cloud Volumes ONTAP ONTAP | AWS內部部署的不全系統endif::AWS [] ifdef:azure[] Cloud Volumes ONTAP ONTAP 
 
 
-| Azure Blob | 目前不支援 | endif::azure[] ifdef::azure[] endif::azure[] ifdef::GCP[] 
+| Azure Blob | Azure 內部部署的整套系統 Cloud Volumes ONTAP ONTAP | Azure內部部署的系統中的資料：：azure[] ifdef：：Cloud Volumes ONTAP ONTAP GCP[] 
 
 
 | Google Cloud Storage | 在Google內部部署的內部部署系統中使用Cloud Volumes ONTAP ONTAP | 在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[] 
 
 
-| NetApp StorageGRID | 目前不支援 |  
+| NetApp StorageGRID | 目前不支援 | 目前不支援 
 |===
-
-TIP: 您必須在雲端供應商平台上部署Connector、才能獲得此支援。當連接器安裝在內部部署環境中時、不支援搜尋與還原。
+連接器必須部署在雲端供應商環境中、才能使用「搜尋與還原」進行還原作業。
 
 請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能
 
@@ -440,6 +447,17 @@ ifdef::aws[]
 endif::aws[]
 
 ifdef::azure[]
+
+* Azure要求：
++
+** 您必須在訂閱中註冊Azure Synapse Analytics資源供應商。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
+** 特定Azure Synapse Workspace與Data Lake Storage帳戶權限必須新增至提供Cloud Manager權限的使用者角色。 link:task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["請確定所有權限均已正確設定"]。
++
+請注意、如果您已經使用Cloud Backup搭配過去設定的Connector、現在您需要將Azure Synapse Workspace和Data Lake Storage Account權限新增至Cloud Manager使用者角色。這些都是新功能、搜尋與還原是必備功能。
+
+
+
+
 
 endif::azure[]
 
@@ -494,6 +512,9 @@ ifdef::aws[]
 endif::aws[]
 
 ifdef::azure[]
+
+* 對於儲存在Azure中的備份、它會配置Azure Synapse工作區和Data Lake檔案系統做為儲存工作區資料的容器。
+
 
 endif::azure[]
 

@@ -190,7 +190,7 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
 
 
 .步驟
-. 確認下列S3權限（從最新版本開始） https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則"^]）是IAM角色的一部分、可為Connector提供權限。
+. 確認下列S3權限（從最新版本開始） https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Cloud Manager 原則"^]）是IAM角色的一部分、可為Connector提供權限。
 +
 [source, json]
 ----
@@ -216,6 +216,23 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
               "s3:GetBucketPolicy",
               "s3:PutBucketPublicAccessBlock",
               "s3:PutEncryptionConfiguration",
+              "s3:GetObjectVersionTagging",
+              "s3:GetBucketObjectLockConfiguration",
+              "s3:GetObjectVersionAcl",
+              "s3:PutObjectTagging",
+              "s3:DeleteObjectTagging",
+              "s3:GetObjectRetention",
+              "s3:DeleteObjectVersionTagging",
+              "s3:PutBucketObjectLockConfiguration",
+              "s3:ListBucketByTags",
+              "s3:DeleteObjectVersion",
+              "s3:GetObjectTagging",
+              "s3:PutBucketVersioning",
+              "s3:PutObjectVersionTagging",
+              "s3:GetBucketVersioning",
+              "s3:BypassGovernanceRetention",
+              "s3:PutObjectRetention",
+              "s3:GetObjectVersion",
               "athena:StartQueryExecution",
               "athena:GetQueryResults",
               "athena:GetQueryExecution",
@@ -233,7 +250,7 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
       },
 ----
 +
-如果您使用3.9.15版或更新版本部署Connector、則這些權限應已成為IAM角色的一部分。否則您必須新增遺失的權限。特別是「Athena」和「黏著」權限、因為它們是搜尋與還原所需的權限。請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS文件：編輯IAM原則"]。
+如果您使用3.9.21版或更新版本部署Connector、則這些權限應已成為IAM角色的一部分。否則您必須新增遺失的權限。特別是「Athena」和「黏著」權限、因為它們是搜尋與還原所需的權限。請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS文件：編輯IAM原則"]。
 
 . 啟動服務時、備份精靈會提示您輸入存取金鑰和秘密金鑰。這些認證資料會傳遞ONTAP 給整個叢集、ONTAP 以便讓支援中心能夠將資料備份並還原至S3儲存區。因此、您需要建立具有下列權限的IAM使用者：
 +
@@ -365,10 +382,14 @@ image:screenshot_backup_onprem_aws_networking.png["螢幕快照顯示將磁碟�
 . 輸入將用於預設原則的備份原則詳細資料、然後按一下「*下一步*」。您可以選取現有的原則、也可以在每個區段中輸入您的選擇來建立新原則：
 +
 .. 輸入預設原則的名稱。您不需要變更名稱。
-.. 定義備份排程、並選擇要保留的備份數量。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings-per-cluster["請參閱您可以選擇的現有原則清單"^]。
-.. 若使用ONTAP 的是版本不含更新版本的版本、您可以選擇在數天後將備份分層至S3 Glacier或S3 Glacier Deep Archive儲存設備、以進一步最佳化成本。 link:reference-aws-backup-tiers.html["深入瞭解如何使用歸檔層"]。
+.. 定義備份排程、並選擇要保留的備份數量。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["請參閱您可以選擇的現有原則清單"^]。
+.. 您也可以選擇在使用ONTAP 更新版本的時、設定_DataLock和勒索軟體Protection _設定、保護備份免受刪除和勒索軟體攻擊。_DataLock_可保護您的備份檔案、避免遭到修改或刪除、而_勒索 軟體保護_會掃描您的備份檔案、尋找備份檔案中勒索軟體攻擊的證據。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["深入瞭解可用的DataLock設定"^]。
+.. 您也可以選擇在使用ONTAP 更新版本的版本時、將備份分層至S3 Glacier或S3 Glacier Deep Archive儲存設備、經過一定天數之後、以進一步最佳化成本。 link:reference-aws-backup-tiers.html["深入瞭解如何使用歸檔層"^]。
 +
 image:screenshot_backup_policy_aws.png["顯示Cloud Backup設定的快照、您可在其中選擇排程和備份保留。"]
+
++
+*重要事項：*如果您打算使用DataLock、則在啟動Cloud Backup時、您必須在第一個原則中啟用DataLock。
 
 
 

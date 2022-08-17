@@ -73,6 +73,56 @@ image:diagram_cloud_backup_cvo_azure.png["顯示Cloud Backup如何與來源系�
 而且您必須訂閱 Microsoft Azure 、才能取得備份所在的儲存空間。
 
 --
+驗證或新增連接器權限:: 若要使用雲端備份搜尋與還原功能、您必須擁有Connector角色的特定權限、才能存取Azure Synapse Workspace和Data Lake Storage Account。請參閱下列權限、如果您需要修改原則、請遵循這些步驟。
++
+--
+您必須在訂閱中註冊Azure Synapse Analytics資源供應商。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
+
+.步驟
+. 識別指派給Connector虛擬機器的角色：
++
+.. 在Azure入口網站中、開啟虛擬機器服務。
+.. 選取 Connector 虛擬機器。
+.. 在「設定」下、選取「*身分識別*」。
+.. 按一下* Azure角色指派*。
+.. 記下指派給Connector虛擬機器的自訂角色。
+
+
+. 更新自訂角色：
++
+.. 在Azure入口網站中、開啟您的Azure訂閱。
+.. 按一下*存取控制（IAM）>角色*。
+.. 按一下自訂角色的省略符號（...）、然後按一下*編輯*。
+.. 按一下Json並新增下列權限：
++
+[source, json]
+----
+"Microsoft.Storage/checknameavailability/read",
+"Microsoft.Storage/operations/read",
+"Microsoft.Storage/storageAccounts/listkeys/action",
+"Microsoft.Storage/storageAccounts/read",
+"Microsoft.Storage/storageAccounts/write",
+"Microsoft.Storage/storageAccounts/blobServices/containers/read",
+"Microsoft.Storage/storageAccounts/listAccountSas/action",
+"Microsoft.Synapse/workspaces/write",
+"Microsoft.Synapse/workspaces/read",
+"Microsoft.Synapse/workspaces/delete",
+"Microsoft.Synapse/register/action",
+"Microsoft.Synapse/checkNameAvailability/action",
+"Microsoft.Synapse/workspaces/operationStatuses/read",
+"Microsoft.Synapse/workspaces/firewallRules/read",
+"Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
+"Microsoft.Synapse/workspaces/operationResults/read"
+----
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["檢視原則的完整Json格式"^]
+
+.. 按一下「*檢閱+更新*」、然後按一下「*更新*」。
+
+
+
+
+--
 支援的 Azure 地區:: 所有Azure地區均支援雲端備份 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]（包括Azure政府區域）。
 在不同Azure訂閱中建立備份所需的設定:: 根據預設、備份會使用與Cloud Volumes ONTAP 您的作業系統相同的訂閱方式建立。如果您想要使用不同的Azure訂閱來進行備份、您必須使用 link:reference-backup-multi-account-azure.html["登入Azure入口網站並連結這兩份訂閱"]。
 使用客戶管理金鑰進行資料加密的必要資訊:: 您可以在啟動精靈中使用自己的客戶管理金鑰進行資料加密、而非使用預設的Microsoft管理加密金鑰。在此情況下、您必須擁有Azure訂閱、Key Vault名稱及金鑰。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["瞭解如何使用您自己的金鑰"]。
@@ -114,6 +164,9 @@ Cloud Backup可在系統上啟用、並每天備份磁碟區、並保留最近30
 .步驟
 . 選取工作環境、然後按一下右窗格中備份與還原服務旁的*啟用*。
 +
+如果您的備份Azure Blob目的地是以工作環境形式存在於Canvas上、您可以將叢集拖曳至Azure Blob工作環境、以啟動設定精靈。
+
++
 image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示「啟用雲端備份」按鈕、可在您選取工作環境之後使用。"]
 
 . 選取供應商詳細資料、然後按*下一步*。
@@ -133,7 +186,7 @@ image:screenshot_backup_provider_settings_azure.png["快照顯示雲端供應商
 . 輸入將用於預設原則的備份原則詳細資料、然後按一下「*下一步*」。您可以選取現有的原則、也可以在每個區段中輸入您的選擇來建立新原則：
 +
 .. 輸入預設原則的名稱。您不需要變更名稱。
-.. 定義備份排程、並選擇要保留的備份數量。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings-per-cluster["請參閱您可以選擇的現有原則清單"^]。
+.. 定義備份排程、並選擇要保留的備份數量。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["請參閱您可以選擇的現有原則清單"^]。
 .. 若使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後將備份分層至Azure歸檔儲存設備、以進一步最佳化成本。 link:reference-azure-backup-tiers.html["深入瞭解如何使用歸檔層"]。
 +
 image:screenshot_backup_policy_azure.png["顯示Cloud Backup設定的快照、您可在其中選擇排程和備份保留。"]

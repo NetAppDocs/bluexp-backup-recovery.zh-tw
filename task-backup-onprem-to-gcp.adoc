@@ -227,6 +227,9 @@ bigquery.tables.create
 .步驟
 . 從「畫版」中選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」>「備份磁碟區」*。
 +
+如果備份的Google Cloud Storage目的地是在Canvas上作為工作環境存在、您可以將叢集拖曳至Google Cloud Storage工作環境、以啟動設定精靈。
+
++
 image:screenshot_backup_onprem_enable.png["螢幕擷取畫面會顯示「備份與安培」；「啟用還原」按鈕、可在您選取工作環境之後使用。"]
 
 . 選擇Google Cloud做為您的供應商、然後按一下*「下一步*」。
@@ -245,7 +248,7 @@ image:screenshot_backup_onprem_to_google.png["此螢幕快照顯示將磁碟區�
 . 輸入將用於預設原則的備份原則詳細資料、然後按一下「*下一步*」。您可以選取現有的原則、也可以在每個區段中輸入您的選擇來建立新原則：
 +
 .. 輸入預設原則的名稱。您不需要變更名稱。
-.. 定義備份排程、並選擇要保留的備份數量。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings-per-cluster["請參閱您可以選擇的現有原則清單"^]。
+.. 定義備份排程、並選擇要保留的備份數量。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["請參閱您可以選擇的現有原則清單"^]。
 +
 image:screenshot_backup_policy_gcp.png["顯示Cloud Backup設定的快照、您可在其中選擇備份排程和保留期間。"]
 
