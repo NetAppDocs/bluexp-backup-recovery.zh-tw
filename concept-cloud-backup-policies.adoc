@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-cloud-backup-policies.html 
-keywords: backing up, back up, backup, back up volumes, cloud backup, backup policies, policies 
+keywords: backing up, back up, backup, back up volumes, cloud backup, backup policies, policies, schedules 
 summary: 本文件說明Cloud Backup的備份原則組態設定。 
 ---
 = 雲端備份原則組態設定
@@ -193,4 +193,55 @@ DataLock設為_Compliance、在保留期間內、任何使用者都無法覆寫�
 * 您在啟動Cloud Backup（企業或法規遵循）時所選取的DataLock選項、必須用於該叢集的所有備份原則。您無法在單一叢集上同時使用企業和法規遵循模式鎖定。
 * 如果啟用DataLock、所有Volume備份都會鎖定。您無法混合使用單一叢集的鎖定和非鎖定磁碟區備份。
 * DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。雲端備份已啟動之後、您就無法啟用此功能。
+
+
+
+
+== 歸檔儲存設定
+
+使用特定雲端儲存設備時、您可以在一定天數後、將舊的備份檔案移至較便宜的儲存類別/存取層。請注意、如果您已啟用DataLock、則無法使用歸檔儲存設備。
+
+檔案層中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您必須考慮從歸檔備份檔案還原資料的頻率。
+
+在AWS或Azure中建立備份檔案時、每個備份原則都會提供一個_Archival Policy_區段、供您套用至備份檔案。
+
+image:screenshot_archive_tier_settings.png["建立備份原則時的封存原則設定快照。"]
+
+ifdef::aws[]
+
+* 在AWS中、備份是從_Standard_儲存類別開始、30天後轉換至_Standard-in頻繁 存取_儲存類別。
++
+如果您的叢集使用ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在一定天數後、將舊版備份分層至Cloud Backup UI中的_S3 Glacier深度歸檔_或_S3 Glacier Deep Archive_儲存設備、以進一步最佳化成本。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔儲存設備"^]。
+
++
+請注意、如果您在啟動Cloud Backup時、在第一個備份原則中選擇「_S3 Glacier」或「_S3 Glacier Deep Archive_」、則該層將是該叢集未來備份原則唯一可用的歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* 在Azure中、備份會與_cool存取層建立關聯。
++
+如果您的叢集使用ONTAP 的是版本為SURF9.10.1或更新版本、您可以選擇在一定天數後、將舊版備份分層至Cloud Backup UI中的_Azure Archive_儲存設備、以進一步最佳化成本。 link:reference-azure-backup-tiers.html["深入瞭解Azure歸檔儲存設備"^]。
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* 在GCP中、預設會將備份與_Standard_儲存類別相關聯。
++
+您可以使用成本較低的_Nearlin__儲存類別、或_Coldlin__或_Archive_儲存類別。不過、您可以透過Google設定這些其他儲存類別、而非透過Cloud Backup UI。請參閱Google主題 link:https://cloud.google.com/storage/docs/storage-classes["儲存類別"^] 如需變更Google Cloud Storage儲存庫預設儲存類別的相關資訊、
+
+
+
+endif::gcp[]
+
+* 在本產品中、備份會與_Standard_儲存類別相關聯。StorageGRID
++
+目前沒有可用的歸檔層。
+
 

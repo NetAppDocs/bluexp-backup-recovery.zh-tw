@@ -309,6 +309,8 @@ endif::gcp[]
 
 一旦您達到某個類別或時間間隔的最大備份數、就會移除舊備份、讓您永遠擁有最新的備份（因此過時的備份不會繼續佔用雲端空間）。
 
+請參閱 link:concept-cloud-backup-policies.html#backup-schedules["備份排程"^] 如需可用排程選項的詳細資訊、請參閱。
+
 請注意、您可以 link:task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time["建立磁碟區的隨需備份"] 除了從排程備份所建立的備份檔案之外、您也可以隨時從備份儀表板取得這些檔案。
 
 
@@ -348,9 +350,6 @@ ifdef::aws[]
 +
 如果您的叢集使用ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在一定天數後、將舊版備份分層至Cloud Backup UI中的_S3 Glacier深度歸檔_或_S3 Glacier Deep Archive_儲存設備、以進一步最佳化成本。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔儲存設備"^]。
 
-+
-請注意、如果您在啟動Cloud Backup時、在第一個備份原則中選擇「_S3 Glacier」或「_S3 Glacier Deep Archive_」、則該層將是該叢集未來備份原則唯一可用的歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。
-
 
 
 endif::aws[]
@@ -377,6 +376,8 @@ endif::gcp[]
 
 * 在本產品中、備份會與_Standard_儲存類別相關聯。StorageGRID
 
+
+請參閱 link:concept-cloud-backup-policies.html#archival-storage-settings["歸檔儲存設定"] 如需更多有關歸檔較舊備份檔案的詳細資訊、
 
 
 

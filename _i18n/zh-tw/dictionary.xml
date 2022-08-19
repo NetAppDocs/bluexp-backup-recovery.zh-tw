@@ -2541,4 +2541,13 @@
   <block id="3d30a92654c5a6882d28070729a841a2" category="paragraph">例如、假設您建立的備份原則會建立7 *每週*和12 *每月*備份：</block>
   <block id="8532188e44adde5f81b7984cddff4e7d" category="paragraph">這兩項功能都能保護您的備份檔案、因此當勒索軟體攻擊來源資料時、您永遠都能擁有有效的備份檔案來還原資料。此外、也有助於滿足某些法規要求、在某些情況下、備份必須鎖定並保留一段時間。啟用DataLock和勒索軟體保護後、隨附於Cloud Backup啟動的雲端儲存區將會啟用物件鎖定和物件版本管理功能。</block>
   <block id="311552a792e16e94720630e5e49001fe" category="paragraph">您在叢集上使用ONTAP 「支援系統管理程式」或ONTAP 「支援服務」CLI建立的備份保護原則也會顯示為選項。這包括使用自訂SnapMirror標籤建立的原則。</block>
+  <block id="9ee754e4742a85085c00a0da15114de7" category="section-title">歸檔儲存設定</block>
+  <block id="96026c4e1b41892c6e751985a3886296" category="paragraph">檔案層中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您必須考慮從歸檔備份檔案還原資料的頻率。</block>
+  <block id="9530f03bca8df90d015321461fae0545" category="paragraph">在AWS或Azure中建立備份檔案時、每個備份原則都會提供一個_Archival Policy_區段、供您套用至備份檔案。</block>
+  <block id="7efe72f6baeb19dc4e15e1feb217b66a" category="inline-image-macro">建立備份原則時的封存原則設定快照。</block>
+  <block id="bff3ba9699160e0c8d9eccbf41cf51f7" category="paragraph"><block ref="bff3ba9699160e0c8d9eccbf41cf51f7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cdef4910d3a4b39e3da863cfac74b555" category="paragraph">您可以使用成本較低的_Nearlin__儲存類別、或_Coldlin__或_Archive_儲存類別。不過、您可以透過Google設定這些其他儲存類別、而非透過Cloud Backup UI。請參閱Google主題 <block ref="ff20b961093fec8eb39137db849f78c4" category="inline-link-macro-rx"></block> 如需變更Google Cloud Storage儲存庫預設儲存類別的相關資訊、</block>
+  <block id="4171d78ae1a555db73fd760355ce3da1" category="paragraph">目前沒有可用的歸檔層。</block>
+  <block id="2e5732b07b5a367d6ae6bf311bb4e064" category="paragraph">請參閱 <block ref="94012c1ab2bd0160a2654e7678395191" category="inline-link-macro-rx"></block> 如需可用排程選項的詳細資訊、請參閱。</block>
+  <block id="330ec284275e2a903b785453c26a379b" category="paragraph">請參閱 <block ref="b960bc47dc855085c33b2bb2182e9e16" category="inline-link-macro-rx"></block> 如需更多有關歸檔較舊備份檔案的詳細資訊、</block>
 </blocks>
