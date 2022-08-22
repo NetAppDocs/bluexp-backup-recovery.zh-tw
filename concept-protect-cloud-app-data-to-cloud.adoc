@@ -64,7 +64,7 @@ image:diagram_nativecloud_backup_app.png["顯示Cloud Backup如何與不同元�
 
 
 
-== 支援的功能
+== 功能
 
 * 自動探索Oracle資料庫
 * 備份位於Amazon FSX for NetApp ONTAP 的Oracle資料庫
