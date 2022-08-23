@@ -2466,7 +2466,6 @@
   <block id="fc2b0bcc44ac9f8bef7ad04de353a902" category="list-text">儲存配置：NFS v3和v4.1（支援DNFS）、iSCSI搭配ASM（ASMfd、ASMLib和ASMUdev)</block>
   <block id="477deb60a679be8d3ed7fc83c4ab4b80" category="list-text">應用程式：Oracle Standard和Oracle Enterprise–獨立式（舊型和多租戶–CDB和PDB）</block>
   <block id="9a8f7463386e75f032fb3eacb8e8b03c" category="list-text">Oracle版本：12cR2、18c和19c</block>
-  <block id="e277e42688a9f44945fa8c1919bab726" category="section-title">支援的功能</block>
   <block id="24952b37ce88035adf02c3d53375aee0" category="list-text">自動探索Oracle資料庫</block>
   <block id="7758fa39945c61d871cb2e22cbfde4ac" category="list-text">備份位於Amazon FSX for NetApp ONTAP 的Oracle資料庫</block>
   <block id="a638d70a88de180abe34c16291fad0fe" category="list-text">完整（資料+控制+歸檔記錄檔）備份</block>
@@ -2550,4 +2549,5 @@
   <block id="4171d78ae1a555db73fd760355ce3da1" category="paragraph">目前沒有可用的歸檔層。</block>
   <block id="2e5732b07b5a367d6ae6bf311bb4e064" category="paragraph">請參閱 <block ref="94012c1ab2bd0160a2654e7678395191" category="inline-link-macro-rx"></block> 如需可用排程選項的詳細資訊、請參閱。</block>
   <block id="330ec284275e2a903b785453c26a379b" category="paragraph">請參閱 <block ref="b960bc47dc855085c33b2bb2182e9e16" category="inline-link-macro-rx"></block> 如需更多有關歸檔較舊備份檔案的詳細資訊、</block>
+  <block id="7e7595ef438d9d19d857be29daa1e8d2" category="list-text">連接器必須設定*不含* Proxy伺服器、才能與網際網路進行HTTP通訊。如果您已為Connector設定HTTP Proxy伺服器、則無法使用搜尋與取代功能。</block>
 </blocks>

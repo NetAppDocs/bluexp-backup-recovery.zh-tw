@@ -455,6 +455,7 @@ ifdef::azure[]
 +
 請注意、如果您已經使用Cloud Backup搭配過去設定的Connector、現在您需要將Azure Synapse Workspace和Data Lake Storage Account權限新增至Cloud Manager使用者角色。這些都是新功能、搜尋與還原是必備功能。
 
+** 連接器必須設定*不含* Proxy伺服器、才能與網際網路進行HTTP通訊。如果您已為Connector設定HTTP Proxy伺服器、則無法使用搜尋與取代功能。
 
 
 
