@@ -52,6 +52,10 @@ curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/tok
     "client_id": "Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC"
 }'
 ----
++
+
+NOTE: NetApp Cloud Central 的使用者權杖有到期日。API 回應包含「 Expire_in 」欄位、指出權杖過期的時間。若要重新整理權杖、您需要再次呼叫此API。
+
 . 取得您的NetApp Cloud Central帳戶ID。
 +
 [source, http]
@@ -179,13 +183,6 @@ curl --location --request GET 'https://cloudmanager.cloud.netapp.com/account/acc
     ]
 }
 ----
-.權杖過期時該怎麼辦？
-****
-NetApp Cloud Central 的使用者權杖有到期日。若要重新整理權杖、您需要再次從步驟 1 呼叫 API 。
-
-API 回應包含「 Expire_in 」欄位、指出權杖過期的時間。
-
-****
 
 
 == API 參考

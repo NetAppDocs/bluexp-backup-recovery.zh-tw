@@ -1774,9 +1774,6 @@
   <block id="7b029d80356dba73932cd4b67641ab73" category="listing-title">監控回應。</block>
   <block id="b6c768315d9228aa5e18b2250a18a10e" category="listing-title">回應：</block>
   <block id="c39d07aa3697a8b5b1eb9963f6cd194c" category="listing-title">監控直到「狀態」為「已完成」。</block>
-  <block id="d6f4f4fada8d5c3952a90492c3138e97" category="sidebar-title">權杖過期時該怎麼辦？</block>
-  <block id="1539598d4e260b03b9265b87976a6ab0" category="paragraph">NetApp Cloud Central 的使用者權杖有到期日。若要重新整理權杖、您需要再次從步驟 1 呼叫 API 。</block>
-  <block id="5c5cd253b66501facf455779c806ee88" category="paragraph">API 回應包含「 Expire_in 」欄位、指出權杖過期的時間。</block>
   <block id="19ec08da81a826d919d64ab860845c04" category="section-title">API 參考</block>
   <block id="daeeb32b9a2ca59f58bedaba9bbc41b5" category="paragraph">如需每個Cloud Backup API的文件、請參閱<block ref="323898002645c2363c910f7c119fd4d6" category="inline-link-rx"></block>。</block>
   <block id="381ea68c9177a4bf66e46b23e8b00041" category="paragraph">設定Connector的權限、以建立及管理S3儲存區。您也需要設定內部部署ONTAP 的叢集權限、以便能夠讀取及寫入S3儲存區的資料。</block>
@@ -1871,7 +1868,6 @@
   <block id="824ce1955c2b2d5f91cb80c86545d639" category="paragraph"><block ref="eb618b89294e80d594faecbc4641afee" category="inline-link-rx"></block>。<block ref="f39d73248b535226c2e16237e43ff2d0" category="inline-link-rx"></block>。</block>
   <block id="0a0c24e7fef8cd9bcb19d6db19987b93" category="paragraph">請注意、如果您先前使用Cloud Restore執行個體/ VM、將會自動移除。雲端備份程序會每天執行一次、以刪除所有舊的Cloud Restore執行個體。這項變更是完全透明的、不會對您的資料造成任何影響、而且您不會注意到備份或還原工作有任何變更。</block>
   <block id="7d3723a161203e59b756ce8e77114fc0" category="admonition">當Cloud Manager Connector部署在雲端的政府區域、或是部署在沒有網際網路存取（黑點）的站台上時、Cloud Backup僅支援ONTAP 從還原系統進行備份與還原作業。使用這些替代部署方法時、Cloud Backup不支援從Kubernetes叢集、應用程式或虛擬機器進行備份與還原作業。</block>
-  <block id="d8fc7ce817e791d9288e2c5b2f30d2e4" category="paragraph">請務必從下列連結產生重新整理權杖：https://services.cloud.netapp.com/refresh-token/。重新整理權杖是一個英數字元字串、可用來產生使用者權杖。</block>
   <block id="f213760e51bc9d7895aab74f2fba377c" category="paragraph">預設原則會每天備份磁碟區、並保留每個磁碟區最近 30 個備份複本。變更為每小時、每日、每週、每月或每年備份、 或選取其中一個系統定義的原則、以提供更多選項。您也可以變更要保留的備份複本數量。</block>
   <block id="2da5030b3f916979a53299b49c96a213" category="paragraph">下圖顯示*公用連線*方法、以及元件之間需要準備的連線。您可以使用內部部署安裝的Connector、或是部署在Google Cloud Platform VPC上的Connector。</block>
   <block id="e48ce03e2bde71049d742a96c5698f33" category="inline-image-macro">顯示Cloud Backup如何透過公共連線與叢集上的磁碟區和備份檔案所在的Google Cloud儲存設備進行通訊的圖表。</block>
@@ -2194,7 +2190,6 @@
   <block id="d871807798c398066c07374cd00a3ae5" category="cell">Amazon S3 endif..:AWS：ifdef：：azure[] endif::azure[] ifdef：：GCP [] endiff:GCP []</block>
   <block id="f3ec603ab9c35660f371c0fc057b7fd1" category="list-text">您的叢集必須執行ONTAP 版本不只是功能不穩定的版本</block>
   <block id="8d9076f8d01c0c18932ba58acd4e1b5e" category="list-text">您必須使用Cloud Manager 3.9.21或更新版本（此時Connector必須部署在雲端）</block>
-  <block id="1578c6d89f4aa3d68d6ae942cc341fc8" category="list-text">若要備份至AWS、下列S3權限必須是為Connector提供權限的IAM角色的一部分：</block>
   <block id="f8a21cbcda6edc5ae1bf2008fc82b99d" category="list-text">S3：GetObjectVersion標記</block>
   <block id="bce339f31623f1dca1af841a36515224" category="list-text">S3：GetBucketObjectLockConfiguration</block>
   <block id="f80f99cee549d1cdd0a4fe6a1527ea90" category="list-text">S3：GetObjectVerionAcl</block>
@@ -2550,4 +2545,9 @@
   <block id="2e5732b07b5a367d6ae6bf311bb4e064" category="paragraph">請參閱 <block ref="94012c1ab2bd0160a2654e7678395191" category="inline-link-macro-rx"></block> 如需可用排程選項的詳細資訊、請參閱。</block>
   <block id="330ec284275e2a903b785453c26a379b" category="paragraph">請參閱 <block ref="b960bc47dc855085c33b2bb2182e9e16" category="inline-link-macro-rx"></block> 如需更多有關歸檔較舊備份檔案的詳細資訊、</block>
   <block id="7e7595ef438d9d19d857be29daa1e8d2" category="list-text">連接器必須設定*不含* Proxy伺服器、才能與網際網路進行HTTP通訊。如果您已為Connector設定HTTP Proxy伺服器、則無法使用搜尋與取代功能。</block>
+  <block id="4f461acb23e2f0a872de2a1c93858fac" category="list-text">若要備份至AWS、下列S3權限必須是為Connector提供權限的IAM角色的一部分。它們位於資源「arn:AWS:S3：：：：NetApp備份-*」的「backupS3Policy」區段：</block>
+  <block id="7b2b7c08da06dd437ae98c50b4ace20f" category="inline-link">檢視原則的完整Json格式、您可以在其中複製及貼上所需的權限</block>
+  <block id="47161ef4ae449d43c829baee065648d2" category="paragraph"><block ref="63cdf6e3f2a869e9e35995fee340f32a" category="inline-link-rx"></block>。</block>
+  <block id="9644265a314e497bc18814e1694c3d27" category="paragraph">請務必從下列連結產生重新整理權杖：https://services.cloud.netapp.com/refresh-token/。重新整理權杖是一個英數字元字串、可用來產生使用者權杖。</block>
+  <block id="777d6e4cc528ea2b29b7fc6903fb67a6" category="admonition">NetApp Cloud Central 的使用者權杖有到期日。API 回應包含「 Expire_in 」欄位、指出權杖過期的時間。若要重新整理權杖、您需要再次呼叫此API。</block>
 </blocks>
