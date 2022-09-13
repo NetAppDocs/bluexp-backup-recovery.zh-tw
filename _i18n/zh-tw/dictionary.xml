@@ -2550,4 +2550,5 @@
   <block id="47161ef4ae449d43c829baee065648d2" category="paragraph"><block ref="63cdf6e3f2a869e9e35995fee340f32a" category="inline-link-rx"></block>。</block>
   <block id="9644265a314e497bc18814e1694c3d27" category="paragraph">請務必從下列連結產生重新整理權杖：https://services.cloud.netapp.com/refresh-token/。重新整理權杖是一個英數字元字串、可用來產生使用者權杖。</block>
   <block id="777d6e4cc528ea2b29b7fc6903fb67a6" category="admonition">NetApp Cloud Central 的使用者權杖有到期日。API 回應包含「 Expire_in 」欄位、指出權杖過期的時間。若要重新整理權杖、您需要再次呼叫此API。</block>
+  <block id="39d3d67728b58b0f9255268d852abfbe" category="admonition">Cloud Backup for Applications基礎架構可靈活因應某個區域內的可用度區域故障。現在、它能將容錯移轉至新的區域、進而支援區域性故障、而且此容錯移轉作業需要停機約2小時。</block>
 </blocks>

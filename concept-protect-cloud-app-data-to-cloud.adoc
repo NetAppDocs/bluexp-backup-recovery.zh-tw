@@ -47,6 +47,9 @@ image:diagram_nativecloud_backup_app.png["顯示Cloud Backup如何與不同元�
 
 
 
+IMPORTANT: Cloud Backup for Applications基礎架構可靈活因應某個區域內的可用度區域故障。現在、它能將容錯移轉至新的區域、進而支援區域性故障、而且此容錯移轉作業需要停機約2小時。
+
+
 
 == 支援的組態
 
