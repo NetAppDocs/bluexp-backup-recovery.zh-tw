@@ -127,7 +127,7 @@ spec:
 
 --
 支援的 GCP 區域:: 所有GCP地區均支援雲端備份 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]。
-授權需求:: 如需Cloud Backup PAYGO授權、請透過訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCP 市場"^] 必須先啟用雲端備份。雲端備份計費是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["您可以從工作環境精靈的詳細資料 & 認證頁面訂閱"^]。
+授權需求:: 如需Cloud Backup PAYGO授權、請透過訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCP 市場"^] 必須先啟用雲端備份。雲端備份計費是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
 +
 --
 對於Cloud Backup BYOL授權、您需要NetApp的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["瞭解如何管理BYOL授權"]。

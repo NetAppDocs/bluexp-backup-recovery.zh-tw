@@ -53,6 +53,8 @@ Cloud Backup支援DataLock和勒索軟體保護功能、可用於磁碟區備份
 
 這兩項功能都能保護您的備份檔案、因此當勒索軟體攻擊來源資料時、您永遠都能擁有有效的備份檔案來還原資料。此外、也有助於滿足某些法規要求、在某些情況下、備份必須鎖定並保留一段時間。啟用DataLock和勒索軟體保護後、隨附於Cloud Backup啟動的雲端儲存區將會啟用物件鎖定和物件版本管理功能。
 
+此功能並不提供來源磁碟區的保護、只能用於這些來源磁碟區的備份。使用NetApp https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["不再是不一樣的Cloud Insights Cloud Secure"^]或部分 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["提供來自VMware的反勒索軟體保護ONTAP"^] 保護來源磁碟區。
+
 [CAUTION]
 ====
 * 如果您計畫使用DataLock和勒索軟體保護、則在建立第一個備份原則並啟動該叢集的Cloud Backup時、必須啟用此功能。
@@ -66,7 +68,7 @@ Cloud Backup支援DataLock和勒索軟體保護功能、可用於磁碟區備份
 
 DataLock可保護您的備份檔案、避免在一段時間內遭到修改或刪除。此功能使用物件儲存供應商的技術來「物件鎖定」。備份檔案被鎖定（並保留）的期間稱為DataLock保留期間。它是根據您定義的備份原則排程和保留設定、加上14天的緩衝區。任何少於30天的DataLock保留原則、最短四捨五入至30天。
 
-請注意、舊備份會在DataLock保留期間到期後刪除、而非在備份原則保留期間之後刪除。
+請注意、舊備份會在DataLock保留期間到期後刪除、而非在備份原則保留期間到期後刪除。
 
 讓我們來看看幾個例子、瞭解這項功能的運作方式：
 
@@ -117,39 +119,47 @@ image:screenshot_datalock_ransomware_settings.png["建立備份原則時、DataL
 +
 DataLock保護和勒索軟體保護已停用。
 
-* 企業
+* 治理（StorageGRID 不適用於此產品）
 +
-DataLock設定為_Enterprise_、其中使用者具有特定權限（link:concept-cloud-backup-policies.html#requirements["請參閱以下內容"]）可在保留期間覆寫或刪除備份檔案。已啟用勒索軟體保護。
+DataLock設定為_Governance模式、其中使用者具有特定權限（link:concept-cloud-backup-policies.html#requirements["請參閱以下內容"]）可在保留期間覆寫或刪除備份檔案。已啟用勒索軟體保護。
 
 * 法規遵循
 +
-DataLock設為_Compliance、在保留期間內、任何使用者都無法覆寫或刪除備份檔案。已啟用勒索軟體保護。
+DataLock設為_Compliance模式、在保留期間內、任何使用者都無法覆寫或刪除備份檔案。已啟用勒索軟體保護。
 
 
+
+
+NOTE: 「支援物件鎖定」功能提供單一DataLock模式、相當於StorageGRID 「符合法規」模式。不支援同等的治理模式、因此沒有使用者能夠略過保留設定、覆寫受保護的備份或刪除備份。
 
 
 
 === 支援的工作環境與物件儲存供應商
 
-在下列公有雲供應商中使用物件儲存設備時、您可以從ONTAP 下列工作環境啟用下列功能中的「資料鎖定」和「勒索軟體」保護功能。未來版本將會新增更多公有雲和私有雲供應商。
+在下列公有雲和私有雲供應商中使用物件儲存設備時、您可以從ONTAP 下列工作環境啟用下列功能中的「資料鎖定」和「勒索軟體」保護功能。未來版本將會新增其他雲端供應商。
 
 [cols="45,45"]
 |===
 | 來源工作環境 | 備份檔案目的地ifdef：：AWS [] 
 
 
-| AWS 中的 Cloud Volumes ONTAP | Amazon S3 endif..:AWS：ifdef：：azure[] endif::azure[] ifdef：：GCP [] endiff：：GCP [] ifdef：：AWS [] 
+| AWS 中的 Cloud Volumes ONTAP | Amazon S3 endif..:AWS：ifdef：：azure[] endif::azure[] ifdef：：GCP [] endiff:GCP [] 
 
 
-| 內部部署 ONTAP 的作業系統 | Amazon S3 endif..:AWS：ifdef：：azure[] endif::azure[] ifdef：：GCP [] endiff:GCP [] 
+| 內部部署 ONTAP 的作業系統 | ifdef：：AWS：Amazon S3 endif：：AWS [] ifdef：：azure[] endif：：azure[] ifdef：：Gcp[] endif：：GCP[] NetApp StorageGRID Rside 
 |===
 
 
 === 需求
 
 * 您的叢集必須執行ONTAP 版本不只是功能不穩定的版本
-* 您必須使用Cloud Manager 3.9.21或更新版本（此時Connector必須部署在雲端）
-* 若要備份至AWS、下列S3權限必須是為Connector提供權限的IAM角色的一部分。它們位於資源「arn:AWS:S3：：：：NetApp備份-*」的「backupS3Policy」區段：
+* 您必須使用Cloud Manager 3.9.21或更新版本
+
+
+ifdef::aws[]
+
+* 對於AWS、Connector必須部署在雲端
+* 下列S3權限必須是為Connector提供權限的IAM角色的一部分。它們位於資源「arn:AWS:S3：：：：NetApp備份-*」的「backupS3Policy」區段：
 +
 ** S3：GetObjectVersion標記
 ** S3：GetBucketObjectLockConfiguration
@@ -179,11 +189,21 @@ DataLock設為_Compliance、在保留期間內、任何使用者都無法覆寫�
 ** S3：GetBucketLocation
 ** S3：GetObjectVersion
 +
-如果您希望管理員使用者能夠覆寫/刪除使用企業模式鎖定的備份檔案、則必須將S3權限「S3：BypassGovernanceRetention」新增至Cloud Manager使用者角色。
+「S3：BypassGovernanceRetention」僅在您希望管理員使用者能夠覆寫/刪除使用「管理模式」鎖定的備份檔案時才必須新增。
 
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["檢視原則的完整Json格式、您可以在其中複製及貼上所需的權限"^]。
 
+
+
+
+
+endif::aws[]
+
+* 適用於下列項目：StorageGRID
++
+** 連接器必須部署在內部部署環境中（可安裝在有或沒有網際網路存取的站台中）
+** 若要完全支援DataLock功能、需要使用支援11.6.0.3及更高版本StorageGRID
 
 
 
@@ -193,7 +213,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aw
 === 限制
 
 * 如果您已在備份原則中設定歸檔儲存設備、則無法使用DataLock和勒索軟體保護功能。
-* 您在啟動Cloud Backup（企業或法規遵循）時所選取的DataLock選項、必須用於該叢集的所有備份原則。您無法在單一叢集上同時使用企業和法規遵循模式鎖定。
+* 您在啟動Cloud Backup時所選取的DataLock選項（監管或法規遵循）、必須用於該叢集的所有備份原則。您無法在單一叢集上同時使用「治理」和「法規遵循」模式鎖定。
 * 如果啟用DataLock、所有Volume備份都會鎖定。您無法混合使用單一叢集的鎖定和非鎖定磁碟區備份。
 * DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。雲端備份已啟動之後、您就無法啟用此功能。
 

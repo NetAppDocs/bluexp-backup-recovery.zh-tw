@@ -18,6 +18,42 @@ summary: 瞭解Cloud Backup的新功能。
 
 
 
+== 2022年9月19日
+
+
+
+=== DataLock和勒索軟體保護功能可設定用於StorageGRID 支援還原系統中的備份檔案
+
+上一版針對儲存在Amazon S3儲存區的備份推出_DataLock和勒索軟體Protection。此版本可擴充對StorageGRID 儲存在還原系統中的備份檔案的支援。如果您的叢集使用ONTAP 的是更新版本的版本、StorageGRID 而您的系統執行的是11.6.0.3或更新版本、則可使用此新的備份原則選項。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-cloud-backup-policies.html#datalock-and-ransomware-protection["深入瞭解如何使用DataLock和勒索軟體保護來保護備份"^]。
+
+請注意、您必須執行3.9.22版或更新版本軟體的Connector。連接器必須安裝在您的內部環境中、而且可以安裝在有或沒有網際網路存取的站台中。
+
+
+
+=== 資料夾層級的還原功能現在可從您的備份檔案取得
+
+現在、如果您需要存取該資料夾（目錄或共用）中的所有檔案、可以從備份檔案還原資料夾。還原資料夾比還原整個磁碟區更有效率。此功能可用於使用「瀏覽與還原」方法和「搜尋與還原」方法進行還原作業。此時您只能選取及還原單一資料夾、而且只會還原該資料夾中的檔案、而不會還原子資料夾或子資料夾中的檔案。
+
+
+
+=== 檔案層級還原現在可從已移至歸檔儲存設備的備份取得
+
+過去您只能從已移至歸檔存放區的備份檔案還原磁碟區（僅限AWS和Azure）。現在您可以從這些已歸檔的備份檔案還原個別檔案和資料夾。此功能可用於使用「瀏覽與還原」方法和「搜尋與還原」方法進行還原作業。
+
+
+
+=== 檔案層級還原現在提供覆寫原始來源檔案的選項
+
+過去、還原至原始磁碟區的檔案一律會以新檔案的形式還原、並以「RESE_」為前置詞。現在、您可以選擇在將檔案還原至磁碟區上的原始位置時、覆寫原始來源檔案。此功能可用於使用「瀏覽與還原」方法和「搜尋與還原」方法進行還原作業。
+
+
+
+=== 拖放以啟用「雲端備份至StorageGRID 不支援的系統」
+
+如果是 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-viewing-azure-blob.html["StorageGRID"^] 備份的目的地在畫版上會以工作環境的形式存在、您可以將內部ONTAP 作業環境拖曳到目的地、以啟動備份設定精靈。
+
+
+
 == 2022年8月18日
 
 
@@ -28,13 +64,9 @@ Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage
 
 
 
-== 2022年8月16日
-
-
-
 === Azure Blob的備份檔案現在支援搜尋與還原功能
 
-現在、將備份檔案儲存在Azure Blob儲存設備中的使用者、可以使用「搜尋與還原」方法來還原磁碟區和檔案。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#prerequisites-2["瞭解如何使用Search & Restore還原磁碟區和檔案"^]。
+現在、將備份檔案儲存在Azure Blob儲存設備中的使用者、可以使用「搜尋與還原」方法來還原磁碟區和檔案。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#prerequisites-2["瞭解如何使用Search  Restore還原磁碟區和檔案"^]。
 
 請注意、連接器角色需要其他權限才能使用此功能。使用3.9.21版軟體（2022年8月）部署的Connector包含這些權限。如果您使用舊版部署Connector、則需要手動新增權限。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["如有必要、請參閱如何新增這些權限"^]。
 
@@ -104,10 +136,6 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-o
 
 
 
-== 2022年6月8日
-
-
-
 === 適用於虛擬機器的Cloud Backup 1.1.0現已上市
 
 您可以將SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式與Cloud Manager整合、以保護虛擬機器上的資料。您可以將資料存放區備份到雲端、SnapCenter 並輕鬆將虛擬機器還原回內部部署的VMware vSphere版的內部部署功能。
@@ -131,7 +159,7 @@ https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-vm-da
 
 === 瀏覽及還原Google Cloud和StorageGRID 支援不支援的檔案
 
-新增瀏覽與還原作業的容器（如上所述）之後、現在即可從儲存在Google Cloud和StorageGRID 更新系統中的備份檔案執行檔案還原作業。現在、瀏覽與還原可用於還原所有公有雲供應商和StorageGRID 來自於整個過程的檔案。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-browse-restore["瞭解如何使用Browse & Restore從ONTAP 您的還原備份還原磁碟區和檔案"]。
+新增瀏覽與還原作業的容器（如上所述）之後、現在即可從儲存在Google Cloud和StorageGRID 更新系統中的備份檔案執行檔案還原作業。現在、瀏覽與還原可用於還原所有公有雲供應商和StorageGRID 來自於整個過程的檔案。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-browse-restore["瞭解如何使用Browse  Restore從ONTAP 您的還原備份還原磁碟區和檔案"]。
 
 
 
@@ -159,7 +187,7 @@ API可從取得 https://docs.netapp.com/us-en/cloud-manager-automation/cbs/overv
 
 === Google Cloud Storage中的備份檔案現在支援搜尋與還原
 
-四月推出的「搜尋與還原」方法、可還原磁碟區和檔案、適用於將備份檔案儲存在AWS中的使用者。現在、將備份檔案儲存在Google Cloud Storage中的使用者可以使用這項功能。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#prerequisites-2["瞭解如何使用Search & Restore還原磁碟區和檔案"]。
+四月推出的「搜尋與還原」方法、可還原磁碟區和檔案、適用於將備份檔案儲存在AWS中的使用者。現在、將備份檔案儲存在Google Cloud Storage中的使用者可以使用這項功能。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#prerequisites-2["瞭解如何使用Search  Restore還原磁碟區和檔案"]。
 
 
 
@@ -198,7 +226,7 @@ link:concept-protect-app-data-to-cloud.html["深入瞭解如何將內部部署�
 
 === 全新的搜尋與還原功能、可在ONTAP 所有的還原檔案中搜尋磁碟區或檔案
 
-現在、您可以ONTAP 透過*全部的支援檔案*、以部分或完整的Volume名稱、部分或完整的檔案名稱、大小範圍及其他搜尋篩選條件來搜尋Volume或檔案。如果您不確定哪個叢集或磁碟區是資料的來源、這是尋找您要還原資料的絕佳新方法。 link:task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["瞭解如何使用搜尋&還原"]。
+現在、您可以ONTAP 透過*全部的支援檔案*、以部分或完整的Volume名稱、部分或完整的檔案名稱、大小範圍及其他搜尋篩選條件來搜尋Volume或檔案。如果您不確定哪個叢集或磁碟區是資料的來源、這是尋找您要還原資料的絕佳新方法。 link:task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["瞭解如何使用搜尋"]。
 
 
 
@@ -341,88 +369,3 @@ link:task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time[
 
 
 === 現在、您可以從擁有超過30、000個檔案的目錄還原檔案
-
-
-
-== 2021年8月1日
-
-
-
-=== 能夠定義私有端點連線、以便安全備份至Azure Blob
-
-從內部部署ONTAP 的整套系統設定備份至Azure Blob時、您可以在啟動精靈中定義與Azure私有端點的連線。這可讓您使用網路介面、將您以私人且安全的方式連線至Azure Private Link所提供的服務。
-
-
-
-=== 現在支援每小時備份原則
-
-除了現有的每日、每週和每月原則之外、這項新原則也是如此。每小時備份原則提供最低的恢復點目標（RPO）。
-
-
-
-== 2021年7月7日
-
-
-
-=== 現在您可以使用不同的帳戶和不同地區建立備份
-
-Cloud Backup現在可讓您使用不同於Cloud Volumes ONTAP 您使用的帳戶/訂閱來建立備份。您也可以在Cloud Volumes ONTAP 不同的區域建立備份檔案、而非部署您的作業系統的區域。
-
-當使用AWS或Azure時、以及只有在現有工作環境中啟用備份時、才能使用此功能、建立新Cloud Volumes ONTAP 的功能不適用於此環境。
-
-
-
-=== 現在、您可以在將資料備份到Azure Blob時、選擇自己的客戶管理金鑰來進行資料加密
-
-為了加強安全性與控制、您可以在啟動精靈中選擇自己的客戶管理資料加密金鑰、而非使用預設的Microsoft管理加密金鑰。這可在從內部部署ONTAP 的系統或Cloud Volumes ONTAP Azure的還原系統進行備份時使用。
-
-
-
-=== 現在、使用單一檔案還原時、一次最多可還原100個檔案
-
-
-
-== 2021年6月7日
-
-
-
-=== 使用ONTAP 起來不受限於DP磁碟區
-
-備份資料保護（DP）磁碟區的兩項已知限制已經解決：
-
-* 以前、串聯備份只有在SnapMirror關係類型為Mirror-Vault或Vault時才會運作。現在、如果關係類型為MirrorAllSnapshots、您就可以進行備份。
-* 只要在SnapMirror原則中設定雲端備份、雲端備份就能使用任何標籤進行備份。每日、每週或每月要求標籤名稱的限制已不復存在。
-
-
-
-
-== 2021年5月5日
-
-
-
-=== 將內部叢集資料備份到Google Cloud Storage或NetApp StorageGRID 還原系統
-
-現在、您可以從內部部署ONTAP 的不只是還原系統、建立備份到Google Cloud Storage或NetApp StorageGRID 的不只是還原系統。請參閱 link:task-backup-onprem-to-gcp.html["備份至Google Cloud Storage"^] 和 link:task-backup-onprem-private-cloud.html["備份StorageGRID 至"^] 以取得詳細資料。
-
-
-
-=== 現在您可以使用System Manager來執行雲端備份作業
-
-利用更新功能ONTAP 的功能、您可以使用System Manager將內部部署ONTAP 的更新資料傳送到透過Cloud Backup設定的物件式儲存設備。 link:https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html["瞭解如何使用System Manager使用Cloud Backup將磁碟區備份到雲端。"^]
-
-
-
-=== 備份原則已經過一些增強功能的改良
-
-* 現在您可以建立自訂原則、其中包含每日、每週和每月備份的組合。
-* 當您變更備份原則時、變更會套用至所有使用原始備份原則*和*的新備份至所有磁碟區。過去的變更只會套用至新的Volume備份。
-
-
-
-
-=== 其他備份與還原改良項目
-
-* 設定備份檔案的雲端目的地時、現在您可以選擇不同於Cloud Volumes ONTAP 此系統所在地區的區域。
-* 您可為單一磁碟區建立的備份檔案數量已從1、019個增加到4、000個。
-* 除了先前刪除單一磁碟區的所有備份檔案的功能之外、現在您可以只刪除一個磁碟區的單一備份檔案、或視需要刪除整個工作環境的所有備份檔案。
-

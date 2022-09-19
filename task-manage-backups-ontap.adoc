@@ -57,7 +57,7 @@ image:screenshot_backup_manage_volumes_page.png["「管理磁碟區」頁面、�
 . 按一下「*儲存*」以提交變更。
 
 
-* 附註： * 停止備份磁碟區時、除非您同意、否則您將繼續由雲端供應商支付備份所使用容量的物件儲存成本 <<Deleting backups,刪除備份>>。
+* 附註： * 停止備份磁碟區時、除非您同意、否則您將繼續由雲端供應商支付備份所使用容量的物件儲存成本  backups,刪除備份。
 
 
 
@@ -67,7 +67,7 @@ image:screenshot_backup_manage_volumes_page.png["「管理磁碟區」頁面、�
 
 [NOTE]
 ====
-* 如果您在啟動此叢集的Cloud Backup時、在初始原則中啟用_DataLock和勒索軟體Protection、則您所編輯的任何原則都必須設定相同的DataLock設定（企業或法規遵循）。如果您在啟動Cloud Backup時未啟用_DataLock和勒索軟體Protection、則現在無法啟用DataLock。
+* 如果您在啟動此叢集的Cloud Backup時、在初始原則中啟用_DataLock和勒索軟體Protection（保護）、則您所編輯的任何原則都必須設定相同的DataLock（保護或法規遵循）設定。如果您在啟動Cloud Backup時未啟用_DataLock和勒索軟體Protection、則現在無法啟用DataLock。
 * 在AWS上建立備份時、如果您在啟動Cloud Backup時、在第一個備份原則中選擇「_S3 Glacier」或「_S3 Glacier Deep Archive_」、則該層級將是編輯備份原則時唯一可用的歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼當您編輯原則時、「_S3 Glacier」將是唯一的歸檔選項。
 
 
@@ -120,11 +120,11 @@ endif::azure[]
 
 在工作環境中啟用Cloud Backup時、您最初選取的所有磁碟區都會使用您定義的預設備份原則進行備份。如果您想要將不同的備份原則指派給具有不同恢復點目標（RPO）的特定磁碟區、您可以為該叢集建立其他原則、並將這些原則指派給其他磁碟區。
 
-如果您想要將新的備份原則套用至工作環境中的特定磁碟區、首先必須將備份原則新增至工作環境。您可以 <<Changing the policy assigned to existing volumes,將原則套用至該工作環境中的磁碟區>>。
+如果您想要將新的備份原則套用至工作環境中的特定磁碟區、首先必須將備份原則新增至工作環境。您可以  the policy assigned to existing volumes,將原則套用至該工作環境中的磁碟區。
 
 [NOTE]
 ====
-* 如果您在啟動此叢集的Cloud Backup時、在初始原則中啟用_DataLock和勒索軟體Protection、則您所建立的任何其他原則都必須設定相同的DataLock設定（企業或法規遵循）。如果您在啟動Cloud Backup時未啟用_DataLock和勒索軟體Protection、則無法建立使用DataLock的新原則。
+* 如果您在啟動此叢集的Cloud Backup時、在初始原則中啟用_DataLock和勒索軟體Protection（保護）、則您所建立的任何其他原則都必須設定相同的DataLock（保護或法規遵循）設定。如果您在啟動Cloud Backup時未啟用_DataLock和勒索軟體Protection、則無法建立使用DataLock的新原則。
 * 在AWS上建立備份時、如果您在啟動Cloud Backup時、在第一個備份原則中選擇了_S3 Glacier或_S3 Glacier Deep Archive_、則該層將是該叢集未來備份原則唯一可用的歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。
 
 
@@ -172,7 +172,7 @@ endif::azure[]
 
 如果您想要變更備份的頻率、或是想要變更保留值、您可以變更指派給現有磁碟區的備份原則。
 
-請注意、您要套用至磁碟區的原則必須已經存在。 <<Adding a new backup policy,瞭解如何為工作環境新增備份原則>>。
+請注意、您要套用至磁碟區的原則必須已經存在。  a new backup policy,瞭解如何為工作環境新增備份原則。
 
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、選取* Backup Settings*（備份設定）。
@@ -204,7 +204,7 @@ NOTE: 如果您在啟動此叢集的Cloud Backup時、在初始原則中啟用�
 
 如果您未選擇在ONTAP 您第一次在叢集上啟動Cloud Backup時自動將備份原則指派給新建立的Volume、您可以稍後在「_Backup Settings_」（備份設定_）頁面中選擇此選項。將備份原則指派給新建立的磁碟區、可確保所有資料都受到保護。
 
-請注意、您要套用至磁碟區的原則必須已經存在。 <<Adding a new backup policy,瞭解如何為工作環境新增備份原則>>。
+請注意、您要套用至磁碟區的原則必須已經存在。  a new backup policy,瞭解如何為工作環境新增備份原則。
 
 您也可以停用此設定、使新建立的磁碟區不會自動備份。在這種情況下、您必須手動啟用任何特定磁碟區的備份、以便日後備份。
 
@@ -265,7 +265,7 @@ image:screenshot_backup_now_button.png["螢幕擷取畫面會顯示「立即備�
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、按一下 image:screenshot_horizontal_more_button.gif["更多圖示"] 針對來源Volume、選取*詳細資料與備份清單*。
 +
-image:screenshot_backup_view_backups_button.png["顯示詳細資料&備份清單按鈕的快照、可用於單一磁碟區。"]
+image:screenshot_backup_view_backups_button.png["顯示詳細資料"]
 
 +
 所有備份檔案的清單都會顯示、以及來源磁碟區、目的地位置和備份詳細資料的詳細資料。
@@ -289,7 +289,7 @@ NOTE: 勒索軟體掃描需要將備份檔案下載到Cloud Manager環境（安�
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、按一下 image:screenshot_horizontal_more_button.gif["更多圖示"] 針對來源Volume、選取*詳細資料與備份清單*。
 +
-image:screenshot_backup_view_backups_button.png["顯示詳細資料&備份清單按鈕的快照、可用於單一磁碟區。"]
+image:screenshot_backup_view_backups_button.png["顯示詳細資料"]
 
 +
 此時會顯示所有備份檔案的清單。
@@ -316,7 +316,7 @@ CAUTION: 如果您打算刪除具有備份的工作環境或叢集、則必須�
 
 === 刪除工作環境的所有備份檔案
 
-刪除工作環境的所有備份、並不會停用此工作環境中未來的磁碟區備份。如果您想要停止在工作環境中建立所有磁碟區的備份、可以停用備份 <<Disabling Cloud Backup for a working environment,如此處所述>>。
+刪除工作環境的所有備份、並不會停用此工作環境中未來的磁碟區備份。如果您想要停止在工作環境中建立所有磁碟區的備份、可以停用備份  Cloud Backup for a working environment,如此處所述。
 
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、選取* Backup Settings*（備份設定）。
@@ -336,12 +336,12 @@ image:screenshot_delete_all_backups.png["選取「刪除所有備份」按鈕以
 
 刪除某個磁碟區的所有備份也會停用該磁碟區的未來備份。
 
-您可以 <<Enabling and disabling backups of volumes,重新開始備份磁碟區>> 隨時從「管理備份」頁面。
+您可以  and disabling backups of volumes,重新開始備份磁碟區 隨時從「管理備份」頁面。
 
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、按一下 image:screenshot_horizontal_more_button.gif["更多圖示"] 針對來源Volume、選取*詳細資料與備份清單*。
 +
-image:screenshot_backup_view_backups_button.png["顯示詳細資料&備份清單按鈕的快照、可用於單一磁碟區。"]
+image:screenshot_backup_view_backups_button.png["顯示詳細資料"]
 
 +
 此時會顯示所有備份檔案的清單。
@@ -365,7 +365,7 @@ image:screenshot_delete_we_backups.png["顯示如何刪除某個Volume的所有�
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、按一下 image:screenshot_horizontal_more_button.gif["更多圖示"] 針對來源Volume、選取*詳細資料與備份清單*。
 +
-image:screenshot_backup_view_backups_button.png["顯示詳細資料&備份清單按鈕的快照、可用於單一磁碟區。"]
+image:screenshot_backup_view_backups_button.png["顯示詳細資料"]
 
 +
 此時會顯示所有備份檔案的清單。
@@ -382,11 +382,11 @@ image:screenshot_delete_one_backup.png["顯示如何刪除單一備份檔案的�
 
 
 
-== 停用工作環境的Cloud Backup
+== 停用工作環境的雲端備份
 
 停用工作環境的Cloud Backup會停用系統上每個磁碟區的備份、也會停用還原磁碟區的功能。不會刪除任何現有的備份。這並不會從這個工作環境中取消註冊備份服務、基本上可讓您暫停一段時間內的所有備份與還原活動。
 
-請注意、除非您同意、否則雲端供應商會繼續向您收取備份所使用容量的物件儲存成本 <<Deleting all backup files for a working environment,刪除備份>>。
+請注意、除非您同意、否則雲端供應商會繼續向您收取備份所使用容量的物件儲存成本  all backup files for a working environment,刪除備份。
 
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、選取* Backup Settings*（備份設定）。

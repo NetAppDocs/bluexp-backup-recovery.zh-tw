@@ -97,7 +97,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 需求 ONTAP::
 +
 --
-* 最低ONTAP 版本為《》（更新ONTAP 版本）；建議使用《》（更新版本）。
+* 最低ONTAP 版本為0、9、75；ONTAP 建議使用0、8P13及更新版本。
 * SnapMirror授權（包含在優質產品組合或資料保護產品組合中）。
 +
 *附註：*使用Cloud Backup時不需要「混合式雲端產品組合」。

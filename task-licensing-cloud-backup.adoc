@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-licensing-cloud-backup.html 
-keywords: license, licensing, install, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license 
-summary: 您可以向雲端供應商購買隨用隨付（PAYGO）市場訂閱、或向NetApp購買自帶授權（BYOL）、以取得Cloud Backup授權。在工作環境中啟動Cloud Backup、建立正式作業資料的備份、以及將備份資料還原至正式作業系統時、需要有效的授權。 
+keywords: license, licensing, install, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
+summary: 您可以向雲端供應商購買隨用隨付（PAYGO）或一年一度的市場訂閱、或向NetApp購買自帶授權（BYOL）、以取得Cloud Backup授權。在工作環境中啟動Cloud Backup、建立正式作業資料的備份、以及將備份資料還原至正式作業系統時、需要有效的授權。 
 ---
 = 設定雲端備份授權
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 您可以向雲端供應商購買隨用隨付（PAYGO）市場訂閱、
 
 
 [role="lead"]
-您可以向雲端供應商購買隨用隨付（PAYGO）市場訂閱、或向NetApp購買自帶授權（BYOL）、以取得Cloud Backup授權。在工作環境中啟動Cloud Backup、建立正式作業資料的備份、以及將備份資料還原至正式作業系統時、需要有效的授權。
+您可以向雲端供應商購買隨用隨付（PAYGO）或一年一度的市場訂閱、或向NetApp購買自帶授權（BYOL）、以取得Cloud Backup授權。在工作環境中啟動Cloud Backup、建立正式作業資料的備份、以及將備份資料還原至正式作業系統時、需要有效的授權。
 
 在閱讀更多內容之前、請先提供幾個附註：
 
@@ -200,7 +200,7 @@ image:screenshot_services_license_expire.png["顯示「Digital Wallet」頁面�
 
 . 如果Cloud Manager無法自動更新授權（例如、安裝在暗點）、則您需要手動上傳授權檔案。
 +
-.. 您可以 <<Obtain your Cloud Backup license file,從NetApp支援網站取得授權檔案>>。
+.. 您可以  your Cloud Backup license file,從NetApp支援網站取得授權檔案。
 .. 在「Digital Wallet」頁面_Data Services Ls__（資料服務授權）索引標籤上、按一下 image:screenshot_horizontal_more_button.gif["更多圖示"] 如需您要更新的服務序號、請按一下*更新授權*。
 +
 image:screenshot_services_license_update1.png["選取特定服務的「更新授權」按鈕的快照。"]

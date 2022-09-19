@@ -36,8 +36,6 @@ sidebar:
       url: "/task-licensing-cloud-backup.html"
     - title: 監控備份與還原工作的狀態
       url: "/task-monitor-backup-jobs.html"
-    - title: 雲端備份原則設定
-      url: "/concept-cloud-backup-policies.html"
   - title: 備份及還原ONTAP 資料
     entries:
     - title: 保護ONTAP 您的資料
@@ -129,17 +127,14 @@ sidebar:
     url: "/api-backup-restore.html"
   - title: 參考資料
     entries:
+    - title: 雲端備份原則設定
+      url: "/concept-cloud-backup-policies.html"
     - title: 支援的AWS歸檔儲存層
       url: "/reference-aws-backup-tiers.html"
     - title: 支援的Azure歸檔存取層
       url: "/reference-azure-backup-tiers.html"
-    - title: 跨帳戶和跨區域組態
-      url: "/reference-cross-account.html"
-      entries:
-      - title: 在AWS中設定多帳戶存取的備份
-        url: "/reference-backup-multi-account-aws.html"
-      - title: 設定備份以在Azure中存取多個帳戶
-        url: "/reference-backup-multi-account-azure.html"
+    - title: 設定備份以在Azure中存取多個帳戶
+      url: "/reference-backup-multi-account-azure.html"
   - title: 知識與支援
     entries:
     - title: 註冊以取得支援
@@ -248,4 +243,4 @@ homepage:
 product-family:
   name: Cloud Manager
   repo: cloud-manager-family
-  sidebar_label: All Cloud Manager documentation
+  sidebar_label: 所有Cloud Manager文件
