@@ -2368,7 +2368,6 @@
   <block id="8996e9eaff78ab540aab279a66de20ac" category="inline-xref">使用Search &amp;amp; Restore還原磁碟區、資料夾和檔案</block>
   <block id="67e7c5cb86f955703ed9f6730af64fd6" category="list-text"><block ref="2695406f56a43b731bc71bc11df2f690" category="inline-xref-macro-rx"></block></block>
   <block id="3be60ab390e443d7cab393bf7054a58c" category="paragraph">開始還原磁碟區、資料夾或檔案之前、您應該知道要還原的磁碟區名稱、磁碟區所在工作環境的名稱、以及要還原的備份檔案的大約日期。</block>
-  <block id="8d9d448b48e22adaa71555def5359f09" category="paragraph">*附註：*如果您要還原的磁碟區備份檔案位於歸檔儲存設備（從ONTAP 版本號9.10.1開始）中、還原作業將需要較長的時間、而且會產生成本。此外、目的地叢集也必須執行ONTAP 適用於Volume還原的版本為「版本資訊」9.10.1或更新版本、以及用於資料夾或檔案還原的版本為9.11.1。</block>
   <block id="7ff418ea3dd2acd8ae27ed509d08a48b" category="paragraph">您可以將磁碟區、資料夾或個別檔案、從ONTAP 還原備份檔還原至下列工作環境：</block>
   <block id="2e25696926fefd43b3529b13086c9690" category="cell">*資料夾與檔案還原* ifdef：：AWS []</block>
   <block id="2e43b583329f5406f8eb83df6ec39874" category="admonition">如果備份檔案已設定DataLock和勒索軟體、則無法還原資料夾或檔案。在這種情況下、您可以從備份檔案還原整個磁碟區、然後存取所需的檔案。</block>
@@ -2413,7 +2412,6 @@
   <block id="33de9caf9e73a2815b32070111ac99d4" category="list-text">按一下「*還原*」、您就會回到「還原儀表板」、以便檢閱還原作業的進度。您也可以按一下「*工作監控*」標籤來查看還原進度。</block>
   <block id="5b9c4d226a1b1a59e01d39143fab7e50" category="paragraph">您可以ONTAP 使用「搜尋與還原」、從還原的還原檔還原磁碟區、資料夾或檔案。「搜尋與還原」可讓您從儲存在雲端儲存設備上的所有備份中搜尋特定的磁碟區、資料夾或檔案、以供特定供應商使用、然後執行還原。您不需要知道確切的工作環境名稱或磁碟區名稱、搜尋會查看所有的Volume備份檔案。</block>
   <block id="ddc1dd6e781e5ceee9400e96abd01aca" category="paragraph">您可以將資料夾或檔案還原至原始磁碟區位置、還原至相同工作環境中的不同磁碟區、或還原至使用相同雲端帳戶的不同工作環境。您也可以將資料夾和檔案還原至內部部署ONTAP 的作業系統上的磁碟區。</block>
-  <block id="148341a9f262dd2566a8d09962c50c13" category="paragraph">如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行ONTAP 不含更新版本的功能才能還原磁碟區、而檔案夾或檔案還原則必須執行9.11.1。</block>
   <block id="e1ddf1ac9e59a50d9ac5683a1d33e13a" category="cell">目的地工作環境ifdef：：AWS []</block>
   <block id="ea69bd234559eac714e5d0b94f7c07f5" category="list-text">在使用搜尋與還原之前、您必須在每個要從中還原Volume資料的來源工作環境上啟用「索引」。這可讓索引目錄追蹤每個磁碟區的備份檔案。</block>
   <block id="0b70b5c6f495c9936344b6df542ed0de" category="list-text">依部分或完整磁碟區名稱、部分或完整檔案名稱、大小範圍、建立日期範圍、其他搜尋篩選條件、輸入磁碟區、資料夾或檔案的搜尋條件、然後按一下*搜尋*。</block>
@@ -2443,9 +2441,7 @@
   <block id="f2c9e54745387d4204d350aaf464ef16" category="paragraph">上一版針對儲存在Amazon S3儲存區的備份推出_DataLock和勒索軟體Protection。此版本可擴充對StorageGRID 儲存在還原系統中的備份檔案的支援。如果您的叢集使用ONTAP 的是更新版本的版本、StorageGRID 而您的系統執行的是11.6.0.3或更新版本、則可使用此新的備份原則選項。<block ref="3f7eaa3e30bb5eb7a46ecb7c423ee7ad" category="inline-link-rx"></block>。</block>
   <block id="7db81221e474d169032014280bbe8e36" category="paragraph">請注意、您必須執行3.9.22版或更新版本軟體的Connector。連接器必須安裝在您的內部環境中、而且可以安裝在有或沒有網際網路存取的站台中。</block>
   <block id="dfa4dbaa7b53b80d828eeac39da445d5" category="section-title">資料夾層級的還原功能現在可從您的備份檔案取得</block>
-  <block id="44049ef063184610d2b3d1f901e33c6a" category="paragraph">現在、如果您需要存取該資料夾（目錄或共用）中的所有檔案、可以從備份檔案還原資料夾。還原資料夾比還原整個磁碟區更有效率。此功能可用於使用「瀏覽與還原」方法和「搜尋與還原」方法進行還原作業。此時您只能選取及還原單一資料夾、而且只會還原該資料夾中的檔案、而不會還原子資料夾或子資料夾中的檔案。</block>
   <block id="08c716b38dc966a670cdf75da8f3f86d" category="section-title">檔案層級還原現在可從已移至歸檔儲存設備的備份取得</block>
-  <block id="5a1b289592dc33da4fec4177e12f2abe" category="paragraph">過去您只能從已移至歸檔存放區的備份檔案還原磁碟區（僅限AWS和Azure）。現在您可以從這些已歸檔的備份檔案還原個別檔案和資料夾。此功能可用於使用「瀏覽與還原」方法和「搜尋與還原」方法進行還原作業。</block>
   <block id="b0e03676724b8b6468356ef104a66e4f" category="section-title">檔案層級還原現在提供覆寫原始來源檔案的選項</block>
   <block id="f3e2c168c189da079b62c6ff6558a640" category="paragraph">過去、還原至原始磁碟區的檔案一律會以新檔案的形式還原、並以「RESE_」為前置詞。現在、您可以選擇在將檔案還原至磁碟區上的原始位置時、覆寫原始來源檔案。此功能可用於使用「瀏覽與還原」方法和「搜尋與還原」方法進行還原作業。</block>
   <block id="736c2dbf2aa9f4b08b97a4f719b3cf5e" category="section-title">拖放以啟用「雲端備份至StorageGRID 不支援的系統」</block>
@@ -2514,4 +2510,8 @@
   <block id="5a58de0e84e5db9ac743167d182029a5" category="section-title">停用工作環境的雲端備份</block>
   <block id="7d74a85f6ca999dc566f13bea483a788" category="paragraph">停用工作環境的Cloud Backup會停用系統上每個磁碟區的備份、也會停用還原磁碟區的功能。不會刪除任何現有的備份。這並不會從這個工作環境中取消註冊備份服務、基本上可讓您暫停一段時間內的所有備份與還原活動。</block>
   <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">所有Cloud Manager文件</block>
+  <block id="201e1c2515e9474bbcf720fb750a48c0" category="paragraph">現在、如果您需要存取該資料夾（目錄或共用）中的所有檔案、可以從備份檔案還原資料夾。還原資料夾比還原整個磁碟區更有效率。此功能可用於使用瀏覽與還原方法及使用ONTAP 版本更新版本的搜尋與還原方法進行還原作業。此時您只能選取及還原單一資料夾、而且只會還原該資料夾中的檔案、而不會還原子資料夾或子資料夾中的檔案。</block>
+  <block id="092186aa28f6e357cce0ba979d549724" category="paragraph">過去您只能從已移至歸檔儲存設備的備份檔案還原磁碟區（僅限AWS和Azure）。現在您可以從這些已歸檔的備份檔案還原個別檔案。此功能可用於使用瀏覽與還原方法及使用ONTAP 版本更新版本的搜尋與還原方法進行還原作業。</block>
+  <block id="a82e38799f4647ec5a2bc71d39020ae3" category="paragraph">*附註：*如果您要還原的磁碟區備份檔案位於歸檔儲存設備（從ONTAP 版本號9.10.1開始）中、還原作業將需要較長的時間、而且會產生成本。此外、目的地叢集也必須執行ONTAP 不含更新版本的功能以進行Volume還原、以及9.11.1的檔案還原。</block>
+  <block id="550600f5b11e396f6d260ad4b5bad6b4" category="paragraph">如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行ONTAP 不含更新版本的功能、才能還原磁碟區、而必須執行9.11.1才能還原檔案。</block>
 </blocks>
