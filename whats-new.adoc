@@ -50,7 +50,7 @@ summary: 瞭解Cloud Backup的新功能。
 
 === 拖放以啟用「雲端備份至StorageGRID 不支援的系統」
 
-如果是 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-viewing-azure-blob.html["StorageGRID"^] 備份的目的地在畫版上會以工作環境的形式存在、您可以將內部ONTAP 作業環境拖曳到目的地、以啟動備份設定精靈。
+如果是 https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["StorageGRID"^] 備份的目的地在畫版上會以工作環境的形式存在、您可以將內部ONTAP 作業環境拖曳到目的地、以啟動Cloud Backup設定精靈。
 
 
 

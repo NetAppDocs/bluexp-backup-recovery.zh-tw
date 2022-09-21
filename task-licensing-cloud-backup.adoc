@@ -20,6 +20,7 @@ summary: 您可以向雲端供應商購買隨用隨付（PAYGO）或一年一度
 
 * 如果您已在雲端供應商的市場訂閱Cloud Manager隨用隨付（PAYGO）Cloud Volumes ONTAP 訂閱以購買一套功能、那麼您也會自動訂閱Cloud Backup。您不需要再次訂閱。
 * Cloud Backup自帶授權（BYOL）是一種浮動授權、可在與Cloud Manager帳戶相關的所有系統上使用。因此、如果現有BYOL授權提供足夠的備份容量、您就不需要再購買其他BYOL授權。
+* 如果您使用BYOL授權、建議您也訂閱PAYGO訂閱。如果您備份的資料超過BYOL授權所允許的數量、則會透過隨用隨付訂閱繼續備份、不會中斷服務。
 * 將內部ONTAP 的支援資料備份StorageGRID 到支援區時、您需要BYOL授權、但雲端供應商的儲存空間不需付費。
 
 

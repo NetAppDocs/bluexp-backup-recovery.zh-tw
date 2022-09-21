@@ -2446,7 +2446,6 @@
   <block id="f3e2c168c189da079b62c6ff6558a640" category="paragraph">過去、還原至原始磁碟區的檔案一律會以新檔案的形式還原、並以「RESE_」為前置詞。現在、您可以選擇在將檔案還原至磁碟區上的原始位置時、覆寫原始來源檔案。此功能可用於使用「瀏覽與還原」方法和「搜尋與還原」方法進行還原作業。</block>
   <block id="736c2dbf2aa9f4b08b97a4f719b3cf5e" category="section-title">拖放以啟用「雲端備份至StorageGRID 不支援的系統」</block>
   <block id="392d70ca39f31f10bd637936769788df" category="inline-link">StorageGRID</block>
-  <block id="8dfffc54074b9b325c97c7860bbed1fe" category="paragraph">如果是<block ref="b1917dc7a4b651d68f42212758a15b79" category="inline-link-rx"></block> 備份的目的地在畫版上會以工作環境的形式存在、您可以將內部ONTAP 作業環境拖曳到目的地、以啟動備份設定精靈。</block>
   <block id="caa02466e2a6c1c2c13139fe55b7aaab" category="list-text">您可以在啟動精靈中使用自己的客戶管理金鑰進行資料加密、而非使用預設的Microsoft管理加密金鑰。在此情況下、您必須擁有Azure訂閱、Key Vault名稱及金鑰。<block ref="50f2f49feb0afd07f1969b5faf2ca775" category="inline-link-rx"></block>。</block>
   <block id="82812db645b6ff5e9c2a24ddfb66c8d6" category="paragraph">除了上述的自我支援選項、您也可以在啟動支援之後、與NetApp支援專家合作解決任何問題。</block>
   <block id="e2a733504c4088b809813bbb35a3ddfd" category="inline-link-macro">瞭解如何註冊以取得支援</block>
@@ -2514,4 +2513,6 @@
   <block id="092186aa28f6e357cce0ba979d549724" category="paragraph">過去您只能從已移至歸檔儲存設備的備份檔案還原磁碟區（僅限AWS和Azure）。現在您可以從這些已歸檔的備份檔案還原個別檔案。此功能可用於使用瀏覽與還原方法及使用ONTAP 版本更新版本的搜尋與還原方法進行還原作業。</block>
   <block id="a82e38799f4647ec5a2bc71d39020ae3" category="paragraph">*附註：*如果您要還原的磁碟區備份檔案位於歸檔儲存設備（從ONTAP 版本號9.10.1開始）中、還原作業將需要較長的時間、而且會產生成本。此外、目的地叢集也必須執行ONTAP 不含更新版本的功能以進行Volume還原、以及9.11.1的檔案還原。</block>
   <block id="550600f5b11e396f6d260ad4b5bad6b4" category="paragraph">如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行ONTAP 不含更新版本的功能、才能還原磁碟區、而必須執行9.11.1才能還原檔案。</block>
+  <block id="01fa460d0b4e6c77f9b145e51a76fbd6" category="paragraph">如果是<block ref="81ffc4823c79c3e10cfa644aead6e93c" category="inline-link-rx"></block> 備份的目的地在畫版上會以工作環境的形式存在、您可以將內部ONTAP 作業環境拖曳到目的地、以啟動Cloud Backup設定精靈。</block>
+  <block id="e90eafa7bd87aa0ac2eee6c1722ef9e4" category="list-text">如果您使用BYOL授權、建議您也訂閱PAYGO訂閱。如果您備份的資料超過BYOL授權所允許的數量、則會透過隨用隨付訂閱繼續備份、不會中斷服務。</block>
 </blocks>
