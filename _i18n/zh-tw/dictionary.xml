@@ -2515,4 +2515,10 @@
   <block id="550600f5b11e396f6d260ad4b5bad6b4" category="paragraph">如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行ONTAP 不含更新版本的功能、才能還原磁碟區、而必須執行9.11.1才能還原檔案。</block>
   <block id="01fa460d0b4e6c77f9b145e51a76fbd6" category="paragraph">如果是<block ref="81ffc4823c79c3e10cfa644aead6e93c" category="inline-link-rx"></block> 備份的目的地在畫版上會以工作環境的形式存在、您可以將內部ONTAP 作業環境拖曳到目的地、以啟動Cloud Backup設定精靈。</block>
   <block id="e90eafa7bd87aa0ac2eee6c1722ef9e4" category="list-text">如果您使用BYOL授權、建議您也訂閱PAYGO訂閱。如果您備份的資料超過BYOL授權所允許的數量、則會透過隨用隨付訂閱繼續備份、不會中斷服務。</block>
+  <block id="14ec6f8e662a83e1b5c675a211b8b029" category="paragraph">請注意、只有在將Connector部署在雲端時、才會在GovCloud區域中支援Cloud Backup、而非在內部部署或黑暗站台中安裝時。</block>
+  <block id="fd1958e5e74317f89c6c16bbca7d1446" category="inline-link">AWS 中 Connector 的規則</block>
+  <block id="56d39ecb5bf4d2ec753c12fbb0e00108" category="list-text">AWS和AWS GovCloud部署需要額外的傳入和傳出安全群組規則。請參閱<block ref="74fb388667736bb2b34ea14720dd63e3" category="inline-link-rx"></block> 以取得詳細資料。</block>
+  <block id="ad016619a46ca8e0f75292c2c0d1a7a8" category="paragraph">請注意、只有當連接器部署在雲端時、才會在政府雲端區域中支援Cloud Backup、而非安裝在內部部署或暗處時。</block>
+  <block id="b445de53411a165e9c56da6430c38d59" category="inline-link">Azure 中的 Connector 規則</block>
+  <block id="f840409b357663e7b24e8296c05770a5" category="list-text">Azure和Azure政府部署需要額外的傳入安全性群組規則。請參閱<block ref="e1893ebf6f9d2e927a13d052b78eec9f" category="inline-link-rx"></block> 以取得詳細資料。</block>
 </blocks>

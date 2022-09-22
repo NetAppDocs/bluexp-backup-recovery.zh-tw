@@ -145,6 +145,8 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["在內部環境中安裝連接器"^]
 
 
+請注意、只有當連接器部署在雲端時、才會在政府雲端區域中支援Cloud Backup、而非安裝在內部部署或暗處時。
+
 
 
 === 為連接器準備網路
@@ -157,6 +159,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 ** 連接Cloud Backup Service 至連接埠443（HTTPS）的傳出網際網路連線
 ** 透過連接埠443連線至Blob物件儲存設備的HTTPS連線
 ** 透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線
+** Azure和Azure政府部署需要額外的傳入安全性群組規則。請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Azure 中的 Connector 規則"^] 以取得詳細資料。
 
 
 . 啟用vnet私有端點對Azure儲存設備。如果ONTAP 從您的DB2叢集到vnet有ExpressRoute或VPN連線、而且您想要連接器與Blob儲存設備之間的通訊保持在虛擬私有網路（*私有*連線）中、就需要此功能。
