@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: task-register-snapcenter-server.html 
+keywords: SnapCenter Server, register 
+summary: 請完成幾個步驟來登錄SnapCenter 到此伺服器。 
+---
+= 註冊SnapCenter 伺服器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+只有具備SnapCenterAdmin角色的使用者、才能登錄SnapCenter 執行哪些主機的支援。您可以登錄多SnapCenter 個支援服務器的主機。
+
+*步驟*
+
+. 在Cloud Manager UI中、按一下*備份與還原*>*應用程式*。
+. 從*設定*下拉式清單中、按一下* SnapCenter 《伺服器*》。
+. 按一下「*登錄SnapCenter 」「伺服器*」。
+. 請指定下列詳細資料：
++
+.. 在「伺服SnapCenter 器」欄位中、指定SnapCenter 「伺服器主機」的FQDN或IP位址。
+.. 在Port（連接埠）欄位中、指定SnapCenter 執行此功能的連接埠號碼。
++
+您應確保連接埠已開啟、SnapCenter 以便在還原伺服器與雲端備份應用程式之間進行通訊。
+
+.. 在「標記」欄位中、指定要標記SnapCenter 此伺服器的站台名稱、城市名稱或任何自訂名稱。
++
+標籤以逗號分隔。
+
+.. 在使用者名稱和密碼欄位中、指定具有SnapCenterAdmin角色的使用者認證。
+
+
+. 按一下 * 註冊 * 。
+
+
+*完成後*
+
+按一下*備份與還原*>*應用程式*、即可檢視使用註冊SnapCenter 的支援服務器主機保護的所有應用程式。
+
+根據預設、應用程式會每天午夜自動探索。您可以設定排程來探索應用程式。
+
+
+NOTE: 對於SQL Server資料庫、「應用程式名稱」欄會以_application_name（執行個體名稱）_格式顯示名稱。
+
+支援的應用程式及其組態包括：
+
+* Oracle資料庫：
++
+** 建立完整備份（資料+記錄）時、至少要有一項每日、每週或每月排程
+** SAN、NFS、VMDK-SAN、VMDK-NFS和RDM
+
+
+* Microsoft SQL Server資料庫：
++
+** 獨立式容錯移轉叢集執行個體和可用度群組
+** 建立完整備份時程至少有一天、每週或每月一次
+** SAN、VMDK-SAN、VMDK-NFS和RDM
+
+
+* SAP HANA資料庫：
++
+** 單一Container 1.x
+** 多個資料庫Container 2.x
+** Hana系統複寫（HSR）
++
+您至少應該在主要和次要站台上有一個備份。您可以決定進行主動式故障或延後容錯移轉至次要系統。
+
+** 非資料磁碟區（NDV）資源、例如HANA二進位檔、HANA歸檔記錄磁碟區、HANA共享磁碟區等
+
+
+
+
+下列資料庫將不會顯示：
+
+* 沒有備份的資料庫
+* 只有隨選或每小時原則的資料庫
+* 位於NVMe上的Oracle資料庫
+

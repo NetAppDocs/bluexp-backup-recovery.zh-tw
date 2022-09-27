@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: task-backup-app-data-to-aws.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, Cloud Backup, cloud backup service, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 完成幾個步驟、將應用程式資料從ONTAP 功能完善的資料備份到AWS。 
+---
+= 將內部部署應用程式資料備份至Amazon Web Services
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以ONTAP 將Cloud Backup for Applications與Cloud Manager和內部部署SnapCenter 的內部部署的功能整合、將應用程式資料從功能性資料備份到Amazon Web Services。
+
+您可以使用單一原則、將一或多個應用程式同時保護到雲端。
+
+
+IMPORTANT: 如果您使用Cloud Manager GUI、一次只能保護一個應用程式。不過、如果您使用REST API、則可以同時保護多個應用程式。
+
+*步驟*
+
+. 在Cloud Manager UI中、按一下*備份與還原*>*應用程式*。
+. 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*啟動備份*。
+. 在「指派原則」頁面中、選取原則、然後按「*下一步*」。
+. 新增工作環境。
++
+設定ONTAP 執行應用程式的SVM所在的叢集。在新增其中一個應用程式的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他應用程式。
+
++
+.. 選取SVM、然後按一下*新增工作環境*。
+.. 在「新增工作環境」精靈中：
++
+... 指定ONTAP 叢集的IP位址。
+... 指定管理認證資料。
++
+Cloud Backup for Applications僅支援叢集管理。
+
+
+
+.. 按一下「 * 新增工作環境 * 」。
+
+
+. 選擇* Amazon Web Services*作為雲端供應商。
++
+.. 指定AWS帳戶。
+.. 在AWS存取金鑰欄位中、指定金鑰。
+.. 在AWS Secret Key（AWS機密金鑰）欄位中、指定密碼。
+.. 選取您要建立備份的區域。
+.. 指定IP空間。
+.. 選取歸檔層。
++
+建議您設定歸檔層、因為這是一次性的活動、日後將不允許您設定。
+
+
+
+. 檢閱詳細資料、然後按一下*啟動備份*。
+

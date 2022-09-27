@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements 
+keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database 
 summary: 整合Cloud Backup for Applications與Cloud Manager及內部部署SnapCenter 的功能、將應用程式一致的Snapshot從內部部署ONTAP 的地方還原至雲端。 
 ---
 = 保護內部部署的應用程式資料
@@ -16,26 +16,10 @@ summary: 整合Cloud Backup for Applications與Cloud Manager及內部部署SnapC
 [role="lead"]
 您可以將Cloud Backup for Applications與Cloud Manager和內部部署SnapCenter 的解決方案整合、將應用程式一致的Snapshot從內部部署ONTAP 的地方還原到雲端。必要時、您可以從雲端還原至內部部署SnapCenter 的功能。
 
-您可以將Oracle和Microsoft SQL應用程式資料從內部部署ONTAP 的支援系統備份到下列雲端供應商：
-
-* Amazon Web Services
-* Microsoft Azure
+您可以將Oracle、Microsoft SQL和SAP HANA應用程式資料從內部部署ONTAP 的支援系統備份到Amazon Web Services、Microsoft Azure、Google Cloud和StorageGRID 更新版本。
 
 
-ifdef::aws[]
-
-endif::aws[]
-
-ifdef::azure[]
-
-endif::azure[]
-
-ifdef::gcp[]
-
-endif::gcp[]
-
-
-NOTE: 您應該使用SnapCenter 的是功能不實的軟體4.6。
+NOTE: 您應該使用SnapCenter 的是不含更新版本的軟體。
 
 如需雲端應用程式備份的詳細資訊、請參閱：
 
@@ -51,63 +35,27 @@ NOTE: 您應該使用SnapCenter 的是功能不實的軟體4.6。
 
 * 部分9.8或更新版本ONTAP
 * Cloud Manager 3.9..
-* 伺服器4.6% SnapCenter
+* 如果您想要使用下列功能、應該使用不含更新版本的伺服器4.7：SnapCenter SnapCenter
++
+** 保護備份不受內部部署二線儲存設備的影響
+** 保護SAP HANA應用程式
+** 保護VMware環境中的Oracle和SQL應用程式
+** 掛載備份
+** 停用備份
+** 取消登SnapCenter 錄伺服器
+
+
 * 每個應用程式至少應有一個備份可供SnapCenter 使用於此伺服器
 * 至少有一項每日、每週或每月的政策SnapCenter 、沒有標籤或標籤與Cloud Manager中的Cloud Backup for Applications原則相同。
 
 
-下圖顯示每個元件及其之間需要準備的連線：
+
+NOTE: Cloud Backup for Applications不支援使用FQDN或IP位址新增的SVM上的應用程式保護。
+
+下圖顯示備份至雲端時的每個元件、以及您需要在它們之間準備的連線：
 
 image:diagram_cloud_backup_app.png["顯示Cloud Backup如何與內部部署應用程式及備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
+下列影像顯示備份StorageGRID 到還原時的每個元件、以及您在它們之間準備所需的連線：
 
-
-== 保護原則
-
-您應該使用Cloud Backup for Applications中定義的其中一項原則、將應用程式資料備份到雲端。
-
-
-NOTE: 不支援自訂原則。
-
-|===
-| 原則名稱 | 標籤 | 保留價值 
-
-
- a| 
-1年每日LTR
- a| 
-每日
- a| 
-366,36
-
-
-
- a| 
-5年每日LTR
- a| 
-每日
- a| 
-1830年
-
-
-
- a| 
-7年每週LTR
- a| 
-每週
- a| 
-37
-
-
-
- a| 
-每月10年LTR
- a| 
-每月
- a| 
-120
-
-|===
-這些原則的標籤和保留值可以使用REST API加以修改、直到原則與應用程式相關聯為止。只有一個原則可以與應用程式建立關聯、一旦建立關聯、您就無法取消關聯。
-
-除了雲端備份應用程式原則之外、您還需要至少一個SnapCenter 還原原則、才能將應用程式資料備份到雲端。
+image:diagram_cloud_backup_onprem_storagegrid.png["顯示Cloud Backup如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]

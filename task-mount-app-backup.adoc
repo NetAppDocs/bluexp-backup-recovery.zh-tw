@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: task-mount-app-backup.html 
+keywords: mount, mount application backups, Oracle database, SAP HANA database 
+summary: 您可以將SAP HANA和Oracle備份掛載到指定的資料庫 
+---
+= 掛載應用程式備份
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+不支援將Oracle和HANA備份還原至替代主機。SnapCenter因此、Cloud Backup for Applications可讓您將Oracle和HANA備份掛載到指定的主機。
+
+*您需要的是什麼*
+
+如果您想要掛載已從次要儲存設備移至物件存放區的備份、則應新增主要工作環境詳細資料、並設定IP空間。如需詳細資訊、請參閱 link:task-manage-app-backups.html#set-ip-space-of-the-primary-working-environment["設定主要工作環境的IP空間"]。
+
+*步驟*
+
+. 在Cloud Manager UI中、按一下*備份與還原*>*應用程式*。
+. 在Filter by（篩選依據）欄位中、選取* Type *、然後從下拉式清單中選取* SAP HANA *或* Oracle*。
+. 按一下 image:icon-action.png["圖示以選取動作"] 與受保護的應用程式對應、然後選取*檢視詳細資料*。
+. 按一下 image:icon-action.png["圖示以選取動作"] 與備份相對應、然後選取*掛載*。
++
+.. 請指定下列其中一項：
++
+... 對於NAS環境、請指定要匯出從物件存放區還原之替代磁碟區的主機FQDN或IP位址。
+... 對於SAN環境、請指定從物件存放區還原之替代磁碟區LUN的主機啟動器、以進行對應。
+
+
+.. 指定要新增至替代Volume名稱的字尾。
+.. 如果快照位於歸檔儲存設備中、請指定從歸檔儲存設備擷取資料的優先順序。
+.. 按一下*掛載*。
+
+
+
+
+此作業只會掛載指定主機上的儲存設備。您應該手動掛載檔案系統並開啟資料庫。在使用替代Volume之後、儲存管理員可以從ONTAP 叢集刪除該Volume。
+
+如需如何啟動SAP HANA資料庫的詳細資訊、請參閱： https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：利用SnapCenter 下列功能自動化SAP HANA系統複製與複製作業"^]。

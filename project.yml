@@ -87,8 +87,21 @@ sidebar:
       entries:
       - title: 保護內部部署的應用程式資料
         url: "/concept-protect-app-data-to-cloud.html"
-      - title: 將內部部署應用程式資料備份到雲端
-        url: "/task-backup-app-data-to-cloud.html"
+      - title: 註冊SnapCenter 伺服器
+        url: "/task-register-snapcenter-server.html"
+      - title: 建立備份應用程式的原則
+        url: "/task-create-policies-apps.html"
+      - title: 將內部部署應用程式資料備份至Amazon Web Services
+        flavor: aws
+        url: "/task-backup-app-data-to-aws.html"
+      - title: 將內部部署應用程式資料備份到Microsoft Azure
+        flavor: azure
+        url: "/task-backup-app-data-to-azure.html"
+      - title: 將內部部署應用程式資料備份到Google Cloud
+        flavor: gcp
+        url: "/task-backup-app-data-to-gcp.html"
+      - title: 將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方
+        url: "/task-backup-app-data-to-storagegrid.html"
       - title: 管理應用程式保護
         url: "/task-manage-app-backups.html"
       - title: 還原應用程式資料
@@ -97,6 +110,8 @@ sidebar:
           url: "/task-restore-oracle-data.html"
         - title: 還原SQL Server資料庫
           url: "/task-restore-sql-data.html"
+      - title: 掛載應用程式備份
+        url: "/task-mount-app-backup.html"
     - title: 備份及還原雲端原生應用程式資料
       entries:
       - title: 保護雲端原生應用程式資料

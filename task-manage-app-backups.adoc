@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-manage-app-backups.html 
-keywords: manage, Azure, Amazon Web services, Oracle database, Microsoft SQL Server database, backups, policy, monitor, jobs, monitor jobs 
+keywords: manage, Azure, Amazon Web services, Oracle database, Microsoft SQL Server database, backups, policy, monitor, jobs, monitor jobs, SAP HANA database 
 summary: 您可以檢視原則和備份。視資料庫、原則或資源群組的變更而定、您可以從Cloud Manager UI重新整理更新。 
 ---
 = 管理應用程式保護
@@ -14,23 +14,23 @@ summary: 您可以檢視原則和備份。視資料庫、原則或資源群組�
 
 
 [role="lead"]
-您可以檢視原則和備份。視資料庫、原則或資源群組的變更而定、您可以從Cloud Manager UI重新整理更新。
+您可以從Cloud Manager UI執行不同的作業來管理應用程式保護。
 
 
 
 == 檢視原則
 
-您可以檢視所有預設的預設預設預設預設預設原則。當您檢視所有相關的Cloud Backup for Applications原則和所有相關應用程式詳細資料時、會列出這些原則中的每個原則。
+您可以檢視所有原則。當您檢視這些原則的詳細資料時、會列出所有相關的應用程式。
 
 . 按一下*備份與還原*>*應用程式*。
 . 從*設定*下拉式清單中、按一下*原則*。
 . 按一下您要檢視其詳細資料之原則的*檢視詳細資料*。
 +
-列出相關的Cloud Backup for Applications原則和所有應用程式。
+隨即列出相關的應用程式。
 
 +
 
-NOTE: 您不應刪除Cloud Backup for Applications原則。
+NOTE: 您無法編輯或刪除與應用程式相關聯的原則。
 
 
 
@@ -52,6 +52,7 @@ IMPORTANT: 列出備份所需的時間取決於ONTAP的預設複寫排程（最�
 * 對於Oracle資料庫、資料與記錄備份、每個備份的SCN編號、會列出每個備份的結束日期。您只能選取資料備份、然後將資料庫還原至內部部署SnapCenter 的伺服器。
 * 對於Microsoft SQL Server資料庫、只會列出每個備份的完整備份和結束日期。您可以選取備份、並將資料庫還原至內部部署SnapCenter 的伺服器。
 * 對於Microsoft SQL Server執行個體、不會列出備份、而只會列出該執行個體下的資料庫。
+* 對於SAP HANA資料庫、只會列出每個備份的資料備份和結束日期。您可以選取備份並執行掛載作業。
 
 
 
@@ -88,6 +89,15 @@ NOTE: 在啟用雲端保護之前所建立的備份並未列出以供還原。
 
 
 
+== 取消登SnapCenter 錄伺服器
+
+. 按一下*備份與還原*>*應用程式*。
+. 從*設定*下拉式清單中、按一下* SnapCenter 《伺服器*》。
+. 按一下 image:icon-action.png["圖示以選取動作"] 對應SnapCenter 於此伺服器、然後按一下*取消註冊*。
+
+
+
+
 == 監控工作
 
 所有雲端備份作業都會建立。您可以監控在每項工作中執行的所有工作和所有子工作。
@@ -97,6 +107,23 @@ NOTE: 在啟用雲端保護之前所建立的備份並未列出以供還原。
 當您啟動作業時、會出現一個視窗、指出該工作已啟動。您可以按一下連結來監控工作。
 
 . 按一下主要工作以檢視每個子工作的子工作和狀態。
+
+
+
+
+== 設定主要工作環境的IP空間
+
+如果您想要還原或掛載已從次要儲存設備移至物件存放區的備份、您應該新增主要工作環境詳細資料、並設定IP空間。
+
+*步驟*
+
+. 在Cloud Manager UI中、按一下「* Canvas*>*新增工作環境*」。
+. 指定主要工作環境的詳細資料、然後按一下*「Add*（新增*）」。
+. 按一下*備份與還原*>*磁碟區*。
+. 按一下 image:icon-action.png["圖示以選取動作"] 對應任何磁碟區、然後按一下*詳細資料*。
+. 按一下 image:icon-action.png["圖示以選取動作"] 與備份相對應、然後按一下*還原*。
+. 在精靈中、選取新增的主要工作環境作為目的地。
+. 指定IP空間。
 
 
 

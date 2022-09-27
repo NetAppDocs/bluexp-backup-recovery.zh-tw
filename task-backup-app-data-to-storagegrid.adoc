@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: task-backup-app-data-to-storagegrid.html 
+keywords: backing up, back up, backup, backup application data, Google Cloud, GCP, Cloud Backup, cloud backup service, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 請完成幾個步驟、將應用程式資料從ONTAP 功能完善的資料備份到GCP。 
+---
+= 將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以ONTAP 將Cloud Backup for Applications與Cloud Manager和內部部署的內部部署的功能整合、將應用程式資料從功能性資料備份StorageGRID 到功能性資料。SnapCenter
+
+您可以StorageGRID 使用單一原則、同時保護一或多個應用程式、使其成為運作不全的功能。
+
+
+IMPORTANT: 如果您使用Cloud Manager GUI、一次只能保護一個應用程式。不過、如果您使用REST API、則可以同時保護多個應用程式。
+
+*您需要的是什麼*
+
+將資料備份StorageGRID 到不支援的地方時、內部環境中必須有連接器。您可能需要安裝新的Connector、或確定目前選取的Connector位於內部部署。連接器可安裝在有或沒有網際網路存取的站台上。
+
+如需相關資訊、請參閱 link:task-backup-onprem-private-cloud.html#creating-or-switching-connectors["建立連接器StorageGRID 以利實現效能"]。
+
+*步驟*
+
+. 在Cloud Manager UI中、按一下*備份與還原*>*應用程式*。
+. 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*啟動備份*。
+. 在「指派原則」頁面中、選取原則、然後按「*下一步*」。
+. 新增工作環境。
++
+設定ONTAP 執行應用程式的SVM所在的叢集。在新增其中一個應用程式的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他應用程式。
+
++
+.. 選取SVM、然後按一下*新增工作環境*。
+.. 在「新增工作環境」精靈中：
++
+... 指定ONTAP 叢集的IP位址。
+... 指定管理認證資料。
++
+Cloud Backup for Applications僅支援叢集管理。
+
+
+
+.. 按一下「 * 新增工作環境 * 」。
+
+
+. 選擇* StorageGRID 《*》*《*》。
++
+.. 指定StorageGRID 「伺服器」的FQDN和StorageGRID 執行此伺服器的連接埠。
++
+請以「FQDN：連接埠」格式輸入詳細資料。
+
+.. 在存取金鑰欄位中、指定金鑰。
+.. 在「Secret Key（機密金鑰）」欄位中、指定密碼。
+.. 指定IP空間。
+
+
+. 檢閱詳細資料、然後按一下*啟動備份*。
+
