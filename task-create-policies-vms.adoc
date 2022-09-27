@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: task-create-policies-vms.html 
+keywords: create policy, protection policies, predefined policies, custom policies 
+summary: 將您的資料存放區從內部部署ONTAP 的功能區備份到AWS。 
+---
+= 建立備份虛擬機器的原則
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以建立原則、或使用Cloud Manager提供的下列其中一項預先定義原則。
+
+|===
+| 原則名稱 | 標籤 | 保留價值 
+
+
+ a| 
+1年每日LTR
+ a| 
+每日
+ a| 
+366,36
+
+
+
+ a| 
+5年每日LTR
+ a| 
+每日
+ a| 
+1830年
+
+
+
+ a| 
+7年每週LTR
+ a| 
+每週
+ a| 
+37
+
+
+
+ a| 
+每月10年LTR
+ a| 
+每月
+ a| 
+120
+
+|===
+如果您不想編輯預先定義的原則、則應建立原則。
+
+.步驟
+. 在「虛擬機器」頁面的「設定」下拉式清單中、選取「*原則*」。
+. 按一下「*建立原則*」。
+. 指定原則名稱。
+. 指定排程和保留詳細資料。
++
+根據預設、備份來源將被選取為主要來源。
+
+. 按一下「 * 建立 * 」。
+

@@ -1,0 +1,50 @@
+---
+sidebar: sidebar 
+permalink: task-backup-vm-data-to-azure.html 
+keywords: back up, backup, backup virtual machine data, Microsoft Azure, cloud backup, backup datastores 
+summary: 將資料存放區從內部部署ONTAP 的地方還原備份到Azure。 
+---
+= 將資料存放區備份至Microsoft Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以將SnapCenter 適用於VMware vSphere的VMware vSphere的VMware Plug-in與Cloud Manager整合、將一或多個資料存放區備份到Microsoft Azure。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
+
+
+NOTE: 確保您已滿足所有需求 link:concept-protect-vm-data.html#Requirements["需求"] 將資料存放區備份到雲端之前。
+
+.步驟
+. 在Cloud Manager UI中、按一下*備份與還原*>*虛擬機器*。
+. 按一下 image:icon-action.png["行動"] 與您要備份的資料存放區相對應、然後按一下「*啟動備份*」。
+. 在「指派原則」頁面中、選取原則、然後按「*下一步*」。
+. 新增工作環境。
++
+設定ONTAP 您想要Cloud Manager探索的各個叢集、以備份資料存放區。在新增其中一個資料存放區的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他資料存放區。
+
++
+.. 按一下與SVM對應的*新增工作環境*。
+.. 在「新增工作環境」精靈中：
++
+... 指定ONTAP 叢集的IP位址。
+... 指定ONTAP 叢集使用者的認證資料。
+
+
+.. 按一下「 * 新增工作環境 * 」。
+
+
+. 選擇* Microsoft Azure *將其設定為雲端供應商。
++
+.. 指定Azure訂閱ID。
+.. 選取您要建立備份的區域。
+.. 建立新的資源群組或使用現有的資源群組。
+.. 指定ONTAP 新增為工作環境的各種不完整叢集的IP位址。
+
+
+. 檢閱詳細資料、然後按一下*啟動備份*。
+

@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task-register-snapCenter-plug-in-for-vmware-vsphere.html 
+keywords: register, registration, SnapCenter Plug-in for VMware vSphere 
+summary: 在SnapCenter Cloud Manager中註冊VMware vSphere的功能外掛程式。 
+---
+= 註冊SnapCenter VMware vSphere的VMware外掛程式
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您應該在SnapCenter Cloud Manager中登錄VMware vSphere的VMware vCenter外掛程式、以便在Cloud Manager中顯示資料存放區和虛擬機器。只有擁有管理存取權的使用者才能登錄SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式。
+
+
+NOTE: 您可以為SnapCenter VMware vSphere登錄多個VMware vCenter外掛程式。不過、一旦登錄完成、您就無法移除SnapCenter VMware vSphere的VMware vCenter外掛程式。
+
+.步驟
+. 在Cloud Manager UI中、按一下*備份與還原*>*虛擬機器*。
+. 從*設定*下拉式清單中、按一下* SnapCenter 適用於VMware vSpher*的「*」「外掛程式」。
+. 按一下「*登錄SnapCenter VMware vSpher*的更新外掛程式」。
+. 請指定下列詳細資料：
++
+.. 在VMware vSphere的「VMware vSphere的解決方法外掛程式」欄位中、指定VMware vSphere的「VMware vSphere的VMware vSphere的解決方法」的FQDN或IP位址。SnapCenter SnapCenter
+.. 在連接埠欄位中、指定SnapCenter 執行VMware vSphere的VMware vSphere的VMware外掛程式連接埠號碼。
++
+您應確保連接埠已開啟、SnapCenter 以便在VMware vSphere的VMware vSphere的VMware外掛程式與適用於虛擬機器的Cloud Backup之間進行通訊。
+
+.. 在使用者名稱和密碼欄位中、指定具有系統管理員角色的使用者認證。
+
+
+. 按一下 * 註冊 * 。
+
+
+*完成後*
+
+按一下「*備份與還原>虛擬機器*」、即可檢視所有符合VMware SnapCenter vSphere之已登錄的「還原外掛程式」保護資格的資料存放區和虛擬機器。

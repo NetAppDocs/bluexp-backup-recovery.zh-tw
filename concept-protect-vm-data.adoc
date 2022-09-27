@@ -16,7 +16,7 @@ summary: 深入瞭解如何保護虛擬機器上的資料、並瞭解不同的�
 [role="lead"]
 您可以將SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式與Cloud Manager整合、以保護虛擬機器上的資料。您可以將資料存放區備份到雲端、SnapCenter 並輕鬆將虛擬機器還原回內部部署的VMware vSphere版的內部部署功能。
 
-您可以將資料存放區備份至Amazon Web Services S3或Microsoft Azure Blob。
+您可以將資料存放區備份到Amazon Web Services S3、Microsoft Azure Blob和StorageGRID Sesome。
 
 
 
@@ -40,54 +40,3 @@ summary: 深入瞭解如何保護虛擬機器上的資料、並瞭解不同的�
 下圖顯示每個元件及其之間需要準備的連線：
 
 image:cloud_backup_vm.png["虛擬機器的雲端備份架構圖。"]
-
-
-
-== 保護原則
-
-您應該使用Cloud Backup中定義的其中一項原則、將資料存放區備份到雲端。
-
-
-NOTE: 不支援自訂原則。
-
-您可以在Cloud Manager中按一下*備份與還原*>*虛擬機器*>*原則*來檢視預設原則。
-
-|===
-| 原則名稱 | 標籤 | 保留價值 
-
-
- a| 
-1年每日LTR
- a| 
-每日
- a| 
-366,36
-
-
-
- a| 
-5年每日LTR
- a| 
-每日
- a| 
-1830年
-
-
-
- a| 
-7年每週LTR
- a| 
-每週
- a| 
-37
-
-
-
- a| 
-每月10年LTR
- a| 
-每月
- a| 
-120
-
-|===
