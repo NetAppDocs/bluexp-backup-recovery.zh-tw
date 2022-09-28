@@ -213,8 +213,17 @@ homepage:
       flavor: gcp
   - title: 備份及還原應用程式資料
     links:
-    - title: 將內部部署應用程式資料備份到雲端
-      url: task-backup-app-data-to-cloud.html
+    - title: 將內部部署應用程式資料備份至Amazon Web Services
+      flavor: aws
+      url: "/task-backup-app-data-to-aws.html"
+    - title: 將內部部署應用程式資料備份到Microsoft Azure
+      flavor: azure
+      url: "/task-backup-app-data-to-azure.html"
+    - title: 將內部部署應用程式資料備份到Google Cloud
+      flavor: gcp
+      url: "/task-backup-app-data-to-gcp.html"
+    - title: 將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方
+      url: "/task-backup-app-data-to-storagegrid.html"
     - title: 將Oracle資料庫從雲端還原至內部部署
       url: task-restore-oracle-data.html
     - title: 將SQL Server資料庫從雲端還原至內部部署
@@ -225,8 +234,14 @@ homepage:
       url: task-restore-cloud-native-app-data.html
   - title: 備份及還原虛擬機器資料
     links:
-    - title: 將資料存放區備份至雲端
-      url: task-backup-vm-data-to-cloud.html
+    - title: 將資料存放區備份至Amazon Web Services
+      flavor: aws
+      url: "/task-backup-vm-data-to-aws.html"
+    - title: 將資料存放區備份至Microsoft Azure
+      flavor: azure
+      url: "/task-backup-vm-data-to-azure.html"
+    - title: 將資料存放區備份StorageGRID 至
+      url: "/task-backup-vm-data-to-storagegrid.html"
     - title: 從雲端還原虛擬機器
       url: task-restore-vm-data.html
   - title: 從備份檔案還原資料
