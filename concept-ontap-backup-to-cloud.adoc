@@ -16,7 +16,7 @@ summary: Cloud Backup提供備份與還原功能、可保護ONTAP 及長期歸�
 [role="lead"]
 Cloud Backup提供備份與還原功能、可保護ONTAP 及長期歸檔您的叢集資料。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中、而且不會與用於近期恢復或複製的Volume Snapshot複本無關。
 
-必要時、您可以將整個_volume、資料夾或一個或多個_fil__檔案、從備份還原至相同或不同的工作環境。
+必要時、您可以將整個_volume、_fold__或一個或多個_fil__檔案、從備份還原至相同或不同的工作環境。
 
 
 
@@ -67,14 +67,14 @@ Cloud Backup可讓您從ONTAP 下列工作環境備份支援下列公有雲和�
 
 | 內部部署 ONTAP 的作業系統 | ifdef：：AWS：Amazon S3 endif：：AWS [] ifdef：：azure[] Azure Blob endif：：azure[] ifdef：：gcp[] Google Cloud Storage endif：：gcp[] NetApp StorageGRID 
 |===
-您可以將磁碟區或個別檔案、從ONTAP 一個還原檔還原至下列工作環境：
+您可以將磁碟區、資料夾或個別檔案、從ONTAP 還原備份檔還原至下列工作環境：
 
 [cols="25,33,37"]
 |===
 | 備份檔案 2+| 目的地工作環境 
 
 
-| *位置* | * 磁碟區還原 * | *檔案還原* ifdef：：AWS [] 
+| *位置* | * 磁碟區還原 * | *資料夾與檔案還原* ifdef：：AWS [] 
 
 
 | Amazon S3 | AWS 內部部署的內部系統 Cloud Volumes ONTAP ONTAP | AWS內部部署的不全系統endif::AWS [] ifdef:azure[] Cloud Volumes ONTAP ONTAP 

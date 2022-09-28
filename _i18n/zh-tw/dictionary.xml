@@ -882,7 +882,6 @@
   <block id="0e8f3fb260ced5550398e677e8e16659" category="cell">Azure 中的 Cloud Volumes ONTAP</block>
   <block id="c373a9aa878db8431d1195796e8e6695" category="cell">在 Google 中使用 Cloud Volumes ONTAP</block>
   <block id="04769aee9bd2927c5587bd92b56cca85" category="cell">內部部署 ONTAP 的作業系統</block>
-  <block id="5359990fe520094f026c7db90ea69230" category="paragraph">您可以將磁碟區或個別檔案、從ONTAP 一個還原檔還原至下列工作環境：</block>
   <block id="faa0833cd581ba985bc7c1435b239823" category="cell">備份檔案</block>
   <block id="13afab58626a9721d363115ba16e409c" category="cell">*位置*</block>
   <block id="5bf0ec987a44f9a72eb5b422ea39344f" category="cell">* 磁碟區還原 *</block>
@@ -1421,9 +1420,7 @@
   <block id="5afde787e060c3a96f34f757eb507404" category="sidebar">Kubernetes叢集至Amazon S3</block>
   <block id="3ef08bbbf058b2bc6a87e3ff1ceecd81" category="sidebar">Kubernetes叢集至Azure Blob</block>
   <block id="d5513ddfa26c41caaba3c021a29dbe45" category="sidebar">Kubernetes叢集至Google Cloud</block>
-  <block id="5f7f9901c41dce1630530dafbee078c8" category="sidebar">從備份檔案還原資料</block>
   <block id="e2f83fe82d1e819ed299851d4da320ce" category="sidebar">還原ONTAP 功能</block>
-  <block id="2b980d17552ec9aa65743e3930cf53cb" category="sidebar">還原ONTAP 功能檔</block>
   <block id="09653b9c7955d4792895fbf1fcaa6ad6" category="sidebar">還原Kubernetes磁碟區</block>
   <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">管理ONTAP 還原備份檔案</block>
   <block id="c88c557dd4e62b29bc87fc433d1738c6" category="sidebar">啟用和停用Volume備份</block>
@@ -1572,7 +1569,6 @@
   <block id="0959a2f5eff65303771c49363a01d789" category="cell">Azure Blob endif::azure[] ifdef：：GCP[]</block>
   <block id="c0b279eeed106351906f95aa546f2ffa" category="cell">Google Cloud Storage endif..:GCP[]</block>
   <block id="45258f319fcdf104df4058c07c21ef2e" category="cell">ifdef：：AWS：Amazon S3 endif：：AWS [] ifdef：：azure[] Azure Blob endif：：azure[] ifdef：：gcp[] Google Cloud Storage endif：：gcp[] NetApp StorageGRID</block>
-  <block id="5ea51d13d3e392d52aa5c1c4bd7d5e09" category="cell">*檔案還原* ifdef：：AWS []</block>
   <block id="bc7aa7434d0ca9752e2c02b4ffee9953" category="cell">AWS內部部署的不全系統endif::AWS [] ifdef:azure[] Cloud Volumes ONTAP ONTAP</block>
   <block id="b97f160a229c063bdce958beafa0f695" category="cell">Azure內部部署的系統中的資料：：azure[] ifdef：：Cloud Volumes ONTAP ONTAP GCP[]</block>
   <block id="a9f8eef7fdd18a9397fd96b661adbbf3" category="cell">在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[]</block>
@@ -2440,7 +2436,6 @@
   <block id="6176afad6a7761beffa9af008f2ae633" category="inline-link">觀看快速示範</block>
   <block id="a9840ddd0211114f18d80718c08ddb05" category="paragraph"><block ref="a9840ddd0211114f18d80718c08ddb05" category="inline-link-rx"></block></block>
   <block id="cd2965bfeacaceb11394002abe013260" category="summary">您可以向雲端供應商購買隨用隨付（PAYGO）或一年一度的市場訂閱、或向NetApp購買自帶授權（BYOL）、以取得Cloud Backup授權。在工作環境中啟動Cloud Backup、建立正式作業資料的備份、以及將備份資料還原至正式作業系統時、需要有效的授權。</block>
-  <block id="3bd6fb8c012d3c55be34dc4f82895451" category="paragraph">必要時、您可以將整個_volume、資料夾或一個或多個_fil__檔案、從備份還原至相同或不同的工作環境。</block>
   <block id="ca636232aaf17fe5d8fef3b105b4363c" category="list-text">將磁碟區、資料夾或個別檔案還原至來源系統或其他系統。</block>
   <block id="ead18a75e8ad08c3fd02c4ded3f53521" category="list-text">可瀏覽且可搜尋的檔案目錄、可用於選取個別資料夾和檔案以進行單一檔案還原。</block>
   <block id="b05129b87daa8f26e20ce7f835876ea3" category="list-text">物件存放區上的WORM /法規遵循模式StorageGRID 目前僅在Amazon S3和支援。這稱為DataLock功能。</block>
@@ -2663,4 +2658,8 @@
   <block id="684375e279a289295b72a006d93e2c4c" category="paragraph">在此過程中、NetApp應與您聯絡。這是新使用者的一次性就職練習。</block>
   <block id="cc7175a084ebd6e004cb2c751c162569" category="paragraph">一旦擁有NetApp 支援網站 您的不二帳戶、您就可以瀏覽至Cloud Manager、新增此新增的NSS-帳戶以供日後登錄。</block>
   <block id="2d96aa84884717fd77e4906d82c73ddc" category="section-title">2022年9月28日</block>
+  <block id="d45e0847841b73f9b8082d6a7bc89f24" category="paragraph">必要時、您可以將整個_volume、_fold__或一個或多個_fil__檔案、從備份還原至相同或不同的工作環境。</block>
+  <block id="262efb8db11032d91af39217fa610e82" category="paragraph">您可以將磁碟區、資料夾或個別檔案、從ONTAP 還原備份檔還原至下列工作環境：</block>
+  <block id="5a885bd71d1142c7d1b89fcfcf197a41" category="sidebar">還原ONTAP 來自還原備份檔案的資料</block>
+  <block id="ba9a6951ecf97e593c2140f66a8574bf" category="sidebar">從ONTAP 還原磁碟區還原檔案和資料夾</block>
 </blocks>
