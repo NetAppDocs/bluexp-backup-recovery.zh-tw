@@ -2442,10 +2442,8 @@
   <block id="550600f5b11e396f6d260ad4b5bad6b4" category="paragraph">如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行ONTAP 不含更新版本的功能、才能還原磁碟區、而必須執行9.11.1才能還原檔案。</block>
   <block id="01fa460d0b4e6c77f9b145e51a76fbd6" category="paragraph">如果是<block ref="81ffc4823c79c3e10cfa644aead6e93c" category="inline-link-rx"></block> 備份的目的地在畫版上會以工作環境的形式存在、您可以將內部ONTAP 作業環境拖曳到目的地、以啟動Cloud Backup設定精靈。</block>
   <block id="e90eafa7bd87aa0ac2eee6c1722ef9e4" category="list-text">如果您使用BYOL授權、建議您也訂閱PAYGO訂閱。如果您備份的資料超過BYOL授權所允許的數量、則會透過隨用隨付訂閱繼續備份、不會中斷服務。</block>
-  <block id="14ec6f8e662a83e1b5c675a211b8b029" category="paragraph">請注意、只有在將Connector部署在雲端時、才會在GovCloud區域中支援Cloud Backup、而非在內部部署或黑暗站台中安裝時。</block>
   <block id="fd1958e5e74317f89c6c16bbca7d1446" category="inline-link">AWS 中 Connector 的規則</block>
   <block id="56d39ecb5bf4d2ec753c12fbb0e00108" category="list-text">AWS和AWS GovCloud部署需要額外的傳入和傳出安全群組規則。請參閱<block ref="74fb388667736bb2b34ea14720dd63e3" category="inline-link-rx"></block> 以取得詳細資料。</block>
-  <block id="ad016619a46ca8e0f75292c2c0d1a7a8" category="paragraph">請注意、只有當連接器部署在雲端時、才會在政府雲端區域中支援Cloud Backup、而非安裝在內部部署或暗處時。</block>
   <block id="b445de53411a165e9c56da6430c38d59" category="inline-link">Azure 中的 Connector 規則</block>
   <block id="f840409b357663e7b24e8296c05770a5" category="list-text">Azure和Azure政府部署需要額外的傳入安全性群組規則。請參閱<block ref="e1893ebf6f9d2e927a13d052b78eec9f" category="inline-link-rx"></block> 以取得詳細資料。</block>
   <block id="2eeb194bf5c17f3408edda6fb4570318" category="summary">請完成幾個步驟、將應用程式資料從ONTAP 無法恢復的資料備份到Azure。</block>
@@ -2666,4 +2664,8 @@
   <block id="f8a98c701370ca7b2e41192ca7baaa6b" category="list-text">連接器必須部署在雲端</block>
   <block id="d82ac33ca1171e71de283e404129a0c4" category="paragraph">如果您的叢集使用ONTAP 的是版本號為S還原9.10.1或更新版本、您可以選擇在特定天數後、將舊版備份分層至_S3 Glacier或_S3 Glacier Deep Archive_儲存設備、以進一步最佳化成本。 <block ref="f7fa7b0a9e810d8c500bcf785a34f359" category="inline-link-macro-rx"></block>。</block>
   <block id="3dfe42849739012935ae4b966fa89d76" category="paragraph">如果您的叢集使用ONTAP 的是版本號為S還原9.10.1或更新版本、您可以選擇在特定天數後、將舊版備份分層至_Azure Archive_儲存設備、以進一步最佳化成本。 <block ref="2f91ed687cd1d1d6d8235865263a43ff" category="inline-link-macro-rx"></block>。</block>
+  <block id="541b5050a50a0e3040c978cd339ac40f" category="inline-link">瞭解如何在AWS GovCloud區域中建立Connector</block>
+  <block id="3a93813464b52092578b75c490a315d3" category="paragraph">當連接器部署在雲端時（而非安裝在您的內部部署或暗處）、政府部門會在GovCloud區域中支援Cloud Backup。此外、您必須從AWS Marketplace部署Connector。您無法從Cloud Manager SaaS網站在政府區域部署Connector。<block ref="8b836e33a466c00dcf60eebb57972847" category="inline-link-rx"></block>。</block>
+  <block id="50f6114c76c0178ff63cce6c4efbb5bc" category="inline-link">瞭解如何在Azure政府區域中建立Connector</block>
+  <block id="73e80c85d0469fdbf73937e3b2fc2017" category="paragraph">當連接器部署在雲端時、Azure政府區域支援Cloud Backup、而非安裝在內部部署或暗處時。此外、您必須從Azure Marketplace部署Connector。您無法從Cloud Manager SaaS網站在政府區域部署Connector。<block ref="9758449d9191108f8c90137ecdba7919" category="inline-link-rx"></block>。</block>
 </blocks>

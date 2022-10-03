@@ -145,7 +145,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["在內部環境中安裝連接器"^]
 
 
-請注意、只有當連接器部署在雲端時、才會在政府雲端區域中支援Cloud Backup、而非安裝在內部部署或暗處時。
+當連接器部署在雲端時、Azure政府區域支援Cloud Backup、而非安裝在內部部署或暗處時。此外、您必須從Azure Marketplace部署Connector。您無法從Cloud Manager SaaS網站在政府區域部署Connector。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html["瞭解如何在Azure政府區域中建立Connector"]。
 
 
 
