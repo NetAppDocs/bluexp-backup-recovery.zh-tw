@@ -14,13 +14,13 @@ summary: 本文件說明Cloud Backup的備份原則組態設定。
 
 
 [role="lead"]
-本文件說明Cloud Backup的備份原則組態設定。
+本文件說明ONTAP 使用時、內部作業系統及Cloud Volumes ONTAP 支援系統的備份原則組態設定Cloud Backup Service 。
 
 
 
 == 備份排程
 
-Cloud Backup可讓您針對每個工作環境建立多種備份原則、並提供獨特的排程。您可以將不同的備份原則指派給具有不同還原點目標（RPO）的磁碟區。
+Cloud Backup可讓您針對每個工作環境（叢集）建立多個備份原則、並提供獨特的排程。您可以將不同的備份原則指派給具有不同還原點目標（RPO）的磁碟區。
 
 每個備份原則都會提供一個區段、說明您可以套用至備份檔案的_標籤與保留_。
 
@@ -28,10 +28,10 @@ image:screenshot_backup_schedule_settings.png["建立備份原則時的備份排
 
 排程分為兩部分：「標籤」和「保留值」：
 
-* *標籤*定義從磁碟區建立備份檔案的頻率。您可以選擇下列類型的標籤：
+* *標籤*定義從磁碟區建立（或更新）備份檔案的頻率。您可以選擇下列類型的標籤：
 +
 ** 您可以選擇*每小時*、*每日*、*每週*、*每月*、 和*年*時間範圍。
-** 您可以選擇其中一個系統定義的原則、提供3個月、1年及7年的備份與保留。
+** 您可以選擇其中一個系統定義的原則、以提供3個月、1年或7年的備份與保留。
 ** 如果您已在叢集上使用ONTAP 支援系統管理程式或ONTAP CLI建立自訂備份保護原則、則可以選取其中一個原則。
 
 
@@ -41,8 +41,8 @@ image:screenshot_backup_schedule_settings.png["建立備份原則時的備份排
 例如、假設您建立的備份原則會建立7 *每週*和12 *每月*備份：
 
 * 每週和每月都會為磁碟區建立備份檔案
-* 在第8週、第一週的備份會由第8週的每週備份取代（每週最多保留7次備份）。
-* 在第13個月、第一次每月備份將由第13個月的每月備份取代（最多保留12個月備份）
+* 在第8週、第一週備份會移除、並新增第8週的每週備份（每週最多保留7次備份）。
+* 在第13個月、第一個每月備份就會移除、並新增第13個月的每月備份（最多保留12個月備份）。
 
 
 
@@ -53,7 +53,7 @@ Cloud Backup支援DataLock和勒索軟體保護功能、可用於磁碟區備份
 
 這兩項功能都能保護您的備份檔案、因此當勒索軟體攻擊來源資料時、您永遠都能擁有有效的備份檔案來還原資料。此外、也有助於滿足某些法規要求、在某些情況下、備份必須鎖定並保留一段時間。啟用DataLock和勒索軟體保護後、隨附於Cloud Backup啟動的雲端儲存區將會啟用物件鎖定和物件版本管理功能。
 
-此功能並不提供來源磁碟區的保護、只能用於這些來源磁碟區的備份。使用NetApp https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["不再是不一樣的Cloud Insights Cloud Secure"^]或部分 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["提供來自VMware的反勒索軟體保護ONTAP"^] 保護來源磁碟區。
+此功能無法為來源磁碟區提供保護、只能用於這些來源磁碟區的備份。使用NetApp https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["不再是不一樣的Cloud Insights Cloud Secure"^]或部分 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["提供來自VMware的反勒索軟體保護ONTAP"^] 保護來源磁碟區。
 
 [CAUTION]
 ====
@@ -72,11 +72,11 @@ DataLock可保護您的備份檔案、避免在一段時間內遭到修改或刪
 
 讓我們來看看幾個例子、瞭解這項功能的運作方式：
 
-* 如果您建立的每月備份排程有12個保留項目、則備份會在刪除之前鎖定12個月（加上14天）（由下一個備份檔案取代）。
+* 如果您建立的每月備份排程有12個保留項目、則每個備份都會在刪除之前鎖定12個月（加上14天）。
 * 如果您建立的備份原則每天建立30個、每週7個、每月12個備份、則會有三個鎖定的保留期間。「30天」備份將保留44天（30天加上14天緩衝）、「7週」備份保留9週（7週加上14天）、「12個月」備份則保留12個月（加上14天）。
-* 如果您建立24個保留項目的每小時備份排程、您會認為備份會鎖定24小時。不過、由於這低於30天的最少時間、因此每個備份都會被鎖定並保留44天（30天加上14天的緩衝）。
+* 如果您建立24個保留項目的每小時備份排程、您可能會認為備份會鎖定24小時。不過、由於這低於30天的最少時間、因此每個備份都會被鎖定並保留44天（30天加上14天的緩衝）。
 +
-您可以在最後一次看到、如果每個備份檔案被鎖定44天、您將會有更多的備份檔案、而不是通常以每小時24小時保留原則來保留。一般而言、一旦Cloud Backup建立第25個備份檔案、就會刪除最舊的備份、使保留上限維持在24（根據原則）。在這種情況下、DataLock保留設定會覆寫備份原則的原則保留設定。這可能會影響您的儲存成本、因為備份檔案將會儲存在物件存放區中一段較長的時間。
+您可以在最後一次看到、如果每個備份檔案被鎖定44天、您將會有更多的備份檔案、而不是通常以每小時24小時保留原則來保留。通常、當Cloud Backup建立第25個備份檔案時、它會刪除最舊的備份、以將保留上限維持在24（根據原則）。在這種情況下、DataLock保留設定會覆寫備份原則的原則保留設定。這可能會影響您的儲存成本、因為備份檔案將會儲存在物件存放區中一段較長的時間。
 
 
 
@@ -90,7 +90,7 @@ DataLock可保護您的備份檔案、避免在一段時間內遭到修改或刪
 
 * 建立備份檔案時
 +
-第一次寫入雲端儲存設備、但寫入下一個備份檔案時、不會對備份檔案執行掃描。例如、如果您已設定星期二的每週備份排程、則會在星期二14建立備份。然後在星期二建立另一個備份。此時勒索軟體掃描會在備份檔案上執行、從14開始執行。
+第一次寫入雲端儲存設備時、並不會對備份檔案執行掃描、但會在寫入*下一次*備份檔案時執行掃描。例如、如果您已設定星期二的每週備份排程、則會在星期二14建立備份。然後在星期二建立另一個備份。此時勒索軟體掃描會在備份檔案上執行、從14開始執行。
 
 * 當您嘗試從備份檔案還原資料時
 +
@@ -130,7 +130,7 @@ DataLock設為_Compliance模式、在保留期間內、任何使用者都無法�
 
 
 
-NOTE: 「支援物件鎖定」功能提供單一DataLock模式、相當於StorageGRID 「符合法規」模式。不支援同等的治理模式、因此沒有使用者能夠略過保留設定、覆寫受保護的備份或刪除備份。
+NOTE: 「支援物件鎖定」功能提供單一DataLock模式、相當於StorageGRID 「符合法規」模式。不支援等效的治理模式、因此沒有使用者能夠略過保留設定、覆寫受保護的備份、或刪除鎖定的備份。
 
 
 
@@ -138,7 +138,7 @@ NOTE: 「支援物件鎖定」功能提供單一DataLock模式、相當於Storag
 
 在下列公有雲和私有雲供應商中使用物件儲存設備時、您可以從ONTAP 下列工作環境啟用下列功能中的「資料鎖定」和「勒索軟體」保護功能。未來版本將會新增其他雲端供應商。
 
-[cols="45,45"]
+[cols="50,50"]
 |===
 | 來源工作環境 | 備份檔案目的地ifdef：：AWS [] 
 
@@ -158,41 +158,45 @@ NOTE: 「支援物件鎖定」功能提供單一DataLock模式、相當於Storag
 
 ifdef::aws[]
 
-* 對於AWS、Connector必須部署在雲端
-* 下列S3權限必須是為Connector提供權限的IAM角色的一部分。它們位於資源「arn:AWS:S3：：：：NetApp備份-*」的「backupS3Policy」區段：
+* 對於AWS：
 +
-** S3：GetObjectVersion標記
-** S3：GetBucketObjectLockConfiguration
-** S3：GetObjectVerionAcl
-** S3：PuttObjectTagging
-** S3：刪除物件
-** S3：刪除ObjectTagging
-** S3：GetObjectRetention
-** S3：刪除ObjectVersion標記
-** S3：PuttObject
-** S3：GetObject
-** S3：PuttBucketObjectLockConfiguration
-** S3：Get生命 週期組態
-** S3：listBucketByTags
-** S3：GetBucketting
-** S3：刪除ObjectVersion
-** S3：listBucketVerions
-** S3：清單庫
-** S3：PuttBucketting
-** S3：GetObjectTagging
-** S3：PuttBucketVersion
-** S3：PuttObjectVersion標記
-** S3：GetBucketVersion
-** S3：GetBucketAcl
-** S3：BypassGovernanceRetention
-** S3：PuttObjectRetention
-** S3：GetBucketLocation
-** S3：GetObjectVersion
+** 連接器必須部署在雲端
+** 下列S3權限必須是為Connector提供權限的IAM角色的一部分。它們位於資源「arn:AWS:S3：：：：NetApp備份-*」的「backupS3Policy」區段：
++
+*** S3：GetObjectVersion標記
+*** S3：GetBucketObjectLockConfiguration
+*** S3：GetObjectVerionAcl
+*** S3：PuttObjectTagging
+*** S3：刪除物件
+*** S3：刪除ObjectTagging
+*** S3：GetObjectRetention
+*** S3：刪除ObjectVersion標記
+*** S3：PuttObject
+*** S3：GetObject
+*** S3：PuttBucketObjectLockConfiguration
+*** S3：Get生命 週期組態
+*** S3：listBucketByTags
+*** S3：GetBucketting
+*** S3：刪除ObjectVersion
+*** S3：listBucketVerions
+*** S3：清單庫
+*** S3：PuttBucketting
+*** S3：GetObjectTagging
+*** S3：PuttBucketVersion
+*** S3：PuttObjectVersion標記
+*** S3：GetBucketVersion
+*** S3：GetBucketAcl
+*** S3：BypassGovernanceRetention
+*** S3：PuttObjectRetention
+*** S3：GetBucketLocation
+*** S3：GetObjectVersion
 +
 「S3：BypassGovernanceRetention」僅在您希望管理員使用者能夠覆寫/刪除使用「管理模式」鎖定的備份檔案時才必須新增。
 
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["檢視原則的完整Json格式、您可以在其中複製及貼上所需的權限"^]。
+
+
 
 
 
@@ -234,7 +238,7 @@ ifdef::aws[]
 
 * 在AWS中、備份是從_Standard_儲存類別開始、30天後轉換至_Standard-in頻繁 存取_儲存類別。
 +
-如果您的叢集使用ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在一定天數後、將舊版備份分層至Cloud Backup UI中的_S3 Glacier深度歸檔_或_S3 Glacier Deep Archive_儲存設備、以進一步最佳化成本。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔儲存設備"^]。
+如果您的叢集使用ONTAP 的是版本號為S還原9.10.1或更新版本、您可以選擇在特定天數後、將舊版備份分層至_S3 Glacier或_S3 Glacier Deep Archive_儲存設備、以進一步最佳化成本。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔儲存設備"^]。
 
 +
 請注意、如果您在啟動Cloud Backup時、在第一個備份原則中選擇「_S3 Glacier」或「_S3 Glacier Deep Archive_」、則該層將是該叢集未來備份原則唯一可用的歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。
@@ -247,7 +251,7 @@ ifdef::azure[]
 
 * 在Azure中、備份會與_cool存取層建立關聯。
 +
-如果您的叢集使用ONTAP 的是版本為SURF9.10.1或更新版本、您可以選擇在一定天數後、將舊版備份分層至Cloud Backup UI中的_Azure Archive_儲存設備、以進一步最佳化成本。 link:reference-azure-backup-tiers.html["深入瞭解Azure歸檔儲存設備"^]。
+如果您的叢集使用ONTAP 的是版本號為S還原9.10.1或更新版本、您可以選擇在特定天數後、將舊版備份分層至_Azure Archive_儲存設備、以進一步最佳化成本。 link:reference-azure-backup-tiers.html["深入瞭解Azure歸檔儲存設備"^]。
 
 
 

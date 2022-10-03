@@ -1725,7 +1725,6 @@
   <block id="19b05e78d3464eff3a0a4847f0b66324" category="list-text">使用GCP時、您可以向NetApp申請私人優惠、然後在雲端備份啟動期間、從Google Cloud Marketplace訂閱方案。</block>
   <block id="cf6d8dee9b177c1138ae0ee4e07dc2f3" category="inline-link-macro">瞭解如何設定年度合約</block>
   <block id="cc0eb7dbb8893977120a22b09b8c4ca0" category="paragraph"><block ref="f5d5ae39791d9eaf9e8591b7cfcc3b96" category="inline-link-macro-rx"></block>。</block>
-  <block id="7fc2834f67e497ab1b49f283ea0500e6" category="paragraph">在工作環境中啟用Cloud Backup時、您最初選取的所有磁碟區都會使用您定義的預設備份原則進行備份。如果您想要將不同的備份原則指派給具有不同恢復點目標（RPO）的特定磁碟區、您可以為該叢集建立其他原則、並在啟動備份之後將這些原則指派給其他磁碟區。</block>
   <block id="c47b9175ecebbf21ca2cd87a3a34dc85" category="paragraph">您可以選擇每小時、每日、每週、每月及每年備份所有磁碟區的組合。您也可以選擇系統定義的原則之一、提供 3 個月、 1 年及 7 年的備份與保留。這些原則包括：</block>
   <block id="952a500aaf6d2c5ad8514e3fa5bd6474" category="paragraph">一旦您達到某個類別或時間間隔的最大備份數、就會移除舊備份、讓您永遠擁有最新的備份（因此過時的備份不會繼續佔用雲端空間）。</block>
   <block id="6cc30d6c33bfc4f65037828783c2a89d" category="paragraph">Cloud Backup支援下列類型的磁碟區：</block>
@@ -1890,19 +1889,14 @@
   <block id="b376676c4c1945b60563d3f5ea93e159" category="summary">本文件說明Cloud Backup的備份原則組態設定。</block>
   <block id="f06685f05a46539219fb2db68c9ade26" category="doc">雲端備份原則組態設定</block>
   <block id="1ac86f6dd27abfcb13588ec9dff9ba2a" category="section-title">備份排程</block>
-  <block id="47af5e4e96b94681a1fda003140d66de" category="paragraph">Cloud Backup可讓您針對每個工作環境建立多種備份原則、並提供獨特的排程。您可以將不同的備份原則指派給具有不同還原點目標（RPO）的磁碟區。</block>
   <block id="4c2b90bc53de152e23fccbce641ea19e" category="paragraph">每個備份原則都會提供一個區段、說明您可以套用至備份檔案的_標籤與保留_。</block>
   <block id="154eb228b3f63f7705fe329177ea16b6" category="inline-image-macro">建立備份原則時的備份排程設定快照。</block>
   <block id="38175fe10c317ca778ce56abf9d3ff3f" category="paragraph"><block ref="38175fe10c317ca778ce56abf9d3ff3f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dca086ae01946b6cf950f1291d93aac6" category="paragraph">排程分為兩部分：「標籤」和「保留值」：</block>
-  <block id="2b98372cf63d6e1e40baa5a92732edd0" category="list-text">*標籤*定義從磁碟區建立備份檔案的頻率。您可以選擇下列類型的標籤：</block>
   <block id="5a35ddef63d61c71445e13d3c9588a2d" category="list-text">您可以選擇*每小時*、*每日*、*每週*、*每月*、 和*年*時間範圍。</block>
-  <block id="72ed362887dfa09e979a0265f8247124" category="list-text">您可以選擇其中一個系統定義的原則、提供3個月、1年及7年的備份與保留。</block>
   <block id="c3453b6163eafb5ced9753c1ce3419e7" category="list-text">如果您已在叢集上使用ONTAP 支援系統管理程式或ONTAP CLI建立自訂備份保護原則、則可以選取其中一個原則。</block>
   <block id="61b862400cd7156cb725e12fe1947d88" category="list-text">「*保留*」值會定義每個標籤（時間範圍）保留的備份檔案數量。一旦類別或時間間隔達到最大備份數、就會移除較舊的備份、讓您永遠擁有最新的備份。這也能節省儲存成本、因為過時的備份不會繼續佔用雲端空間。</block>
   <block id="292f9f5eb65ebf40fd71fda6e8b093e7" category="list-text">每週和每月都會為磁碟區建立備份檔案</block>
-  <block id="b5cdfa0edd5a8bb432fe066f8fbcb82f" category="list-text">在第8週、第一週的備份會由第8週的每週備份取代（每週最多保留7次備份）。</block>
-  <block id="f229fe4211204b2ac0e2c6733e936325" category="list-text">在第13個月、第一次每月備份將由第13個月的每月備份取代（最多保留12個月備份）</block>
   <block id="23433a4a1c369f850662f43bac40d8ae" category="section-title">DataLock和勒索軟體保護</block>
   <block id="3960b74bd00136bf9d473cf143876ec1" category="paragraph">Cloud Backup支援DataLock和勒索軟體保護功能、可用於磁碟區備份。這些功能可讓您鎖定備份檔案、並加以掃描、以偵測備份檔案上可能的勒索軟體。這是可選的設定、您可以在備份原則中定義、以便為叢集的磁碟區備份提供額外保護。</block>
   <block id="6c73c9d6c177001ef79643ba7b341c9e" category="list-text">如果您計畫使用DataLock和勒索軟體保護、則在建立第一個備份原則並啟動該叢集的Cloud Backup時、必須啟用此功能。</block>
@@ -1910,15 +1904,10 @@
   <block id="921b747c1abfd997d26a273c0b62011b" category="section-title">什麼是DataLock</block>
   <block id="dfb62b997a26ac6f842b39091a92428a" category="paragraph">DataLock可保護您的備份檔案、避免在一段時間內遭到修改或刪除。此功能使用物件儲存供應商的技術來「物件鎖定」。備份檔案被鎖定（並保留）的期間稱為DataLock保留期間。它是根據您定義的備份原則排程和保留設定、加上14天的緩衝區。任何少於30天的DataLock保留原則、最短四捨五入至30天。</block>
   <block id="f6494bde8c5d58e1a40bf174c8083f96" category="paragraph">讓我們來看看幾個例子、瞭解這項功能的運作方式：</block>
-  <block id="19606e2b227c881953690cfcbb2621ad" category="list-text">如果您建立的每月備份排程有12個保留項目、則備份會在刪除之前鎖定12個月（加上14天）（由下一個備份檔案取代）。</block>
   <block id="4f326e1a4453cc79600c1df4374d2c22" category="list-text">如果您建立的備份原則每天建立30個、每週7個、每月12個備份、則會有三個鎖定的保留期間。「30天」備份將保留44天（30天加上14天緩衝）、「7週」備份保留9週（7週加上14天）、「12個月」備份則保留12個月（加上14天）。</block>
-  <block id="74e291c59b5337829d6b959b562110ba" category="list-text">如果您建立24個保留項目的每小時備份排程、您會認為備份會鎖定24小時。不過、由於這低於30天的最少時間、因此每個備份都會被鎖定並保留44天（30天加上14天的緩衝）。</block>
-  <block id="d9d4ba4e9716540e097a3623daaf1962" category="paragraph">您可以在最後一次看到、如果每個備份檔案被鎖定44天、您將會有更多的備份檔案、而不是通常以每小時24小時保留原則來保留。一般而言、一旦Cloud Backup建立第25個備份檔案、就會刪除最舊的備份、使保留上限維持在24（根據原則）。在這種情況下、DataLock保留設定會覆寫備份原則的原則保留設定。這可能會影響您的儲存成本、因為備份檔案將會儲存在物件存放區中一段較長的時間。</block>
   <block id="57f10edfffe2adcbce7ee7a76dc7702f" category="section-title">什麼是勒索軟體保護</block>
-  <block id="cad8a645661899cd5a1b0a948cae91fd" category="paragraph">勒索軟體保護功能會掃描您的備份檔案、尋找勒索軟體攻擊的證據。勒索軟體攻擊的偵測是使用Checksum比較來執行。如果在備份檔案中識別出潛在的勒索軟體、而在先前的備份檔案中、則新的備份檔案會被最新的備份檔案取代、而該檔案不會顯示任何勒索軟體攻擊的跡象。（被識別為遭受勒索軟體攻擊的檔案、在被取代1天後即會刪除。）</block>
   <block id="6178bb3c1b6a8af3ec3a7000d38df00e" category="paragraph">勒索軟體掃描會在備份與還原程序的3點執行：</block>
   <block id="74fdca54d2260fb26943ee68a4de7888" category="list-text">建立備份檔案時</block>
-  <block id="07b31f5674c57b8903c6b15b2144b514" category="paragraph">第一次寫入雲端儲存設備、但寫入下一個備份檔案時、不會對備份檔案執行掃描。例如、如果您已設定星期二的每週備份排程、則會在星期二14建立備份。然後在星期二建立另一個備份。此時勒索軟體掃描會在備份檔案上執行、從14開始執行。</block>
   <block id="f656e9389b65beefa5f22506a262c68a" category="list-text">當您嘗試從備份檔案還原資料時</block>
   <block id="d71c7fafb5eead8d41c2869b8c551f6a" category="paragraph">您可以選擇在從備份檔案還原資料之前執行掃描、或跳過此掃描。</block>
   <block id="826c19d01b527f2701cc3460b9c889de" category="list-text">手動</block>
@@ -1974,7 +1963,6 @@
   <block id="f5ef24e218bb7a52732b62958bb89c68" category="list-text">掃描備份檔案以找出可能的勒索軟體攻擊、並自動移除/取代受感染的備份。</block>
   <block id="3f28b1a3a0b3b6c8294e56323ec13e18" category="list-text">將較舊的備份檔案分層至歸檔儲存設備、以節省成本。</block>
   <block id="fe66ea47b1e195d0a8f311d62ee027d8" category="paragraph">資源費用會支付給雲端供應商、用於物件儲存容量、以及將備份檔案寫入和讀取至雲端。</block>
-  <block id="ea7f0ec7b7c9b030700a4f123edfd3eb" category="list-text">對於使用搜尋與還原的Volume或檔案還原、某些資源是由您的雲端供應商提供、且每個TiB的成本與搜尋要求所掃描的資料量有關。</block>
   <block id="8006ced8739173ca22ba2b0d83f53268" category="inline-link">Azure Synapse工作區</block>
   <block id="31f9c16bc3570a56499294176c354ee7" category="inline-link">Azure Data Lake儲存設備</block>
   <block id="82ba9e045163c7c72098c50671704351" category="list-text">在Azure中<block ref="a3ff4de37e7a195a145416e9f02577ac" category="inline-link-rx"></block> 和<block ref="47b506e6a2508a9b210c02fa89bbdc24" category="inline-link-rx"></block> 可在您的儲存帳戶中進行資源配置、以儲存及分析您的資料。</block>
@@ -1985,7 +1973,6 @@
   <block id="136194d46b42cb1f4c0ffea5b134879e" category="list-text">企業：DataLock模式設為_Enterprise_、在保留期間內、具有特定權限的使用者可以覆寫或刪除備份檔案。已啟用勒索軟體保護。</block>
   <block id="b0e2bacf658f248f5b3198bb6ec3cf68" category="list-text">法規遵循：DataLock模式設為_Compliance、使用者在保留期間內無法覆寫或刪除備份檔案。已啟用勒索軟體保護。</block>
   <block id="307f506933fa37350a3739584fc7749a" category="paragraph">保留期間與排程保留期間相同、加上14天。例如、使用_5_份複本的每週備份會鎖定每個備份檔案5週。_每月_備份加上_6_份複本、將會鎖定每個備份檔案6個月。</block>
-  <block id="5d9fc27df9d43a3f4819efb43ba8f23a" category="paragraph">當您的備份目的地是Amazon S3時、目前可提供支援。其他儲存供應商目的地將會新增至未來版本。</block>
   <block id="668420eb25c0657fa1ed103061b132a1" category="admonition">如果您要將備份分層至歸檔儲存設備、則無法啟用DataLock。</block>
   <block id="e4d473c7eaa0d5a17a8380f5a1f05a7e" category="paragraph">請參閱 <block ref="6fd60dcfbd658d3c6de952e2d3164749" category="inline-link-macro-rx"></block> 如需DataLock和勒索軟體保護功能運作方式的詳細資訊、請參閱。</block>
   <block id="648e07eb3f255382cd68dd1ee61b6561" category="section-title">舊備份檔案的歸檔儲存設備</block>
@@ -2417,16 +2404,13 @@
   <block id="639be990cfca56ab4b63685d8bacd437" category="list-text">請至提交非技術案例<block ref="2298f47e4dad19a3156da7ce6116d9b1" category="inline-link-rx"></block></block>
   <block id="aa254718f2c52dc147bfd8f98b0c4840" category="inline-link">不再是不一樣的Cloud Insights Cloud Secure</block>
   <block id="86fef274eb09e789513af0922e579b5a" category="inline-link">提供來自VMware的反勒索軟體保護ONTAP</block>
-  <block id="f27beac3d097dd791847516307a68045" category="paragraph">此功能並不提供來源磁碟區的保護、只能用於這些來源磁碟區的備份。使用NetApp<block ref="2e57621b97dadc1cef3dd80d75e83676" category="inline-link-rx"></block>或部分<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block> 保護來源磁碟區。</block>
   <block id="dc52d5a83e31ec66da3344056a4e4e39" category="paragraph">請注意、舊備份會在DataLock保留期間到期後刪除、而非在備份原則保留期間到期後刪除。</block>
   <block id="49a6926ab95494c4de6e1f26bab7e4d5" category="list-text">治理（StorageGRID 不適用於此產品）</block>
   <block id="4e828df72a865dff97ed752d2c9c8307" category="paragraph">DataLock設定為_Governance模式、其中使用者具有特定權限（<block ref="6091ac16b06103b3d1b14d6f408bb364" category="inline-link-macro-rx"></block>）可在保留期間覆寫或刪除備份檔案。已啟用勒索軟體保護。</block>
   <block id="5a080c775e60ee1f55b487821cc05ac3" category="paragraph">DataLock設為_Compliance模式、在保留期間內、任何使用者都無法覆寫或刪除備份檔案。已啟用勒索軟體保護。</block>
-  <block id="2d950277b1c4175f1241fd34170e963f" category="admonition">「支援物件鎖定」功能提供單一DataLock模式、相當於StorageGRID 「符合法規」模式。不支援同等的治理模式、因此沒有使用者能夠略過保留設定、覆寫受保護的備份或刪除備份。</block>
   <block id="189baba290165c9a7ddf7f3c3ec05a6a" category="paragraph">在下列公有雲和私有雲供應商中使用物件儲存設備時、您可以從ONTAP 下列工作環境啟用下列功能中的「資料鎖定」和「勒索軟體」保護功能。未來版本將會新增其他雲端供應商。</block>
   <block id="12ffabaafd850d6e279869bb1cd0b7c8" category="cell">ifdef：：AWS：Amazon S3 endif：：AWS [] ifdef：：azure[] endif：：azure[] ifdef：：Gcp[] endif：：GCP[] NetApp StorageGRID Rside</block>
   <block id="de45b13527319d3765cb25daa45622e5" category="list-text">您必須使用Cloud Manager 3.9.21或更新版本</block>
-  <block id="57eabf5a162d469521b2a0fa9368dd35" category="list-text">對於AWS、Connector必須部署在雲端</block>
   <block id="46651d9c49a465cb6fa5e07cd6981948" category="list-text">下列S3權限必須是為Connector提供權限的IAM角色的一部分。它們位於資源「arn:AWS:S3：：：：NetApp備份-*」的「backupS3Policy」區段：</block>
   <block id="709168c65e2b4e5806ef96ffe25ed710" category="paragraph">「S3：BypassGovernanceRetention」僅在您希望管理員使用者能夠覆寫/刪除使用「管理模式」鎖定的備份檔案時才必須新增。</block>
   <block id="a0cfa687d678b7bdaa6e05ad4367a96d" category="list-text">適用於下列項目：StorageGRID</block>
@@ -2438,7 +2422,6 @@
   <block id="cd2965bfeacaceb11394002abe013260" category="summary">您可以向雲端供應商購買隨用隨付（PAYGO）或一年一度的市場訂閱、或向NetApp購買自帶授權（BYOL）、以取得Cloud Backup授權。在工作環境中啟動Cloud Backup、建立正式作業資料的備份、以及將備份資料還原至正式作業系統時、需要有效的授權。</block>
   <block id="ca636232aaf17fe5d8fef3b105b4363c" category="list-text">將磁碟區、資料夾或個別檔案還原至來源系統或其他系統。</block>
   <block id="ead18a75e8ad08c3fd02c4ded3f53521" category="list-text">可瀏覽且可搜尋的檔案目錄、可用於選取個別資料夾和檔案以進行單一檔案還原。</block>
-  <block id="b05129b87daa8f26e20ce7f835876ea3" category="list-text">物件存放區上的WORM /法規遵循模式StorageGRID 目前僅在Amazon S3和支援。這稱為DataLock功能。</block>
   <block id="e831d27edb715928e8204ce285611618" category="section-title">檔案與資料夾還原限制</block>
   <block id="79ec871c574dbe9adf17973bdb4bf029" category="paragraph">這些限制同時適用於「搜尋與還原」和「瀏覽與還原」還原檔案與資料夾的方法、除非特別提出。</block>
   <block id="7a6f7d393f4de35501272976e1ba9e03" category="list-text">瀏覽與還原及搜尋與還原可一次還原1個資料夾。</block>
@@ -2662,4 +2645,25 @@
   <block id="262efb8db11032d91af39217fa610e82" category="paragraph">您可以將磁碟區、資料夾或個別檔案、從ONTAP 還原備份檔還原至下列工作環境：</block>
   <block id="5a885bd71d1142c7d1b89fcfcf197a41" category="sidebar">還原ONTAP 來自還原備份檔案的資料</block>
   <block id="ba9a6951ecf97e593c2140f66a8574bf" category="sidebar">從ONTAP 還原磁碟區還原檔案和資料夾</block>
+  <block id="855a635321caeb08d8525de5eea56651" category="list-text">若要使用「搜尋與還原」還原資料、某些資源會由您的雲端供應商進行資源配置、而且每個TiB的成本會與搜尋要求所掃描的資料量有關。（瀏覽與還原不需要這些資源。）</block>
+  <block id="c03019f9be2cb226dc19ca939f4d2a98" category="paragraph">在工作環境中啟用Cloud Backup時、您最初選取的所有磁碟區都會使用您定義的預設備份原則進行備份。如果您想要將不同的備份原則指派給具有不同恢復點目標（RPO）的特定磁碟區、您可以為該叢集建立其他原則、並在啟用Cloud Backup之後將這些原則指派給其他磁碟區。</block>
+  <block id="887b3715a8c6b9f979173f9bb78db138" category="paragraph">當您的備份目的地是Amazon S3或NetApp StorageGRID 時、目前可提供支援。其他儲存供應商目的地將會新增至未來版本。</block>
+  <block id="eec8499000c8f659d98df740f918b905" category="list-text">物件存放區上的WORM /法規遵循模式StorageGRID 目前僅在Amazon S3和支援。這稱為DataLock功能、必須使用Cloud Backup設定來管理。</block>
+  <block id="5116aee7e891450dd457789d0b3857e4" category="paragraph">本文件說明ONTAP 使用時、內部作業系統及Cloud Volumes ONTAP 支援系統的備份原則組態設定Cloud Backup Service 。</block>
+  <block id="f576f81f502b655c924b76cc045e8946" category="paragraph">Cloud Backup可讓您針對每個工作環境（叢集）建立多個備份原則、並提供獨特的排程。您可以將不同的備份原則指派給具有不同還原點目標（RPO）的磁碟區。</block>
+  <block id="3b190b83ddc2ee9e610caa6dc209fbaf" category="list-text">*標籤*定義從磁碟區建立（或更新）備份檔案的頻率。您可以選擇下列類型的標籤：</block>
+  <block id="42f0dfacb9775e138cb12f277162bec2" category="list-text">您可以選擇其中一個系統定義的原則、以提供3個月、1年或7年的備份與保留。</block>
+  <block id="cc52989062051281d16ab44b8c24cbef" category="list-text">在第8週、第一週備份會移除、並新增第8週的每週備份（每週最多保留7次備份）。</block>
+  <block id="1d7733f94633408426a8b5de97f97f13" category="list-text">在第13個月、第一個每月備份就會移除、並新增第13個月的每月備份（最多保留12個月備份）。</block>
+  <block id="105cf1dd74d7a9079245d031f91df8b0" category="paragraph">此功能無法為來源磁碟區提供保護、只能用於這些來源磁碟區的備份。使用NetApp<block ref="2e57621b97dadc1cef3dd80d75e83676" category="inline-link-rx"></block>或部分<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block> 保護來源磁碟區。</block>
+  <block id="f88d31c8fba76a471a02f0b65a9ac963" category="list-text">如果您建立的每月備份排程有12個保留項目、則每個備份都會在刪除之前鎖定12個月（加上14天）。</block>
+  <block id="bf7c437191fdcde55e7d7e2fc049c230" category="list-text">如果您建立24個保留項目的每小時備份排程、您可能會認為備份會鎖定24小時。不過、由於這低於30天的最少時間、因此每個備份都會被鎖定並保留44天（30天加上14天的緩衝）。</block>
+  <block id="681e74daf8a2c7a6316ddee6727d3b7f" category="paragraph">您可以在最後一次看到、如果每個備份檔案被鎖定44天、您將會有更多的備份檔案、而不是通常以每小時24小時保留原則來保留。通常、當Cloud Backup建立第25個備份檔案時、它會刪除最舊的備份、以將保留上限維持在24（根據原則）。在這種情況下、DataLock保留設定會覆寫備份原則的原則保留設定。這可能會影響您的儲存成本、因為備份檔案將會儲存在物件存放區中一段較長的時間。</block>
+  <block id="e81b2d9a99c319820fe2a1d0b0d7f2bf" category="paragraph">勒索軟體保護功能會掃描您的備份檔案、尋找勒索軟體攻擊的證據。勒索軟體攻擊的偵測是使用Checksum比較來執行。如果在備份檔案中識別出潛在的勒索軟體、而在先前的備份檔案中、則新的備份檔案會被最新的備份檔案取代、而該檔案不會顯示任何勒索軟體攻擊的跡象。（被識別為遭受勒索軟體攻擊的檔案、在被取代1天後即會刪除。）</block>
+  <block id="c545a26c4ed6190e3a8c71826161a528" category="paragraph">第一次寫入雲端儲存設備時、並不會對備份檔案執行掃描、但會在寫入*下一次*備份檔案時執行掃描。例如、如果您已設定星期二的每週備份排程、則會在星期二14建立備份。然後在星期二建立另一個備份。此時勒索軟體掃描會在備份檔案上執行、從14開始執行。</block>
+  <block id="e3ab630e3f610a8213d19aed9bf024c4" category="admonition">「支援物件鎖定」功能提供單一DataLock模式、相當於StorageGRID 「符合法規」模式。不支援等效的治理模式、因此沒有使用者能夠略過保留設定、覆寫受保護的備份、或刪除鎖定的備份。</block>
+  <block id="83933361b1e2abf7e7f406666cc9c104" category="list-text">對於AWS：</block>
+  <block id="f8a98c701370ca7b2e41192ca7baaa6b" category="list-text">連接器必須部署在雲端</block>
+  <block id="d82ac33ca1171e71de283e404129a0c4" category="paragraph">如果您的叢集使用ONTAP 的是版本號為S還原9.10.1或更新版本、您可以選擇在特定天數後、將舊版備份分層至_S3 Glacier或_S3 Glacier Deep Archive_儲存設備、以進一步最佳化成本。 <block ref="f7fa7b0a9e810d8c500bcf785a34f359" category="inline-link-macro-rx"></block>。</block>
+  <block id="3dfe42849739012935ae4b966fa89d76" category="paragraph">如果您的叢集使用ONTAP 的是版本號為S還原9.10.1或更新版本、您可以選擇在特定天數後、將舊版備份分層至_Azure Archive_儲存設備、以進一步最佳化成本。 <block ref="2f91ed687cd1d1d6d8235865263a43ff" category="inline-link-macro-rx"></block>。</block>
 </blocks>
