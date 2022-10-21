@@ -1087,7 +1087,6 @@
   <block id="be956322a93c4a7bc2b8c8b049f7496e" category="paragraph">請先閱讀下列需求、確定您擁有支援的組態、再開始將內部部署磁碟區備份到Google Cloud儲存設備。</block>
   <block id="2d0d225e73f16b3d6a3fd87e23385c8e" category="paragraph">從內部部署ONTAP 的還原系統設定備份到Google Cloud Storage時、您可以使用兩種連線方法。</block>
   <block id="9a5f1a8ca0c47b2989eff1e34ffce9a2" category="list-text">公共連線：ONTAP 使用公有Google端點、直接將該等系統連線至Google Cloud Storage。</block>
-  <block id="bb34fe147704098832eaf972d37eaa4e" category="list-text">私有連線：使用VPN或私有服務連線、並透過使用私有IP位址的私有Google存取介面路由流量。</block>
   <block id="0ee205b9a66364b8bd529d4a5a68568a" category="list-text">透過連接埠443從叢集間LIF啟動HTTPS連線至Google Cloud儲存設備、以便進行備份與還原作業。ONTAP</block>
   <block id="a45a0d78412f96d4e0612c2263af5042" category="list-text">需要連接器與叢集管理LIF之間的傳入連線。ONTAPConnector可位於Google Cloud Platform VPC中。</block>
   <block id="c359c4549d4c72aed13558f2e3ef33a0" category="list-text">透過連接埠443連線至Google Cloud儲存設備的HTTPS連線</block>
@@ -1352,7 +1351,6 @@
   <block id="6b0c75410e611c90f61766c508b79740" category="paragraph">您可以 <block ref="aa20de8329f0af2f510902910d29f0be" category="inline-link-macro-rx"></block>。您也可以 <block ref="091cc4395662354f7a5868ee2318ef97" category="inline-link-macro-rx"></block> 在AWS（位於同一個區域）的相同或不同Kubernetes叢集上做為新磁碟區。</block>
   <block id="3c10116b37b407ac79092a38ffb292e4" category="summary">在您透過NetApp技術支援開啟支援案例之前、您必須先將NetApp支援網站帳戶新增至Cloud Manager、然後註冊以取得支援。</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">註冊以取得支援</block>
-  <block id="de2241fea60d98698faaa196ff73ee80" category="paragraph">「支援儀表板」可讓您從單一位置新增及管理所有NetApp支援網站帳戶。</block>
   <block id="0046efb3377274ff3215d4b30269809e" category="list-text">在Cloud Manager主控台右上角、按一下「說明」圖示、然後選取*「支援」*。</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">「說明」功能表的快照、其中「支援」是第一個列出的選項</block>
   <block id="868d9aa88f16ea923af1d15eac5d2647" category="paragraph"><block ref="868d9aa88f16ea923af1d15eac5d2647" category="inline-image-macro-rx" type="image"></block></block>
@@ -2668,4 +2666,8 @@
   <block id="3a93813464b52092578b75c490a315d3" category="paragraph">當連接器部署在雲端時（而非安裝在您的內部部署或暗處）、政府部門會在GovCloud區域中支援Cloud Backup。此外、您必須從AWS Marketplace部署Connector。您無法從Cloud Manager SaaS網站在政府區域部署Connector。<block ref="8b836e33a466c00dcf60eebb57972847" category="inline-link-rx"></block>。</block>
   <block id="50f6114c76c0178ff63cce6c4efbb5bc" category="inline-link">瞭解如何在Azure政府區域中建立Connector</block>
   <block id="73e80c85d0469fdbf73937e3b2fc2017" category="paragraph">當連接器部署在雲端時、Azure政府區域支援Cloud Backup、而非安裝在內部部署或暗處時。此外、您必須從Azure Marketplace部署Connector。您無法從Cloud Manager SaaS網站在政府區域部署Connector。<block ref="9758449d9191108f8c90137ecdba7919" category="inline-link-rx"></block>。</block>
+  <block id="77bdda0b5be7d2725f2b5941d74db0e2" category="paragraph">「支援儀表板」可讓您新增及管理NetApp 支援網站 要搭配Cloud Manager使用的各種不一致帳戶。</block>
+  <block id="328a2c1e7778e9edaf79d90c51409ac4" category="list-text">如果您有客戶層級的帳戶、可以新增一或多個NSS帳戶。</block>
+  <block id="4fde72c535fd0cd463dbeb49347cdfae" category="list-text">如果您有合作夥伴或經銷商帳戶、您可以新增一或多個NSS帳戶、但這些帳戶無法與客戶層級帳戶一起新增。</block>
+  <block id="d0a875b745f9b38ce0c00471ccf26254" category="list-text">私有連線：使用VPN或Google Cloud互連、並透過使用私有IP位址的私有Google Access介面路由流量。</block>
 </blocks>

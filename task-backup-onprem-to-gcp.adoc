@@ -64,7 +64,7 @@ image:screenshot_backup_policy_gcp.png["顯示Cloud Backup設定的快照、您�
 從內部部署ONTAP 的還原系統設定備份到Google Cloud Storage時、您可以使用兩種連線方法。
 
 * 公共連線：ONTAP 使用公有Google端點、直接將該等系統連線至Google Cloud Storage。
-* 私有連線：使用VPN或私有服務連線、並透過使用私有IP位址的私有Google存取介面路由流量。
+* 私有連線：使用VPN或Google Cloud互連、並透過使用私有IP位址的私有Google Access介面路由流量。
 
 
 下圖顯示*公用連線*方法、以及元件之間需要準備的連線。您可以使用內部部署安裝的Connector、或是部署在Google Cloud Platform VPC上的Connector。
