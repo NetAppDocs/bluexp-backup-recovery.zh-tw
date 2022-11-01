@@ -20,13 +20,13 @@ summary: 探索應用程式以指派原則並建立備份。
 
 * 您應該已經建立FSX,以利ONTAP 進行不工作的環境和連接器。
 * 確保Connector可連線至FSX、以利ONTAP 執行不中斷作業的環境和Oracle資料庫主機。
-* 確保Cloud Manager使用者具有「帳戶管理員」角色。
+* 確定BlueXP使用者具有「帳戶管理員」角色。
 * 您應該已經部署SnapCenter 了適用於Oracle的不支援功能外掛程式。 link:reference-prereq-protect-cloud-native-app-data.html#deploy-snapcenter-plug-in-for-oracle["深入瞭解"]。
 
 
 *步驟*
 
-. 在Cloud Manager UI中、按一下*備份與還原*>*應用程式*。
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 按一下「探索應用程式」。
 . 選取* Cloud Native *、然後按一下* Next*。
 +

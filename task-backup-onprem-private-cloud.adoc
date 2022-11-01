@@ -25,7 +25,7 @@ summary: 請完成幾個步驟、開始從內部部署ONTAP 的支援系統備�
 請依照下列步驟快速入門、或向下捲動至其餘部分以取得完整詳細資料。
 
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] alt="1"></span>請確認您的組態是否支援
-* 您已探索內部部署叢集、並將其新增至 Cloud Manager 中的工作環境。請參閱 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
+* 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
 +
 ** 叢集執行 ONTAP 的是更新版本的 1.7P5 。
 ** 叢集具有SnapMirror授權、包含在優質產品組合或資料保護產品組合中。
@@ -82,7 +82,7 @@ image:diagram_cloud_backup_onprem_storagegrid.png["顯示Cloud Backup如何與�
 
 === 準備 ONTAP 您的叢集
 
-您必須先在ONTAP Cloud Manager中探索內部部署的叢集、才能開始備份大量資料。
+您必須先在ONTAP BlueXP中探索內部部署的叢集、才能開始備份大量資料。
 
 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
 
@@ -170,7 +170,7 @@ S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支
 
 
 
-NOTE: Cloud Manager Connector內建Cloud Backup功能。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["雲端備份新功能"] 若要查看每個Cloud Backup版本中的新功能、請依照下列步驟執行 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["升級Connector軟體"^] 當您想要使用新功能時。
+NOTE: BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["雲端備份新功能"] 若要查看每個Cloud Backup版本中的新功能、請依照下列步驟執行 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["升級Connector軟體"^] 當您想要使用新功能時。
 
 
 

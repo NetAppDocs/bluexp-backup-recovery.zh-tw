@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-app-backups.html 
 keywords: manage, Azure, Amazon Web services, Oracle database, Microsoft SQL Server database, backups, policy, monitor, jobs, monitor jobs, SAP HANA database 
-summary: 您可以檢視原則和備份。視資料庫、原則或資源群組的變更而定、您可以從Cloud Manager UI重新整理更新。 
+summary: 您可以檢視原則和備份。視資料庫、原則或資源群組的變更而定、您可以從BlueXP UI重新整理更新。 
 ---
 = 管理應用程式保護
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 您可以檢視原則和備份。視資料庫、原則或資源群組�
 
 
 [role="lead"]
-您可以從Cloud Manager UI執行不同的作業來管理應用程式保護。
+您可以從BlueXP UI執行不同的作業來管理應用程式保護。
 
 
 
@@ -40,14 +40,14 @@ NOTE: 您無法編輯或刪除與應用程式相關聯的原則。
 
 == 檢視雲端上的備份
 
-您可以在Cloud Manager UI中檢視雲端上的備份。
+您可以在BlueXP UI中檢視雲端上的備份。
 
 . 按一下*備份與還原*>*應用程式*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*檢視詳細資料*。
 
 
 
-IMPORTANT: 列出備份所需的時間取決於ONTAP的預設複寫排程（最多1小時）和Cloud Manager（最多6小時）。
+IMPORTANT: 列出備份所需的時間取決於ONTAP的預設複寫排程（最多1小時）和BlueXP（最多6小時）。
 
 * 對於Oracle資料庫、資料與記錄備份、每個備份的SCN編號、會列出每個備份的結束日期。您只能選取資料備份、然後將資料庫還原至內部部署SnapCenter 的伺服器。
 * 對於Microsoft SQL Server資料庫、只會列出每個備份的完整備份和結束日期。您可以選取備份、並將資料庫還原至內部部署SnapCenter 的伺服器。
@@ -102,7 +102,7 @@ NOTE: 在啟用雲端保護之前所建立的備份並未列出以供還原。
 
 所有雲端備份作業都會建立。您可以監控在每項工作中執行的所有工作和所有子工作。
 
-. 按一下*備份與還原*>*工作監控*。
+. 按一下*備份與恢復*>*工作監控*。
 +
 當您啟動作業時、會出現一個視窗、指出該工作已啟動。您可以按一下連結來監控工作。
 
@@ -117,7 +117,7 @@ NOTE: 在啟用雲端保護之前所建立的備份並未列出以供還原。
 
 *步驟*
 
-. 在Cloud Manager UI中、按一下「* Canvas*>*新增工作環境*」。
+. 在BluXP UI中、按一下* Storage *>* Canvas*>* My Working Environment*>* Add Working Environment*。
 . 指定主要工作環境的詳細資料、然後按一下*「Add*（新增*）」。
 . 按一下*備份與還原*>*磁碟區*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 對應任何磁碟區、然後按一下*詳細資料*。

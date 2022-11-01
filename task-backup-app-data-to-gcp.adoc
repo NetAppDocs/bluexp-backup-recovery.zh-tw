@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-app-data-to-gcp.html 
-keywords: backing up, back up, backup, backup application data, Google Cloud, GCP, Cloud Backup, cloud backup service, Oracle database, Microsoft SQL Server database, SAP HANA database 
+keywords: backing up, back up, backup, backup application data, Google Cloud Platform, GCP, Cloud Backup, cloud backup service, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: 請完成幾個步驟、將應用程式資料從ONTAP 功能完善的資料備份到GCP。 
 ---
-= 將內部部署應用程式資料備份到Google Cloud
+= 將內部部署應用程式資料備份到Google Cloud Platform
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,16 +14,16 @@ summary: 請完成幾個步驟、將應用程式資料從ONTAP 功能完善的�
 
 
 [role="lead"]
-您可以ONTAP 將Cloud Backup for Applications與Cloud Manager和內部部署SnapCenter 的內部環境的整合、將應用程式資料從功能性資料備份到Google Cloud。
+您可以ONTAP 將Cloud Backup for Applications與BlueXP和內部部署SnapCenter 的更新整合、將應用程式資料從功能性資料備份到Google Cloud Platform。
 
 您可以使用單一原則、將一或多個應用程式同時保護到雲端。
 
 
-IMPORTANT: 如果您使用Cloud Manager GUI、一次只能保護一個應用程式。不過、如果您使用REST API、則可以同時保護多個應用程式。
+IMPORTANT: 如果您使用的是BlueXP GUI、一次只能保護一個應用程式。不過、如果您使用REST API、則可以同時保護多個應用程式。
 
 *步驟*
 
-. 在Cloud Manager UI中、按一下*備份與還原*>*應用程式*。
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*啟動備份*。
 . 在「指派原則」頁面中、選取原則、然後按「*下一步*」。
 . 新增工作環境。

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-cloud-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites 
-summary: 在NetApp Cloud Manager中啟用的雲端應用程式備份、可提供高效、應用程式一致、原則型的備份、並還原位於Amazon FSX for NetApp ONTAP 的Oracle®資料庫。 
+keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Manager, BlueXP 
+summary: 在NetApp BlueXP中啟用的雲端應用程式備份、可提供高效、應用程式一致、原則型的備份、以及位於Amazon FSX for NetApp ONTAP 的Oracle®資料庫還原。 
 ---
 = 保護雲端原生應用程式資料
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 在NetApp Cloud Manager中啟用的雲端應用程式備份、可提供
 
 
 [role="lead"]
-Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在NetApp Cloud Manager中啟用的雲端應用程式備份、可提供高效、應用程式一致、原則型的備份、並還原位於Amazon FSX for NetApp ONTAP 的Oracle資料庫。
+Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在NetApp BlueXP（formerlt Cloud Manager）中啟用的雲端應用程式備份、可針對位於Amazon FSX for NetApp ONTAP 的Oracle資料庫、提供有效率、應用程式一致、原則型的備份及還原。
 
 
 
@@ -22,15 +22,15 @@ Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage
 
 Cloud Backup for Applications架構包含下列元件。
 
-* Cloud Backup for Applications是一組由NetApp代管的SaaS服務、以Cloud Manager SaaS平台為基礎。
+* Cloud Backup for Applications是一組由NetApp代管的SaaS服務、以BlueXP SaaS平台為基礎。
 +
 它能協調NetApp雲端儲存設備上的應用程式資料保護工作流程。
 
-* Cloud Backup for Applications UI與Cloud Manager UI整合。
+* Cloud Backup for Applications UI已與BlueXP UI整合。
 +
 Cloud Backup for Applications UI提供多種儲存與資料管理功能。
 
-* Cloud Manager Connector是Cloud Manager的元件、可在您的雲端網路中執行、並與在SnapCenter Oracle資料庫主機上執行的Amazon FSX儲存檔案系統和適用於Oracle的Sfxin外掛程式互動。
+* BlueXP Connector是BlueXP的元件、可在雲端網路中執行、並與在SnapCenter Oracle資料庫主機上執行的Amazon FSX儲存檔案系統和適用於Oracle的支援Oracle的插件互動。
 * 適用於Oracle的零組件可在每個Oracle資料庫主機上執行、並與主機上執行的Oracle資料庫互動、同時執行資料保護作業。SnapCenter
 +
 下圖顯示每個元件及其之間需要準備的連線：
@@ -39,7 +39,7 @@ Cloud Backup for Applications UI提供多種儲存與資料管理功能。
 image:diagram_nativecloud_backup_app.png["顯示Cloud Backup如何與不同元件通訊的圖表"]
 
 +
-對於任何使用者啟動的要求、Cloud Backup for Applications UI會與Cloud Manager SaaS進行通訊、而Cloud Manager SaaS會在驗證要求時處理相同的程序。如果要求執行工作流程（例如備份或還原）、SaaS服務會啟動工作流程、並在必要時將通話轉接至Cloud Manager Connector。然後Connector會與Amazon FSX for NetApp ONTAP 的支援Oracle和SnapCenter 支援Oracle的支援功能進行通訊、以執行工作流程工作。
+對於任何使用者啟動的要求、Cloud Backup for Applications UI會與驗證要求後處理相同程序的BlueXP SaaS進行通訊。如果要求執行工作流程（例如備份或還原）、SaaS服務會啟動工作流程、並在必要時將通話轉接至BlueXP Connector。然後Connector會與Amazon FSX for NetApp ONTAP 的支援Oracle和SnapCenter 支援Oracle的支援功能進行通訊、以執行工作流程工作。
 
 +
 連接器可部署在與Oracle資料庫相同的VPC上、或部署在不同的VPC上。如果Connector和Oracle資料庫位於不同的網路上、您應該在兩者之間建立網路連線。

@@ -23,7 +23,7 @@ summary: 請完成幾個步驟、開始將資料從您的持續磁碟區備份�
 請依照下列步驟快速入門、或向下捲動至其餘部分以取得完整詳細資料。
 
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] alt="1"></span>檢閱先決條件
-* 您發現Kubernetes叢集是Cloud Manager工作環境。
+* 您已將Kubernetes叢集探索為藍圖XP工作環境。
 +
 ** 叢集上必須安裝Trident、Trident版本必須為21.1或更新版本。
 ** 所有用於建立要備份之持續磁碟區的PVCS、都必須將「snapshotPolicy」設為「Default」（預設）。
@@ -65,7 +65,7 @@ image:diagram_cloud_backup_k8s_cvo_azure.png["顯示Cloud Backup如何與來源�
 Kubernetes 叢集需求::
 +
 --
-* 您發現Kubernetes叢集是Cloud Manager工作環境。 https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-kubernetes-discover-azure.html["瞭解如何探索Kubernetes叢集"^]。
+* 您已將Kubernetes叢集探索為藍圖XP工作環境。 https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-kubernetes-discover-azure.html["瞭解如何探索Kubernetes叢集"^]。
 * 叢集上必須安裝Trident、Trident版本必須至少21.1。請參閱 https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-manage-trident.html["如何安裝Trident"^] 或 https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["如何升級Trident版本"^]。
 * 叢集必須在Cloud Volumes ONTAP Azure上使用以做為其後端儲存設備。
 * 該系統必須與Kubernetes叢集位於同一個Azure區域、且必須執行更新版本的版本號為《S時 局》（建議使用更新版本的版本號為《時局》）Cloud Volumes ONTAP ONTAP ONTAP 。

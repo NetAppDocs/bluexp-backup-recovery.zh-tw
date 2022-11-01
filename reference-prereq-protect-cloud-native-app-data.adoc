@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: reference-prereq-protect-cloud-native-app-data.html 
-keywords: Cloud Manager, FSx for ONTAP, working environment, Connector, AWS, deploy Oracle plug-in 
+keywords: Cloud Manager, FSx for ONTAP, working environment, Connector, AWS, deploy Oracle plug-in, BlueXP 
 summary: 在建立備份之前、請先完成先決條件。 
 ---
 = 先決條件
@@ -14,13 +14,13 @@ summary: 在建立備份之前、請先完成先決條件。
 
 
 [role="lead"]
-您應該可以存取Cloud Manager、建立Cloud Manager帳戶、建立工作環境和Connector、並部署SnapCenter 適用於Oracle的「支援Oracle的支援程式」。
+您應該可以存取BlueXP、建立一個BlueXP帳戶、建立工作環境和連接器、並部署SnapCenter 適用於Oracle的「支援Oracle的更新程式」。
 
 
 
-== 存取Cloud Manager
+== 存取BlueXP
 
-您應該 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-signing-up.html["註冊NetApp Cloud Central"]、 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["登入Cloud Manager"]，然後設定 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-setting-up-netapp-accounts.html["NetApp帳戶"]。
+您應該 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-signing-up.html["註冊NetApp BlueXP網站"]、 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["登入BlueXP"]，然後設定 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-setting-up-netapp-accounts.html["NetApp帳戶"]。
 
 
 
@@ -28,15 +28,15 @@ summary: 在建立備份之前、請先完成先決條件。
 
 您應該建立Amazon FSX、以利ONTAP 資料庫所在的不中斷作業環境。如需相關資訊、請參閱 link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html["Amazon FSX for ONTAP Sfor Sf.入門"] 和 link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["建立及管理Amazon FSX以利ONTAP 實現不工作環境"]。
 
-您可以使用Cloud Manager或AWS來建立NetApp FSX。如果您是使用AWS建立、那麼您應該在ONTAP Cloud Manager中探索FSX for the Sfor the Sfor the System。
+您可以使用BlueXP或AWS來建立NetApp FSX。如果您是使用AWS建立、那麼您應該在ONTAP BlueXP中探索FSXfor the Sfor the Sfor the System.
 
 
 
 == 建立連接器
 
-客戶管理員需要在AWS中部署Connector、讓Cloud Manager能夠管理公有雲環境中的資源和程序。
+客戶管理員需要在AWS中部署Connector、讓BlueXP能夠管理公有雲環境中的資源和程序。
 
-如需相關資訊、請參閱 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["從 Cloud Manager 在 AWS 中建立連接器"]。
+如需相關資訊、請參閱 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["從BlueXP在AWS中建立連接器"]。
 
 * 您應該使用相同的連接器來管理FSX工作環境和Oracle資料庫。
 * 如果您在同一個VPC上有FSX工作環境和Oracle資料庫、您可以在同一個VPC上部署連接器。
@@ -52,7 +52,7 @@ NOTE: 若要使用NAS（NFS）工作負載、您應該在Oracle資料庫VPC和FS
 
 
 
-建立連接器之後、按一下* Canvas*>* Add Working Environment*、然後依照提示新增工作環境。確保連接器與Oracle資料庫主機和FSX工作環境之間有連線。連接器應能連線至FSX工作環境的叢集管理IP位址。
+建立連接器之後、按一下「*儲存設備*>* Canvas*>*我的工作環境*>*「新增工作環境*」、然後依照提示新增工作環境。確保連接器與Oracle資料庫主機和FSX工作環境之間有連線。連接器應能連線至FSX工作環境的叢集管理IP位址。
 
 
 IMPORTANT: 建立連接器之後、按一下*連接器>管理連接器*；選取連接器名稱、然後複製連接器ID。

@@ -14,12 +14,12 @@ summary: 請完成幾個步驟、將應用程式資料從ONTAP 功能完善的�
 
 
 [role="lead"]
-您可以ONTAP 將Cloud Backup for Applications與Cloud Manager和內部部署的內部部署的功能整合、將應用程式資料從功能性資料備份StorageGRID 到功能性資料。SnapCenter
+您可以ONTAP 將Cloud Backup for Applications與BlueXP和內部部署的內部環境中的資料整合、將應用程式資料從功能性資料備份到StorageGRID 功能性資料。SnapCenter
 
 您可以StorageGRID 使用單一原則、同時保護一或多個應用程式、使其成為運作不全的功能。
 
 
-IMPORTANT: 如果您使用Cloud Manager GUI、一次只能保護一個應用程式。不過、如果您使用REST API、則可以同時保護多個應用程式。
+IMPORTANT: 如果您使用的是BlueXP GUI、一次只能保護一個應用程式。不過、如果您使用REST API、則可以同時保護多個應用程式。
 
 *您需要的是什麼*
 
@@ -29,7 +29,7 @@ IMPORTANT: 如果您使用Cloud Manager GUI、一次只能保護一個應用程�
 
 *步驟*
 
-. 在Cloud Manager UI中、按一下*備份與還原*>*應用程式*。
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*啟動備份*。
 . 在「指派原則」頁面中、選取原則、然後按「*下一步*」。
 . 新增工作環境。

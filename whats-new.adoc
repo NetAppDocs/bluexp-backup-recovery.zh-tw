@@ -24,7 +24,7 @@ summary: 瞭解Cloud Backup的新功能。
 
 === Cloud Backup for Applications的增強功能
 
-* 支援Google Cloud Provider（GCP）和StorageGRID 支援以備份應用程式一致的快照
+* 支援Google Cloud Platform（GCP）和StorageGRID 支援以備份應用程式一致的快照
 * 建立自訂原則
 * 支援歸檔儲存
 * 備份SAP HANA應用程式
@@ -86,7 +86,7 @@ summary: 瞭解Cloud Backup的新功能。
 
 === 新增支援以保護雲端原生應用程式資料
 
-Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。Cloud Manager內建的Cloud Backup for Applications可針對位於Amazon FSX for NetApp ONTAP 的Oracle資料庫、提供高效率、應用程式一致且以原則為基礎的備份與還原功能。https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-cloud-app-data-to-cloud.html["深入瞭解"^]。
+Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在BlueXP中啟用的雲端應用程式備份、可針對位於Amazon FSX for NetApp ONTAP 上的Oracle資料庫、提供有效率且應用程式一致的原則型備份與還原功能。https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-cloud-app-data-to-cloud.html["深入瞭解"^]。
 
 
 
@@ -156,7 +156,7 @@ Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage
 
 === 我們新增支援功能、可在ONTAP 無法存取網際網路的站台中備份內部部署的叢集資料
 
-如果您的內部ONTAP 使用的叢集位於無法存取網際網路的站台、也稱為暗站或離線站台、現在您可以使用Cloud Backup將Volume資料備份到StorageGRID 位於同一個站台的NetApp作業系統。此功能需要Cloud Manager Connector（3.9.19或更新版本）也部署在離線站台。
+如果您的內部ONTAP 使用的叢集位於無法存取網際網路的站台、也稱為暗站或離線站台、現在您可以使用Cloud Backup將Volume資料備份到StorageGRID 位於同一個站台的NetApp作業系統。此功能需要同時在離線站台部署BlueXP Connector（3.9.19或更新版本）。
 
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["瞭解如何在離線站台中安裝Connector"]。https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html["瞭解如何在ONTAP 離線網站上備份不只是StorageGRID 資料的功能"]。
 
@@ -164,7 +164,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-o
 
 === 適用於虛擬機器的Cloud Backup 1.1.0現已上市
 
-您可以將SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式與Cloud Manager整合、以保護虛擬機器上的資料。您可以將資料存放區備份到雲端、SnapCenter 並輕鬆將虛擬機器還原回內部部署的VMware vSphere版的內部部署功能。
+您可以將SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式與BlueXP整合、以保護虛擬機器上的資料。您可以將資料存放區備份到雲端、SnapCenter 並輕鬆將虛擬機器還原回內部部署的VMware vSphere版的內部部署功能。
 
 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-vm-data.html["深入瞭解如何將虛擬機器保護至雲端"]。
 
@@ -282,7 +282,7 @@ link:concept-protect-app-data-to-cloud.html["深入瞭解如何將內部部署�
 
 === 新選項可讓您自動將預設備份原則套用至新建立的磁碟區
 
-過去、在雲端備份啟動之後、在工作環境中建立的新磁碟區、需要您手動套用備份原則。現在、無論磁碟區是在Cloud Manager、System Manager、CLI中建立、或是使用API建立、Cloud Backup都會探索磁碟區、並套用您選擇做為預設原則的備份原則。
+過去、在雲端備份啟動之後、在工作環境中建立的新磁碟區、需要您手動套用備份原則。現在、無論磁碟區是在BlueXP、System Manager、CLI中建立、或是使用API建立、Cloud Backup都會探索磁碟區、並套用您選擇做為預設原則的備份原則。
 
 在新的工作環境中啟用備份時、或從現有工作環境的「管理磁碟區」頁面啟用備份時、都可使用此選項。
 
@@ -344,7 +344,7 @@ Cloud Backup現在支援在ONTAP SVM-DR關係中、建立目標支援的DP磁碟
 
 === Cloud Backup BYOL授權已移至Digital Wallet中的「Data Services Licenses（資料服務授權）」索引標籤
 
-Cloud Backup的BYOL授權已從Cloud Backup授權索引標籤移至Cloud Manager Digital Wallet的資料服務授權索引標籤。
+Cloud Backup的BYOL授權已從Cloud Backup授權索引標籤移至BlueXP數位錢包的資料服務授權索引標籤。
 
 
 

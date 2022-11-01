@@ -14,18 +14,18 @@ summary: 從內部部署ONTAP 的地方將資料存放區備份到StorageGRID �
 
 
 [role="lead"]
-您可以StorageGRID 整合SnapCenter VMware vSphere的VMware vSphere for VMware vSphere with Cloud Manager、將一或多個資料存放區備份至VMware。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
+您可以StorageGRID 將SnapCenter VMware vSphere的VMware vSphere的VMware vSphere的VMware外掛程式與BlueXP整合、將一或多個資料存放區備份至VMware。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
 
 
 NOTE: 確保您已滿足所有需求 link:concept-protect-vm-data.html#Requirements["需求"] 將資料存放區備份到雲端之前。
 
 .步驟
-. 在Cloud Manager UI中、按一下*備份與還原*>*虛擬機器*。
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *。
 . 按一下 image:icon-action.png["行動"] 與您要備份的資料存放區相對應、然後按一下「*啟動備份*」。
 . 在「指派原則」頁面中、選取原則、然後按「*下一步*」。
 . 新增工作環境。
 +
-設定ONTAP 您想要Cloud Manager探索的各個叢集、以備份資料存放區。在新增其中一個資料存放區的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他資料存放區。
+設定ONTAP 您希望BlueXP探索的各個叢集、以備份資料存放區。在新增其中一個資料存放區的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他資料存放區。
 
 +
 .. 按一下與SVM對應的*新增工作環境*。

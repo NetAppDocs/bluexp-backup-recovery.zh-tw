@@ -25,7 +25,7 @@ summary: 請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中�
 請依照下列步驟快速入門、或向下捲動至其餘部分以取得完整詳細資料。
 
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] alt="1"></span>請確認您的組態是否支援
-* 您已探索內部部署叢集、並將其新增至 Cloud Manager 中的工作環境。請參閱 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
+* 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
 +
 ** 叢集執行 ONTAP 的是更新版本的 1.7P5 。
 ** 叢集具有SnapMirror授權、包含在優質產品組合或資料保護產品組合中。
@@ -90,7 +90,7 @@ image:diagram_cloud_backup_onprem_azure_private.png["顯示Cloud Backup如何透
 
 === 準備 ONTAP 您的叢集
 
-您必須先在ONTAP Cloud Manager中探索內部部署的叢集、才能開始備份大量資料。
+您必須先在ONTAP BlueXP中探索內部部署的叢集、才能開始備份大量資料。
 
 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
 
@@ -145,7 +145,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["在內部環境中安裝連接器"^]
 
 
-當連接器部署在雲端時、Azure政府區域支援Cloud Backup、而非安裝在內部部署或暗處時。此外、您必須從Azure Marketplace部署Connector。您無法從Cloud Manager SaaS網站在政府區域部署Connector。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html["瞭解如何在Azure政府區域中建立Connector"]。
+當連接器部署在雲端時、Azure政府區域支援Cloud Backup、而非安裝在內部部署或暗處時。此外、您必須從Azure Marketplace部署Connector。您無法從BlueXP SaaS網站在政府區域部署Connector。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html["瞭解如何在Azure政府區域中建立Connector"]。
 
 
 

@@ -30,7 +30,7 @@ IMPORTANT: 不支援單一檔案還原（SFR）。
 
 *步驟*
 
-. 在Cloud Manager UI中、按一下*備份與還原*>*應用程式*。
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 在*篩選條件*欄位中、選取篩選條件*類型*、然後從下拉式清單中選取* Oracle*。
 . 按一下您要還原之資料庫的*檢視詳細資料*、然後按一下*還原*。
 . 在「還原類型」頁面上、執行下列動作：

@@ -22,11 +22,11 @@ NOTE: 您無法還原跨資料存放區跨區的虛擬機器。
 確保您已滿足所有需求 link:concept-protect-vm-data.html#Requirements["需求"] 從雲端還原虛擬機器之前。
 
 .步驟
-. 在Cloud Manager中、按一下*備份與還原*>*虛擬機器*>* SnapCenter 適用於VMware vSphere的*還原外掛程式*、然後選取SnapCenter 您要還原其虛擬機器的VMware vSphere的「VMware vSphere的還原外掛程式」。
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *>* SnapCenter VMware vSpher*的*《VMware vSphere外掛程式》、然後選取SnapCenter 您要還原其虛擬機器的VMware vSphere《VMware vSphere的還原外掛程式》。
 
 
 
-NOTE: 如果將來源虛擬機器移至其他位置（vMotion）、而且使用者從Cloud Manager觸發該虛擬機器的還原、則虛擬機器將會還原至進行備份的原始來源位置。
+NOTE: 如果將來源虛擬機器移至其他位置（vMotion）、而且使用者從BlueXP觸發該虛擬機器的還原、則虛擬機器將會還原至進行備份的原始來源位置。
 
 . 若要從資料存放區還原：
 +

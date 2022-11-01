@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-register-snapCenter-plug-in-for-vmware-vsphere.html 
 keywords: register, registration, SnapCenter Plug-in for VMware vSphere 
-summary: 在SnapCenter Cloud Manager中註冊VMware vSphere的功能外掛程式。 
+summary: 在SnapCenter BlueXP中註冊VMware vSphere的功能外掛程式。 
 ---
 = 註冊SnapCenter VMware vSphere的VMware外掛程式
 :hardbreaks:
@@ -14,13 +14,13 @@ summary: 在SnapCenter Cloud Manager中註冊VMware vSphere的功能外掛程式
 
 
 [role="lead"]
-您應該在SnapCenter Cloud Manager中登錄VMware vSphere的VMware vCenter外掛程式、以便在Cloud Manager中顯示資料存放區和虛擬機器。只有擁有管理存取權的使用者才能登錄SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式。
+您應該在SnapCenter BlueXP中登錄VMware vSphere的VMware vCenter外掛程式、以便在BlueXP中顯示資料存放區和虛擬機器。只有擁有管理存取權的使用者才能登錄SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式。
 
 
 NOTE: 您可以為SnapCenter VMware vSphere登錄多個VMware vCenter外掛程式。不過、一旦登錄完成、您就無法移除SnapCenter VMware vSphere的VMware vCenter外掛程式。
 
 .步驟
-. 在Cloud Manager UI中、按一下*備份與還原*>*虛擬機器*。
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *。
 . 從*設定*下拉式清單中、按一下* SnapCenter 適用於VMware vSpher*的「*」「外掛程式」。
 . 按一下「*登錄SnapCenter VMware vSpher*的更新外掛程式」。
 . 請指定下列詳細資料：
@@ -38,4 +38,4 @@ NOTE: 您可以為SnapCenter VMware vSphere登錄多個VMware vCenter外掛程�
 
 *完成後*
 
-按一下「*備份與還原>虛擬機器*」、即可檢視所有符合VMware SnapCenter vSphere之已登錄的「還原外掛程式」保護資格的資料存放區和虛擬機器。
+按一下*備份與還原*>*虛擬機器*、即可檢視所有符合VMware SnapCenter vSphere之已登錄版的「VMware vSphere插件」保護資格的資料存放區與虛擬機器。

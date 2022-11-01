@@ -22,7 +22,7 @@ summary: 您可以將SAP HANA和Oracle備份掛載到指定的資料庫
 
 *步驟*
 
-. 在Cloud Manager UI中、按一下*備份與還原*>*應用程式*。
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 在Filter by（篩選依據）欄位中、選取* Type *、然後從下拉式清單中選取* SAP HANA *或* Oracle*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 與受保護的應用程式對應、然後選取*檢視詳細資料*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 與備份相對應、然後選取*掛載*。

@@ -74,7 +74,7 @@ Header:
 ----
 [{"accountPublicId":"account-i6vJXvZW","accountName":"rashidn","isSaas":true,"isGov":false,"isPrivatePreviewEnabled":false,"is3rdPartyServicesEnabled":false,"accountSerial":"96064469711530003565","userRole":"Role-1"}………
 ----
-. 取得包含Cloud Manager Connector ID的X-agent-id。
+. 取得內含BlueXP Connector ID的X-agent-id。
 +
 [source, http]
 ----
@@ -101,7 +101,7 @@ Header:
 
 以下範例顯示API呼叫、要求在工作環境中啟動備份、新原則在Azure雲端的東美2地區、將每日、每小時及每週標籤設定為180天之後歸檔。請注意、這只會在工作環境中啟用備份、但不會備份任何磁碟區。如果您選擇「自動備份已啟用」：true、則系統中已存在的任何磁碟區都會備份、再加上未來新增的磁碟區。
 
-您會發現我們使用Cloud Central帳戶ID「account-DpTFCxN3」、Cloud Manager Connector ID「iZwFFeVCzjWnzGlw8RgD0QNANZVP7IClients」、以及使用者權杖「beareYJhbGciOiJSUB1NIIsInUR5cCIM6W1001WPIH1001W1W1W1W1W1W1W1W1W1W1W1W1W1W1W1W100M100M100M1W1W1W1W1W1W1W1W1WPIKIMST1W1W1W1W1W1W1W
+您會發現我們使用Cloud Central帳戶ID「account-DpTFCxN3」、BlueXP Connector ID「iZwFFeVCzjWnzGlw8RgD0QNANZVP7IClients」、以及使用者權杖「beareYJhbGciOiJSUBI1NIIsInUR5cCI1W6WPIM6W1001W1W1W1W100M100M1001W1W1W1WPIKIMS1001W1W1W1W1W1W1W1W1W1W1W1W1W1W1W1W1W1W1W1W1W1W1W1W
 
 [source, http]
 ----

@@ -26,7 +26,7 @@ CAUTION: 請勿直接從雲端供應商環境管理或變更備份檔案。這�
 您可以在備份儀表板中檢視目前正在備份的所有磁碟區清單。
 
 .步驟
-. 在Cloud Manager左側導覽功能表中、按一下*備份與還原*。
+. 從BlueXP功能表中、選取* Protection > Backup and recovery *。
 . 按一下「* Volumes（* Volume）」索引標籤、即可檢視Cloud Volumes ONTAP 已備份的for the S還原 與內部部署ONTAP 的系統Volume清單。
 +
 image:screenshot_backup_dashboard.png["顯示所有工作環境和具有備份檔案的磁碟區的快照。"]
@@ -223,7 +223,7 @@ image:screenshot_auto_backup.png["快照顯示如何選取要指派給叢集上�
 
 
 
-現在、此備份原則將套用至此工作環境中使用Cloud Manager、System Manager或ONTAP the不支援的CLI所建立的任何新磁碟區。
+現在、此備份原則將套用至此工作環境中使用BlueXP、System Manager或ONTAP the支援CLI建立的任何新磁碟區。
 
 
 
@@ -284,7 +284,7 @@ NetApp勒索軟體保護軟體會掃描您的備份檔案、尋找建立備份�
 此功能只有在磁碟區備份是從ONTAP 含有VMware®的系統建立、且您在備份原則中啟用了_DataLock和勒索軟體Protection（保護）時才能使用。
 
 
-NOTE: 勒索軟體掃描需要將備份檔案下載到Cloud Manager環境（安裝Connector的環境）。如果您已在內部部署Connector、雲端供應商可能會產生額外的出口成本。因此、我們建議您將Connector部署在雲端、而且它與儲存備份的儲存庫位於同一個區域。
+NOTE: 勒索軟體掃描需要將備份檔案下載到您的BlueXP環境（安裝Connector的環境）。如果您已在內部部署Connector、雲端供應商可能會產生額外的出口成本。因此、我們建議您將Connector部署在雲端、而且它與儲存備份的儲存庫位於同一個區域。
 
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、按一下 image:screenshot_horizontal_more_button.gif["更多圖示"] 針對來源Volume、選取*詳細資料與備份清單*。

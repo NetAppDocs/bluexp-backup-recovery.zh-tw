@@ -37,7 +37,7 @@ summary: 請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中�
  your Connector,瞭解如何建立連接器、以及如何定義必要的網路設定。
 
 [role="quick-margin-para"]
-在ONTAP Cloud Manager中探索您的叢集、確認叢集符合最低需求、並自訂網路設定、讓叢集可以連線至AWS S3。
+在ONTAP BlueXP中探索您的叢集、確認叢集符合最低需求、並自訂網路設定、讓叢集可以連線至AWS S3。
 
 [role="quick-margin-para"]
  your ONTAP cluster,瞭解如何ONTAP 準備好內部部署的叢集。
@@ -76,7 +76,7 @@ image:diagram_cloud_backup_onprem_aws_private.png["顯示Cloud Backup如何透�
 
 == 準備好連接器
 
-Cloud Manager Connector是Cloud Manager功能的主要軟體。需要連接器來備份及還原ONTAP 您的不必要資料。
+BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份及還原ONTAP 您的不必要資料。
 
 
 
@@ -90,7 +90,7 @@ Cloud Manager Connector是Cloud Manager功能的主要軟體。需要連接器�
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["在內部環境中安裝連接器"^]
 
 
-當連接器部署在雲端時（而非安裝在您的內部部署或暗處）、政府部門會在GovCloud區域中支援Cloud Backup。此外、您必須從AWS Marketplace部署Connector。您無法從Cloud Manager SaaS網站在政府區域部署Connector。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html#create-the-connector-in-an-aws-government-region["瞭解如何在AWS GovCloud區域中建立Connector"]。
+當連接器部署在雲端時（而非安裝在您的內部部署或暗處）、政府部門會在GovCloud區域中支援Cloud Backup。此外、您必須從AWS Marketplace部署Connector。您無法從BlueXP SaaS網站在政府區域部署Connector。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-aws-mktp.html#create-the-connector-in-an-aws-government-region["瞭解如何在AWS GovCloud區域中建立Connector"]。
 
 
 
@@ -113,9 +113,9 @@ Cloud Manager Connector是Cloud Manager功能的主要軟體。需要連接器�
 
 
 
-=== 在ONTAP Cloud Manager中探索您的叢集
+=== 在ONTAP BlueXP中探索您的叢集
 
-您必須先在ONTAP Cloud Manager中探索內部部署的叢集、才能開始備份Volume資料。您必須知道叢集管理IP位址和管理使用者帳戶的密碼、才能新增叢集。
+您必須先在ONTAP BlueXP中探索內部部署的叢集、才能開始備份Volume資料。您必須知道叢集管理IP位址和管理使用者帳戶的密碼、才能新增叢集。
 
 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
 
@@ -193,7 +193,7 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
 
 
 .步驟
-. 確認下列S3權限（從最新版本開始） https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Cloud Manager 原則"^]）是IAM角色的一部分、可為Connector提供權限。
+. 確認下列S3權限（從最新版本開始） https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]）是IAM角色的一部分、可為Connector提供權限。
 +
 [source, json]
 ----
@@ -302,7 +302,7 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
 如果您想要透過網際網路從內部資料中心連線至VPC、可以在備份啟動精靈中選取AWS Private Link連線。如果您打算使用VPN或AWS Direct Connect、透過使用私有IP位址的VPC端點介面來連接內部部署系統、就必須使用此功能。這種連線類型顯示於 link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["第二個圖表"]。
 
 . 使用Amazon VPC主控台或命令列建立介面端點組態。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["如需使用AWS Private Link for Amazon S3的詳細資訊、請參閱"^]。
-. 修改與Cloud Manager Connector相關的安全群組組組態。您必須將原則變更為「Custom（自訂）」（從「Full Access（完整存取）」）、而且您必須如此  up S3 permissions,從備份原則新增S3權限 如前所示。
+. 修改與BlueXP Connector相關的安全性群組組態。您必須將原則變更為「Custom（自訂）」（從「Full Access（完整存取）」）、而且您必須如此  up S3 permissions,從備份原則新增S3權限 如前所示。
 +
 image:screenshot_backup_aws_sec_group.png["與Connector相關聯的AWS安全性群組快照。"]
 
@@ -316,7 +316,7 @@ image:screenshot_backup_aws_sec_group.png["與Connector相關聯的AWS安全性�
 +
 image:screenshot_endpoint_dns_aws_console.png["AWS主控台VPC端點的DNS名稱快照。"]
 
-. 從VPC S3端點取得憑證。您的做法是 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["登入裝載Cloud Manager Connector的VM"^] 並執行下列命令。輸入端點的DNS名稱時、請在開頭加入「pucket」、取代「*」：
+. 從VPC S3端點取得憑證。您的做法是 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["登入裝載BlueXP Connector的VM"^] 並執行下列命令。輸入端點的DNS名稱時、請在開頭加入「pucket」、取代「*」：
 +
 [source, text]
 ----

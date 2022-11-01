@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database 
-summary: 整合Cloud Backup for Applications與Cloud Manager及內部部署SnapCenter 的功能、將應用程式一致的Snapshot從內部部署ONTAP 的地方還原至雲端。 
+keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP 
+summary: 將Cloud Backup for Applications與BlueXP和內部部署SnapCenter 的功能整合、以將應用程式一致的Snapshot從內部部署ONTAP 到雲端。 
 ---
 = 保護內部部署的應用程式資料
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: 整合Cloud Backup for Applications與Cloud Manager及內部部署SnapC
 
 
 [role="lead"]
-您可以將Cloud Backup for Applications與Cloud Manager和內部部署SnapCenter 的解決方案整合、將應用程式一致的Snapshot從內部部署ONTAP 的地方還原到雲端。必要時、您可以從雲端還原至內部部署SnapCenter 的功能。
+您可以將Cloud Backup for Applications與BlueXP（前身為Cloud Manager）及內部部署SnapCenter 的內部環境整合、將應用程式一致的Snapshot從內部部署ONTAP 的更新備份到雲端。必要時、您可以從雲端還原至內部部署SnapCenter 的功能。
 
-您可以將Oracle、Microsoft SQL和SAP HANA應用程式資料從內部部署ONTAP 的支援系統備份到Amazon Web Services、Microsoft Azure、Google Cloud和StorageGRID 更新版本。
+您可以將Oracle、Microsoft SQL和SAP HANA應用程式資料從內部部署ONTAP 的支援系統備份到Amazon Web Services、Microsoft Azure、Google Cloud Platform和StorageGRID 更新版本。
 
 
 NOTE: 您應該使用SnapCenter 的是不含更新版本的軟體。
@@ -34,7 +34,7 @@ NOTE: 您應該使用SnapCenter 的是不含更新版本的軟體。
 請先閱讀下列需求、確定您擁有支援的組態、再開始將應用程式資料備份至雲端服務。
 
 * 部分9.8或更新版本ONTAP
-* Cloud Manager 3.9..
+* BlueXP 3.9..
 * 如果您想要使用下列功能、應該使用不含更新版本的伺服器4.7：SnapCenter SnapCenter
 +
 ** 保護備份不受內部部署二線儲存設備的影響
@@ -46,7 +46,7 @@ NOTE: 您應該使用SnapCenter 的是不含更新版本的軟體。
 
 
 * 每個應用程式至少應有一個備份可供SnapCenter 使用於此伺服器
-* 至少有一項每日、每週或每月的政策SnapCenter 、沒有標籤或標籤與Cloud Manager中的Cloud Backup for Applications原則相同。
+* 至少有一項每日、每週或每月的政策SnapCenter 在支援服務方面、沒有標籤或標籤與BlueXP中的Cloud Backup for Applications政策相同。
 
 
 

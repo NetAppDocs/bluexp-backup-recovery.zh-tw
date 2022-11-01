@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-backup-to-cloud.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem, kubernetes, applications 
-summary: Cloud Backup是適用於Cloud Manager工作環境的服務、可提供備份與還原功能、以保護資料並長期歸檔。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。 
+summary: Cloud Backup是適用於BlueXP工作環境的服務、可提供備份與還原功能、以保護資料並進行長期歸檔。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。 
 ---
 = 深入瞭解Cloud Backup
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cloud Backup是適用於Cloud Manager工作環境的服務、可提供�
 
 
 [role="lead"]
-Cloud Backup是適用於Cloud Manager工作環境的服務、可提供備份與還原功能、以保護資料並長期歸檔。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。
+Cloud Backup是適用於BlueXP（前身為Cloud Manager）工作環境的服務、可提供備份與還原功能、以保護資料並進行長期歸檔。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。
 
 必要時、您可以將整個_volume從備份還原至相同或不同的工作環境。備份ONTAP 不一致的資料時、您也可以選擇將備份中的一個或多個_fil__還原到相同或不同的工作環境。
 
@@ -31,7 +31,7 @@ link:https://cloud.netapp.com/cloud-backup-service["深入瞭解Cloud Backup"^]�
 https://www.youtube.com/watch?v=DF0knrH2a80["觀看快速示範"^]
 
 
-TIP: 當Cloud Manager Connector部署在雲端的政府區域、或是部署在沒有網際網路存取（黑點）的站台上時、Cloud Backup僅支援ONTAP 從還原系統進行備份與還原作業。使用這些替代部署方法時、Cloud Backup不支援從Kubernetes叢集、應用程式或虛擬機器進行備份與還原作業。
+TIP: 當BlueXP Connector部署在雲端的政府區域、或是沒有網際網路連線（黑點）的站台時、Cloud Backup僅支援ONTAP 從還原系統進行備份與還原作業。使用這些替代部署方法時、Cloud Backup不支援從Kubernetes叢集、應用程式或虛擬機器進行備份與還原作業。
 
 
 
@@ -39,7 +39,7 @@ TIP: 當Cloud Manager Connector部署在雲端的政府區域、或是部署在�
 
 當您在Cloud Volumes ONTAP 一個不完整或內部部署ONTAP 的支援系統上啟用Cloud Backup時、服務會執行資料的完整備份。備份映像不包含 Volume 快照。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。
 
-在大多數情況下、您會將Cloud Manager UI用於所有備份作業。不過ONTAP 、從使用支援功能支援功能的版本起、您可以ONTAP 使用ONTAP 「支援功能」、啟動內部部署功能的內部叢集的Volume備份作業。 https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html["瞭解如何使用System Manager使用Cloud Backup將磁碟區備份到雲端。"^]
+在大多數情況下、您會將BlueXP UI用於所有備份作業。不過ONTAP 、從使用支援功能支援功能的版本起、您可以ONTAP 使用ONTAP 「支援功能」、啟動內部部署功能的內部叢集的Volume備份作業。 https://docs.netapp.com/us-en/ontap/task_cloud_backup_data_using_cbs.html["瞭解如何使用System Manager使用Cloud Backup將磁碟區備份到雲端。"^]
 
 下圖顯示每個元件之間的關係：
 
@@ -49,30 +49,30 @@ image:diagram_cloud_backup_general.png["顯示Cloud Backup如何與來源系統�
 
 === 備份所在位置
 
-備份複本儲存在Cloud Manager在雲端帳戶中建立的物件存放區中。每個叢集/工作環境有一個物件存放區、Cloud Manager會將物件存放區命名為：「NetApp-backup-clusteruuid」。請勿刪除此物件存放區。
+備份複本儲存在BlueXP在雲端帳戶中建立的物件存放區中。每個叢集/工作環境都有一個物件存放區、而BlueXP會將物件存放區命名如下：「NetApp-backup-clusteruuid」。請勿刪除此物件存放區。
 
 ifdef::aws[]
 
-* 在 AWS 中、 Cloud Manager 可啟用 https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 封鎖公共存取功能"^] 在 S3 儲存桶上。
+* 在AWS中、BlueXP會啟用 https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 封鎖公共存取功能"^] 在 S3 儲存桶上。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* 在 Azure 中、 Cloud Manager 使用新的或現有的資源群組、並為 Blob 容器提供儲存帳戶。Cloud Manager https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["封鎖對Blob資料的公開存取"] 依預設。
+* 在Azure中、BlueXP會使用新的或現有的資源群組、以及Blob容器的儲存帳戶。藍圖 https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["封鎖對Blob資料的公開存取"] 依預設。
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* 在 GCP 中、 Cloud Manager 使用新的或現有的專案、並為 Google Cloud Storage 儲存庫使用儲存帳戶。
+* 在GCP中、BlueXP使用新的或現有的專案、其中含有Google Cloud Storage儲存庫的儲存帳戶。
 
 
 endif::gcp[]
 
-* 在本報告中、Cloud Manager使用現有的儲存帳戶來儲存物件儲存庫。StorageGRID
+* 在本報告中、BlueXP會使用現有的儲存帳戶來儲存物件儲存庫。StorageGRID
 
 
 

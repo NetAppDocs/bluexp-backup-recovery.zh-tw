@@ -18,7 +18,7 @@ summary: 請完成幾個步驟來登錄SnapCenter 到此伺服器。
 
 *步驟*
 
-. 在Cloud Manager UI中、按一下*備份與還原*>*應用程式*。
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 從*設定*下拉式清單中、按一下* SnapCenter 《伺服器*》。
 . 按一下「*登錄SnapCenter 」「伺服器*」。
 . 請指定下列詳細資料：

@@ -26,7 +26,7 @@ summary: 請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能�
 * 您在Cloud Volumes ONTAP AWS中執行的是版本號為9、7P5或更新版本。
 * 您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。
 * 您已訂閱 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Cloud Manager Marketplace 備份產品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS年度合約"]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"] NetApp的Cloud Backup BYOL授權。
-* 提供Cloud Manager Connector權限的IAM角色包括最新的S3權限 https://mysupport.netapp.com/site/info/cloud-manager-policies["Cloud Manager 原則"^]。
+* 提供具有權限的BlueXP Connector的IAM角色包括來自最新版本的S3權限 https://mysupport.netapp.com/site/info/cloud-manager-policies["BlueXP原則"^]。
 
 
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png"[] Alt="2"></span>在新的或現有的系統上啟用雲端備份
@@ -82,13 +82,13 @@ image:diagram_cloud_backup_cvo_aws.png["顯示Cloud Backup如何與來源系統�
 在不同的AWS帳戶中建立備份所需的設定:: 根據預設、備份會使用Cloud Volumes ONTAP 與您的作業系統相同的帳戶建立。如果您想要使用不同的AWS帳戶進行備份、您必須：
 +
 --
-* 在Cloud Manager中新增目的地AWS帳戶認證資料
-* 將「S3：PuttBucketPolicy」權限新增至IAM角色、以提供Cloud Manager權限
+* 在BluXP中新增目的地AWS帳戶認證資料
+* 將「S3：PuttBucketPolicy」權限新增至IAM角色、為BlueXP提供權限
 
 
 --
 使用客戶管理金鑰進行資料加密的必要資訊:: 您可以在啟動精靈中選擇自己的客戶管理資料加密金鑰、而非使用預設的Amazon S3加密金鑰。在此情況下、您必須先設定加密管理金鑰。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的金鑰"^]。
-需要 AWS 權限:: 提供 Cloud Manager 權限的 IAM 角色必須包含最新版本的 S3 權限 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["Cloud Manager 原則"^]。
+需要 AWS 權限:: 提供BlueXP權限的IAM角色必須包含最新版本的S3權限 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]。
 +
 --
 以下是原則的特定權限：
@@ -197,7 +197,7 @@ image:screenshot_backup_cvo_enable.png["螢幕擷取畫面會顯示「備份與�
 +
 .. 用來儲存備份的AWS帳戶。這可能與Cloud Volumes ONTAP 駐留於此系統的帳戶不同。
 +
-如果您想要使用不同的AWS帳戶進行備份、則必須在Cloud Manager中新增目的地AWS帳戶認證、並將「S3：PuttketPolicy」權限新增至IAM角色、以提供Cloud Manager權限。
+如果您想要使用不同的AWS帳戶進行備份、則必須在BlueXP中新增目的地AWS帳戶認證、並將「S3：PuttketPolicy」權限新增至IAM角色、以便為BlueXP提供權限。
 
 .. 儲存備份的區域。這可能與Cloud Volumes ONTAP 駐留的地方不同。
 .. 無論您是使用預設的Amazon S3加密金鑰、還是從AWS帳戶選擇自己的客戶管理金鑰、都能管理資料的加密。 (https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的加密金鑰"]）。
