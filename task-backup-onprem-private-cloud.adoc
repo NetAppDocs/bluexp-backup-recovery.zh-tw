@@ -58,6 +58,9 @@ image:screenshot_backup_provider_settings_storagegrid.png["快照顯示將磁碟
 預設原則會每天備份磁碟區、並保留每個磁碟區最近 30 個備份複本。變更為每小時、每日、每週、每月或每年備份、 或選取其中一個系統定義的原則、以提供更多選項。您也可以變更要保留的備份複本數量。
 
 [role="quick-margin-para"]
+您也可以選擇在使用ONTAP 更新版本的時、設定_DataLock和勒索軟體Protection _設定、保護備份免受刪除和勒索軟體攻擊。 link:concept-cloud-backup-policies.html["深入瞭解可用的Cloud Backup原則組態設定"^]。
+
+[role="quick-margin-para"]
 image:screenshot_backup_onprem_policy.png["顯示Cloud Backup設定的快照、您可在其中選擇備份排程和保留期間。"]
 
 [role="quick-margin-para"]
@@ -225,9 +228,6 @@ image:screenshot_backup_onprem_enable.png["螢幕擷取畫面會顯示「備份�
 +
 image:screenshot_backup_provider_settings_storagegrid.png["快照顯示將磁碟區從內部部署叢集備份到StorageGRID 還原儲存設備時、雲端供應商的詳細資料。"]
 
-+
-請注意、您無法在服務啟動後變更此資訊。
-
 
 
 . 輸入將用於預設原則的備份原則詳細資料、然後按一下「*下一步*」。您可以選取現有的原則、也可以在每個區段中輸入您的選擇來建立新原則：
@@ -243,21 +243,27 @@ image:screenshot_backup_onprem_policy.png["顯示Cloud Backup設定的快照、�
 
 
 
-. 在「Select Volumes（選取磁碟區）」頁面中、使用預設備份原則選取您要備份的磁碟區。如果您想要將不同的備份原則指派給特定磁碟區、可以建立其他原則、並於稍後將其套用至這些磁碟區。
+. 在「Select Volumes（選取磁碟區）」頁面中、使用定義的備份原則選取您要備份的磁碟區。如果您想要將不同的備份原則指派給特定磁碟區、可以建立其他原則、並於稍後將其套用至這些磁碟區。
 +
-** 若要備份所有磁碟區、請勾選標題列中的方塊（image:button_backup_all_volumes.png[""]）。
+** 若要備份未來新增的所有現有磁碟區和任何磁碟區、請勾選「備份所有現有和未來的磁碟區...」方塊。我們建議您使用此選項、以便備份所有的磁碟區、而且您永遠不需要記住為新的磁碟區啟用備份。
+** 若要僅備份現有磁碟區、請勾選標題列中的方塊（image:button_backup_all_volumes.png[""]）。
 ** 若要備份個別磁碟區、請勾選每個磁碟區的方塊（image:button_backup_1_volume.png[""]）。
 +
 image:screenshot_backup_select_volumes.png["選取要備份之磁碟區的快照。"]
 
+** 如果此工作環境中的任何Volume本機Snapshot複本符合您剛為此工作環境選取的備份排程標籤（例如每日、每週等）、則會顯示另一個提示：「Export existing Snapshot copies to object storage as Backup copies（匯出現有的Snapshot複本至物件儲存設備作為備份複本）」。如果您想要將所有歷史Snapshot複製到物件儲存設備做為備份檔案、以確保為磁碟區提供最完整的保護、請勾選此方塊。
 
-
-+
-如果您希望將來新增至此叢集的所有磁碟區都啟用備份、只要勾選「自動備份未來磁碟區...」核取方塊即可。如果停用此設定、您將需要手動啟用未來磁碟區的備份。
 
 . 按一下「*啟動備份*」、「雲端備份」就會開始對每個選取的磁碟區進行初始備份。
 
 
-S3儲存區會自動建立在您輸入的S3存取金鑰和秘密金鑰所指示的服務帳戶中、並儲存備份檔案。Volume Backup Dashboard隨即顯示、以便您監控備份狀態。
+S3儲存區會自動建立在您輸入的S3存取金鑰和秘密金鑰所指示的服務帳戶中、並儲存備份檔案。Volume Backup Dashboard隨即顯示、以便您監控備份狀態。您也可以使用監控備份與還原工作的狀態 link:task-monitor-backup-jobs.html["「工作監控」面板"^]。
 
-您可以 link:task-manage-backups-ontap.html["開始和停止磁碟區備份、或變更備份排程"^]。您也可以 link:task-restore-backups-ontap.html["從備份檔案還原整個磁碟區或個別檔案"^] 內部部署ONTAP 的系統。
+
+
+== 接下來呢？
+
+* 您可以 link:task-manage-backups-ontap.html["管理備份檔案與備份原則"^]。這包括開始和停止備份、刪除備份、新增和變更備份排程等。
+* 您可以 link:task-manage-backup-settings-ontap.html["管理叢集層級的備份設定"^]。這包括變更ONTAP 用來存取雲端儲存設備的儲存金鑰、變更可將備份上傳至物件儲存設備的網路頻寬、變更未來磁碟區的自動備份設定等。
+* 您也可以 link:task-restore-backups-ontap.html["從備份檔案還原磁碟區、資料夾或個別檔案"^] 內部部署ONTAP 的系統。
+

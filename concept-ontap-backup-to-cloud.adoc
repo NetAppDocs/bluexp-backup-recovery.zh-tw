@@ -26,9 +26,11 @@ Cloud Backup提供備份與還原功能、可保護ONTAP 及長期歸檔您的�
 
 * 將獨立的資料磁碟區複本備份到低成本的物件儲存設備。
 * 將單一備份原則套用至叢集中的所有磁碟區、或將不同的備份原則指派給具有獨特還原點目標的磁碟區。
+* 建立備份原則、以套用至叢集中未來建立的所有磁碟區。
 * 製作不可變的備份檔案、以便在保留期間鎖定。
 * 掃描備份檔案以找出可能的勒索軟體攻擊、並自動移除/取代受感染的備份。
 * 將較舊的備份檔案分層至歸檔儲存設備、以節省成本。
+* 刪除備份關係、以便在保留磁碟區備份的同時、歸檔不需要的來源磁碟區。
 * 從雲端備份到雲端、從內部部署系統備份到公有雲或私有雲。
 * 對於NetApp系統、您的備份可以存放在不同的訂閱/帳戶或不同的地區。Cloud Volumes ONTAP
 * 備份資料會以 AES-256 位元加密的閒置和 TLS 1.2 HTTPS 傳輸連線加以保護。
@@ -238,7 +240,7 @@ link:task-licensing-cloud-backup.html#use-an-annual-contract["瞭解如何設定
 
 == 雲端備份的運作方式
 
-當您在Cloud Volumes ONTAP 一個不完整或內部部署ONTAP 的支援系統上啟用Cloud Backup時、服務會執行資料的完整備份。備份映像不包含 Volume 快照。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。
+當您在Cloud Volumes ONTAP 一個不完整或內部部署ONTAP 的支援系統上啟用Cloud Backup時、服務會執行資料的完整備份。備份映像不包含 Volume 快照。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。Cloud Backup建置於上方 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["NetApp SnapMirror雲端技術"]。
 
 
 CAUTION: 直接從雲端供應商環境中採取的任何管理或變更備份檔案的動作、都可能會毀損檔案、並導致不支援的組態。
@@ -320,21 +322,14 @@ TIP: 資料保護磁碟區備份的保留期間與來源SnapMirror關係中所�
 
 如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以保護備份、避免遭到刪除和勒索軟體攻擊。每個備份原則都提供_DataLock和勒索軟體Protection的區段、可在特定時間段（_保留期間_）內套用至備份檔案。_DataLock_可保護您的備份檔案、避免遭到修改或刪除。_勒索 軟體保護_會掃描您的備份檔案、尋找建立備份檔案時、以及從備份檔案還原資料時、勒索軟體攻擊的證據。
 
-您可以針對每個備份原則從下列設定中選擇：
-
-* 無。DataLock保護和勒索軟體保護已停用。
-* 企業：DataLock模式設為_Enterprise_、在保留期間內、具有特定權限的使用者可以覆寫或刪除備份檔案。已啟用勒索軟體保護。
-* 法規遵循：DataLock模式設為_Compliance、使用者在保留期間內無法覆寫或刪除備份檔案。已啟用勒索軟體保護。
-
-
-保留期間與排程保留期間相同、加上14天。例如、使用_5_份複本的每週備份會鎖定每個備份檔案5週。_每月_備份加上_6_份複本、將會鎖定每個備份檔案6個月。
+備份保留期間與備份排程保留期間相同、加上14天。例如、使用_5_份複本的每週備份會鎖定每個備份檔案5週。_每月_備份加上_6_份複本、將會鎖定每個備份檔案6個月。
 
 當您的備份目的地是Amazon S3或NetApp StorageGRID 時、目前可提供支援。其他儲存供應商目的地將會新增至未來版本。
 
+請參閱 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLock和勒索軟體保護"^] 如需DataLock和勒索軟體保護功能運作方式的詳細資訊、請參閱。
+
 
 TIP: 如果您要將備份分層至歸檔儲存設備、則無法啟用DataLock。
-
-請參閱 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLock和勒索軟體保護"^] 如需DataLock和勒索軟體保護功能運作方式的詳細資訊、請參閱。
 
 
 

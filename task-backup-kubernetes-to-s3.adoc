@@ -126,7 +126,7 @@ spec:
 
 
 --
-授權需求:: 對於Cloud Backup PAYGO授權、AWS Marketplace提供Cloud Manager訂閱服務、可讓您部署Cloud Volumes ONTAP 支援的功能包括：還原和雲端備份。您需要 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["訂閱此 Cloud Manager 訂閱"^] 在啟用Cloud Backup之前。雲端備份計費是透過此訂閱完成。
+授權需求:: 對於Cloud Backup PAYGO授權、AWS Marketplace提供訂閱服務、可部署Cloud Volumes ONTAP 支援的功能包括：您需要 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["訂閱此 Cloud Manager 訂閱"^] 在啟用Cloud Backup之前。雲端備份計費是透過此訂閱完成。
 +
 --
 如需一年一度的合約、而該合約可讓您同時備份Cloud Volumes ONTAP 支援不必要資料和內部部署ONTAP 的不必要資料、您必須從訂閱 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace頁面"^] 然後 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html["將訂閱與AWS認證資料建立關聯"^]。

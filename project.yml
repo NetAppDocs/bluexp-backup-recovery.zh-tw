@@ -62,6 +62,8 @@ sidebar:
       url: "/task-backup-onprem-private-cloud.html"
     - title: 管理ONTAP 還原備份
       url: "/task-manage-backups-ontap.html"
+    - title: 管理叢集層級的備份設定
+      url: "/task-manage-backup-settings-ontap.html"
     - title: 從ONTAP 還原備份還原
       url: "/task-restore-backups-ontap.html"
   - title: 備份及還原Kubernetes資料

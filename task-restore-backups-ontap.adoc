@@ -444,7 +444,8 @@ video::RZktLe32hhQ[youtube,width=848,height=480]
 
 | NetApp StorageGRID | 目前不支援 
 |===
-連接器必須部署在雲端供應商環境中、才能使用「搜尋與還原」進行還原作業。
+
+TIP: 在搜尋與還原方面、從Amazon S3或Azure Blob還原備份時、可將Connector部署在雲端供應商或內部部署環境中。從Google Cloud Storage還原備份時、必須將Connector部署在雲端。
 
 請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能
 

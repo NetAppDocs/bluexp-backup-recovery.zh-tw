@@ -45,6 +45,8 @@ image:screenshot_backup_schedule_settings.png["建立備份原則時的備份排
 * 在第13個月、第一個每月備份就會移除、並新增第13個月的每月備份（最多保留12個月備份）。
 
 
+請注意、每年備份會在傳輸至物件儲存設備後、自動從來源系統刪除。此預設行為可以變更 link:task-manage-backup-settings-ontap#change-whether-yearly-snapshots-are-removed-from-the-source-system["在「進階設定」頁面中"] 適用於工作環境。
+
 
 
 == DataLock和勒索軟體保護

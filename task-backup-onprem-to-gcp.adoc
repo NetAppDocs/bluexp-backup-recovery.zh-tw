@@ -254,21 +254,27 @@ image:screenshot_backup_policy_gcp.png["顯示Cloud Backup設定的快照、您�
 
 
 
-. 在「Select Volumes（選取磁碟區）」頁面中、使用預設備份原則選取您要備份的磁碟區。如果您想要將不同的備份原則指派給特定磁碟區、可以建立其他原則、並於稍後將其套用至這些磁碟區。
+. 在「Select Volumes（選取磁碟區）」頁面中、使用定義的備份原則選取您要備份的磁碟區。如果您想要將不同的備份原則指派給特定磁碟區、可以建立其他原則、並於稍後將其套用至這些磁碟區。
 +
-** 若要備份所有磁碟區、請勾選標題列中的方塊（image:button_backup_all_volumes.png[""]）。
+** 若要備份未來新增的所有現有磁碟區和任何磁碟區、請勾選「備份所有現有和未來的磁碟區...」方塊。我們建議您使用此選項、以便備份所有的磁碟區、而且您永遠不需要記住為新的磁碟區啟用備份。
+** 若要僅備份現有磁碟區、請勾選標題列中的方塊（image:button_backup_all_volumes.png[""]）。
 ** 若要備份個別磁碟區、請勾選每個磁碟區的方塊（image:button_backup_1_volume.png[""]）。
 +
 image:screenshot_backup_select_volumes.png["選取要備份之磁碟區的快照。"]
 
+** 如果此工作環境中的任何Volume本機Snapshot複本符合您剛為此工作環境選取的備份排程標籤（例如每日、每週等）、則會顯示另一個提示：「Export existing Snapshot copies to object storage as Backup copies（匯出現有的Snapshot複本至物件儲存設備作為備份複本）」。如果您想要將所有歷史Snapshot複製到物件儲存設備做為備份檔案、以確保為磁碟區提供最完整的保護、請勾選此方塊。
 
-
-+
-如果您希望未來新增的所有磁碟區都啟用備份、只要勾選「自動備份未來磁碟區...」核取方塊即可。如果停用此設定、您將需要手動啟用未來磁碟區的備份。
 
 . 按一下「*啟動備份*」、「雲端備份」就會開始進行磁碟區的初始備份。
 
 
-Cloud Backup會開始對每個選取的磁碟區進行初始備份、並顯示Volume Backup Dashboard、以便您監控備份狀態。
+Google Cloud Storage儲存庫會自動在您輸入的Google存取金鑰和秘密金鑰所指示的服務帳戶中建立、並儲存備份檔案。Volume Backup Dashboard隨即顯示、以便您監控備份狀態。您也可以使用監控備份與還原工作的狀態 link:task-monitor-backup-jobs.html["「工作監控」面板"^]。
 
-您可以 link:task-manage-backups-ontap.html["開始和停止磁碟區備份、或變更備份排程"^]。您也可以 link:task-restore-backups-ontap.html["從備份檔案還原磁碟區或檔案"^] 至Cloud Volumes ONTAP Google的某個系統、或內部部署ONTAP 的某個系統。
+
+
+== 接下來呢？
+
+* 您可以 link:task-manage-backups-ontap.html["管理備份檔案與備份原則"^]。這包括開始和停止備份、刪除備份、新增和變更備份排程等。
+* 您可以 link:task-manage-backup-settings-ontap.html["管理叢集層級的備份設定"^]。這包括變更ONTAP 用來存取雲端儲存設備的儲存金鑰、變更可將備份上傳至物件儲存設備的網路頻寬、變更未來磁碟區的自動備份設定等。
+* 您也可以 link:task-restore-backups-ontap.html["從備份檔案還原磁碟區、資料夾或個別檔案"^] 至Cloud Volumes ONTAP Google的某個系統、或內部部署ONTAP 的某個系統。
+

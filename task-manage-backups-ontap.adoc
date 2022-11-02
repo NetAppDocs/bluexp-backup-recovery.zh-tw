@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-backups-ontap.html 
 keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup 
-summary: 您可以Cloud Volumes ONTAP 變更備份排程、建立新的備份原則、啟用/停用磁碟區備份、刪除備份等、來管理您的支援資料和內部部署ONTAP 的支援系統備份。 
+summary: 您可以Cloud Volumes ONTAP 變更備份排程、建立新的備份原則、啟用/停用磁碟區備份、暫停備份、刪除備份等、來管理您的支援功能和內部部署ONTAP 的支援系統備份。 
 ---
 = 管理ONTAP 您的還原系統的備份
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 您可以Cloud Volumes ONTAP 變更備份排程、建立新的備份原
 
 
 [role="lead"]
-您可以Cloud Volumes ONTAP 變更備份排程、建立新的備份原則、啟用/停用磁碟區備份、刪除備份等、來管理您的支援資料和內部部署ONTAP 的支援系統備份。
+您可以Cloud Volumes ONTAP 變更備份排程、建立新的備份原則、啟用/停用磁碟區備份、暫停備份、刪除備份等、來管理您的支援功能和內部部署ONTAP 的支援系統備份。
 
 
 CAUTION: 請勿直接從雲端供應商環境管理或變更備份檔案。這可能會毀損檔案、並導致不受支援的組態。
@@ -39,7 +39,9 @@ image:screenshot_backup_dashboard.png["顯示所有工作環境和具有備份�
 
 == 啟用及停用磁碟區備份
 
-如果您不需要該磁碟區的備份複本、而且不想支付儲存備份的成本、則可以停止備份磁碟區。如果目前尚未備份、您也可以將新的磁碟區新增至備份清單。
+如果目前未備份任何新磁碟區、您可以為這些磁碟區啟動備份。您也可以針對先前停用的任何磁碟區啟動備份。
+
+您可以停用磁碟區的備份、不產生其他備份。這也會停用從備份檔案還原Volume資料的功能。這基本上可讓您暫停一段時間內的所有備份與還原活動。任何現有的備份都不會刪除、因此除非您同意、否則您將繼續由雲端供應商收取備份所使用容量的物件儲存成本 link:deleting-all-backup-files-for-a-volume["刪除備份"]。
 
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、選取* Backup Settings*（備份設定）。
@@ -56,8 +58,6 @@ image:screenshot_backup_manage_volumes_page.png["「管理磁碟區」頁面、�
 
 . 按一下「*儲存*」以提交變更。
 
-
-* 附註： * 停止備份磁碟區時、除非您同意、否則您將繼續由雲端供應商支付備份所使用容量的物件儲存成本  backups,刪除備份。
 
 
 
@@ -200,33 +200,6 @@ NOTE: 如果您在啟動此叢集的Cloud Backup時、在初始原則中啟用�
 
 
 
-== 設定要指派給新磁碟區的備份原則
-
-如果您未選擇在ONTAP 您第一次在叢集上啟動Cloud Backup時自動將備份原則指派給新建立的Volume、您可以稍後在「_Backup Settings_」（備份設定_）頁面中選擇此選項。將備份原則指派給新建立的磁碟區、可確保所有資料都受到保護。
-
-請注意、您要套用至磁碟區的原則必須已經存在。  a new backup policy,瞭解如何為工作環境新增備份原則。
-
-您也可以停用此設定、使新建立的磁碟區不會自動備份。在這種情況下、您必須手動啟用任何特定磁碟區的備份、以便日後備份。
-
-.步驟
-. 從* Volumes（磁碟區）*索引標籤、選取* Backup Settings*（備份設定）。
-+
-image:screenshot_backup_settings_button.png["螢幕擷取畫面會顯示「備份設定」按鈕、您可以在選取工作環境之後使用該按鈕。"]
-
-. 在「備份設定」頁面中、按一下 image:screenshot_horizontal_more_button.gif["更多圖示"] 針對存在磁碟區的工作環境、選取*自動備份新磁碟區*。
-+
-image:screenshot_auto_backup_new_volumes.png["從「備份設定」頁面選取「自動備份新磁碟區」選項的快照。"]
-
-. 選取「自動備份新磁碟區...」核取方塊、選擇您要套用至新磁碟區的備份原則、然後按一下*「儲存*」。
-+
-image:screenshot_auto_backup.png["快照顯示如何選取要指派給叢集上所有未來磁碟區的備份原則。"]
-
-
-
-現在、此備份原則將套用至此工作環境中使用BlueXP、System Manager或ONTAP the支援CLI建立的任何新磁碟區。
-
-
-
 == 隨時建立手動Volume備份
 
 您可以隨時建立隨需備份、以擷取Volume的目前狀態。如果已對磁碟區進行非常重要的變更、而您不想等待下一次排程備份來保護該資料、或是目前未備份磁碟區、而您想要擷取其目前狀態、則此功能非常實用。
@@ -309,6 +282,8 @@ image:screenshot_scan_one_backup.png["顯示如何在單一備份檔案上執行
 
 Cloud Backup可讓您刪除單一備份檔案、刪除磁碟區的所有備份、或刪除工作環境中所有磁碟區的所有備份。如果您不再需要備份、或是刪除來源磁碟區並想要移除所有備份、您可能會想要刪除所有備份。
 
+請注意、您無法刪除使用DataLock和勒索軟體保護功能鎖定的備份檔案。如果您已選取一或多個鎖定的備份檔案、則UI中的「刪除」選項將無法使用。
+
 
 CAUTION: 如果您打算刪除具有備份的工作環境或叢集、則必須在*刪除系統之前刪除備份。當您刪除系統時、Cloud Backup不會自動刪除備份、而且使用者介面目前不支援刪除系統後的備份。您將繼續支付剩餘備份的物件儲存成本。
 
@@ -379,6 +354,41 @@ image:screenshot_delete_one_backup.png["顯示如何刪除單一備份檔案的�
 
 . 在確認對話方塊中、按一下 * 刪除 * 。
 
+
+
+
+== 刪除Volume備份關係
+
+如果您想要停止建立新的備份檔案並刪除來源磁碟區、但保留所有現有的備份檔案、則刪除磁碟區的備份關係可提供歸檔機制。這可讓您在未來視需要從備份檔案還原磁碟區、同時從來源儲存系統中清除空間。
+
+您無法從Cloud Backup使用者介面刪除來源Volume。不過、您可以在畫版上開啟「Volume Details」（Volume詳細資料）頁面、以及 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["從該處刪除磁碟區"]。
+
+
+NOTE: 一旦關係被刪除、您就無法刪除個別的Volume備份檔案。不過、您可以 link:task-manage-backups-ontap.html#deleting-all-backup-files-for-a-volume["刪除磁碟區的所有備份"] 如果您要移除所有備份檔案。
+
+.步驟
+. 從* Volumes（磁碟區）*索引標籤、選取* Backup Settings*（備份設定）。
++
+image:screenshot_backup_settings_button.png["螢幕擷取畫面會顯示「備份設定」按鈕、您可以在選取工作環境之後使用該按鈕。"]
+
+. 在「備份設定」頁面中、按一下 image:screenshot_horizontal_more_button.gif["更多圖示"] 對於工作環境、請選取 * 管理磁碟區 * 。
++
+image:screenshot_backup_manage_volumes.png["顯示「備份設定」頁面中「管理磁碟區」按鈕的快照。"]
+
+. 選取您要刪除備份關係的磁碟區或磁碟區核取方塊、然後按一下*刪除關係*。
++
+image:screenshot_delete_relationship.png["顯示如何刪除多個磁碟區的備份關係的快照。"]
+
+. 按一下「*儲存*」以提交變更。
+
+
+請注意、您也可以從「Volumes（磁碟區）」頁面刪除單一磁碟區的備份關係。
+
+image:screenshot_delete_relationship_single.png["顯示如何刪除單一磁碟區的備份關係的快照。"]
+
+當您檢視每個磁碟區的備份清單時、您會看到「關係狀態」列示為*關係已刪除*。
+
+image:screenshot_backup_view_no_relationship.png["在刪除磁碟區備份關係之後、顯示「關係已刪除」狀態的快照。"]
 
 
 
