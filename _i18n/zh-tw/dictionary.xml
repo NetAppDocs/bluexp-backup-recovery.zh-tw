@@ -2644,7 +2644,6 @@
   <block id="8fa9fc7dcc8c23904d4a616698a7a223" category="paragraph">您可以在「*工作監控*」標籤中檢視所有備份與還原作業及其目前狀態的清單。這包括Cloud Volumes ONTAP 來自您的VMware、內部部署ONTAP 的VMware、應用程式、虛擬機器和Kubernetes系統的作業。每個作業或工作都有唯一的ID和狀態。狀態可以是：</block>
   <block id="505a83f220c02df2f85c3810cd9ceb38" category="list-text">成功</block>
   <block id="e26263e363fecef775843a8d72ae75f8" category="paragraph">如果您要尋找特定工作、可以：</block>
-  <block id="b4c7b1f52d0a6c15993076d79d22628c" category="list-text">使用頁面頂端的時間選取器可檢視某段時間內的工作</block>
   <block id="d9adc9312afedb38a2612892c29f9ec2" category="list-text">使用每個欄標題中的篩選條件來排序結果。例如、「工作負載」欄的篩選器可讓您檢視下列類別中的工作：</block>
   <block id="3919b07e397df4ea5f1ccc5ad0f35b8a" category="list-text">Volume Cloud Volumes ONTAP （內部和內部ONTAP 的不全功能資料）</block>
   <block id="1ddf333c6654f7f89c739dddfb4cc429" category="list-text">應用程式</block>
@@ -2657,10 +2656,6 @@
   <block id="b58d9a206bdb4f66bef72d876e8c275e" category="section-title">使用通知中心來檢閱備份與還原警示</block>
   <block id="40da6f1400e45d080a97992a6a539894" category="inline-image-macro">通知鈴聲</block>
   <block id="01d7db5ac182c0b2dc523448e4c1a34b" category="paragraph">通知中心會追蹤您所啟動的備份與還原工作進度、以便您確認作業是否成功。您可以按一下（<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>）。您也可以設定BluefXP以電子郵件傳送通知作為警示、即使您尚未登入系統、也能得知重要的系統活動。</block>
-  <block id="9d06bbee27c7c52aee4ed8f45598a47e" category="paragraph">目前有三個事件會觸發電子郵件警示：</block>
-  <block id="0f217a680c2fae12a2aef1605523e63b" category="list-text">備份啟動失敗</block>
-  <block id="bd05c05b26ad99e0b7734e77c6615dbc" category="list-text">還原失敗</block>
-  <block id="0d1bc1ce0ffc15450740c0c168790109" category="list-text">Adhoc（隨需）備份失敗</block>
   <block id="cef1c38108b72f8eb8fba5c231923d9c" category="paragraph">根據預設、BlueXP帳戶管理員會收到所有「重大」和「建議」警示的電子郵件。根據預設、所有其他使用者和收件者都會設定為不接收任何通知電子郵件。電子郵件可傳送給任何屬於您NetApp雲端帳戶一部分的BlueXP使用者、或傳送給任何其他需要注意備份與還原活動的收件者。</block>
   <block id="a1c41906d0e1e81a4ce819d12975d647" category="paragraph">您必須選取通知類型「Critical」和「錯誤」、才能接收Cloud Backup電子郵件警示。</block>
   <block id="44d4deb8868ac8159ee85f4a8e68725c" category="inline-link">深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作</block>
@@ -2715,7 +2710,6 @@
   <block id="aa561ba34fe652162fed2a07f12593c1" category="list-text">變更分配給上傳備份到物件儲存設備的網路頻寬</block>
   <block id="11fdb6dde8ff715d780c091b4866b526" category="list-text">變更歸檔儲存類別（僅限AWS）</block>
   <block id="54ccc53455625170e0d9225f1d12c305" category="list-text">變更未來磁碟區的自動備份設定（和原則）</block>
-  <block id="da83f4088cfea6a8c07863d1dd3a06f0" category="list-text">變更是否在初始基礎備份檔案中包含歷史Snapshot複本</block>
   <block id="90262b49b516aea0770d54c5389860ab" category="list-text">變更是否從來源系統移除「每年」快照</block>
   <block id="0b1dbe1ca2e686301ad63250cc03207d" category="section-title">檢視叢集層級的備份設定</block>
   <block id="ed0a9603eb52469e5089b682941c8579" category="paragraph">您可以檢視每個工作環境的叢集層級備份設定。</block>
@@ -2737,7 +2731,6 @@
   <block id="69f49af99be101331b7adf45a31d1ff9" category="section-title">變更ONTAP 連線至物件儲存的物件保護區</block>
   <block id="6e1bb784e48dbc68cd86c7478f6a1d16" category="paragraph">您可以變更ONTAP 連接至物件儲存的物件保護區。此選項僅適用於從內部部署ONTAP 的支援系統備份資料、Cloud Volumes ONTAP 不適用於此系統。</block>
   <block id="fe2348305cb832db0607d4941ba06ff1" category="paragraph">此選項不應用於主動將Volume資料備份至物件儲存設備的系統。僅當在內部部署ONTAP 的不正確系統上初始啟動備份時、才應使用此選項。</block>
-  <block id="2ec8522fb627c9277002b72183b02c88" category="paragraph">請參閱《使用入門》文件、將內部部署ONTAP 的資料還原至雲端供應商、以確保ONTAP 針對新的IPspace正確設定您的支援。例如：</block>
   <block id="7a81527905d341365c1c48c1c2df82f7" category="list-text">裝載您要備份之磁碟區的 ONTAP 每個節點都需要叢集間 LIF 。</block>
   <block id="b61284a9f89e31d7eca6523e6a26baf1" category="list-text">LIF必須與IPspace建立關聯、ONTAP 以便連接物件儲存設備。</block>
   <block id="8373574988dfec20642b8146055e60ea" category="list-text">節點的叢集間LIF必須能夠存取物件存放區。</block>
@@ -2746,10 +2739,8 @@
   <block id="7782aa7e3e532fc975c4c9fd409a0cd1" category="paragraph"><block ref="7782aa7e3e532fc975c4c9fd409a0cd1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9f4a0a8969226290161358177e49f679" category="paragraph">只要選取新的IPspace、然後按一下*「Apply *（套用*）」。之後、您就能從該IPspace的集合體中選取要備份的磁碟區。</block>
   <block id="5fb03dafd6274ec459f4ae7b73182f44" category="section-title">變更可上傳備份至物件儲存設備的網路頻寬</block>
-  <block id="8a75fbddacee811141e1743b04ce7747" category="paragraph">當您在工作環境中啟動Cloud Backup時、ONTAP 根據預設、使用無限頻寬將資料從工作環境傳輸至物件儲存設備。如果您需要調節傳輸期間所使用的網路頻寬量、可以選擇1到1、000 Mbps之間的值作為最大傳輸率。</block>
   <block id="1f93761cc5827e33d0eab0b81e59533a" category="inline-image-macro">「進階設定」頁面中的「傳輸率上限」項目快照。</block>
   <block id="b6b92ac68c60c85a484c906db8777124" category="paragraph"><block ref="b6b92ac68c60c85a484c906db8777124" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="74cc52c7c289df31888fc04f6bdb8413" category="paragraph">選取選項按鈕*無限*表示沒有限制、或選取*有限*選項按鈕、然後輸入可使用的最大頻寬。</block>
   <block id="0e90335213cfc4fed49846f4e44e57d3" category="section-title">變更歸檔儲存類別</block>
   <block id="8d45cbf2cc7abced70e253acc8c53957" category="paragraph">如果您想要變更備份檔案已儲存一定天數（通常超過30天）時所使用的歸檔儲存類別、您可以在此處進行變更。使用歸檔儲存設備的任何備份原則都會立即變更、以使用此新的儲存類別。</block>
   <block id="5028cfaccc8708e90dc537ae32bd3cf2" category="paragraph">當您將備份檔案寫入Amazon S3時、此選項適用於內部部署ONTAP 的功能不全的功能不全系統（Cloud Volumes ONTAP 使用ONTAP 版本號為S還原9.10.1或更新版本）。</block>
@@ -2767,8 +2758,6 @@
   <block id="82bdb7270f3d2ffc39f1a3ee094d5e8a" category="paragraph"><block ref="82bdb7270f3d2ffc39f1a3ee094d5e8a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8c6367e42cd8d2e09365265f2ef8621b" category="paragraph">啟用後、此備份原則將套用至此工作環境中使用BlueXP、System Manager、ONTAP the Isor CLI或API建立的任何新磁碟區。</block>
   <block id="260734931fc90337787f8eab9f95f6af" category="section-title">變更是否將歷史Snapshot複本匯出為備份檔案</block>
-  <block id="27c37010bd2f00bedab738367c01ec45" category="paragraph">如果此工作環境中的任何Volume本機Snapshot複本符合您在此工作環境中使用的備份排程標籤（例如每日、每週等）、您可以將這些歷史快照匯出至物件儲存設備作為備份檔案。這可讓您將快照舊複本移至基礎備份複本、以初始化雲端中的備份。</block>
-  <block id="8f3eb38987d6f48885d716830b4c0240" category="paragraph">請注意、資料保護（DP）磁碟區不支援此選項。</block>
   <block id="e1260315a439b823ca53a44a12cdbed4" category="inline-image-macro">「進階設定」頁面中的「匯出現有的Snapshot複本」項目快照。</block>
   <block id="4c55333e1e917a54978d32ab7a324b08" category="paragraph"><block ref="4c55333e1e917a54978d32ab7a324b08" category="inline-image-macro-rx" type="image"></block></block>
   <block id="51a3a396e404f898f2e45dad30b6b1da" category="paragraph">只要選取是否要匯出現有的Snapshot複本、然後按一下*套用*即可。</block>
@@ -2811,4 +2800,20 @@
   <block id="95bdcffb51de388c8d204ebc69a73e61" category="section-title">AWS跨帳戶備份增強功能</block>
   <block id="ae3795f53c6086a9639e4652dbff318b" category="paragraph">如果您想要使用不同於Cloud Volumes ONTAP 來源磁碟區的AWS帳戶進行還原備份、則必須在BluetXP中新增目的地AWS帳戶認證、而且必須將「S3：PuttBucketPolicy」和「S3：PuttetOwnershipControl」權限新增至IAM角色、以便為BlueXP提供權限。過去、您需要在AWS主控台設定許多設定、您不再需要這麼做了。</block>
   <block id="ef88ffe6f484bdfc25f97445be29df28" category="sidebar">管理叢集層級的備份設定</block>
+  <block id="749775c831a251b1841492d6cd64446b" category="paragraph">此螢幕快照顯示預設欄/欄位標題。您可以按一下 <block ref="835a7e197f8f78cae39058ebe9f7b1c4" category="inline-image-macro-rx" type="image"></block> 顯示及隱藏欄標題、或新增2個「使用者名稱」和「類型」標題。</block>
+  <block id="9596c723878bfc4072c4881a7877ce59" category="list-text">使用頁面左上角的時間選取器可檢視特定期間內的工作</block>
+  <block id="8c8d15cbcb23d4d9a941a520eed8f594" category="list-text">按一下「*檢視工作*」以查看特定狀態、例如在「失敗」下、僅檢視失敗的工作</block>
+  <block id="aa72dffd28e8e8bc6bede04c2bfb9b8a" category="paragraph">目前有四個事件會觸發電子郵件警示：</block>
+  <block id="86adb6c119fde87f974199cf61935f54" category="list-text">在工作環境中啟用雲端備份失敗</block>
+  <block id="17d0a830cae7a9ee38e63d4d74257685" category="list-text">雲端備份還原作業失敗</block>
+  <block id="4a4cfe5483874f73014159f5baca5462" category="list-text">Adhoc（隨需）磁碟區備份失敗</block>
+  <block id="01c236efa847517aec154a45e404d759" category="list-text">偵測到系統上可能發生的勒索軟體攻擊</block>
+  <block id="30dae49f6de63e85b78b96b2080bb0bb" category="paragraph">您不一定需要刪除來源Volume。您可以刪除磁碟區的備份關係、並保留來源磁碟區。在此情況下、您可以稍後在磁碟區上「啟動」備份。在這種情況下、會繼續使用原始的基礎備份複本：不會建立新的基礎備份複本、也不會將其匯出至雲端。請注意、如果您確實重新啟動備份關係、磁碟區會被指派預設的備份原則。</block>
+  <block id="495f64bce7d9d754a435527baf769353" category="paragraph">此功能僅在系統執行ONTAP 的是更新版本的更新版本時才可使用。</block>
+  <block id="228129642e2d421577991251a19c55f5" category="list-text">變更是否在未來磁碟區的初始基礎備份檔案中包含歷史Snapshot複本</block>
+  <block id="886fd7da3e081fa21e258a3d2c55adaa" category="paragraph">請參閱入門文件、將內部部署ONTAP 的各項資料備份到您的特定雲端供應商、以確保ONTAP 您的整套系統設定正確、適合新的IPspace。例如：</block>
+  <block id="12ada5b9617c3b45c33107e57c89ecb9" category="paragraph">當您在工作環境中啟動Cloud Backup時、ONTAP 根據預設、使用無限頻寬將備份資料從工作環境中的磁碟區傳輸至物件儲存設備。如果您注意到備份流量會影響一般使用者工作負載、您可以限制傳輸期間所使用的網路頻寬量。您可以選擇1到1、000 Mbps之間的值作為最大傳輸率。</block>
+  <block id="057d6c600d485e4ee55de2a7a7001dc5" category="paragraph">選取*受限*選項按鈕、然後輸入可使用的最大頻寬、或選取*無限*表示沒有限制。</block>
+  <block id="45d792202c91671265c4a5c1b4b44f68" category="paragraph">如果磁碟區的任何本機Snapshot複本符合您在此工作環境中使用的備份排程標籤（例如每日、每週等）、您可以將這些歷史快照匯出至物件儲存設備作為備份檔案。這可讓您將快照舊複本移至基礎備份複本、以初始化雲端中的備份。</block>
+  <block id="6e5adfd3f87f76739bd90a17c2764063" category="paragraph">請注意、此選項僅適用於新磁碟區的新備份檔案、不支援資料保護（DP）磁碟區。</block>
 </blocks>

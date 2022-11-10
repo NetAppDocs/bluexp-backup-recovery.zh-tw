@@ -361,6 +361,10 @@ image:screenshot_delete_one_backup.png["顯示如何刪除單一備份檔案的�
 
 如果您想要停止建立新的備份檔案並刪除來源磁碟區、但保留所有現有的備份檔案、則刪除磁碟區的備份關係可提供歸檔機制。這可讓您在未來視需要從備份檔案還原磁碟區、同時從來源儲存系統中清除空間。
 
+您不一定需要刪除來源Volume。您可以刪除磁碟區的備份關係、並保留來源磁碟區。在此情況下、您可以稍後在磁碟區上「啟動」備份。在這種情況下、會繼續使用原始的基礎備份複本：不會建立新的基礎備份複本、也不會將其匯出至雲端。請注意、如果您確實重新啟動備份關係、磁碟區會被指派預設的備份原則。
+
+此功能僅在系統執行ONTAP 的是更新版本的更新版本時才可使用。
+
 您無法從Cloud Backup使用者介面刪除來源Volume。不過、您可以在畫版上開啟「Volume Details」（Volume詳細資料）頁面、以及 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["從該處刪除磁碟區"]。
 
 
