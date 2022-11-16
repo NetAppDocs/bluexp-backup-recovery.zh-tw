@@ -187,9 +187,9 @@ bigquery.tables.create
 
 === 驗證授權需求
 
-* 若要為叢集啟動Cloud Backup、您必須先向Google訂閱隨用隨付（PAYGO）Cloud Manager Marketplace產品、或向NetApp購買及啟動Cloud Backup BYOL授權。這些授權適用於您的帳戶、可在多個系統上使用。
+* 若要為叢集啟動Cloud Backup、您必須先向Google訂閱隨用隨付（PAYGO）的BlueXP Marketplace產品、或向NetApp購買並啟動Cloud Backup BYOL授權。這些授權適用於您的帳戶、可在多個系統上使用。
 +
-** 若要取得Cloud Backup PAYGO授權、您需要訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google"^] Cloud Manager Marketplace提供的雲端備份功能。雲端備份計費是透過此訂閱完成。
+** 若要取得Cloud Backup PAYGO授權、您需要訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["Google"^] 使用雲端備份的BlueXP Marketplace產品。雲端備份計費是透過此訂閱完成。
 ** 對於Cloud Backup BYOL授權、您需要NetApp的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["瞭解如何管理BYOL授權"]。
 
 
@@ -244,7 +244,7 @@ image:screenshot_backup_onprem_to_google.png["此螢幕快照顯示將磁碟區�
 
 
 
-. 如果您的帳戶沒有現有的Cloud Backup授權、此時系統會提示您選擇要使用的收費方法類型。您可以從Google訂閱隨用隨付（PAYGO）Cloud Manager Marketplace產品（或如果您有多個訂閱、則需要選擇一個）、或從NetApp購買並啟動Cloud Backup BYOL授權。 link:task-licensing-cloud-backup.html["瞭解如何設定Cloud Backup授權。"]
+. 如果您的帳戶沒有現有的Cloud Backup授權、此時系統會提示您選擇要使用的收費方法類型。您可以從Google訂閱隨用隨付（PAYGO）的BlueXP Marketplace產品（或如果您有多個訂閱、則需要選擇一個）、或從NetApp購買並啟動Cloud Backup BYOL授權。 link:task-licensing-cloud-backup.html["瞭解如何設定Cloud Backup授權。"]
 . 輸入將用於預設原則的備份原則詳細資料、然後按一下「*下一步*」。您可以選取現有的原則、也可以在每個區段中輸入您的選擇來建立新原則：
 +
 .. 輸入預設原則的名稱。您不需要變更名稱。
@@ -269,6 +269,8 @@ image:screenshot_backup_select_volumes.png["選取要備份之磁碟區的快照
 
 
 Google Cloud Storage儲存庫會自動在您輸入的Google存取金鑰和秘密金鑰所指示的服務帳戶中建立、並儲存備份檔案。Volume Backup Dashboard隨即顯示、以便您監控備份狀態。您也可以使用監控備份與還原工作的狀態 link:task-monitor-backup-jobs.html["「工作監控」面板"^]。
+
+根據預設、備份會與_Standard_儲存類別相關聯。您可以使用成本較低的_Nearlin__、_Coldlin__或_Archive_儲存類別。不過、您可以透過Google設定儲存類別、而非透過Cloud Backup UI進行設定。請參閱Google主題 https://cloud.google.com/storage/docs/changing-default-storage-class["變更儲存區的預設儲存類別"^] 以取得詳細資料。
 
 
 

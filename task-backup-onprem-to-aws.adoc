@@ -168,9 +168,9 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
 
 == 驗證授權需求
 
-* 若要為叢集啟動Cloud Backup、您必須先訂閱AWS的隨用隨付（PAYGO）Cloud Manager Marketplace產品、或向NetApp購買及啟動Cloud Backup BYOL授權。這些授權適用於您的帳戶、可在多個系統上使用。
+* 若要為叢集啟動Cloud Backup、您必須先訂閱AWS的隨用隨付（PAYGO）BlueXP Marketplace產品、或向NetApp購買及啟動Cloud Backup BYOL授權。這些授權適用於您的帳戶、可在多個系統上使用。
 +
-** 若要取得Cloud Backup PAYGO授權、您需要訂閱 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS Cloud Manager Marketplace 產品"^] 使用Cloud Backup。雲端備份計費是透過此訂閱完成。
+** 若要取得Cloud Backup PAYGO授權、您需要訂閱 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS BlueXP Marketplace產品"^] 使用Cloud Backup。雲端備份計費是透過此訂閱完成。
 ** 對於Cloud Backup BYOL授權、您需要NetApp的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["瞭解如何管理BYOL授權"]。
 
 
@@ -376,7 +376,7 @@ image:screenshot_backup_provider_settings_aws.png["快照顯示將磁碟區從ON
 
 
 
-. 如果您的帳戶沒有現有的Cloud Backup授權、此時系統會提示您選擇要使用的收費方法類型。您可以訂閱AWS提供的隨用隨付（PAYGO）Cloud Manager Marketplace服務（或如果您有多個訂閱、則需要選擇一個）、或向NetApp購買並啟動Cloud Backup BYOL授權。 link:task-licensing-cloud-backup.html["瞭解如何設定Cloud Backup授權。"]
+. 如果您的帳戶沒有現有的Cloud Backup授權、此時系統會提示您選擇要使用的收費方法類型。您可以從AWS訂閱隨用隨付（PAYGO）的BlueXP Marketplace產品（或如果您有多個訂閱、則需要選擇一個）、或從NetApp購買並啟動Cloud Backup BYOL授權。 link:task-licensing-cloud-backup.html["瞭解如何設定Cloud Backup授權。"]
 . 輸入網路詳細資料、然後按*下一步*。
 +
 .. 您要備份的磁碟區所在的叢集中的 IPspace ONTAP 。此IPspace的叢集間生命體必須具有傳出網際網路存取。

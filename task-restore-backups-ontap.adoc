@@ -53,7 +53,7 @@ image:screenshot_restore_dashboard.png["「還原儀表板」顯示使用瀏覽"
 | 瀏覽資料夾樣式的結構、找出單一備份檔案中的磁碟區、資料夾或檔案 | 依部分或完整磁碟區名稱、部分或完整資料夾/檔案名稱、大小範圍及其他搜尋篩選條件、在*所有備份檔案*之間搜尋磁碟區、資料夾或檔案 
 
 
-| Volume與檔案還原可搭配儲存在Amazon S3、Azure Blob、Google Cloud和NetApp StorageGRID 的備份檔案使用。 | Volume與檔案還原可與儲存在Amazon S3、Azure Blob和Google Cloud中的備份檔案搭配使用 
+| Volume與檔案還原可搭配儲存在Amazon S3、Azure Blob、Google Cloud和NetApp StorageGRID 的備份檔案使用 | Volume與檔案還原可搭配儲存在Amazon S3、Azure Blob、Google Cloud和NetApp StorageGRID 的備份檔案使用 
 
 
 | 在StorageGRID 無法存取網際網路的情況下、從無法存取的站台還原磁碟區、資料夾和檔案 | 在黑暗站台不受支援 
@@ -119,12 +119,36 @@ endif::azure[]
 | Azure Blob | Azure 內部部署的整套系統 Cloud Volumes ONTAP ONTAP | Azure內部部署的系統中的資料：：azure[] ifdef：：Cloud Volumes ONTAP ONTAP GCP[] 
 
 
-| Google Cloud Storage | 在Google內部部署的內部部署系統中使用Cloud Volumes ONTAP ONTAP | 在Google中顯示（^1^）內部部署的不二系統（^1^）Cloud Volumes ONTAP ONTAP endif::GCP[] 
+| Google Cloud Storage | 在Google內部部署的內部部署系統中使用Cloud Volumes ONTAP ONTAP | 在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[] 
 
 
 | NetApp StorageGRID | 內部部署 ONTAP 的作業系統 | 內部部署 ONTAP 的作業系統 
 |===
-（^1^）_Connector必須部署在Google Cloud Platform VPC上、才能獲得此支援。_
+在瀏覽與還原中、連接器可安裝在下列位置：
+
+ifdef::aws[]
+
+* 對於Amazon S3、連接器可部署在AWS或內部部署環境中
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* 對於Azure Blob、連接器可部署於Azure或內部部署
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Google Cloud Storage的Connector必須部署在Google Cloud Platform VPC上
+
+
+endif::gcp[]
+
+* 若為僅供部分使用、連接器必須部署在您的內部環境中StorageGRID
+
 
 請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能
 
@@ -277,7 +301,7 @@ image:diagram_browse_restore_file.png["顯示使用瀏覽"]
 
 
 
-==== 使用「瀏覽與還原」還原資料夾與檔案
+==== 還原資料夾與檔案
 
 請依照下列步驟、從ONTAP 一份支援的恢復磁碟區備份、將資料夾或檔案還原至磁碟區。您應該知道磁碟區的名稱、以及要用來還原資料夾或檔案的備份檔案日期。此功能使用「即時瀏覽」功能、可讓您檢視每個備份檔案中的目錄和檔案清單。
 
@@ -442,10 +466,33 @@ video::RZktLe32hhQ[youtube,width=848,height=480]
 | Google Cloud Storage | 在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[] 
 
 
-| NetApp StorageGRID | 目前不支援 
+| NetApp StorageGRID | 內部部署 ONTAP 的作業系統 
 |===
+對於搜尋與還原、連接器可安裝在下列位置：
 
-TIP: 在搜尋與還原方面、從Amazon S3或Azure Blob還原備份時、可將Connector部署在雲端供應商或內部部署環境中。從Google Cloud Storage還原備份時、必須將Connector部署在雲端。
+ifdef::aws[]
+
+* 對於Amazon S3、連接器可部署在AWS或內部部署環境中
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* 對於Azure Blob、連接器可部署於Azure或內部部署
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Google Cloud Storage的Connector必須部署在Google Cloud Platform VPC上
+
+
+endif::gcp[]
+
+* 若為僅供部分使用、連接器必須部署在內部部署、並具備網際網路連線能力StorageGRID
+
 
 請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能
 
@@ -507,6 +554,20 @@ ifdef::gcp[]
 
 endif::gcp[]
 
+* 需求：StorageGRID
++
+根據您的組態、有兩種方法可以實作搜尋與還原：
+
++
+** 如果您的帳戶中沒有雲端供應商認證資料、則索引目錄資訊會儲存在Connector上。
+** 如果您有 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html["AWS認證資料"^] 或 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html["Azure認證"^] 在帳戶中、索引目錄會儲存在雲端供應商、就像部署在雲端的Connector一樣。
++
+使用此實作時、請參閱上述AWS和Azure需求。即使您使用的是內部部署Connector、也必須同時滿足Connector權限和雲端供應商資源的雲端供應商需求。
+
+
+
+
+
 
 
 === 搜尋與還原程序
@@ -556,6 +617,9 @@ ifdef::gcp[]
 
 
 endif::gcp[]
+
+* 對於StorageGRID 儲存在還原中的備份、它會在Connector或雲端供應商環境中配置空間。
+
 
 如果您的工作環境已啟用索引、請前往下一節還原資料。
 
@@ -634,6 +698,9 @@ ifdef::gcp[]
 
 
 endif::gcp[]
+
+* 從StorageGRID 物件還原時、請輸入StorageGRID 支援ONTAP 以HTTPS通訊的支援對象伺服器的FQDN和連接埠StorageGRID 、輸入存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 目的地Volume所在的物件叢集中的IPspace。
+
 
 磁碟區、資料夾或檔案將會還原、並返回「還原儀表板」、以便您檢閱還原作業的進度。您也可以按一下「*工作監控*」標籤來查看還原進度。
 

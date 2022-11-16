@@ -65,21 +65,21 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensin
 
 ifdef::aws[]
 
-* AWS ： https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["如需價格詳細資料、請前往 Cloud Manager Marketplace 產品"^]。
+* AWS ： https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["如需價格詳細資料、請前往BlueXP Marketplace產品"^]。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Azure ： https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["如需價格詳細資料、請前往 Cloud Manager Marketplace 產品"^]。
+* Azure ： https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["如需價格詳細資料、請前往BlueXP Marketplace產品"^]。
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* GCP ： https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["如需價格詳細資料、請前往 Cloud Manager Marketplace 產品"^]。
+* GCP ： https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["如需價格詳細資料、請前往BlueXP Marketplace產品"^]。
 
 
 endif::gcp[]

@@ -33,7 +33,7 @@ summary: 請完成幾個步驟、開始將GKE Kubernetes叢集上持續磁碟區
 
 * 您擁有有效的 GCP 訂閱、可用於存放備份的儲存空間。
 * 您的Google Cloud Project中有一個服務帳戶、該帳戶具有預先定義的儲存管理角色。
-* 您已訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["Cloud Manager Marketplace 備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"^] NetApp的Cloud Backup BYOL授權。
+* 您已訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"^] NetApp的Cloud Backup BYOL授權。
 
 
 [role="quick-margin-para"]
@@ -173,4 +173,4 @@ image:screenshot_backup_select_volumes_k8s.png["選取要備份之持續磁碟�
 
 此時會顯示Kubernetes儀表板、以便您監控備份狀態。
 
-您可以 link:task-managing-backups-kubernetes.html["開始和停止磁碟區備份、或變更備份排程"^]。您也可以 link:task-restore-backups-kubernetes.html#restoring-volumes-from-a-kubernetes-backup-file["從備份檔案還原整個磁碟區"^] 在GCP的相同或不同Kubernetes叢集（位於同一個區域）上做為新磁碟區。
+您可以 link:task-manage-backups-kubernetes.html["開始和停止磁碟區備份、或變更備份排程"^]。您也可以 link:task-restore-backups-kubernetes.html#restoring-volumes-from-a-kubernetes-backup-file["從備份檔案還原整個磁碟區"^] 在GCP的相同或不同Kubernetes叢集（位於同一個區域）上做為新磁碟區。

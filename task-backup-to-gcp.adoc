@@ -26,7 +26,7 @@ summary: 請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能�
 * 您在 Cloud Volumes ONTAP GCP 中執行的是《 1.7P5 或更新版本：
 * 您擁有有效的 GCP 訂閱、可用於存放備份的儲存空間。
 * 您的Google Cloud Project中有一個服務帳戶、該帳戶具有預先定義的儲存管理角色。
-* 您已訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["Cloud Manager Marketplace 備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"^] NetApp的Cloud Backup BYOL授權。
+* 您已訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"^] NetApp的Cloud Backup BYOL授權。
 
 
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png"[] Alt="2"></span>在新的或現有的系統上啟用雲端備份
@@ -63,20 +63,20 @@ image:screenshot_backup_policy_gcp.png["顯示Cloud Backup設定的快照、您�
 image:diagram_cloud_backup_cvo_google.png["顯示Cloud Backup如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
 支援 ONTAP 的支援版本:: 最低ONTAP 版本為0、9、75；ONTAP 建議使用0、8P13及更新版本。
-支援的 GCP 區域:: 所有GCP地區均支援雲端備份 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]。
-授權需求:: 如需Cloud Backup PAYGO授權、請透過訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCP 市場"^] 必須先啟用雲端備份。雲端備份計費是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
+授權需求:: 如需Cloud Backup PAYGO授權、請透過訂購BlueXP https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCP 市場"^] 必須先啟用雲端備份。雲端備份計費是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
 +
 --
-對於Cloud Backup BYOL授權、您需要NetApp的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["瞭解如何管理BYOL授權"]。
+對於Cloud Backup BYOL授權、您需要NetApp的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["瞭解如何管理BYOL授權"^]。
 
 而且您需要 Google 訂閱備份所在的儲存空間。
 
 --
+支援的 GCP 區域:: 所有GCP地區均支援雲端備份 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]。
 GCP 服務帳戶:: 您必須在Google Cloud Project中擁有預先定義儲存管理角色的服務帳戶。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html["瞭解如何建立服務帳戶"^]。
 驗證或新增連接器權限:: 若要使用雲端備份搜尋與還原功能、您必須擁有Connector角色的特定權限、才能存取Google Cloud BigQuery服務。請參閱下列權限、如果您需要修改原則、請遵循這些步驟。
 +
 --
-. 在中 link:https://console.cloud.google.com["雲端主控台"^]請移至*角色*頁面。
+. 在中 https://console.cloud.google.com["雲端主控台"^]請移至*角色*頁面。
 . 使用頁面頂端的下拉式清單、選取包含您要編輯之角色的專案或組織。
 . 按一下自訂角色。
 . 按一下*編輯角色*以更新角色的權限。
@@ -183,6 +183,8 @@ image:screenshot_backup_select_volumes.png["選取要備份之磁碟區的快照
 
 
 Google Cloud Storage儲存庫會自動在您輸入的Google存取金鑰和秘密金鑰所指示的服務帳戶中建立、並儲存備份檔案。Volume Backup Dashboard隨即顯示、以便您監控備份狀態。您也可以使用監控備份與還原工作的狀態 link:task-monitor-backup-jobs.html["「工作監控」面板"^]。
+
+根據預設、備份會與_Standard_儲存類別相關聯。您可以使用成本較低的_Nearlin__、_Coldlin__或_Archive_儲存類別。不過、您可以透過Google設定儲存類別、而非透過Cloud Backup UI進行設定。請參閱Google主題 https://cloud.google.com/storage/docs/changing-default-storage-class["變更儲存區的預設儲存類別"^] 以取得詳細資料。
 
 
 

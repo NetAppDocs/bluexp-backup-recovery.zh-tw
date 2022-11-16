@@ -25,7 +25,7 @@ summary: 請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能�
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] alt="1"></span>請確認您的組態是否支援
 * 您在Cloud Volumes ONTAP AWS中執行的是版本號為9、7P5或更新版本。
 * 您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。
-* 您已訂閱 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["Cloud Manager Marketplace 備份產品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS年度合約"]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"] NetApp的Cloud Backup BYOL授權。
+* 您已訂閱 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["BlueXP Marketplace備份產品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS年度合約"]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"] NetApp的Cloud Backup BYOL授權。
 * 提供具有權限的BlueXP Connector的IAM角色包括來自最新版本的S3權限 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html["BlueXP原則"^]。
 
 
@@ -69,7 +69,7 @@ image:screenshot_backup_policy_aws.png["顯示Cloud Backup設定的快照、您�
 image:diagram_cloud_backup_cvo_aws.png["顯示Cloud Backup如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
 支援 ONTAP 的支援版本:: 最低ONTAP 版本為0、9、75；ONTAP 建議使用0、8P13及更新版本。
-授權需求:: 對於Cloud Backup PAYGO授權、AWS Marketplace提供Cloud Manager訂閱服務、可讓您部署Cloud Volumes ONTAP 支援的功能包括：還原和雲端備份。您需要 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["訂閱此 Cloud Manager 訂閱"^] 在啟用Cloud Backup之前。雲端備份計費是透過此訂閱完成。
+授權需求:: 如需Cloud Backup PAYGO授權、AWS Marketplace提供了一份適用於BlueXP的訂購服務、可用於部署Cloud Volumes ONTAP 功能包括：您需要 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["訂閱此BlueXP訂閱"^] 在啟用Cloud Backup之前。雲端備份計費是透過此訂閱完成。
 +
 --
 如需一年一度的合約、而該合約可讓您同時備份Cloud Volumes ONTAP 支援不必要資料和內部部署ONTAP 的不必要資料、您必須從訂閱 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace頁面"^] 然後 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html["將訂閱與AWS認證資料建立關聯"^]。

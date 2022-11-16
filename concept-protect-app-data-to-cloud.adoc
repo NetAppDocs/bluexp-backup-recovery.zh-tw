@@ -24,7 +24,7 @@ NOTE: 您應該使用SnapCenter 的是不含更新版本的軟體。
 如需雲端應用程式備份的詳細資訊、請參閱：
 
 * https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["應用程式感知備份、採用Cloud Backup和SnapCenter 功能"^]
-* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["應用程式的雲端備份"^]
+* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["Cloud Backup for Applications Podcast"^]
 
 
 

@@ -263,7 +263,7 @@ ifdef::gcp[]
 
 * 在GCP中、預設會將備份與_Standard_儲存類別相關聯。
 +
-您可以使用成本較低的_Nearlin__儲存類別、或_Coldlin__或_Archive_儲存類別。不過、您可以透過Google設定這些其他儲存類別、而非透過Cloud Backup UI。請參閱Google主題 link:https://cloud.google.com/storage/docs/storage-classes["儲存類別"^] 如需變更Google Cloud Storage儲存庫預設儲存類別的相關資訊、
+您可以使用成本較低的_Nearlin__儲存類別、或_Coldlin__或_Archive_儲存類別。不過、您可以透過Google設定這些其他儲存類別、而非透過Cloud Backup UI。請參閱Google主題 https://cloud.google.com/storage/docs/storage-classes["儲存類別"^] 如需變更Google Cloud Storage儲存庫預設儲存類別的相關資訊、
 
 
 
