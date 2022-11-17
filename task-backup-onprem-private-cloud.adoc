@@ -43,10 +43,10 @@ summary: 請完成幾個步驟、開始從內部部署ONTAP 的支援系統備�
 
 
 [role="quick-margin-para"]
-選取工作環境、然後按一下右窗格中「Backup & Restore（備份與還原）」服務旁的*「Enable（啟用）」>「Backup Volumes（備份磁碟區）」*、然後依照設定精靈進行。
+選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」>「備份磁碟區」*、再依照設定精靈進行。
 
 [role="quick-margin-para"]
-image:screenshot_backup_onprem_enable.png["螢幕擷取畫面會顯示「備份與安培」；「啟用還原」按鈕、可在您選取工作環境之後使用。"]
+image:screenshot_backup_onprem_enable.png["螢幕擷取畫面顯示「啟用備份與還原」按鈕、可在您選取工作環境之後使用。"]
 
 [role="quick-margin-para"]
 選擇StorageGRID 「支援供應商」、然後輸入StorageGRID 「不支援服務器」和「S3租戶帳戶」的詳細資料。您也需要在 ONTAP 磁碟區所在的叢集中指定 IPspace 。
@@ -214,7 +214,7 @@ TIP: 將檔案備份StorageGRID 到還原時、不支援PAYGO授權。
 如果StorageGRID 您的備份的目的地是在Canvas上的工作環境、您可以將叢集拖曳到StorageGRID 可運作的環境中、以啟動設定精靈。
 
 +
-image:screenshot_backup_onprem_enable.png["螢幕擷取畫面會顯示「備份與安培」；「啟用還原」按鈕、可在您選取工作環境之後使用。"]
+image:screenshot_backup_onprem_enable.png["螢幕擷取畫面顯示「啟用備份與還原」按鈕、可在您選取工作環境之後使用。"]
 
 . 選擇* StorageGRID 《*》*「供應商」、按一下「*下一步*」、然後輸入供應商詳細資料：
 +

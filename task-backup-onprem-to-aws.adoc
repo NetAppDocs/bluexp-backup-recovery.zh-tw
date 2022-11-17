@@ -49,7 +49,7 @@ summary: 請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中�
 或者、您可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的Amazon S3加密金鑰。  your AWS environment,瞭解如何讓AWS S3環境準備好接收ONTAP 還原備份。
 
 [role="quick-margin-para"]
-選取工作環境、然後按一下右窗格中「Backup & Restore（備份與還原）」服務旁的*「Enable（啟用）」>「Backup Volumes（備份磁碟區）」*。然後依照設定精靈定義預設的備份原則和要保留的備份數目、並選取您要備份的磁碟區。
+選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」>「備份磁碟區」*。然後依照設定精靈定義預設的備份原則和要保留的備份數目、並選取您要備份的磁碟區。
 
 [role="quick-margin-para"]
  Cloud Backup,瞭解如何在您的磁碟區上啟動Cloud Backup。
@@ -360,7 +360,7 @@ Please enter Certificate: Press <Enter> when done
 如果用於備份的Amazon S3目的地是在Canvas上的工作環境、您可以將叢集拖曳至Amazon S3工作環境、以啟動設定精靈。
 
 +
-image:screenshot_backup_onprem_enable.png["螢幕擷取畫面會顯示「備份與安培」；「啟用還原」按鈕、可在您選取工作環境之後使用。"]
+image:screenshot_backup_onprem_enable.png["螢幕擷取畫面顯示「啟用備份與還原」按鈕、可在您選取工作環境之後使用。"]
 
 . 選取Amazon Web Services做為您的供應商、然後按一下*「下一步*」。
 . 輸入供應商詳細資料、然後按*下一步*。

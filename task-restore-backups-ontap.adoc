@@ -28,7 +28,7 @@ summary: 備份會儲存在雲端帳戶的物件存放區中、以便從特定�
 
 == 還原儀表板
 
-您可以使用還原儀表板來執行磁碟區、資料夾和檔案還原作業。若要存取「還原儀表板」、請按一下BlueXP功能表中的*備份與還原*、然後按一下*還原*索引標籤。您也可以按一下 image:screenshot_gallery_options.gif["更多按鈕"] >*從「服務」面板中的「備份與還原」服務中檢視「還原儀表板」*。
+您可以使用還原儀表板來執行磁碟區、資料夾和檔案還原作業。若要存取「還原儀表板」、請按一下BlueXP功能表中的*備份與還原*、然後按一下*還原*索引標籤。您也可以按一下 image:screenshot_gallery_options.gif["更多按鈕"] >*從「服務」面板的「備份與還原」服務中檢視「還原儀表板」*。
 
 
 NOTE: 雲端備份必須已啟用、至少必須有一個工作環境、而且必須存在初始備份檔案。
@@ -560,9 +560,9 @@ endif::gcp[]
 
 +
 ** 如果您的帳戶中沒有雲端供應商認證資料、則索引目錄資訊會儲存在Connector上。
-** 如果您有 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html["AWS認證資料"^] 或 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html["Azure認證"^] 在帳戶中、索引目錄會儲存在雲端供應商、就像部署在雲端的Connector一樣。
+** 如果您有 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html["AWS認證資料"^] 或 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html["Azure認證"^] 在帳戶中、索引目錄會儲存在雲端供應商、就像部署在雲端的Connector一樣。（如果您同時擁有這兩項認證、則AWS預設為選取狀態。）
 +
-使用此實作時、請參閱上述AWS和Azure需求。即使您使用的是內部部署Connector、也必須同時滿足Connector權限和雲端供應商資源的雲端供應商需求。
+即使您使用的是內部部署Connector、也必須同時滿足Connector權限和雲端供應商資源的雲端供應商需求。使用此實作時、請參閱上述AWS和Azure需求。
 
 
 
@@ -678,7 +678,10 @@ image:screenshot_restore_step2_search_restore.png["顯示如何檢視符合搜�
 +
 ifdef::aws[]
 
-** 從Amazon S3還原時、請在ONTAP 目標Volume所在的叢集中選取IPspace、輸入您所建立之使用者的存取金鑰和秘密金鑰、以便ONTAP 讓該叢集能夠存取S3儲存區、 此外、您也可以選擇私有VPC端點來進行安全的資料傳輸。
++
+*** 從Amazon S3還原時、請在ONTAP 目標Volume所在的叢集中選取IPspace、輸入您所建立之使用者的存取金鑰和秘密金鑰、以便ONTAP 讓該叢集能夠存取S3儲存區、 此外、您也可以選擇私有VPC端點來進行安全的資料傳輸。
+
+
 
 
 

@@ -31,7 +31,7 @@ summary: 請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能�
 
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png"[] Alt="2"></span>在新的或現有的系統上啟用雲端備份
 * 新系統：完成新的工作環境精靈後、即可啟用雲端備份。
-* 現有系統：選取工作環境、然後按一下右窗格中「Backup & Restore（備份與還原）」服務旁的*「Enable（啟用）」*、然後依照設定精靈進行。
+* 現有系統：選取工作環境、然後按一下右窗格中備份與還原服務旁的*啟用*、然後依照設定精靈進行。
 +
 image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示「啟用雲端備份」按鈕、可在您選取工作環境之後使用。"]
 

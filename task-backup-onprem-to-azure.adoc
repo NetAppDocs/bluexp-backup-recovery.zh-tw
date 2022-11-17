@@ -37,10 +37,10 @@ summary: 請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中�
 
 
 [role="quick-margin-para"]
-選取工作環境、然後按一下右窗格中「Backup & Restore（備份與還原）」服務旁的*「Enable（啟用）」>「Backup Volumes（備份磁碟區）」*、然後依照設定精靈進行。
+選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」>「備份磁碟區」*、再依照設定精靈進行。
 
 [role="quick-margin-para"]
-image:screenshot_backup_onprem_enable.png["螢幕擷取畫面會顯示「備份與安培」；「啟用還原」按鈕、可在您選取工作環境之後使用。"]
+image:screenshot_backup_onprem_enable.png["螢幕擷取畫面顯示「啟用備份與還原」按鈕、可在您選取工作環境之後使用。"]
 
 [role="quick-margin-para"]
 選取Microsoft Azure做為您的供應商、然後輸入供應商詳細資料。您必須選擇Azure訂閱、以及您要建立備份的地區。您也可以選擇自己的客戶管理資料加密金鑰、而非使用預設的Microsoft管理加密金鑰。
@@ -261,7 +261,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-az
 如果您的備份Azure Blob目的地是以工作環境形式存在於Canvas上、您可以將叢集拖曳至Azure Blob工作環境、以啟動設定精靈。
 
 +
-image:screenshot_backup_onprem_enable.png["螢幕擷取畫面會顯示「備份與安培」；「啟用還原」按鈕、可在您選取工作環境之後使用。"]
+image:screenshot_backup_onprem_enable.png["螢幕擷取畫面顯示「啟用備份與還原」按鈕、可在您選取工作環境之後使用。"]
 
 . 選取Microsoft Azure做為您的供應商、然後按一下* Next*。
 . 輸入供應商詳細資料、然後按*下一步*。

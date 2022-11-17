@@ -31,9 +31,9 @@ summary: 請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能�
 
 .span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png"[] Alt="2"></span>在新的或現有的系統上啟用雲端備份
 * 新系統：工作環境精靈預設會啟用雲端備份。請務必保持啟用選項。
-* 現有系統：選取工作環境、然後按一下右窗格中「Backup & Restore（備份與還原）」服務旁的*「Enable（啟用）」*、然後依照設定精靈進行。
+* 現有系統：選取工作環境、然後按一下右窗格中備份與還原服務旁的*啟用*、然後依照設定精靈進行。
 +
-image:screenshot_backup_cvo_enable.png["螢幕擷取畫面會顯示「備份與安培」；「啟用還原」按鈕、可在您選取工作環境之後使用。"]
+image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示「啟用備份與還原」按鈕、可在您選取工作環境之後使用。"]
 
 
 
@@ -193,7 +193,7 @@ Cloud Backup可在系統上啟用、並每天備份磁碟區、並保留最近30
 如果用於備份的Amazon S3目的地是在Canvas上的工作環境、您可以將叢集拖曳至Amazon S3工作環境、以啟動設定精靈。
 
 +
-image:screenshot_backup_cvo_enable.png["螢幕擷取畫面會顯示「備份與安培」；「啟用還原」按鈕、可在您選取工作環境之後使用。"]
+image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示「啟用備份與還原」按鈕、可在您選取工作環境之後使用。"]
 
 . 選取供應商詳細資料、然後按*下一步*。
 +
