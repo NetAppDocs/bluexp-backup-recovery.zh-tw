@@ -1,0 +1,177 @@
+---
+sidebar: sidebar 
+permalink: reference-backup-cbs-db-in-dark-site.html 
+keywords: backup database, recover database 
+summary: 在無法存取網際網路的站台上使用Cloud Backup時、如果您遇到與BlueXP Connector主機系統有關的問題、您將需要定期備份重要的Cloud Backup檔案。這可讓您部署新的Connector、並還原重要的Cloud Backup資料。 
+---
+= 在黑暗的站台中備份及還原Cloud Backup資料
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在無法存取網際網路的站台上使用Cloud Backup時、如果您遇到與BlueXP Connector主機系統有關的問題、您將需要定期備份重要的Cloud Backup檔案。這可讓您部署新的Connector、並還原重要的Cloud Backup資料。
+
+當您在部署BlueXP Connector的SaaS環境中使用Cloud Backup時、無論是在雲端供應商、或是在自己的主機系統上、只要能存取網際網路、所有重要的Cloud Backup組態資料都會備份並儲存在雲端中。當您在無法存取網際網路的站台（也稱為「暗站」）中使用Cloud Backup時、此Cloud Backup資訊只會儲存在本機連接器系統上。
+
+本主題說明如何將重要的Cloud Backup資料備份到連線StorageGRID 的作業系統。同時也說明如何在必要時將資料還原至新的Connector。
+
+
+NOTE: 您應計畫定期備份此Cloud Backup資料、以便隨時存取最新的資料。
+
+
+
+== 備份關鍵雲端備份資料
+
+您需要備份兩種類型的資料：
+
+* 雲端備份資料庫
+* 索引目錄檔案（用於搜尋與還原功能）
+
+
+Cloud Backup資料庫或Indexed目錄檔案中沒有任何Volume資料。
+
+
+
+=== 備份Cloud Backup資料庫
+
+Cloud Backup資料庫包含所有磁碟區、備份檔案、備份原則和組態資訊的清單。
+
+.步驟
+. 使用適當的認證資料登入Connector主機系統。
+. 輸入下列命令、輸入MySQL Container Shell：
++
+[source, cli]
+----
+docker exec -it ds_mysql_1 sh
+----
+. 在Container Shell中、部署「env」。
+. 您需要MySQL資料庫密碼、因此請複製「MySQL_root_password」金鑰的值。
+. 輸入下列命令備份Cloud Backup MySQL DB：
++
+[source, cli]
+----
+mysqldump --user root --password -p cloud_backup --result-file=mysql.dump.cloud_backup.sql
+----
+. 輸入下列命令、從MySQL Docker容器複製MySQL DB備份：
++
+[source, cli]
+----
+docker cp ds_mysql_1:/mysql.dump.cloud_backup.sql .
+----
+. 將備份複製到網路中的安全位置。如果您要建立一個本地的不全區的還原磁碟區備份到該位置、就可以使用該StorageGRID 系統ONTAP 。
+
+
+
+
+=== 備份索引型錄檔案
+
+索引目錄用於搜尋與還原功能。其中包含每個磁碟區和每個備份檔案的相關資訊、讓您在還原磁碟區資料時、能夠快速且有效率地進行搜尋。
+
+. 在Connector主機系統上、將目錄變更為「/tmp」。
+. 找到索引目錄資料夾。它以字串*型錄*開頭。
+. 輸入下列命令、壓縮「catalog（型錄）<_xxxxxx_>」資料夾：
++
+[source, cli]
+----
+zip -r catalogxxxxxx.zip catalogxxxxxx
+----
+. 將壓縮備份複製到網路中的安全位置。
+
+
+
+
+== 將Cloud Backup資料還原至新的Connector
+
+如果內部部署Connector發生災難性故障、您必須安裝新的Connector、然後將Cloud Backup資料還原至新的Connector。
+
+您需要執行4項工作、才能將Cloud Backup系統恢復至正常運作狀態：
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["在新的內部部署Linux主機上安裝新的Connector"^]
+* 還原Cloud Backup資料庫
+* 還原索引型目錄檔案
+* 重新探索ONTAP 所有內部的功能齊全的功能、使其成為藍圖XP UI
+
+
+一旦您確認系統恢復正常運作、建議您建立新的備份檔案。
+
+
+
+=== 還原Cloud Backup資料庫
+
+. 安裝新的Connector之後、請使用適當的認證資料登入Connector主機系統。
+. 將MySQL備份從安全位置複製到新的Connector主機。
+. 使用下列命令、將備份複製到MySQL Docker容器中：
++
+[source, cli]
+----
+docker cp mysql.dump.cloud_backup.sql ds_mysql_1:/.
+----
+. 使用下列命令輸入MySQL Container Shell：
++
+[source, cli]
+----
+docker exec -it ds_mysql_1 sh
+----
+. 在Container Shell中、部署「env」。
+. 您需要MySQL資料庫密碼、因此請複製「MySQL_root_password」金鑰的值。
+. 使用下列命令還原Cloud Backup MySQL資料庫：
++
+[source, cli]
+----
+mysql -u root -p cloud_backup < mysql.dump.cloud_backup.sql
+----
+. 使用下列SQL命令、確認Cloud Backup MySQL資料庫已正確還原：
++
+[source, cli]
+----
+# mysql -u root -p cloud_backup
+----
++
+輸入密碼。
+
++
+[source, cli]
+----
+mysql> show tables;
+mysql> select * from volume;
+----
++
+檢查顯示的磁碟區是否與原始環境中的磁碟區相同。
+
+
+
+
+
+=== 還原索引型目錄檔案
+
+. 將「索引目錄」備份壓縮檔從安全位置複製到「/tmp」資料夾中的新Connector主機。
+. 使用下列命令解壓縮「catalogxxxxxx.zip」檔案：
++
+[source, cli]
+----
+unzip catalogxxxxxx.zip
+----
+. 執行* ls-*命令、確認已建立資料夾「catalogxxxxxx」、並在其下方加入子資料夾「變更」和「快照」。
+
+
+
+
+=== 探索叢集並驗證雲端備份設定
+
+. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html#discovering-clusters-from-the-canvas-page["探索ONTAP 所有內部環境"^] 您先前環境中可用的。
+. （可選） https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["探索StorageGRID 您的系統"^]。
+. 選取每ONTAP 個執行中的環境、然後按一下右窗格中備份與還原服務旁的*檢視備份*。
++
+您應該能夠查看為磁碟區建立的所有備份。
+
+. 在「還原儀表板」的「搜尋與還原」區段下、按一下「*索引設定*」。
++
+請確定先前啟用索引編製功能的工作環境仍保持啟用狀態。
+
+. 在「搜尋與還原」頁面中、執行幾項目錄搜尋、以確認已成功完成索引目錄還原。
+

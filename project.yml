@@ -160,6 +160,8 @@ sidebar:
       url: "/reference-aws-backup-tiers.html"
     - title: 支援的Azure歸檔存取層
       url: "/reference-azure-backup-tiers.html"
+    - title: 支援的Google歸檔儲存層
+      url: "/reference-google-backup-tiers.html"
     - title: 設定備份以在Azure中存取多個帳戶
       url: "/reference-backup-multi-account-azure.html"
   - title: 知識與支援

@@ -74,9 +74,9 @@ image:screenshot_restore_dashboard.png["「還原儀表板」顯示使用瀏覽"
 
 請參閱您要使用的還原作業類型的需求與還原步驟：
 
-*  volumes using Browse  Restore,使用瀏覽安培還原磁碟區；還原
-*  folders and files using Browse  Restore,使用瀏覽安培還原資料夾與檔案
-*  ONTAP data using Search  Restore,使用Search  Restore還原磁碟區、資料夾和檔案
+* <<Restoring volumes using Browse & Restore,使用瀏覽安培還原磁碟區；還原>>
+* <<Restoring folders and files using Browse & Restore,使用瀏覽安培還原資料夾與檔案>>
+* <<Restoring ONTAP data using Search & Restore,使用Search  Restore還原磁碟區、資料夾和檔案
 
 
 
@@ -85,7 +85,7 @@ image:screenshot_restore_dashboard.png["「還原儀表板」顯示使用瀏覽"
 
 開始還原磁碟區、資料夾或檔案之前、您應該知道要還原的磁碟區名稱、磁碟區所在工作環境的名稱、以及要還原的備份檔案的大約日期。
 
-*附註：*如果您要還原的磁碟區備份檔案位於歸檔儲存設備（從ONTAP 版本號9.10.1開始）中、還原作業將需要較長的時間、而且會產生成本。此外、目的地叢集也必須執行ONTAP 不含更新版本的功能以進行Volume還原、以及9.11.1的檔案還原。
+*附註：*如果您要還原的磁碟區備份檔案位於歸檔儲存設備（從ONTAP 版本號9.10.1開始）中、還原作業將需要較長的時間、而且會產生成本。此外、目的地叢集也必須執行ONTAP 支援磁碟區還原的版本為《支援使用者支援者支援者支援者支援對象》（更新版本）、適用於檔案還原的版本為9.11.1、以及適用於Google歸檔的版本為9.12.1。
 
 ifdef::aws[]
 
@@ -99,30 +99,30 @@ link:reference-azure-backup-tiers.html["深入瞭解如何從Azure歸檔儲存�
 
 endif::azure[]
 
+ifdef::gcp[]
+
+link:reference-google-backup-tiers.html["深入瞭解如何從Google歸檔儲存設備還原"]。
+
+endif::gcp[]
+
 
 
 === 瀏覽及還原支援的工作環境和物件儲存供應商
 
 您可以將磁碟區、資料夾或個別檔案、從ONTAP 還原備份檔還原至下列工作環境：
 
-[cols="30,35,35"]
+[cols="50,50"]
 |===
-| 備份檔案位置 2+| 目的地工作環境 
+| 備份檔案位置目的地工作環境ifdef：：AWS [] | Amazon S3 
 
 
-|  | * 磁碟區還原 * | *資料夾與檔案還原* ifdef：：AWS [] 
+| AWS內部部署的不全系統endif::AWS [] ifdef:azure[] Cloud Volumes ONTAP ONTAP | Azure Blob 
 
 
-| Amazon S3 | AWS 內部部署的內部系統 Cloud Volumes ONTAP ONTAP | AWS內部部署的不全系統endif::AWS [] ifdef:azure[] Cloud Volumes ONTAP ONTAP 
+| Azure內部部署的系統中的資料：：azure[] ifdef：：Cloud Volumes ONTAP ONTAP GCP[] | Google Cloud Storage 
 
 
-| Azure Blob | Azure 內部部署的整套系統 Cloud Volumes ONTAP ONTAP | Azure內部部署的系統中的資料：：azure[] ifdef：：Cloud Volumes ONTAP ONTAP GCP[] 
-
-
-| Google Cloud Storage | 在Google內部部署的內部部署系統中使用Cloud Volumes ONTAP ONTAP | 在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[] 
-
-
-| NetApp StorageGRID | 內部部署 ONTAP 的作業系統 | 內部部署 ONTAP 的作業系統 
+| 在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[] | NetApp StorageGRID 
 |===
 在瀏覽與還原中、連接器可安裝在下列位置：
 
@@ -215,12 +215,9 @@ endif::gcp[]
 
 * 從StorageGRID 物件還原時、請輸入StorageGRID 用來ONTAP 與StorageGRID 物件進行HTTPS通訊的支援伺服器FQDN和連接埠、選擇存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 位於目的地Volume所在之資料中心內的IPspace。
 +
-.. 輸入您要用於還原磁碟區的名稱、然後選取磁碟區所在的Storage VM。根據預設、*<SOUR_volume名稱>_restore *會用作磁碟區名稱。
+.. 輸入您要用於還原磁碟區的名稱、然後選取磁碟區所在的Storage VM和Aggregate。根據預設、*<SOUR_volume名稱>_restore *會用作磁碟區名稱。
 +
 image:screenshot_restore_new_vol_name.png["輸入您要還原之新磁碟區名稱的快照。"]
-
-+
-您只能在將Volume還原至內部部署ONTAP 的還原系統時、選取要用於其容量的集合體。
 
 +
 如果您要從位於歸檔儲存層的備份檔案還原磁碟區（從ONTAP 版本號9.10.1開始提供）、則可以選取還原優先順序。
@@ -242,9 +239,16 @@ link:reference-azure-backup-tiers.html#restoring-data-from-archival-storage["深
 
 endif::azure[]
 
+ifdef::gcp[]
+
+link:reference-google-backup-tiers.html#restoring-data-from-archival-storage["深入瞭解如何從Google歸檔儲存設備還原"]。Google歸檔儲存層中的備份檔案幾乎會立即還原、而且不需要還原優先順序。
+
+endif::gcp[]
+
 . 按一下「*還原*」、您就會回到「還原儀表板」、以便檢閱還原作業的進度。
 
 
+.結果
 Cloud Backup會根據您選取的備份建立新的磁碟區。您可以 link:task-manage-backups-ontap.html["管理此新Volume的備份設定"] 視需要而定。
 
 請注意、根據歸檔層和還原優先順序、從歸檔儲存設備中的備份檔案還原磁碟區可能需要許多分鐘或數小時的時間。您可以按一下「*工作監控*」標籤來查看還原進度。
@@ -271,12 +275,7 @@ Cloud Backup會根據您選取的備份建立新的磁碟區。您可以 link:ta
 ==== 先決條件
 
 * 執行_file_還原作業的版本必須為9.6或更新版本。ONTAP
-* 執行_foldle_還原作業時、此版本必須為9.11.1或更新版本。ONTAP
-
-
-ifdef::aws[]
-
-* AWS跨帳戶還原需要在AWS主控台中手動執行動作。請參閱 AWS 主題 https://docs.aws.amazon.com/AmazonS3/latest/dev/example-walkthroughs-managing-access-example2.html["授予跨帳戶庫位權限"^] 以取得詳細資料。
+* 執行_foldle_還原作業時、此版本必須為9.11.1或更新版本。ONTAPifdef：：AWS []
 
 
 endif::aws[]
@@ -337,6 +336,12 @@ ifdef::azure[]
 link:reference-azure-backup-tiers.html#restoring-data-from-archival-storage["深入瞭解如何從Azure歸檔儲存設備還原"]。
 
 endif::azure[]
+
+ifdef::gcp[]
+
+link:reference-google-backup-tiers.html#restoring-data-from-archival-storage["深入瞭解如何從Google歸檔儲存設備還原"]。Google歸檔儲存層中的備份檔案幾乎會立即還原、而且不需要還原優先順序。
+
+endif::gcp[]
 
 +如果備份檔案的勒索軟體保護功能為作用中（如果您在備份原則中啟用DataLock和勒索軟體保護）、則系統會在還原資料之前、提示您在備份檔案上執行額外的勒索軟體掃描。我們建議您掃描備份檔案以尋找勒索軟體。
 
@@ -420,7 +425,7 @@ image:screenshot_restore_select_dest.png["選取您要還原之檔案的磁碟�
 
 您可以將資料夾或檔案還原至原始磁碟區位置、還原至相同工作環境中的不同磁碟區、或還原至使用相同雲端帳戶的不同工作環境。您也可以將資料夾和檔案還原至內部部署ONTAP 的作業系統上的磁碟區。
 
-如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行ONTAP 不含更新版本的功能、才能還原磁碟區、而必須執行9.11.1才能還原檔案。
+如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行ONTAP 支援磁碟區還原功能的版本為《支援使用者支援者支援者支援者支援對象》（更新版本）、適用於檔案還原的版本為《支援者支援者支援者支援者支援者支援者支援者支援者支援者
 
 ifdef::aws[]
 
@@ -433,6 +438,12 @@ ifdef::azure[]
 link:reference-azure-backup-tiers.html["深入瞭解如何從Azure歸檔儲存設備還原"]。
 
 endif::azure[]
+
+ifdef::gcp[]
+
+link:reference-google-backup-tiers.html["深入瞭解如何從Google歸檔儲存設備還原"]。
+
+endif::gcp[]
 
 [NOTE]
 ====
@@ -639,7 +650,7 @@ image:screenshot_restore_enable_indexing.png["顯示已啟動索引目錄的工�
 
 === 使用「搜尋與還原」還原磁碟區、資料夾和檔案
 
-您就可以了  the Indexed Catalog for each working environment,為您的工作環境啟用索引、您可以使用「搜尋與還原」來還原磁碟區、資料夾和檔案。這可讓您使用各種篩選器、找出想要從所有備份檔案還原的確切檔案或磁碟區。
+您就可以了 <<為每個工作環境啟用索引型錄,為您的工作環境啟用索引>>、您可以使用「搜尋與還原」來還原磁碟區、資料夾和檔案。這可讓您使用各種篩選器、找出想要從所有備份檔案還原的確切檔案或磁碟區。
 
 .步驟
 . 從BlueXP功能表中、選取* Protection > Backup and recovery *。
@@ -679,7 +690,7 @@ image:screenshot_restore_step2_search_restore.png["顯示如何檢視符合搜�
 ifdef::aws[]
 
 +
-*** 從Amazon S3還原時、請在ONTAP 目標Volume所在的叢集中選取IPspace、輸入您所建立之使用者的存取金鑰和秘密金鑰、以便ONTAP 讓該叢集能夠存取S3儲存區、 此外、您也可以選擇私有VPC端點來進行安全的資料傳輸。
+*** 從Amazon S3還原時、請在ONTAP 目標Volume所在的叢集中選取IPspace、輸入您所建立之使用者的存取金鑰和秘密金鑰、以便ONTAP 讓該叢集能夠存取S3儲存區、 此外、您也可以選擇私有VPC端點來進行安全的資料傳輸。 link:task-backup-onprem-to-aws.html#cluster-networking-requirements["請參閱這些需求的詳細資料"]。
 
 
 
@@ -690,21 +701,22 @@ endif::aws[]
 
 ifdef::azure[]
 
-* 從Azure Blob還原時、請在ONTAP 目的地Volume所在的叢集中選取IPspace、然後選取vnet和Subnet（子網路）、以選擇性地選擇私有端點進行安全資料傳輸。
+* 從Azure Blob還原時、請在ONTAP 目的地Volume所在的叢集中選取IPspace、然後選取vnet和Subnet（子網路）、以選擇性地選擇私有端點進行安全資料傳輸。 link:task-backup-onprem-to-azure.html#requirements["請參閱這些需求的詳細資料"]。
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* 從Google Cloud Storage還原時、請在ONTAP 目的地Volume所在的叢集中選取IPspace、然後選取存取金鑰和秘密金鑰以存取物件儲存設備。
+* 從Google Cloud Storage還原時、請在ONTAP 目的地Volume所在的叢集中選取IPspace、然後選取存取金鑰和秘密金鑰以存取物件儲存設備。 link:task-backup-onprem-to-gcp.html#requirements["請參閱這些需求的詳細資料"]。
 
 
 endif::gcp[]
 
-* 從StorageGRID 物件還原時、請輸入StorageGRID 支援ONTAP 以HTTPS通訊的支援對象伺服器的FQDN和連接埠StorageGRID 、輸入存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 目的地Volume所在的物件叢集中的IPspace。
+* 從StorageGRID 物件還原時、請輸入StorageGRID 支援ONTAP 以HTTPS通訊的支援對象伺服器的FQDN和連接埠StorageGRID 、輸入存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 目的地Volume所在的物件叢集中的IPspace。 link:task-backup-onprem-private-cloud.html#requirements["請參閱這些需求的詳細資料"]。
 
 
+.結果
 磁碟區、資料夾或檔案將會還原、並返回「還原儀表板」、以便您檢閱還原作業的進度。您也可以按一下「*工作監控*」標籤來查看還原進度。
 
 對於還原的磁碟區、您可以 link:task-manage-backups-ontap.html["管理此新Volume的備份設定"] 視需要而定。

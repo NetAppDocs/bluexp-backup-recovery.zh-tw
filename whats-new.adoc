@@ -18,6 +18,32 @@ summary: 瞭解Cloud Backup的新功能。
 
 
 
+== 2022年12月6日
+
+
+
+=== 支援Google Archival儲存類別
+
+備份檔案最初是在Google Standard儲存類別中建立。現在您可以選擇在特定天數後將舊備份分層至Google歸檔儲存設備、以進一步最佳化成本。
+
+目前支援ONTAP 內部使用ONTAP 的支援功能適用於使用支援更新版本的支援功能。目前不提供Cloud Volumes ONTAP 此功能給非系統。
+
+
+
+=== 支援FlexGroup 支援功能
+
+Cloud Backup現在支援FlexGroup 支援支援的是各個方面。使用ONTAP 支援更新版本的《支援資料》時、您可以將FlexGroup 《支援資料》備份到公有雲和私有雲儲存設備。如果您的工作環境包含FlexVol 了一些不含支援的功能、FlexGroup 請在更新ONTAP 完您的支援功能後、在FlexGroup 這些系統上備份任何的支援功能。
+
+https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html#supported-volumes["請參閱支援的磁碟區類型完整清單"]。
+
+
+
+=== 能夠將資料從備份還原到Cloud Volumes ONTAP 位於不受影響的系統上的特定集合體
+
+在早期版本中、您只能在將資料還原至內部ONTAP 的資訊系統時、才選取Aggregate。此功能現在可用於將資料還原Cloud Volumes ONTAP 至還原系統。
+
+
+
 == 2022年11月2日
 
 

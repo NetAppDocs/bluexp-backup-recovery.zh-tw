@@ -66,4 +66,5 @@ image:screenshot_restore_k8s_volume.png["將還原持續磁碟區之目的地資
 . 按一下「*還原*」、系統會將您返回Kubernetes儀表板、以便您檢閱還原作業的進度。
 
 
+.結果
 BlueXP會根據您選取的備份、在Kubernetes叢集中建立新的磁碟區。您可以 link:task-manage-backups-kubernetes.html["管理此新Volume的備份設定"] 視需要而定。

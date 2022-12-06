@@ -24,7 +24,8 @@ summary: 請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中�
 
 請依照下列步驟快速入門、或向下捲動至其餘部分以取得完整詳細資料。
 
-.span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] alt="1"></span>請確認您的組態是否支援
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 確認您的組態支援
+[role="quick-margin-list"]
 * 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
 +
 ** 叢集執行 ONTAP 的是更新版本的 1.7P5 。
@@ -36,24 +37,28 @@ summary: 請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中�
 * 您擁有有效的Azure訂閱、可用於儲存備份所在的物件儲存空間。
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 在系統上啟用Cloud Backup
 [role="quick-margin-para"]
 選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」>「備份磁碟區」*、再依照設定精靈進行。
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_enable.png["螢幕擷取畫面顯示「啟用備份與還原」按鈕、可在您選取工作環境之後使用。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 選取雲端供應商、然後輸入供應商詳細資料
 [role="quick-margin-para"]
 選取Microsoft Azure做為您的供應商、然後輸入供應商詳細資料。您必須選擇Azure訂閱、以及您要建立備份的地區。您也可以選擇自己的客戶管理資料加密金鑰、而非使用預設的Microsoft管理加密金鑰。
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_to_azure.png["此螢幕快照顯示將磁碟區從內部部署叢集備份到Azure Blob儲存設備時、雲端供應商的詳細資料。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 選取叢集IPspace、並選用使用私有vnet端點
 [role="quick-margin-para"]
 選取ONTAP 位於磁碟區所在之資訊區叢集中的IPspace。您也可以選擇使用現有的Azure私有端點、從內部資料中心建立更安全的Vnet連線。
 
 [role="quick-margin-para"]
 image:screenshot_backup_onprem_azure_networking.png["快照顯示將磁碟區從ONTAP 某個系統備份到Azure Blob儲存設備時的網路詳細資料。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 定義預設備份原則
 [role="quick-margin-para"]
 預設原則會每天備份磁碟區、並保留每個磁碟區最近 30 個備份複本。變更為每小時、每日、每週、每月或每年備份、 或選取其中一個系統定義的原則、以提供更多選項。您也可以變更要保留的備份複本數量。
 
@@ -63,6 +68,7 @@ image:screenshot_backup_onprem_azure_networking.png["快照顯示將磁碟區從
 [role="quick-margin-para"]
 image:screenshot_backup_policy_azure.png["顯示Cloud Backup設定的快照、您可在其中選擇備份排程和保留期間。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 選取您要備份的磁碟區
 [role="quick-margin-para"]
 在「Select Volumes（選取磁碟區）」頁面中、使用預設的備份原則來識別要備份的磁碟區。如果您想要將不同的備份原則指派給特定磁碟區、可以建立其他原則、並於稍後套用至磁碟區。
 
@@ -173,6 +179,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 
 若要使用雲端備份搜尋與還原功能、您必須擁有Connector角色的特定權限、才能存取Azure Synapse Workspace和Data Lake Storage Account。請參閱下列權限、如果您需要修改原則、請遵循這些步驟。
 
+.開始之前
 您必須在訂閱中註冊Azure Synapse Analytics資源供應商。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
 
 .步驟
@@ -302,12 +309,13 @@ image:screenshot_backup_policy_azure.png["顯示Cloud Backup設定的快照、�
 +
 image:screenshot_backup_select_volumes.png["選取要備份之磁碟區的快照。"]
 
-** 如果此工作環境中的任何Volume本機Snapshot複本符合您剛為此工作環境選取的備份排程標籤（例如每日、每週等）、則會顯示另一個提示：「Export existing Snapshot copies to object storage as Backup copies（匯出現有的Snapshot複本至物件儲存設備作為備份複本）」。如果您想要將所有歷史Snapshot複製到物件儲存設備做為備份檔案、以確保為磁碟區提供最完整的保護、請勾選此方塊。
+** 如果此工作環境中有任何讀寫磁碟區的本機Snapshot複本符合您剛才為此工作環境所選取的備份排程標籤（例如每日、每週等）、則會顯示另一個提示：「Export existing Snapshot copies to object storage as Backup copies（匯出現有的Snapshot複本至物件儲存區做為備份複本）」。如果您想要將所有歷史Snapshot複製到物件儲存設備做為備份檔案、以確保為磁碟區提供最完整的保護、請勾選此方塊。
 
 
 . 按一下「*啟動備份*」、「雲端備份」就會開始進行磁碟區的初始備份。
 
 
+.結果
 Blob儲存容器會自動建立在您輸入的資源群組中、並儲存備份檔案。Volume Backup Dashboard隨即顯示、以便您監控備份狀態。您也可以使用監控備份與還原工作的狀態 link:task-monitor-backup-jobs.html["「工作監控」面板"^]。
 
 

@@ -22,7 +22,8 @@ summary: 請完成幾個步驟、開始將EKS Kubernetes叢集上持續磁碟區
 
 請依照下列步驟快速入門、或向下捲動至其餘部分以取得完整詳細資料。
 
-.span class="image"><imgrc="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"[] alt="1"></span>檢閱先決條件
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 檢閱先決條件
+[role="quick-margin-list"]
 * 您已將Kubernetes叢集探索為藍圖XP工作環境。
 +
 ** 叢集上必須安裝Trident、Trident版本必須為21.1或更新版本。
@@ -36,18 +37,21 @@ summary: 請完成幾個步驟、開始將EKS Kubernetes叢集上持續磁碟區
 * 提供具有權限的BlueXP Connector的IAM角色包括來自最新版本的S3權限 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]。
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 在現有的Kubernetes叢集上啟用Cloud Backup
 [role="quick-margin-para"]
 選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」*、再依照設定精靈的指示操作。
 
 [role="quick-margin-para"]
 image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示「啟用雲端備份」按鈕、可在您選取工作環境之後使用。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 定義備份原則
 [role="quick-margin-para"]
 預設原則會每天備份磁碟區、並保留每個磁碟區最近 30 個備份複本。變更為每小時、每日、每週或每月備份、或選取其中一個系統定義的原則來提供更多選項。您也可以變更要保留的備份複本數量。
 
 [role="quick-margin-para"]
 image:screenshot_backup_policy_k8s_aws.png["顯示Cloud Backup設定的快照、您可在其中選擇備份排程和保留期間。"]
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 選取您要備份的磁碟區
 [role="quick-margin-para"]
 在「 Select Volumes （選取磁碟區）」頁面中、找出您要備份的磁碟區。S3儲存區會自動建立在Cloud Volumes ONTAP 與該系統相同的AWS帳戶和區域中、並儲存備份檔案。
 
@@ -209,8 +213,10 @@ image:screenshot_backup_select_volumes_k8s.png["選取要備份之持續磁碟�
 . 按一下「*啟動備份*」、「雲端備份」就會開始對每個選取的磁碟區進行初始備份。
 
 
+.結果
 S3儲存區會自動建立在Cloud Volumes ONTAP 與該系統相同的AWS帳戶和區域中、並儲存備份檔案。
 
 此時會顯示Kubernetes儀表板、以便您監控備份狀態。
 
+.接下來呢？
 您可以 link:task-manage-backups-kubernetes.html["開始和停止磁碟區備份、或變更備份排程"^]。您也可以 link:task-restore-backups-kubernetes.html#restoring-volumes-from-a-kubernetes-backup-file["從備份檔案還原整個磁碟區"^] 在AWS（位於同一個區域）的相同或不同Kubernetes叢集上做為新磁碟區。

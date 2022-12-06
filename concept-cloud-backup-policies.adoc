@@ -232,7 +232,7 @@ endif::aws[]
 
 檔案層中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您必須考慮從歸檔備份檔案還原資料的頻率。
 
-在AWS或Azure中建立備份檔案時、每個備份原則都會提供一個_Archival Policy_區段、供您套用至備份檔案。
+每個備份原則都會提供一節_Archival Policy_、您可以套用至備份檔案。
 
 image:screenshot_archive_tier_settings.png["建立備份原則時的封存原則設定快照。"]
 
@@ -263,7 +263,7 @@ ifdef::gcp[]
 
 * 在GCP中、預設會將備份與_Standard_儲存類別相關聯。
 +
-您可以使用成本較低的_Nearlin__儲存類別、或_Coldlin__或_Archive_儲存類別。不過、您可以透過Google設定這些其他儲存類別、而非透過Cloud Backup UI。請參閱Google主題 https://cloud.google.com/storage/docs/storage-classes["儲存類別"^] 如需變更Google Cloud Storage儲存庫預設儲存類別的相關資訊、
+如果您的內部叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後、將舊版備份分層至Cloud Backup UI中的_Archive_儲存設備、以進一步最佳化成本。（Cloud Volumes ONTAP 此功能目前不適用於不支援的系統。） link:reference-google-backup-tiers.html["深入瞭解Google歸檔儲存設備"^]。
 
 
 

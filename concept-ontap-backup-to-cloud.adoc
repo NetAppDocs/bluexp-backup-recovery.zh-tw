@@ -71,24 +71,21 @@ Cloud Backup可讓您從ONTAP 下列工作環境備份支援下列公有雲和�
 |===
 您可以將磁碟區、資料夾或個別檔案、從ONTAP 還原備份檔還原至下列工作環境：
 
-[cols="25,33,37"]
+[cols="50,50"]
 |===
-| 備份檔案 2+| 目的地工作環境 
+| 備份檔案位置 | 目的地工作環境ifdef：：AWS [] 
 
 
-| *位置* | * 磁碟區還原 * | *資料夾與檔案還原* ifdef：：AWS [] 
+| Amazon S3 | AWS內部部署的不全系統endif::AWS [] ifdef:azure[] Cloud Volumes ONTAP ONTAP 
 
 
-| Amazon S3 | AWS 內部部署的內部系統 Cloud Volumes ONTAP ONTAP | AWS內部部署的不全系統endif::AWS [] ifdef:azure[] Cloud Volumes ONTAP ONTAP 
+| Azure Blob | Azure內部部署的系統中的資料：：azure[] ifdef：：Cloud Volumes ONTAP ONTAP GCP[] 
 
 
-| Azure Blob | Azure 內部部署的整套系統 Cloud Volumes ONTAP ONTAP | Azure內部部署的系統中的資料：：azure[] ifdef：：Cloud Volumes ONTAP ONTAP GCP[] 
+| Google Cloud Storage | 在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[] 
 
 
-| Google Cloud Storage | 在Google內部部署的內部部署系統中使用Cloud Volumes ONTAP ONTAP | 在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[] 
-
-
-| NetApp StorageGRID | 內部部署 ONTAP 的作業系統 | 內部部署 ONTAP 的作業系統 
+| NetApp StorageGRID | 內部部署 ONTAP 的作業系統 
 |===
 請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能
 
@@ -107,10 +104,25 @@ Cloud Backup支援下列類型的磁碟區：
 * 可讀寫的磁碟區FlexVol
 * SnapMirror資料保護（DP）目的地磁碟區
 * 《企業版》（需使用更新版本的版本）SnapLock ONTAP
++
+** 目前不支援「符合法規」磁碟區SnapLock 。
 
 
-目前不支援使用各種適用的資料量和不符合要求的資料量。FlexGroup SnapLock
+* 不含更新版本的ONTAP FlexGroup
 
+
+[NOTE]
+====
+*不受限制* FlexGroup ：
+
+* 內部ONTAP 的功能不支援完整Volume還原；Cloud Volumes ONTAP 目前不支援任何功能。
+* 內部ONTAP 系統的內部系統支援檔案層級還原Cloud Volumes ONTAP 。
+* 目前不支援目錄/資料夾還原。
+* 無法將備份移至歸檔儲存設備。
+* 備份無法使用DataLock和勒索軟體保護。
+
+
+====
 
 
 == 成本
@@ -162,7 +174,7 @@ endif::gcp[]
 
 服務費用會支付給NetApp、同時涵蓋_建立_備份與_還原_磁碟區、或是這些備份中的檔案的成本。您只需支付保護資料的費用、此資料是根據ONTAP 備份至物件儲存設備的來源、即來源邏輯使用容量（_fore_效率）計算ONTAP 而得。此容量也稱為前端TB（FTB）。
 
-有三種方式可以支付備份服務的費用。第一個選項是向雲端供應商訂閱、讓您每月付費。第二種選擇是取得年度合約。第三種選擇是直接向NetApp購買授權。閱讀 ,授權 章節以取得詳細資料。
+有三種方式可以支付備份服務的費用。第一個選項是向雲端供應商訂閱、讓您每月付費。第二種選擇是取得年度合約。第三種選擇是直接向NetApp購買授權。閱讀 <<授權,授權>> 章節以取得詳細資料。
 
 
 
@@ -240,7 +252,7 @@ link:task-licensing-cloud-backup.html#use-an-annual-contract["瞭解如何設定
 
 == 雲端備份的運作方式
 
-當您在Cloud Volumes ONTAP 一個不完整或內部部署ONTAP 的支援系統上啟用Cloud Backup時、服務會執行資料的完整備份。備份映像不包含 Volume 快照。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。Cloud Backup建置於上方 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["NetApp SnapMirror雲端技術"]。
+當您在Cloud Volumes ONTAP 一個不完整或內部部署ONTAP 的支援系統上啟用Cloud Backup時、服務會執行資料的完整備份。備份映像不包含 Volume 快照。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。Cloud Backup建置於上方 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["NetApp SnapMirror雲端技術"^]。
 
 
 CAUTION: 直接從雲端供應商環境中採取的任何管理或變更備份檔案的動作、都可能會毀損檔案、並導致不支援的組態。
@@ -359,9 +371,9 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* 在GCP中、預設會將備份與_Standard_儲存類別相關聯。
+* 在 GCP 中、備份會與 _Standard_ 儲存類別相關聯。
 +
-您也可以使用成本較低的_Nearlin__儲存類別、或_Coldlin__或_Archive_儲存類別。您可以透過Google設定這些其他儲存類別。請參閱Google主題 link:https://cloud.google.com/storage/docs/storage-classes["儲存類別"^] 以取得變更儲存類別的相關資訊。
+如果您的內部叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後、將舊版備份分層至Cloud Backup UI中的_Archive_儲存設備、以進一步最佳化成本。（Cloud Volumes ONTAP 此功能目前不適用於不支援的系統。） link:reference-google-backup-tiers.html["深入瞭解Google歸檔儲存設備"^]。
 
 
 
@@ -417,9 +429,9 @@ endif::gcp[]
 ** 套用至磁碟區的Snapshot原則必須是Cloud Backup可辨識的原則之一、包括每日、每週、每月等。預設的「sm_已 建立」原則（用於*鏡射所有Snapshot *） 無法辨識、且DP磁碟區不會顯示在可備份的磁碟區清單中。
 
 
+* 僅支援從不含支援的物件資料來源進行的資料（MCC）備份：MCC > SnapMirror >物件式備份> Cloud Backup。MetroCluster ONTAP ONTAP
 * 資料保護磁碟區不支援使用*立即備份*按鈕進行臨機操作磁碟區備份。
 * 不支援SM至BC組態。
-* 僅支援從不含支援的物件資料來源進行的資料（MCC）備份：MCC > SnapMirror >物件式備份> Cloud Backup。MetroCluster ONTAP ONTAP
 * 不支援從單一磁碟區到多個物件存放區的SnapMirror關係、因此Cloud Backup不支援此組態。ONTAP
 * 物件存放區上的WORM /法規遵循模式StorageGRID 目前僅在Amazon S3和支援。這稱為DataLock功能、必須使用Cloud Backup設定來管理。
 
