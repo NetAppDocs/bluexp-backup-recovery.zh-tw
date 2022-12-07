@@ -1407,10 +1407,6 @@
   <block id="cddd2b11445e1c8453ea0da106dab7a6" category="list-text">單一檔案層級還原（SFR）</block>
   <block id="d9a2a68e5e36f917b84ad2543b9d7eb9" category="list-text">工作環境</block>
   <block id="cb59b87e00d11222bfd9159d0d23836f" category="section-title">快速入門</block>
-  <block id="cb8eae28208af8da6d1790f12f05d13a" category="paragraph">若要開始使用Cloud Backup API、您必須取得使用者權杖、Cloud Central帳戶ID和Cloud Connector ID。</block>
-  <block id="6f1f68c4600a11c04b4d3eaa5313820c" category="list-text">從 NetApp Cloud Central 取得使用者權杖。</block>
-  <block id="8006289517e097344c5132b125d48612" category="list-text">取得您的NetApp Cloud Central帳戶ID。</block>
-  <block id="80e7fa6f7ec235f2ec73e616228b4d5a" category="paragraph">此API會傳回如下回應。您可以剖析來自*的輸出來擷取帳戶ID。[帳戶PublicId]*。</block>
   <block id="b3080cdc3d4f3f5baa6015e73aeff8f4" category="paragraph">此API會傳回如下回應。您可以剖析* occm.[0].[agent].[agentId]*的輸出來擷取代理程式ID。</block>
   <block id="b62dbbecd6533f9627427d34160e7d75" category="section-title">使用API的範例</block>
   <block id="8243464aa42a67375338d8b893252d77" category="listing-title">回應是您可以監控的工作ID。</block>
@@ -1754,8 +1750,6 @@
   <block id="c81ea6f9f60a10281bd1aa698a50e3e7" category="paragraph">如果您的叢集使用ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在一定天數後、將舊版備份分層至Cloud Backup UI中的_S3 Glacier深度歸檔_或_S3 Glacier Deep Archive_儲存設備、以進一步最佳化成本。 <block ref="f7fa7b0a9e810d8c500bcf785a34f359" category="inline-link-macro-rx"></block>。</block>
   <block id="e978c3a1389a8a8755aae6236e595807" category="paragraph">請注意、如果您在啟動Cloud Backup時、在第一個備份原則中選擇「_S3 Glacier」或「_S3 Glacier Deep Archive_」、則該層將是該叢集未來備份原則唯一可用的歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。</block>
   <block id="c370775a8bc883ada27fec0c9380c141" category="paragraph">如果您的叢集使用ONTAP 的是版本為SURF9.10.1或更新版本、您可以選擇在一定天數後、將舊版備份分層至Cloud Backup UI中的_Azure Archive_儲存設備、以進一步最佳化成本。 <block ref="2f91ed687cd1d1d6d8235865263a43ff" category="inline-link-macro-rx"></block>。</block>
-  <block id="081b49cd285a64a7dc21891cb3b85f4e" category="paragraph">以下是未來版本將修正的已知問題：</block>
-  <block id="edd8bdf579117f85e813a9cfb5e571e1" category="list-text">在還原作業期間、如果備份是在執行ONTAP 版本9.10.1或更新版本的系統上建立、而正在還原磁碟區的系統執行ONTAP 版本為版本9.10.0或更早版本、則還原會在系統中斷或在某些情況下成功、而失敗。 但磁碟區已毀損。</block>
   <block id="c84ee35eef49d3ea170dc5583bae97eb" category="section-title">備份限制</block>
   <block id="dd717dd6a5197fd72bf9aae1e454dd3e" category="list-text">備份資料保護（DP）磁碟區時：</block>
   <block id="c73aeadbe74d06b3eebf4d0a5f283344" category="list-text">與SnapMirror標籤「app_nistent」和「all_source_snapshot」的關係將不會備份到雲端。</block>
@@ -2023,7 +2017,6 @@
   <block id="7b2b7c08da06dd437ae98c50b4ace20f" category="inline-link">檢視原則的完整Json格式、您可以在其中複製及貼上所需的權限</block>
   <block id="47161ef4ae449d43c829baee065648d2" category="paragraph"><block ref="63cdf6e3f2a869e9e35995fee340f32a" category="inline-link-rx"></block>。</block>
   <block id="9644265a314e497bc18814e1694c3d27" category="paragraph">請務必從下列連結產生重新整理權杖：https://services.cloud.netapp.com/refresh-token/。重新整理權杖是一個英數字元字串、可用來產生使用者權杖。</block>
-  <block id="777d6e4cc528ea2b29b7fc6903fb67a6" category="admonition">NetApp Cloud Central 的使用者權杖有到期日。API 回應包含「 Expire_in 」欄位、指出權杖過期的時間。若要重新整理權杖、您需要再次呼叫此API。</block>
   <block id="39d3d67728b58b0f9255268d852abfbe" category="admonition">Cloud Backup for Applications基礎架構可靈活因應某個區域內的可用度區域故障。現在、它能將容錯移轉至新的區域、進而支援區域性故障、而且此容錯移轉作業需要停機約2小時。</block>
   <block id="da101cda60f537d813b60a33b665c8f8" category="paragraph">選擇StorageGRID 「支援供應商」、然後輸入StorageGRID 「不支援服務器」和「S3租戶帳戶」的詳細資料。您也需要在 ONTAP 磁碟區所在的叢集中指定 IPspace 。</block>
   <block id="80b09eca2711141a189a78c7b481d5cb" category="list-text">最低ONTAP 版本為0、9、75；ONTAP 建議使用0、8P13及更新版本。</block>
@@ -2340,7 +2333,6 @@
   <block id="855a635321caeb08d8525de5eea56651" category="list-text">若要使用「搜尋與還原」還原資料、某些資源會由您的雲端供應商進行資源配置、而且每個TiB的成本會與搜尋要求所掃描的資料量有關。（瀏覽與還原不需要這些資源。）</block>
   <block id="c03019f9be2cb226dc19ca939f4d2a98" category="paragraph">在工作環境中啟用Cloud Backup時、您最初選取的所有磁碟區都會使用您定義的預設備份原則進行備份。如果您想要將不同的備份原則指派給具有不同恢復點目標（RPO）的特定磁碟區、您可以為該叢集建立其他原則、並在啟用Cloud Backup之後將這些原則指派給其他磁碟區。</block>
   <block id="887b3715a8c6b9f979173f9bb78db138" category="paragraph">當您的備份目的地是Amazon S3或NetApp StorageGRID 時、目前可提供支援。其他儲存供應商目的地將會新增至未來版本。</block>
-  <block id="eec8499000c8f659d98df740f918b905" category="list-text">物件存放區上的WORM /法規遵循模式StorageGRID 目前僅在Amazon S3和支援。這稱為DataLock功能、必須使用Cloud Backup設定來管理。</block>
   <block id="5116aee7e891450dd457789d0b3857e4" category="paragraph">本文件說明ONTAP 使用時、內部作業系統及Cloud Volumes ONTAP 支援系統的備份原則組態設定Cloud Backup Service 。</block>
   <block id="f576f81f502b655c924b76cc045e8946" category="paragraph">Cloud Backup可讓您針對每個工作環境（叢集）建立多個備份原則、並提供獨特的排程。您可以將不同的備份原則指派給具有不同還原點目標（RPO）的磁碟區。</block>
   <block id="3b190b83ddc2ee9e610caa6dc209fbaf" category="list-text">*標籤*定義從磁碟區建立（或更新）備份檔案的頻率。您可以選擇下列類型的標籤：</block>
@@ -2900,10 +2892,7 @@
   <block id="0d1c0309cd5a222639167f043ad2659c" category="inline-link-macro">深入瞭解如何使用Google歸檔儲存設備</block>
   <block id="ca8f2417237c1ca946e8895448c8a806" category="paragraph"><block ref="0ebbe78b3d1a38928eec5f9d045a7c89" category="inline-link-macro-rx"></block>。（需要ONTAP 使用此功能。）</block>
   <block id="273a0c18ae7ae64c7f1016a71ed51d1e" category="paragraph">+請注意、如果您停止分層備份至歸檔儲存設備、任何已分層至歸檔儲存設備的備份檔案都會留在該層中、不會自動移回標準層級。只有新的Volume備份會駐留在標準層。</block>
-  <block id="702200e406214ec2d341f851f3e5e0b0" category="paragraph">進行API呼叫時、您將在「授權」標頭中新增使用者權杖、並在X-agent-id標頭中新增Cloud Connector ID。您應該在API中使用Cloud Central帳戶ID。</block>
-  <block id="ef852916d56255b8dc79b6f7e695865f" category="paragraph">以下範例顯示API呼叫、要求在工作環境中啟動備份、新原則在Azure雲端的東美2地區、將每日、每小時及每週標籤設定為180天之後歸檔。請注意、這只會在工作環境中啟用備份、但不會備份任何磁碟區。如果您選擇「自動備份已啟用」：true、則系統中已存在的任何磁碟區都會備份、再加上未來新增的磁碟區。</block>
   <block id="7d9faab09c1d85e60360dfca30ab77cc" category="paragraph-title">API要求</block>
-  <block id="91d8ce7a0dd4ae47d0a99b9912f413a7" category="paragraph">您會發現我們使用Cloud Central帳戶ID<block ref="50deb7e0fbc66ff8a640c6692b57f062" prefix=" " category="inline-code"></block>、BlueXP Connector ID<block ref="4c8927d7befc11ec79983636b1168c7e" prefix=" " category="inline-code"></block>和使用者權杖<block ref="4def1da2868e8cb4ae96d8dc41f88f59" prefix=" " category="inline-code"></block> 在此命令中。</block>
   <block id="c57b731ee494dd2c5422da75f8283d02" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 在系統上啟用Cloud Backup</block>
   <block id="4c9a0feab9499a53c704c9db0adc3926" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 選取雲端供應商、然後輸入供應商詳細資料</block>
   <block id="3b39c09e2f4aebd9e4dafe73f9fdeabe" category="paragraph">根據預設、備份會儲存在標準儲存設備中。如果您的叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後將備份分層至Google歸檔儲存設備、以進一步最佳化成本。 <block ref="87ffafedb97d3b50ea58ef296117bbac" category="inline-link-macro-rx"></block>。</block>
@@ -2957,4 +2946,15 @@
   <block id="373e31603b5a78ab3bc84cbe57c892b5" category="paragraph">每個備份原則都會提供一節_Archival Policy_、您可以套用至備份檔案。</block>
   <block id="0776412162b9ad0d387bbf818146d659" category="sidebar">支援的Google歸檔儲存層</block>
   <block id="91770f038cd944a1d3b9b347edeb2b10" category="sidebar">新增功能</block>
+  <block id="442630401ddd0f14988d739183c35505" category="list-text">物件存放區上的WORM /法規遵循模式StorageGRID 目前僅在Amazon S3和支援。這稱為DataLock功能、必須使用Cloud Backup設定來管理。</block>
+  <block id="b2ff0fb046b03e40e599f1561ed5ebd3" category="list-text">不FlexGroup 支援從支援的範圍內將資料從支援的資料區還原為FlexVol 資料區、或FlexVol 將資料區還原FlexGroup 為資料區。</block>
+  <block id="c911798e68210cf43e7a5a85f31ebebe" category="paragraph">若要開始使用Cloud Backup API、您需要取得使用者權杖、您的BlueXP帳戶ID和BlueXP Connector ID。</block>
+  <block id="30bc6b6cbbb254a1299f2544d8a09731" category="paragraph">撥打API呼叫時、您將在「授權」標頭中新增使用者權杖、並在X-agent-id標頭中新增BlueXP Connector ID。您應該在API中使用BlueXP帳戶ID。</block>
+  <block id="710f97f519c3a0c08777096972387f3c" category="list-text">從NetApp BlueXP網站取得使用者權杖。</block>
+  <block id="061a5fbf692c14aa8949bc11c7758ccb" category="admonition">BlueXP網站的使用者權杖有到期日。API 回應包含「 Expire_in 」欄位、指出權杖過期的時間。若要重新整理權杖、您需要再次呼叫此API。</block>
+  <block id="8ce9552d4501ab462ee2bb5bc9e6477c" category="list-text">取得您的BlueXP帳戶ID。</block>
+  <block id="8249fee34290d25027be632b8f27da68" category="paragraph">此API會傳回如下回應。您可以剖析*的輸出、以擷取帳戶ID。[帳戶PublicId]*。</block>
+  <block id="3d230e49f0e908474dc66b75f9fe1a42" category="paragraph">以下範例顯示API呼叫、要求在工作環境中啟動Cloud Backup、新原則是在Azure雲端的東美2地區設定每日、每小時及每週標籤、並將天數設為180天之後歸檔。請注意、這只會在工作環境中啟用備份、但不會備份任何磁碟區。</block>
+  <block id="f8d12ed26ccbabf790e2b8039b322046" category="paragraph">如果您選擇「自動備份已啟用」：「true」、則系統中已存在的任何磁碟區都會備份、而且未來也會備份任何磁碟區。</block>
+  <block id="056e3b6ecd6329a08267381680ade8b7" category="paragraph">您會發現我們使用的是BlueXP帳戶ID<block ref="50deb7e0fbc66ff8a640c6692b57f062" prefix=" " category="inline-code"></block>、BlueXP Connector ID<block ref="4c8927d7befc11ec79983636b1168c7e" prefix=" " category="inline-code"></block>和使用者權杖<block ref="4def1da2868e8cb4ae96d8dc41f88f59" prefix=" " category="inline-code"></block> 在此命令中。</block>
 </blocks>
