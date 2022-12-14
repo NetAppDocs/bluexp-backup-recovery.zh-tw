@@ -16,16 +16,17 @@ summary: 透過Web UI提供的Cloud Backup功能也可透過RESTful API取得。
 [role="lead"]
 透過Web UI提供的Cloud Backup功能也可透過RESTful API取得。
 
-在這個功能區中定義了八種端點：Cloud Backup Service
+Cloud Backup中定義了九種端點類別：
 
-* 備份
-* 目錄
-* 雲端
-* 工作
-* 授權
-* 還原
-* 單一檔案層級還原（SFR）
-* 工作環境
+* 備份：管理雲端和內部部署資源的備份作業、並擷取備份資料的詳細資料
+* 目錄：根據查詢（搜尋與還原）來管理已建立索引的檔案目錄搜尋。
+* 雲端：從BlueXP擷取各種雲端供應商資源的相關資訊
+* 工作：管理BlueXP資料庫上的工作詳細資料項目
+* 授權：從BlueXP擷取工作環境的授權有效性
+* 勒索軟體掃描：對特定備份檔案進行勒索軟體掃描
+* 還原：可讓您執行磁碟區和檔案層級的還原作業
+* SFR -從備份檔案擷取檔案、以執行單一檔案層級的還原作業（瀏覽與還原）
+* 工作環境：管理備份原則、並設定與工作環境相關的目的地物件存放區
 
 
 
@@ -60,7 +61,7 @@ NOTE: BlueXP網站的使用者權杖有到期日。API 回應包含「 Expire_in
 +
 [source, http]
 ----
-GET 'https://cloudmanager.cloud.netapp.com/tenancy/account' -H 'authority: cloudmanager.cloud.netapp.com'
+GET 'https://api.bluexp.netapp.com/tenancy/account' -H 'authority: api.bluexp.netapp.com'
 Header:
 -H 'accept: application/json'
 -H 'accept-language: en-GB,en;q=0.9'
@@ -108,7 +109,7 @@ Header:
 
 [source, http]
 ----
-curl --location --request POST 'https://cloudmanager.cloud.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v3/backup/working-environment/VsaWorkingEnvironment-99hPYEgk' \
+curl --location --request POST 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v3/backup/working-environment/VsaWorkingEnvironment-99hPYEgk' \
 --header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
@@ -150,7 +151,7 @@ curl --location --request POST 'https://cloudmanager.cloud.netapp.com/account/ac
 .監控回應。
 [source, http]
 ----
-curl --location --request GET 'https://cloudmanager.cloud.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v1/job/1b34b6f6-8f43-40fb-9a52-485b0dfe893a' \
+curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v1/job/1b34b6f6-8f43-40fb-9a52-485b0dfe893a' \
 --header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \

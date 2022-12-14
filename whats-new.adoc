@@ -22,9 +22,27 @@ summary: 瞭解Cloud Backup的新功能。
 
 
 
-=== 支援Google Archival儲存類別
+=== 必要的連接器輸出網際網路存取端點變更
 
-備份檔案最初是在Google Standard儲存類別中建立。現在您可以選擇在特定天數後將舊備份分層至Google歸檔儲存設備、以進一步最佳化成本。
+由於Cloud Backup有所變更、您必須變更下列Connector端點、才能成功執行Cloud Backup作業：
+
+[cols="50,50"]
+|===
+| 舊端點 | 新的端點 
+
+
+| https://cloudmanager.cloud.netapp.com[] | https://api.bluexp.netapp.com[] 
+
+
+| https://*.cloudmanager.cloud.netapp.com[] | https://*.api.bluexp.netapp.com[] 
+|===
+請參閱的完整端點清單 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#outbound-internet-access["AWS"^]、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#outbound-internet-access["Google Cloud"^]或 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html#outbound-internet-access["Azure"^] 雲端環境：
+
+
+
+=== 支援在UI中選取Google Archival儲存類別
+
+備份檔案最初是在Google Standard儲存類別中建立。現在您可以使用Cloud Backup使用者介面、在特定天數後將舊備份分層至Google歸檔儲存設備、以進一步最佳化成本。
 
 目前支援ONTAP 內部使用ONTAP 的支援功能適用於使用支援更新版本的支援功能。目前不提供Cloud Volumes ONTAP 此功能給非系統。
 

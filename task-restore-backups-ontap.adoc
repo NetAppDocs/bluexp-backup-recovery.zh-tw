@@ -41,7 +41,7 @@ image:screenshot_restore_dashboard.png["「還原儀表板」顯示使用瀏覽"
 
 == 比較瀏覽與還原、以及搜尋與還原
 
-廣義而言、當您需要從上週或上月還原特定的磁碟區、資料夾或檔案時、_Browse & Restore通常會更好、而且您知道檔案的名稱和位置、以及檔案的最後保存日期。當您需要還原磁碟區、資料夾或檔案時、「搜尋與還原」通常會比較好、但您不記得確切的名稱、磁碟區所在的磁碟區、或是上次的狀態良好的日期。
+廣義而言、當您需要從上週或上月還原特定的磁碟區、資料夾或檔案時、_Browse & Restore通常會更好、而且您知道檔案的名稱和位置、以及檔案的最後保存日期。當您需要還原磁碟區、資料夾或檔案、但不記得確切的名稱、磁碟區所在的磁碟區、或是上次的狀態良好的日期時、_Search & Restore通常會更好。
 
 此表提供兩種方法的比較。
 
@@ -113,16 +113,19 @@ endif::gcp[]
 
 [cols="50,50"]
 |===
-| 備份檔案位置目的地工作環境ifdef：：AWS [] | Amazon S3 
+| 備份檔案位置 | 目的地工作環境ifdef：：AWS [] 
 
 
-| AWS內部部署的不全系統endif::AWS [] ifdef:azure[] Cloud Volumes ONTAP ONTAP | Azure Blob 
+| Amazon S3 | AWS內部部署的不全系統endif::AWS [] ifdef:azure[] Cloud Volumes ONTAP ONTAP 
 
 
-| Azure內部部署的系統中的資料：：azure[] ifdef：：Cloud Volumes ONTAP ONTAP GCP[] | Google Cloud Storage 
+| Azure Blob | Azure內部部署的系統中的資料：：azure[] ifdef：：Cloud Volumes ONTAP ONTAP GCP[] 
 
 
-| 在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[] | NetApp StorageGRID 
+| Google Cloud Storage | 在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[] 
+
+
+| NetApp StorageGRID | 內部部署 ONTAP 的作業系統 
 |===
 在瀏覽與還原中、連接器可安裝在下列位置：
 

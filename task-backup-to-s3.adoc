@@ -73,7 +73,7 @@ image:screenshot_backup_policy_aws.png["顯示Cloud Backup設定的快照、您�
 
 image:diagram_cloud_backup_cvo_aws.png["顯示Cloud Backup如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
-VPC閘道端點必須已存在於VPC中。
+VPC閘道端點必須已存在於VPC中。 https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html["深入瞭解閘道端點"^]。
 
 支援 ONTAP 的支援版本:: 最低ONTAP 版本為0、9、75；ONTAP 建議使用0、8P13及更新版本。
 授權需求:: 如需Cloud Backup PAYGO授權、AWS Marketplace提供了一份適用於BlueXP的訂購服務、可用於部署Cloud Volumes ONTAP 功能包括：您需要 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["訂閱此BlueXP訂閱"^] 在啟用Cloud Backup之前。雲端備份計費是透過此訂閱完成。
@@ -89,14 +89,6 @@ VPC閘道端點必須已存在於VPC中。
 
 --
 支援的 AWS 區域:: 所有AWS區域均支援雲端備份 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]；包括AWS GovCloud區域。
-在不同的AWS帳戶中建立備份所需的設定:: 根據預設、備份會使用Cloud Volumes ONTAP 與您的作業系統相同的帳戶建立。如果您想要使用不同的AWS帳戶進行備份、您必須：
-+
---
-* 在BluXP中新增目的地AWS帳戶認證資料。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#add-additional-credentials-to-a-connector["瞭解如何做到這一點"]。
-* 將「S3：PuttBucketPolicy」和「S3：PuttBucketOwnershipControl」權限新增至IAM角色、以便為BlueXP Connector提供權限。
-
-
---
 使用客戶管理金鑰進行資料加密的必要資訊:: 您可以在啟動精靈中選擇自己的客戶管理資料加密金鑰、而非使用預設的Amazon S3加密金鑰。在此情況下、您必須先設定加密管理金鑰。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的金鑰"^]。
 必要的AWS Connector權限:: 提供BlueXP權限的IAM角色必須包含最新版本的S3權限 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]。
 +
@@ -171,6 +163,28 @@ VPC閘道端點必須已存在於VPC中。
 +
 --
 如果您Cloud Volumes ONTAP 使用BlueXP 3.9.23版或更新版本建立了這個功能完善的環境、這些權限應該已經成為IAM角色的一部分。否則您必須新增遺失的權限。
+
+--
+在不同的AWS帳戶中建立備份所需的設定:: 根據預設、備份會使用Cloud Volumes ONTAP 與您的作業系統相同的帳戶建立。如果您想要使用不同的AWS帳戶進行備份、您必須：
++
+--
+* 驗證「S3：PuttBucketPolicy」和「S3：PuttBucketOwnershipControl」權限是否為IAM角色的一部分、該角色可為BlueXP Connector提供權限。
+* 在BluXP中新增目的地AWS帳戶認證資料。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#add-additional-credentials-to-a-connector["瞭解如何做到這一點"^]。
+* 在第二個帳戶的使用者認證中新增下列權限：
++
+....
+"athena:StartQueryExecution",
+"athena:GetQueryResults",
+"athena:GetQueryExecution",
+"glue:GetDatabase",
+"glue:GetTable",
+"glue:CreateTable",
+"glue:CreateDatabase",
+"glue:GetPartitions",
+"glue:BatchCreatePartition",
+"glue:BatchDeletePartition"
+....
+
 
 --
 

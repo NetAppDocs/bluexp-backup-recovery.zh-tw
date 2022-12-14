@@ -113,13 +113,12 @@ Cloud Backup支援下列類型的磁碟區：
 
 [NOTE]
 ====
-*不受限制* FlexGroup ：
+*不限數量的Volume還原限制* FlexGroup ：
 
-* 內部ONTAP 的功能不支援完整Volume還原；Cloud Volumes ONTAP 目前不支援任何功能。
+* 完整Volume還原僅支援內部ONTAP 的功能（Cloud Volumes ONTAP 目前不支援哪些系統）。
 * 內部ONTAP 系統的內部系統支援檔案層級還原Cloud Volumes ONTAP 。
 * 目前不支援目錄/資料夾還原。
-* 無法將備份移至歸檔儲存設備。
-* 備份無法使用DataLock和勒索軟體保護。
+* 此時可將磁碟區還原至單一Aggregate。
 
 
 ====
@@ -212,7 +211,7 @@ link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["瞭解如
 
 === 隨用隨付訂閱
 
-Cloud Backup以隨用隨付模式提供消費型授權。透過雲端供應商的市場訂閱之後、您需要支付每GiB的備份資料費用、而無需預付任何款項。您的雲端供應商會透過每月帳單向您收費。
+Cloud Backup以隨用隨付模式提供消費型授權。透過雲端供應商的市場訂閱之後、您只需支付每GiB的備份資料費用、無需預付任何款項。您的雲端供應商會透過每月帳單向您收費。
 
 link:task-licensing-cloud-backup.html#use-a-cloud-backup-paygo-subscription["瞭解如何設定隨用隨付訂閱"]。
 
@@ -414,6 +413,7 @@ endif::gcp[]
 ** 如果您在SnapMirror目的地磁碟區上建立Snapshot的本機複本（無論使用的是SnapMirror標籤）、這些Snapshot將不會作為備份移至雲端。此時、您需要建立Snapshot原則、並在來源DP磁碟區中加上所需的標籤、以便Cloud Backup備份這些標籤。
 
 
+* 無法將資料區備份移至歸檔儲存設備、也無法使用DataLock和勒索軟體保護功能FlexGroup 。
 * SVM-DR磁碟區備份受到下列限制的支援：
 +
 ** 備份僅支援ONTAP 來自於不支援的支援。
