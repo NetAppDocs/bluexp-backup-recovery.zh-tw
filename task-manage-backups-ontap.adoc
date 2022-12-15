@@ -268,9 +268,6 @@ NetApp勒索軟體保護軟體會掃描您的備份檔案、尋找建立備份�
 
 此功能只有在磁碟區備份是從ONTAP 含有VMware®的系統建立、且您在備份原則中啟用了_DataLock和勒索軟體Protection（保護）時才能使用。
 
-
-NOTE: 勒索軟體掃描需要將備份檔案下載到您的BlueXP環境（安裝Connector的環境）。如果您已在內部部署Connector、雲端供應商可能會產生額外的出口成本。因此、我們建議您將Connector部署在雲端、而且它與儲存備份的儲存庫位於同一個區域。
-
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、按一下 image:screenshot_horizontal_more_button.gif["更多圖示"] 針對來源Volume、選取*詳細資料與備份清單*。
 +

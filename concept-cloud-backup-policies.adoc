@@ -105,9 +105,6 @@ DataLock可保護您的備份檔案、避免在一段時間內遭到修改或刪
 
 
 
-CAUTION: 勒索軟體掃描需要將備份檔案下載到您的BlueXP環境（安裝Connector的環境）。如果您已在內部部署Connector、雲端供應商可能會產生額外的出口成本。因此、我們建議您將Connector部署在雲端、而且它與儲存備份的儲存庫位於同一個區域。
-
-
 
 === DataLock和勒索軟體保護設定
 
@@ -162,7 +159,7 @@ ifdef::aws[]
 
 * 對於AWS：
 +
-** 連接器必須部署在雲端
+** 連接器可部署在雲端或內部部署
 ** 下列S3權限必須是為Connector提供權限的IAM角色的一部分。它們位於資源「arn:AWS:S3：：：：NetApp備份-*」的「backupS3Policy」區段：
 +
 *** S3：GetObjectVersion標記
@@ -192,9 +189,6 @@ ifdef::aws[]
 *** S3：PuttObjectRetention
 *** S3：GetBucketLocation
 *** S3：GetObjectVersion
-+
-「S3：BypassGovernanceRetention」僅在您希望管理員使用者能夠覆寫/刪除使用「管理模式」鎖定的備份檔案時才必須新增。
-
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["檢視原則的完整Json格式、您可以在其中複製及貼上所需的權限"^]。
 

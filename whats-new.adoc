@@ -31,10 +31,10 @@ summary: 瞭解Cloud Backup的新功能。
 | 舊端點 | 新的端點 
 
 
-| https://cloudmanager.cloud.netapp.com[] | https://api.bluexp.netapp.com[] 
+| \https://cloudmanager.cloud.netapp.com | \https://api.bluexp.netapp.com 
 
 
-| https://*.cloudmanager.cloud.netapp.com[] | https://*.api.bluexp.netapp.com[] 
+| \https://*.cloudmanager.cloud.netapp.com | \https://*.api.bluexp.netapp.com 
 |===
 請參閱的完整端點清單 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#outbound-internet-access["AWS"^]、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#outbound-internet-access["Google Cloud"^]或 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html#outbound-internet-access["Azure"^] 雲端環境：
 
@@ -50,7 +50,7 @@ summary: 瞭解Cloud Backup的新功能。
 
 === 支援FlexGroup 支援功能
 
-Cloud Backup現在支援FlexGroup 支援支援的是各個方面。使用ONTAP 支援更新版本的《支援資料》時、您可以將FlexGroup 《支援資料》備份到公有雲和私有雲儲存設備。如果您的工作環境包含FlexVol 了一些不含支援的功能、FlexGroup 請在更新ONTAP 完您的支援功能後、在FlexGroup 這些系統上備份任何的支援功能。
+Cloud Backup現在支援還原FlexGroup 及備份功能。使用ONTAP 支援更新版本的《支援資料》時、您可以將FlexGroup 《支援資料》備份到公有雲和私有雲儲存設備。如果您的工作環境包含FlexVol 了一些不含支援的功能、FlexGroup 請在更新ONTAP 完您的支援功能後、在FlexGroup 這些系統上備份任何的支援功能。
 
 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html#supported-volumes["請參閱支援的磁碟區類型完整清單"]。
 
@@ -418,63 +418,3 @@ link:concept-protect-app-data-to-cloud.html["深入瞭解如何將內部部署�
 === 本次發表中已變更了各項收費、以更貼近業界標準Cloud Backup Service
 
 現在您只需支付所保護資料的費用、而非根據備份檔案的大小來支付NetApp的容量費用、這是根據ONTAP 正在ONTAP 備份的來源供應區的邏輯使用容量（不含不含還原效率）計算而得。此容量也稱為前端TB（FTB）。
-
-
-
-== 2021年11月28日
-
-
-
-=== 能夠將持續磁碟區從EKS Kubernetes叢集備份到Amazon S3
-
-如果您的EKS叢集已安裝NetApp Astra Trident、而且使用Cloud Volumes ONTAP 適用於AWS的叢集後端儲存設備、則您可以在Amazon S3之間備份及還原磁碟區。 link:task-backup-kubernetes-to-s3.html["如需詳細資料、請前往此處"]。
-
-
-
-=== 增強備份DP磁碟區的功能
-
-Cloud Backup現在支援在ONTAP SVM-DR關係中、建立目標支援的DP磁碟區備份。有幾項限制、請參閱 link:concept-ontap-backup-to-cloud.html#limitations["限制"] 以取得詳細資料。
-
-
-
-== 2021年11月5日
-
-
-
-=== 可在將Volume還原至內部部署ONTAP 的作業系統時、選擇私有端點
-
-從ONTAP Amazon S3或Azure Blob上的備份檔案將磁碟區還原至內部部署的支援系統時、現在您可以選擇一個私有端點、以私密且安全的方式連線至內部部署系統。
-
-
-
-=== 現在、您可以在數天後將舊的備份檔案分層保存至歸檔儲存設備、以節省成本
-
-如果您的叢集執行ONTAP 的是版本為NetApp 9.10.1或更新版本、而且您使用的是AWS或Azure雲端儲存設備、則可以將備份分層處理至歸檔儲存設備。如需詳細資訊、請參閱 link:reference-aws-backup-tiers.html["AWS S3歸檔儲存類別"] 和 link:reference-azure-backup-tiers.html["Azure Blob歸檔存取層"]。
-
-
-
-=== Cloud Backup BYOL授權已移至Digital Wallet中的「Data Services Licenses（資料服務授權）」索引標籤
-
-Cloud Backup的BYOL授權已從Cloud Backup授權索引標籤移至BlueXP數位錢包的資料服務授權索引標籤。
-
-
-
-== 2021年10月4日
-
-
-
-=== 執行磁碟區或檔案還原時、備份檔案大小現在可在「備份」頁面中使用
-
-如果您想要刪除不必要的大型備份檔案、或是比較備份檔案大小、找出任何可能因為惡意軟體攻擊而造成的異常備份檔案、這很有用。
-
-
-
-=== TCO計算機可用來比較雲端備份成本
-
-總體擁有成本計算機可協助您瞭解Cloud Backup的總體擁有成本、並將這些成本與傳統備份解決方案進行比較、並預估可能的節約效益。歡迎來看看https://cloud.netapp.com/cloud-backup-service-tco-calculator["請按這裡"^]。
-
-
-
-=== 能夠取消註冊工作環境的Cloud Backup
-
-現在您可以輕鬆完成 link:task_manage_backups.html#unregistering-cloud-backup-for-a-working-environment["取消登錄工作環境的Cloud Backup"] 如果您不想再為該工作環境使用備份功能（或付費）、
