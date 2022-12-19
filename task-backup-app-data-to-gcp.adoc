@@ -14,7 +14,7 @@ summary: 請完成幾個步驟、將應用程式資料從ONTAP 功能完善的�
 
 
 [role="lead"]
-您可以ONTAP 將Cloud Backup for Applications與BlueXP和內部部署SnapCenter 的更新整合、將應用程式資料從功能性資料備份到Google Cloud Platform。
+您可以ONTAP 將Cloud Backup for Applications與Cloud Manager和內部部署SnapCenter 的內部部署的整合、將應用程式資料從支援的對象備份到Google Cloud Platform。
 
 您可以使用單一原則、將一或多個應用程式同時保護到雲端。
 

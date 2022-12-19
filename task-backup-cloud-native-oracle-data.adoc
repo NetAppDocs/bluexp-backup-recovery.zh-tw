@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task-backup-cloud-native-app-data.html 
-keywords: cloud native, application data, back up, policy, pre-canned policies, scheduled backups, on-demand backups 
-summary: 指派原則並備份資料庫。 
+permalink: task-backup-cloud-native-oracle-data.html 
+keywords: admin role, service account, pre-canned policies, cloud manager, BlueXP, scheduled backups, on-demand backups, create policy, Oracle database, backup limitations 
+summary: 建立Oracle資料庫的排程或隨需備份。 
 ---
-= 備份雲端原生應用程式資料
+= 備份雲端原生Oracle資料庫
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,10 +14,32 @@ summary: 指派原則並備份資料庫。
 
 
 [role="lead"]
-您可以指派預先整合的原則、或是建立原則、然後將其指派給資料庫。一旦指派原則、便會依照原則中定義的排程建立備份。您也可以建立隨需備份。
+您應該指派預先設定的原則或您建立的原則、然後進行備份。
 
 
-NOTE: 為Oracle建立ASM磁碟群組時、請確定磁碟群組之間沒有通用磁碟區。每個磁碟群組都需要有專屬的磁碟區。
+
+== 建立保護Oracle資料庫的原則
+
+如果您不想編輯預先安裝的原則、可以建立原則。
+
+*步驟*
+
+. 在「應用程式」頁面的「設定」下拉式清單中、選取「*原則*」。
+. 按一下「*建立原則*」。
+. 指定原則名稱。
+. （選用）編輯備份名稱的格式。
+. 指定排程和保留詳細資料。
+. 按一下「 * 建立 * 」。
+
+
+
+
+== 建立Oracle資料庫的備份
+
+您可以指派預先整合的原則、或是建立原則、然後將其指派給資料庫。一旦指派原則、便會依照原則中定義的排程建立備份。
+
+
+NOTE: 對於Oracle、在建立ASM磁碟群組時、請確定磁碟群組之間沒有通用磁碟區。每個磁碟群組都需要有專屬的磁碟區。
 
 *步驟*
 
@@ -37,7 +59,7 @@ NOTE: 服務帳戶（_SnapCenter-account-<account_id>_）用於執行排程的�
 
 
 
-== 建立隨需備份
+== 建立Oracle資料庫的隨需備份
 
 指派原則之後、您可以建立應用程式的隨需備份。
 
@@ -54,3 +76,14 @@ NOTE: 服務帳戶（_SnapCenter-account-<account_id>_）用於執行排程的�
 「失敗、狀態代碼為500、錯誤｛\「錯誤」：｛\「代碼」：\「app_inters_error\」、「訊息」：\「無法建立快照」。原因：由於快照備份的複本、因此不允許執行快照作業。稍後再試一次
 
 如需如何修正此問題的相關資訊、請參閱： https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Snapshot_operation_not_allowed_due_to_clones_backed_by_snapshots["由於複本以快照做為備份、因此不允許執行Snapshot作業"]。
+
+
+
+== 限制
+
+* 不支援線上資料或僅記錄備份
+* 不支援離線備份
+* 不支援備份位於循環掛載點上的Oracle資料庫
+* 不支援位於多個ASM磁碟群組中、且與FSX磁碟區重疊的Oracle資料庫之一致性群組快照
+* 如果您的Oracle資料庫是在ASM上設定、請確認您的SVM名稱在FSX系統中是唯一的。如果您在FSX系統中擁有相同的SVM名稱、則不支援備份位於這些SVM上的Oracle資料庫。
+

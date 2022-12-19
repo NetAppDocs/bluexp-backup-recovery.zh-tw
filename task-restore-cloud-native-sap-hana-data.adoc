@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: task-restore-cloud-native-sap-hana-data.html 
+keywords: cloud native, application data, restore, data files, SAP HANA, database, recovery, Cloud Manager, BlueXP 
+summary: 還原資料檔案、然後還原資料庫。 
+---
+= 還原雲端原生SAP HANA資料庫
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在資料遺失的情況下、您可以還原資料和非資料檔案、然後還原資料庫。
+
+
+
+== 簡報與指令碼
+
+您可以在建立原則時提供預先編寫、後置指令碼及結束指令碼。這些指令碼會在HANA主機上執行、同時執行還原作業。
+
+指令碼支援的格式為.sh、python指令碼、perl指令碼等。
+
+pretced和postscript應由主機管理員登錄至 `/opt/NetApp/snapcenter/scc/etc/allowed_commands.config file``
+
+`[root@scspa2622265001 etc]# cat allowed_commands.config
+command: mount
+command: umount
+command: /mnt/scripts/pre_script.sh
+command: /mnt/scripts/post_script.sh`
+
+
+
+== 環境變數
+
+在還原工作流程中、下列環境變數可作為預先記錄和PostScript的一部分使用。
+
+|===
+| 環境變數 | 說明 
+
+
+ a| 
+SID
+ a| 
+選擇用於還原的HANA資料庫系統識別碼
+
+
+
+ a| 
+備份名稱
+ a| 
+選擇用於還原作業的備份名稱
+
+
+
+ a| 
+UserStoreKeyNames
+ a| 
+設定HANA資料庫的使用者存放區金鑰
+
+
+
+ a| 
+OSDB使用者
+ a| 
+針對HANA資料庫設定OSDBUser
+
+|===
+
+
+== 還原雲端原生SAP HANA資料庫
+
+*您需要的是什麼*
+
+. SAP HANA系統必須處於停止狀態。
+. 您可以提供預先記錄來停止SAP HANA系統。
+
+
+*步驟*
+
+. 按一下 image:icon-action.png["圖示以選取動作"] 與您要還原的資料庫相對應、然後按一下「*檢視詳細資料*」。
+. 按一下 image:icon-action.png["圖示以選取動作"] 與您要用於還原的資料備份相對應、然後按一下*還原*。
+. 在「*還原系統*」頁面中、輸入指令碼。
+. 按一下 * 還原 * 。
+
+
+*完成後*
+
+* 還原之後、請手動還原SAP HANA系統、或提供執行SAP HANA系統還原的PostScript。
+
+
+
+
+== 還原非資料磁碟區
+
+. 在「*應用程式*」頁面中、從下拉式方塊中選取「非資料磁碟區」。
+. 按一下 image:icon-action.png["圖示以選取動作"] 與您要還原的備份相對應、然後按一下*還原*。
+
+
+
+
+== 還原全域非資料磁碟區
+
+*步驟*
+
+. 在「*應用程式*」頁面中、按一下您要還原的「全域非資料磁碟區」。
+. 按一下 image:icon-action.png["圖示以選取動作"] 對應至您要還原的全域非資料磁碟區、然後按一下*還原*。
+

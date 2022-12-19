@@ -14,9 +14,9 @@ summary: 深入瞭解如何保護虛擬機器上的資料、並瞭解不同的�
 
 
 [role="lead"]
-您可以將SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式與BlueXP（前身為Cloud Manager）整合、以保護虛擬機器上的資料。您可以將資料存放區備份到雲端、SnapCenter 並輕鬆將虛擬機器還原回內部部署的VMware vSphere版的內部部署功能。
+您可以將SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式與BlueXP（前身為Cloud Manager）整合、以保護虛擬機器上的資料。您可以將資料存放區從內部部署的一線和二線儲存設備備份到雲端、SnapCenter 並輕鬆將虛擬機器還原回內部部署的VMware vSphere內建的「支援VMware vSphere的插件」。
 
-您可以將資料存放區備份到Amazon Web Services S3、Microsoft Azure Blob和StorageGRID Sesome。
+您可以將資料存放區備份至Amazon Web Services S3（支援的歸檔層為Glacier和Deep Glacier）、Microsoft Azure Blob（支援的歸檔層為Azure歸檔層）、Google Cloud Platform和StorageGRID Sfor。
 
 
 
@@ -25,10 +25,14 @@ summary: 深入瞭解如何保護虛擬機器上的資料、並瞭解不同的�
 請先閱讀下列需求、確定您擁有支援的組態、再開始將資料存放區和虛擬機器備份至雲端服務。
 
 * VMware vSphere 4.6P1或更新版本的適用插件SnapCenter
++
+** 您應該使用SnapCenter VMware vSphere 4.7P1或更新版本的VMware vCenter外掛程式、從內部部署的次要儲存設備備份虛擬機器。
+
+
 * 部分9.8或更新版本ONTAP
 * BlueXP 3.9或更新版本
 * VMware vSphere 4.6P1的VMware vCenter外掛程式應至少進行一次備份SnapCenter 。
-* VMware vSphere適用的VMware vSphere中至少有一項SnapCenter 每天、每週或每月政策、沒有標籤或標籤與BlueXP中的Cloud Backup for Virtual Machines原則相同。
+* VMware vSphere適用的VMware vSphere中至少有一項SnapCenter 每日、每週或每月原則、沒有標籤或標籤與BlueXP中的虛擬機器原則相同。
 * 對於預先安裝的原則、VMware SnapCenter vSphere的VMware vSphere及雲端的VMware Infrastructure的VMware Plug-in資料存放區排程層應相同。
 * 請確認FlexGroup 資料存放區中沒有任何不支援的資料區、因為不FlexGroup 支援備份和還原功能。
 * 請確定不支援還原加密磁碟區、因此不會加密任何磁碟區。
@@ -39,4 +43,4 @@ summary: 深入瞭解如何保護虛擬機器上的資料、並瞭解不同的�
 
 下圖顯示每個元件及其之間需要準備的連線：
 
-image:cloud_backup_vm.png["虛擬機器的雲端備份架構圖。"]
+image:cloud_backup_vm.png["架構圖"]

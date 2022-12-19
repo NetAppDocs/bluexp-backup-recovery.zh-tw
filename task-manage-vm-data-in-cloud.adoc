@@ -50,7 +50,7 @@ summary: 您可以檢視資料存放區和虛擬機器、並編輯SnapCenter VMw
 
 == 編輯SnapCenter VMware vSphere執行個體的VMware vCenter外掛程式
 
-您可以在SnapCenter BlueXP中編輯VMware vSphere的《VMware vSphere的VMware vSphere》外掛程式詳細資料
+您可以在SnapCenter BlueXP中編輯VMware vSphere的《支援VMware vSphere的支援》外掛程式詳細資料。
 
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *>* Setting*>* SnapCenter 《VMware vSpher******的*還原外掛程式》。

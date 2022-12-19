@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task-restore-cloud-native-app-data.html 
-keywords: cloud native, application data, restore, data files, control files, recovery 
+permalink: task-restore-cloud-native-oracle-data.html 
+keywords: cloud native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
 summary: 還原資料檔案、控制檔或兩者、然後還原資料庫。 
 ---
-= 還原雲端原生應用程式資料
+= 還原雲端原生Oracle資料庫
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -15,6 +15,11 @@ summary: 還原資料檔案、控制檔或兩者、然後還原資料庫。
 
 [role="lead"]
 在資料遺失的情況下、您可以還原資料檔案、控制檔或兩者、然後還原資料庫。
+
+*您需要的是什麼*
+
+如果Oracle 21c資料庫處於「已啟動」狀態、還原作業將會失敗。您應該執行下列步驟、以成功還原資料庫。
+`cp -f <ORACLE_HOME>/jdbc/lib/ojdbc8.jar /opt/NetApp/snapcenter/spl/plugins/sco/lib ojdbc8-8.jar`
 
 *步驟*
 
@@ -54,7 +59,18 @@ NOTE: 在ASM配置上、iSCSI不支援使用控制檔或僅控制檔來還原資
 您也可以選取*強制就地還原*核取方塊。
 
 +
-「*強制就地還原*」選項會覆寫來自資料檔案磁碟群組的spfile、密碼檔及封存記錄檔。選取「*強制就地還原*」選項時、您應該使用最新的備份。
+在SAN配置中、如果SnapCenter Oracle的Estrate-Plug-in在ASM磁碟群組中找到Oracle資料檔案以外的任何外部檔案、則會執行連線和複製還原方法。外部檔案可以是下列一種或多種類型：
+
++
+** 參數
+** 密碼
+** 歸檔記錄
+** 線上記錄
+** ASM參數檔案。
++
+「*強制就地還原*」選項會覆寫類型參數、密碼及歸檔記錄的外部檔案。選取「*強制就地還原*」選項時、您應該使用最新的備份。
+
+
 
 . 在「恢復範圍」區段中、執行下列動作：
 +
@@ -97,4 +113,15 @@ NOTE: 在ASM配置上、iSCSI不支援使用控制檔或僅控制檔來還原資
 
 . 單擊* Next*（下一步）並查看詳細資料。
 . 按一下 * 還原 * 。
+
+
+
+
+== 限制
+
+* 不支援精細還原、例如還原資料表空間和PDF
+* 如果某些磁碟群組包含外部檔案、則會同時使用就地和連線與複製還原方法。但是、不支援同時使用這兩種方法來執行還原、而且還原作業會失敗。資料庫將保持掛載狀態、您需要手動將資料庫設為開啟狀態。
++
+由於已知問題、UI中的工作頁面不會顯示因有外部檔案而導致的失敗訊息。如果SAN預先還原階段發生故障、請檢查連接器記錄、以瞭解問題的原因。
+
 

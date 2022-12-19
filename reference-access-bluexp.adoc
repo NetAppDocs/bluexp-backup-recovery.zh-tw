@@ -1,0 +1,17 @@
+---
+sidebar: sidebar 
+permalink: reference-access-bluexp.html 
+keywords: Cloud Manager, BlueXP 
+summary: 存取BlueXP： 
+---
+= 存取BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您應該 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-signing-up.html["註冊NetApp BlueXP網站"]、 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["登入BlueXP"]，然後設定 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-setting-up-netapp-accounts.html["NetApp帳戶"]。

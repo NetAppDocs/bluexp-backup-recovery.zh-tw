@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task-backup-vm-data-to-aws.html 
-keywords: back up, backup, backup virtual machine data, aws, Amazon Web Services, cloud backup, backup datastores 
-summary: 將您的資料存放區從內部部署ONTAP 的功能區備份到AWS。 
+permalink: task-backup-vm-data-to-gcp.html 
+keywords: back up, backup, backup virtual machine data, gcp, google cloud platform, cloud backup, backup datastores 
+summary: 將資料存放區從內部部署ONTAP 的不支援功能備份到Google Cloud Platform。 
 ---
-= 將資料存放區備份至Amazon Web Services
+= 將資料存放區備份到Google Cloud Platform
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,7 @@ summary: 將您的資料存放區從內部部署ONTAP 的功能區備份到AWS�
 
 
 [role="lead"]
-您可以將SnapCenter 適用於VMware vSphere的VMware vSphere的VMware vCenter外掛程式與BlueXP整合、將一或多個資料存放區備份至Amazon Web Services。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
-
-如果資料存放區與歸檔原則相關聯、則會提供一個選項來選取歸檔層。支援的歸檔層為Glacier和Glacier Deep。
+您可以將SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式與BlueXP整合、將一或多個資料存放區備份到Google Cloud Platform。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
 
 
 NOTE: 確保您已滿足所有需求 link:concept-protect-vm-data.html#Requirements["需求"] 將資料存放區備份到雲端之前。
@@ -40,17 +38,13 @@ NOTE: 確保您已滿足所有需求 link:concept-protect-vm-data.html#Requireme
 .. 按一下「 * 新增工作環境 * 」。
 
 
-. 選取* Amazon Web Services*將其設定為雲端供應商。
+. 選擇* Google Cloud Platform *將其設定為雲端供應商。
 +
-.. 指定AWS帳戶。
-.. 在AWS存取金鑰欄位中、指定資料加密的金鑰。
-.. 在AWS Secret Key（AWS機密金鑰）欄位中、指定資料加密的密碼。
+.. 選取您要在其中建立 Google Cloud Storage 儲存庫以進行備份的 Google Cloud Project 。
+.. 在Google Cloud存取金鑰欄位中、指定金鑰。
+.. 在Google Cloud Secret Key（Google Cloud機密金鑰）欄位中、指定密碼。
 .. 選取您要建立備份的區域。
-.. 指定ONTAP 新增為工作環境的各種不完整叢集的IP位址。
-.. 選取歸檔層。
-+
-建議您設定歸檔層、因為這是一次性的活動、日後將不允許您設定。
-
+.. 指定IP空間。
 
 
 . 檢閱詳細資料、然後按一下*啟動備份*。

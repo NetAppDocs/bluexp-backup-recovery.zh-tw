@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-manage-cloud-native-app-data.html 
-keywords: manage, view backup, monitor jobs, monitor 
+keywords: manage, view backup, monitor jobs, monitor, Cloud Manager, BlueXP 
 summary: 檢視備份詳細資料、並監控所有工作的狀態。 
 ---
 = 管理雲端原生應用程式資料的保護
@@ -45,6 +45,14 @@ summary: 檢視備份詳細資料、並監控所有工作的狀態。
 
 
 
+== 稽核資料
+
+當您直接執行API或使用UI呼叫Cloud Backup for Applications的任何外部外露API時、要求詳細資料如標頭、角色、要求本文、API資訊將記錄在藍圖XP時間表中、稽核項目將永遠保留在時間表中。API呼叫的狀態和錯誤回應也會在作業完成後進行稽核。在非同步API回應（例如工作）的情況下、工作ID也會記錄為回應的一部分。
+
+Cloud Backup for Applications會記錄主機IP、要求本文、作業名稱、觸發者、部分標頭、以及API的作業狀態。
+
+
+
 == 檢視備份詳細資料
 
 您可以檢視建立的備份總數、用於建立備份的原則、資料庫版本和代理程式ID。
@@ -54,34 +62,40 @@ summary: 檢視備份詳細資料、並監控所有工作的狀態。
 
 
 
-IMPORTANT: 代理程式ID與Connector相關聯。如果登錄Oracle資料庫主機時使用的連接器不再存在、則該應用程式的後續備份將會失敗、因為新連接器的代理程式ID不同。您應該執行*連接器更新* API來修改代理程式ID。
+IMPORTANT: 代理程式ID與Connector相關聯。如果登錄SAP HANA主機時使用的連接器不再存在、則後續的應用程式備份將會失敗、因為新連接器的代理程式ID不同。您應該修改主機中的Connector ID。
 
 
 
-== 更新連接器詳細資料
+== 刪除實體複本
 
-如果在註冊Oracle資料庫主機時所使用的連接器不再存在或在AWS中毀損、您應該部署新的連接器。部署新的連接器之後、您應該執行* Connector-update-* API來更新連接器詳細資料。
+如果不再需要複本、您可以刪除複本。
+
+. 按一下 image:button_plus_sign_square.png["圖示以選取動作"] 緊鄰*篩選條件*、然後選取* Clone選項*>* Clone父項*。
+. 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*檢視詳細資料*。
+. 在「資料庫詳細資料」頁面中、按一下 image:button_plus_sign_square.png["圖示以選取動作"] 緊鄰*篩選條件*、然後選取* Clone（複製）*。
+. 按一下 image:icon-action.png["圖示以選取動作"] 與您要刪除的複本相對應、然後按一下*刪除*。
+. （選用）選取「*強制刪除*」核取方塊。
+
+
+
+
+== 更新SAP HANA資料庫主機的Connector Details
+
+如果登錄應用程式主機時使用的連接器不再存在或毀損、您應該部署新的連接器。部署新連接器之後、您應該執行* Connector-updated* API、以更新使用舊連接器登錄之所有主機的連接器詳細資料。
 
 [listing]
 ----
-curl --location --request PATCH 'https://snapcenter.cloudmanager.cloud.netapp.com/api/oracle/databases/connector-update' \
+curl --location --request PATCH
+'https://snapcenter.cloudmanager.cloud.netapp.com/api/saphana/hosts/connector/update' \
 --header 'x-account-id: <CM account-id>' \
---header 'x-agent-id: <connector Agent ID >' \
 --header 'Authorization: Bearer token' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-"old_connector_id": "Old connector id that no longer exist",
+"old_connector_id": "Old connector id that no longer exists",
 "new_connector_id": "New connector Id"
 }
 ----
-更新Connector詳細資料之後、您應該連線至Oracle資料庫主機、然後執行下列步驟：
-
-. 取得在Oracle資料庫主機上執行的外掛程式資訊。"rpm -Qi NetApp-snapcenter-plugin-oracle"
-. 解除安裝外掛程式。「Udo /opt/NetApp/snapcenter/spl/install/plugins/uninstall」
-. 確認外掛程式已成功解除安裝。"rpm -Qi NetApp-snapcenter-plugin-oracle"
-
-
-解除安裝外掛程式之後、您可以部署外掛程式。 link:reference-prereq-protect-cloud-native-app-data.html#deploy-snapcenter-plug-in-for-oracle["深入瞭解"]。
+如果所有主機SnapCenter 都安裝並執行適用於SAP HANA的支援功能、而且所有主機都可從新連接器存取、連接器詳細資料將會成功更新。
 
 
 
@@ -123,7 +137,7 @@ NOTE: certfile.crt是指根CA和中繼CA的憑證。
 
 === 設定外掛程式伺服器憑證的CA簽署憑證
 
-CA憑證應具有連接器虛擬機器與其通訊之Oracle外掛程式主機的確切名稱。
+CA憑證應具有連接器虛擬機器與其通訊的外掛程式主機確切名稱。
 
 *您需要的是什麼*
 
