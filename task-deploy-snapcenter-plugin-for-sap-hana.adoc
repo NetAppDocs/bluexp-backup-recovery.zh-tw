@@ -29,9 +29,9 @@ NOTE: 確保每個SAP HANA資料庫主機上都安裝了Java 11（64位元）Ora
 
 . 登入Connector VM。
 . 下載Linux主機外掛程式二進位檔。
-`sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'``
+`sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
 . 取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」
-. 從複製第1行至第16行 `oracle_checksum_scs.txt`` 檔案位於 `base_mount_path/version/sc-linux-host-plugin/`
+. 從複製第1行至第16行 `oracle_checksum_scs.txt` 檔案位於 `base_mount_path/version/sc-linux-host-plugin/`
 . 登入SAP HANA資料庫主機、然後執行下列步驟：
 +
 .. 建立非root使用者帳戶、私密金鑰組、然後指派權限。
@@ -39,34 +39,6 @@ NOTE: 確保每個SAP HANA資料庫主機上都安裝了Java 11（64位元）Ora
 +
 在上述各行中、<LINUXUSER> 將所建立的非root使用者取代為您在視覺化公用程式中儲存的使用者。
 
-
-
-
-
-
-
-== 手動部署外掛程式
-
-如果HANA主機上未啟用SSH金鑰型驗證、您應該執行下列手動步驟來部署外掛程式。
-
-*步驟*
-
-. 登入Connector VM。
-. 下載Linux主機外掛程式二進位檔。
-`# sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'``
-. 取得基本掛載路徑。
-`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint``
-. 取得下載外掛程式的二進位路徑。
-`sudo ls <base_mount_path> $(sudo docker ps|grep -Po "cloudmanager_scs_cloud:.*? "|sed -e 's/ *$//'|cut -f2 -d":")/sc-linux-host-plugin/snapcenter_linux_host_plugin_scs.bin``
-. 複本 `snapcenter_linux_host_plugin_scs.bin`` 使用scp或其他替代方法、將資料傳送至每個SAP HANA資料庫主機。
-. 在SAP HANA資料庫主機上、執行下列命令以啟用二進位檔案的執行權限。
-`chmod +x snapcenter_linux_host_plugin_scs.bin`
-. 將SAP HANA外掛程式部署為Sudo非root使用者。``./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root-user>``
-. 複本 在外掛程式主機上。
-+
-.. 瀏覽至/var/opt/snapcenter/spl/etc`` and execute the keytool command to import the certificate.
-`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt``
-.. 重新啟動SPL： `systemctl restart spl``
 
 
 
@@ -91,6 +63,33 @@ NOTE: 確保每個SAP HANA資料庫主機上都安裝了Java 11（64位元）Ora
 ** SSH_port：HANA主機上的SSH連接埠、這是選用參數。預設值為22。
 ** plugin_port：外掛程式使用的連接埠、這是選用參數。預設值為8145。
 ** 安裝目錄：要部署外掛程式的目錄、這是選用參數。預設值為/opt。
+
+
+
+
+
+
+== 手動部署外掛程式
+
+如果HANA主機上未啟用SSH金鑰型驗證、您應該執行下列手動步驟來部署外掛程式。
+
+*步驟*
+
+. 登入Connector VM。
+. 下載Linux主機外掛程式二進位檔。
+`# sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
+. 取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」
+. 取得下載外掛程式的二進位路徑。「Udo ls <base_mount_path>$(sudo dod泊 塢視窗ps | grep -po" cloudmanager_SCs_clou:.*？"| sed -e 's/*$/'| cut -F2 -d":")/sc-Linux主機外掛程式/snapcenter_Linux主機外掛程式_scsscs.bin"
+. 複本 `snapcenter_linux_host_plugin_scs.bin` 使用scp或其他替代方法、將資料傳送至每個SAP HANA資料庫主機。
+. 在SAP HANA資料庫主機上、執行下列命令以啟用二進位檔案的執行權限。
+`chmod +x snapcenter_linux_host_plugin_scs.bin`
+. 將SAP HANA外掛程式部署為Sudo非root使用者。
+`./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root-user>`
+. 複本 `certificate.p12` 寄件者 `<base_mount_path>/client/certificate/` 連接器VM的路徑 `/var/opt/snapcenter/spl/etc/` 在外掛程式主機上。
++
+.. 瀏覽至 `/var/opt/snapcenter/spl/etc` 並執行keytools命令以匯入憑證。
+`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
+.. 重新啟動SPL：「系統重新啟動spl」
 
 
 

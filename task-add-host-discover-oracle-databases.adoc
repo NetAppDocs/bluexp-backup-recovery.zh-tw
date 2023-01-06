@@ -58,31 +58,6 @@ summary: 在SnapCenter 每個Oracle資料庫主機上部署適用於Oracle的支
 
 
 
-=== 手動部署外掛程式
-
-如果未在Oracle主機上啟用SSH金鑰型驗證、您應該執行下列手動步驟來部署外掛程式。
-
-*步驟*
-
-. 登入Connector VM。
-. 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
-. 取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」
-. 取得下載外掛程式的二進位路徑。「Udo ls <base_mount_path>$(sudo dod泊 塢視窗ps | grep -po" cloudmanager_SCs_clou:.*？"| sed -e 's/*$/'| cut -F2 -d":")/sc-Linux主機外掛程式/snapcenter_Linux主機外掛程式_scsscs.bin"
-. 使用scp或其他替代方法、將_snapcenter_Linux主機_plugin_scs.bin_複製到每個Oracle資料庫主機。
-+
-_snapcenter_Linux主機外掛程式_SCS.bin_應複製到非root使用者可存取的位置。
-
-. 使用非root使用者帳戶登入Oracle資料庫主機、然後執行下列命令來啟用二進位檔案的執行權限。
-`chmod +x snapcenter_linux_host_plugin_scs.bin`
-. 以Sudo非root使用者的身分部署Oracle外掛程式。
-`./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root-user>`
-. 從連接器VM的_<base_mount_path>/用戶端/憑證/_路徑、複製_imple.p12_到外掛主機的_/var/opt/snapcenter/spl/etc/_。
-. 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入憑證。「keytool-v -importkeystore -srckeystore CERT.p12 -srcstoretype pkcs12 -destkeystore keyKeystore .jks -deststoretype JKS -rcsstorepass SnapCenter sore-ascalias SnapCenter agentcert -noprompt」
-. 重新啟動SPL：「系統重新啟動spl」
-
-
-
-
 === 使用指令碼部署外掛程式
 
 如果非root使用者在Oracle主機上啟用SSH金鑰型驗證、您可以執行下列步驟來部署外掛程式。在執行這些步驟之前、請先確認已啟用連接器的SSH連線。
@@ -106,6 +81,31 @@ _snapcenter_Linux主機外掛程式_SCS.bin_應複製到非root使用者可存�
 
 例如：
 `sudo /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/oracle_plugin_copy_and_install.sh --host xxx.xx.x.x --sshkey /keys/netapp-ssh.ppk`
+
+
+
+=== 手動部署外掛程式
+
+如果未在Oracle主機上啟用SSH金鑰型驗證、您應該執行下列手動步驟來部署外掛程式。
+
+*步驟*
+
+. 登入Connector VM。
+. 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
+. 取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」
+. 取得下載外掛程式的二進位路徑。「Udo ls <base_mount_path>$(sudo dod泊 塢視窗ps | grep -po" cloudmanager_SCs_clou:.*？"| sed -e 's/*$/'| cut -F2 -d":")/sc-Linux主機外掛程式/snapcenter_Linux主機外掛程式_scsscs.bin"
+. 使用scp或其他替代方法、將_snapcenter_Linux主機_plugin_scs.bin_複製到每個Oracle資料庫主機。
++
+_snapcenter_Linux主機外掛程式_SCS.bin_應複製到非root使用者可存取的位置。
+
+. 使用非root使用者帳戶登入Oracle資料庫主機、然後執行下列命令來啟用二進位檔案的執行權限。
+`chmod +x snapcenter_linux_host_plugin_scs.bin`
+. 以Sudo非root使用者的身分部署Oracle外掛程式。
+`./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root-user>`
+. 從連接器VM的_<base_mount_path>/用戶端/憑證/_路徑、複製_imple.p12_到外掛主機的_/var/opt/snapcenter/spl/etc/_。
+. 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入憑證。「keytool-v -importkeystore -srckeystore CERT.p12 -srcstoretype pkcs12 -destkeystore keyKeystore .jks -deststoretype JKS -rcsstorepass SnapCenter sore-ascalias SnapCenter agentcert -noprompt」
+. 重新啟動SPL：「系統重新啟動spl」
+
 
 
 
