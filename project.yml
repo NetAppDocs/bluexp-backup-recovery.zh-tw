@@ -198,6 +198,8 @@ sidebar:
       url: "/reference-azure-backup-tiers.html"
     - title: 支援的Google歸檔儲存層
       url: "/reference-google-backup-tiers.html"
+    - title: 在黑暗的站台中備份Cloud Backup資料庫
+      url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: 設定備份以在Azure中存取多個帳戶
       url: "/reference-backup-multi-account-azure.html"
   - title: 知識與支援

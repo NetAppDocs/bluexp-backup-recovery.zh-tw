@@ -18,6 +18,36 @@ summary: 瞭解Cloud Backup的新功能。
 
 
 
+== 2023年1月9日
+
+
+
+=== 能夠將較舊的備份檔案從StorageGRID 支援系統移至AWS S3歸檔儲存設備
+
+現在您可以將舊的備份檔案分層、從StorageGRID 支援的系統、到AWS S3的歸檔儲存設備。如此一來StorageGRID 、您就能釋出整個作業系統的空間、並使用經濟實惠的儲存類別來儲存舊的備份檔案、進而節省成本。您可以選擇將備份分層至AWS S3 Glacier或S3 Glacier Deep Archive儲存設備。
+
+如果您的叢集使用ONTAP 的是更新版本的版本、而StorageGRID 您的系統使用的是11.3或更新版本、則可使用此功能。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["如需詳細資訊、請參閱此處"]。
+
+
+
+=== 能夠在Google Cloud上選擇您自己的客戶管理金鑰來進行資料加密
+
+將ONTAP 資料從您的支援系統備份到Google Cloud Storage時、現在您可以在啟動精靈中選擇自己的客戶管理金鑰來進行資料加密、而不使用預設的Google管理加密金鑰。只要先設定客戶管理的加密金鑰、然後在啟動Cloud Backup時輸入詳細資料即可。
+
+
+
+=== 服務帳戶不再需要「儲存管理員」角色、即可在Google Cloud Storage中建立備份
+
+在早期版本中、「儲存管理員」角色是讓Cloud Backup能夠存取Google Cloud Storage儲存桶的服務帳戶所需的角色。現在您可以建立自訂角色、並減少指派給服務帳戶的權限集。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["瞭解如何準備Google Cloud Storage進行備份"]。
+
+
+
+=== 能夠下載「工作監控結果」頁面做為CSV報告
+
+篩選「工作監控」頁面以顯示您感興趣的工作和行動之後、您現在可以產生並下載該資料的.csvs檔案。然後您可以分析資訊、或將報告傳送給組織中的其他人員。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["請參閱如何產生工作監控報告"]。
+
+
+
 == 2022年12月19日
 
 
@@ -45,7 +75,7 @@ summary: 瞭解Cloud Backup的新功能。
 
 
 
-=== 雲端備份的增強功能
+=== 增強了適用於虛擬機器的Cloud Backup功能
 
 * 虛擬機器
 +
@@ -284,7 +314,7 @@ Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage
 
 === 支援已新增至備份SnapLock 支援的支援功能
 
-現在、您可以使用Cloud Backup將SnapLock 非公有雲和私有雲備份到其中。此功能需要ONTAP 您的不知道系統執行ONTAP 的是版本不符合更新版本的版本。不過、目前不支援「符合性」磁碟區。SnapLock
+現在、您可以使用Cloud Backup將SnapLock 非公有雲和私有雲備份到其中。此功能需要ONTAP 您的不知道系統執行ONTAP 的是版本不符合更新版本的版本。不過、目前不支援「符合性」磁碟區SnapLock 。
 
 
 

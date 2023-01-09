@@ -43,7 +43,7 @@ Cloud Backup提供備份與還原功能、可保護ONTAP 及長期歸檔您的�
 * 從特定時間點還原資料。
 * 將磁碟區、資料夾或個別檔案還原至來源系統或其他系統。
 * 使用不同的訂閱/帳戶或不同地區的帳戶、將資料還原至工作環境。
-* 還原區塊層級的資料、將資料直接放在您指定的位置、同時保留原始ACL。
+* 資料會在區塊層級上還原、將資料直接放在您指定的位置、同時保留原始ACL。
 * 可瀏覽且可搜尋的檔案目錄、可用於選取個別資料夾和檔案以進行單一檔案還原。
 
 
@@ -379,6 +379,9 @@ ifdef::gcp[]
 endif::gcp[]
 
 * 在本產品中、備份會與_Standard_儲存類別相關聯。StorageGRID
++
+如果內部叢集使用ONTAP 的是不含更新版本的版本、StorageGRID 而您的系統使用的是11.3或更新版本、您可以將舊版備份檔案歸檔至公有雲歸檔儲存設備。目前僅支援AWS S3儲存類別的歸檔儲存設備。您可以選擇在一定天數後、將備份分層至AWS _S3 Glacier或_S3 Glacier Deep Archive_儲存設備。 link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["深入瞭解StorageGRID 如何從還原歸檔備份檔案"^]。
+
 
 
 請參閱 link:concept-cloud-backup-policies.html#archival-storage-settings["歸檔儲存設定"] 如需更多有關歸檔較舊備份檔案的詳細資訊、

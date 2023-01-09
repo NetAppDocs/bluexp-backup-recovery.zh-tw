@@ -28,7 +28,7 @@ summary: 請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中�
 [role="quick-margin-list"]
 * 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
 +
-** 叢集執行 ONTAP 的是更新版本的 1.7P5 。
+** 叢集執行ONTAP 的是1.7P5或更新版本（ONTAP 建議使用更新版本的版本號為0。
 ** 叢集具有SnapMirror授權、包含在優質產品組合或資料保護產品組合中。
 ** 叢集必須具備連接Blob儲存設備和連接器所需的網路連線。
 
@@ -167,6 +167,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 ** 連接Cloud Backup Service 至連接埠443（HTTPS）的傳出網際網路連線
 ** 透過連接埠443連線至Blob物件儲存設備的HTTPS連線
 ** 透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線
+** 為了讓Cloud Backup搜尋與還原功能正常運作、連接埠1433必須開啟、以便連接器與Azure Synapse SQL服務之間進行通訊。
 ** Azure和Azure政府部署需要額外的傳入安全性群組規則。請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Azure 中的 Connector 規則"^] 以取得詳細資料。
 
 
@@ -214,9 +215,11 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 "Microsoft.Synapse/register/action",
 "Microsoft.Synapse/checkNameAvailability/action",
 "Microsoft.Synapse/workspaces/operationStatuses/read",
+"Microsoft.Synapse/workspaces/firewallRules/write",
 "Microsoft.Synapse/workspaces/firewallRules/read",
 "Microsoft.Synapse/workspaces/replaceAllIpFirewallRules/action",
-"Microsoft.Synapse/workspaces/operationResults/read"
+"Microsoft.Synapse/workspaces/operationResults/read",
+"Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["檢視原則的完整Json格式"^]

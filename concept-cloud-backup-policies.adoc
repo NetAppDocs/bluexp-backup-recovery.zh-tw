@@ -255,7 +255,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* 在GCP中、預設會將備份與_Standard_儲存類別相關聯。
+* 在 GCP 中、備份會與 _Standard_ 儲存類別相關聯。
 +
 如果您的內部叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後、將舊版備份分層至Cloud Backup UI中的_Archive_儲存設備、以進一步最佳化成本。（Cloud Volumes ONTAP 此功能目前不適用於不支援的系統。） link:reference-google-backup-tiers.html["深入瞭解Google歸檔儲存設備"^]。
 
@@ -265,6 +265,6 @@ endif::gcp[]
 
 * 在本產品中、備份會與_Standard_儲存類別相關聯。StorageGRID
 +
-目前沒有可用的歸檔層。
+如果內部叢集使用ONTAP 的是不含更新版本的版本、StorageGRID 而您的系統使用的是11.3或更新版本、您可以將舊版備份檔案歸檔至公有雲歸檔儲存設備。目前僅支援AWS S3儲存類別的歸檔儲存設備。您可以選擇在一定天數後、將備份分層至AWS _S3 Glacier或_S3 Glacier Deep Archive_儲存設備。 link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["深入瞭解StorageGRID 如何從還原歸檔備份檔案"^]。
 
 

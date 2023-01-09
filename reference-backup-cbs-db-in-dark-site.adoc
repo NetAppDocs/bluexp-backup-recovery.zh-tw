@@ -21,9 +21,6 @@ summary: 在無法存取網際網路的站台上使用Cloud Backup時、如果�
 本主題說明如何將重要的Cloud Backup資料備份到連線StorageGRID 的作業系統。同時也說明如何在必要時將資料還原至新的Connector。
 
 
-NOTE: 您應計畫定期備份此Cloud Backup資料、以便隨時存取最新的資料。
-
-
 
 == 備份關鍵雲端備份資料
 
@@ -33,7 +30,10 @@ NOTE: 您應計畫定期備份此Cloud Backup資料、以便隨時存取最新�
 * 索引目錄檔案（用於搜尋與還原功能）
 
 
-Cloud Backup資料庫或Indexed目錄檔案中沒有任何Volume資料。
+
+NOTE: 您應計畫定期備份此Cloud Backup資料、以便隨時存取最新的資料。
+
+請注意、Cloud Backup資料庫或Indexed目錄檔案中從未包含任何Volume資料。
 
 
 
@@ -51,7 +51,7 @@ docker exec -it ds_mysql_1 sh
 ----
 . 在Container Shell中、部署「env」。
 . 您需要MySQL資料庫密碼、因此請複製「MySQL_root_password」金鑰的值。
-. 輸入下列命令備份Cloud Backup MySQL DB：
+. 輸入下列命令來備份Cloud Backup MySQL資料庫：
 +
 [source, cli]
 ----
@@ -70,7 +70,7 @@ docker cp ds_mysql_1:/mysql.dump.cloud_backup.sql .
 
 === 備份索引型錄檔案
 
-索引目錄用於搜尋與還原功能。其中包含每個磁碟區和每個備份檔案的相關資訊、讓您在還原磁碟區資料時、能夠快速且有效率地進行搜尋。
+索引目錄用於搜尋與還原功能。其中包含每個磁碟區和每個備份檔案的相關資訊、可讓您在尋找想要還原的磁碟區資料時、快速又有效率地進行搜尋。
 
 . 在Connector主機系統上、將目錄變更為「/tmp」。
 . 找到索引目錄資料夾。它以字串*型錄*開頭。
@@ -91,19 +91,28 @@ zip -r catalogxxxxxx.zip catalogxxxxxx
 
 您需要執行4項工作、才能將Cloud Backup系統恢復至正常運作狀態：
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["在新的內部部署Linux主機上安裝新的Connector"^]
+* 安裝新的BlueXP Connector
 * 還原Cloud Backup資料庫
 * 還原索引型目錄檔案
-* 重新探索ONTAP 所有內部的功能齊全的功能、使其成為藍圖XP UI
+* 重新探索ONTAP 所有內部的功能齊全的系統、StorageGRID 並將其整合到BlueXP UI上
 
 
 一旦您確認系統恢復正常運作、建議您建立新的備份檔案。
 
 
 
+=== 在新的內部部署Linux主機上安裝新的Connector
+
+安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。定期變更Cloud Backup資料庫結構、可能會使較新的軟體版本與原始資料庫備份不相容。您可以 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["還原備份資料庫後、將Connector軟體升級至最新版本"^]。
+
+. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["在新的內部部署Linux主機上安裝BlueXP Connector"^]
+. 使用您剛建立的管理員使用者認證登入BlueXP。
+
+
+
+
 === 還原Cloud Backup資料庫
 
-. 安裝新的Connector之後、請使用適當的認證資料登入Connector主機系統。
 . 將MySQL備份從安全位置複製到新的Connector主機。
 . 使用下列命令、將備份複製到MySQL Docker容器中：
 +
@@ -161,17 +170,67 @@ unzip catalogxxxxxx.zip
 
 
 
-=== 探索叢集並驗證雲端備份設定
+=== 探索ONTAP 您的叢集與StorageGRID 功能性系統
 
-. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html#discovering-clusters-from-the-canvas-page["探索ONTAP 所有內部環境"^] 您先前環境中可用的。
-. （可選） https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["探索StorageGRID 您的系統"^]。
+. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["探索ONTAP 所有內部環境"^] 您先前環境中可用的。
+. https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["探索StorageGRID 您的系統"^]。
+
+
+
+
+=== 設定StorageGRID 有關支援環境的詳細資料
+
+在StorageGRID 原始Connector設定中使用設定時、新增與ONTAP 您的不支援功能環境相關的詳細資訊 https://docs.netapp.com/us-en/cloud-manager-automation/index.html["BlueXP API"^]。
+
+您需要針對ONTAP 每個將資料備份StorageGRID 到EFlash的支援系統執行這些步驟。
+
+. 使用下列O驗 證/權杖API擷取授權權杖。
++
+[source, http]
+----
+curl 'http://10.193.192.202/oauth/token' -X POST -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:100101 Firefox/108.0' -H 'Accept: application/json' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/json' -d '{"username":admin@netapp.com,"password":"Netapp@123","grant_type":"password"}
+> '
+----
++
+此API會傳回如下回應。您可以擷取授權權杖、如下所示。
+
++
+[source, text]
+----
+{"expires_in":21600,"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJlMGFiZjRiIn0eyJzdWIiOiJvY2NtYXV0aHwxIiwiYXVkIjpbImh0dHBzOi8vYXBpLmNsb3VkLm5ldGFwcC5jb20iXSwiaHR0cDovL2Nsb3VkLm5ldGFwcC5jb20vZnVsbF9uYW1lIjoiYWRtaW4iLCJodHRwOi8vY2xvdWQubmV0YXBwLmNvbS9lbWFpbCI6ImFkbWluQG5ldGFwcC5jb20iLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiaWF0IjoxNjcyNzM2MDIzLCJleHAiOjE2NzI3NTc2MjMsImlzcyI6Imh0dHA6Ly9vY2NtYXV0aDo4NDIwLyJ9CJtRpRDY23PokyLg1if67bmgnMcYxdCvBOY-ZUYWzhrWbbY_hqUH4T-114v_pNDsPyNDyWqHaKizThdjjHYHxm56vTz_Vdn4NqjaBDPwN9KAnC6Z88WA1cJ4WRQqj5ykODNDmrv5At_f9HHp0-xVMyHqywZ4nNFalMvAh4xESc5jfoKOZc-IOQdWm4F4LHpMzs4qFzCYthTuSKLYtqSTUrZB81-o-ipvrOqSo1iwIeHXZJJV-UsWun9daNgiYd_wX-4WWJViGEnDzzwOKfUoUoe1Fg3ch--7JFkFl-rrXDOjk1sUMumN3WHV9usp1PgBE5HAcJPrEBm0ValSZcUbiA"}
+----
+. 使用租戶/外部/資源API擷取工作環境ID和X-agent-ID。
++
+[source, http]
+----
+curl -X GET http://10.193.192.202/tenancy/external/resource?account=account-DARKSITE1 -H 'accept: application/json' -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJlMGFiZjRiIn0eyJzdWIiOiJvY2NtYXV0aHwxIiwiYXVkIjpbImh0dHBzOi8vYXBpLmNsb3VkLm5ldGFwcC5jb20iXSwiaHR0cDovL2Nsb3VkLm5ldGFwcC5jb20vZnVsbF9uYW1lIjoiYWRtaW4iLCJodHRwOi8vY2xvdWQubmV0YXBwLmNvbS9lbWFpbCI6ImFkbWluQG5ldGFwcC5jb20iLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiaWF0IjoxNjcyNzIyNzEzLCJleHAiOjE2NzI3NDQzMTMsImlzcyI6Imh0dHA6Ly9vY2NtYXV0aDo4NDIwLyJ9X_cQF8xttD0-S7sU2uph2cdu_kN-fLWpdJJX98HODwPpVUitLcxV28_sQhuopjWobozPelNISf7KvMqcoXc5kLDyX-yE0fH9gr4XgkdswjWcNvw2rRkFzjHpWrETgfqAMkZcAukV4DHuxogHWh6-DggB1NgPZT8A_szHinud5W0HJ9c4AaT0zC-sp81GaqMahPf0KcFVyjbBL4krOewgKHGFo_7ma_4mF39B1LCj7Vc2XvUd0wCaJvDMjwp19-KbZqmmBX9vDnYp7SSxC1hHJRDStcFgJLdJHtowweNH2829KsjEGBTTcBdO8SvIDtctNH_GAxwSgMT3zUfwaOimPw'
+----
++
+此API會傳回如下回應。「資源識別碼」下的值代表_WorkingEnvironment ID_、而「agentId」下的值則代表_x-agent-id_。
+
+. 更新Cloud Backup資料庫、瞭解StorageGRID 與工作環境相關的更新過程。請務必輸入StorageGRID 完整的網域名稱、以及存取金鑰和儲存金鑰、如下所示：
++
+[source, http]
+----
+curl -X POST 'http://10.193.192.202/account/account-DARKSITE1/providers/cloudmanager_cbs/api/v1/sg/credentials/working-environment/OnPremWorkingEnvironment-pMtZND0M' \
+> --header 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJlMGFiZjRiIn0eyJzdWIiOiJvY2NtYXV0aHwxIiwiYXVkIjpbImh0dHBzOi8vYXBpLmNsb3VkLm5ldGFwcC5jb20iXSwiaHR0cDovL2Nsb3VkLm5ldGFwcC5jb20vZnVsbF9uYW1lIjoiYWRtaW4iLCJodHRwOi8vY2xvdWQubmV0YXBwLmNvbS9lbWFpbCI6ImFkbWluQG5ldGFwcC5jb20iLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIiwiaWF0IjoxNjcyNzIyNzEzLCJleHAiOjE2NzI3NDQzMTMsImlzcyI6Imh0dHA6Ly9vY2NtYXV0aDo4NDIwLyJ9X_cQF8xttD0-S7sU2uph2cdu_kN-fLWpdJJX98HODwPpVUitLcxV28_sQhuopjWobozPelNISf7KvMqcoXc5kLDyX-yE0fH9gr4XgkdswjWcNvw2rRkFzjHpWrETgfqAMkZcAukV4DHuxogHWh6-DggB1NgPZT8A_szHinud5W0HJ9c4AaT0zC-sp81GaqMahPf0KcFVyjbBL4krOewgKHGFo_7ma_4mF39B1LCj7Vc2XvUd0wCaJvDMjwp19-KbZqmmBX9vDnYp7SSxC1hHJRDStcFgJLdJHtowweNH2829KsjEGBTTcBdO8SvIDtctNH_GAxwSgMT3zUfwaOimPw' \
+> --header 'x-agent-id: vB_1xShPpBtUosjD7wfBlLIhqDgIPA0wclients' \
+> -d '
+> { "storage-server" : "sr630ip15.rtp.eng.netapp.com:10443", "access-key": "2ZMYOAVAS5E70MCNH9", "secret-password": "uk/6ikd4LjlXQOFnzSzP/T0zR4ZQlG0w1xgWsB" }'
+----
+
+
+
+
+=== 驗證雲端備份設定
+
 . 選取每ONTAP 個執行中的環境、然後按一下右窗格中備份與還原服務旁的*檢視備份*。
 +
 您應該能夠查看為磁碟區建立的所有備份。
 
 . 在「還原儀表板」的「搜尋與還原」區段下、按一下「*索引設定*」。
 +
-請確定先前啟用索引編製功能的工作環境仍保持啟用狀態。
+請確定先前啟用「索引」目錄的工作環境仍保持啟用狀態。
 
 . 在「搜尋與還原」頁面中、執行幾項目錄搜尋、以確認已成功完成索引目錄還原。
 

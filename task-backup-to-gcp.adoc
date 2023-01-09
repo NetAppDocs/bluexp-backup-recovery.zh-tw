@@ -24,7 +24,7 @@ summary: 請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 確認您的組態支援
 [role="quick-margin-list"]
-* 您在 Cloud Volumes ONTAP GCP 中執行的是《 1.7P5 或更新版本：
+* 您正在Cloud Volumes ONTAP GCP中執行更新版本的《支援》（ONTAP 建議使用更新版本的《支援》）。
 * 您擁有有效的 GCP 訂閱、可用於存放備份的儲存空間。
 * 您的Google Cloud Project中有一個服務帳戶、該帳戶具有預先定義的儲存管理角色。
 * 您已訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"^] NetApp的Cloud Backup BYOL授權。
@@ -41,7 +41,7 @@ image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示「啟用雲端�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 輸入供應商詳細資料
 [role="quick-margin-para"]
-選取您要在其中建立 Google Cloud Storage 儲存庫以進行備份的 Google Cloud Project 。
+選取您要在其中建立Google Cloud Storage儲存庫以進行備份的Google Cloud Project和地區。您也可以選擇自己的客戶管理金鑰來進行資料加密、而非使用預設的Google管理加密金鑰。
 
 [role="quick-margin-para"]
 image:screenshot_backup_provider_settings_gcp.png["快照顯示雲端供應商將磁碟區從 Cloud Volumes ONTAP 安裝在 GCP 上的某個系統備份到 Google Cloud Storage 儲存庫時的詳細資料。"]
@@ -104,6 +104,32 @@ bigquery.tables.create
 
 
 --
+使用客戶管理的加密金鑰（CMEK）所需的資訊:: 您可以使用自己的客戶管理金鑰進行資料加密、而非使用預設的Google管理加密金鑰。在這種情況下、您必須擁有金鑰環和金鑰名稱、才能在啟動精靈中新增此資訊。 https://cloud.google.com/kms/docs/cmek["深入瞭解客戶管理的加密金鑰"^]。
++
+--
+您也需要在Connector for CCMEK角色中新增這些必要權限、才能正常運作：
+
+[source, json]
+----
+cloudkms.cryptoKeys.get
+cloudkms.cryptoKeys.getIamPolicy
+cloudkms.cryptoKeys.list
+cloudkms.cryptoKeys.setIamPolicy
+cloudkms.keyRings.get
+cloudkms.keyRings.getIamPolicy
+cloudkms.keyRings.list
+cloudkms.keyRings.setIamPolicy
+----
+* CMEK注意事項：*
+
+* 同時支援HSM（硬體備份）和軟體產生的金鑰。
+* 同時支援新建立或匯入的雲端KMS金鑰。
+* 僅支援區域金鑰、不支援全域金鑰。
+* 目前僅支援「對稱加密/解密」用途。
+* Cloud Backup會將與儲存帳戶相關的服務代理程式指派為「CryptoKey Encrypter/Decypter（角色/雲端kms.cryptoKeyEncrypterDecypter）」IAM角色。
+
+
+--
 
 
 
@@ -158,12 +184,17 @@ Cloud Backup可在系統上啟用、並備份您每天建立的磁碟區、並�
 +
 image:screenshot_backup_cvo_enable.png["螢幕擷取畫面會顯示「Cloud Backup Settings」（雲端備份設定）按鈕、您可以在選取工作環境之後使用該按鈕。"]
 
-. 選取您要在其中建立Google Cloud Storage儲存庫以進行備份的Google Cloud Project和地區、然後按一下* Next*。
+. 選取供應商詳細資料、然後按*下一步*。
++
+.. 您想要在其中建立Google Cloud Storage儲存庫以進行備份的Google Cloud Project和地區。
+.. 無論您是使用預設的Google管理加密金鑰、還是選擇自己的客戶管理金鑰來管理資料加密。若要使用CMEK、您必須擁有金鑰環和金鑰名稱。 https://cloud.google.com/kms/docs/cmek["深入瞭解客戶管理的加密金鑰"^]。
 +
 image:screenshot_backup_provider_settings_gcp.png["快照顯示雲端供應商將磁碟區從 Cloud Volumes ONTAP 安裝在 GCP 上的某個系統備份到 Google Cloud Storage 儲存庫時的詳細資料。"]
 
 +
 請注意、專案必須擁有具有預先定義儲存管理角色的服務帳戶。
+
+
 
 . 輸入將用於預設原則的備份原則詳細資料、然後按一下「*下一步*」。您可以選取現有的原則、也可以在每個區段中輸入您的選擇來建立新原則：
 +

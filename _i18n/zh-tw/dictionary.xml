@@ -26,7 +26,6 @@
   <block id="f432a56abcf880039b4fc76adc99cbcd" category="paragraph">S3儲存區會自動建立在您輸入的S3存取金鑰和秘密金鑰所指示的服務帳戶中、並儲存備份檔案。</block>
   <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="section-title">需求</block>
   <block id="da95680877c2d8ff430e738df948144e" category="paragraph">請先閱讀下列要求、確認您擁有支援的組態、再開始將內部部署的Volume備份StorageGRID 到原地。</block>
-  <block id="35a7772387f55277aaf5e7a6fe0fd1de" category="paragraph">下列影像顯示將內部ONTAP 系統備份至StorageGRID 支援版時的每個元件、以及您在它們之間準備所需的連線：</block>
   <block id="362e1fd025fbc54170675a786630faff" category="inline-image-macro">顯示Cloud Backup如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。</block>
   <block id="7c9c2c9135c9dd5b2198f3d2e909e271" category="paragraph"><block ref="7c9c2c9135c9dd5b2198f3d2e909e271" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5c611511bb6c7851d2e8d2dda1c92506" category="section-title">準備 ONTAP 您的叢集</block>
@@ -615,7 +614,6 @@
   <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link">請按這裡</block>
   <block id="07c2ea1cc6b7f654f42d3f074f3c13f4" category="summary">請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能區備份到 Azure Blob 儲存設備。</block>
   <block id="f6c96f9db00475dfd6c371ca50af3d5b" category="doc">將Cloud Volumes ONTAP 不支援的資料備份到Azure Blob儲存設備</block>
-  <block id="f4ca70a51e36ab5a53700df413dab643" category="list-text">您在Cloud Volumes ONTAP Azure上執行的是版本號為1.7P5或更新版本。</block>
   <block id="fc054407571c2d4dfcfbb5057d24c238" category="list-text">您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。</block>
   <block id="23dbb22134961553d5b555f78c0d3634" category="list-text">新系統：工作環境精靈預設會啟用雲端備份。請務必保持啟用選項。</block>
   <block id="f3e86c6d5e3056f3aed2f891ef4894b3" category="paragraph">選取提供者訂閱和地區、然後選擇是要建立新的資源群組、還是要使用現有的資源群組。您也可以選擇自己的客戶管理金鑰來進行資料加密、而非使用預設的Microsoft管理加密金鑰。</block>
@@ -709,7 +707,6 @@
   <block id="020c911dde61e6dcdb0fdc14a39191bc" category="summary">請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能區備份到 Google Cloud 儲存設備。</block>
   <block id="16d4cdec56b3c490095eb1c28b330e1f" category="doc">將Cloud Volumes ONTAP 不支援的資料備份到Google Cloud Storage</block>
   <block id="e196accd41672418154158d3bf8e1006" category="paragraph">請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能區備份到 Google Cloud Storage 。</block>
-  <block id="ed67205a4d86653559f5c0f0973afc52" category="list-text">您在 Cloud Volumes ONTAP GCP 中執行的是《 1.7P5 或更新版本：</block>
   <block id="534e7b1b233af6dcaf3fe6265a36586b" category="list-text">新系統：完成新的工作環境精靈後、即可啟用雲端備份。</block>
   <block id="bd1bf42f3eb311ef9f00c80352b4b141" category="paragraph">選取您要在其中建立 Google Cloud Storage 儲存庫以進行備份的 Google Cloud Project 。</block>
   <block id="2acb00623fcbca99b27f6a3cc5991634" category="inline-image-macro">快照顯示雲端供應商將磁碟區從 Cloud Volumes ONTAP 安裝在 GCP 上的某個系統備份到 Google Cloud Storage 儲存庫時的詳細資料。</block>
@@ -720,7 +717,6 @@
   <block id="6ad141960e301daf8f0738b656c59d72" category="paragraph"><block ref="6ad141960e301daf8f0738b656c59d72" category="inline-image-macro-rx" type="image"></block></block>
   <block id="10f89ed6604369a92daf5a87a1c4f18c" category="list-text">驗證或新增連接器權限</block>
   <block id="afcaeb8a33eef207414e875d7fa75193" category="inline-link-macro">雲端主控台</block>
-  <block id="c2460b8a49ca9d7a6f36222771d77ae4" category="list-text">在中 <block ref="90b0dbeec03910bdea419bc944660763" category="inline-link-macro-rx"></block>請移至*角色*頁面。</block>
   <block id="cd94368c3fb0f5830daaa821b7867010" category="list-text">使用頁面頂端的下拉式清單、選取包含您要編輯之角色的專案或組織。</block>
   <block id="faca795779c0bd6b6eb9d726aeb9fe83" category="list-text">按一下自訂角色。</block>
   <block id="2179345c723745012afae6b2ce8b7947" category="list-text">按一下*編輯角色*以更新角色的權限。</block>
@@ -743,7 +739,6 @@
   <block id="5e807f8371650cef9e33a4d42fdac697" category="list-text">請完成精靈中的頁面、依照中所述部署系統<block ref="cb0c89ebc39bea4b1064543ce799882f" category="inline-link-rx"></block>。</block>
   <block id="44f7ee201aadf50852f08554367ab6cf" category="paragraph">Cloud Backup可在系統上啟用、並備份您每天建立的磁碟區、並保留最近30個備份複本。</block>
   <block id="fd45898f75263130be297845518a221f" category="paragraph">您可以隨時直接從工作環境啟用雲端備份。</block>
-  <block id="85a2ad69bad082451b7411021cbb2271" category="list-text">選取您要在其中建立Google Cloud Storage儲存庫以進行備份的Google Cloud Project和地區、然後按一下* Next*。</block>
   <block id="437c2bff9e94c6e982529b9d2ef1cd3c" category="paragraph">請注意、專案必須擁有具有預先定義儲存管理角色的服務帳戶。</block>
   <block id="78b1c4b91dde782fcd81e4766d23aac3" category="summary">Cloud Backup提供備份與還原功能、可保護ONTAP 及長期歸檔您的叢集資料。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中、而且不會與用於近期恢復或複製的Volume Snapshot複本無關。</block>
   <block id="9e07c89abda253fc5c6f61b46485c3c0" category="doc">使用Cloud Backup保護ONTAP 您的無資料叢集資料</block>
@@ -929,7 +924,6 @@
   <block id="e950616aa291f7c208ba1c81279fac86" category="list-text">連接器必須具備所需的網路連線、才能連線至Google儲存設備和叢集。</block>
   <block id="8bdd358a89f9eb4aa9db585fe0022c49" category="list-text">您擁有有效的Google訂閱、可用於存放備份的物件儲存空間。</block>
   <block id="aba00b3a9824359e1b71c654d0e30236" category="list-text">您的Google帳戶擁有存取金鑰和秘密金鑰、ONTAP 因此該叢集可以備份及還原資料。</block>
-  <block id="7ffdeee26efbb4de92b2a7d6b5011f0b" category="paragraph">選取Google Cloud做為供應商、然後輸入供應商詳細資料。您也需要在 ONTAP 磁碟區所在的叢集中指定 IPspace 。</block>
   <block id="2e1115d39f7972f9468b4f2ab39cff31" category="paragraph"><block ref="2e1115d39f7972f9468b4f2ab39cff31" category="inline-image-macro-rx" type="image"></block></block>
   <block id="be956322a93c4a7bc2b8c8b049f7496e" category="paragraph">請先閱讀下列需求、確定您擁有支援的組態、再開始將內部部署磁碟區備份到Google Cloud儲存設備。</block>
   <block id="2d0d225e73f16b3d6a3fd87e23385c8e" category="paragraph">從內部部署ONTAP 的還原系統設定備份到Google Cloud Storage時、您可以使用兩種連線方法。</block>
@@ -942,16 +936,11 @@
   <block id="a6dcd23c3ac238175abaf161ac1ebec0" category="list-text">您必須訂閱Google的物件儲存空間、才能找到備份所在的位置。</block>
   <block id="5e04c7ce8120dee91a67c3f89dc435ef" category="paragraph">您可以從內部部署系統建立備份、並在所有地區建立Google Cloud Storage<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>。您可以指定在設定服務時儲存備份的區域。</block>
   <block id="22d599494fb27c8f85e36d489a5fe77d" category="section-title">準備Google Cloud Storage進行備份</block>
-  <block id="dfa2ebc2c5048f9486fe3dbffbc52438" category="paragraph">設定備份時、您必須為具有Storage Admin權限的服務帳戶提供儲存存取金鑰。服務帳戶可讓Cloud Backup驗證及存取用於儲存備份的雲端儲存桶。這些金鑰是必要的、以便 Google Cloud Storage 知道誰在提出要求。</block>
-  <block id="08b66c293c38e17964ad1686888ef26c" category="inline-link">建立具有預先定義儲存管理角色的服務帳戶</block>
-  <block id="442a5b2cd4109c0203483d91fc544ccf" category="list-text"><block ref="cbd838ab5a582921645cc152129d502d" category="inline-link-rx"></block>。</block>
   <block id="037f057bec36e168c4cbef4fb3d7baef" category="inline-link">GCP 儲存設定</block>
   <block id="53b7d7a30f51832e17a6116b67b1ed1b" category="list-text">前往<block ref="68a5b209ce3843ce6d342e4d1299b53b" category="inline-link-rx"></block> 並建立服務帳戶的存取金鑰：</block>
-  <block id="b1ca97074a9a438ddbe4b7a8de533728" category="list-text">選取專案、然後按一下 * 互通性 * 。如果您尚未啟用、請按一下 * 「啟用互通性存取」 * 。</block>
   <block id="2888f76ffbc5da2864448f44f9438096" category="list-text">在 * 服務帳戶的存取金鑰 * 下、按一下 * 建立服務帳戶的金鑰 * 、選取您剛建立的服務帳戶、然後按一下 * 建立金鑰 * 。</block>
   <block id="e70be257e1b959fc5e5a47150ae303c3" category="paragraph">稍後設定備份服務時、您需要在Cloud Backup中輸入金鑰。</block>
   <block id="60e390e46e8053a449cd4b01f03eb2b1" category="list-text">選擇Google Cloud做為您的供應商、然後按一下*「下一步*」。</block>
-  <block id="230e4929fb2833e313996458b4c8cfc5" category="list-text">您想要在其中建立Google Cloud Storage儲存庫以進行備份的Google Cloud Project。（專案必須擁有具有預先定義儲存管理角色的服務帳戶。）</block>
   <block id="df01e222f706a6e606e31a3c39365e1e" category="list-text">用於儲存備份的Google存取金鑰和秘密金鑰。</block>
   <block id="fab2c1fd526bfec515ab263855629395" category="list-text">儲存備份的Google區域。</block>
   <block id="a2533530877329fd448b78c28606ffc4" category="inline-image-macro">此螢幕快照顯示將磁碟區從內部部署叢集備份到Google Cloud Storage時、雲端供應商的詳細資料。</block>
@@ -1077,7 +1066,6 @@
   <block id="3f25e82b6a6ddd7bce8047cf9c5eb6cf" category="list-text">您可以選取任何資料夾。</block>
   <block id="f86cddb5af7f6094afd9672eaafed050" category="list-text">您可以將游標暫留在資料夾上、然後按一下 <block ref="3ff15a622a2116b6d2d6b57ef7b58fef" category="inline-image-macro-rx" type="image"></block> 在列末端向下切入子資料夾、然後選取資料夾。</block>
   <block id="1c60eafb2bcc4dfa9a04abebcbb62b4e" category="section-title">使用「搜尋與還原」還原ONTAP 資料</block>
-  <block id="c87406bc7afbf4c1491aba5c6a89782b" category="paragraph">搜尋作業也會查看ONTAP 所有適用於您的Shapes的本機Snapshot複本。由於從本機Snapshot複本還原資料的速度比從備份檔案還原更快、成本更低、因此您可能想要從Snapshot還原資料。您可以從畫版上的Volume Details（磁碟區詳細資料）頁面、將Snapshot還原為新的磁碟區。</block>
   <block id="bd0f4c161a252516fc5ca2f8121fe5d5" category="paragraph">當您從備份檔案還原磁碟區時、Cloud Backup會使用備份中的資料來建立_new磁碟區。您可以將資料還原為原始工作環境中的磁碟區、或還原至與來源工作環境位於相同雲端帳戶中的不同工作環境。您也可以將磁碟區還原至內部部署ONTAP 的作業系統。</block>
   <block id="87e12bc1b54923f05d8d8365d473b744" category="paragraph"><block ref="ca127c5e9bec15815ed41459177c241d" category="inline-link-macro-rx"></block>。</block>
   <block id="42c4ab8961cdba5beaf8c8b46bfb4bc4" category="paragraph">在開始之前、您應該先瞭解要還原的磁碟區或檔案名稱或位置。</block>
@@ -1085,7 +1073,6 @@
   <block id="7c9a067ed7fc3d318d415405ab0cb349" category="list-text">叢集需求：</block>
   <block id="042e2868bd27cf0f2d07239f80a976dd" category="list-text">此版本必須為9.8或更新版本。ONTAP</block>
   <block id="6f0cd96277bd61a1a3f4c2504033ded7" category="list-text">磁碟區所在的儲存VM（SVM）必須具有已設定的資料LIF。</block>
-  <block id="5aa886d067197e66c77587733a464d79" category="list-text">必須在磁碟區上啟用NFS。</block>
   <block id="b08d607bff755a82c8c9d9351d968b4a" category="list-text">AWS要求：</block>
   <block id="69822c6d3eec5c2a5b83f578217d08ce" category="inline-link-macro">請確定所有權限均已正確設定</block>
   <block id="2bb068da3540e8034049c29306ef2a17" category="list-text">Google Cloud需求：</block>
@@ -1434,7 +1421,6 @@
   <block id="e25a9f6fb169550c2eb662453971516f" category="paragraph"><block ref="e25a9f6fb169550c2eb662453971516f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f23af0fb3293030465a68a6d46401ecc" category="list-text">使用Cloud Backup for VMware將資料存放區備份到雲端、並將虛擬機器還原回內部部署的vCenter。 <block ref="7d3aa28b08d11afec4b666dd6503d425" category="inline-link-macro-rx"></block>。</block>
   <block id="0868f24313a597293d06e71f7f63fd1e" category="list-text">連接器可安裝在有或沒有網際網路存取的站台上。</block>
-  <block id="97a9760662f83584b35ab92e7aad1071" category="paragraph">若將Connector和內部部署ONTAP 的系統安裝在內部部署位置、但無法存取網際網路、StorageGRID 則該系統必須位於同一個內部部署資料中心內。</block>
   <block id="360446e3fb6e2087ba1eda4d6e9eafde" category="list-text">節點的叢集間LIF可存取物件存放區（當連接器安裝在「暗」站台時、則不需要）。</block>
   <block id="6dca065caf89927398e08355b9d7718e" category="paragraph">將資料備份StorageGRID 到不支援的地方時、內部環境中必須有連接器。您可能需要安裝新的 Connector 、或確定目前選取的 Connector 位於內部部署。連接器可安裝在有或沒有網際網路存取的站台上。</block>
   <block id="f6428d68ab8312cad4e05d9222dbabc5" category="inline-link">在無法存取網際網路的Linux主機上安裝Connector</block>
@@ -1483,7 +1469,6 @@
   <block id="53356882cec477de26a5ac4371a30b82" category="list-text">《企業版》（需使用更新版本的版本）SnapLock ONTAP</block>
   <block id="02e3f175b6b6db384cc8a9f19dfd8b6a" category="section-title">2022年7月13日</block>
   <block id="f2c95e400c19071fbcd562467ddc48b3" category="section-title">支援已新增至備份SnapLock 支援的支援功能</block>
-  <block id="e5fff8c021afd86e8d7cd1a5b82dec8e" category="paragraph">現在、您可以使用Cloud Backup將SnapLock 非公有雲和私有雲備份到其中。此功能需要ONTAP 您的不知道系統執行ONTAP 的是版本不符合更新版本的版本。不過、目前不支援「符合性」磁碟區。SnapLock</block>
   <block id="975ab611b7133feabb2a325e663f8347" category="section-title">現在、您可以在使用內部部署Connector時、在公有雲中建立備份檔案</block>
   <block id="8d2224260491150c834f946712c069a0" category="paragraph">過去、您需要在建立備份檔案的相同雲端供應商中部署Connector。現在、您可以使用部署在內部部署的Connector、從內部ONTAP 部署的支援系統建立備份檔案、以將檔案備份到Amazon S3、Azure Blob和Google Cloud Storage。（在StorageGRID 還原系統上建立備份檔案時、一律需要內部連接器。）</block>
   <block id="f42fcdabb7c9a7075b26292ed8cb7a23" category="section-title">建立ONTAP 適用於不支援的系統的備份原則時、也提供其他功能</block>
@@ -1900,7 +1885,6 @@
   <block id="9ee754e4742a85085c00a0da15114de7" category="section-title">歸檔儲存設定</block>
   <block id="7efe72f6baeb19dc4e15e1feb217b66a" category="inline-image-macro">建立備份原則時的封存原則設定快照。</block>
   <block id="bff3ba9699160e0c8d9eccbf41cf51f7" category="paragraph"><block ref="bff3ba9699160e0c8d9eccbf41cf51f7" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4171d78ae1a555db73fd760355ce3da1" category="paragraph">目前沒有可用的歸檔層。</block>
   <block id="2e5732b07b5a367d6ae6bf311bb4e064" category="paragraph">請參閱 <block ref="94012c1ab2bd0160a2654e7678395191" category="inline-link-macro-rx"></block> 如需可用排程選項的詳細資訊、請參閱。</block>
   <block id="330ec284275e2a903b785453c26a379b" category="paragraph">請參閱 <block ref="b960bc47dc855085c33b2bb2182e9e16" category="inline-link-macro-rx"></block> 如需更多有關歸檔較舊備份檔案的詳細資訊、</block>
   <block id="7e7595ef438d9d19d857be29daa1e8d2" category="list-text">連接器必須設定*不含* Proxy伺服器、才能與網際網路進行HTTP通訊。如果您已為Connector設定HTTP Proxy伺服器、則無法使用搜尋與取代功能。</block>
@@ -1916,7 +1900,6 @@
   <block id="168036087bcdae960471ab9c23a03efa" category="list-text">您不得StorageGRID 在物件存放區上手動啟用物件版本管理功能。</block>
   <block id="5f98d57ca0c8691b6e1217691d5b1094" category="list-text">「Fingsing閘 道節點」的FQDN StorageGRID 。</block>
   <block id="de589f45b99515535f818a20a828ed99" category="list-text">支援HTTPS通訊的連接埠ONTAP 。StorageGRID</block>
-  <block id="92e7e64290ff37f2ae2bd9287b6710b0" category="list-text">您也可以選擇在使用ONTAP 更新版本的時、設定_DataLock和勒索軟體Protection、保護備份免受刪除和勒索軟體攻擊。_DataLock_可保護您的備份檔案、避免遭到修改或刪除、而_勒索 軟體保護_會掃描您的備份檔案、尋找備份檔案中勒索軟體攻擊的證據。 <block ref="a1590ca0a57c2e20ed40ac0f3384a5af" category="inline-link-macro-rx"></block>。</block>
   <block id="642c6cdace2b813772c203eeab710f8a" category="summary">備份會儲存在雲端帳戶的物件存放區中、以便從特定時間點還原資料。您可以從ONTAP 備份檔案還原整個支援磁碟區、或者如果您只需要還原幾個檔案、就可以從備份檔案還原資料夾或個別檔案。</block>
   <block id="7ada527d1dd84b409531cc41597f383e" category="paragraph">您可以將*資料夾*還原至原始工作環境中的磁碟區、使用相同雲端帳戶的不同工作環境中的磁碟區、或還原至內部部署ONTAP 的S還原 系統上的磁碟區。</block>
   <block id="d04e8ed2daf2cfbac4df96c77bda4638" category="cell">瀏覽資料夾樣式的結構、找出單一備份檔案中的磁碟區、資料夾或檔案</block>
@@ -2038,7 +2021,6 @@
   <block id="e831d27edb715928e8204ce285611618" category="section-title">檔案與資料夾還原限制</block>
   <block id="79ec871c574dbe9adf17973bdb4bf029" category="paragraph">這些限制同時適用於「搜尋與還原」和「瀏覽與還原」還原檔案與資料夾的方法、除非特別提出。</block>
   <block id="7a6f7d393f4de35501272976e1ba9e03" category="list-text">瀏覽與還原及搜尋與還原可一次還原1個資料夾。</block>
-  <block id="2e47b96ebcc91dcfee6b5804d47d3820" category="list-text">您在Cloud Volumes ONTAP AWS中執行的是版本號為9、7P5或更新版本。</block>
   <block id="7ed26bbb75f4d5a15f22c2e06ce64775" category="list-text">根據預設、備份會使用Cloud Volumes ONTAP 與您的作業系統相同的帳戶建立。如果您想要使用不同的AWS帳戶進行備份、您必須：</block>
   <block id="315fa9b600d5877a548fb6493014cdc0" category="list-text">如果您在啟動此叢集的Cloud Backup時、在初始原則中啟用_DataLock和勒索軟體Protection（保護）、則您所編輯的任何原則都必須設定相同的DataLock（保護或法規遵循）設定。如果您在啟動Cloud Backup時未啟用_DataLock和勒索軟體Protection、則現在無法啟用DataLock。</block>
   <block id="147ea6861d62ba04b46cbb346ad32a93" category="list-text">如果您在啟動此叢集的Cloud Backup時、在初始原則中啟用_DataLock和勒索軟體Protection（保護）、則您所建立的任何其他原則都必須設定相同的DataLock（保護或法規遵循）設定。如果您在啟動Cloud Backup時未啟用_DataLock和勒索軟體Protection、則無法建立使用DataLock的新原則。</block>
@@ -2336,7 +2318,6 @@
   <block id="3a41597d5116718fb24622669197f3e8" category="paragraph">按一下*備份與還原*&gt;*虛擬機器*、即可檢視所有符合VMware SnapCenter vSphere之已登錄版的「VMware vSphere插件」保護資格的資料存放區與虛擬機器。</block>
   <block id="d4f4c5ccc817cf84f5825246d829cabe" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。</block>
   <block id="fbd33db6168b024f7fb941bc669aa81a" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。<block ref="9f26112087077321f30a8a9a55bedf44" category="inline-link-rx"></block>。</block>
-  <block id="466b90fa557f0884965a272b2e01ec39" category="list-text">SnapDiff RPC伺服器必須在SVM上啟動。在工作環境中啟用索引時、BlueXP會自動執行此動作。</block>
   <block id="7dbea888521fb9c4360764add4f59e05" category="list-text">必須將特定的Amazon Athena、AWS黏著及AWS S3權限新增至提供BlueXP權限的使用者角色。 <block ref="172464504974bed7b77dd155db5fb92b" category="inline-link-macro-rx"></block>。</block>
   <block id="03ee3f0eead5f2b738977ac3926782b1" category="paragraph">請注意、如果您已經使用Cloud Backup搭配過去設定的Connector、現在就必須將Athena和黏著權限新增至BlueXP使用者角色。這些都是新功能、搜尋與還原是必備功能。</block>
   <block id="97b5e4c408de2e312a0b1fc4e2535f1f" category="list-text">特定Azure Synapse Workspace與Data Lake Storage帳戶權限必須新增至提供BlueXP權限的使用者角色。 <block ref="3f613adb79f1db61c1db3e20329cd95a" category="inline-link-macro-rx"></block>。</block>
@@ -2406,7 +2387,6 @@
   <block id="827847975a80bac18a6ca2764d35dd87" category="inline-link-macro">深入瞭解可用的Cloud Backup原則組態設定</block>
   <block id="eef42d7f28b590d9b42d8fbddb7a3937" category="paragraph">您也可以選擇在使用ONTAP 更新版本的時、設定_DataLock和勒索軟體Protection _設定、保護備份免受刪除和勒索軟體攻擊。 <block ref="87ffafedb97d3b50ea58ef296117bbac" category="inline-link-macro-rx"></block>。</block>
   <block id="1b023ff169abba0d2ae3b5eda4b0662e" category="list-text">您也可以 <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> 內部部署ONTAP 的系統。</block>
-  <block id="873cdf52ec54bab55a108a2a77fe541f" category="summary">您可以監控已在工作環境中啟動的備份與還原工作狀態。這可讓您查看已成功完成的工作、目前進行中的工作、以及已失敗的工作、以便診斷及修正任何問題。您也可以設定以電子郵件傳送通知、即使您尚未登入系統、也能得知重要的系統活動。</block>
   <block id="10ad842a6a3246a44700dd2f0005c89c" category="section-title">使用「工作監控」檢視備份與還原工作狀態</block>
   <block id="8fa9fc7dcc8c23904d4a616698a7a223" category="paragraph">您可以在「*工作監控*」標籤中檢視所有備份與還原作業及其目前狀態的清單。這包括Cloud Volumes ONTAP 來自您的VMware、內部部署ONTAP 的VMware、應用程式、虛擬機器和Kubernetes系統的作業。每個作業或工作都有唯一的ID和狀態。狀態可以是：</block>
   <block id="505a83f220c02df2f85c3810cd9ceb38" category="list-text">成功</block>
@@ -2416,13 +2396,10 @@
   <block id="1ddf333c6654f7f89c739dddfb4cc429" category="list-text">應用程式</block>
   <block id="76b0fa668c1cd016096eb9bc1bfde44a" category="list-text">虛擬機器</block>
   <block id="30136395f01879792198317c11831ea4" category="list-text">Kubernetes</block>
-  <block id="ee500d90f2bbe338004152cd72405d74" category="paragraph">請注意、此頁面會每15分鐘自動重新整理一次、以便您隨時看到最新的工作狀態結果。您可以按一下「*重新整理*」按鈕、立即更新頁面。</block>
-  <block id="2c269153024be49f954a614b0a13da62" category="paragraph">若要檢視與特定工作對應的詳細資料、請按一下工作名稱。您會在「工作詳細資料」頁面中看到所有執行來完成主要工作的子工作。</block>
   <block id="ead1b755a95c48c918fa1c54aead1fbb" category="inline-image-macro">顯示「工作詳細資料」頁面的快照。</block>
   <block id="02e4b55a2c03c05864dc080ed278886c" category="paragraph"><block ref="02e4b55a2c03c05864dc080ed278886c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b58d9a206bdb4f66bef72d876e8c275e" category="section-title">使用通知中心來檢閱備份與還原警示</block>
   <block id="40da6f1400e45d080a97992a6a539894" category="inline-image-macro">通知鈴聲</block>
-  <block id="01d7db5ac182c0b2dc523448e4c1a34b" category="paragraph">通知中心會追蹤您所啟動的備份與還原工作進度、以便您確認作業是否成功。您可以按一下（<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>）。您也可以設定BluefXP以電子郵件傳送通知作為警示、即使您尚未登入系統、也能得知重要的系統活動。</block>
   <block id="cef1c38108b72f8eb8fba5c231923d9c" category="paragraph">根據預設、BlueXP帳戶管理員會收到所有「重大」和「建議」警示的電子郵件。根據預設、所有其他使用者和收件者都會設定為不接收任何通知電子郵件。電子郵件可傳送給任何屬於您NetApp雲端帳戶一部分的BlueXP使用者、或傳送給任何其他需要注意備份與還原活動的收件者。</block>
   <block id="a1c41906d0e1e81a4ce819d12975d647" category="paragraph">您必須選取通知類型「Critical」和「錯誤」、才能接收Cloud Backup電子郵件警示。</block>
   <block id="44d4deb8868ac8159ee85f4a8e68725c" category="inline-link">深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作</block>
@@ -2553,7 +2530,6 @@
   <block id="5b839de8a8e7b5f30407c5dc2cfdabd2" category="list-text">「工作負載」欄可供使用、以便您篩選頁面以檢視下列備份服務的工作：Volume、應用程式、虛擬機器和Kubernetes。</block>
   <block id="a2ed310c63a1aba1225315fe5f7f60ee" category="list-text">若要檢視特定備份工作的這些詳細資料、您可以新增「使用者名稱」和「工作類型」欄。</block>
   <block id="bcce731a4ced178ba1457a0965f1a878" category="list-text">「工作詳細資料」頁面會顯示正在執行以完成主要工作的所有子工作。</block>
-  <block id="dbe9251780901a4775188539e940cce0" category="list-text">此頁面每15分鐘自動重新整理一次、讓您隨時都能看到最新的工作狀態結果。您也可以按一下「*重新整理*」按鈕、立即更新頁面。</block>
   <block id="95bdcffb51de388c8d204ebc69a73e61" category="section-title">AWS跨帳戶備份增強功能</block>
   <block id="ae3795f53c6086a9639e4652dbff318b" category="paragraph">如果您想要使用不同於Cloud Volumes ONTAP 來源磁碟區的AWS帳戶進行還原備份、則必須在BluetXP中新增目的地AWS帳戶認證、而且必須將「S3：PuttBucketPolicy」和「S3：PuttetOwnershipControl」權限新增至IAM角色、以便為BlueXP提供權限。過去、您需要在AWS主控台設定許多設定、您不再需要這麼做了。</block>
   <block id="ef88ffe6f484bdfc25f97445be29df28" category="sidebar">管理叢集層級的備份設定</block>
@@ -2643,14 +2619,12 @@
   <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">從「Support Registration（支援註冊）」頁面找到您的帳戶ID序號。</block>
   <block id="50a1dc01b7312307c34a888071586955" category="list-text">複製上述步驟2的帳戶序號、完成安全性檢查、然後確認您已閱讀NetApp的全球資料隱私權政策。</block>
   <block id="cc8b0535948da368f832027c19b7f853" category="list-text">請務必複製上述序號欄位使用的帳戶序號（960xxxx）。這將加速帳戶處理。</block>
-  <block id="9469202592824934bca3fb2cb931658f" category="paragraph">*附註：*如果您要還原的磁碟區備份檔案位於歸檔儲存設備（從ONTAP 版本號9.10.1開始）中、還原作業將需要較長的時間、而且會產生成本。此外、目的地叢集也必須執行ONTAP 支援磁碟區還原的版本為《支援使用者支援者支援者支援者支援對象》（更新版本）、適用於檔案還原的版本為9.11.1、以及適用於Google歸檔的版本為9.12.1。</block>
   <block id="e57e5c06a7f562addb87315f013677ab" category="inline-link-macro">深入瞭解如何從Google歸檔儲存設備還原</block>
   <block id="9412087e43270b75b90fb61a57336ae4" category="paragraph"><block ref="3c746f2f3db6e0c7091d37b11706df4d" category="inline-link-macro-rx"></block>。</block>
   <block id="14bc89f69d47048d5fa04ec00dbd4951" category="list-text">輸入您要用於還原磁碟區的名稱、然後選取磁碟區所在的Storage VM和Aggregate。根據預設、*&lt;SOUR_volume名稱&gt;_restore *會用作磁碟區名稱。</block>
   <block id="a4601bed84cfcc515268c444afd2de52" category="paragraph"><block ref="bb0b0cd162d3c161f2efdc6c31126950" category="inline-link-macro-rx"></block>。Google歸檔儲存層中的備份檔案幾乎會立即還原、而且不需要還原優先順序。</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
   <block id="b696dfa697a630f834f39ef334da1579" category="list-text">執行_foldle_還原作業時、此版本必須為9.11.1或更新版本。ONTAPifdef：：AWS []</block>
-  <block id="f7c73a8bcc6ec99dca8a19a69746f9dc" category="paragraph">如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行ONTAP 支援磁碟區還原功能的版本為《支援使用者支援者支援者支援者支援對象》（更新版本）、適用於檔案還原的版本為《支援者支援者支援者支援者支援者支援者支援者支援者支援者</block>
   <block id="149fb738a290d4d7e242bb7a559fed06" category="inline-link-macro">請參閱這些需求的詳細資料</block>
   <block id="877b0f756f66e3e84fa762dc3c8a2b9e" category="list-text">從Amazon S3還原時、請在ONTAP 目標Volume所在的叢集中選取IPspace、輸入您所建立之使用者的存取金鑰和秘密金鑰、以便ONTAP 讓該叢集能夠存取S3儲存區、 此外、您也可以選擇私有VPC端點來進行安全的資料傳輸。 <block ref="59db365b1913b0034fd7f8109883ec93" category="inline-link-macro-rx"></block>。</block>
   <block id="f1bad5bccc0926b2365a948394ec0c3b" category="list-text">從Azure Blob還原時、請在ONTAP 目的地Volume所在的叢集中選取IPspace、然後選取vnet和Subnet（子網路）、以選擇性地選擇私有端點進行安全資料傳輸。 <block ref="a7e5c84b094b3a8759a279cc77c2362b" category="inline-link-macro-rx"></block>。</block>
@@ -2686,18 +2660,14 @@
   <block id="90a2b3614b10514530462c20f49310e9" category="paragraph">您需要備份兩種類型的資料：</block>
   <block id="4daedd65baee68d93f5c1ba1298f4e4a" category="list-text">雲端備份資料庫</block>
   <block id="42f4d5b158a93e293d624d39bf3d9c3e" category="list-text">索引目錄檔案（用於搜尋與還原功能）</block>
-  <block id="6a360030c0944ed786f9c83f788a0715" category="paragraph">Cloud Backup資料庫或Indexed目錄檔案中沒有任何Volume資料。</block>
   <block id="9120e18c07abc0ccffe71aedbba5bc10" category="section-title">備份Cloud Backup資料庫</block>
   <block id="2905857ff704be9c2beb191f3a164c59" category="paragraph">Cloud Backup資料庫包含所有磁碟區、備份檔案、備份原則和組態資訊的清單。</block>
   <block id="8c1b248edb88a6de85b408ee92f9d0c3" category="list-text">使用適當的認證資料登入Connector主機系統。</block>
   <block id="efd75f5230ec23281732b80a345896d9" category="list-text">輸入下列命令、輸入MySQL Container Shell：</block>
   <block id="ea88528cf92a2583181519ef77cd0928" category="list-text">在Container Shell中、部署「env」。</block>
   <block id="fb4d2049eb8a30a41f47794ab189550a" category="list-text">您需要MySQL資料庫密碼、因此請複製「MySQL_root_password」金鑰的值。</block>
-  <block id="71a947bdbdf184c6af28cdd06fe3ca88" category="list-text">輸入下列命令備份Cloud Backup MySQL DB：</block>
   <block id="7db6ebf161f7a9da5769ee912be2da41" category="list-text">輸入下列命令、從MySQL Docker容器複製MySQL DB備份：</block>
-  <block id="f80ad56051adb2380df8c550217f8ea6" category="list-text">將備份複製到網路中的安全位置。如果您要建立一個本地的不全區的還原磁碟區備份到該位置、就可以使用該StorageGRID 系統ONTAP 。</block>
   <block id="155dea4952585272f1c0844ef81cfd9a" category="section-title">備份索引型錄檔案</block>
-  <block id="e13687ed35f680800f122a94f776bc3e" category="paragraph">索引目錄用於搜尋與還原功能。其中包含每個磁碟區和每個備份檔案的相關資訊、讓您在還原磁碟區資料時、能夠快速且有效率地進行搜尋。</block>
   <block id="ef634fffc66ae93838b8ca070447f663" category="list-text">在Connector主機系統上、將目錄變更為「/tmp」。</block>
   <block id="7cb88c443fc924903c835b571b479a4e" category="list-text">找到索引目錄資料夾。它以字串*型錄*開頭。</block>
   <block id="8569fa5b25edd3388fba8c4d5fbbdf9d" category="list-text">輸入下列命令、壓縮「catalog（型錄）&lt;_xxxxxx_&gt;」資料夾：</block>
@@ -2706,13 +2676,9 @@
   <block id="c68e25209d430f055bb6e33f3e3b4fed" category="paragraph">如果內部部署Connector發生災難性故障、您必須安裝新的Connector、然後將Cloud Backup資料還原至新的Connector。</block>
   <block id="76c03ea1561a108c492740542135bf41" category="paragraph">您需要執行4項工作、才能將Cloud Backup系統恢復至正常運作狀態：</block>
   <block id="f0f8593cf8d423b69e3ba1407f6f5b05" category="inline-link">在新的內部部署Linux主機上安裝新的Connector</block>
-  <block id="156efc7e7346ddcd688a6720c1666bea" category="list-text"><block ref="156efc7e7346ddcd688a6720c1666bea" category="inline-link-rx"></block></block>
   <block id="4ea3b71370c485479872f790680ce4b4" category="list-text">還原Cloud Backup資料庫</block>
   <block id="bac8f03e2f29846dbab5b2b784213272" category="list-text">還原索引型目錄檔案</block>
-  <block id="9d40ebeace97c319e8246e0447991b88" category="list-text">重新探索ONTAP 所有內部的功能齊全的功能、使其成為藍圖XP UI</block>
   <block id="f19661624edbf73361ae75955e672733" category="paragraph">一旦您確認系統恢復正常運作、建議您建立新的備份檔案。</block>
-  <block id="a3f8f3e803fe1f12829bd879a4212372" category="list-text">安裝新的Connector之後、請使用適當的認證資料登入Connector主機系統。</block>
-  <block id="b65d7abdd1b32aa352c11a8e2736220b" category="list-text">將MySQL備份從安全位置複製到新的Connector主機。</block>
   <block id="ee8d56e3bf2ec5617d7b8febb655c287" category="list-text">使用下列命令、將備份複製到MySQL Docker容器中：</block>
   <block id="bb319ca7a8d748d2ce5adf7548a5803c" category="list-text">使用下列命令輸入MySQL Container Shell：</block>
   <block id="58cd44673ee99119180601eef0ae358a" category="list-text">使用下列命令還原Cloud Backup MySQL資料庫：</block>
@@ -2722,15 +2688,11 @@
   <block id="f9083b6cbd32e754624254bf8a15bbd5" category="list-text">將「索引目錄」備份壓縮檔從安全位置複製到「/tmp」資料夾中的新Connector主機。</block>
   <block id="4137b6be705d5f9d9f9bcc8018e1f70a" category="list-text">使用下列命令解壓縮「catalogxxxxxx.zip」檔案：</block>
   <block id="82ed93b77a5223377d1a45ab463f6fb3" category="list-text">執行* ls-*命令、確認已建立資料夾「catalogxxxxxx」、並在其下方加入子資料夾「變更」和「快照」。</block>
-  <block id="293d2ec7f3441372d965e1f67d0e7214" category="section-title">探索叢集並驗證雲端備份設定</block>
   <block id="202fec1254d856dde5dee6e53f5eb9e9" category="inline-link">探索ONTAP 所有內部環境</block>
-  <block id="03b1c4147aa5c46889d8153c6552b7ce" category="list-text"><block ref="179610062d14a1a80cba7318c7e8f765" category="inline-link-rx"></block> 您先前環境中可用的。</block>
   <block id="f8fe3d533b3c8ec77c886cdbfcbd8c60" category="inline-link">探索StorageGRID 您的系統</block>
-  <block id="012ba9fde8487c1dd821b1c9fba89266" category="list-text">（可選）<block ref="96a264e98dd669c84cc531f3c314c13a" category="inline-link-rx"></block>。</block>
   <block id="e828f5871c88d64ebf2a764153246360" category="list-text">選取每ONTAP 個執行中的環境、然後按一下右窗格中備份與還原服務旁的*檢視備份*。</block>
   <block id="36c688567530141607520ff8f371abad" category="paragraph">您應該能夠查看為磁碟區建立的所有備份。</block>
   <block id="ca58572920332b0113296b57e60a56de" category="list-text">在「還原儀表板」的「搜尋與還原」區段下、按一下「*索引設定*」。</block>
-  <block id="e33e607084aa892db97b23f266651e04" category="paragraph">請確定先前啟用索引編製功能的工作環境仍保持啟用狀態。</block>
   <block id="080b8dd3f3323a86a22c3af13ee1c495" category="list-text">在「搜尋與還原」頁面中、執行幾項目錄搜尋、以確認已成功完成索引目錄還原。</block>
   <block id="650c5c3b9794e3433e90f3f1f307a2c3" category="list-text">目前不支援「符合法規」磁碟區SnapLock 。</block>
   <block id="bab09e9304b5c4bff1eb4287ce6071b7" category="list-text">不含更新版本的ONTAP FlexGroup</block>
@@ -2756,11 +2718,9 @@
   <block id="c57b731ee494dd2c5422da75f8283d02" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 在系統上啟用Cloud Backup</block>
   <block id="4c9a0feab9499a53c704c9db0adc3926" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 選取雲端供應商、然後輸入供應商詳細資料</block>
   <block id="3b39c09e2f4aebd9e4dafe73f9fdeabe" category="paragraph">根據預設、備份會儲存在標準儲存設備中。如果您的叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後將備份分層至Google歸檔儲存設備、以進一步最佳化成本。 <block ref="87ffafedb97d3b50ea58ef296117bbac" category="inline-link-macro-rx"></block>。</block>
-  <block id="820fd47da31bb7e371c067563d9f2cd2" category="paragraph">如果您使用的是私有Google存取或私有服務連線、請確定DNS伺服器已設定為將storage.googleapis.com指向正確的內部（私有）IP位址。</block>
   <block id="8d95102bf9140e4354a61dced325fdb3" category="paragraph">如果您的Google Cloud Platform VPC中已部署Connector、您就能輕鬆完成所有設定。如果沒有、您需要在該位置建立Connector、以便將ONTAP 還原資料備份到Google Cloud儲存設備。您無法使用部署在其他雲端供應商或內部部署的Connector。</block>
   <block id="697b9d2300ad9e2f011376f9c9a30392" category="inline-link">私有服務連線</block>
   <block id="7747fb16d3b3ebca41d53c73111f029f" category="list-text">在您打算部署Connector的子網路上啟用私有Google Access（或Private Service Connect）。<block ref="befc9e6419c4dc26dd25bf8222d3c172" category="inline-link-rx"></block> 或<block ref="d4dc822b3b70edddfbd179916941cf96" category="inline-link-rx"></block> 如果ONTAP 您從某個叢集直接連線至VPC、而且想要連接器與Google Cloud Storage之間的通訊保持在虛擬私有網路（*私有*連線）中、就需要使用此功能。</block>
-  <block id="77ad64cda7f3f0a896fe326acfe64c20" category="paragraph">請依照Google指示設定這些私人存取選項。請確定您的DNS伺服器已設定為將www.googleapis.com和storage.googleapis.com指向正確的內部（私有）IP位址。</block>
   <block id="a749fefaadd4a1a540a6422d310ad685" category="list-text">若使用ONTAP 的是《支援資料》9.12.1或更新版本、您可以選擇在特定天數後將備份分層歸檔至「歸檔」儲存設備、以進一步最佳化成本。 <block ref="87ffafedb97d3b50ea58ef296117bbac" category="inline-link-macro-rx"></block>。</block>
   <block id="301d9a7273c6553e974ed7816033c909" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> 選取叢集IPspace、並選用使用私有vnet端點</block>
   <block id="c6a4a4ea42501e26c847a39ca95c134d" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 定義預設備份原則</block>
@@ -2927,7 +2887,6 @@
   <block id="88094c6c8ad963e6131e3c23988917d4" category="list-text">支援使用連線與複製方法還原Oracle資料庫</block>
   <block id="7d6f6d1efeae8c573a74a091cc119cb9" category="list-text">支援Oracle 21c</block>
   <block id="35d9afe1e1e85a29b0de625fd2a9a44a" category="list-text">支援複製雲端原生Oracle資料庫</block>
-  <block id="2b02d4e6e1f394b4dc9da1cac8c404a3" category="section-title">雲端備份的增強功能</block>
   <block id="137f19e6e2dc1219f33553b812627bc2" category="list-text">虛擬機器</block>
   <block id="c2452add37f94598e06d237edc68078b" category="list-text">從內部部署的次要儲存設備備份虛擬機器</block>
   <block id="8e21c62b69b7c01b40ec93ceb9c4b5cd" category="list-text">支援Google Cloud Platform（GCP）備份一或多個資料存放區</block>
@@ -3363,4 +3322,126 @@
   <block id="f21f4c2a14663fba17fd663498932188" category="list-text">將SAP HANA外掛程式部署為Sudo非root使用者。<block ref="a9b0283be469b80a16d7090f132ac831" prefix=" " category="inline-code"></block></block>
   <block id="8125c29989803ad0a7a3fcd80763904a" category="list-text">複本<block ref="7730e5c2e030df9de4e60d7586534d1d" prefix=" " category="inline-code"></block> 寄件者<block ref="6a722c9070d74bb0503ce0417b0cad70" prefix=" " category="inline-code"></block> 連接器VM的路徑<block ref="b99636c9e34de318e385a63d2cb037a1" prefix=" " category="inline-code"></block> 在外掛程式主機上。</block>
   <block id="ef1e764c716d2aa5406d3d434b9c8614" category="list-text">瀏覽至<block ref="0dc0b955539cf9119a9695bb3312c8cb" prefix=" " category="inline-code"></block> 並執行keytools命令以匯入憑證。<block ref="0d48a0d1a6daee261d59f76e1ce65f98" prefix=" " category="inline-code"></block></block>
+  <block id="fd9064c3951e4ceddd0e2ae6bf2708e5" category="paragraph">*附註：*如果包含您要還原之資料的備份檔案位於歸檔儲存設備（從ONTAP 版本號9.10.1開始）中、還原作業將需要較長的時間、而且會產生成本。此外、目的地叢集也必須執行ONTAP 適用於Volume還原的版本為《支援還原功能》、適用於檔案還原的版本為《支援功能》、適用於Google歸檔和StorageGRID 《支援功能》的版本則為《支援功能》、適用於Google歸檔和《支援功能》。</block>
+  <block id="996e1ad0df7144c78c9638cef2553e17" category="paragraph">搜尋作業也會查看ONTAP 所有適用於您的Shapes的本機Snapshot複本。由於從本機Snapshot複本還原資料的速度比從備份檔案還原更快、成本更低、因此您可能想要從Snapshot還原資料。您可以從畫版上的Volume Details（磁碟區詳細資料）頁面（而非Cloud Backup）、將Snapshot還原為新的磁碟區。</block>
+  <block id="c003f27675e7048b4dd9d00ba4f2f343" category="paragraph">如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行ONTAP 支援磁碟區還原的版本為《支援使用者支援者支援者支援對象》（更新版本）、適用於檔案還原的版本為《支援者支援者支援者支援者》（9.11.1）、以及適用於Google歸檔與StorageGRID 更新版本的</block>
+  <block id="aba6991b1b269dad52e52cd4c3998779" category="list-text">必須在磁碟區上啟用NFS（支援NFS和SMB/CIFS磁碟區）。</block>
+  <block id="4870c40d3a9790a30e2c950188cce666" category="list-text">SnapDiff RPC伺服器必須在SVM上啟動。在工作環境中啟用索引時、BlueXP會自動執行此動作。（SnapDiff技術可快速識別兩個Snapshot複本之間的檔案和目錄差異。）</block>
+  <block id="3583d22777b682d17c7d912cdbfe39ae" category="list-text">您已探索內部部署叢集、並將其新增為藍圖XP中的工作環境。請參閱<block ref="04e8e773ac6637419158f2743860946e" category="inline-link-rx"></block> 以取得詳細資料。</block>
+  <block id="a39a3a8413839ba93362257bd4ae066b" category="list-text">叢集執行ONTAP 的是1.7P5或更新版本（ONTAP 建議使用更新版本的版本號為0。</block>
+  <block id="f01bc3a9f1abc31db81523be2ef9e811" category="paragraph">選取Google Cloud做為供應商、然後輸入供應商詳細資料。您需要在ONTAP 駐留磁碟區的叢集中指定IPspace。您也可以選擇自己的客戶管理金鑰來進行資料加密、而非使用預設的Google管理加密金鑰。</block>
+  <block id="810f2cc6519ce771cf16343b5e8f75b3" category="inline-image-macro">快照顯示雲端供應商將磁碟區從內部ONTAP 系統備份到Google Cloud Storage儲存庫時的詳細資料。</block>
+  <block id="f287cb4e24a724872537899eb5d9682d" category="paragraph"><block ref="f287cb4e24a724872537899eb5d9682d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7dfd82301201229d10d2b7f30a3a9e1e" category="paragraph">如果您使用的是私有Google存取或私有服務連線、請確定DNS伺服器已設定為指向<block ref="3f4ca1d8ed90e1a3c0451eb42e58e5ef" prefix=" " category="inline-code"></block> 至正確的內部（私有）IP位址。</block>
+  <block id="eb459fb8cd981c7e5f0e78a70a2b5b3e" category="list-text">如有必要、請更新防火牆規則、以便透過ONTAP 連接埠443、將Cloud Backup連線從物件儲存設備、以及透過連接埠53（TCP/IP）、從儲存VM到DNS伺服器的名稱解析流量。</block>
+  <block id="a4cee2fc0fbf35cc350b6c809b0fde73" category="paragraph">請依照Google指示設定這些私人存取選項。請確定DNS伺服器已設定為指向<block ref="473b30be766431f8982e4e0c5267a321" prefix=" " category="inline-code"></block> 和<block ref="3f4ca1d8ed90e1a3c0451eb42e58e5ef" prefix=" " category="inline-code"></block> 至正確的內部（私有）IP位址。</block>
+  <block id="89786972ebb5d82191ae05695b18af61" category="inline-link">Google Cloud Console</block>
+  <block id="19f12756ac5dc154a1953209912fa013" category="list-text">在中<block ref="6f302cade9285379185cc50702d4e32d" category="inline-link-rx"></block>請移至*角色*頁面。</block>
+  <block id="1ed0a28cd2dfc8f3fe96737a23ab2d11" category="paragraph">設定備份時、您必須為具有特定權限的服務帳戶提供儲存存取金鑰。服務帳戶可讓Cloud Backup驗證及存取用於儲存備份的雲端儲存桶。這些金鑰是必要的、以便 Google Cloud Storage 知道誰在提出要求。</block>
+  <block id="fc08b36bdc07ed26699904e7366b7a75" category="inline-link">建立新角色</block>
+  <block id="57fabc4b9bda4ca1a792eb3e9b91c146" category="list-text"><block ref="d366e10b62e06826a8148ba57999a9a3" category="inline-link-rx"></block> 具備下列權限：</block>
+  <block id="ab6fcc124e86604f6bab5da13aaea51a" category="inline-link">前往「服務帳戶」頁面</block>
+  <block id="7dc4b63dc4834aecd751b91ed3de3d39" category="list-text">在Google Cloud主控台中、<block ref="72863ecd427c906452e0c3d21111bdac" category="inline-link-rx"></block>。</block>
+  <block id="0894024ee935148d86c9827d799389ac" category="list-text">選擇您的雲端專案。</block>
+  <block id="59a53d9856e55e6fc033c86e4387c316" category="list-text">按一下*建立服務帳戶*、並提供必要資訊：</block>
+  <block id="7804f90af05e35898d30a79bf21e0c6f" category="list-text">*服務帳戶詳細資料*：輸入名稱和說明。</block>
+  <block id="9eb59ff65a78f23373b8ad69068d7395" category="list-text">*授予此服務帳戶專案存取權*：選取您剛建立的自訂角色。</block>
+  <block id="e13a15252a4dbf9779c44afe477e3343" category="list-text">按一下「 * 完成 * 」。</block>
+  <block id="1b9cd9f1d110a19c8b1050fa1e561e7b" category="list-text">選取專案、然後按一下 * 互通性 * 。如果您尚未啟用、請按一下 * 「啟用互通性存取」 * 。</block>
+  <block id="cb5b8455e39199ad360babf0d764750a" category="section-title">使用客戶管理的加密金鑰（CMEK）</block>
+  <block id="47bb831f95ab1288c32b97aba5fa20cb" category="inline-link">深入瞭解客戶管理的加密金鑰</block>
+  <block id="15384dc3b70c9b07babeb039640c6cd0" category="paragraph">您可以使用自己的客戶管理金鑰進行資料加密、而非使用預設的Google管理加密金鑰。在這種情況下、您必須擁有金鑰環和金鑰名稱、才能在啟動精靈中新增此資訊。<block ref="f8e0e63bffb58004a25f7278cd43c42c" category="inline-link-rx"></block>。</block>
+  <block id="f850c5b79269cb96d63324524deffe7d" category="paragraph">您也需要在Connector for CCMEK角色中新增這些必要權限、才能正常運作：</block>
+  <block id="2381bd859243711ef52a6003e1f2a815" category="paragraph">* CMEK注意事項：*</block>
+  <block id="59fb95b874bcbbfbda9fa6989e37cce4" category="list-text">同時支援HSM（硬體備份）和軟體產生的金鑰。</block>
+  <block id="59446873896ed16ae8f1cb30ccfe0a7a" category="list-text">同時支援新建立或匯入的雲端KMS金鑰。</block>
+  <block id="2b3b83fb44538b632325042aba519ab5" category="list-text">僅支援區域金鑰、不支援全域金鑰。</block>
+  <block id="d9c15cd950d71f46009911fed97cd7ad" category="list-text">目前僅支援「對稱加密/解密」用途。</block>
+  <block id="259867979057b5e6ad5fa3df5144f0da" category="list-text">Cloud Backup會將與儲存帳戶相關的服務代理程式指派為「CryptoKey Encrypter/Decypter（角色/雲端kms.cryptoKeyEncrypterDecypter）」IAM角色。</block>
+  <block id="e5270a4abac17c25b3ef1bd1f0178ffa" category="list-text">您想要在其中建立Google Cloud Storage儲存庫以進行備份的Google Cloud Project。（專案必須擁有具有特定權限的自訂角色的服務帳戶： <block ref="fcf105bce6a0d8360050e7cca51db497" category="inline-xref-macro-rx"></block>）</block>
+  <block id="f8db587738d0ddf87ce3a2c057f297b7" category="list-text">無論您是使用預設的Google管理加密金鑰、還是選擇自己的客戶管理金鑰來管理資料加密。若要使用CMEK、您必須擁有金鑰環和金鑰名稱。<block ref="f8e0e63bffb58004a25f7278cd43c42c" category="inline-link-rx"></block>。</block>
+  <block id="7c8c3c3e25f0041dee3a27547aa13698" category="list-text">為了讓Cloud Backup搜尋與還原功能正常運作、連接埠1433必須開啟、以便連接器與Azure Synapse SQL服務之間進行通訊。</block>
+  <block id="88a11892e7418e1eee8c952df9545b46" category="section-title">2023年1月9日</block>
+  <block id="b17d2155a07524d0e8a3d1eb73a257c3" category="section-title">能夠將較舊的備份檔案從StorageGRID 支援系統移至AWS S3歸檔儲存設備</block>
+  <block id="76592785cd14862cf74d11289e50ed92" category="paragraph">現在您可以將舊的備份檔案分層、從StorageGRID 支援的系統、到AWS S3的歸檔儲存設備。如此一來StorageGRID 、您就能釋出整個作業系統的空間、並使用經濟實惠的儲存類別來儲存舊的備份檔案、進而節省成本。您可以選擇將備份分層至AWS S3 Glacier或S3 Glacier Deep Archive儲存設備。</block>
+  <block id="ec9614a46239aa59499c4a94e919963a" category="inline-link">如需詳細資訊、請參閱此處</block>
+  <block id="481c6a107a47fcbb610d4e79b7d8bc01" category="paragraph">如果您的叢集使用ONTAP 的是更新版本的版本、而StorageGRID 您的系統使用的是11.3或更新版本、則可使用此功能。<block ref="ba1010a667c53f122912d421bb932c28" category="inline-link-rx"></block>。</block>
+  <block id="5baabb9bbca503ea382779d0fce7e9c5" category="section-title">能夠在Google Cloud上選擇您自己的客戶管理金鑰來進行資料加密</block>
+  <block id="d42d3ab595b05475b681bcec25a25c6b" category="paragraph">將ONTAP 資料從您的支援系統備份到Google Cloud Storage時、現在您可以在啟動精靈中選擇自己的客戶管理金鑰來進行資料加密、而不使用預設的Google管理加密金鑰。只要先設定客戶管理的加密金鑰、然後在啟動Cloud Backup時輸入詳細資料即可。</block>
+  <block id="b9395c2030b2a8ad48d31ad52bd9f6e9" category="section-title">服務帳戶不再需要「儲存管理員」角色、即可在Google Cloud Storage中建立備份</block>
+  <block id="d7cf6019b64afefeee4361ce4c22ce30" category="inline-link">瞭解如何準備Google Cloud Storage進行備份</block>
+  <block id="121b4934193e6ec77a35338afd1028bb" category="paragraph">在早期版本中、「儲存管理員」角色是讓Cloud Backup能夠存取Google Cloud Storage儲存桶的服務帳戶所需的角色。現在您可以建立自訂角色、並減少指派給服務帳戶的權限集。<block ref="cdc0823dc4910df979845484c27cfc1d" category="inline-link-rx"></block>。</block>
+  <block id="fe1757784884bfcaf0ca6254fb7fa44e" category="section-title">能夠下載「工作監控結果」頁面做為CSV報告</block>
+  <block id="5ae1400b4fd16294ac8af42e98d8a9ed" category="inline-link">請參閱如何產生工作監控報告</block>
+  <block id="c8a0a8bdcaf1f25cbadde68224d6591d" category="paragraph">篩選「工作監控」頁面以顯示您感興趣的工作和行動之後、您現在可以產生並下載該資料的.csvs檔案。然後您可以分析資訊、或將報告傳送給組織中的其他人員。<block ref="f54dc22fe93134a0b2767a291dba51f5" category="inline-link-rx"></block>。</block>
+  <block id="4f4a2e17ef7aa2669f99a3748377015f" category="list-text">此頁面每15分鐘自動重新整理一次、讓您隨時都能看到最新的工作狀態結果。您也可以按一下「*重新整理*」按鈕、立即更新頁面。</block>
+  <block id="b5c6b00b01586b598af43c9744b7abbf" category="paragraph">現在、您可以使用Cloud Backup將SnapLock 非公有雲和私有雲備份到其中。此功能需要ONTAP 您的不知道系統執行ONTAP 的是版本不符合更新版本的版本。不過、目前不支援「符合性」磁碟區SnapLock 。</block>
+  <block id="c2957acd301b96ab66a098d21d407ec6" category="summary">您可以監控已在工作環境中啟動的備份與還原工作狀態。這可讓您查看已成功完成的工作、目前進行中的工作、以及已失敗的工作、以便診斷及修正任何問題。您也可以將通知設定為透過電子郵件傳送、如此即使您尚未登入系統、也能得知重要的系統活動。</block>
+  <block id="ff11f62f1fefd326fa418557508f0bb3" category="inline-image-macro">重新整理按鈕</block>
+  <block id="ec07be2e9042814beca41a92a8df587b" category="paragraph">請注意、此頁面會每15分鐘自動重新整理一次、以便您隨時看到最新的工作狀態結果。您可以按一下 <block ref="e42fbc94b6d5b113bb8925ec57acbe3b" category="inline-image-macro-rx" type="image"></block> 按鈕、可立即更新頁面。</block>
+  <block id="8b512d5ba4f8158f9bbde90865caba8c" category="section-title">將工作監控結果下載為報告</block>
+  <block id="ae976c2662f0510c956866f26b3e7c91" category="inline-image-macro">下載按鈕</block>
+  <block id="17d49cbe3e073a57d023fcd4f76f67a3" category="paragraph">如果您想要在精簡工作監控頁面之後、將其內容下載為報告、請按一下 <block ref="481ffb3cda2f04d006c0bbcaeeccf883" category="inline-image-macro-rx" type="image"></block> 按鈕。Cloud Backup會產生.CSV檔案、您可視需要檢閱並傳送給其他群組。CSV檔案最多包含10、000列資料。</block>
+  <block id="ec7d92235d0dc6e0acfa017dfe7f1dbd" category="section-title">檢視工作詳細資料</block>
+  <block id="1bc59241eb9bf200909aad328d7d6f94" category="paragraph">您可以按一下工作名稱、檢視與特定工作對應的詳細資料。您會在「工作詳細資料」頁面中看到所有執行來完成主要工作的子工作。</block>
+  <block id="e415c99bdef560f45a5ed65de16a1f1c" category="paragraph">通知中心會追蹤您所啟動的備份與還原工作進度、以便您確認作業是否成功。您可以按一下（<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>）。您也可以設定BluefXP以電子郵件傳送通知作為警示、即使您尚未登入系統、也能得知重要的系統活動。</block>
+  <block id="3ce5b4dc9c8f2be5c856c5ecbade36be" category="list-text">您在Cloud Volumes ONTAP Azure中執行的是版本號為1.7P5或更新版本ONTAP （建議使用版本號為0、8P13及更新版本）。</block>
+  <block id="555662c8177ef0a8b7bd61c88704ac20" category="list-text">您正在Cloud Volumes ONTAP AWS中執行更新版本的支援功能（ONTAP 建議使用更新版本的支援功能）。</block>
+  <block id="42db682583d3eb9a753380374c8e1b40" category="paragraph">請注意、Cloud Backup資料庫或Indexed目錄檔案中從未包含任何Volume資料。</block>
+  <block id="ea875f7f1cbce7ccafa3294588db9171" category="list-text">輸入下列命令來備份Cloud Backup MySQL資料庫：</block>
+  <block id="f89ceb52adf6438c575a46d20a693abb" category="list-text">將備份複製到網路中的安全位置。如果您要建立一個本地的不全區的還原磁碟區備份到該位置、就可以使用該StorageGRID 系統ONTAP 。</block>
+  <block id="c404e3c86dc07dadeb1ba026f8f68641" category="paragraph">索引目錄用於搜尋與還原功能。其中包含每個磁碟區和每個備份檔案的相關資訊、可讓您在尋找想要還原的磁碟區資料時、快速又有效率地進行搜尋。</block>
+  <block id="49ec960387a7762f70c9454eff39ff67" category="list-text">安裝新的BlueXP Connector</block>
+  <block id="f7610e9182682c46b21a456bb9f88633" category="list-text">重新探索ONTAP 所有內部的功能齊全的系統、StorageGRID 並將其整合到BlueXP UI上</block>
+  <block id="65432ae2b80d2de48c0eff9f34726b87" category="inline-link">還原備份資料庫後、將Connector軟體升級至最新版本</block>
+  <block id="2e7f569a13a8775ddbc8714475ad7db7" category="paragraph">安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。定期變更Cloud Backup資料庫結構、可能會使較新的軟體版本與原始資料庫備份不相容。您可以<block ref="d77ae51b7aa47031957bd13dfa8d8fa8" category="inline-link-rx"></block>。</block>
+  <block id="fb91cab4ff80a23255e3962dd363d180" category="inline-link">在新的內部部署Linux主機上安裝BlueXP Connector</block>
+  <block id="147eee6c59a90af6498494b9e5153835" category="list-text"><block ref="147eee6c59a90af6498494b9e5153835" category="inline-link-rx"></block></block>
+  <block id="ecbcbb16fdbff1b3b59d0639b270e056" category="list-text">使用您剛建立的管理員使用者認證登入BlueXP。</block>
+  <block id="5fb01033092428057d91703462850bb8" category="list-text">將MySQL備份從安全位置複製到新的Connector主機。</block>
+  <block id="47088be6cbcb439bd7241ec72edf3a91" category="section-title">探索ONTAP 您的叢集與StorageGRID 功能性系統</block>
+  <block id="1832485ebcd99cd5b4b3491a8cffd638" category="list-text"><block ref="9033f64bdbb62eae631654d0a3df291b" category="inline-link-rx"></block> 您先前環境中可用的。</block>
+  <block id="1b7fb9def2cbf0701ee8453186654b5b" category="list-text"><block ref="a5cecadb957adccfe222c1147dfa0b64" category="inline-link-rx"></block>。</block>
+  <block id="8a817b57889a6e642ad7fb06e7b26c80" category="section-title">設定StorageGRID 有關支援環境的詳細資料</block>
+  <block id="95405ad3ad814456093255e6d36ee69e" category="inline-link">BlueXP API</block>
+  <block id="10e047f5e5b14e395de98b85ed4c9291" category="paragraph">在StorageGRID 原始Connector設定中使用設定時、新增與ONTAP 您的不支援功能環境相關的詳細資訊<block ref="40510467bd8e1f43a6541476355593dd" category="inline-link-rx"></block>。</block>
+  <block id="ed28e31454bb8c9849e6271a030b2762" category="paragraph">您需要針對ONTAP 每個將資料備份StorageGRID 到EFlash的支援系統執行這些步驟。</block>
+  <block id="3f1b9decb18d57a001f26c7273adeddc" category="list-text">使用下列O驗 證/權杖API擷取授權權杖。</block>
+  <block id="f2b2dd8a7061a4f2836de5feda40a45e" category="paragraph">此API會傳回如下回應。您可以擷取授權權杖、如下所示。</block>
+  <block id="74e96d8b9d4abdf183199553dd665e53" category="list-text">使用租戶/外部/資源API擷取工作環境ID和X-agent-ID。</block>
+  <block id="69473e9fe37da40f59b6a4abb9d0b124" category="paragraph">此API會傳回如下回應。「資源識別碼」下的值代表_WorkingEnvironment ID_、而「agentId」下的值則代表_x-agent-id_。</block>
+  <block id="3d84eb6c8f7ba56269ac1eb9fb7b5940" category="list-text">更新Cloud Backup資料庫、瞭解StorageGRID 與工作環境相關的更新過程。請務必輸入StorageGRID 完整的網域名稱、以及存取金鑰和儲存金鑰、如下所示：</block>
+  <block id="130a4df0285ca3d6a664db04d607c971" category="section-title">驗證雲端備份設定</block>
+  <block id="98c648bc34880f7f4d457836f8d482d7" category="paragraph">請確定先前啟用「索引」目錄的工作環境仍保持啟用狀態。</block>
+  <block id="29296806c9458e6f9b360ca27eab0dac" category="list-text">資料會在區塊層級上還原、將資料直接放在您指定的位置、同時保留原始ACL。</block>
+  <block id="98c5dd0d4e4b94048525760a7e30fd9f" category="inline-link-macro">深入瞭解StorageGRID 如何從還原歸檔備份檔案</block>
+  <block id="c9530b8dd09db9c948a2d65976dd98fe" category="paragraph">如果內部叢集使用ONTAP 的是不含更新版本的版本、StorageGRID 而您的系統使用的是11.3或更新版本、您可以將舊版備份檔案歸檔至公有雲歸檔儲存設備。目前僅支援AWS S3儲存類別的歸檔儲存設備。您可以選擇在一定天數後、將備份分層至AWS _S3 Glacier或_S3 Glacier Deep Archive_儲存設備。 <block ref="363267dd6106568fded10aaeda2ee302" category="inline-link-macro-rx"></block>。</block>
+  <block id="29331ccc5b0d6188fad90573f3b1bde1" category="list-text">您正在Cloud Volumes ONTAP GCP中執行更新版本的《支援》（ONTAP 建議使用更新版本的《支援》）。</block>
+  <block id="8eea324303c1dff2b89095050e381e68" category="paragraph">選取您要在其中建立Google Cloud Storage儲存庫以進行備份的Google Cloud Project和地區。您也可以選擇自己的客戶管理金鑰來進行資料加密、而非使用預設的Google管理加密金鑰。</block>
+  <block id="3faa891caeff03d695c501cc0759c886" category="list-text">使用客戶管理的加密金鑰（CMEK）所需的資訊</block>
+  <block id="2599350a4e955ee44290aa8aca0871d2" category="list-text">您想要在其中建立Google Cloud Storage儲存庫以進行備份的Google Cloud Project和地區。</block>
+  <block id="38fbb45a27b21096249ed80da88ec578" category="paragraph">如果您的叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您使用的是版本號為2、11.3或更新版本、您可以選擇在特定天數後、將舊版備份分層至AWS S3 Glacier或S3 Glacier Deep Archive儲存設備、以進一步最佳化成本。</block>
+  <block id="cac9868917effa10c15d3dafdd2bd043" category="paragraph">下列影像顯示將內部ONTAP 系統備份至StorageGRID 支援版時的每個元件、以及您在它們之間準備所需的連線。</block>
+  <block id="d1eea7086b8dc17469efa8e41a303777" category="paragraph">若將Connector和內部部署ONTAP 的Esor系統 安裝於內部環境、但無法存取網際網路（「暗點」）、StorageGRID 則該系統必須位於同一個內部資料中心內。在Dark站台組態中、不支援將舊版備份檔案歸檔至公有雲。</block>
+  <block id="0276e5d8afdc46e144ae840aae5be338" category="paragraph">若要將較舊的備份分層保存至雲端歸檔儲存設備、StorageGRID 您的不穩定系統必須執行11.3版或更新版本。</block>
+  <block id="f8436f6242c5e270dd0e25a1a05d34a4" category="inline-link-macro">瞭解如何在黑暗的站台中備份雲端備份資料</block>
+  <block id="02bf1c0a02190999eeab71bbe7fff71c" category="paragraph">強烈建議您在沒有網際網路連線的站台上安裝Connector時、定期建立Cloud Backup組態資料的本機備份。 <block ref="07f517d916bbf45a47c5d9dc6a000920" category="inline-link-macro-rx"></block>。</block>
+  <block id="89d604768fdd7e6fda1e2bdb512ac56e" category="section-title">準備將較舊的備份檔案歸檔至公有雲儲存設備</block>
+  <block id="483f68b62cb5a3e5d608257045622894" category="paragraph">將較舊的備份檔案分層儲存至歸檔儲存設備、可節省成本、因為您可能不需要使用較便宜的儲存類別進行備份。雖然內部部署（私有雲端）解決方案不提供歸檔儲存、但您可以將舊的備份檔案移至公有雲歸檔儲存設備StorageGRID 。</block>
+  <block id="9da2e088609ab78eb6aa7a0ffe0637b3" category="list-text">您的叢集必須使用ONTAP 的是更新版本的版本</block>
+  <block id="7bbe58a850cc71a0ff06edd40213c29c" category="list-text">您的產品必須使用11.3或更新版本StorageGRID</block>
+  <block id="170d42742a62bce031fc4ab2cfd0c056" category="inline-link">已探索並可在BlueXP畫版中使用</block>
+  <block id="98c4206e171ce9b62f1dadef4f4da528" category="list-text">您的需求必須是StorageGRID<block ref="a62572fc02ca2a884f6a1e42d38d1d55" category="inline-link-rx"></block></block>
+  <block id="68aa7e5e44b2aff449b0543b49e563bd" category="inline-link-macro">深入瞭解AWS歸檔層</block>
+  <block id="9ac50560d5fb673e5d33906e46dd98c6" category="list-text">目前僅支援AWS S3儲存類別的歸檔儲存設備。您可以選擇將備份分層至AWS S3 Glacier或S3 Glacier Deep Archive儲存設備。 <block ref="99a80ab47f2b3c111e86aba05224c42e" category="inline-link-macro-rx"></block>。</block>
+  <block id="ec1bc3c970d4b572c193f7ae566018d4" category="list-text">您必須註冊AWS S3訂閱、才能取得備份所在的儲存空間。</block>
+  <block id="832d0ea7eab67f52faa651ad1475e14a" category="paragraph">定義叢集備份原則的歸檔設定時、您將輸入雲端供應商認證資料、然後選取您要使用的儲存類別。當您為叢集啟動備份時、Cloud Backup會建立雲端儲存庫。AWS歸檔儲存設備所需的資訊如下所示。</block>
+  <block id="1561c5b8437cf775ebce2ca08e284b68" category="inline-image-macro">將備份檔案從StorageGRID 還原歸檔至AWS S3所需資訊的快照。</block>
+  <block id="4e82138d6097530281cd6cb668514613" category="paragraph"><block ref="4e82138d6097530281cd6cb668514613" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e3f77a85430d8ff3b4a253ea611bd9ee" category="inline-link">深入瞭解StorageGRID 《ILM原則與規則》</block>
+  <block id="3bb8e0b301b3650899fdd92490d4f2b8" category="paragraph">您選取的歸檔原則設定將會在StorageGRID 還原中產生資訊生命週期管理（ILM）原則、並將設定新增為「規則」。如果有現有的作用中ILM原則、則新規則會新增至ILM原則、以將資料移至歸檔層。如果現有的ILM原則處於「建議」狀態、則無法建立及啟動新的ILM原則。<block ref="6561077144087ebe496b43ff07401cd5" category="inline-link-rx"></block>。</block>
+  <block id="43e902efcea42d88512963cd9451ec29" category="list-text">如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以設定_DataLock和勒索軟體Protection來保護備份、避免遭到刪除和勒索軟體攻擊。_DataLock_可保護您的備份檔案、避免遭到修改或刪除、而_勒索 軟體保護_會掃描您的備份檔案、尋找備份檔案中勒索軟體攻擊的證據。 <block ref="a1590ca0a57c2e20ed40ac0f3384a5af" category="inline-link-macro-rx"></block>。</block>
+  <block id="b1e78dfdd8adc3005cff56ffd24b2af1" category="inline-xref">瞭解如何針對此功能設定您的系統</block>
+  <block id="57e477fd9dd6f84cb8ac24711869c4f5" category="list-text">如果您的叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您使用的是版本號為2、11.3或更新版本、您可以選擇在特定天數後、將舊版備份分層至AWS S3 Glacier或S3 Glacier Deep Archive儲存設備、以進一步最佳化成本。 <block ref="c2797d22435b48dabeada89d48523cd9" category="inline-xref-macro-rx"></block>。</block>
+  <block id="8b1fecd8a08d1d10ad201653d8d4088f" category="sidebar">在黑暗的站台中備份Cloud Backup資料庫</block>
 </blocks>
