@@ -473,19 +473,3 @@ link:concept-protect-app-data-to-cloud.html["深入瞭解如何將內部部署�
 === 新的工作監控器可供查看所有備份與還原工作的處理中狀態
 
 當您針對多個磁碟區啟動作業（例如變更備份原則或刪除備份）時、「工作監視器」會很有幫助、因此您可以查看所有磁碟區上的作業何時完成。 link:task-monitor-backup-jobs.html["瞭解如何使用工作監控器"]。
-
-
-
-== 2022年1月2日
-
-
-
-=== 能夠將持續磁碟區從您的KS Kubernetes叢集備份到Azure Blob儲存設備
-
-如果您的叢集已安裝NetApp Astra Trident、而且使用Cloud Volumes ONTAP 適用於Azure的for Azure做為叢集的後端儲存設備、則您可以備份及還原Azure Blob儲存設備的磁碟區。 link:task-backup-kubernetes-to-azure.html["如需詳細資料、請前往此處"]。
-
-
-
-=== 本次發表中已變更了各項收費、以更貼近業界標準Cloud Backup Service
-
-現在您只需支付所保護資料的費用、而非根據備份檔案的大小來支付NetApp的容量費用、這是根據ONTAP 正在ONTAP 備份的來源供應區的邏輯使用容量（不含不含還原效率）計算而得。此容量也稱為前端TB（FTB）。

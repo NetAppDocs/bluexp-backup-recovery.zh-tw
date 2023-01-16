@@ -173,7 +173,6 @@
   <block id="497968cf7f565b72a034d69215ab9754" category="paragraph"><block ref="497968cf7f565b72a034d69215ab9754" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c7a220fc58ccea879a68f706ca98ac0c" category="list-text">按一下「*儲存*」以提交變更。</block>
   <block id="8764d766d622ae40812776b15d742a79" category="inline-xref">刪除備份</block>
-  <block id="1cdf12d909faca3295263dc58dc5d4b8" category="paragraph">* 附註： * 停止備份磁碟區時、除非您同意、否則您將繼續由雲端供應商支付備份所使用容量的物件儲存成本 <block ref="e2e48247dd6dcee2daca407937463dc9" category="inline-xref-macro-rx"></block>。</block>
   <block id="370b82ce2e3ba80cd6ec552891697236" category="section-title">編輯現有的備份原則</block>
   <block id="666a7dbcb8fbb40415b3646ab93b9692" category="paragraph">您可以變更目前套用至工作環境中磁碟區的備份原則屬性。變更備份原則會影響使用原則的所有現有磁碟區。</block>
   <block id="0be2c78c9d9743f1e0ca96b2de59d98b" category="inline-image-macro">「Volumes（磁碟區）」索引標籤上顯示「Backup Settings（備份設定）」按鈕的快照</block>
@@ -606,11 +605,6 @@
   <block id="739f8a5ac1453fdcd33ce781cd333914" category="section-title">新的工作監控器可供查看所有備份與還原工作的處理中狀態</block>
   <block id="7a99d9487fc9540fa7bee7c2eb717413" category="inline-link-macro">瞭解如何使用工作監控器</block>
   <block id="9d20a5735dc25af92271eea8fa797bf7" category="paragraph">當您針對多個磁碟區啟動作業（例如變更備份原則或刪除備份）時、「工作監視器」會很有幫助、因此您可以查看所有磁碟區上的作業何時完成。 <block ref="41d368101275ff882313a6db3fc29812" category="inline-link-macro-rx"></block>。</block>
-  <block id="586301717819197e24001cac47efdaaa" category="section-title">2022年1月2日</block>
-  <block id="3d83253385058dc12afb77a2f730e4c2" category="section-title">能夠將持續磁碟區從您的KS Kubernetes叢集備份到Azure Blob儲存設備</block>
-  <block id="8b0675f2bcc5bb7f00dbceec71509372" category="paragraph">如果您的叢集已安裝NetApp Astra Trident、而且使用Cloud Volumes ONTAP 適用於Azure的for Azure做為叢集的後端儲存設備、則您可以備份及還原Azure Blob儲存設備的磁碟區。 <block ref="dedf276821ed6d29dbf4b6c6ac7e23c3" category="inline-link-macro-rx"></block>。</block>
-  <block id="14c8359231c23d6f5c54ca5cd66b7645" category="section-title">本次發表中已變更了各項收費、以更貼近業界標準Cloud Backup Service</block>
-  <block id="8f26fba202051bdab8552c6642789714" category="paragraph">現在您只需支付所保護資料的費用、而非根據備份檔案的大小來支付NetApp的容量費用、這是根據ONTAP 正在ONTAP 備份的來源供應區的邏輯使用容量（不含不含還原效率）計算而得。此容量也稱為前端TB（FTB）。</block>
   <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link">請按這裡</block>
   <block id="07c2ea1cc6b7f654f42d3f074f3c13f4" category="summary">請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能區備份到 Azure Blob 儲存設備。</block>
   <block id="f6c96f9db00475dfd6c371ca50af3d5b" category="doc">將Cloud Volumes ONTAP 不支援的資料備份到Azure Blob儲存設備</block>
@@ -2369,7 +2363,6 @@
   <block id="bd5465eb0e8cf8f303aee7ea9420c8b1" category="sidebar">BlueXP部落格</block>
   <block id="e4f8a35ee8df8b5c247f6e3286e42891" category="sidebar">BlueXP使用案例</block>
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">所有BlueXP文件</block>
-  <block id="58ba7a61ebb07a1d7ec3d3aac8a698c7" category="paragraph"><block ref="2557c337dfecad402162dac53d872fb6" category="inline-link-rx"></block>。</block>
   <block id="dbb5638e73887ef4301df1c7b10993df" category="inline-link">在AWS GovCloud區域安裝Connector</block>
   <block id="9ead7424c07e39075bc88d26cf29486d" category="list-text"><block ref="9ead7424c07e39075bc88d26cf29486d" category="inline-link-rx"></block></block>
   <block id="74af27074013d973d4d84d17e513984c" category="paragraph">當連接器部署在雲端時（而非安裝在內部部署環境中）、GovCloud區域會支援Cloud Backup。此外、您必須從AWS Marketplace部署Connector。您無法從BlueXP SaaS網站在政府區域部署Connector。</block>
@@ -3444,4 +3437,7 @@
   <block id="b1e78dfdd8adc3005cff56ffd24b2af1" category="inline-xref">瞭解如何針對此功能設定您的系統</block>
   <block id="57e477fd9dd6f84cb8ac24711869c4f5" category="list-text">如果您的叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您使用的是版本號為2、11.3或更新版本、您可以選擇在特定天數後、將舊版備份分層至AWS S3 Glacier或S3 Glacier Deep Archive儲存設備、以進一步最佳化成本。 <block ref="c2797d22435b48dabeada89d48523cd9" category="inline-xref-macro-rx"></block>。</block>
   <block id="8b1fecd8a08d1d10ad201653d8d4088f" category="sidebar">在黑暗的站台中備份Cloud Backup資料庫</block>
+  <block id="fe3f1bd257c4451d8f8bcbf9a1a58d34" category="paragraph"><block ref="1247b899b5e6800d8fd9e850903ad55a" category="inline-link-rx"></block>。</block>
+  <block id="275b9b785d71f45bb8f134005ece056a" category="paragraph">*附註：*停止備份磁碟區時、除非您同意、否則您將繼續由雲端供應商支付備份所使用容量的物件儲存成本 <block ref="e2e48247dd6dcee2daca407937463dc9" category="inline-xref-macro-rx"></block>。</block>
+  <block id="46fb0ddeabbcb2b9784add28928cfe7a" category="paragraph">請注意、您要套用至磁碟區的原則必須已經存在。</block>
 </blocks>
