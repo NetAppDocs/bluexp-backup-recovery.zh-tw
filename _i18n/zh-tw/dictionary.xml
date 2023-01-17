@@ -1424,8 +1424,6 @@
   <block id="1ad501aca706aedda73a497f3e05cad4" category="list-text">透過連接埠443連至Cloud Backup的傳出網際網路連線（當連接器安裝在「暗」站台時、不需要）</block>
   <block id="7213734d8950b4641631fa35737ef55d" category="list-text">您要備份的磁碟區所在的叢集中的 IPspace ONTAP 。此IPspace的叢集間生命體必須具有傳出網際網路存取（當連接器安裝在「暗」站台時、則不需要）。</block>
   <block id="9fe942ae01924dd657ce7f1996246cc6" category="section-title">支援無網際網路連線的站台</block>
-  <block id="012009e84c36a8660d26e3a3201d2fe9" category="list-text">若Connector安裝在沒有網際網路存取的站台（黑站）、則不支援使用搜尋與還原進行檔案層級還原。</block>
-  <block id="2deb7493de6dd6e8fd3126d72d730f68" category="cell">在黑暗站台不受支援</block>
   <block id="664bf8c6e31ba8a710f5213d1874cd18" category="list-text">如果您有備份授權檔案（安裝在暗處時需要）、請選取*上傳授權檔案*選項、然後依照提示附加檔案。</block>
   <block id="d4e2be367ddcfb2b47d5711136446363" category="section-title">2022年6月14日</block>
   <block id="dd16b8804cbc8afa6e2f6deb9acf5bcf" category="section-title">我們新增支援功能、可在ONTAP 無法存取網際網路的站台中備份內部部署的叢集資料</block>
@@ -2555,11 +2553,9 @@
   <block id="e191225ef89ae4b4097edff77c5ad2a5" category="list-text">對於Amazon S3、連接器可部署在AWS或內部部署環境中</block>
   <block id="2bdfeeb4dec8a7b723d287568533182e" category="list-text">對於Azure Blob、連接器可部署於Azure或內部部署</block>
   <block id="477b6dc7ebfe6a69105359bdce55f421" category="list-text">Google Cloud Storage的Connector必須部署在Google Cloud Platform VPC上</block>
-  <block id="e379a23dde4555ac0507594521c2f485" category="list-text">若為僅供部分使用、連接器必須部署在您的內部環境中StorageGRID</block>
   <block id="c49f59ffa802db74f79cfe31499cbec3" category="section-title">還原資料夾與檔案</block>
   <block id="a6d15ed479d88aab273727debe09b199" category="paragraph">請依照下列步驟、從ONTAP 一份支援的恢復磁碟區備份、將資料夾或檔案還原至磁碟區。您應該知道磁碟區的名稱、以及要用來還原資料夾或檔案的備份檔案日期。此功能使用「即時瀏覽」功能、可讓您檢視每個備份檔案中的目錄和檔案清單。</block>
   <block id="1c01241cf7c3489f40f6f12fb4239c09" category="paragraph">對於搜尋與還原、連接器可安裝在下列位置：</block>
-  <block id="b3099050d137cae2d6b32ee13fa2a9a2" category="list-text">若為僅供部分使用、連接器必須部署在內部部署、並具備網際網路連線能力StorageGRID</block>
   <block id="50dbd12360a1c9bec9e23472af649ee9" category="list-text">需求：StorageGRID</block>
   <block id="2372538267040a6e644c149e870e7242" category="paragraph">根據您的組態、有兩種方法可以實作搜尋與還原：</block>
   <block id="d1bf7f840fa5b89e3ec98ec94dcf9f3c" category="list-text">如果您的帳戶中沒有雲端供應商認證資料、則索引目錄資訊會儲存在Connector上。</block>
@@ -2756,7 +2752,6 @@
   <block id="373e31603b5a78ab3bc84cbe57c892b5" category="paragraph">每個備份原則都會提供一節_Archival Policy_、您可以套用至備份檔案。</block>
   <block id="0776412162b9ad0d387bbf818146d659" category="sidebar">支援的Google歸檔儲存層</block>
   <block id="91770f038cd944a1d3b9b347edeb2b10" category="sidebar">新增功能</block>
-  <block id="442630401ddd0f14988d739183c35505" category="list-text">物件存放區上的WORM /法規遵循模式StorageGRID 目前僅在Amazon S3和支援。這稱為DataLock功能、必須使用Cloud Backup設定來管理。</block>
   <block id="b2ff0fb046b03e40e599f1561ed5ebd3" category="list-text">不FlexGroup 支援從支援的範圍內將資料從支援的資料區還原為FlexVol 資料區、或FlexVol 將資料區還原FlexGroup 為資料區。</block>
   <block id="c911798e68210cf43e7a5a85f31ebebe" category="paragraph">若要開始使用Cloud Backup API、您需要取得使用者權杖、您的BlueXP帳戶ID和BlueXP Connector ID。</block>
   <block id="30bc6b6cbbb254a1299f2544d8a09731" category="paragraph">撥打API呼叫時、您將在「授權」標頭中新增使用者權杖、並在X-agent-id標頭中新增BlueXP Connector ID。您應該在API中使用BlueXP帳戶ID。</block>
@@ -2778,7 +2773,6 @@
   <block id="ad28f8f849480a4631fcbda2422f9afa" category="paragraph">Cloud Backup以隨用隨付模式提供消費型授權。透過雲端供應商的市場訂閱之後、您只需支付每GiB的備份資料費用、無需預付任何款項。您的雲端供應商會透過每月帳單向您收費。</block>
   <block id="2802742de18e4e6fd33742e9f320577d" category="paragraph">備份複本儲存在BlueXP在雲端帳戶中建立的物件存放區中。每個叢集/工作環境都有一個物件存放區、而BlueXP會將物件存放區命名如下：「NetApp-backup-clusteruuid」。請勿刪除此物件存放區。</block>
   <block id="bea14d044add005ebbc3ac7671a9bac7" category="list-text">如果您在SnapMirror目的地磁碟區上建立Snapshot的本機複本（無論使用的是SnapMirror標籤）、這些Snapshot將不會作為備份移至雲端。此時、您需要建立Snapshot原則、並在來源DP磁碟區中加上所需的標籤、以便Cloud Backup備份這些標籤。</block>
-  <block id="a5de9c26eaee9b57d8bcd1ff4d49f888" category="list-text">無法將資料區備份移至歸檔儲存設備、也無法使用DataLock和勒索軟體保護功能FlexGroup 。</block>
   <block id="9defdde711056fe7bbfd4e7bfc21de90" category="inline-link">深入瞭解閘道端點</block>
   <block id="5395d21beaf13b09f8644c9586a34bbb" category="paragraph">VPC閘道端點必須已存在於VPC中。<block ref="efccbdf33ae534e50311d23fe5ad227e" category="inline-link-rx"></block>。</block>
   <block id="172483accc796d1a4b4deb4fe01ad8d4" category="list-text">驗證「S3：PuttBucketPolicy」和「S3：PuttBucketOwnershipControl」權限是否為IAM角色的一部分、該角色可為BlueXP Connector提供權限。</block>
@@ -3427,7 +3421,6 @@
   <block id="98c4206e171ce9b62f1dadef4f4da528" category="list-text">您的需求必須是StorageGRID<block ref="a62572fc02ca2a884f6a1e42d38d1d55" category="inline-link-rx"></block></block>
   <block id="68aa7e5e44b2aff449b0543b49e563bd" category="inline-link-macro">深入瞭解AWS歸檔層</block>
   <block id="9ac50560d5fb673e5d33906e46dd98c6" category="list-text">目前僅支援AWS S3儲存類別的歸檔儲存設備。您可以選擇將備份分層至AWS S3 Glacier或S3 Glacier Deep Archive儲存設備。 <block ref="99a80ab47f2b3c111e86aba05224c42e" category="inline-link-macro-rx"></block>。</block>
-  <block id="ec1bc3c970d4b572c193f7ae566018d4" category="list-text">您必須註冊AWS S3訂閱、才能取得備份所在的儲存空間。</block>
   <block id="832d0ea7eab67f52faa651ad1475e14a" category="paragraph">定義叢集備份原則的歸檔設定時、您將輸入雲端供應商認證資料、然後選取您要使用的儲存類別。當您為叢集啟動備份時、Cloud Backup會建立雲端儲存庫。AWS歸檔儲存設備所需的資訊如下所示。</block>
   <block id="1561c5b8437cf775ebce2ca08e284b68" category="inline-image-macro">將備份檔案從StorageGRID 還原歸檔至AWS S3所需資訊的快照。</block>
   <block id="4e82138d6097530281cd6cb668514613" category="paragraph"><block ref="4e82138d6097530281cd6cb668514613" category="inline-image-macro-rx" type="image"></block></block>
@@ -3440,4 +3433,13 @@
   <block id="fe3f1bd257c4451d8f8bcbf9a1a58d34" category="paragraph"><block ref="1247b899b5e6800d8fd9e850903ad55a" category="inline-link-rx"></block>。</block>
   <block id="275b9b785d71f45bb8f134005ece056a" category="paragraph">*附註：*停止備份磁碟區時、除非您同意、否則您將繼續由雲端供應商支付備份所使用容量的物件儲存成本 <block ref="e2e48247dd6dcee2daca407937463dc9" category="inline-xref-macro-rx"></block>。</block>
   <block id="46fb0ddeabbcb2b9784add28928cfe7a" category="paragraph">請注意、您要套用至磁碟區的原則必須已經存在。</block>
+  <block id="da241970bf8ab518d4b9fd4ec20e3a48" category="list-text">您必須註冊Amazon S3帳戶、以取得備份所在的儲存空間。</block>
+  <block id="3c6238f54517e5cf7923ae4c33a5eff9" category="list-text">若為僅供部分使用、連接器必須部署在內部部署、無論是否可存取網際網路StorageGRID</block>
+  <block id="cd1cceb157b5982d899b66d18217af64" category="list-text">如果您是在黑暗站台中使用Connector、則Indexed目錄資訊會儲存在Connector上（需要Connector 3.9.25版或更新版本）。</block>
+  <block id="e083799711dc9b588bbb440525564506" category="section-title">我們新增支援、在沒有網際網路存取的站台中使用「搜尋與還原」來還原資料</block>
+  <block id="7582bcce7533bd53ab590d04904ea75b" category="paragraph">如果您將資料從內部ONTAP 的支援叢集備份到StorageGRID 無法存取網際網路的站台（也稱為暗站或離線站台）、現在您可以使用「搜尋與還原」還原選項、在必要時還原資料。此功能需要在離線站台部署BlueXP Connector（3.9.25版或更新版本）。</block>
+  <block id="c9ec78264dce9938676b736265201e28" category="inline-link">瞭解如何ONTAP 使用Search &amp;amp; Restore還原資料</block>
+  <block id="74aacc002c6d6d85e9786012bf71af08" category="paragraph"><block ref="fbe0ce057e5d8013a227c4cb944242a5" category="inline-link-rx"></block>。<block ref="eb618b89294e80d594faecbc4641afee" category="inline-link-rx"></block>。</block>
+  <block id="4f60787e5fe87ac0aa425be67237edec" category="list-text">無法將資料區備份移至歸檔儲存設備、也無法使用DataLock和勒索軟體保護功能FlexGroup 。</block>
+  <block id="1f973e0276bdcc7629141de9466f59f2" category="list-text">物件存放區上的WORM /法規遵循模式StorageGRID 目前僅在Amazon S3和支援。這稱為DataLock功能、必須使用Cloud Backup設定進行管理、而非使用雲端供應商介面。</block>
 </blocks>

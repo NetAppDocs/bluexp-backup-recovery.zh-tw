@@ -42,6 +42,14 @@ summary: 瞭解Cloud Backup的新功能。
 
 
 
+=== 我們新增支援、在沒有網際網路存取的站台中使用「搜尋與還原」來還原資料
+
+如果您將資料從內部ONTAP 的支援叢集備份到StorageGRID 無法存取網際網路的站台（也稱為暗站或離線站台）、現在您可以使用「搜尋與還原」還原選項、在必要時還原資料。此功能需要在離線站台部署BlueXP Connector（3.9.25版或更新版本）。
+
+https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["瞭解如何ONTAP 使用Search  Restore還原資料"]。https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["瞭解如何在離線站台中安裝Connector"]。
+
+
+
 === 能夠下載「工作監控結果」頁面做為CSV報告
 
 篩選「工作監控」頁面以顯示您感興趣的工作和行動之後、您現在可以產生並下載該資料的.csvs檔案。然後您可以分析資訊、或將報告傳送給組織中的其他人員。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["請參閱如何產生工作監控報告"]。

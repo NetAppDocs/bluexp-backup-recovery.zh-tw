@@ -56,7 +56,7 @@ image:screenshot_restore_dashboard.png["「還原儀表板」顯示使用瀏覽"
 | Volume與檔案還原可搭配儲存在Amazon S3、Azure Blob、Google Cloud和NetApp StorageGRID 的備份檔案使用 | Volume與檔案還原可搭配儲存在Amazon S3、Azure Blob、Google Cloud和NetApp StorageGRID 的備份檔案使用 
 
 
-| 在StorageGRID 無法存取網際網路的情況下、從無法存取的站台還原磁碟區、資料夾和檔案 | 在黑暗站台不受支援 
+| 在StorageGRID 無法存取網際網路的情況下、從無法存取的站台還原磁碟區、資料夾和檔案 | 在StorageGRID 無法存取網際網路的情況下、從無法存取的站台還原磁碟區、資料夾和檔案 
 
 
 | 不會處理已重新命名或刪除的檔案 | 處理新建立/刪除/重新命名的目錄、以及新建立/刪除/重新命名的檔案 
@@ -150,7 +150,7 @@ ifdef::gcp[]
 
 endif::gcp[]
 
-* 若為僅供部分使用、連接器必須部署在您的內部環境中StorageGRID
+* 若為僅供部分使用、連接器必須部署在內部部署、無論是否可存取網際網路StorageGRID
 
 
 請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能
@@ -505,7 +505,7 @@ ifdef::gcp[]
 
 endif::gcp[]
 
-* 若為僅供部分使用、連接器必須部署在內部部署、並具備網際網路連線能力StorageGRID
+* 若為僅供部分使用、連接器必須部署在內部部署、無論是否可存取網際網路StorageGRID
 
 
 請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能
@@ -574,6 +574,7 @@ endif::gcp[]
 
 +
 ** 如果您的帳戶中沒有雲端供應商認證資料、則索引目錄資訊會儲存在Connector上。
+** 如果您是在黑暗站台中使用Connector、則Indexed目錄資訊會儲存在Connector上（需要Connector 3.9.25版或更新版本）。
 ** 如果您有 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html["AWS認證資料"^] 或 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html["Azure認證"^] 在帳戶中、索引目錄會儲存在雲端供應商、就像部署在雲端的Connector一樣。（如果您同時擁有這兩項認證、則AWS預設為選取狀態。）
 +
 即使您使用的是內部部署Connector、也必須同時滿足Connector權限和雲端供應商資源的雲端供應商需求。使用此實作時、請參閱上述AWS和Azure需求。

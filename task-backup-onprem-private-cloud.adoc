@@ -216,7 +216,7 @@ NOTE: BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連�
 * 您的產品必須使用11.3或更新版本StorageGRID
 * 您的需求必須是StorageGRID https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["已探索並可在BlueXP畫版中使用"^]
 * 目前僅支援AWS S3儲存類別的歸檔儲存設備。您可以選擇將備份分層至AWS S3 Glacier或S3 Glacier Deep Archive儲存設備。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔層"^]。
-* 您必須註冊AWS S3訂閱、才能取得備份所在的儲存空間。
+* 您必須註冊Amazon S3帳戶、以取得備份所在的儲存空間。
 
 
 --
