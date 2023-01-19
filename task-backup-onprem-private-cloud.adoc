@@ -207,7 +207,7 @@ NOTE: BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連�
 
 === 準備將較舊的備份檔案歸檔至公有雲儲存設備
 
-將較舊的備份檔案分層儲存至歸檔儲存設備、可節省成本、因為您可能不需要使用較便宜的儲存類別進行備份。雖然內部部署（私有雲端）解決方案不提供歸檔儲存、但您可以將舊的備份檔案移至公有雲歸檔儲存設備StorageGRID 。
+將較舊的備份檔案分層儲存至歸檔儲存設備、可節省成本、因為您可能不需要使用較便宜的儲存類別進行備份。雖然內部部署（私有雲端）解決方案不提供歸檔儲存、但您可以將舊的備份檔案移至公有雲歸檔儲存設備StorageGRID 。以這種方式使用時、分層至雲端儲存設備或從雲端儲存設備還原的資料、會在StorageGRID 下列兩種雲端儲存設備之間移動：這種資料傳輸不涉及BlueXP。
 
 需求::
 +
@@ -217,6 +217,18 @@ NOTE: BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連�
 * 您的需求必須是StorageGRID https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["已探索並可在BlueXP畫版中使用"^]
 * 目前僅支援AWS S3儲存類別的歸檔儲存設備。您可以選擇將備份分層至AWS S3 Glacier或S3 Glacier Deep Archive儲存設備。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔層"^]。
 * 您必須註冊Amazon S3帳戶、以取得備份所在的儲存空間。
+* 應可完全控制鏟斗的存取權StorageGRID (`s3:*`）；但是、如果無法做到、儲存區原則必須授予下列S3權限StorageGRID 以供使用：
++
+** `s3:AbortMultipartUpload`
+** `s3:DeleteObject`
+** `s3:GetObject`
+** `s3:ListBucket`
+** `s3:ListBucketMultipartUploads`
+** `s3:ListMultipartUploadParts`
+** `s3:PutObject`
+** `s3:RestoreObject`
+
+
 
 
 --

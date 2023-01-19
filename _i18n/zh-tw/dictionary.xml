@@ -2359,7 +2359,6 @@
   <block id="c95623cd0395d5a6bb6105b9d32f197b" category="inline-link">藍圖XP注意事項</block>
   <block id="e8a6d0f19a957eac14b9917a6c92899b" category="list-text"><block ref="e8a6d0f19a957eac14b9917a6c92899b" category="inline-link-rx"></block></block>
   <block id="bd5465eb0e8cf8f303aee7ea9420c8b1" category="sidebar">BlueXP部落格</block>
-  <block id="e4f8a35ee8df8b5c247f6e3286e42891" category="sidebar">BlueXP使用案例</block>
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">所有BlueXP文件</block>
   <block id="dbb5638e73887ef4301df1c7b10993df" category="inline-link">在AWS GovCloud區域安裝Connector</block>
   <block id="9ead7424c07e39075bc88d26cf29486d" category="list-text"><block ref="9ead7424c07e39075bc88d26cf29486d" category="inline-link-rx"></block></block>
@@ -2785,7 +2784,6 @@
   <block id="bbc08f31565cf18b34651c7d285d9911" category="list-text">工作：管理BlueXP資料庫上的工作詳細資料項目</block>
   <block id="24a0195c713a5929a91f430eefb31465" category="list-text">授權：從BlueXP擷取工作環境的授權有效性</block>
   <block id="f3e008a63710b1317b4340caf4a574bd" category="list-text">勒索軟體掃描：對特定備份檔案進行勒索軟體掃描</block>
-  <block id="383364de1ac57828a17c795ac72c6b9c" category="list-text">還原：可讓您執行磁碟區和檔案層級的還原作業</block>
   <block id="50091c079ab0009fa21807b8bbc81cfd" category="list-text">SFR -從備份檔案擷取檔案、以執行單一檔案層級的還原作業（瀏覽與還原）</block>
   <block id="96fa87fed0ba1143a920c3c8d44c8754" category="list-text">工作環境：管理備份原則、並設定與工作環境相關的目的地物件存放區</block>
   <block id="73358bf2a9d2d2c32dbbab5b76681d7f" category="section-title">必要的連接器輸出網際網路存取端點變更</block>
@@ -3352,9 +3350,7 @@
   <block id="b17d2155a07524d0e8a3d1eb73a257c3" category="section-title">能夠將較舊的備份檔案從StorageGRID 支援系統移至AWS S3歸檔儲存設備</block>
   <block id="76592785cd14862cf74d11289e50ed92" category="paragraph">現在您可以將舊的備份檔案分層、從StorageGRID 支援的系統、到AWS S3的歸檔儲存設備。如此一來StorageGRID 、您就能釋出整個作業系統的空間、並使用經濟實惠的儲存類別來儲存舊的備份檔案、進而節省成本。您可以選擇將備份分層至AWS S3 Glacier或S3 Glacier Deep Archive儲存設備。</block>
   <block id="ec9614a46239aa59499c4a94e919963a" category="inline-link">如需詳細資訊、請參閱此處</block>
-  <block id="481c6a107a47fcbb610d4e79b7d8bc01" category="paragraph">如果您的叢集使用ONTAP 的是更新版本的版本、而StorageGRID 您的系統使用的是11.3或更新版本、則可使用此功能。<block ref="ba1010a667c53f122912d421bb932c28" category="inline-link-rx"></block>。</block>
   <block id="5baabb9bbca503ea382779d0fce7e9c5" category="section-title">能夠在Google Cloud上選擇您自己的客戶管理金鑰來進行資料加密</block>
-  <block id="d42d3ab595b05475b681bcec25a25c6b" category="paragraph">將ONTAP 資料從您的支援系統備份到Google Cloud Storage時、現在您可以在啟動精靈中選擇自己的客戶管理金鑰來進行資料加密、而不使用預設的Google管理加密金鑰。只要先設定客戶管理的加密金鑰、然後在啟動Cloud Backup時輸入詳細資料即可。</block>
   <block id="b9395c2030b2a8ad48d31ad52bd9f6e9" category="section-title">服務帳戶不再需要「儲存管理員」角色、即可在Google Cloud Storage中建立備份</block>
   <block id="d7cf6019b64afefeee4361ce4c22ce30" category="inline-link">瞭解如何準備Google Cloud Storage進行備份</block>
   <block id="121b4934193e6ec77a35338afd1028bb" category="paragraph">在早期版本中、「儲存管理員」角色是讓Cloud Backup能夠存取Google Cloud Storage儲存桶的服務帳戶所需的角色。現在您可以建立自訂角色、並減少指派給服務帳戶的權限集。<block ref="cdc0823dc4910df979845484c27cfc1d" category="inline-link-rx"></block>。</block>
@@ -3414,7 +3410,6 @@
   <block id="f8436f6242c5e270dd0e25a1a05d34a4" category="inline-link-macro">瞭解如何在黑暗的站台中備份雲端備份資料</block>
   <block id="02bf1c0a02190999eeab71bbe7fff71c" category="paragraph">強烈建議您在沒有網際網路連線的站台上安裝Connector時、定期建立Cloud Backup組態資料的本機備份。 <block ref="07f517d916bbf45a47c5d9dc6a000920" category="inline-link-macro-rx"></block>。</block>
   <block id="89d604768fdd7e6fda1e2bdb512ac56e" category="section-title">準備將較舊的備份檔案歸檔至公有雲儲存設備</block>
-  <block id="483f68b62cb5a3e5d608257045622894" category="paragraph">將較舊的備份檔案分層儲存至歸檔儲存設備、可節省成本、因為您可能不需要使用較便宜的儲存類別進行備份。雖然內部部署（私有雲端）解決方案不提供歸檔儲存、但您可以將舊的備份檔案移至公有雲歸檔儲存設備StorageGRID 。</block>
   <block id="9da2e088609ab78eb6aa7a0ffe0637b3" category="list-text">您的叢集必須使用ONTAP 的是更新版本的版本</block>
   <block id="7bbe58a850cc71a0ff06edd40213c29c" category="list-text">您的產品必須使用11.3或更新版本StorageGRID</block>
   <block id="170d42742a62bce031fc4ab2cfd0c056" category="inline-link">已探索並可在BlueXP畫版中使用</block>
@@ -3437,9 +3432,23 @@
   <block id="3c6238f54517e5cf7923ae4c33a5eff9" category="list-text">若為僅供部分使用、連接器必須部署在內部部署、無論是否可存取網際網路StorageGRID</block>
   <block id="cd1cceb157b5982d899b66d18217af64" category="list-text">如果您是在黑暗站台中使用Connector、則Indexed目錄資訊會儲存在Connector上（需要Connector 3.9.25版或更新版本）。</block>
   <block id="e083799711dc9b588bbb440525564506" category="section-title">我們新增支援、在沒有網際網路存取的站台中使用「搜尋與還原」來還原資料</block>
-  <block id="7582bcce7533bd53ab590d04904ea75b" category="paragraph">如果您將資料從內部ONTAP 的支援叢集備份到StorageGRID 無法存取網際網路的站台（也稱為暗站或離線站台）、現在您可以使用「搜尋與還原」還原選項、在必要時還原資料。此功能需要在離線站台部署BlueXP Connector（3.9.25版或更新版本）。</block>
   <block id="c9ec78264dce9938676b736265201e28" category="inline-link">瞭解如何ONTAP 使用Search &amp;amp; Restore還原資料</block>
   <block id="74aacc002c6d6d85e9786012bf71af08" category="paragraph"><block ref="fbe0ce057e5d8013a227c4cb944242a5" category="inline-link-rx"></block>。<block ref="eb618b89294e80d594faecbc4641afee" category="inline-link-rx"></block>。</block>
   <block id="4f60787e5fe87ac0aa425be67237edec" category="list-text">無法將資料區備份移至歸檔儲存設備、也無法使用DataLock和勒索軟體保護功能FlexGroup 。</block>
   <block id="1f973e0276bdcc7629141de9466f59f2" category="list-text">物件存放區上的WORM /法規遵循模式StorageGRID 目前僅在Amazon S3和支援。這稱為DataLock功能、必須使用Cloud Backup設定進行管理、而非使用雲端供應商介面。</block>
+  <block id="0c1029565d47087d49e25dbc4e2a20e9" category="list-text">還原：可讓您執行磁碟區、檔案及資料夾層級的還原作業</block>
+  <block id="b7027e7163ab44680c3c69296db41564" category="paragraph">如果內部叢集使用ONTAP 的是更新版本的版本、StorageGRID 而您的系統使用的是11.3或更新版本、則可使用此功能。<block ref="ba1010a667c53f122912d421bb932c28" category="inline-link-rx"></block>。</block>
+  <block id="0b17a5b6850808b4455bcd3d8bf54966" category="paragraph">將ONTAP 資料從您的支援系統備份到Google Cloud Storage時、現在您可以在啟動精靈中選擇自己的客戶管理金鑰來進行資料加密、而不使用預設的Google管理加密金鑰。只要先在Google中設定客戶管理的加密金鑰、然後在啟動Cloud Backup時輸入詳細資料即可。</block>
+  <block id="a282fca785a0e402e0b5cdde4c380d6d" category="paragraph">如果您將資料從內部ONTAP 的支援叢集備份到StorageGRID 無法存取網際網路的站台（也稱為暗站或離線站台）、現在您可以使用「搜尋與還原」選項在必要時還原資料。此功能需要在離線站台部署BlueXP Connector（3.9.25版或更新版本）。</block>
+  <block id="d0729ea313d81752ff62b4b9a3f956b7" category="paragraph">將較舊的備份檔案分層儲存至歸檔儲存設備、可節省成本、因為您可能不需要使用較便宜的儲存類別進行備份。雖然內部部署（私有雲端）解決方案不提供歸檔儲存、但您可以將舊的備份檔案移至公有雲歸檔儲存設備StorageGRID 。以這種方式使用時、分層至雲端儲存設備或從雲端儲存設備還原的資料、會在StorageGRID 下列兩種雲端儲存設備之間移動：這種資料傳輸不涉及BlueXP。</block>
+  <block id="a4a085a9787be2fa9b79bdf6aa072546" category="list-text">應可完全控制鏟斗的存取權StorageGRID <block ref="08fd47fd7b45cb2848f70fc30872fe0d" prefix="(" category="inline-code"></block>）；但是、如果無法做到、儲存區原則必須授予下列S3權限StorageGRID 以供使用：</block>
+  <block id="9ba767f0be9f0bee0980958cc583e14c" category="list-text"><block ref="e24d90c482d00361a495cd937be3bb7b" prefix="" category="inline-code"></block></block>
+  <block id="abd3980be6419b43c4ada2fde9c93bd1" category="list-text"><block ref="ec68e11afcd3e390ebf5080e8af5b735" prefix="" category="inline-code"></block></block>
+  <block id="94ab3733a115c1db662684796c5e5f70" category="list-text"><block ref="53cfd5032381d05f65cbc6d64e0004f5" prefix="" category="inline-code"></block></block>
+  <block id="c51afd34d09e8287bb3c293b4c19f57a" category="list-text"><block ref="05cce54a3c6e4b27fe1202c73065ac29" prefix="" category="inline-code"></block></block>
+  <block id="f4f5a5034e34b12200aaca19a2871aea" category="list-text"><block ref="2fadb459df3bdee0dccfda5cc625c37b" prefix="" category="inline-code"></block></block>
+  <block id="80ce9d537bd04197e7c7cc4227525715" category="list-text"><block ref="9c6f56f3012c2178f15d4346495a0a67" prefix="" category="inline-code"></block></block>
+  <block id="4014cba1d3679d7444ccb96338d9ee36" category="list-text"><block ref="8e0864f8129f5d2b658668b9103e83a5" prefix="" category="inline-code"></block></block>
+  <block id="139e90f4554bdc4681ca70203e695cd5" category="list-text"><block ref="28e5f48e9f12d4928897b706c15e527a" prefix="" category="inline-code"></block></block>
+  <block id="7eca941847083ddad64a04d3dca6b3b8" category="sidebar">雲端備份使用案例</block>
 </blocks>

@@ -24,7 +24,7 @@ Cloud Backup中定義了九種端點類別：
 * 工作：管理BlueXP資料庫上的工作詳細資料項目
 * 授權：從BlueXP擷取工作環境的授權有效性
 * 勒索軟體掃描：對特定備份檔案進行勒索軟體掃描
-* 還原：可讓您執行磁碟區和檔案層級的還原作業
+* 還原：可讓您執行磁碟區、檔案及資料夾層級的還原作業
 * SFR -從備份檔案擷取檔案、以執行單一檔案層級的還原作業（瀏覽與還原）
 * 工作環境：管理備份原則、並設定與工作環境相關的目的地物件存放區
 
@@ -71,10 +71,7 @@ Header:
 此API會傳回如下回應。您可以剖析*的輸出、以擷取帳戶ID。[帳戶PublicId]*。
 
 +
-[source, text]
-----
-[{"accountPublicId":"account-i6vJXvZW","accountName":"rashidn","isSaas":true,"isGov":false,"isPrivatePreviewEnabled":false,"is3rdPartyServicesEnabled":false,"accountSerial":"96064469711530003565","userRole":"Role-1"}………
-----
+ [{"accountPublicId":"account-i6vJXvZW","accountName":"rashidn","isSaas":true,"isGov":false,"isPrivatePreviewEnabled":false,"is3rdPartyServicesEnabled":false,"accountSerial":"96064469711530003565","userRole":"Role-1"}………
 . 取得內含BlueXP Connector ID的X-agent-id。
 +
 [source, http]
@@ -90,10 +87,7 @@ Header:
 此API會傳回如下回應。您可以剖析* occm.[0].[agent].[agentId]*的輸出來擷取代理程式ID。
 
 +
-[source, text]
-----
-{"occms":[{"account":"account-OOnAR4ZS","accountName":"cbs","occm":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","status":"ready","occmName":"cbsgcpdevcntsg-asia","primaryCallbackUri":"http://34.93.197.21","manualOverrideUris":[],"automaticCallbackUris":["http://34.93.197.21","http://34.93.197.21/occmui","https://34.93.197.21","https://34.93.197.21/occmui","http://10.138.0.16","http://10.138.0.16/occmui","https://10.138.0.16","https://10.138.0.16/occmui","http://localhost","http://localhost/occmui","http://localhost:1337","http://localhost:1337/occmui","https://localhost","https://localhost/occmui","https://localhost:1337","https://localhost:1337/occmui"],"createDate":"1652120369286","agent":{"useDockerInfra":true,"network":"default","name":"cbsgcpdevcntsg-asia","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Zclients","provider":"gcp","systemId":"a3aa3578-bfee-4d16-9e10-
-----
+ {"occms":[{"account":"account-OOnAR4ZS","accountName":"cbs","occm":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","status":"ready","occmName":"cbsgcpdevcntsg-asia","primaryCallbackUri":"http://34.93.197.21","manualOverrideUris":[],"automaticCallbackUris":["http://34.93.197.21","http://34.93.197.21/occmui","https://34.93.197.21","https://34.93.197.21/occmui","http://10.138.0.16","http://10.138.0.16/occmui","https://10.138.0.16","https://10.138.0.16/occmui","http://localhost","http://localhost/occmui","http://localhost:1337","http://localhost:1337/occmui","https://localhost","https://localhost/occmui","https://localhost:1337","https://localhost:1337/occmui"],"createDate":"1652120369286","agent":{"useDockerInfra":true,"network":"default","name":"cbsgcpdevcntsg-asia","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Zclients","provider":"gcp","systemId":"a3aa3578-bfee-4d16-9e10-
 
 
 
@@ -145,7 +139,7 @@ curl --location --request POST 'https://api.bluexp.netapp.com/account/account-Dp
 [source, text]
 ----
 {
-    "job-id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a"
+ "job-id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a"
 }
 ----
 .監控回應。
