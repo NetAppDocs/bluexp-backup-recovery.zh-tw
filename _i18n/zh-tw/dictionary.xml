@@ -1908,7 +1908,6 @@
   <block id="7e9e3d210bbdc9a1da52aaf1ad227746" category="section-title">使用「瀏覽與還原」還原資料夾與檔案</block>
   <block id="27816218998e04ffd3077d0806e7798b" category="paragraph">如果您只需要從ONTAP 一個還原磁碟區備份中還原幾個檔案、您可以選擇還原資料夾或個別檔案、而非還原整個磁碟區。您可以將資料夾和檔案還原至原始工作環境中的現有磁碟區、或還原至使用相同雲端帳戶的不同工作環境。您也可以將資料夾和檔案還原至內部部署ONTAP 的作業系統上的磁碟區。</block>
   <block id="ced64378309b598ee856f94695ccdd3a" category="paragraph">此時、您只能選取及還原單一資料夾。而且只會還原該資料夾中的檔案-不會還原子資料夾或子資料夾中的檔案。</block>
-  <block id="8d2050d73759f67297630e3e686d074f" category="list-text">當備份檔案位於歸檔儲存設備中時、目前不支援資料夾層級的還原。在這種情況下、您可以從尚未歸檔的較新備份檔案還原資料夾、也可以從歸檔的備份還原整個磁碟區、然後存取所需的資料夾和檔案。</block>
   <block id="502b9bcf8737b06b486f332278870bbf" category="list-text">執行_file_還原作業的版本必須為9.6或更新版本。ONTAP</block>
   <block id="cee5f78cfda5fc2f3b24ce19bdf5119a" category="section-title">資料夾與檔案還原程序</block>
   <block id="f3c6f7e9aebf0c7de403d55832a37318" category="list-text">若要從磁碟區備份還原資料夾或一或多個檔案、請按一下「*還原*」索引標籤、然後按一下「_瀏覽與還原_」下的「*還原檔案或資料夾*」。</block>
@@ -3451,4 +3450,6 @@
   <block id="4014cba1d3679d7444ccb96338d9ee36" category="list-text"><block ref="8e0864f8129f5d2b658668b9103e83a5" prefix="" category="inline-code"></block></block>
   <block id="139e90f4554bdc4681ca70203e695cd5" category="list-text"><block ref="28e5f48e9f12d4928897b706c15e527a" prefix="" category="inline-code"></block></block>
   <block id="7eca941847083ddad64a04d3dca6b3b8" category="sidebar">雲端備份使用案例</block>
+  <block id="66d2847cfd42bf73060fb82fb4345a9a" category="list-text">如果備份檔案已設定DataLock和勒索軟體、則目前不支援資料夾層級還原。在這種情況下、您可以從備份檔案還原整個磁碟區、然後存取所需的資料夾和檔案。</block>
+  <block id="5571d67bc301ab9246278c7b368f2013" category="list-text">如果備份檔案位於歸檔儲存設備中、則目前不支援資料夾層級的還原。在這種情況下、您可以從尚未歸檔的較新備份檔案還原資料夾、也可以從歸檔的備份還原整個磁碟區、然後存取所需的資料夾和檔案。</block>
 </blocks>
