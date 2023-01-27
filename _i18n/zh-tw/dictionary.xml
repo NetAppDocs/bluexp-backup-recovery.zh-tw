@@ -1007,7 +1007,6 @@
   <block id="2acfaf00d1f43b0bc630fdcf43c20bb3" category="paragraph">此表提供兩種方法的比較。</block>
   <block id="1181e345cf6d2eaef5900c975d430d7d" category="cell">瀏覽與還原</block>
   <block id="7d0014a7ab187c6931fc2183a6074420" category="cell">搜尋與還原</block>
-  <block id="fa6009564cbbb803ab9e939ec7396236" category="cell">不會處理已重新命名或刪除的檔案</block>
   <block id="609c9e9bd29468f2ba84839f3741b886" category="cell">處理新建立/刪除/重新命名的目錄、以及新建立/刪除/重新命名的檔案</block>
   <block id="7676f4eb0750d027aaf39357e74a6f0a" category="cell">瀏覽橫跨公有雲和私有雲的結果</block>
   <block id="5559993f6f3050a853326203c63f7ed0" category="cell">瀏覽跨公有雲和本機Snapshot複本的結果</block>
@@ -3452,4 +3451,13 @@
   <block id="7eca941847083ddad64a04d3dca6b3b8" category="sidebar">雲端備份使用案例</block>
   <block id="66d2847cfd42bf73060fb82fb4345a9a" category="list-text">如果備份檔案已設定DataLock和勒索軟體、則目前不支援資料夾層級還原。在這種情況下、您可以從備份檔案還原整個磁碟區、然後存取所需的資料夾和檔案。</block>
   <block id="5571d67bc301ab9246278c7b368f2013" category="list-text">如果備份檔案位於歸檔儲存設備中、則目前不支援資料夾層級的還原。在這種情況下、您可以從尚未歸檔的較新備份檔案還原資料夾、也可以從歸檔的備份還原整個磁碟區、然後存取所需的資料夾和檔案。</block>
+  <block id="0375f4855be072c7d856a0233cc21de9" category="section-title">支援雲端供應商解決方案</block>
+  <block id="be845c219bb74b14349ffa6e27e7aef3" category="paragraph">如需您已整合至BlueXP的下列雲端供應商解決方案的技術支援、請參閱該產品的藍圖XP文件中的「取得協助」。</block>
+  <block id="5bf5309465f91318228a7f956b826348" category="list-text"><block ref="5bf5309465f91318228a7f956b826348" category="inline-link-macro-rx"></block></block>
+  <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link-macro">Azure NetApp Files</block>
+  <block id="0e2bc9c853e0af52ead12823c025e58b" category="list-text"><block ref="0e2bc9c853e0af52ead12823c025e58b" category="inline-link-macro-rx"></block></block>
+  <block id="b0cee72642f5457a71ddd0b49efb6d93" category="inline-link-macro">適用於 Google Cloud Cloud Volumes Service</block>
+  <block id="02efcbea18b9485a78a41871dce1e64d" category="list-text"><block ref="02efcbea18b9485a78a41871dce1e64d" category="inline-link-macro-rx"></block></block>
+  <block id="67b74e19355f9340daf7f62ceb8233d5" category="list-text">連接埠1433必須開啟、以便連接器與Azure Synapse SQL服務之間進行通訊。</block>
+  <block id="8042f6982b79849d158e3d7ac9190cc2" category="cell">如果檔案已刪除或重新命名、而且使用者不知道原始檔案名稱、則不會處理檔案還原</block>
 </blocks>
