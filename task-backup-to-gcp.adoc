@@ -51,7 +51,10 @@ image:screenshot_backup_provider_settings_gcp.png["快照顯示雲端供應商�
 預設原則會每天備份磁碟區、並保留每個磁碟區最近 30 個備份複本。變更為每小時、每日、每週、每月或每年備份、 或選取其中一個系統定義的原則、以提供更多選項。您也可以變更要保留的備份複本數量。
 
 [role="quick-margin-para"]
-image:screenshot_backup_policy_gcp_no_archive.png["顯示Cloud Backup設定的快照、您可以在其中啟用或停用此功能、然後選擇備份保留。"]
+根據預設、備份會儲存在標準儲存設備中。如果您的叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後將備份分層歸檔至歸檔儲存設備、以進一步最佳化成本。 link:concept-cloud-backup-policies.html["深入瞭解可用的Cloud Backup原則組態設定"^]。
+
+[role="quick-margin-para"]
+image:screenshot_backup_policy_gcp.png["顯示Cloud Backup設定的快照、您可以在其中啟用或停用此功能、然後選擇備份保留。"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 選取您要備份的磁碟區
 [role="quick-margin-para"]
@@ -200,8 +203,9 @@ image:screenshot_backup_provider_settings_gcp.png["快照顯示雲端供應商�
 +
 .. 輸入預設原則的名稱。您不需要變更名稱。
 .. 定義備份排程、並選擇要保留的備份數量。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["請參閱您可以選擇的現有原則清單"^]。
+.. 若使用ONTAP 的是《支援資料》9.12.1或更新版本、您可以選擇在特定天數後將備份分層歸檔至「歸檔」儲存設備、以進一步最佳化成本。 link:concept-cloud-backup-policies.html["深入瞭解可用的Cloud Backup原則組態設定"^]。
 +
-image:screenshot_backup_policy_gcp_no_archive.png["顯示Cloud Backup設定的快照、您可以在其中啟用或停用此功能、然後選擇備份保留。"]
+image:screenshot_backup_policy_gcp.png["顯示Cloud Backup設定的快照、您可以在其中啟用或停用此功能、然後選擇備份保留。"]
 
 
 

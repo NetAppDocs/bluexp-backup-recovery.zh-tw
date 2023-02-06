@@ -83,7 +83,7 @@ image:screenshot_restore_dashboard.png["「還原儀表板」顯示使用瀏覽"
 
 == 使用瀏覽與還原還原ONTAP 還原資料
 
-開始還原磁碟區、資料夾或檔案之前、您應該知道要還原的磁碟區名稱、磁碟區所在工作環境的名稱、以及要還原的備份檔案的大約日期。
+開始還原磁碟區、資料夾或檔案之前、您應該知道要還原的磁碟區名稱、磁碟區所在工作環境和SVM的名稱、以及要還原的備份檔案的大約日期。
 
 *附註：*如果包含您要還原之資料的備份檔案位於歸檔儲存設備（從ONTAP 版本號9.10.1開始）中、還原作業將需要較長的時間、而且會產生成本。此外、目的地叢集也必須執行ONTAP 適用於Volume還原的版本為《支援還原功能》、適用於檔案還原的版本為《支援功能》、適用於Google歸檔和StorageGRID 《支援功能》的版本則為《支援功能》、適用於Google歸檔和《支援功能》。
 
@@ -104,6 +104,9 @@ ifdef::gcp[]
 link:reference-google-backup-tiers.html["深入瞭解如何從Google歸檔儲存設備還原"]。
 
 endif::gcp[]
+
+
+NOTE: 當從Azure還原資料至StorageGRID 支援的系統時、不支援高優先順序。
 
 
 
@@ -166,7 +169,7 @@ NOTE: 如果備份檔案已設定DataLock和勒索軟體、則無法還原資料
 
 image:diagram_browse_restore_volume.png["顯示使用瀏覽"]
 
-如您所見、您必須知道工作環境名稱、磁碟區名稱及備份檔案日期、才能執行磁碟區還原。
+如您所見、您需要知道工作環境名稱、儲存VM、Volume名稱和備份檔案日期、才能執行Volume還原。
 
 下列影片顯示還原磁碟區的快速步驟：
 
@@ -218,7 +221,7 @@ endif::gcp[]
 
 * 從StorageGRID 物件還原時、請輸入StorageGRID 用來ONTAP 與StorageGRID 物件進行HTTPS通訊的支援伺服器FQDN和連接埠、選擇存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 位於目的地Volume所在之資料中心內的IPspace。
 +
-.. 輸入您要用於還原磁碟區的名稱、然後選取磁碟區所在的Storage VM和Aggregate。根據預設、*<SOUR_volume名稱>_restore *會用作磁碟區名稱。
+.. 輸入您要用於還原磁碟區的名稱、然後選取磁碟區所在的Storage VM和Aggregate。還原FlexGroup 某個卷時、您可以選擇多個集合體。根據預設、*<SOUR_volume名稱>_restore *會用作磁碟區名稱。
 +
 image:screenshot_restore_new_vol_name.png["輸入您要還原之新磁碟區名稱的快照。"]
 
@@ -422,7 +425,7 @@ image:screenshot_restore_select_dest.png["選取您要還原之檔案的磁碟�
 
 您可以ONTAP 使用「搜尋與還原」、從還原的還原檔還原磁碟區、資料夾或檔案。「搜尋與還原」可讓您從儲存在雲端儲存設備上的所有備份中搜尋特定的磁碟區、資料夾或檔案、以供特定供應商使用、然後執行還原。您不需要知道確切的工作環境名稱或磁碟區名稱、搜尋會查看所有的Volume備份檔案。
 
-搜尋作業也會查看ONTAP 所有適用於您的Shapes的本機Snapshot複本。由於從本機Snapshot複本還原資料的速度比從備份檔案還原更快、成本更低、因此您可能想要從Snapshot還原資料。您可以從畫版上的Volume Details（磁碟區詳細資料）頁面（而非Cloud Backup）、將Snapshot還原為新的磁碟區。
+搜尋作業也會查看ONTAP 所有適用於您的Shapes的本機Snapshot複本。由於從本機Snapshot複本還原資料的速度比從備份檔案還原更快、成本更低、因此您可能想要從Snapshot還原資料。您可以將Snapshot還原為新的Volume https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["從畫版上的Volume Details（Volume詳細資料）頁面"^] （而非雲端備份）。
 
 當您從備份檔案還原磁碟區時、Cloud Backup會使用備份中的資料來建立_new磁碟區。您可以將資料還原為原始工作環境中的磁碟區、或還原至與來源工作環境位於相同雲端帳戶中的不同工作環境。您也可以將磁碟區還原至內部部署ONTAP 的作業系統。
 
@@ -452,6 +455,7 @@ endif::gcp[]
 ====
 * 如果備份檔案已設定DataLock和勒索軟體、則目前不支援資料夾層級還原。在這種情況下、您可以從備份檔案還原整個磁碟區、然後存取所需的資料夾和檔案。
 * 如果備份檔案位於歸檔儲存設備中、則目前不支援資料夾層級的還原。在這種情況下、您可以從尚未歸檔的較新備份檔案還原資料夾、也可以從歸檔的備份還原整個磁碟區、然後存取所需的資料夾和檔案。
+* 當從Azure還原資料至StorageGRID 支援的系統時、不支援高還原優先順序。
 
 
 ====
@@ -542,7 +546,7 @@ ifdef::azure[]
 
 * Azure要求：
 +
-** 您必須在訂閱中註冊Azure Synapse Analytics資源供應商。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
+** 您必須在訂閱中註冊Azure Synapse Analytics資源供應商（稱為「Microsoft.Synapse」）。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
 ** 特定Azure Synapse Workspace與Data Lake Storage帳戶權限必須新增至提供BlueXP權限的使用者角色。 link:task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["請確定所有權限均已正確設定"]。
 +
 請注意、如果您已經使用Cloud Backup搭配過去設定的Connector、現在您需要將Azure Synapse Workspace和Data Lake Storage Account權限新增至BlueXP使用者角色。這些都是新功能、搜尋與還原是必備功能。
@@ -684,7 +688,7 @@ image:screenshot_restore_step2_search_restore.png["顯示如何檢視符合搜�
 
 . 選取要還原磁碟區、資料夾或檔案的目的地位置、然後按一下*還原*。
 +
-** 對於Volume、您可以選取原始目的地工作環境、也可以選取替代的工作環境。
+** 對於Volume、您可以選取原始目的地工作環境、也可以選取替代的工作環境。還原FlexGroup 某個卷時、您可以選擇多個集合體。
 ** 對於資料夾、您可以還原至原始位置、也可以選擇替代位置、包括工作環境、磁碟區和資料夾。
 ** 對於檔案、您可以還原至原始位置、也可以選擇替代位置、包括工作環境、磁碟區和資料夾。選取原始位置時、您可以選擇覆寫來源檔案或建立新檔案。
 +

@@ -27,7 +27,7 @@ Cloud Backup提供備份與還原功能、可保護ONTAP 及長期歸檔您的�
 * 將獨立的資料磁碟區複本備份到低成本的物件儲存設備。
 * 將單一備份原則套用至叢集中的所有磁碟區、或將不同的備份原則指派給具有獨特還原點目標的磁碟區。
 * 建立備份原則、以套用至叢集中未來建立的所有磁碟區。
-* 製作不可變的備份檔案、以便在保留期間鎖定。
+* 製作不可變的備份檔案、以便在保留期間鎖定及保護這些檔案。
 * 掃描備份檔案以找出可能的勒索軟體攻擊、並自動移除/取代受感染的備份。
 * 將較舊的備份檔案分層至歸檔儲存設備、以節省成本。
 * 刪除備份關係、以便在保留磁碟區備份的同時、歸檔不需要的來源磁碟區。
@@ -44,7 +44,7 @@ Cloud Backup提供備份與還原功能、可保護ONTAP 及長期歸檔您的�
 * 將磁碟區、資料夾或個別檔案還原至來源系統或其他系統。
 * 使用不同的訂閱/帳戶或不同地區的帳戶、將資料還原至工作環境。
 * 資料會在區塊層級上還原、將資料直接放在您指定的位置、同時保留原始ACL。
-* 可瀏覽且可搜尋的檔案目錄、可用於選取個別資料夾和檔案以進行單一檔案還原。
+* 可瀏覽且可搜尋的檔案目錄、可輕鬆選取個別資料夾和檔案、以進行單一檔案還原。
 
 
 
@@ -111,17 +111,8 @@ Cloud Backup支援下列類型的磁碟區：
 * 不含更新版本的ONTAP FlexGroup
 
 
-[NOTE]
-====
-*不限數量的Volume還原限制* FlexGroup ：
+請參閱的章節 <<限制,備份與還原限制>> 以瞭解其他需求與限制。
 
-* 完整Volume還原僅支援內部ONTAP 的功能（Cloud Volumes ONTAP 目前不支援哪些系統）。
-* 內部ONTAP 系統的內部系統支援檔案層級還原Cloud Volumes ONTAP 。
-* 目前不支援目錄/資料夾還原。
-* 此時可將磁碟區還原至單一Aggregate。
-
-
-====
 
 
 == 成本
@@ -335,7 +326,7 @@ TIP: 資料保護磁碟區備份的保留期間與來源SnapMirror關係中所�
 
 備份保留期間與備份排程保留期間相同、加上14天。例如、使用_5_份複本的每週備份會鎖定每個備份檔案5週。_每月_備份加上_6_份複本、將會鎖定每個備份檔案6個月。
 
-當您的備份目的地是Amazon S3或NetApp StorageGRID 時、目前可提供支援。其他儲存供應商目的地將會新增至未來版本。
+當您的備份目的地是Amazon S3、Azure Blob或NetApp StorageGRID 時、目前可提供支援。其他儲存供應商目的地將會新增至未來版本。
 
 請參閱 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLock和勒索軟體保護"^] 如需DataLock和勒索軟體保護功能運作方式的詳細資訊、請參閱。
 
@@ -372,7 +363,7 @@ ifdef::gcp[]
 
 * 在 GCP 中、備份會與 _Standard_ 儲存類別相關聯。
 +
-如果您的內部叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後、將舊版備份分層至Cloud Backup UI中的_Archive_儲存設備、以進一步最佳化成本。（Cloud Volumes ONTAP 此功能目前不適用於不支援的系統。） link:reference-google-backup-tiers.html["深入瞭解Google歸檔儲存設備"^]。
+如果您的叢集使用ONTAP 的是版本不支援的版本9.12.1或更高版本、您可以選擇在一定天數後、將舊的備份分層至Cloud Backup UI中的_Archive_儲存設備、以進一步最佳化成本。 link:reference-google-backup-tiers.html["深入瞭解Google歸檔儲存設備"^]。
 
 
 
@@ -380,7 +371,7 @@ endif::gcp[]
 
 * 在本產品中、備份會與_Standard_儲存類別相關聯。StorageGRID
 +
-如果內部叢集使用ONTAP 的是不含更新版本的版本、StorageGRID 而您的系統使用的是11.3或更新版本、您可以將舊版備份檔案歸檔至公有雲歸檔儲存設備。目前僅支援AWS S3儲存類別的歸檔儲存設備。您可以選擇在一定天數後、將備份分層至AWS _S3 Glacier或_S3 Glacier Deep Archive_儲存設備。 link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["深入瞭解StorageGRID 如何從還原歸檔備份檔案"^]。
+如果您的內部叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您的支援系統使用的是11.4或更新版本、您可以在特定天數後、將舊版備份檔案歸檔至公有雲歸檔儲存設備。目前支援AWS S3 Glacier / S3 Glacier Deep歸檔或Azure歸檔儲存層。 link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["深入瞭解StorageGRID 如何從還原歸檔備份檔案"^]。
 
 
 
@@ -427,7 +418,15 @@ endif::gcp[]
 ** 套用至磁碟區的Snapshot原則必須是Cloud Backup可辨識的原則之一、包括每日、每週、每月等。預設的「sm_已 建立」原則（用於*鏡射所有Snapshot *） 無法辨識、且DP磁碟區不會顯示在可備份的磁碟區清單中。
 
 
-* 僅支援從不含支援的物件資料來源進行的資料（MCC）備份：MCC > SnapMirror >物件式備份> Cloud Backup。MetroCluster ONTAP ONTAP
+
+
+* 支援MetroCluster ：
++
+** 若使用ONTAP 的是《支援使用支援的功能》（例如《支援使用支援的功能》）、則可在連接至主要系統時使用此功能。整個備份組態會傳輸到次要系統、以便在切換後自動繼續備份到雲端。您不需要在次要系統上設定備份（事實上、您受到限制、無法這麼做）。
+** 使用ONTAP 版本不支援的版本僅ONTAP 支援從版本不支援的版本。
+** 目前不支援還原磁碟區的備份FlexGroup 。
+
+
 * 資料保護磁碟區不支援使用*立即備份*按鈕進行臨機操作磁碟區備份。
 * 不支援SM至BC組態。
 * 不支援從單一磁碟區到多個物件存放區的SnapMirror關係、因此Cloud Backup不支援此組態。ONTAP
@@ -436,16 +435,16 @@ endif::gcp[]
 
 
 
-=== 檔案與資料夾還原限制
+=== 還原限制
 
 這些限制同時適用於「搜尋與還原」和「瀏覽與還原」還原檔案與資料夾的方法、除非特別提出。
 
 * 瀏覽與還原一次最多可還原100個個別檔案。
 * 搜尋與還原一次可還原1個檔案。
 * 瀏覽與還原及搜尋與還原可一次還原1個資料夾。
+* 目前不支援FlexGroup 將目錄/資料夾還原至不支援的功能。
 * 不FlexGroup 支援從支援的範圍內將資料從支援的資料區還原為FlexVol 資料區、或FlexVol 將資料區還原FlexGroup 為資料區。
-
-
 * 如果備份檔案位於歸檔儲存設備中、則無法還原個別資料夾。
 * 要還原的檔案必須使用與目的地Volume上語言相同的語言。如果語言不同、您將會收到錯誤訊息。
+* 從Azure還原資料至StorageGRID 整套系統時、不支援「_High_還原」優先順序。
 

@@ -18,6 +18,52 @@ summary: 瞭解Cloud Backup的新功能。
 
 
 
+== 2023年2月6日
+
+
+
+=== 能夠將較舊的備份檔案從StorageGRID 無法還原的系統移至Azure歸檔儲存設備
+
+現在、您可以將舊版備份檔案分層、從StorageGRID 無法更新的系統到Azure中的歸檔儲存設備。如此一來StorageGRID 、您就能釋出整個作業系統的空間、並使用經濟實惠的儲存類別來儲存舊的備份檔案、進而節省成本。
+
+如果內部叢集使用ONTAP 的是更新版本的版本、StorageGRID 而您的系統使用的是11.4或更新版本、則可使用此功能。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["如需詳細資訊、請參閱此處"^]。
+
+
+
+=== 您可以在Azure Blob中設定DataLock和勒索軟體保護功能、以供備份檔案使用
+
+Azure Blob儲存的備份檔案現在支援DataLock和勒索軟體保護。如果Cloud Volumes ONTAP 您的支援對象ONTAP 為執行ONTAP 支援的支援對象、那麼您現在可以鎖定備份檔案、然後掃描檔案、以偵測可能的勒索軟體。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-cloud-backup-policies.html#datalock-and-ransomware-protection["深入瞭解如何使用DataLock和勒索軟體保護來保護備份"^]。
+
+
+
+=== 備份與還原FlexGroup 功能強化功能
+
+* 現在、您可以在還原FlexGroup 完一個功能區時、選擇多個集合體。在最後一個版本中、您只能選取單一Aggregate。
+* 目前支援在不支援的系統上進行還原Cloud Volumes ONTAP FlexGroup 。在上一版中、您只能還原到內部ONTAP 的作業系統。
+
+
+
+
+=== 可將舊版備份移至Google Archival儲存設備Cloud Volumes ONTAP
+
+備份檔案最初是在Google Standard儲存類別中建立。現在您可以使用Cloud Backup將舊備份分層至Google歸檔儲存設備、以進一步最佳化成本。上一版僅支援內部ONTAP 使用的功能、目前Cloud Volumes ONTAP 支援部署在Google Cloud上的各種系統。
+
+
+
+=== Volume Restore作業現在可讓您選取要還原Volume資料的SVM
+
+現在您可以將Volume資料還原至ONTAP 您的叢集中的不同儲存VM。過去無法選擇儲存VM。
+
+
+
+=== 增強支援以支援各種形式進行的Volume MetroCluster
+
+當使用ONTAP 的是版本號為《支援使用支援的功能》（例如《支援使用支援的功能》）的更新版本時、系統會以MetroCluster 「支援的功能」的形式連接至主系統。整個備份組態會傳輸到次要系統、以便在切換後自動繼續備份到雲端。
+
+https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html#backup-limitations["如需詳細資訊、請參閱備份限制"]。
+
+
+
 == 2023年1月9日
 
 

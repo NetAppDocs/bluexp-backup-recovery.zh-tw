@@ -51,9 +51,11 @@ image:screenshot_backup_schedule_settings.png["建立備份原則時的備份排
 
 == DataLock和勒索軟體保護
 
-Cloud Backup支援DataLock和勒索軟體保護功能、可用於磁碟區備份。這些功能可讓您鎖定備份檔案、並加以掃描、以偵測備份檔案上可能的勒索軟體。這是可選的設定、您可以在備份原則中定義、以便為叢集的磁碟區備份提供額外保護。
+Cloud Backup支援DataLock和勒索軟體保護功能、可用於磁碟區備份。這些功能可讓您鎖定備份檔案、並進行掃描、以偵測備份檔案上可能的勒索軟體。這是可選的設定、您可以在備份原則中定義、以便為叢集的磁碟區備份提供額外保護。
 
 這兩項功能都能保護您的備份檔案、因此當勒索軟體攻擊來源資料時、您永遠都能擁有有效的備份檔案來還原資料。此外、也有助於滿足某些法規要求、在某些情況下、備份必須鎖定並保留一段時間。啟用DataLock和勒索軟體保護後、隨附於Cloud Backup啟動的雲端儲存區將會啟用物件鎖定和物件版本管理功能。
+
+https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["如需詳細資料、請參閱DataLock和勒索軟體保護部落格"^]。
 
 此功能無法為來源磁碟區提供保護、只能用於這些來源磁碟區的備份。使用NetApp https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["不再是不一樣的Cloud Insights Cloud Secure"^]或部分 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["提供來自VMware的反勒索軟體保護ONTAP"^] 保護來源磁碟區。
 
@@ -110,48 +112,84 @@ DataLock可保護您的備份檔案、避免在一段時間內遭到修改或刪
 
 每個備份原則都會提供一個區段、說明您可以套用至備份檔案的_DataLock和勒索軟體Protection。
 
-image:screenshot_datalock_ransomware_settings.png["建立備份原則時、DataLock和勒索軟體保護設定的快照。"]
+image:screenshot_datalock_ransomware_settings.png["建立備份原則時、AWS、Azure和StorageGRID VMware的DataLock和勒索軟體保護設定的快照。"]
 
 您可以針對每個備份原則從下列設定中選擇：
 
-* 無（預設）
+[role="tabbed-block"]
+====
+.AWS
+--
+* *無*（預設）
 +
 DataLock保護和勒索軟體保護已停用。
 
-* 治理（StorageGRID 不適用於此產品）
+* *治理*
 +
-DataLock設定為_Governance模式、其中使用者具有特定權限（link:concept-cloud-backup-policies.html#requirements["請參閱以下內容"]）可在保留期間覆寫或刪除備份檔案。已啟用勒索軟體保護。
+DataLock設為使用者使用的_Governance模式 `s3:BypassGovernanceRetention` 權限（link:concept-cloud-backup-policies.html#requirements["請參閱以下內容"]）可在保留期間覆寫或刪除備份檔案。已啟用勒索軟體保護。
 
-* 法規遵循
+* *法規遵循*
 +
 DataLock設為_Compliance模式、在保留期間內、任何使用者都無法覆寫或刪除備份檔案。已啟用勒索軟體保護。
 
 
 
+--
+.Azure
+--
+* *無*（預設）
++
+DataLock保護和勒索軟體保護已停用。
 
-NOTE: 「支援物件鎖定」功能提供單一DataLock模式、相當於StorageGRID 「符合法規」模式。不支援等效的治理模式、因此沒有使用者能夠略過保留設定、覆寫受保護的備份、或刪除鎖定的備份。
+* *解除鎖定*
++
+備份檔案在保留期間受到保護。保留期間可以增加或縮短。通常使用24小時來測試系統。已啟用勒索軟體保護。
 
+* *已鎖定*
++
+備份檔案在保留期間受到保護。保留期間可以增加、但不能縮短。滿足完整的法規遵循要求。已啟用勒索軟體保護。
+
+
+
+--
+.StorageGRID
+--
+* *無*（預設）
++
+DataLock保護和勒索軟體保護已停用。
+
+* *法規遵循*
++
+DataLock設為_Compliance模式、在保留期間內、任何使用者都無法覆寫或刪除備份檔案。已啟用勒索軟體保護。
+
+
+
+--
+====
 
 
 === 支援的工作環境與物件儲存供應商
 
 在下列公有雲和私有雲供應商中使用物件儲存設備時、您可以從ONTAP 下列工作環境啟用下列功能中的「資料鎖定」和「勒索軟體」保護功能。未來版本將會新增其他雲端供應商。
 
-[cols="50,50"]
+[cols="55,45"]
 |===
 | 來源工作環境 | 備份檔案目的地ifdef：：AWS [] 
 
 
-| AWS 中的 Cloud Volumes ONTAP | Amazon S3 endif..:AWS：ifdef：：azure[] endif::azure[] ifdef：：GCP [] endiff:GCP [] 
+| AWS 中的 Cloud Volumes ONTAP | Amazon S3 endif:::AWS[] ifdef::azure[] 
 
 
-| 內部部署 ONTAP 的作業系統 | ifdef：：AWS：Amazon S3 endif：：AWS [] ifdef：：azure[] endif：：azure[] ifdef：：Gcp[] endif：：GCP[] NetApp StorageGRID Rside 
+| Azure 中的 Cloud Volumes ONTAP | Azure Blob endif::azure[] ifdef：：GCP[] endif::GCP[] 
+
+
+| 內部部署 ONTAP 的作業系統 | ifdef：：AWS：Amazon S3 endif：：AWS [] ifdef：：azure[] Azure Blob endif：：azure[] ifdef：：gcp[] endif：：gcp[] NetApp StorageGRID 
 |===
 
 
 === 需求
 
-* 您的叢集必須執行ONTAP 版本不只是功能不穩定的版本
+* 您的叢集必須執行ONTAP 版本不只是更新版本的版本（Azure則為9.12.1）
 * 您必須使用的是BlueXP 3.9.21或更新版本
 
 
@@ -200,6 +238,17 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aw
 
 endif::aws[]
 
+ifdef::azure[]
+
+* 對於Azure：
++
+** 連接器可部署在雲端或內部部署
+
+
+
+
+endif::azure[]
+
 * 適用於下列項目：StorageGRID
 +
 ** 連接器必須部署在內部部署環境中（可安裝在有或沒有網際網路存取的站台中）
@@ -213,7 +262,8 @@ endif::aws[]
 === 限制
 
 * 如果您已在備份原則中設定歸檔儲存設備、則無法使用DataLock和勒索軟體保護功能。
-* 您在啟動Cloud Backup時所選取的DataLock選項（監管或法規遵循）、必須用於該叢集的所有備份原則。您無法在單一叢集上同時使用「治理」和「法規遵循」模式鎖定。
+* 啟動Cloud Backup時所選取的DataLock選項、必須用於該叢集的所有備份原則。
+* 您無法在單一叢集上同時使用兩種DataLock模式。
 * 如果啟用DataLock、所有Volume備份都會鎖定。您無法混合使用單一叢集的鎖定和非鎖定磁碟區備份。
 * DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。雲端備份已啟動之後、您就無法啟用此功能。
 
@@ -234,7 +284,7 @@ ifdef::aws[]
 
 * 在AWS中、備份是從_Standard_儲存類別開始、30天後轉換至_Standard-in頻繁 存取_儲存類別。
 +
-如果您的叢集使用ONTAP 的是版本號為S還原9.10.1或更新版本、您可以選擇在特定天數後、將舊版備份分層至_S3 Glacier或_S3 Glacier Deep Archive_儲存設備、以進一步最佳化成本。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔儲存設備"^]。
+如果您的叢集使用ONTAP 的是更新版本的版本、您可以將舊版備份分層至_S3 Glacier或_S3 Glacier Deep Archive_儲存設備。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔儲存設備"^]。
 
 +
 請注意、如果您在啟動Cloud Backup時、在第一個備份原則中選擇「_S3 Glacier」或「_S3 Glacier Deep Archive_」、則該層將是該叢集未來備份原則唯一可用的歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。
@@ -247,7 +297,7 @@ ifdef::azure[]
 
 * 在Azure中、備份會與_cool存取層建立關聯。
 +
-如果您的叢集使用ONTAP 的是版本號為S還原9.10.1或更新版本、您可以選擇在特定天數後、將舊版備份分層至_Azure Archive_儲存設備、以進一步最佳化成本。 link:reference-azure-backup-tiers.html["深入瞭解Azure歸檔儲存設備"^]。
+如果您的叢集使用ONTAP 的是版本為S還原9.10.1或更新版本、您可以將舊版備份分層保存至_Azure Archive_儲存設備。 link:reference-azure-backup-tiers.html["深入瞭解Azure歸檔儲存設備"^]。
 
 
 
@@ -257,7 +307,7 @@ ifdef::gcp[]
 
 * 在 GCP 中、備份會與 _Standard_ 儲存類別相關聯。
 +
-如果您的內部叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後、將舊版備份分層至Cloud Backup UI中的_Archive_儲存設備、以進一步最佳化成本。（Cloud Volumes ONTAP 此功能目前不適用於不支援的系統。） link:reference-google-backup-tiers.html["深入瞭解Google歸檔儲存設備"^]。
+如果您的內部叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後、將舊版備份分層至Cloud Backup UI中的_Archive_儲存設備、以進一步最佳化成本。 link:reference-google-backup-tiers.html["深入瞭解Google歸檔儲存設備"^]。
 
 
 
@@ -265,6 +315,20 @@ endif::gcp[]
 
 * 在本產品中、備份會與_Standard_儲存類別相關聯。StorageGRID
 +
-如果內部叢集使用ONTAP 的是不含更新版本的版本、StorageGRID 而您的系統使用的是11.3或更新版本、您可以將舊版備份檔案歸檔至公有雲歸檔儲存設備。目前僅支援AWS S3儲存類別的歸檔儲存設備。您可以選擇在一定天數後、將備份分層至AWS _S3 Glacier或_S3 Glacier Deep Archive_儲存設備。 link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["深入瞭解StorageGRID 如何從還原歸檔備份檔案"^]。
+如果您的內部叢集使用ONTAP 的是不含更新版本的版本、StorageGRID 而您的系統使用的是11.4版或更新版本、您可以將舊版備份檔案歸檔至公有雲歸檔儲存設備。
 
 
+
+ifdef::aws[]
+
++*對於AWS、您可以將備份分層至AWS _S3 Glacier或_S3 Glacier Deep Archive_儲存設備。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔儲存設備"^]。
+
+endif::aws[]
+
+ifdef::azure[]
+
++*對於Azure、您可以將舊版備份分層至_Azure Archive_儲存設備。 link:reference-azure-backup-tiers.html["深入瞭解Azure歸檔儲存設備"^]。
+
+endif::azure[]
+
++link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["深入瞭解StorageGRID 如何從還原歸檔備份檔案"^]。

@@ -44,6 +44,11 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["瞭�
 每種方法都有不同的每GB擷取費用和每個要求的費用。如需Azure區域的Azure歸檔詳細定價資訊、請參閱 https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Azure定價頁面"^]。
 
 --
+
+
+
+NOTE: 當從Azure還原資料至StorageGRID 支援的系統時、不支援高優先順序。
+
 還原在Azure歸檔中歸檔的資料需要多久時間？:: 還原時間由兩部分組成：
 +
 --
