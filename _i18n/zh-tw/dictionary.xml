@@ -3511,4 +3511,5 @@
   <block id="92a755b6d9fa88006d2c9e3907a504a5" category="list-text">對於Volume、您可以選取原始目的地工作環境、也可以選取替代的工作環境。還原FlexGroup 某個卷時、您可以選擇多個集合體。</block>
   <block id="de0ace3ca6a340bec96b9fe94ee00c37" category="paragraph">根據預設、備份會儲存在標準儲存設備中。如果您的叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後將備份分層歸檔至歸檔儲存設備、以進一步最佳化成本。 <block ref="87ffafedb97d3b50ea58ef296117bbac" category="inline-link-macro-rx"></block>。</block>
   <block id="0a0a678be4028579aac1f022ed126971" category="paragraph"><block ref="0a0a678be4028579aac1f022ed126971" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ff977a010b4bffe09adf01a3ba75903" category="admonition">不支援以iSCSI/FC/NVMe和vVOls為基礎的VMFS資料存放區。</block>
 </blocks>

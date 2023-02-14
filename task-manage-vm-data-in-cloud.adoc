@@ -38,6 +38,11 @@ summary: 您可以檢視資料存放區和虛擬機器、並編輯SnapCenter VMw
 *關於此工作*
 
 * 只會顯示NFS資料存放區。
+
+
+
+NOTE: 不支援以iSCSI/FC/NVMe和vVOls為基礎的VMFS資料存放區。
+
 * 僅SnapCenter 會顯示至少在VMware vSphere的VMware vSphere的VMware外掛程式中執行一次成功備份的資料存放區。
 
 
