@@ -21,7 +21,7 @@ settings:
     - name: Microsoft Azure
       alias: Azure
       id: azure
-  langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,fr-fr
+  langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr
 sidebar:
   entries:
   - title: 雲端備份文件
