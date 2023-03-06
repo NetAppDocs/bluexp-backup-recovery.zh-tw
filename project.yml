@@ -128,7 +128,7 @@ sidebar:
             url: "/reference-configure-fsx-for-ontap.html"
           - title: 設定Cloud Volumes ONTAP 功能
             url: "/reference-configure-cloud-volumes-ontap.html"
-          - title: 新增主機並探索Oracle資料庫
+          - title: 部署SnapCenter 適用於Oracle的支援功能外掛程式、並新增資料庫主機
             url: "/task-add-host-discover-oracle-databases.html"
           - title: 備份Oracle資料庫
             url: "/task-backup-cloud-native-oracle-data.html"
@@ -140,7 +140,7 @@ sidebar:
           - title: 設定Azure NetApp Files 功能
             flavor: azure
             url: "/reference-configure-azure-netapp-files.html"
-          - title: 部署SnapCenter 適用於SAP HANA的支援功能外掛程式
+          - title: 部署SnapCenter 適用於SAP HANA的支援功能外掛程式、並新增資料庫主機
             flavor: azure
             url: "/task-deploy-snapcenter-plugin-for-sap-hana.html"
           - title: 備份SAP HANA資料庫

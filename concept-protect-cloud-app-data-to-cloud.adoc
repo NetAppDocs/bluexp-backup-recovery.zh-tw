@@ -17,7 +17,7 @@ summary: BlueXP提供高效、應用程式一致、原則型的備份、以及�
 Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在BlueXP（前身為Cloud Manager）中啟用的雲端應用程式備份、可為下列應用程式提供高效率、應用程式一致且以原則為基礎的保護：
 
 * Oracle資料庫位於Amazon FSX上、適用於NetApp ONTAP 的功能與Cloud Volumes ONTAP 功能
-* SAP HANA系統駐留Azure NetApp Files 在NetApp上（ANF）。
+* SAP HANA系統駐留Azure NetApp Files 在
 
 
 
@@ -144,7 +144,7 @@ IMPORTANT: 雲端備份應用程式SaaS基礎架構可靈活因應區域內的�
 ** SLES 12 SP5或更新版本、以及15個通過SAP HANA認證的SPx平台
 
 
-* 儲存系統Azure NetApp Files ：功能（ANF）
+* 儲存系統Azure NetApp Files
 * 儲存配置：對於資料與記錄、Azure僅支援NFSv4.1。
 * 資料庫配置：
 +

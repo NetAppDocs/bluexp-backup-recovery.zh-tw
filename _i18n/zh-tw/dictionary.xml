@@ -92,7 +92,6 @@
   <block id="0ad648b845988c92aa984e9622fbd14b" category="inline-link-macro">開始和停止磁碟區備份、或變更備份排程</block>
   <block id="c1517582a429538e0dd5adc774e4d5a5" category="inline-link-macro">從備份檔案還原整個磁碟區</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">取得協助</block>
-  <block id="07d41912a6ab6b97216f8cf89e93205c" category="section-title">自我支援</block>
   <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">這些選項可供免費使用、一天24小時、一週7天：</block>
   <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">知識庫</block>
   <block id="fd6bb4fa1ad0caeedd6782d92cc54ea3" category="list-text"><block ref="fd6bb4fa1ad0caeedd6782d92cc54ea3" category="inline-link-rx"></block></block>
@@ -100,8 +99,6 @@
   <block id="410fdb9caa9c64da2ff3f88f4836960d" category="list-text"><block ref="410fdb9caa9c64da2ff3f88f4836960d" category="inline-link-rx"></block></block>
   <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">文件</block>
   <block id="80b1b0d2b1ebf2b3cba2d25759801afd" category="list-text">mailto：ng-cloudmanager-feedback@netapp.com [意見反應電子郵件]</block>
-  <block id="0659d428df833a806e29e65e632d380a" category="section-title">NetApp支援</block>
-  <block id="f5052c65917d7341726235d4d4941461" category="list-text">在「Technical Support（技術支援）」下選擇可用的選項之一：</block>
   <block id="18a6c204240510c87aba39d6d8b5d26b" category="doc">保護內部部署的應用程式資料</block>
   <block id="14f3ef2e312755e7942bb9d424acba3a" category="paragraph">如需雲端應用程式備份的詳細資訊、請參閱：</block>
   <block id="ca6aeed84517a7133f1abaebed19854e" category="inline-link">應用程式感知備份、採用Cloud Backup和SnapCenter 功能</block>
@@ -1755,7 +1752,6 @@
   <block id="3dbc2a858555e80cf398377571556499" category="list-text">SSH_port：Oracle主機上的SSH連接埠、此為選用參數。預設值為22</block>
   <block id="e5a8e97642efe29ef958c3cafde091c8" category="list-text">plugin_port：外掛程式使用的連接埠、這是選用參數。預設值為8145</block>
   <block id="5e0c9d9b775ad3565e6649bfa8ec9800" category="list-text">安裝目錄：要部署外掛程式的目錄、此為選用參數。預設值為/opt。</block>
-  <block id="1744dd19db9c80afac565572fb28289c" category="paragraph">如果未在Oracle主機上啟用SSH金鑰型驗證、您應該執行下列手動步驟來部署外掛程式。</block>
   <block id="e67d4d64b1a45fd340729c74de84b847" category="list-text">登入Connector VM。</block>
   <block id="274f1ac526644b363a1660f91b59759a" category="list-text">下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get <block ref="b6b73f503ca62442f11ad4b84cc2f0bc" category="inline-link-rx"></block></block>
   <block id="5f46deee08d4b3d1d62d6ffaf5f1db1c" category="list-text">取得下載外掛程式的二進位路徑。「Udo ls &lt;base_mount_path&gt;$(sudo dod泊 塢視窗ps | grep -po" cloudmanager_SCs_clou:.*？"| sed -e 's/*$/'| cut -F2 -d":")/sc-Linux主機外掛程式/snapcenter_Linux主機外掛程式_scsscs.bin"</block>
@@ -1955,7 +1951,6 @@
   <block id="82812db645b6ff5e9c2a24ddfb66c8d6" category="paragraph">除了上述的自我支援選項、您也可以在啟動支援之後、與NetApp支援專家合作解決任何問題。</block>
   <block id="e2a733504c4088b809813bbb35a3ddfd" category="inline-link-macro">瞭解如何註冊以取得支援</block>
   <block id="383133cb6f7207b1c65c3ace94aa5e95" category="list-text">如果您想與電話上的其他人通話、請按一下*「呼叫我們*」。您將會被導向netapp.com上的頁面、其中列出您可以撥打的電話號碼。</block>
-  <block id="bf5bc6ab0f95f17f4e98c9d766b8c11d" category="list-text">按一下*建立案例*、與NetApp支援專家一起開啟問題單：</block>
   <block id="b53e0a259f4a0c8e7da80d6c94e26c84" category="list-text">*《支援帳戶*》：選取與開立支援案例的人員相關的適用的NSS帳戶。NetApp 支援網站除了以下提供的其他電子郵件之外、此人將是NetApp聯絡的主要聯絡人。</block>
   <block id="2e50c5f85523f0aba9ff2db10f18279c" category="list-text">*工作環境*：如果適用於儲存設備、請選取* Cloud Volumes ONTAP 《*》或*《內部部署*》、然後選取相關的工作環境。</block>
   <block id="e6f29fb3c7636dc0040600dd0e84bb79" category="list-text">*案例優先順序*：選擇案例的優先順序、可以是低、中、高或嚴重。</block>
@@ -2793,15 +2788,10 @@
   <block id="aead5ccad47d982e42806d38753de835" category="paragraph">您可以在SnapCenter BlueXP中編輯VMware vSphere的《支援VMware vSphere的支援》外掛程式詳細資料。</block>
   <block id="98c5d692e015a6f029128bd692f9ac3d" category="paragraph">您可以ONTAP 將Cloud Backup for Applications與Cloud Manager和內部部署SnapCenter 的內部部署的整合、將應用程式資料從支援的對象備份到Google Cloud Platform。</block>
   <block id="367df4ef9103973813086656b7424c40" category="summary">在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HNAN的支援功能。</block>
-  <block id="d5df46302dfdd7579521694fb4b06495" category="doc">部署SnapCenter 適用於SAP HANA的支援功能外掛程式</block>
   <block id="0aa4c98c108fd4eb123ca5d3e22561e8" category="paragraph">您應該在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HANA的解決方案。視SAP HANA主機是否啟用SSH金鑰型驗證而定、您可以遵循其中一種方法來部署外掛程式。</block>
   <block id="dd115af180e43b9284746f0724f2e436" category="admonition">確保每個SAP HANA資料庫主機上都安裝了Java 11（64位元）Oracle Java或OpenJDK。</block>
-  <block id="16ca5309d737224096c304c6dff4de3a" category="section-title">設定非root使用者</block>
-  <block id="fd80eea6ceaa6f2785bf097c10501f77" category="paragraph">您應該建立非root使用者來部署外掛程式。</block>
   <block id="3ebdbfe737c7aead22c3f4a0051261a7" category="list-text">登入SAP HANA資料庫主機、然後執行下列步驟：</block>
-  <block id="089e0745e03208bd82005bf60f52e3c2" category="list-text">建立非root使用者帳戶、私密金鑰組、然後指派權限。</block>
   <block id="bdacf8a8beaec8b190c600a860c2b532" category="list-text">將您在步驟4中複製的行貼到<block ref="6c109d6e94c97fb519007c1f06880582" prefix=" " category="inline-code"></block> 使用visudo Linux公用程式來建立檔案。</block>
-  <block id="e3092b913d71bf2b71c0b3838c675913" category="paragraph">在上述各行中、&lt;LINUXUSER&gt; 將所建立的非root使用者取代為您在視覺化公用程式中儲存的使用者。</block>
   <block id="6fb496880c72d81f141594926d685434" category="section-title">手動部署外掛程式</block>
   <block id="81669171fb08f882a32669c2772c3fd8" category="paragraph">如果HANA主機上未啟用SSH金鑰型驗證、您應該執行下列手動步驟來部署外掛程式。</block>
   <block id="ec3a94350310fa8818e0df3a82aa2b54" category="list-text">在SAP HANA資料庫主機上、執行下列命令以啟用二進位檔案的執行權限。<block ref="4cd88a831fa940d7f40686837061308c" prefix=" " category="inline-code"></block></block>
@@ -2821,7 +2811,6 @@
   <block id="bccdf5c7461a91341c81491a049f7917" category="list-text">選擇* Google Cloud Platform *將其設定為雲端供應商。</block>
   <block id="e29eef6ae64d545134f2b42984845a94" category="section-title">2022年12月19日</block>
   <block id="0a286ad90f3a25f45e443367036a8789" category="list-text">SAP HANA資料庫</block>
-  <block id="feb69ad1d8975111fe86bbc94b823a7f" category="list-text">支援以原則為基礎的SAP HANA資料庫備份與還原Azure NetApp Files 功能、這些資料庫位於</block>
   <block id="d5a365014bbbc5172b423043fb2a2501" category="list-text">支援自訂原則</block>
   <block id="5ffbe0deb5b41148dc58e63a20df8411" category="list-text">Oracle資料庫</block>
   <block id="aa6dc7e308fa4a4875c447c8e7fa4a19" category="list-text">新增主機並自動部署外掛程式</block>
@@ -3018,7 +3007,6 @@
   <block id="54f922a09b59b7f2fce83cc984324d03" category="paragraph">您應該手動新增SAP HANA資料庫主機、以指派原則並建立備份。不支援自動探索SAP HANA資料庫主機。</block>
   <block id="2d401a77c81793a9ece97156d2f30373" category="list-text">您應該已新增工作環境並建立Connector。</block>
   <block id="fdb89fa76e003bcdaa62dc781c75080d" category="list-text">確認連接器已連線至工作環境</block>
-  <block id="0c6caad59b974bed7b5a027d2727752f" category="list-text">您應該已經部署SnapCenter 了適用於SAP HANA的支援功能。 <block ref="4495130e78dd5770e2665c50d9b867ed" category="inline-link-macro-rx"></block></block>
   <block id="19ba3d8b0889a939f5ec8733d64f1d60" category="list-text">新增SAP HANA資料庫主機時、您應該新增HDB使用者儲存金鑰。HDB安全使用者存放區金鑰用於將SAP HANA資料庫主機的連線資訊安全地儲存在用戶端上、HDBSQL用戶端則使用安全的使用者存放區金鑰來連線至SAP HANA資料庫主機。</block>
   <block id="eb8c7136dc3f88489deecb383a3e2159" category="list-text">針對HANA系統複寫（HSR）、為了保護HANA系統、您應該手動登錄主要和次要HANA系統。</block>
   <block id="8b0c466fdb979630c3d45c5c1cdb2441" category="list-text">在* BlueXP* UI中、按一下* Protection *&gt;* Backup and recovery *&gt;* Applications*。</block>
@@ -3046,16 +3034,13 @@
   <block id="718c7b6c3378e6331dfacc19082eceda" category="section-title">新增非資料磁碟區</block>
   <block id="c1d37ffb98838b18cccda19785198d15" category="paragraph">新增多租戶資料庫容器或單一容器類型的SAP HANA系統之後、即可新增HANA系統的非資料磁碟區。</block>
   <block id="70ece8b209ed1c9476f13c0fa00e2a77" category="list-text">在「*應用程式*」頁面中、按一下 <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> 與您要新增非資料磁碟區的系統相對應、然後選取*管理系統*&gt;*非資料磁碟區*。</block>
-  <block id="1c5bc62ec06d77a94bd950001c20bf5c" category="section-title">新增全域非資料磁碟區</block>
   <block id="e84d0cbc8756fa7ba2af158f670486a8" category="paragraph">新增多租戶資料庫容器或單一容器類型的SAP HANA系統之後、即可新增HANA系統的全域非資料Volume。</block>
   <block id="01f13da2dfcf737f54346ebf7f44db6f" category="list-text">從System Type（系統類型）下拉式清單中、選取* Global Non-Data Volume（*全域非資料Volume）*。</block>
   <block id="5d9b8dbd580deb48e76c53d62ab7c6f3" category="list-text">指定SAP HANA系統的相關SSID。</block>
   <block id="9c40bb6f28c1548e2bec94c55bf9bf96" category="list-text">選取外掛程式主機</block>
   <block id="b5e87b76d37fdb904487f6bc0c10bef7" category="paragraph">（可選）要添加多個主機，請單擊* Add Plug-In Host*（添加插件主機*）並指定主機名和端口，然後單擊* Add Host*（添加主機*）。</block>
   <block id="7322146fa0278b7076d42a67da3ca68f" category="section-title">簡報與指令碼</block>
-  <block id="b3716aa17e229f5a48546a80e870a997" category="paragraph">您可以在建立原則時提供預先編寫、後置指令碼及結束指令碼。這些指令碼會在HANA主機上執行、同時建立備份。</block>
   <block id="6185a8cfc72f93e3f8af600e5e7f9606" category="paragraph">指令碼支援的格式為.sh、python指令碼、perl指令碼等。</block>
-  <block id="d36dcc27103f15cf7156e649498bba14" category="paragraph">pretced和postscript應由主機管理員登錄至<block ref="198c786822c306ff1d8e3ae0098bbf6c" prefix=" " category="inline-code"></block></block>
   <block id="3c91acc7806c6fcfd2da29720998df5d" category="paragraph"><block ref="8a0444f402186e75dfce312a113251e3" prefix="" category="inline-code"></block></block>
   <block id="50283e8d57278ed79d15d9dbb7c56561" category="section-title">環境變數</block>
   <block id="3e2882dbce286b81b8650600aa1d8086" category="paragraph">在還原工作流程中、下列環境變數可作為預先記錄和PostScript的一部分使用。</block>
@@ -3076,7 +3061,6 @@
   <block id="30ca1c0b30eeb1e981b018064c3097f6" category="list-text">在「*應用程式*」頁面的「設定」下拉式清單中、選取「*原則*」。</block>
   <block id="78ba2f5b165a9466c243c7ee05da78ac" category="list-text">（選用）編輯Snapshot複本名稱的格式。</block>
   <block id="808bacecc5ae86450915402dea0afd9a" category="list-text">選取原則類型。</block>
-  <block id="d47a69e45ac10064eed780e92117e540" category="list-text">（選用）指定指令碼。</block>
   <block id="01ca810bd15c48e8c9ab7589db8498ca" category="section-title">建立SAP HANA資料庫的備份</block>
   <block id="9fbab2932a5b265f7d6778bc72aaa745" category="paragraph">針對HANA系統複寫（HSR）、排定的備份工作只會針對主要HANA系統觸發、如果系統容錯移轉至次要HANA系統、則現有的排程會觸發目前主要HANA系統的備份。如果未將原則指派給兩個HANA系統、則在容錯移轉之後、排程將會失敗。</block>
   <block id="e0a1b2dffc713527405b0a710a4c3c77" category="paragraph">如果指派不同的原則給HSR系統、系統會觸發排程備份、而次要HANA系統的備份則會失敗。</block>
@@ -3089,38 +3073,17 @@
   <block id="34cdaf3eb96811f5c751a65473724ab9" category="list-text">（選用）指定指令碼和指令碼路徑。</block>
   <block id="3c384d2eeea22869be9b66e36dec9d6e" category="list-text">按一下「*建立備份*」。</block>
   <block id="33519237272d7d2506e4b23467569d7f" category="summary">在SnapCenter 每個Oracle資料庫主機上部署適用於Oracle的支援功能。</block>
-  <block id="5513c7a4fb1a461c9910fea9e8c7a3df" category="doc">新增主機並探索Oracle資料庫</block>
-  <block id="0046bf9daf0e3a3d63572328eb09710c" category="paragraph">您應該新增主機並探索主機上的資料庫、以指派原則並建立備份。您可以在已部署外掛程式時手動新增主機、或使用SSH新增主機。</block>
   <block id="031ed57adfb7acf180fc66b9bac25dcf" category="paragraph">在新增主機之前、您應確保符合先決條件。</block>
   <block id="00346be4bfc4c310cf2dbead933dff7c" category="list-text">您應該已經建立了工作環境和Connector。</block>
   <block id="150cd80aa8da7e8a0e1532db17acbab2" category="list-text">確保連接器可連線至工作環境和Oracle資料庫主機。</block>
   <block id="b3a8552d8ed438ec3ca2f066908ea2d4" category="list-text">確保每個Oracle資料庫主機上都已安裝Java 11（64位元）Oracle Java或OpenJDK、且已適當設定Java_Home變數。</block>
-  <block id="5206371c2969f80deb7370081781fc8b" category="list-text">您應該已經建立非root使用者。如需相關資訊、請參閱 <block ref="218c9ff3f0827d13a63195c67e07e241" category="inline-xref-macro-rx"></block>。</block>
-  <block id="419e9f180bcb9992797f0d63e5108d02" category="inline-xref">手動</block>
-  <block id="6082f779360f7aa7eae37c198973c6a2" category="inline-xref">使用指令碼</block>
-  <block id="a0b4d571b248f50b94b7633e3babe462" category="list-text">如果您想要手動新增主機、應該先部署外掛程式。您可以部署外掛程式 <block ref="71f9c0626648fc2ad6935845122647e8" category="inline-xref-macro-rx"></block> 或 <block ref="d5731cdfa534d1a5d7ccf2070fa3f2fc" category="inline-xref-macro-rx"></block>。</block>
-  <block id="9528b4fc4cc8c4ea29cdf1b307031b98" category="paragraph">您應該在每個Oracle資料庫主機上部署外掛程式。</block>
-  <block id="882fd9db70a37f6582163f4e6d1c4fde" category="paragraph">您應該設定非root使用者來部署外掛程式。</block>
   <block id="c3af1031c174f35d8fbd1d63764549d3" category="list-text">將第1行從* oracle_checksum _scs.txt*檔案複製到第16行、該檔案位於* base _mount_path_/_version _/sc-Linux主機外掛程式/*。</block>
   <block id="941c84084e1d6a473d4b06951513646e" category="list-text">登入Oracle資料庫主機、然後執行下列步驟：</block>
   <block id="20ba94819b2688b9ce1be17cd8c67f00" category="inline-link">建立使用者帳戶</block>
-  <block id="dc77642a9db95bfa3d7cfad2feac68d7" category="list-text">建立非root使用者帳戶、私密金鑰組、然後指派權限。如需相關資訊、請參閱<block ref="fda0d36f41d4c9e30e06c472b1bf9e0c" category="inline-link-rx"></block>。</block>
   <block id="e0a6bb364ca10aed658b56d5c7220ce6" category="list-text">使用visudo Linux公用程式、將您在步驟4中複製的行貼到/etc/udoers_檔案。</block>
-  <block id="e0ec6c3418190a65b388f2ec3b545b73" category="paragraph">在上述各行中、&lt;LINUXUSER&gt; 將此文件替換為您所建立的非root使用者、並將其儲存在視覺化公用程式中。</block>
-  <block id="ad15ac1aed6665420aee6da3d2599843" category="paragraph">_snapcenter_Linux主機外掛程式_SCS.bin_應複製到非root使用者可存取的位置。</block>
-  <block id="1140247d0922f07c1db2936f25736b76" category="list-text">使用非root使用者帳戶登入Oracle資料庫主機、然後執行下列命令來啟用二進位檔案的執行權限。<block ref="4cd88a831fa940d7f40686837061308c" prefix=" " category="inline-code"></block></block>
-  <block id="448fb639b2dbccf2171b5c8f9a70a09a" category="list-text">以Sudo非root使用者的身分部署Oracle外掛程式。<block ref="a9b0283be469b80a16d7090f132ac831" prefix=" " category="inline-code"></block></block>
-  <block id="d00dc5124d9367c0c08e4ba45796fdd4" category="section-title">使用指令碼部署外掛程式</block>
-  <block id="7f4f03eee9cd1fb77b091d1f31a63e75" category="paragraph">如果非root使用者在Oracle主機上啟用SSH金鑰型驗證、您可以執行下列步驟來部署外掛程式。在執行這些步驟之前、請先確認已啟用連接器的SSH連線。</block>
   <block id="5db771567067dd09af5564e02cf7ed87" category="list-text">使用Connector中提供的輔助程式指令碼來部署外掛程式。<block ref="1d1dd7c5683a80bd4fd769dadbf81b09" prefix=" " category="inline-code"></block></block>
-  <block id="0fe1e69c4c87559df8ff5fba40419445" category="list-text">SSH_KEY_file是非root使用者的SSH金鑰、用於連線至Oracle主機。這是必要參數。</block>
-  <block id="d9997864ce67719ea93cc0b0cff9c006" category="list-text">使用者名稱：在Oracle主機上具有SSH權限的非root使用者、此為選用參數。預設值為EC2使用者。</block>
   <block id="6ae7d9f8527d1ed6cd28c1fe9cc17109" category="paragraph">例如：<block ref="f2458f3042d087542cd1b232a3f7c978" prefix=" " category="inline-code"></block></block>
-  <block id="af7f8976f175216d1e12ff5be8b68be4" category="section-title">新增主機</block>
-  <block id="c45737224c5ab40ea9affadd8962c6e7" category="paragraph">您應該新增主機並探索Oracle資料庫。</block>
   <block id="e4bed981c8dc4fe15a706f0b93160836" category="list-text">在BlueXP UI中、按一下* Protection *&gt;* Backup and recovery *&gt;* Applications*。</block>
-  <block id="254d235472af71154481e0a6f56b2535" category="list-text">在「Add Host（新增主機）」頁面中、執行下列其中一項：</block>
-  <block id="2958f19f58f0ca8d9d63b20360a0d39d" category="paragraph">也已部署外掛程式 <block ref="71f9c0626648fc2ad6935845122647e8" category="inline-xref-macro-rx"></block> 或 <block ref="d5731cdfa534d1a5d7ccf2070fa3f2fc" category="inline-xref-macro-rx"></block></block>
   <block id="f56876c150285cea7b724cbb95594046" category="list-text">選擇*手動*。</block>
   <block id="96d18284484330f0461bebeeedf28b93" category="list-text">指定部署外掛程式之主機的FQDN或IP位址。</block>
   <block id="4b9c5e10e240cdb44f786ad97e92d363" category="paragraph">請確定連接器可以使用FQDN或IP位址與資料庫主機通訊。</block>
@@ -3128,11 +3091,8 @@
   <block id="acb4159eef3e5ecd5b233216c18d4d45" category="paragraph">預設連接埠為8145。</block>
   <block id="91128bbc82eb724ccb4b4532f152c3da" category="list-text">選取連接器。</block>
   <block id="74a99b6dc2ef8f1a612ef62e0fbae84d" category="list-text">選取核取方塊、確認外掛程式已安裝在主機上</block>
-  <block id="8443ac4c22417245b61f0c033b4ea3d2" category="paragraph">想要自動部署外掛程式</block>
   <block id="044408c01f4556451a3907257fc21382" category="list-text">選擇*使用SSH*。</block>
   <block id="21c7549ba6f4014b1d2c113aff7f95aa" category="list-text">指定要安裝外掛程式之主機的FQDN或IP位址。</block>
-  <block id="067a9635a80c1edff88c622203fa7ce1" category="inline-xref">非root使用者</block>
-  <block id="0b2581c6c2b040b10360f2182f95a26e" category="list-text">指定使用者名稱（<block ref="b860729b45208ea0c8184e39fd0d4fa7" category="inline-xref-macro-rx"></block>）將外掛程式套件複製到主機的方法。</block>
   <block id="791d63ac899b8ad7fc56dc931d1fd29a" category="list-text">指定SSH和外掛程式連接埠。</block>
   <block id="505ce6fed4446b13324d0562a28bb6ba" category="paragraph">預設SSH連接埠為22、外掛程式連接埠為8145。</block>
   <block id="11f3ace264fde67c71154e15a9b49b51" category="paragraph">您可以在安裝外掛程式之後、關閉應用程式主機上的SSH連接埠。任何其他外掛程式作業都不需要SSH連接埠。</block>
@@ -3148,7 +3108,6 @@
   <block id="013e38cfdb2c6d0bb3f17b59760240ff" category="summary">BlueXP提供高效、應用程式一致、原則型的備份、以及位於Amazon FSX for NetApp ONTAP 的Oracle®資料庫Cloud Volumes ONTAP 還原功能。</block>
   <block id="7105ab20f187c4c6345342e06cd1748d" category="paragraph">Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在BlueXP（前身為Cloud Manager）中啟用的雲端應用程式備份、可為下列應用程式提供高效率、應用程式一致且以原則為基礎的保護：</block>
   <block id="9b029537d0b8df0bfe13af02e2f4b676" category="list-text">Oracle資料庫位於Amazon FSX上、適用於NetApp ONTAP 的功能與Cloud Volumes ONTAP 功能</block>
-  <block id="0fb238fbf40ffb66b4fc526838e26664" category="list-text">SAP HANA系統駐留Azure NetApp Files 在NetApp上（ANF）。</block>
   <block id="0e9f5823c929b9fb9d64f8929519166d" category="list-text">雲端備份應用程式UI可從BlueXP UI存取。</block>
   <block id="97c81decba97f11a1ed9821a4ddbc39d" category="paragraph">Cloud Backup for Applications UI為應用程式提供資料保護功能。</block>
   <block id="a900fc2ba3036431f83eaa95438d5c78" category="list-text">BlueXP Connector是在使用者雲端網路中執行的元件、可與儲存系統和應用程式特定外掛程式互動。</block>
@@ -3185,7 +3144,6 @@
   <block id="9317a56cfedd80231a539c42f44d9c8d" category="section-title">保護SAP HANA資料庫</block>
   <block id="494c3084e3990387ac3b46cb5749bb65" category="list-text">RHEL 7.5或更新版本、已通過SAP HANA認證的8.x平台</block>
   <block id="504d22b0e020e0b365851eef08a1e4ca" category="list-text">SLES 12 SP5或更新版本、以及15個通過SAP HANA認證的SPx平台</block>
-  <block id="bf8209cf9b7524db25e82e107aec699b" category="list-text">儲存系統Azure NetApp Files ：功能（ANF）</block>
   <block id="4181f6e16bb30e02b42299eaabaccd5e" category="list-text">儲存配置：對於資料與記錄、Azure僅支援NFSv4.1。</block>
   <block id="c7325743e6b1be5853672e4ed19d279b" category="list-text">資料庫配置：</block>
   <block id="4f3c431044df2a4101e620b1add959d6" category="list-text">單一Container版本1.0SPS12</block>
@@ -3205,12 +3163,9 @@
   <block id="5cca45bd52ac035de73ec0e76f0e5043" category="summary">還原資料檔案、然後還原資料庫。</block>
   <block id="e648f70e1fb5d17870bf65097e43c5a6" category="doc">還原雲端原生SAP HANA資料庫</block>
   <block id="26661dc24144ed594be15c07b300db39" category="paragraph">在資料遺失的情況下、您可以還原資料和非資料檔案、然後還原資料庫。</block>
-  <block id="209bbbd2ef26cf13ac9d3e2ab4a48795" category="paragraph">您可以在建立原則時提供預先編寫、後置指令碼及結束指令碼。這些指令碼會在HANA主機上執行、同時執行還原作業。</block>
-  <block id="8e193dde313806673c3561148f67d074" category="paragraph">pretced和postscript應由主機管理員登錄至<block ref="3b233c9e75b7e3c86773366e24bbc002" prefix=" " category="inline-code"></block></block>
   <block id="43b21c00ad4299ac7f4d7e1dafb5f387" category="paragraph">*您需要的是什麼*</block>
   <block id="f8988e398a707101924ea388677409fc" category="list-text">SAP HANA系統必須處於停止狀態。</block>
   <block id="e7112ed1470e71e600498d1a4b34ac26" category="list-text">您可以提供預先記錄來停止SAP HANA系統。</block>
-  <block id="864ef826ca9afa5b1d7e1e3468c6f957" category="list-text">在「*還原系統*」頁面中、輸入指令碼。</block>
   <block id="8f0f4ecd6bb49079fb488435d58bf611" category="list-text">還原之後、請手動還原SAP HANA系統、或提供執行SAP HANA系統還原的PostScript。</block>
   <block id="aafa017aee26c3860dee1aac06cc22e5" category="section-title">還原非資料磁碟區</block>
   <block id="b78066905c05d49abb8f4df49665ed37" category="list-text">在「*應用程式*」頁面中、從下拉式方塊中選取「非資料磁碟區」。</block>
@@ -3224,9 +3179,7 @@
   <block id="c6927bf583958e84094bc7e9d4328c6f" category="section-title">打造Azure NetApp Files 可運作的環境</block>
   <block id="8b53faee27870b72e0be69261d54a7ee" category="inline-link-macro">深入瞭解 Azure NetApp Files</block>
   <block id="c5c12e22be965b4ae0e9fc5e1618bdbe" category="inline-link-macro">打造 Azure NetApp Files 一個不一樣的工作環境</block>
-  <block id="bf91af894eb3580afdb33ab6ce5ab06f" category="paragraph">您應該建立Azure NetApp Files 代管資料庫的運作環境。如需相關資訊、請參閱 <block ref="e42252aa263ed60f84feb7fdedc741c2" category="inline-link-macro-rx"></block> 和 <block ref="08189a1662d35a0f6c5c7b20dd7f30c3" category="inline-link-macro-rx"></block>。</block>
   <block id="e7a9cd1dc4bf0c230d0684e18369d70d" category="section-title">建立連接器</block>
-  <block id="7c258ce888390955a0508e6bf64eec18" category="paragraph">客戶管理員必須在ANF中部署Connector、讓BlueXP能夠管理公有雲環境中的資源和程序。</block>
   <block id="bca25b5056d8715db55e6e28a72ddea0" category="admonition">您無法從UI更新新的連接器ID。</block>
   <block id="e12fb4f30abef516bf6f5e0e9a5b72b7" category="inline-link-macro">從BlueXP在Azure中建立連接器</block>
   <block id="3717a56f9d9c162dfd0127cd325c0a2f" category="paragraph">如需相關資訊、請參閱 <block ref="88ddfb8e0cf0e729a2d90f978111b93e" category="inline-link-macro-rx"></block>。</block>
@@ -3262,7 +3215,6 @@
   <block id="fa4308d3f9fdcd01f05ba58ff69b9dd5" category="list-text">從複製第1行至第16行<block ref="5fc8e5db28f79a3512344717eb75a2f3" prefix=" " category="inline-code"></block> 檔案位於<block ref="dca5cd789ecd3e8ac3b24e72d56f2c0f" prefix=" " category="inline-code"></block></block>
   <block id="c8e4cea60639b8f6c2e1f74034e46e71" category="list-text">下載Linux主機外掛程式二進位檔。<block ref="842b6533279ede354ede13a8696c77a7" prefix=" " category="inline-code"></block></block>
   <block id="1333b695230748772732811a4dce8133" category="list-text">複本<block ref="4f97ae2a0dc11c8ac2f61e73bbd23cd8" prefix=" " category="inline-code"></block> 使用scp或其他替代方法、將資料傳送至每個SAP HANA資料庫主機。</block>
-  <block id="f21f4c2a14663fba17fd663498932188" category="list-text">將SAP HANA外掛程式部署為Sudo非root使用者。<block ref="a9b0283be469b80a16d7090f132ac831" prefix=" " category="inline-code"></block></block>
   <block id="8125c29989803ad0a7a3fcd80763904a" category="list-text">複本<block ref="7730e5c2e030df9de4e60d7586534d1d" prefix=" " category="inline-code"></block> 寄件者<block ref="6a722c9070d74bb0503ce0417b0cad70" prefix=" " category="inline-code"></block> 連接器VM的路徑<block ref="b99636c9e34de318e385a63d2cb037a1" prefix=" " category="inline-code"></block> 在外掛程式主機上。</block>
   <block id="ef1e764c716d2aa5406d3d434b9c8614" category="list-text">瀏覽至<block ref="0dc0b955539cf9119a9695bb3312c8cb" prefix=" " category="inline-code"></block> 並執行keytools命令以匯入憑證。<block ref="0d48a0d1a6daee261d59f76e1ce65f98" prefix=" " category="inline-code"></block></block>
   <block id="fd9064c3951e4ceddd0e2ae6bf2708e5" category="paragraph">*附註：*如果包含您要還原之資料的備份檔案位於歸檔儲存設備（從ONTAP 版本號9.10.1開始）中、還原作業將需要較長的時間、而且會產生成本。此外、目的地叢集也必須執行ONTAP 適用於Volume還原的版本為《支援還原功能》、適用於檔案還原的版本為《支援功能》、適用於Google歸檔和StorageGRID 《支援功能》的版本則為《支援功能》、適用於Google歸檔和《支援功能》。</block>
@@ -3510,4 +3462,63 @@
   <block id="de0ace3ca6a340bec96b9fe94ee00c37" category="paragraph">根據預設、備份會儲存在標準儲存設備中。如果您的叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後將備份分層歸檔至歸檔儲存設備、以進一步最佳化成本。 <block ref="87ffafedb97d3b50ea58ef296117bbac" category="inline-link-macro-rx"></block>。</block>
   <block id="0a0a678be4028579aac1f022ed126971" category="paragraph"><block ref="0a0a678be4028579aac1f022ed126971" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8453fab1acf37cb3dad50bd528b75148" category="list-text">僅支援NFS資料存放區。不支援以iSCSI/FC/NVMe和vVols為基礎的VMFS資料存放區。</block>
+  <block id="f990e553cdc4c29c2efffba33e08a8c7" category="inline-link-macro">深入瞭解。</block>
+  <block id="c0efb50e50bd832fe33303fe8a025710" category="list-text">（選用）指定指令碼。 <block ref="64f80f18cd8436040cdc180731adb1df" category="inline-link-macro-rx"></block></block>
+  <block id="898f472703342efc6d5adc298a7628c8" category="paragraph">您可以在建立原則時提供預先編寫、後置指令碼及結束指令碼。這些指令碼會在資料保護作業期間於HANA主機上執行。</block>
+  <block id="c5b751b6877453fd04eb6340347e4511" category="paragraph">pretced和postscript應由主機管理員登錄至<block ref="91d372f85b001dba79ebc4129e5acd32" prefix=" " category="inline-code"></block> 檔案：</block>
+  <block id="0baab2619f15ec742e2bf8b60e516b39" category="paragraph">在備份工作流程中、下列環境變數可作為預先記錄和PostScript的一部分使用。</block>
+  <block id="37b91819addbb5b3ca6a2d78cfe91ff2" category="inline-link-macro">簡報與後稿</block>
+  <block id="c7436ac5bc62035107d7dd8330e0ce9c" category="paragraph">如需詳細資訊、請參閱 <block ref="e21df236c176ec826d056db82d193773" category="inline-link-macro-rx"></block></block>
+  <block id="edd15fbeb7b2dffa163336ecd4f3e80c" category="section-title">使用自我支援選項</block>
+  <block id="d88bacf2a9fdcbbc844edcba97c34e30" category="section-title">利用NetApp支援建立案例</block>
+  <block id="08d96fdd1a845d80db99e6e1dffb8bc7" category="list-text">在「*資源*」頁面上、選擇「技術支援」下的其中一個可用選項：</block>
+  <block id="5be2e1dfe4bf215289731df45ec8157b" category="list-text">按一下*建立案例*、與NetApp支援專家一起開啟問題單：</block>
+  <block id="32ecc38b872b5f889b952ca26b4c9e01" category="list-text">SAP HANA系統駐留Azure NetApp Files 在</block>
+  <block id="25b10c02d41eec413a14409c4612d5d3" category="list-text">儲存系統Azure NetApp Files</block>
+  <block id="2aebd4a586327a155f5ad3b448f755af" category="doc">部署SnapCenter 適用於SAP HANA的支援功能外掛程式、並新增資料庫主機</block>
+  <block id="269c48e37c80fdf85eed155628bc58de" category="inline-link-macro">設定Sudo for SnapCenter S供 使用者使用。</block>
+  <block id="ddaa83445dd7a230c2c58c8306085a19" category="list-text">您應該已經為SnapCenter 該位使用者建立了「Sudo」、並已設定「Sudo」SnapCenter 。如需相關資訊、請參閱 <block ref="6178ed5e7702fbe22f507b323e07e08d" category="inline-link-macro-rx"></block></block>
+  <block id="d2112f16a8059fc09554b14c09d4fcfc" category="list-text">在新增資料庫主機之前、您應該已經部署SnapCenter 了適用於SAP HANA的功能不全的外掛程式。</block>
+  <block id="257b77ad500d8d34d40999c829e11687" category="list-text">如果使用SSH型部署、連接器應啟用與SSH連接埠的通訊（預設值：22）。</block>
+  <block id="5725f533e015d3bd4b9e8c38eca0144b" category="list-text">連接器應已啟用外掛連接埠的通訊功能（預設值：8145）、以便讓作業正常運作。</block>
+  <block id="b010a3fdc0e4a30de49959a04a4e75e0" category="section-title">設定Sudo for SnapCenter S供 使用者使用</block>
+  <block id="a07faa3e8d1ee5e05e2477cb22d4aada" category="paragraph">您應該建立SnapCenter 一個用來部署外掛程式的不必要使用者。</block>
+  <block id="d92750f46e700776d748ee9b15b423cc" category="list-text">建立SnapCenter 這個使用者帳戶、私密金鑰配對、然後指派權限。</block>
+  <block id="1aadfd10fc57b635454a6d55fa8fc260" category="paragraph">在以上各行中、將&lt;LINUXUSER&gt; 您SnapCenter 建立並儲存在視覺化公用程式中的支援功能取代成功能不實的使用者。</block>
+  <block id="1fd90cd4e86ccb2a0caebc53978ce238" category="inline-link-macro">SAP HANA資料庫主機：</block>
+  <block id="d608b8b79f8e38b5355b2621076c03a7" category="paragraph">部署外掛程式之後、您應該新增 <block ref="92ad6bba296fdb7b03893ff2938b8375" category="inline-link-macro-rx"></block></block>
+  <block id="bd66e9124149884520020da3bbb7fb42" category="list-text">將SAP HANA外掛程式部署為Sudo SnapCenter Sudo Sudo用戶。<block ref="a9b0283be469b80a16d7090f132ac831" prefix=" " category="inline-code"></block></block>
+  <block id="c827c4145f570b61f9ba6a78e5ffdca3" category="list-text">從Connector執行下列命令、驗證外掛程式是否可從Connector存取：</block>
+  <block id="196620afd1e2e98d838480028131dc6b" category="paragraph"><block ref="7bab21217ba7da8fb8f176538fe93b9b" prefix="" category="inline-code"></block></block>
+  <block id="ed4c596de80903a7b24e5ada4ad1cb18" category="section-title">新增全域非資料磁碟區</block>
+  <block id="c85382f11c645139d96d5e2eacdd8985" category="list-text">在「*還原系統*」頁面中、輸入指令碼。 <block ref="64f80f18cd8436040cdc180731adb1df" category="inline-link-macro-rx"></block></block>
+  <block id="c2d07a443e1ff7ca3b9a176f2e281fa7" category="paragraph">您應該在Azure NetApp Files 託管資料庫的環境中建立不必要的工作環境。如需相關資訊、請參閱 <block ref="e42252aa263ed60f84feb7fdedc741c2" category="inline-link-macro-rx"></block> 和 <block ref="08189a1662d35a0f6c5c7b20dd7f30c3" category="inline-link-macro-rx"></block>。</block>
+  <block id="86e567c58e1677d6f28f5faf45337dd6" category="paragraph">客戶管理員需要在Azure NetApp Files 支援功能區中部署Connector、讓BlueXP能夠管理公有雲環境中的資源和程序。</block>
+  <block id="fcdf1a1b46f3b7e8ad6ff82010438a90" category="list-text">支援以原則為基礎的SAP HANA資料庫備份與還原Azure NetApp Files 功能、這些資料庫位於支援中心</block>
+  <block id="626a739569b9dd0c59a5743d227d6123" category="doc">部署SnapCenter 適用於Oracle的支援功能外掛程式、並新增資料庫主機</block>
+  <block id="67d8739c95209190622df34ef33e74cb" category="paragraph">您應該在SnapCenter 每個Oracle資料庫主機上部署適用於Oracle的支援功能、新增資料庫主機、並探索主機上的資料庫、以指派原則並建立備份。</block>
+  <block id="90830749b6cbde0f0a187f49bb486594" category="list-text">如果資料庫主機已啟用SSH、您可以使用下列其中一種方法來部署外掛程式：</block>
+  <block id="8b6b64c474edd30f1a9272ee24a2232f" category="list-text">部署外掛程式、並使用SSH選項新增裝載UI。 <block ref="96cf78a1eacf9d4e1d33800a6dba4d36" category="inline-xref-macro-rx"></block>。</block>
+  <block id="3262da317dca873a6393aacedc92711b" category="list-text">使用指令碼部署外掛程式、並使用手動選項從UI新增主機。 <block ref="7e15d0c8c67b3cf8713be59b7b4c1b25" category="inline-xref-macro-rx"></block>。</block>
+  <block id="08504e173a088669654aaeccaa2b3a23" category="list-text">如果停用SSH、請手動部署外掛程式、並使用手動選項從UI新增主機。 <block ref="5f00e4f7335cd99930cda849266e93c9" category="inline-xref-macro-rx"></block>。</block>
+  <block id="39897a09935775120f58a38650026ddb" category="list-text">您應該已經為SnapCenter 該位使用者建立了「Sudo」、並已設定「Sudo」SnapCenter 。如需相關資訊、請參閱 <block ref="5e3b9649d708169ed88a9a242f31b61c" category="inline-xref-macro-rx"></block>。</block>
+  <block id="552cb41f77557f24afc949caef89280f" category="list-text">如果使用SSH型部署、請確定連接器已啟用SSH連接埠的通訊（預設值：22）。</block>
+  <block id="39f31ccaa29cc339e3980e0da960d750" category="list-text">請確定連接器已啟用外掛連接埠的通訊（預設值：8145）、讓作業正常運作。</block>
+  <block id="739fcf2b514d944f705042f1e0e00257" category="paragraph">您應該建立SnapCenter 一個供使用者使用的Sudo、然後為使用者設定該Sudo。</block>
+  <block id="fe689694da98d31a8ecb33f9937bcf2b" category="list-text">建立SnapCenter 這個使用者帳戶、私密金鑰配對、然後指派權限。如需相關資訊、請參閱<block ref="fda0d36f41d4c9e30e06c472b1bf9e0c" category="inline-link-rx"></block>。</block>
+  <block id="08a9756f760e15ecb833f8a03e820f5c" category="paragraph">在以上各行中、&lt;LINUXUSER&gt; 將您SnapCenter 建立的支援功能取代為「支援功能」使用者、並將檔案儲存到「視覺效果」公用程式中。</block>
+  <block id="cf4cb057a8a94a7af35c1f206a490fc7" category="section-title">部署外掛程式、並使用SSH選項從UI新增主機</block>
+  <block id="c19f3000ecedd6e739c73e513c597e19" category="list-text">在「Add Host（新增主機）」頁面中、執行下列步驟：</block>
+  <block id="ac942bfda2b49411af92bb83a04093ea" category="inline-xref">Sudo SnapCenter S答案 使用者</block>
+  <block id="3873a19d99c54075bd878c4755a660d7" category="list-text">指定使用者名稱（<block ref="0ddbb3d2c437bced333ce4f5ef476df6" category="inline-xref-macro-rx"></block>）將外掛程式套件複製到主機的方法。</block>
+  <block id="96e8e4df8b3ca0b4eec3a79081f69a5f" category="section-title">使用指令碼部署外掛程式、並使用手動選項從UI新增主機</block>
+  <block id="91eb61d109e3007a8e969ba3cba1c154" category="paragraph">如果啟用Oracle主機上的SSH金鑰型驗證供SnapCenter 支援對象使用、您可以執行下列步驟來部署外掛程式。在執行這些步驟之前、請先確認已啟用連接器的SSH連線。</block>
+  <block id="10e01a340c84380e027a73fec4302231" category="list-text">SSH_KEY_file是SnapCenter 支援此功能的使用者SSH金鑰、用於連線至Oracle主機。這是必要參數。</block>
+  <block id="2a8cccba41dd7585d3e688efa551f3ca" category="list-text">使用者名稱：SnapCenter Oracle主機上具有SSH權限的支援對象、這是選用參數。預設值為EC2使用者。</block>
+  <block id="dc9d1d5a9daee6a922e8ca3b643f951f" category="section-title">手動部署外掛程式、並使用手動選項從UI新增主機</block>
+  <block id="6536d8bd829629536e41a1e31830f5df" category="paragraph">如果未在Oracle資料庫主機上啟用SSH金鑰型驗證、您應該執行下列手動步驟來部署外掛程式、然後使用手動選項從UI新增主機。</block>
+  <block id="59498123f173f525c8ccd6041aad0090" category="paragraph">_snapcenter_Linux主機外掛程式_SCS.bin_應複製到SnapCenter 可由該位使用者存取的位置。</block>
+  <block id="9fccb7bf2ea38fc2199a167bbe2d87fd" category="list-text">使用SnapCenter 支援程式碼的使用者帳戶登入Oracle資料庫主機、然後執行下列命令來啟用二進位檔的執行權限。<block ref="4cd88a831fa940d7f40686837061308c" prefix=" " category="inline-code"></block></block>
+  <block id="2fe3c4ca1597e6bdf865a7367c7a7a08" category="list-text">將Oracle外掛程式部署為Sudo SnapCenter Sudo Sudo使用者。<block ref="d0ac17823bdcaade630c1553c4540054" prefix=" " category="inline-code"></block></block>
+  <block id="f55cf31361d600683e03e25c6f1109e3" category="list-text">從Connector執行下列命令、驗證外掛程式是否可從Connector存取。<block ref="7bab21217ba7da8fb8f176538fe93b9b" prefix=" " category="inline-code"></block></block>
 </blocks>

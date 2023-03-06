@@ -20,13 +20,13 @@ summary: 打造Azure NetApp Files 可運作的環境和Connector
 
 == 打造Azure NetApp Files 可運作的環境
 
-您應該建立Azure NetApp Files 代管資料庫的運作環境。如需相關資訊、請參閱 link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/concept-azure-netapp-files.html["深入瞭解 Azure NetApp Files"] 和 link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-create-working-env.html["打造 Azure NetApp Files 一個不一樣的工作環境"]。
+您應該在Azure NetApp Files 託管資料庫的環境中建立不必要的工作環境。如需相關資訊、請參閱 link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/concept-azure-netapp-files.html["深入瞭解 Azure NetApp Files"] 和 link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-create-working-env.html["打造 Azure NetApp Files 一個不一樣的工作環境"]。
 
 
 
 == 建立連接器
 
-客戶管理員必須在ANF中部署Connector、讓BlueXP能夠管理公有雲環境中的資源和程序。
+客戶管理員需要在Azure NetApp Files 支援功能區中部署Connector、讓BlueXP能夠管理公有雲環境中的資源和程序。
 
 
 NOTE: 您無法從UI更新新的連接器ID。

@@ -4,7 +4,7 @@ permalink: task-deploy-snapcenter-plugin-for-sap-hana.html
 keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for SAP HANA, SAP HANA, database, host, deploy 
 summary: 在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HNAN的支援功能。 
 ---
-= 部署SnapCenter 適用於SAP HANA的支援功能外掛程式
+= 部署SnapCenter 適用於SAP HANA的支援功能外掛程式、並新增資料庫主機
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -17,13 +17,26 @@ summary: 在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HNAN�
 您應該在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HANA的解決方案。視SAP HANA主機是否啟用SSH金鑰型驗證而定、您可以遵循其中一種方法來部署外掛程式。
 
 
-NOTE: 確保每個SAP HANA資料庫主機上都安裝了Java 11（64位元）Oracle Java或OpenJDK。
+
+== 先決條件
+
+* 確保每個SAP HANA資料庫主機上都安裝了Java 11（64位元）Oracle Java或OpenJDK。
+* 您應該已新增工作環境並建立Connector。
+* 確認連接器已連線至工作環境
+* 確定BlueXP使用者具有「帳戶管理員」角色。
+* 您應該已經為SnapCenter 該位使用者建立了「Sudo」、並已設定「Sudo」SnapCenter 。如需相關資訊、請參閱 link:task-deploy-snapcenter-plugin-for-sap-hana.html#configure-sudo-for-snapcenter-user["設定Sudo for SnapCenter S供 使用者使用。"]
+* 在新增資料庫主機之前、您應該已經部署SnapCenter 了適用於SAP HANA的功能不全的外掛程式。
+* 新增SAP HANA資料庫主機時、您應該新增HDB使用者儲存金鑰。HDB安全使用者存放區金鑰用於將SAP HANA資料庫主機的連線資訊安全地儲存在用戶端上、HDBSQL用戶端則使用安全的使用者存放區金鑰來連線至SAP HANA資料庫主機。
+* 針對HANA系統複寫（HSR）、為了保護HANA系統、您應該手動登錄主要和次要HANA系統。
+* 如果使用SSH型部署、連接器應啟用與SSH連接埠的通訊（預設值：22）。
+* 連接器應已啟用外掛連接埠的通訊功能（預設值：8145）、以便讓作業正常運作。
 
 
 
-== 設定非root使用者
 
-您應該建立非root使用者來部署外掛程式。
+== 設定Sudo for SnapCenter S供 使用者使用
+
+您應該建立SnapCenter 一個用來部署外掛程式的不必要使用者。
 
 *步驟*
 
@@ -34,10 +47,10 @@ NOTE: 確保每個SAP HANA資料庫主機上都安裝了Java 11（64位元）Ora
 . 從複製第1行至第16行 `oracle_checksum_scs.txt` 檔案位於 `base_mount_path/version/sc-linux-host-plugin/`
 . 登入SAP HANA資料庫主機、然後執行下列步驟：
 +
-.. 建立非root使用者帳戶、私密金鑰組、然後指派權限。
+.. 建立SnapCenter 這個使用者帳戶、私密金鑰配對、然後指派權限。
 .. 將您在步驟4中複製的行貼到 `/etc/sudoers` 使用visudo Linux公用程式來建立檔案。
 +
-在上述各行中、<LINUXUSER> 將所建立的非root使用者取代為您在視覺化公用程式中儲存的使用者。
+在以上各行中、將<LINUXUSER> 您SnapCenter 建立並儲存在視覺化公用程式中的支援功能取代成功能不實的使用者。
 
 
 
@@ -67,6 +80,8 @@ NOTE: 確保每個SAP HANA資料庫主機上都安裝了Java 11（64位元）Ora
 
 
 
+部署外掛程式之後、您應該新增 link:task-deploy-snapcenter-plugin-for-sap-hana.html#add-sap-hana-database-hosts["SAP HANA資料庫主機："]
+
 
 
 == 手動部署外掛程式
@@ -83,13 +98,106 @@ NOTE: 確保每個SAP HANA資料庫主機上都安裝了Java 11（64位元）Ora
 . 複本 `snapcenter_linux_host_plugin_scs.bin` 使用scp或其他替代方法、將資料傳送至每個SAP HANA資料庫主機。
 . 在SAP HANA資料庫主機上、執行下列命令以啟用二進位檔案的執行權限。
 `chmod +x snapcenter_linux_host_plugin_scs.bin`
-. 將SAP HANA外掛程式部署為Sudo非root使用者。
+. 將SAP HANA外掛程式部署為Sudo SnapCenter Sudo Sudo用戶。
 `./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root-user>`
 . 複本 `certificate.p12` 寄件者 `<base_mount_path>/client/certificate/` 連接器VM的路徑 `/var/opt/snapcenter/spl/etc/` 在外掛程式主機上。
 +
 .. 瀏覽至 `/var/opt/snapcenter/spl/etc` 並執行keytools命令以匯入憑證。
 `keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
 .. 重新啟動SPL：「系統重新啟動spl」
+
+
+. 從Connector執行下列命令、驗證外掛程式是否可從Connector存取：
++
+`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert /config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
+
+
+
+
+
+== 新增SAP HANA資料庫主機
+
+您應該手動新增SAP HANA資料庫主機、以指派原則並建立備份。不支援自動探索SAP HANA資料庫主機。
+
+*步驟*
+
+. 在* BlueXP* UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
+. 按一下「*探索應用程式*」。
+. 選取* Cloud Native *>* SAP HANA *、然後按一下* Next*。
+. 在「*應用程式*」頁面中、按一下「*新增系統*」。
+. 在*系統詳細資料*頁面中、執行下列動作：
++
+.. 選取「系統類型」作為多租戶資料庫容器或單一容器。
+.. 輸入SAP HANA系統名稱。
+.. 指定SAP HANA系統的SID。
+.. （選用）指定HDBSQL OS使用者。
+.. 選取外掛程式主機。（可選）如果未添加主機或要添加多個主機，請單擊* Add Plug-In Host*（添加插件主機*）。
+.. 如果HANA系統設定為HANA系統複寫、請啟用* HANA系統複寫（HSR）System*。
+.. 按一下「* HDB Secure User Store Keys *（* HDB安全使用者儲存金鑰*）」文字方塊以新增使用者儲存金鑰
++
+指定金鑰名稱、系統詳細資料、使用者名稱和密碼、然後按一下*新增金鑰*。
+
++
+您可以刪除或修改使用者儲存金鑰。
+
+
+
+. 單擊 * 下一步 * 。
+. 在「*儲存設備佔用空間*」頁面中、按一下「*新增儲存空間*」、然後執行下列步驟：
++
+.. 選取工作環境並指定NetApp帳戶。
++
+移至* Canvas*頁面以新增工作環境
+
+.. 選取所需的磁碟區。
+.. 按一下「*新增儲存設備*」。
+
+
+. 檢閱所有詳細資料、然後按一下*「Add System*（新增系統*）」。
+
+
+
+NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定主機名稱時、會顯示所有主機
+
+您可以使用REST API來修改及移除SAP HANA系統。在移除HANA系統之前、您應該刪除所有相關的備份並移除保護。
+
+
+
+=== 新增非資料磁碟區
+
+新增多租戶資料庫容器或單一容器類型的SAP HANA系統之後、即可新增HANA系統的非資料磁碟區。
+
+*步驟*
+
+. 在* BlueXP* UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
+. 按一下「*探索應用程式*」。
+. 選取* Cloud Native *>* SAP HANA *、然後按一下* Next*。
+. 在「*應用程式*」頁面中、按一下 image:icon-action.png["圖示以選取動作"] 與您要新增非資料磁碟區的系統相對應、然後選取*管理系統*>*非資料磁碟區*。
+
+
+
+
+=== 新增全域非資料磁碟區
+
+新增多租戶資料庫容器或單一容器類型的SAP HANA系統之後、即可新增HANA系統的全域非資料Volume。
+
+*步驟*
+
+. 在* BlueXP* UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
+. 按一下「*探索應用程式*」。
+. 選取* Cloud Native *>* SAP HANA *、然後按一下* Next*。
+. 在「*應用程式*」頁面中、按一下「*新增系統*」。
+. 在*系統詳細資料*頁面中、執行下列動作：
++
+.. 從System Type（系統類型）下拉式清單中、選取* Global Non-Data Volume（*全域非資料Volume）*。
+.. 輸入SAP HANA系統名稱。
+.. 指定SAP HANA系統的相關SSID。
+.. 選取外掛程式主機
++
+（可選）要添加多個主機，請單擊* Add Plug-In Host*（添加插件主機*）並指定主機名和端口，然後單擊* Add Host*（添加主機*）。
+
+.. 單擊 * 下一步 * 。
+.. 檢閱所有詳細資料、然後按一下*「Add System*（新增系統*）」。
 
 
 
