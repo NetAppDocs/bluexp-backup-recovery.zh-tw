@@ -22,16 +22,16 @@ https://bluexp.netapp.com/cloud-backup["深入瞭解Cloud Backup"^]。
 
 備份與還原可用於：
 
-* 備份及還原ONTAP 來自於內部部署的不全系統的資料。Cloud Volumes ONTAP ONTAP link:concept-ontap-backup-to-cloud.html["請參閱此處的詳細功能"]。
+* 備份並還原ONTAP 來自於不受資料保護的功能、以及內部部署的功能ONTAP Cloud Volumes ONTAP 。 link:concept-ontap-backup-to-cloud.html["請參閱此處的詳細功能"]。
 * 備份及還原Kubernetes持續磁碟區。 link:concept-kubernetes-backup-to-cloud.html["請參閱此處的詳細功能"]。
-* 使用Cloud Backup for Applications、將應用程式一致的Snapshot從內部部署ONTAP 到雲端。 link:concept-protect-app-data-to-cloud.html["請參閱此處的詳細功能"]。
+* 使用Cloud Backup for Applications、從內部部署ONTAP 的支援系統備份應用程式一致的Snapshot快照。 link:concept-protect-app-data-to-cloud.html["請參閱此處的詳細功能"]。
 * 使用Cloud Backup for VMware將資料存放區備份到雲端、並將虛擬機器還原回內部部署的vCenter。 link:concept-protect-vm-data.html["請參閱此處的詳細功能"]。
 
 
 https://www.youtube.com/watch?v=DF0knrH2a80["觀看快速示範"^]
 
 
-TIP: 當BlueXP Connector部署在雲端的政府區域、或是沒有網際網路連線（黑點）的站台時、Cloud Backup僅支援ONTAP 從還原系統進行備份與還原作業。使用這些替代部署方法時、Cloud Backup不支援從Kubernetes叢集、應用程式或虛擬機器進行備份與還原作業。
+TIP: 當BlueXP Connector部署在雲端的政府區域、或是沒有網際網路連線（黑點）的站台時、Cloud Backup僅支援ONTAP 從還原系統進行備份與還原作業。使用這些類型的部署方法時、Cloud Backup不支援從Kubernetes叢集、應用程式或虛擬機器進行備份與還原作業。
 
 
 

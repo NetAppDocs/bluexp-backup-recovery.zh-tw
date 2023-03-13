@@ -27,6 +27,7 @@ summary: 請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能�
 * 您在Cloud Volumes ONTAP Azure中執行的是版本號為1.7P5或更新版本ONTAP （建議使用版本號為0、8P13及更新版本）。
 * 您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。
 * 您已訂閱 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"^] NetApp的Cloud Backup BYOL授權。
+* 您在Azure中安裝了Connector。連接器可安裝在有或沒有網際網路存取的站台上。
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 在新系統或現有系統上啟用Cloud Backup
@@ -76,11 +77,27 @@ image:diagram_cloud_backup_cvo_azure.png["顯示Cloud Backup如何與來源系�
 授權需求:: 對於Cloud Backup PAYGO授權、您必須先透過Azure Marketplace訂閱、才能啟用Cloud Backup。雲端備份計費是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
 +
 --
-對於Cloud Backup BYOL授權、您需要NetApp的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["瞭解如何管理BYOL授權"]。
+對於Cloud Backup BYOL授權、您需要NetApp的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["瞭解如何管理BYOL授權"]。在Cloud Volumes ONTAP 黑暗的站台中部署Connector和解決方案時、必須使用BYOL授權。
 
 而且您必須訂閱 Microsoft Azure 、才能取得備份所在的儲存空間。
 
 --
+連接器需求:: 連接器可安裝在Azure地區、無論是否可存取網際網路。目前、只有Azure商用網站支援無法存取網際網路的網站。
++
+--
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["在Azure中部署Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["在Azure地區的Linux主機上安裝Connector、無需網際網路存取"^]
+
+
+--
+
+
+
+NOTE: BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["雲端備份新功能"] 若要查看每個Cloud Backup版本中的新功能、請依照下列步驟執行 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["升級Connector軟體"^] 當您想要使用新功能時。
+
+強烈建議您在沒有網際網路連線的站台上安裝Connector時、定期建立Cloud Backup組態資料的本機備份。 link:reference-backup-cbs-db-in-dark-site.html["瞭解如何在黑暗的站台中備份雲端備份資料"^]。
+
 驗證或新增連接器權限:: 若要使用雲端備份搜尋與還原功能、您必須擁有Connector角色的特定權限、才能存取Azure Synapse Workspace和Data Lake Storage Account。請參閱下列權限、如果您需要修改原則、請遵循這些步驟。
 +
 --
@@ -201,7 +218,7 @@ image:screenshot_backup_provider_settings_azure.png["快照顯示雲端供應商
 .. 輸入預設原則的名稱。您不需要變更名稱。
 .. 定義備份排程、並選擇要保留的備份數量。 link:concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings["請參閱您可以選擇的現有原則清單"^]。
 .. 您也可以選擇在使用ONTAP 更新版本的時、設定_DataLock和勒索軟體Protection _設定、保護備份免受刪除和勒索軟體攻擊。_DataLock_可保護您的備份檔案、避免遭到修改或刪除、而_勒索 軟體保護_會掃描您的備份檔案、尋找備份檔案中勒索軟體攻擊的證據。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["深入瞭解可用的DataLock設定"^]。
-.. 若使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後將備份分層至Azure歸檔儲存設備、以進一步最佳化成本。 link:reference-azure-backup-tiers.html["深入瞭解如何使用歸檔層"]。
+.. 若使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後將備份分層至Azure歸檔儲存設備、以進一步最佳化成本。當部署於黑暗站台時、此功能無法使用。 link:reference-azure-backup-tiers.html["深入瞭解如何使用歸檔層"]。
 +
 image:screenshot_backup_policy_azure.png["顯示Cloud Backup設定的快照、您可在其中選擇排程和備份保留。"]
 
