@@ -34,9 +34,11 @@ summary: 瞭解Cloud Backup的新功能。
 
 
 
-=== 「工作監控」提供進階篩選功能、可尋找特定的備份或還原工作
+=== 工作監控器的多項增強功能
 
-「工作監控」頁面新增進階篩選功能、讓您可以依時間、工作負載（磁碟區、應用程式、虛擬機器或Kubernetes）、 工作類型、狀態、工作環境和儲存VM。您也可以輸入任意文字來搜尋任何資源、例如「application_3」。  https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["瞭解如何使用進階篩選器"]。
+* 「工作監控」頁面新增進階篩選功能、讓您可以依時間、工作負載（磁碟區、應用程式、虛擬機器或Kubernetes）、 工作類型、狀態、工作環境和儲存VM。您也可以輸入任意文字來搜尋任何資源、例如「application_3」。  https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["瞭解如何使用進階篩選器"]。
+* 從Cloud Backup使用者介面和API啟動的使用者啟動備份和還原作業、以及系統啟動的工作（例如持續的備份作業）、現在都可在Cloud Volumes ONTAP *工作監控*索引標籤中找到、以供執行ONTAP S還原9.13.0或更新版本的系統使用。早期版本Cloud Volumes ONTAP 的不一致系統和內部部署ONTAP 的不一致系統、目前只會顯示使用者啟動的工作。
+
 
 
 

@@ -2330,7 +2330,6 @@
   <block id="eef42d7f28b590d9b42d8fbddb7a3937" category="paragraph">您也可以選擇在使用ONTAP 更新版本的時、設定_DataLock和勒索軟體Protection _設定、保護備份免受刪除和勒索軟體攻擊。 <block ref="87ffafedb97d3b50ea58ef296117bbac" category="inline-link-macro-rx"></block>。</block>
   <block id="1b023ff169abba0d2ae3b5eda4b0662e" category="list-text">您也可以 <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> 內部部署ONTAP 的系統。</block>
   <block id="10ad842a6a3246a44700dd2f0005c89c" category="section-title">使用「工作監控」檢視備份與還原工作狀態</block>
-  <block id="8fa9fc7dcc8c23904d4a616698a7a223" category="paragraph">您可以在「*工作監控*」標籤中檢視所有備份與還原作業及其目前狀態的清單。這包括Cloud Volumes ONTAP 來自您的VMware、內部部署ONTAP 的VMware、應用程式、虛擬機器和Kubernetes系統的作業。每個作業或工作都有唯一的ID和狀態。狀態可以是：</block>
   <block id="505a83f220c02df2f85c3810cd9ceb38" category="list-text">成功</block>
   <block id="3919b07e397df4ea5f1ccc5ad0f35b8a" category="list-text">Volume Cloud Volumes ONTAP （內部和內部ONTAP 的不全功能資料）</block>
   <block id="1ddf333c6654f7f89c739dddfb4cc429" category="list-text">應用程式</block>
@@ -3570,11 +3569,9 @@
   <block id="5463242c7cc34f92b5dbbf1ab6d87188" category="paragraph">過去當您還原資料夾時、只會還原該資料夾中的檔案、子資料夾中的任何子資料夾或檔案都不會還原。現在、如果您使用ONTAP 的是更新版本的版本、則會還原所選資料夾中的所有子資料夾和檔案。如果您在頂層資料夾中有多個巢狀資料夾、這可節省大量時間與金錢。</block>
   <block id="bbe776d643f3b0568f3c2fa216a50124" category="section-title">能夠在Cloud Volumes ONTAP 黑暗的環境中備份來自於各種系統的資料</block>
   <block id="aef1b3252b7a5b85dab7066cccc19b52" category="paragraph">現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要在商業區域的Linux主機上安裝Connector、也需要在Cloud Volumes ONTAP 該處部署該系統。請參閱 <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block> 和 <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
-  <block id="463ed6b78b2c95e39ecc10ee3195e921" category="section-title">「工作監控」提供進階篩選功能、可尋找特定的備份或還原工作</block>
   <block id="1cdf820a77c583c660d65df7b1ca03b8" category="inline-link">瞭解如何使用進階篩選器</block>
   <block id="aa3492539222da5bc85fd5614f489f71" category="paragraph">「工作監控」頁面新增進階篩選功能、讓您可以依時間、工作負載（磁碟區、應用程式、虛擬機器或Kubernetes）、 工作類型、狀態、工作環境和儲存VM。您也可以輸入任意文字來搜尋任何資源、例如「application_3」。 <block ref="f726054cf0d935cd51c2a5edb3b3fd0c" category="inline-link-rx"></block>。</block>
   <block id="1625899745083f00e310fe6a84e9582c" category="list-text">下列S3權限必須是為Connector提供權限的IAM角色的一部分：</block>
-  <block id="ec119ac8f6ca5b011d4a2ba9323dbca5" category="admonition">此時系統啟動的工作（這類持續備份作業）不會反映在*工作監控*標籤中、只會顯示使用者啟動的工作。</block>
   <block id="d90665b682298c55adb9c3f6a9ceb3f0" category="paragraph">此螢幕快照顯示預設欄/欄位標題。您可以按一下 <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block> 若要顯示「工作環境」、「SVM」、「使用者名稱」和「工作負載」的四個額外欄。</block>
   <block id="9d5572457fea4567bbd4373a983f3216" category="section-title">搜尋及篩選工作清單</block>
   <block id="c892f9f2802395ba3a650b944f02ddbc" category="paragraph">根據預設、「工作監控」頁面會顯示過去24小時內的工作。您可以按一下每個欄標題、依「狀態」、「開始時間」、「資源名稱」等項目來排序結果。</block>
@@ -3591,4 +3588,9 @@
   <block id="e429a3dcdf9ca5d36834b72490aae784" category="admonition">將資料從Azure歸檔儲存設備還原StorageGRID 至支援的系統不支援高優先順序。</block>
   <block id="5a583661a8908e9d0eb4e2adb7e14660" category="paragraph">使用ONTAP 支援更新版本的支援功能時、您可以還原資料夾及其中的所有檔案和子資料夾。使用ONTAP 9.13.0之前的版本時、只會還原該資料夾中的檔案、子資料夾中的任何子資料夾或檔案都不會還原。</block>
   <block id="9dc68f929a10fb4c3bc9901cb0ad551c" category="list-text">將資料從Azure歸檔儲存設備還原StorageGRID 至整套系統時、不支援高還原優先順序。</block>
+  <block id="1442489a4cf0ea56df2e53ec47c70ec8" category="section-title">工作監控器的多項增強功能</block>
+  <block id="bf2bb33000b51334f72c2e394ff56247" category="list-text">從Cloud Backup使用者介面和API啟動的使用者啟動備份和還原作業、以及系統啟動的工作（例如持續的備份作業）、現在都可在Cloud Volumes ONTAP *工作監控*索引標籤中找到、以供執行ONTAP S還原9.13.0或更新版本的系統使用。早期版本Cloud Volumes ONTAP 的不一致系統和內部部署ONTAP 的不一致系統、目前只會顯示使用者啟動的工作。</block>
+  <block id="da2d24e019fdbb554fb9260491bdb31f" category="paragraph">您可以在「*工作監控*」標籤中檢視所有備份與還原作業及其目前狀態的清單。這包括Cloud Volumes ONTAP 來自您的VMware、內部部署ONTAP 的VMware、應用程式、虛擬機器和Kubernetes系統的作業。每個作業或工作都有唯一的ID和狀態。狀態可以是：</block>
+  <block id="51ed954daa0d2ac8e61b514ada10d020" category="paragraph">從Cloud Backup使用者介面和API啟動的使用者啟動備份和還原作業、以及系統啟動的工作（例如持續的備份作業）、都可在Cloud Volumes ONTAP 執行ONTAP S還原9.13.0或更新版本的系統*工作監控*索引標籤中找到。</block>
+  <block id="ef3fa14a7fd05f8163ad506cf72a0464" category="admonition">在ONTAP 支援的地方執行舊版的支援功能時Cloud Volumes ONTAP 、或是在內部部署ONTAP 的支援系統上執行時、此時只會顯示使用者啟動的工作。</block>
 </blocks>
