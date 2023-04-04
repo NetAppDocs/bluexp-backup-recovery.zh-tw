@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-onprem-private-cloud.html 
 keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, StorageGRID 
-summary: 請完成幾個步驟、開始從內部部署ONTAP 的支援系統備份資料、以便將資料物件儲存在NetApp StorageGRID 的支援系統中。 
+summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到 NetApp StorageGRID 系統的物件儲存設備。 
 ---
 = 將內部部署ONTAP 的不全資料備份StorageGRID 至不全
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 請完成幾個步驟、開始從內部部署ONTAP 的支援系統備�
 
 
 [role="lead"]
-請完成幾個步驟、開始從內部部署ONTAP 的支援系統備份資料、以便將資料物件儲存在NetApp StorageGRID 的支援系統中。
+請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到 NetApp StorageGRID 系統的物件儲存設備。
 
 請注意、「內部部署ONTAP 的功能不只是指FAS 包含了功能不全的功能、AFF 包括了功能不全的功能、包括了功能不全的功能。ONTAP Select
 

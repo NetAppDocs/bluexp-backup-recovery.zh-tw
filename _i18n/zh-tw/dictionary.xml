@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
-  <block id="e5df9ae2e68ee55688688cf3c2915421" category="summary">Cloud Backup提供備份與還原功能、可保護資料並長期歸檔。</block>
   <block id="846099e77083903f32f72c0e2156c3c5" category="doc">雲端備份文件</block>
-  <block id="c9146a1e3424250bbdad9265d1b3133b" category="summary">請完成幾個步驟、開始從內部部署ONTAP 的支援系統備份資料、以便將資料物件儲存在NetApp StorageGRID 的支援系統中。</block>
   <block id="1b91b58bbd15b10b96b7306af574303b" category="doc">將內部部署ONTAP 的不全資料備份StorageGRID 至不全</block>
   <block id="447d2fd8f5815390c0a99de97b857ccb" category="paragraph">請注意、「內部部署ONTAP 的功能不只是指FAS 包含了功能不全的功能、AFF 包括了功能不全的功能、包括了功能不全的功能。ONTAP Select</block>
   <block id="06ad314b340900d226b1196e1fe289e9" category="section-title">快速入門</block>
@@ -260,7 +258,6 @@
   <block id="39f91bde3bf148c0b27accc0c3b738c0" category="inline-image-macro">工作環境的「取消註冊備份」按鈕快照。</block>
   <block id="6b8f75608c780411342a488cc1ed6a77" category="paragraph"><block ref="6b8f75608c780411342a488cc1ed6a77" category="inline-image-macro-rx" type="image"></block></block>
   <block id="16d050cc0c345f23a8c1f9d1557ac107" category="list-text">在確認對話方塊中、按一下*取消登錄*。</block>
-  <block id="7ffa363d940790eb415f439ffe91d85e" category="summary">請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中的資料備份到Azure Blob儲存設備。</block>
   <block id="3d6e948defef3e67a438f4f7819ed82e" category="doc">將內部部署ONTAP 的內部資料備份到Azure Blob儲存設備</block>
   <block id="fee59c74a156abe8a410a85ba51f5956" category="inline-link">瞭解如何使用System Manager使用Cloud Backup將磁碟區備份到雲端。</block>
   <block id="08c19771a6ca4c9d29ee89345a0e2d51" category="list-text">叢集必須具備連接Blob儲存設備和連接器所需的網路連線。</block>
@@ -328,7 +325,6 @@
   <block id="07704c3b46fd42d29ebe46644d5f6447" category="list-text">每天的備份作業會在每天午夜之後才開始。</block>
   <block id="e6810e9f98ecbf425d91e0dc05f65de5" category="list-text">每週備份會在週日早上午夜之後開始。</block>
   <block id="e029f5798c244f87b310df92d9b4527f" category="list-text">每月備份只在每月第一天午夜之後開始。</block>
-  <block id="bbbcf16122866d0fe2fb2058a6acdf2e" category="paragraph">開始時間取決於每ONTAP 個來源系統設定的時區。您無法在使用者指定的時間從UI排程備份作業。如需詳細資訊、請聯絡您的系統工程師。</block>
   <block id="fab27e4b9f13b45f921fe1c7f42ffac1" category="section-title">備份複本會與您的NetApp帳戶建立關聯</block>
   <block id="ac252743de820aac9183d9f76d4bed67" category="inline-link">NetApp帳戶</block>
   <block id="3ce3233955186ca42fd073f31c7b98aa" category="paragraph">備份複本與相關聯<block ref="5c84ace7b3e4263476ddf0c264272cee" category="inline-link-rx"></block> 連接器所在的位置。</block>
@@ -599,7 +595,6 @@
   <block id="7a99d9487fc9540fa7bee7c2eb717413" category="inline-link-macro">瞭解如何使用工作監控器</block>
   <block id="9d20a5735dc25af92271eea8fa797bf7" category="paragraph">當您針對多個磁碟區啟動作業（例如變更備份原則或刪除備份）時、「工作監視器」會很有幫助、因此您可以查看所有磁碟區上的作業何時完成。 <block ref="41d368101275ff882313a6db3fc29812" category="inline-link-macro-rx"></block>。</block>
   <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link">請按這裡</block>
-  <block id="07c2ea1cc6b7f654f42d3f074f3c13f4" category="summary">請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能區備份到 Azure Blob 儲存設備。</block>
   <block id="f6c96f9db00475dfd6c371ca50af3d5b" category="doc">將Cloud Volumes ONTAP 不支援的資料備份到Azure Blob儲存設備</block>
   <block id="fc054407571c2d4dfcfbb5057d24c238" category="list-text">您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。</block>
   <block id="23dbb22134961553d5b555f78c0d3634" category="list-text">新系統：工作環境精靈預設會啟用雲端備份。請務必保持啟用選項。</block>
@@ -691,9 +686,7 @@
   <block id="5b517e301694c9f9491db430482b4297" category="list-text">如果您使用的帳戶沒有市場帳戶、備份服務會繼續執行、但您仍會看到警告。</block>
   <block id="1fc1233733d1833b4337f4dc4a0d2a4f" category="inline-link-macro">如何更新Cloud Backup授權</block>
   <block id="d279d008f3f2141ce1fc250d370bf6a9" category="paragraph">移轉至 PAYGO 授權的系統會自動傳回 BYOL 授權。而在未取得授權的情況下執行的系統將停止顯示警告。</block>
-  <block id="020c911dde61e6dcdb0fdc14a39191bc" category="summary">請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能區備份到 Google Cloud 儲存設備。</block>
   <block id="16d4cdec56b3c490095eb1c28b330e1f" category="doc">將Cloud Volumes ONTAP 不支援的資料備份到Google Cloud Storage</block>
-  <block id="e196accd41672418154158d3bf8e1006" category="paragraph">請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能區備份到 Google Cloud Storage 。</block>
   <block id="534e7b1b233af6dcaf3fe6265a36586b" category="list-text">新系統：完成新的工作環境精靈後、即可啟用雲端備份。</block>
   <block id="bd1bf42f3eb311ef9f00c80352b4b141" category="paragraph">選取您要在其中建立 Google Cloud Storage 儲存庫以進行備份的 Google Cloud Project 。</block>
   <block id="2acb00623fcbca99b27f6a3cc5991634" category="inline-image-macro">快照顯示雲端供應商將磁碟區從 Cloud Volumes ONTAP 安裝在 GCP 上的某個系統備份到 Google Cloud Storage 儲存庫時的詳細資料。</block>
@@ -800,7 +793,6 @@
   <block id="d6ea4d085acb7feedf70dfad55d12af7" category="paragraph"><block ref="d6ea4d085acb7feedf70dfad55d12af7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4216f1ed77e39a831eabf2f65c0d56d8" category="list-text">所有Azure地區均支援雲端備份<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>。</block>
   <block id="5cf322cefc810d29bf6edaec8079e4f8" category="paragraph">備份檔案儲存在Blob容器中、使用與Cloud Volumes ONTAP 該系統相同的Azure訂閱和Region。</block>
-  <block id="180e97e259921e464d68cd76825f9337" category="summary">請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中的資料備份到Amazon S3儲存設備。</block>
   <block id="e4eb771c510e3febaca5aa81f1155f85" category="doc">將內部部署ONTAP 的不全資料備份到Amazon S3</block>
   <block id="5c37edf1ec718afd1ab9a5a51043e0ce" category="paragraph">請依照下列步驟快速入門。每個步驟的詳細資料請參閱本主題的下列各節。</block>
   <block id="2095d7a797c25bb28e0630e6f0234176" category="inline-xref">請參閱可用的連線方法。</block>
@@ -904,7 +896,6 @@
   <block id="f66a35b8c8476dffd82a65fd5e691b3b" category="list-text">複製憑證和CRL檔案之後、請重新啟動Cloud Backup for Apps服務。</block>
   <block id="d9bedb6ca0e8e6bbd10eebe3f471507d" category="list-text">「Udo Docker執行cloudmanager_snapcenter sed -I 's/skipscCertValidation：true/skipscCertValidation：假/g'/opt/netapp/cloudmanager-snapcenter-agent/config/config.yml」</block>
   <block id="9eb706636b25b810332dcdc9d194f80b" category="list-text">「Udo Docker重新啟動cloudmanager_snapcentre」</block>
-  <block id="b3d62ac61d47e85fb707f629dcb871fb" category="summary">請完成幾個步驟、開始將內部部署ONTAP 的資料還原至Google Cloud Storage。</block>
   <block id="f2063b8fb6d1546ec7a6225b7a11d6e6" category="doc">將內部部署ONTAP 的內部資料備份到Google Cloud Storage</block>
   <block id="4e3ab3869d64d61090a4ac213d5f1074" category="list-text">叢集必須具備所需的網路連線、才能連線至Google儲存設備和Connector。</block>
   <block id="e950616aa291f7c208ba1c81279fac86" category="list-text">連接器必須具備所需的網路連線、才能連線至Google儲存設備和叢集。</block>
@@ -932,7 +923,6 @@
   <block id="a2533530877329fd448b78c28606ffc4" category="inline-image-macro">此螢幕快照顯示將磁碟區從內部部署叢集備份到Google Cloud Storage時、雲端供應商的詳細資料。</block>
   <block id="f923a26bc1b433d5513afeed46e2923c" category="paragraph"><block ref="f923a26bc1b433d5513afeed46e2923c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8575271d8fddeb4206e2c91bcc85ed84" category="paragraph"><block ref="8575271d8fddeb4206e2c91bcc85ed84" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9608aa854ca5f36a89549c7fae2a8010" category="summary">請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能完善的資料備份到 Amazon S3 。</block>
   <block id="9d811f8ab4335c82eeb7d1477874bc1c" category="doc">將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3</block>
   <block id="77f3b81e1d7c5ed627835fb76acd97c6" category="inline-link">AWS年度合約</block>
   <block id="a7d695b3eb756754aec11a762e124dbb" category="paragraph">選取AWS帳戶和您要建立備份的區域。您也可以選擇自己的客戶管理資料加密金鑰、而非使用預設的Amazon S3加密金鑰。</block>
@@ -1150,13 +1140,11 @@
   <block id="8aaf101e623c543c7eef3c65f6233366" category="list-text">出現提示時、按一下*繼續*以重新導向至Microsoft登入頁面。</block>
   <block id="19d089db572ee6a1e154a0c9c9e57bfd" category="paragraph">NetApp使用Microsoft Azure Active Directory做為身分識別供應商、提供專為支援與授權所設計的驗證服務。</block>
   <block id="465ec6d5eafa3524c948c99d8bfcd306" category="list-text">在登入頁面上、提供您的NetApp支援網站註冊電子郵件地址和密碼、以執行驗證程序。</block>
-  <block id="ee0db59fec59c2b3e6c6583a61bf12b6" category="doc">監控備份與還原工作的狀態</block>
   <block id="30ae8fff8898dc197acd49d9c0797d20" category="list-text">成功</block>
   <block id="c9413dd7682a45da9ecc9efa8cea47d7" category="list-text">進行中</block>
   <block id="7b2f31b90fe1c2cc33a52233c1925df3" category="list-text">已佇列</block>
   <block id="0eaadb4fcb48a0a0ed7bc9868be9fbaa" category="list-text">警告</block>
   <block id="d7c8c85bf79bbe1b7188497c32c3b0ca" category="list-text">失敗</block>
-  <block id="49e34b28c9e9b61ed97b385f257f46fe" category="list-text">按一下「*工作監控*」標籤。</block>
   <block id="fdb4a732f867f813a90fc7fb3a9bd9ea" category="inline-image-macro">在「工作監控」儀表板中顯示備份與還原工作的快照。</block>
   <block id="6a0946e9e6df1feca77ae10577f6057c" category="paragraph"><block ref="6a0946e9e6df1feca77ae10577f6057c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b401829f4311e25d3f3303c0d30e69b7" category="list-text">使用頁面頂端的時間選取器來檢視特定時間範圍內的工作</block>
@@ -1439,7 +1427,6 @@
   <block id="19b05e78d3464eff3a0a4847f0b66324" category="list-text">使用GCP時、您可以向NetApp申請私人優惠、然後在雲端備份啟動期間、從Google Cloud Marketplace訂閱方案。</block>
   <block id="cf6d8dee9b177c1138ae0ee4e07dc2f3" category="inline-link-macro">瞭解如何設定年度合約</block>
   <block id="cc0eb7dbb8893977120a22b09b8c4ca0" category="paragraph"><block ref="f5d5ae39791d9eaf9e8591b7cfcc3b96" category="inline-link-macro-rx"></block>。</block>
-  <block id="c47b9175ecebbf21ca2cd87a3a34dc85" category="paragraph">您可以選擇每小時、每日、每週、每月及每年備份所有磁碟區的組合。您也可以選擇系統定義的原則之一、提供 3 個月、 1 年及 7 年的備份與保留。這些原則包括：</block>
   <block id="952a500aaf6d2c5ad8514e3fa5bd6474" category="paragraph">一旦您達到某個類別或時間間隔的最大備份數、就會移除舊備份、讓您永遠擁有最新的備份（因此過時的備份不會繼續佔用雲端空間）。</block>
   <block id="6cc30d6c33bfc4f65037828783c2a89d" category="paragraph">Cloud Backup支援下列類型的磁碟區：</block>
   <block id="d461a54e93e8dcbd189b38f0ff2865bc" category="list-text">可讀寫的磁碟區FlexVol</block>
@@ -2164,8 +2151,6 @@
   <block id="83933361b1e2abf7e7f406666cc9c104" category="list-text">對於AWS：</block>
   <block id="328a2c1e7778e9edaf79d90c51409ac4" category="list-text">如果您有客戶層級的帳戶、可以新增一或多個NSS帳戶。</block>
   <block id="d0a875b745f9b38ce0c00471ccf26254" category="list-text">私有連線：使用VPN或Google Cloud互連、並透過使用私有IP位址的私有Google Access介面路由流量。</block>
-  <block id="dac3cac56101d31900414dafe82d7447" category="summary">Cloud Backup是適用於BlueXP工作環境的服務、可提供備份與還原功能、以保護資料並進行長期歸檔。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
-  <block id="334d532e95c8088dda41b2e55290b233" category="paragraph">Cloud Backup是適用於BlueXP（前身為Cloud Manager）工作環境的服務、可提供備份與還原功能、以保護資料並進行長期歸檔。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
   <block id="ac66cfcf395ec1521c28c0c64a6aac63" category="paragraph">在大多數情況下、您會將BlueXP UI用於所有備份作業。不過ONTAP 、從使用支援功能支援功能的版本起、您可以ONTAP 使用ONTAP 「支援功能」、啟動內部部署功能的內部叢集的Volume備份作業。<block ref="b4b04e1b4b3140ad1e0e3c0a94c9c848" category="inline-link-rx"></block></block>
   <block id="bf2b1bf7aed8d75654bb42a8a53d6a96" category="paragraph">備份複本儲存在BlueXP在雲端帳戶中建立的物件存放區中。每個叢集/工作環境都有一個物件存放區、而BlueXP會將物件存放區命名如下：「NetApp-backup-clusteruuid」。請勿刪除此物件存放區。</block>
   <block id="e33931549f252451d72b5664ade6ecf0" category="list-text">在AWS中、BlueXP會啟用<block ref="b38667957fcdf9b9da65b213e7fb2492" category="inline-link-rx"></block> 在 S3 儲存桶上。</block>
@@ -2314,7 +2299,6 @@
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">所有BlueXP文件</block>
   <block id="dbb5638e73887ef4301df1c7b10993df" category="inline-link">在AWS GovCloud區域安裝Connector</block>
   <block id="9ead7424c07e39075bc88d26cf29486d" category="list-text"><block ref="9ead7424c07e39075bc88d26cf29486d" category="inline-link-rx"></block></block>
-  <block id="74af27074013d973d4d84d17e513984c" category="paragraph">當連接器部署在雲端時（而非安裝在內部部署環境中）、GovCloud區域會支援Cloud Backup。此外、您必須從AWS Marketplace部署Connector。您無法從BlueXP SaaS網站在政府區域部署Connector。</block>
   <block id="86459dce2ebdc093806a2c3cc3a8ca9e" category="list-text">在「Select Volumes（選取磁碟區）」頁面中、使用定義的備份原則選取您要備份的磁碟區。如果您想要將不同的備份原則指派給特定磁碟區、可以建立其他原則、並於稍後將其套用至這些磁碟區。</block>
   <block id="47ab521431b84d7f8280399db460e01b" category="list-text">若要備份未來新增的所有現有磁碟區和任何磁碟區、請勾選「備份所有現有和未來的磁碟區...」方塊。我們建議您使用此選項、以便備份所有的磁碟區、而且您永遠不需要記住為新的磁碟區啟用備份。</block>
   <block id="fc32ef7e48902fe522b53f26c5a7c5cc" category="list-text">若要僅備份現有磁碟區、請勾選標題列中的方塊（<block ref="2b1190f90c2c717d2aa70aabd2fc4c36" category="inline-image-macro-rx" type="image"></block>）。</block>
@@ -2329,18 +2313,12 @@
   <block id="827847975a80bac18a6ca2764d35dd87" category="inline-link-macro">深入瞭解可用的Cloud Backup原則組態設定</block>
   <block id="eef42d7f28b590d9b42d8fbddb7a3937" category="paragraph">您也可以選擇在使用ONTAP 更新版本的時、設定_DataLock和勒索軟體Protection _設定、保護備份免受刪除和勒索軟體攻擊。 <block ref="87ffafedb97d3b50ea58ef296117bbac" category="inline-link-macro-rx"></block>。</block>
   <block id="1b023ff169abba0d2ae3b5eda4b0662e" category="list-text">您也可以 <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> 內部部署ONTAP 的系統。</block>
-  <block id="10ad842a6a3246a44700dd2f0005c89c" category="section-title">使用「工作監控」檢視備份與還原工作狀態</block>
   <block id="505a83f220c02df2f85c3810cd9ceb38" category="list-text">成功</block>
   <block id="3919b07e397df4ea5f1ccc5ad0f35b8a" category="list-text">Volume Cloud Volumes ONTAP （內部和內部ONTAP 的不全功能資料）</block>
   <block id="1ddf333c6654f7f89c739dddfb4cc429" category="list-text">應用程式</block>
   <block id="76b0fa668c1cd016096eb9bc1bfde44a" category="list-text">虛擬機器</block>
   <block id="30136395f01879792198317c11831ea4" category="list-text">Kubernetes</block>
-  <block id="ead1b755a95c48c918fa1c54aead1fbb" category="inline-image-macro">顯示「工作詳細資料」頁面的快照。</block>
-  <block id="02e4b55a2c03c05864dc080ed278886c" category="paragraph"><block ref="02e4b55a2c03c05864dc080ed278886c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="b58d9a206bdb4f66bef72d876e8c275e" category="section-title">使用通知中心來檢閱備份與還原警示</block>
   <block id="40da6f1400e45d080a97992a6a539894" category="inline-image-macro">通知鈴聲</block>
-  <block id="cef1c38108b72f8eb8fba5c231923d9c" category="paragraph">根據預設、BlueXP帳戶管理員會收到所有「重大」和「建議」警示的電子郵件。根據預設、所有其他使用者和收件者都會設定為不接收任何通知電子郵件。電子郵件可傳送給任何屬於您NetApp雲端帳戶一部分的BlueXP使用者、或傳送給任何其他需要注意備份與還原活動的收件者。</block>
-  <block id="a1c41906d0e1e81a4ce819d12975d647" category="paragraph">您必須選取通知類型「Critical」和「錯誤」、才能接收Cloud Backup電子郵件警示。</block>
   <block id="44d4deb8868ac8159ee85f4a8e68725c" category="inline-link">深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作</block>
   <block id="09b16d1aa35c58d96fa185b2690e8f18" category="paragraph"><block ref="5089517823b516715ea5ebbb3ef37ff2" category="inline-link-rx"></block>。</block>
   <block id="f23bdd8e7d7bd57bc5cf675c6305d62a" category="paragraph">根據預設、備份會儲存在冷存取層中。如果您的叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後將備份分層至Azure歸檔儲存設備、以進一步最佳化成本。 <block ref="87ffafedb97d3b50ea58ef296117bbac" category="inline-link-macro-rx"></block>。</block>
@@ -2379,7 +2357,6 @@
   <block id="30d334a4a47bf8bcc0a713cea94b6d98" category="list-text">您也可以 <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> 至Cloud Volumes ONTAP Google的某個系統、或內部部署ONTAP 的某個系統。</block>
   <block id="0fed42c16e02df19813c1ada5f9c8fd7" category="inline-link">在Azure政府區域安裝Connector</block>
   <block id="3ed416b513332ef0663a96d528858df7" category="list-text"><block ref="3ed416b513332ef0663a96d528858df7" category="inline-link-rx"></block></block>
-  <block id="d9fe08fb28fabd3278ac4fe4d7c1575e" category="paragraph">當連接器部署在雲端時、Azure政府區域支援Cloud Backup、而非安裝在內部部署中時。此外、您必須從Azure Marketplace部署Connector。您無法從BlueXP SaaS網站在政府區域部署Connector。</block>
   <block id="62640a282075f7801899cdb8febacf09" category="summary">您可以變更許多叢集層級的備份設定、以便在每ONTAP 個支援系統啟動Cloud Backup時進行設定。您也可以修改某些套用為「預設」備份設定的設定。這包括變更儲存金鑰、將備份傳輸至物件儲存設備的速度、是否將歷史Snapshot複本匯出為備份檔案等。</block>
   <block id="c7d0d42759e1658d8ae1d80e3dedd0d1" category="doc">管理叢集層級的備份設定</block>
   <block id="c039a60af8309de6dc61d8d90e85b514" category="paragraph">叢集層級的備份設定可在「_Advanced Settings_」（進階設定_）頁面中使用。</block>
@@ -2441,8 +2418,6 @@
   <block id="4c55333e1e917a54978d32ab7a324b08" category="paragraph"><block ref="4c55333e1e917a54978d32ab7a324b08" category="inline-image-macro-rx" type="image"></block></block>
   <block id="51a3a396e404f898f2e45dad30b6b1da" category="paragraph">只要選取是否要匯出現有的Snapshot複本、然後按一下*套用*即可。</block>
   <block id="cef9bbe98866aa24765a5c6e51e5daa5" category="section-title">變更是否從來源系統移除「每年」快照</block>
-  <block id="0031856863cc395d1ff84803fd56c19c" category="paragraph">當您為任何磁碟區選取備份原則的「每年」備份標籤時、所建立的Snapshot複本非常龐大。根據預設、這些年度快照會在傳輸至物件儲存設備後、自動從來源系統刪除。您可以從「每年刪除Snapshot」區段變更此預設行為。</block>
-  <block id="5f717e08d45563b71014d6a50b43fc5f" category="paragraph"><block ref="5f717e08d45563b71014d6a50b43fc5f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2dec521441a7be60c295856f7526c87a" category="paragraph">如果您要在來源系統上保留年度快照、請選取*已停用*、然後按一下*套用*。</block>
   <block id="733947b9c31fd162b40f0854f88a98f0" category="section-title">2022年11月2日</block>
   <block id="4e1bedfa5acb9fc8467640ea1dcaece3" category="section-title">能夠將較舊的Snapshot複本匯出至基礎備份檔案</block>
@@ -2474,7 +2449,6 @@
   <block id="ef88ffe6f484bdfc25f97445be29df28" category="sidebar">管理叢集層級的備份設定</block>
   <block id="17d0a830cae7a9ee38e63d4d74257685" category="list-text">雲端備份還原作業失敗</block>
   <block id="4a4cfe5483874f73014159f5baca5462" category="list-text">Adhoc（隨需）磁碟區備份失敗</block>
-  <block id="01c236efa847517aec154a45e404d759" category="list-text">偵測到系統上可能發生的勒索軟體攻擊</block>
   <block id="30dae49f6de63e85b78b96b2080bb0bb" category="paragraph">您不一定需要刪除來源Volume。您可以刪除磁碟區的備份關係、並保留來源磁碟區。在此情況下、您可以稍後在磁碟區上「啟動」備份。在這種情況下、會繼續使用原始的基礎備份複本：不會建立新的基礎備份複本、也不會將其匯出至雲端。請注意、如果您確實重新啟動備份關係、磁碟區會被指派預設的備份原則。</block>
   <block id="495f64bce7d9d754a435527baf769353" category="paragraph">此功能僅在系統執行ONTAP 的是更新版本的更新版本時才可使用。</block>
   <block id="228129642e2d421577991251a19c55f5" category="list-text">變更是否在未來磁碟區的初始基礎備份檔案中包含歷史Snapshot複本</block>
@@ -3248,11 +3222,8 @@
   <block id="c8a0a8bdcaf1f25cbadde68224d6591d" category="paragraph">篩選「工作監控」頁面以顯示您感興趣的工作和行動之後、您現在可以產生並下載該資料的.csvs檔案。然後您可以分析資訊、或將報告傳送給組織中的其他人員。<block ref="f54dc22fe93134a0b2767a291dba51f5" category="inline-link-rx"></block>。</block>
   <block id="4f4a2e17ef7aa2669f99a3748377015f" category="list-text">此頁面每15分鐘自動重新整理一次、讓您隨時都能看到最新的工作狀態結果。您也可以按一下「*重新整理*」按鈕、立即更新頁面。</block>
   <block id="b5c6b00b01586b598af43c9744b7abbf" category="paragraph">現在、您可以使用Cloud Backup將SnapLock 非公有雲和私有雲備份到其中。此功能需要ONTAP 您的不知道系統執行ONTAP 的是版本不符合更新版本的版本。不過、目前不支援「符合性」磁碟區SnapLock 。</block>
-  <block id="c2957acd301b96ab66a098d21d407ec6" category="summary">您可以監控已在工作環境中啟動的備份與還原工作狀態。這可讓您查看已成功完成的工作、目前進行中的工作、以及已失敗的工作、以便診斷及修正任何問題。您也可以將通知設定為透過電子郵件傳送、如此即使您尚未登入系統、也能得知重要的系統活動。</block>
   <block id="8b512d5ba4f8158f9bbde90865caba8c" category="section-title">將工作監控結果下載為報告</block>
   <block id="ec7d92235d0dc6e0acfa017dfe7f1dbd" category="section-title">檢視工作詳細資料</block>
-  <block id="1bc59241eb9bf200909aad328d7d6f94" category="paragraph">您可以按一下工作名稱、檢視與特定工作對應的詳細資料。您會在「工作詳細資料」頁面中看到所有執行來完成主要工作的子工作。</block>
-  <block id="e415c99bdef560f45a5ed65de16a1f1c" category="paragraph">通知中心會追蹤您所啟動的備份與還原工作進度、以便您確認作業是否成功。您可以按一下（<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>）。您也可以設定BluefXP以電子郵件傳送通知作為警示、即使您尚未登入系統、也能得知重要的系統活動。</block>
   <block id="3ce5b4dc9c8f2be5c856c5ecbade36be" category="list-text">您在Cloud Volumes ONTAP Azure中執行的是版本號為1.7P5或更新版本ONTAP （建議使用版本號為0、8P13及更新版本）。</block>
   <block id="555662c8177ef0a8b7bd61c88704ac20" category="list-text">您正在Cloud Volumes ONTAP AWS中執行更新版本的支援功能（ONTAP 建議使用更新版本的支援功能）。</block>
   <block id="42db682583d3eb9a753380374c8e1b40" category="paragraph">請注意、Cloud Backup資料庫或Indexed目錄檔案中從未包含任何Volume資料。</block>
@@ -3496,21 +3467,12 @@
   <block id="2fe3c4ca1597e6bdf865a7367c7a7a08" category="list-text">將Oracle外掛程式部署為Sudo SnapCenter Sudo Sudo使用者。<block ref="d0ac17823bdcaade630c1553c4540054" prefix=" " category="inline-code"></block></block>
   <block id="f55cf31361d600683e03e25c6f1109e3" category="list-text">從Connector執行下列命令、驗證外掛程式是否可從Connector存取。<block ref="7bab21217ba7da8fb8f176538fe93b9b" prefix=" " category="inline-code"></block></block>
   <block id="d2b32f39697a5b013948d2ec66933921" category="list-text">工作：管理BlueXP資料庫上的工作詳細資料項目</block>
-  <block id="5874609ca1e9c6045e19df3c609ae04c" category="list-text">您在AWS中安裝了Connector。</block>
-  <block id="ce611ab7ae453854c290d7e4d11064ce" category="paragraph">對於Cloud Backup BYOL授權、您需要NetApp的序號、以便在授權期間和容量內使用服務。 <block ref="47744e5312ce42ad8130a5365d7fb0d0" category="inline-link-macro-rx"></block>。在Cloud Volumes ONTAP 黑暗的站台中部署Connector和解決方案時、必須使用BYOL授權。</block>
   <block id="608448c2576128ccc8c2f959d59e20b4" category="list-text">連接器需求</block>
-  <block id="08917925d8deee805c0740b818316f1f" category="list-text">連接器可安裝在AWS區域、無論是否可存取網際網路。目前只有AWS商業網站支援沒有網際網路存取的網站。</block>
   <block id="c9069f67c447a0a15bda0467230c3148" category="inline-link">在AWS中部署Connector</block>
   <block id="545a608e55ae4e3a96594a093a988a8a" category="list-text"><block ref="545a608e55ae4e3a96594a093a988a8a" category="inline-link-rx"></block></block>
-  <block id="d1000075c67be559ac41b2b7f56e66ab" category="inline-link">在AWS區域的Linux主機上安裝Connector、無需網際網路存取</block>
-  <block id="1f3a5a11cda993d1d191432fd2dc055b" category="list-text"><block ref="1f3a5a11cda993d1d191432fd2dc055b" category="inline-link-rx"></block></block>
   <block id="070bde10025186ce49792171c694b711" category="list-text">您也可以選擇在使用ONTAP 更新版本的版本時、將備份分層至S3 Glacier或S3 Glacier Deep Archive儲存設備、經過一定天數之後、以進一步最佳化成本。當部署於黑暗站台時、此功能無法使用。 <block ref="58f01ad9ea7ce8fd23147681b9f27af7" category="inline-link-macro-rx"></block>。</block>
-  <block id="6c0c856e3601c869e5ed2f66c1dcbf65" category="list-text">您在Azure中安裝了Connector。連接器可安裝在有或沒有網際網路存取的站台上。</block>
-  <block id="7a2aa73d5af1003f6f2e1afc92561258" category="list-text">連接器可安裝在Azure地區、無論是否可存取網際網路。目前、只有Azure商用網站支援無法存取網際網路的網站。</block>
   <block id="261ca950ce5b13f6fc57f9ad7d366d88" category="inline-link">在Azure中部署Connector</block>
   <block id="28cf618b595b848efbf044d272e765f2" category="list-text"><block ref="28cf618b595b848efbf044d272e765f2" category="inline-link-rx"></block></block>
-  <block id="84beba0db9273fc390fc97455e0888c5" category="inline-link">在Azure地區的Linux主機上安裝Connector、無需網際網路存取</block>
-  <block id="9ec4ead8f39a7134e0970f8b37a9cc9a" category="list-text"><block ref="9ec4ead8f39a7134e0970f8b37a9cc9a" category="inline-link-rx"></block></block>
   <block id="7cccee5994c911e5094d2b657aa36982" category="list-text">若使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後將備份分層至Azure歸檔儲存設備、以進一步最佳化成本。當部署於黑暗站台時、此功能無法使用。 <block ref="0f1866ee99580c7794186e312ffd205e" category="inline-link-macro-rx"></block>。</block>
   <block id="898e35e1a4bf4b025c3edec879439b08" category="section-title">管理支援案例（預覽）</block>
   <block id="8b74b053fbeeff5c3b6f4991cb1d028d" category="paragraph">您可以直接從BlueXP檢視及管理作用中和已解決的支援案例。您可以管理與您的NSS帳戶和貴公司相關的個案。</block>
@@ -3542,10 +3504,8 @@
   <block id="f791bc685c526af8296381acff10f6a0" category="list-text">*結案案例*：提供結案原因的詳細資料、然後按一下*結案案例*。</block>
   <block id="e93217b2f709a398ce3c0fb753beb05f" category="inline-image-macro">螢幕擷取畫面、顯示您在表格最後一欄選取功能表後可以採取的動作。</block>
   <block id="e9a5c374fb47ed2ae5cc6108fb36d829" category="paragraph"><block ref="e9a5c374fb47ed2ae5cc6108fb36d829" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="8960709309953db706184cbddcb4b045" category="paragraph">Cloud Backup可用於沒有網際網路連線的站台（也稱為「離線」或「暗」站台）、以備份Volume資料。此組態也支援Volume與檔案還原。在這種情況下、您需要在Dark網站上部署BlueXP Connector。</block>
   <block id="2336f5fb78c2a5c8f2076f882bd71161" category="list-text">您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。請參閱 <block ref="14e7f2dcf692810422b10a89547f7ac5" category="inline-link-macro-rx"></block> 以取得詳細資料。</block>
   <block id="a5e6246728060cb5f413df6fa5adbf0c" category="inline-link-macro">將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob</block>
-  <block id="37071c3b292f3b2dabcce750f34cbc0e" category="list-text">您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商用區域的支援資料系統備份到Amazon S3或Azure Blob。請參閱 <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block> 和 <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
   <block id="9d5cd7f5faccdd3ae5ba70e594cc061f" category="list-text">目前Amazon S3、Azure和StorageGRID 支援物件存放區上的WORM /法規遵循模式。這稱為DataLock功能、必須使用Cloud Backup設定進行管理、而非使用雲端供應商介面。</block>
   <block id="1eea998a6969261ae6e45e41459d7ae2" category="list-text">使用ONTAP 支援更新版本的版本時、瀏覽與還原及搜尋與還原功能可還原資料夾及其中的所有檔案與子資料夾。</block>
   <block id="e7dd5c3025a4bc62e595b708efedd1e5" category="paragraph">當使用ONTAP 版本高於9.11.1但在9.13.0之前的版本時、還原作業只能還原選取的資料夾和該資料夾中的檔案、而不會還原子資料夾或子資料夾中的檔案。</block>
@@ -3567,32 +3527,125 @@
   <block id="35203f05692d5cc102a5525bf4de9733" category="section-title">資料夾層級的還原作業現在包括所有子資料夾和檔案</block>
   <block id="5463242c7cc34f92b5dbbf1ab6d87188" category="paragraph">過去當您還原資料夾時、只會還原該資料夾中的檔案、子資料夾中的任何子資料夾或檔案都不會還原。現在、如果您使用ONTAP 的是更新版本的版本、則會還原所選資料夾中的所有子資料夾和檔案。如果您在頂層資料夾中有多個巢狀資料夾、這可節省大量時間與金錢。</block>
   <block id="bbe776d643f3b0568f3c2fa216a50124" category="section-title">能夠在Cloud Volumes ONTAP 黑暗的環境中備份來自於各種系統的資料</block>
-  <block id="aef1b3252b7a5b85dab7066cccc19b52" category="paragraph">現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要在商業區域的Linux主機上安裝Connector、也需要在Cloud Volumes ONTAP 該處部署該系統。請參閱 <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block> 和 <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
   <block id="1cdf820a77c583c660d65df7b1ca03b8" category="inline-link">瞭解如何使用進階篩選器</block>
   <block id="aa3492539222da5bc85fd5614f489f71" category="paragraph">「工作監控」頁面新增進階篩選功能、讓您可以依時間、工作負載（磁碟區、應用程式、虛擬機器或Kubernetes）、 工作類型、狀態、工作環境和儲存VM。您也可以輸入任意文字來搜尋任何資源、例如「application_3」。 <block ref="f726054cf0d935cd51c2a5edb3b3fd0c" category="inline-link-rx"></block>。</block>
   <block id="1625899745083f00e310fe6a84e9582c" category="list-text">下列S3權限必須是為Connector提供權限的IAM角色的一部分：</block>
-  <block id="d90665b682298c55adb9c3f6a9ceb3f0" category="paragraph">此螢幕快照顯示預設欄/欄位標題。您可以按一下 <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block> 若要顯示「工作環境」、「SVM」、「使用者名稱」和「工作負載」的四個額外欄。</block>
-  <block id="9d5572457fea4567bbd4373a983f3216" category="section-title">搜尋及篩選工作清單</block>
-  <block id="c892f9f2802395ba3a650b944f02ddbc" category="paragraph">根據預設、「工作監控」頁面會顯示過去24小時內的工作。您可以按一下每個欄標題、依「狀態」、「開始時間」、「資源名稱」等項目來排序結果。</block>
-  <block id="0bcdeb46b5f3d4d317c7920982129c63" category="paragraph">如果您要尋找特定工作或特定工作群組、可以按一下*進階搜尋與篩選*區域來開啟「搜尋」面板。此面板可讓您自由搜尋任何資源、例如「Volume 1」或「應用程式3」。您也可以根據下拉式功能表中的項目來篩選工作清單。</block>
-  <block id="cff5fc0e11ee3e58d953f2080d46b7cb" category="inline-image-macro">設定篩選條件以僅檢視符合篩選條件之工作的快照。</block>
-  <block id="87cc1b510629c0452232ccc6838b69a7" category="paragraph"><block ref="87cc1b510629c0452232ccc6838b69a7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="30c580a99dd8f8145066f47bf26ac29f" category="paragraph">此螢幕快照顯示如何在「上週」中搜尋所有「Volume」「Backup」工作、以搜尋名為「Volume _1」的磁碟區。</block>
   <block id="51b623efdc27fe6f448c8ac3c9969630" category="paragraph">大部分篩選條件都是不言自明的。「工作負載」篩選器可讓您檢視下列類別中的工作：</block>
   <block id="dd9313799fa929f642611d4d86e9e772" category="paragraph">只有在您第一次選取「工作環境」時、才能在特定的「SVM」中搜尋資料。</block>
-  <block id="aae95eaf384b0c3c467df78d2dffac6b" category="paragraph">請注意、此頁面會每15分鐘自動重新整理一次、以便您隨時看到最新的工作狀態結果。您可以按一下 <block ref="26403496cb9a151e9afeeb59244dd01b" category="inline-image-macro-rx" type="image"></block> 按鈕（如果需要立即更新頁面）。</block>
-  <block id="25c5bc4b2a25afb0f66d91c9f9de520f" category="paragraph">如果您想要在精簡工作監控頁面之後、將其內容下載為報告、請按一下 <block ref="d2e5c9ca6fcd7f605e1d5f7b4f6a6a99" category="inline-image-macro-rx" type="image"></block> 按鈕。Cloud Backup會產生並下載.CSV檔案、您可以視需要檢閱並傳送給其他群組。CSV檔案最多包含10、000列資料。</block>
-  <block id="0baf64ee9658e94630586cd9067331e3" category="paragraph">目前有四個備份與還原事件會觸發電子郵件警示：</block>
-  <block id="1dd33183006df81ec96a6dbec241ac42" category="list-text">在工作環境中、雲端備份啟動失敗</block>
   <block id="e429a3dcdf9ca5d36834b72490aae784" category="admonition">將資料從Azure歸檔儲存設備還原StorageGRID 至支援的系統不支援高優先順序。</block>
   <block id="5a583661a8908e9d0eb4e2adb7e14660" category="paragraph">使用ONTAP 支援更新版本的支援功能時、您可以還原資料夾及其中的所有檔案和子資料夾。使用ONTAP 9.13.0之前的版本時、只會還原該資料夾中的檔案、子資料夾中的任何子資料夾或檔案都不會還原。</block>
   <block id="9dc68f929a10fb4c3bc9901cb0ad551c" category="list-text">將資料從Azure歸檔儲存設備還原StorageGRID 至整套系統時、不支援高還原優先順序。</block>
   <block id="1442489a4cf0ea56df2e53ec47c70ec8" category="section-title">工作監控器的多項增強功能</block>
   <block id="bf2bb33000b51334f72c2e394ff56247" category="list-text">從Cloud Backup使用者介面和API啟動的使用者啟動備份和還原作業、以及系統啟動的工作（例如持續的備份作業）、現在都可在Cloud Volumes ONTAP *工作監控*索引標籤中找到、以供執行ONTAP S還原9.13.0或更新版本的系統使用。早期版本Cloud Volumes ONTAP 的不一致系統和內部部署ONTAP 的不一致系統、目前只會顯示使用者啟動的工作。</block>
-  <block id="da2d24e019fdbb554fb9260491bdb31f" category="paragraph">您可以在「*工作監控*」標籤中檢視所有備份與還原作業及其目前狀態的清單。這包括Cloud Volumes ONTAP 來自您的VMware、內部部署ONTAP 的VMware、應用程式、虛擬機器和Kubernetes系統的作業。每個作業或工作都有唯一的ID和狀態。狀態可以是：</block>
-  <block id="51ed954daa0d2ac8e61b514ada10d020" category="paragraph">從Cloud Backup使用者介面和API啟動的使用者啟動備份和還原作業、以及系統啟動的工作（例如持續的備份作業）、都可在Cloud Volumes ONTAP 執行ONTAP S還原9.13.0或更新版本的系統*工作監控*索引標籤中找到。</block>
-  <block id="ef3fa14a7fd05f8163ad506cf72a0464" category="admonition">在ONTAP 支援的地方執行舊版的支援功能時Cloud Volumes ONTAP 、或是在內部部署ONTAP 的支援系統上執行時、此時只會顯示使用者啟動的工作。</block>
   <block id="c7f5c1a75acc58c6f004efc0ce1eba09" category="list-text">* 附件（選填） * ：上傳最多五個附件、一次上傳一個。</block>
   <block id="bfa80e7aaad6da353b431bff3a0e12d6" category="paragraph">每個檔案的附件上限為 25 MB 。支援下列副檔名： txt 、 log 、 pdf 、 jpg/jpeg 、 rtf 、 doc/dox 、 xls/xlsx 和 csv 。</block>
   <block id="8e6b52a532a4fbbfc98dca3ebfa5f1e6" category="list-text">* 更新案例附註 * ：提供問題的其他詳細資料、或選擇 * 上傳檔案 * 最多附加五個檔案。</block>
+  <block id="99b6a376880ac28b047f54b783efb2b9" category="summary">請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份至 Azure Blob 儲存設備。</block>
+  <block id="682b6321ac519cf28bd8d1a2cb21003e" category="list-text">您在Azure中安裝了Connector。Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「限制模式」）。。<block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 在新系統或現有系統上啟用Cloud Backup</block>
+  <block id="6bdecde65d2cf1697dee748c10e1d508" category="paragraph">對於Cloud Backup BYOL授權、您需要NetApp的序號、以便在授權期間和容量內使用服務。 <block ref="47744e5312ce42ad8130a5365d7fb0d0" category="inline-link-macro-rx"></block>。當 Connector 和 Cloud Volumes ONTAP 系統部署在黑暗的站台時、您必須使用 BYOL 授權。</block>
+  <block id="6322974b2572b580e2e280f1f7473932" category="list-text">Connector 可安裝在具有完整或有限網際網路存取（「標準」或「限制」模式）的 Azure 區域。</block>
+  <block id="f07703a113f9329efbb1b3b1ed7d5490" category="inline-link">在 Azure 區域的 Linux 主機上手動安裝 Connector</block>
+  <block id="6557cfcd06534fdeff37ca971fbd068c" category="list-text"><block ref="6557cfcd06534fdeff37ca971fbd068c" category="inline-link-rx"></block></block>
+  <block id="f74289356f2bc0344a65a98de529ad8d" category="paragraph">Blob儲存容器會自動建立在您輸入的資源群組中、並儲存備份檔案。</block>
+  <block id="62ce1fd293b23e542e251491d1905645" category="paragraph">Volume Backup Dashboard隨即顯示、以便您監控備份狀態。您也可以使用監控備份與還原工作的狀態 <block ref="5d9366e34fca5f2de6190abcadbc5e98" category="inline-link-macro-rx"></block>。</block>
+  <block id="95fa16fe802a71eca4c0ade2049c7325" category="inline-link">變更儲存帳戶的複寫方式</block>
+  <block id="42d0b8dd4c3eb0fd561f9f9a0897c942" category="paragraph">根據預設、 Cloud Backup 會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要確保資料在不同區域之間複寫、可以將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
+  <block id="fd32f35db4beea68175faf51895e4286" category="list-text">StorageGRID - 擷取 StorageGRID 伺服器的詳細資料、並可讓您探索 StorageGRID 伺服器</block>
+  <block id="49f2fa5360686148867b942e73c164ea" category="summary">請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份至 Azure Blob 儲存設備。</block>
+  <block id="1f869ea97c0cfcd27abac67475683298" category="paragraph">當連接器部署在雲端時、Azure政府區域支援Cloud Backup、而非安裝在內部部署中時。此外、您必須從Azure Marketplace部署Connector。您無法從 BlueXP SaaS 網站在政府區域部署 Connector 。</block>
+  <block id="58d10a6e5e45d1a8458204e47220c68c" category="summary">您可以監控排程的備份工作狀態、或是您已在工作環境中起始和還原工作的狀態。您可以查看已成功完成的工作、目前正在進行的工作、以及失敗的工作、以便診斷和修正問題。您也可以將通知設定為透過電子郵件傳送、如此即使您尚未登入系統、也能得知重要的系統活動。</block>
+  <block id="6e20e21fbdfeb7c2ac6f9d0235b820c4" category="section-title">在工作監控器上檢視備份與還原工作狀態</block>
+  <block id="5b48d2885665cc3dce56d742d3ec50c4" category="paragraph">您可以在「*工作監控*」標籤中檢視所有備份與還原作業及其目前狀態的清單。這包括 Cloud Volumes ONTAP 、內部部署 ONTAP 、應用程式、虛擬機器和 Kubernetes 系統的作業。每個作業或工作都有唯一的ID和狀態。</block>
+  <block id="6c99ceac3d4ecb03d01e55de5bf1dadf" category="paragraph">備份與還原狀態可以是：</block>
+  <block id="8bcc7a84af915c49a05cc7a03882de54" category="paragraph">從雲端備份 UI 和 API 啟動的使用者起始備份和還原作業、以及系統起始的工作（例如持續排程備份作業）、都可以在執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統的 * 工作監控 * 標籤中找到。</block>
+  <block id="108027a6ed451e4f7dad3e579e833100" category="admonition">在 Cloud Volumes ONTAP 系統或內部部署 ONTAP 系統上執行舊版 ONTAP 時、只會顯示使用者啟動的工作。</block>
+  <block id="7e318049bc5ff56e12d5aaab6c31bfe3" category="list-text">選取 * 工作監控 * 標籤。</block>
+  <block id="57544dd9986f2126f88bac7c195f9bd4" category="paragraph">此螢幕擷取畫面會顯示預設欄標題。</block>
+  <block id="165b658a40f191c52efd59498a472761" category="list-text">若要顯示其他四欄（工作環境、 SVM 、使用者名稱和工作負載）、請選取 <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="87aa191eff82d3ce3518c07577f209bd" category="section-title">搜尋並篩選工作清單</block>
+  <block id="3cdaf61a1c1fcead1aac87ee5bf643c6" category="paragraph">根據預設、「工作監控」頁面會顯示過去24小時內的工作。</block>
+  <block id="a466bc110c2ee16333fcf19f4e7b5dc2" category="list-text">若要以不同方式排序結果、請選取每個欄標題、依狀態、開始時間、資源名稱等進行排序。</block>
+  <block id="a455dc1f7055781041ae4a61d786b592" category="list-text">如果您正在尋找特定工作或特定工作群組、請選取 * 進階搜尋與篩選 * 區域以開啟「搜尋」面板。</block>
+  <block id="f55acf819cf64faf595e14da13d54f0b" category="paragraph">使用此面板輸入任意資源的自由文字搜尋、例如「 Volume 1 」或「 Application 3 」。您也可以根據下拉式功能表中的項目來篩選工作清單。</block>
+  <block id="54ddf8f4a9811275c5b1e84929c147b5" category="inline-image-macro">設定篩選條件以僅檢視符合篩選條件的工作的螢幕擷取畫面</block>
+  <block id="0d7c78b3574aa917280fb0542afb0636" category="paragraph"><block ref="0d7c78b3574aa917280fb0542afb0636" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="81651a87dc9c981a87ea4cbde8b47b8b" category="list-text">若要立即更新頁面、請選取 <block ref="26403496cb9a151e9afeeb59244dd01b" category="inline-image-macro-rx" type="image"></block> 按鈕。否則、此頁面會每 15 分鐘重新整理一次、以便您永遠看到最新的工作狀態結果。</block>
+  <block id="ee3f8d79ef4be283abca6676023d9d44" category="paragraph">您可以檢視與特定已完成工作相對應的詳細資料。您可以以 JSON 格式匯出特定工作的詳細資料。</block>
+  <block id="a9ef27cebacb15f0935e08d436652812" category="paragraph">您可以檢視詳細資料、例如備份工作類型（排程或隨需）、 SnapMirror 備份類型（初始或定期）的開始和結束時間、持續時間、從工作環境傳輸到物件儲存的資料量、平均傳輸率、備份原則名稱、啟用保留鎖定、執行勒索軟體掃描、 備份來源詳細資料和備份目標詳細資料。</block>
+  <block id="f81fffdc5ad712c54605d2f9e4914d8b" category="paragraph">還原工作會顯示備份目標供應商（ Amazon Web Services 、 Microsoft Azure 、 Google Cloud 、內部部署）、 S3 儲存庫名稱、 SVM 名稱、來源 Volume 名稱、目的地 Volume 、 Snapshot 標籤、恢復的物件數、 檔案名稱、檔案大小、上次修改日期和完整檔案路徑。</block>
+  <block id="fd165791d228aa48ff83c622836e19e3" category="admonition">工作詳細資料僅會顯示在 ONTAP Volume 備份與還原工作中。排程備份工作詳細資料僅會顯示在 ONTAP 9.13.0 開頭的 Cloud Volumes ONTAP 系統上。將顯示進行中和已完成工作的工作詳細資料。</block>
+  <block id="18ace58a9d18e3907eb7cd150e193461" category="list-text">選取工作名稱。</block>
+  <block id="5ad3e303fff11348579be9fa7186a3bf" category="inline-image-macro">動作圖示</block>
+  <block id="a338f0236c9cd90b94c866169e207597" category="list-text">選取「動作」功能表 <block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block> 然後選取 * 檢視詳細資料 * 。</block>
+  <block id="0735db0c27a664030915eb2c0c30e8e7" category="inline-image-macro">顯示備份工作詳細資料的螢幕擷取畫面</block>
+  <block id="f3affedf53ca54ce720a61a968b55e98" category="paragraph"><block ref="f3affedf53ca54ce720a61a968b55e98" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a2f820f1e803ccce8bb7aecd68c2172d" category="list-text">展開每個區段以查看詳細資料。</block>
+  <block id="29f675dfee0461f2ee711bdb22b6e227" category="paragraph">您可以在修改後、將「工作監控」主頁的內容下載為報告。Cloud Backup會產生並下載.CSV檔案、您可以視需要檢閱並傳送給其他群組。CSV檔案最多包含10、000列資料。</block>
+  <block id="4ef79a32c3fec53a7c7441bdc6ef7cd0" category="paragraph">您可以從「工作監控詳細資料」資訊下載包含單一工作詳細資料的 JSON 檔案。</block>
+  <block id="a66349ce733cf5c358cc8d7d30a14bfe" category="list-text">若要下載所有工作的 CSV 檔案、請選取 <block ref="d2e5c9ca6fcd7f605e1d5f7b4f6a6a99" category="inline-image-macro-rx" type="image"></block> 按鈕、並在您的下載目錄中找到檔案。</block>
+  <block id="1dc45daaf063a4c51a123d4f491b6b42" category="list-text">若要下載單一工作的 JSON 檔案、請選取「動作」功能表 <block ref="2a0f14b836fbf833847542e256b2473a" category="inline-image-macro-rx" type="image"></block> 對於作業、請選取 * 下載 JSON 檔案 * 、然後在您的下載目錄中找到檔案。</block>
+  <block id="7bec9aba9b1ad2e1a26decb16eb04dc7" category="section-title">檢閱 BlueXP 通知中心的備份與還原警示</block>
+  <block id="c36393beabb226bcf16fa0bdfb5851c2" category="paragraph">BlueXP 通知中心會追蹤您已啟動的備份和還原工作進度、以便您確認作業是否成功。</block>
+  <block id="b3506b7d9f752c93488710d594220a60" category="paragraph">除了檢視 BlueXP 通知清單中的警示之外、您也可以設定 BlueXP 以電子郵件方式傳送通知作為警示、讓您即使未登入系統、也能得知重要的系統活動。<block ref="255bd8ee961ab1582d001d4f6c77e40f" category="inline-link-rx"></block>。</block>
+  <block id="cb66415666da247e57ab2b85246fb1c6" category="paragraph">下列事件會觸發電子郵件警示：</block>
+  <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">活動</block>
+  <block id="f04eba667839806ceb188d5cdf29e14f" category="cell">嚴重性等級</block>
+  <block id="902b0d55fddef6f8d651fe1035b7d4bd" category="cell">錯誤</block>
+  <block id="86adb6c119fde87f974199cf61935f54" category="paragraph">在工作環境中啟用雲端備份失敗</block>
+  <block id="278d01e5af56273bae1bb99a98b370cd" category="cell">關鍵</block>
+  <block id="4df68e0b98ba0691ff46f48eff2a2f3f" category="paragraph">在您的系統上偵測到可能的勒索軟體攻擊</block>
+  <block id="c7a7a73ad2996822034895fcb8e15565" category="paragraph">還原工作完成但出現警告</block>
+  <block id="160157a33511dda5495776f0fcfc771d" category="paragraph">排程工作失敗</block>
+  <block id="9bcaee25e049aff6113cfeccac319ecb" category="admonition">從 Cloud Volumes ONTAP 9.13.0 開始、所有警示都會出現。對於具有 Cloud Volumes ONTAP 9.13.0 和內部部署 ONTAP 的系統、只會顯示與還原工作相關的警示、並顯示警告。</block>
+  <block id="9d4940c64262023bfa08bec24da82dd3" category="paragraph">根據預設、 BlueXP 帳戶管理員會收到所有「重大」和「建議」警示的電子郵件。根據預設、所有其他使用者和收件者都會設定為不接收任何通知電子郵件。電子郵件可傳送給任何屬於您NetApp雲端帳戶一部分的BlueXP使用者、或傳送給任何其他需要注意備份與還原活動的收件者。</block>
+  <block id="415360852aa0b5061f173ccd047b9908" category="paragraph">若要接收 Cloud Backup 電子郵件警示、您必須選取通知嚴重性類型「重大」和「錯誤」。</block>
+  <block id="9b5f00722faa27f8d92c452deb45e908" category="list-text">選取（<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>）。</block>
+  <block id="43a7ffdce907a49598d2965f30856cee" category="list-text">檢閱通知。</block>
+  <block id="fb902a35540ad53bda044609815ee278" category="summary">請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到 NetApp StorageGRID 系統的物件儲存設備。</block>
+  <block id="1b27bd9c593488a3b7f12cdedf95fcbc" category="summary">請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到 Google 雲端儲存設備。</block>
+  <block id="4ab7d99363507ea7d2dfa59860eae018" category="summary">請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Google Cloud 儲存設備。</block>
+  <block id="2ec8fbded5e88799ebd7fdba2189b818" category="paragraph">請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Google Cloud Storage 。</block>
+  <block id="051139f64ea4dc8d9390cd2792f01b14" category="list-text">您已在 Google Cloud 中安裝 Connector 。</block>
+  <block id="6b344f3d57a23c796f9476dd353d12e7" category="list-text">Connector 必須安裝在可存取網際網路的 Google 區域。</block>
+  <block id="87a05d4200b00403ad79b218876c73d4" category="inline-link">在 Google Cloud 中部署 Connector</block>
+  <block id="b7ca017a195ca4317075e0552ce38e44" category="list-text"><block ref="b7ca017a195ca4317075e0552ce38e44" category="inline-link-rx"></block></block>
+  <block id="38d4d167f6dd9174c3535fc5c7ba4b76" category="section-title">2023 年 4 月 4 日</block>
+  <block id="40c193dda1b0a4df68695abe150f234a" category="section-title">能夠以「受限」模式、從 Cloud Volumes ONTAP 系統將資料備份到雲端</block>
+  <block id="28e1f4495f1c7f5d7f7a5392a215c21a" category="paragraph">現在您可以在「受限」模式下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。請參閱<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> 和<block ref="d878e312b2f9cdcef2f8eccaa51619ee" category="inline-link-rx"></block>。</block>
+  <block id="57c3b4ba3c60295d45a2554606080eef" category="section-title">能夠使用 API 將內部部署的 ONTAP 磁碟區備份至 ONTAP S3</block>
+  <block id="430a1b25bf435fd21376b7b1884b6999" category="inline-link">與 ONTAP S3 整合為目的地（使用 REST API ）</block>
+  <block id="26ec6efcc8d7c7740aceeb4c7307d184" category="paragraph">API 的新功能可讓您使用 BlueXP 雲端備份、將 Volume 快照備份至 ONTAP S3 。此功能目前僅適用於內部 ONTAP 系統。如需詳細指示、請參閱部落格<block ref="50f757899df464a10b489edfac75ae5d" category="inline-link-rx"></block>。</block>
+  <block id="720734599c08f49ea57d729ec9f12d53" category="section-title">能夠將 Azure 儲存帳戶的區域備援層面從 LRS 變更為 ZRS</block>
+  <block id="d9f6af5f4e2b16940729f1ac7da86d7d" category="paragraph">從 Cloud Volumes ONTAP 系統建立備份至 Azure 儲存設備時、雲端備份預設會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要在不同區域之間複寫資料、可以將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
+  <block id="a7393f4b2940dc4b2ad20a62564d25be" category="section-title">工作監控的增強功能</block>
+  <block id="93d5bf0f2acae0e81a6d13b46176b48e" category="list-text">從雲端備份 UI 和 API 啟動的使用者初始化備份和還原作業、以及系統起始的工作（例如持續的備份作業）、現在都可在執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統的 * 工作監控 * 標籤中找到。舊版 ONTAP 只會顯示使用者啟動的工作。</block>
+  <block id="37ead9c61d06cf605bf6ef53ce2c8b21" category="list-text">除了能夠下載 CSV 檔案來報告所有工作之外、現在您可以下載 JSON 檔案來處理單一工作、並查看其詳細資料。<block ref="66069a05d43f728baec5f6540c7eac38" category="inline-link-rx"></block>。</block>
+  <block id="b52af75f0a736f3d25d4ca26a392ae12" category="inline-link">檢閱 Cloud Backup 可以傳送的所有警示</block>
+  <block id="d5bb4794eda4b0c9284e4c974224e6be" category="list-text">新增兩個備份工作警示：「排程工作失敗」和「還原工作完成但有警告」。<block ref="195577865fd88650b7ad870ffdc0b71a" category="inline-link-rx"></block>。</block>
+  <block id="220577050b1ecc839ba3ad281c6d2862" category="paragraph">現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要在商業區域的Linux主機上安裝Connector、也需要在Cloud Volumes ONTAP 該處部署該系統。請參閱<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> 和<block ref="d878e312b2f9cdcef2f8eccaa51619ee" category="inline-link-rx"></block>。</block>
+  <block id="8577d7fd44fe39164228bbbe19ab37b5" category="paragraph">當您為任何磁碟區的備份原則選取「每年」備份標籤時、所建立的 Snapshot 複本非常大。根據預設、這些年度快照會在傳輸至物件儲存設備後、自動從來源系統中刪除。您可以從「每年刪除Snapshot」區段變更此預設行為。</block>
+  <block id="550e2d4456467c22193939aa0029676d" category="inline-image-macro">進階設定頁面中每年快照項目的螢幕擷取畫面。</block>
+  <block id="824924c3b132c056f8e7a92e2b64399e" category="paragraph"><block ref="824924c3b132c056f8e7a92e2b64399e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4bcbb4af45b381297584462255b98bc0" category="summary">完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Amazon S3 。</block>
+  <block id="73e3e8b801023d50693f98eda6579dda" category="list-text">您在 AWS 中安裝了 Connector ：</block>
+  <block id="a9d3c4c93c315af7f13f9b365c2adcbf" category="list-text">Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「限制模式」）。</block>
+  <block id="5b477e50c905f9613c5e16e571e9e5bc" category="list-text">Connector 可安裝在 AWS 區域、且可存取完整或有限的網際網路（「 Standard 」（標準）或「 Restricted 」（限制）模式）。</block>
+  <block id="e7e22b4d377bdd0d9b0cb0ec1148ae55" category="inline-link">在 AWS 區域的 Linux 主機上手動安裝 Connector</block>
+  <block id="1196ba0da50696f076c6352e9882467f" category="list-text"><block ref="1196ba0da50696f076c6352e9882467f" category="inline-link-rx"></block></block>
+  <block id="04b01ab636ef32a98ac9e4e70d26301d" category="paragraph">Cloud Backup 可用於沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）、以備份 Volume 資料。此組態也支援Volume與檔案還原。在這種情況下、您需要在Dark網站上部署BlueXP Connector。</block>
+  <block id="9cee8a58cb0f70566a439c4bcaed0562" category="list-text">您可以將安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統和 AWS C2S/SC2S 安全區域的資料備份到 Amazon S3 。請參閱 <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block>。</block>
+  <block id="5660f9fec8990d75e681f2c7676a1132" category="list-text">您可以將安裝在 Azure 商用地區和 Azure IL6 安全區域的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。請參閱 <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
+  <block id="ee2081007b4b41aa21ddcbdddb722d5e" category="section-title">支援連線能力有限的站台</block>
+  <block id="b2f6031ac57c2fd58a0d11d2c12f1465" category="paragraph">Cloud Backup 可用於網際網路連線能力有限（也稱為「受限模式」）的網站、以備份 Volume 資料。此組態也支援Volume與檔案還原。在這種情況下、您需要在受限區域部署 BlueXP Connector 。</block>
+  <block id="a3f02510edf67619908394e8afc73938" category="list-text">您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。請參閱 <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block>。</block>
+  <block id="b8507c62b8182b29a382ffefc9fab5f2" category="list-text">您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。請參閱 <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
+  <block id="1b57298c9825f880d62b2296bd4b45f2" category="paragraph">您可以選擇每小時、每日、每週、每月及每年備份所有磁碟區的組合。套用至磁碟區的 Snapshot 原則必須是 Cloud Backup 可辨識的原則之一。您也可以選擇系統定義的原則之一、提供 3 個月、 1 年及 7 年的備份與保留。這些原則包括：</block>
+  <block id="a6a4730c10b1358f1c9def7ffe4b5b3e" category="summary">BlueXP 備份與還原（雲端備份）可為內部部署和雲端中的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。</block>
+  <block id="7eb9cafcf06d2b2e35409b3b19eebaa6" category="summary">BlueXP 備份與還原可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
+  <block id="4e16c93a7a40b92bf4ddc82057092a1f" category="paragraph">BlueXP 備份與還原（雲端備份）可為內部部署和雲端中的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
+  <block id="d875f19aed16817841128703d062f580" category="paragraph">此服務執行區塊層級的遞增永久複寫、並保留所有儲存效率、大幅減少複寫和儲存的資料量。此外、您只需支付受保護的資源、並使用可用的最低成本儲存層、這使得雲端備份非常具成本效益。</block>
+  <block id="042a30f816a9f3db4f832c68a750cbd0" category="paragraph">開始時間取決於每ONTAP 個來源系統設定的時區。您無法從 UI 在使用者指定的時間排程備份作業。如需詳細資訊、請聯絡您的系統工程師。</block>
+  <block id="f6c25edb13a1fb5bd6c5a94f498065a2" category="summary">完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到 Amazon S3 儲存設備。</block>
+  <block id="1034847477ed5a052dde5a113bf49af2" category="paragraph">當連接器部署在雲端時（而非安裝在內部部署環境中）、GovCloud區域會支援Cloud Backup。此外、您必須從AWS Marketplace部署Connector。您無法從 BlueXP SaaS 網站在政府區域部署 Connector 。</block>
 </blocks>

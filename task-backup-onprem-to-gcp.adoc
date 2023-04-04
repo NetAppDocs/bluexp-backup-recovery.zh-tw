@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-onprem-to-gcp.html 
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, gcp, google cloud 
-summary: 請完成幾個步驟、開始將內部部署ONTAP 的資料還原至Google Cloud Storage。 
+summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到 Google 雲端儲存設備。 
 ---
 = 將內部部署ONTAP 的內部資料備份到Google Cloud Storage
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 請完成幾個步驟、開始將內部部署ONTAP 的資料還原至Go
 
 
 [role="lead"]
-請完成幾個步驟、開始將內部部署ONTAP 的資料還原至Google Cloud Storage。
+請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到 Google 雲端儲存設備。
 
 請注意、「內部部署ONTAP 的功能不只是指FAS 包含了功能不全的功能、AFF 包括了功能不全的功能、包括了功能不全的功能。ONTAP Select
 

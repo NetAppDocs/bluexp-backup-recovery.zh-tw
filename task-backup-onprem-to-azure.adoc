@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-onprem-to-azure.html 
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, azure, azure blob, government 
-summary: 請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中的資料備份到Azure Blob儲存設備。 
+summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份至 Azure Blob 儲存設備。 
 ---
 = 將內部部署ONTAP 的內部資料備份到Azure Blob儲存設備
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中�
 
 
 [role="lead"]
-請完成幾個步驟、開始將內部部署ONTAP 的資訊系統中的資料備份到Azure Blob儲存設備。
+請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份至 Azure Blob 儲存設備。
 
 請注意、「內部部署ONTAP 的功能不只是指FAS 包含了功能不全的功能、AFF 包括了功能不全的功能、包括了功能不全的功能。ONTAP Select
 
@@ -154,7 +154,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["在內部環境中安裝連接器"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-launching-azure-mktp.html["在Azure政府區域安裝Connector"^]
 +
-當連接器部署在雲端時、Azure政府區域支援Cloud Backup、而非安裝在內部部署中時。此外、您必須從Azure Marketplace部署Connector。您無法從BlueXP SaaS網站在政府區域部署Connector。
+當連接器部署在雲端時、Azure政府區域支援Cloud Backup、而非安裝在內部部署中時。此外、您必須從Azure Marketplace部署Connector。您無法從 BlueXP SaaS 網站在政府區域部署 Connector 。
 
 
 

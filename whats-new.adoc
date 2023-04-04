@@ -18,6 +18,37 @@ summary: 瞭解Cloud Backup的新功能。
 
 
 
+== 2023 年 4 月 4 日
+
+
+
+=== 能夠以「受限」模式、從 Cloud Volumes ONTAP 系統將資料備份到雲端
+
+現在您可以在「受限」模式下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。請參閱 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
+
+
+
+=== 能夠使用 API 將內部部署的 ONTAP 磁碟區備份至 ONTAP S3
+
+API 的新功能可讓您使用 BlueXP 雲端備份、將 Volume 快照備份至 ONTAP S3 。此功能目前僅適用於內部 ONTAP 系統。如需詳細指示、請參閱部落格 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["與 ONTAP S3 整合為目的地（使用 REST API ）"^]。
+
+
+
+=== 能夠將 Azure 儲存帳戶的區域備援層面從 LRS 變更為 ZRS
+
+從 Cloud Volumes ONTAP 系統建立備份至 Azure 儲存設備時、雲端備份預設會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要在不同區域之間複寫資料、可以將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示 https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["變更儲存帳戶的複寫方式"^]。
+
+
+
+=== 工作監控的增強功能
+
+* 從雲端備份 UI 和 API 啟動的使用者初始化備份和還原作業、以及系統起始的工作（例如持續的備份作業）、現在都可在執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統的 * 工作監控 * 標籤中找到。舊版 ONTAP 只會顯示使用者啟動的工作。
+* 除了能夠下載 CSV 檔案來報告所有工作之外、現在您可以下載 JSON 檔案來處理單一工作、並查看其詳細資料。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["深入瞭解"]。
+* 新增兩個備份工作警示：「排程工作失敗」和「還原工作完成但有警告」。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["檢閱 Cloud Backup 可以傳送的所有警示"]。
+
+
+
+
 == 2023年3月9日
 
 
@@ -30,7 +61,7 @@ summary: 瞭解Cloud Backup的新功能。
 
 === 能夠在Cloud Volumes ONTAP 黑暗的環境中備份來自於各種系統的資料
 
-現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要在商業區域的Linux主機上安裝Connector、也需要在Cloud Volumes ONTAP 該處部署該系統。請參閱 link:task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 link:task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
+現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要在商業區域的Linux主機上安裝Connector、也需要在Cloud Volumes ONTAP 該處部署該系統。請參閱 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
 
 
 

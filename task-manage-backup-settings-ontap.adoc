@@ -155,8 +155,8 @@ image:screenshot_backup_edit_export_snapshots.png["「進階設定」頁面中�
 
 == 變更是否從來源系統移除「每年」快照
 
-當您為任何磁碟區選取備份原則的「每年」備份標籤時、所建立的Snapshot複本非常龐大。根據預設、這些年度快照會在傳輸至物件儲存設備後、自動從來源系統刪除。您可以從「每年刪除Snapshot」區段變更此預設行為。
+當您為任何磁碟區的備份原則選取「每年」備份標籤時、所建立的 Snapshot 複本非常大。根據預設、這些年度快照會在傳輸至物件儲存設備後、自動從來源系統中刪除。您可以從「每年刪除Snapshot」區段變更此預設行為。
 
-image:screenshot_backup_edit_yearly_snap_delete.png["「進階設定」頁面中IPspace項目的快照。"]
+image:screenshot_backup_edit_yearly_snap_delete.png["進階設定頁面中每年快照項目的螢幕擷取畫面。"]
 
 如果您要在來源系統上保留年度快照、請選取*已停用*、然後按一下*套用*。

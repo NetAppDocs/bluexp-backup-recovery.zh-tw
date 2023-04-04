@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-backup-to-gcp.html 
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, gcp, google cloud, back up volumes, cloud backup 
-summary: 請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能區備份到 Google Cloud 儲存設備。 
+summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Google Cloud 儲存設備。 
 ---
 = 將Cloud Volumes ONTAP 不支援的資料備份到Google Cloud Storage
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能�
 
 
 [role="lead"]
-請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能區備份到 Google Cloud Storage 。
+請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Google Cloud Storage 。
 
 
 
@@ -28,6 +28,7 @@ summary: 請完成幾個步驟、開始將資料從 Cloud Volumes ONTAP 功能�
 * 您擁有有效的 GCP 訂閱、可用於存放備份的儲存空間。
 * 您的Google Cloud Project中有一個服務帳戶、該帳戶具有預先定義的儲存管理角色。
 * 您已訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"^] NetApp的Cloud Backup BYOL授權。
+* 您已在 Google Cloud 中安裝 Connector 。
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 在新系統或現有系統上啟用Cloud Backup
@@ -81,6 +82,14 @@ image:diagram_cloud_backup_cvo_google.png["顯示Cloud Backup如何與來源系�
 --
 支援的 GCP 區域:: 所有GCP地區均支援雲端備份 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]。
 GCP 服務帳戶:: 您必須在Google Cloud Project中擁有預先定義儲存管理角色的服務帳戶。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html["瞭解如何建立服務帳戶"^]。
+連接器需求:: Connector 必須安裝在可存取網際網路的 Google 區域。
++
+--
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["在 Google Cloud 中部署 Connector"^]
+
+
+--
 驗證或新增連接器權限:: 若要使用Cloud Backup的「搜尋與還原」功能、您必須擁有Connector角色的特定權限、才能存取Google Cloud BigQuery服務。請參閱下列權限、如果您需要修改原則、請遵循這些步驟。
 +
 --

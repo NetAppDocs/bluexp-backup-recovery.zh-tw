@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept-backup-to-cloud.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem, kubernetes, applications 
-summary: Cloud Backup是適用於BlueXP工作環境的服務、可提供備份與還原功能、以保護資料並進行長期歸檔。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, kubernetes, applications, virtual machines, backup and recovery 
+summary: BlueXP 備份與還原可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。 
 ---
 = 深入瞭解Cloud Backup
 :hardbreaks:
@@ -14,7 +14,9 @@ summary: Cloud Backup是適用於BlueXP工作環境的服務、可提供備份�
 
 
 [role="lead"]
-Cloud Backup是適用於BlueXP（前身為Cloud Manager）工作環境的服務、可提供備份與還原功能、以保護資料並進行長期歸檔。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。
+BlueXP 備份與還原（雲端備份）可為內部部署和雲端中的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。
+
+此服務執行區塊層級的遞增永久複寫、並保留所有儲存效率、大幅減少複寫和儲存的資料量。此外、您只需支付受保護的資源、並使用可用的最低成本儲存層、這使得雲端備份非常具成本效益。
 
 必要時、您可以將整個_volume從備份還原至相同或不同的工作環境。備份ONTAP 不一致的資料時、您也可以選擇將備份中的一個或多個_fil__還原到相同或不同的工作環境。
 
@@ -86,7 +88,7 @@ endif::gcp[]
 * 每年備份的開始時間是一年中的第一天午夜之後。
 
 
-開始時間取決於每ONTAP 個來源系統設定的時區。您無法在使用者指定的時間從UI排程備份作業。如需詳細資訊、請聯絡您的系統工程師。
+開始時間取決於每ONTAP 個來源系統設定的時區。您無法從 UI 在使用者指定的時間排程備份作業。如需詳細資訊、請聯絡您的系統工程師。
 
 
 
