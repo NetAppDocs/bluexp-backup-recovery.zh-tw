@@ -59,9 +59,6 @@
   <block id="e6e80588e9fe7cf89218fea44300f7ca" category="inline-link">深入瞭解連接器</block>
   <block id="da1264a616f156bd6836a85f7dfdea5a" category="list-text"><block ref="da1264a616f156bd6836a85f7dfdea5a" category="inline-link-rx"></block></block>
   <block id="f9e3fe9bcf87b917aee79601ec31e206" category="inline-link">在可存取網際網路的Linux主機上安裝Connector</block>
-  <block id="c406c8943ff98e7dc5d56f37428c9410" category="list-text"><block ref="c406c8943ff98e7dc5d56f37428c9410" category="inline-link-rx"></block></block>
-  <block id="c870531773e82c374eb4125c8029e25e" category="inline-link">在連接器之間切換</block>
-  <block id="74d39f4b6fe0e32c5cfa2ed86891bf44" category="list-text"><block ref="74d39f4b6fe0e32c5cfa2ed86891bf44" category="inline-link-rx"></block></block>
   <block id="a8e8e48001e032c3b5939047d15db5a2" category="section-title">為連接器準備網路</block>
   <block id="7b16b8b258668ab05a1e5d83e084b477" category="paragraph">確認連接器具備所需的網路連線。</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步驟</block>
@@ -1206,8 +1203,6 @@
   <block id="03a5b9815bb473e6f4be8d24abee633a" category="list-text">瀏覽與還原一次最多可還原100個個別檔案。</block>
   <block id="83e93965854a9ee03d55a2d15f2e8dc7" category="list-text">搜尋與還原一次可還原1個檔案。</block>
   <block id="e41af01898aa01f20e528d19fdda2ec8" category="paragraph">您可以選擇將內部部署ONTAP 的更新叢集直接連接至AWS S3（透過公用網際網路）、或是使用VPN或AWS Direct Connect、然後透過私有VPC端點介面將流量路由傳送至AWS S3。</block>
-  <block id="d41b031ef25fff764808749edcc2cd28" category="inline-link">連接器入門</block>
-  <block id="b37ed402641ff6f2d1b0b55061547f2d" category="list-text"><block ref="b37ed402641ff6f2d1b0b55061547f2d" category="inline-link-rx"></block></block>
   <block id="76e709935c290dea4c7b1c0de4918211" category="inline-link-macro">確認Connector具有管理S3儲存區的權限</block>
   <block id="834f26d80b9784d547a441b2c02d3ad5" category="list-text"><block ref="7eb7d4d5a2ffca3aec2449e14ed03205" category="inline-link-macro-rx"></block>。</block>
   <block id="187b50ee8f2351a69b8fa6b8b42687d5" category="paragraph">IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權。如果您無法針對目前的IPspace進行設定、則必須建立專屬的IPspace、讓所有叢集間生命週期都能存取物件存放區。</block>
@@ -1392,7 +1387,6 @@
   <block id="360446e3fb6e2087ba1eda4d6e9eafde" category="list-text">節點的叢集間LIF可存取物件存放區（當連接器安裝在「暗」站台時、則不需要）。</block>
   <block id="6dca065caf89927398e08355b9d7718e" category="paragraph">將資料備份StorageGRID 到不支援的地方時、內部環境中必須有連接器。您可能需要安裝新的 Connector 、或確定目前選取的 Connector 位於內部部署。連接器可安裝在有或沒有網際網路存取的站台上。</block>
   <block id="f6428d68ab8312cad4e05d9222dbabc5" category="inline-link">在無法存取網際網路的Linux主機上安裝Connector</block>
-  <block id="d2c6281fb2bfdd80b1c106c90e21e78b" category="list-text"><block ref="d2c6281fb2bfdd80b1c106c90e21e78b" category="inline-link-rx"></block></block>
   <block id="31f0caf11b57fb7cb77368268e368d75" category="inline-link-macro">雲端備份新功能</block>
   <block id="f4cec0313eb4678996dc68cfe81c6f4f" category="inline-link">升級Connector軟體</block>
   <block id="1ad501aca706aedda73a497f3e05cad4" category="list-text">透過連接埠443連至Cloud Backup的傳出網際網路連線（當連接器安裝在「暗」站台時、不需要）</block>
@@ -1411,9 +1405,7 @@
   <block id="003facd7f31c0fd7dac15a48dbce6ccc" category="inline-image-macro">顯示Cloud Backup如何透過私有連線與叢集上的磁碟區和備份檔案所在的Google Cloud儲存設備進行通訊的圖表。</block>
   <block id="4b831201269c6366ac22eccdcf44893f" category="paragraph"><block ref="4b831201269c6366ac22eccdcf44893f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1c52fe530613f90d476d439dbca6d53e" category="inline-link">在GCP中安裝連接器</block>
-  <block id="a792c7e75bcc7cf7d82f87b63cbca477" category="list-text"><block ref="a792c7e75bcc7cf7d82f87b63cbca477" category="inline-link-rx"></block></block>
   <block id="c434332bb7ea2d6636a3d41a262f1e7e" category="inline-link">在內部環境中安裝連接器</block>
-  <block id="408e970a6e2ac7b03356ff4f61689ed3" category="list-text"><block ref="408e970a6e2ac7b03356ff4f61689ed3" category="inline-link-rx"></block></block>
   <block id="902e370d1248b02546dce02dd966d3df" category="list-text">輸入將用於預設原則的備份原則詳細資料、然後按一下「*下一步*」。您可以選取現有的原則、也可以在每個區段中輸入您的選擇來建立新原則：</block>
   <block id="9f0a90a5aa72e2d8a79c1f4913cfc4eb" category="list-text">輸入預設原則的名稱。您不需要變更名稱。</block>
   <block id="3b4d703b29a9da1e70d08b65d53fe521" category="paragraph">Cloud Backup可搭配下列使用模式使用：</block>
@@ -1456,7 +1448,6 @@
   <block id="eaa29096ef448c4ab5d5ece35c540788" category="paragraph"><block ref="eaa29096ef448c4ab5d5ece35c540788" category="inline-image-macro-rx" type="image"></block></block>
   <block id="244b0622880fcbe1c4432e64d81bc038" category="paragraph">如果您已在AWS VPC或內部部署部署了Connector、您就能輕鬆完成所有設定。如果沒有、則您需要在上述任一位置建立連接器、以便將ONTAP 支援的資料備份到AWS S3儲存設備。您無法使用部署於其他雲端供應商的Connector。</block>
   <block id="cd10ae990b1a676dcb9da574833197dc" category="inline-link">在AWS中安裝Connector</block>
-  <block id="fe96b3be0fd11571a6c8ea6ac43f23fe" category="list-text"><block ref="fe96b3be0fd11571a6c8ea6ac43f23fe" category="inline-link-rx"></block></block>
   <block id="2e379f93711508ab69eec06837dd271c" category="inline-link">請參閱端點清單</block>
   <block id="3014a55cd7ec25590c6b5406eec324b1" category="list-text">透過連接埠443連接HTTPS、連接Cloud Backup Service 至整個物件儲存區 <block ref="2b717f51e9f0e108fc936d861142f7b4" category="inline-link-rx"></block>）</block>
   <block id="b81793c592727efa905fe3e8a74bbb9d" category="list-text">如果ONTAP 您有從您的叢集到VPC的直接連線或VPN連線、而且您想要連接器和S3之間的通訊保持在AWS內部網路（*私有*連線）中、您就必須啟用連接到S3的VPC端點介面。 <block ref="038eee040120b4244a9c2b9d19ca5787" category="inline-xref-macro-rx"></block></block>
@@ -1516,7 +1507,6 @@
   <block id="325a65bfe5fe5e749b4e5c907feaa4cd" category="paragraph"><block ref="325a65bfe5fe5e749b4e5c907feaa4cd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="68c339b6eb7bfabf7edb3aa60625b8a0" category="paragraph">如果您已在Azure vnet或內部部署了Connector、您就能輕鬆完成設定。如果沒有、您需要在其中任一位置建立連接器、以便將ONTAP 還原資料備份到Azure Blob儲存設備。您無法使用部署於其他雲端供應商的Connector。</block>
   <block id="698b05231bfe12b062cbf4a5381b3d2f" category="inline-link">在Azure中安裝Connector</block>
-  <block id="b4f571ad8c9a525beb5cb8da26f64fef" category="list-text"><block ref="b4f571ad8c9a525beb5cb8da26f64fef" category="inline-link-rx"></block></block>
   <block id="a3caba4397a73eb091b3374d44a36510" category="list-text">啟用vnet私有端點對Azure儲存設備。如果ONTAP 從您的DB2叢集到vnet有ExpressRoute或VPN連線、而且您想要連接器與Blob儲存設備之間的通訊保持在虛擬私有網路（*私有*連線）中、就需要此功能。</block>
   <block id="37c606e486cf867317024daab096d5c7" category="sidebar">設定備份以在Azure中存取多個帳戶</block>
   <block id="9aa87cabc3c16ccfd72ed13e9e2a189c" category="list-text">透過使用者指定的連接埠、從叢集間LIF啟動HTTPS連線至支援備份與還原作業的支援閘道節點。ONTAP StorageGRID此連接埠可在備份設定期間進行設定。</block>
@@ -2201,7 +2191,6 @@
   <block id="39f30cdd2630386fa4f3ba56e107c2fd" category="list-text">選擇訂購2（部署BlueXP Connector和Cloud Volumes ONTAP 更新系統的位置）和資源群組。</block>
   <block id="5e9c68a306632190e5fdfb7db87750f9" category="list-text">您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱<block ref="04e8e773ac6637419158f2743860946e" category="inline-link-rx"></block> 以取得詳細資料。</block>
   <block id="f14bda54277879b5d5f51fa405834285" category="paragraph">您必須先在ONTAP BlueXP中探索內部部署的叢集、才能開始備份大量資料。</block>
-  <block id="48b0bfd3649cb51640d3b2b726ccd1b0" category="admonition">BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 <block ref="4b505ef59fae088b7538ff8d53b204e9" category="inline-link-macro-rx"></block> 若要查看每個Cloud Backup版本中的新功能、請依照下列步驟執行<block ref="9f7f6f7d33dac6a99bb8b7e121fd2054" category="inline-link-rx"></block> 當您想要使用新功能時。</block>
   <block id="4222162492898e3a8b9e4698a4abb67a" category="paragraph">您可以將SnapCenter 適用於VMware vSphere的VMware vSphere的VMware vCenter外掛程式與BlueXP整合、將一或多個資料存放區備份至Amazon Web Services。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。</block>
   <block id="a9bb4a4ebd2695e50a673d0b706564b1" category="list-text">在BlueXP UI中、按一下* Protection *&gt;* Backup and recovery *&gt;* Virtual Machines *。</block>
   <block id="abe7d23d1826e9db79e6c78593403413" category="paragraph">設定ONTAP 您希望BlueXP探索的各個叢集、以備份資料存放區。在新增其中一個資料存放區的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他資料存放區。</block>
@@ -2298,7 +2287,6 @@
   <block id="bd5465eb0e8cf8f303aee7ea9420c8b1" category="sidebar">BlueXP部落格</block>
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">所有BlueXP文件</block>
   <block id="dbb5638e73887ef4301df1c7b10993df" category="inline-link">在AWS GovCloud區域安裝Connector</block>
-  <block id="9ead7424c07e39075bc88d26cf29486d" category="list-text"><block ref="9ead7424c07e39075bc88d26cf29486d" category="inline-link-rx"></block></block>
   <block id="86459dce2ebdc093806a2c3cc3a8ca9e" category="list-text">在「Select Volumes（選取磁碟區）」頁面中、使用定義的備份原則選取您要備份的磁碟區。如果您想要將不同的備份原則指派給特定磁碟區、可以建立其他原則、並於稍後將其套用至這些磁碟區。</block>
   <block id="47ab521431b84d7f8280399db460e01b" category="list-text">若要備份未來新增的所有現有磁碟區和任何磁碟區、請勾選「備份所有現有和未來的磁碟區...」方塊。我們建議您使用此選項、以便備份所有的磁碟區、而且您永遠不需要記住為新的磁碟區啟用備份。</block>
   <block id="fc32ef7e48902fe522b53f26c5a7c5cc" category="list-text">若要僅備份現有磁碟區、請勾選標題列中的方塊（<block ref="2b1190f90c2c717d2aa70aabd2fc4c36" category="inline-image-macro-rx" type="image"></block>）。</block>
@@ -2356,7 +2344,6 @@
   <block id="1921607c8a4d3375b5df7e659b429e1c" category="paragraph">Google Cloud Storage儲存庫會自動在您輸入的Google存取金鑰和秘密金鑰所指示的服務帳戶中建立、並儲存備份檔案。Volume Backup Dashboard隨即顯示、以便您監控備份狀態。您也可以使用監控備份與還原工作的狀態 <block ref="5d9366e34fca5f2de6190abcadbc5e98" category="inline-link-macro-rx"></block>。</block>
   <block id="30d334a4a47bf8bcc0a713cea94b6d98" category="list-text">您也可以 <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> 至Cloud Volumes ONTAP Google的某個系統、或內部部署ONTAP 的某個系統。</block>
   <block id="0fed42c16e02df19813c1ada5f9c8fd7" category="inline-link">在Azure政府區域安裝Connector</block>
-  <block id="3ed416b513332ef0663a96d528858df7" category="list-text"><block ref="3ed416b513332ef0663a96d528858df7" category="inline-link-rx"></block></block>
   <block id="62640a282075f7801899cdb8febacf09" category="summary">您可以變更許多叢集層級的備份設定、以便在每ONTAP 個支援系統啟動Cloud Backup時進行設定。您也可以修改某些套用為「預設」備份設定的設定。這包括變更儲存金鑰、將備份傳輸至物件儲存設備的速度、是否將歷史Snapshot複本匯出為備份檔案等。</block>
   <block id="c7d0d42759e1658d8ae1d80e3dedd0d1" category="doc">管理叢集層級的備份設定</block>
   <block id="c039a60af8309de6dc61d8d90e85b514" category="paragraph">叢集層級的備份設定可在「_Advanced Settings_」（進階設定_）頁面中使用。</block>
@@ -3469,10 +3456,8 @@
   <block id="d2b32f39697a5b013948d2ec66933921" category="list-text">工作：管理BlueXP資料庫上的工作詳細資料項目</block>
   <block id="608448c2576128ccc8c2f959d59e20b4" category="list-text">連接器需求</block>
   <block id="c9069f67c447a0a15bda0467230c3148" category="inline-link">在AWS中部署Connector</block>
-  <block id="545a608e55ae4e3a96594a093a988a8a" category="list-text"><block ref="545a608e55ae4e3a96594a093a988a8a" category="inline-link-rx"></block></block>
   <block id="070bde10025186ce49792171c694b711" category="list-text">您也可以選擇在使用ONTAP 更新版本的版本時、將備份分層至S3 Glacier或S3 Glacier Deep Archive儲存設備、經過一定天數之後、以進一步最佳化成本。當部署於黑暗站台時、此功能無法使用。 <block ref="58f01ad9ea7ce8fd23147681b9f27af7" category="inline-link-macro-rx"></block>。</block>
   <block id="261ca950ce5b13f6fc57f9ad7d366d88" category="inline-link">在Azure中部署Connector</block>
-  <block id="28cf618b595b848efbf044d272e765f2" category="list-text"><block ref="28cf618b595b848efbf044d272e765f2" category="inline-link-rx"></block></block>
   <block id="7cccee5994c911e5094d2b657aa36982" category="list-text">若使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後將備份分層至Azure歸檔儲存設備、以進一步最佳化成本。當部署於黑暗站台時、此功能無法使用。 <block ref="0f1866ee99580c7794186e312ffd205e" category="inline-link-macro-rx"></block>。</block>
   <block id="898e35e1a4bf4b025c3edec879439b08" category="section-title">管理支援案例（預覽）</block>
   <block id="8b74b053fbeeff5c3b6f4991cb1d028d" category="paragraph">您可以直接從BlueXP檢視及管理作用中和已解決的支援案例。您可以管理與您的NSS帳戶和貴公司相關的個案。</block>
@@ -3542,11 +3527,9 @@
   <block id="bfa80e7aaad6da353b431bff3a0e12d6" category="paragraph">每個檔案的附件上限為 25 MB 。支援下列副檔名： txt 、 log 、 pdf 、 jpg/jpeg 、 rtf 、 doc/dox 、 xls/xlsx 和 csv 。</block>
   <block id="8e6b52a532a4fbbfc98dca3ebfa5f1e6" category="list-text">* 更新案例附註 * ：提供問題的其他詳細資料、或選擇 * 上傳檔案 * 最多附加五個檔案。</block>
   <block id="99b6a376880ac28b047f54b783efb2b9" category="summary">請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份至 Azure Blob 儲存設備。</block>
-  <block id="682b6321ac519cf28bd8d1a2cb21003e" category="list-text">您在Azure中安裝了Connector。Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「限制模式」）。。<block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 在新系統或現有系統上啟用Cloud Backup</block>
   <block id="6bdecde65d2cf1697dee748c10e1d508" category="paragraph">對於Cloud Backup BYOL授權、您需要NetApp的序號、以便在授權期間和容量內使用服務。 <block ref="47744e5312ce42ad8130a5365d7fb0d0" category="inline-link-macro-rx"></block>。當 Connector 和 Cloud Volumes ONTAP 系統部署在黑暗的站台時、您必須使用 BYOL 授權。</block>
   <block id="6322974b2572b580e2e280f1f7473932" category="list-text">Connector 可安裝在具有完整或有限網際網路存取（「標準」或「限制」模式）的 Azure 區域。</block>
   <block id="f07703a113f9329efbb1b3b1ed7d5490" category="inline-link">在 Azure 區域的 Linux 主機上手動安裝 Connector</block>
-  <block id="6557cfcd06534fdeff37ca971fbd068c" category="list-text"><block ref="6557cfcd06534fdeff37ca971fbd068c" category="inline-link-rx"></block></block>
   <block id="f74289356f2bc0344a65a98de529ad8d" category="paragraph">Blob儲存容器會自動建立在您輸入的資源群組中、並儲存備份檔案。</block>
   <block id="62ce1fd293b23e542e251491d1905645" category="paragraph">Volume Backup Dashboard隨即顯示、以便您監控備份狀態。您也可以使用監控備份與還原工作的狀態 <block ref="5d9366e34fca5f2de6190abcadbc5e98" category="inline-link-macro-rx"></block>。</block>
   <block id="95fa16fe802a71eca4c0ade2049c7325" category="inline-link">變更儲存帳戶的複寫方式</block>
@@ -3609,13 +3592,11 @@
   <block id="051139f64ea4dc8d9390cd2792f01b14" category="list-text">您已在 Google Cloud 中安裝 Connector 。</block>
   <block id="6b344f3d57a23c796f9476dd353d12e7" category="list-text">Connector 必須安裝在可存取網際網路的 Google 區域。</block>
   <block id="87a05d4200b00403ad79b218876c73d4" category="inline-link">在 Google Cloud 中部署 Connector</block>
-  <block id="b7ca017a195ca4317075e0552ce38e44" category="list-text"><block ref="b7ca017a195ca4317075e0552ce38e44" category="inline-link-rx"></block></block>
   <block id="38d4d167f6dd9174c3535fc5c7ba4b76" category="section-title">2023 年 4 月 4 日</block>
   <block id="40c193dda1b0a4df68695abe150f234a" category="section-title">能夠以「受限」模式、從 Cloud Volumes ONTAP 系統將資料備份到雲端</block>
   <block id="28e1f4495f1c7f5d7f7a5392a215c21a" category="paragraph">現在您可以在「受限」模式下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。請參閱<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> 和<block ref="d878e312b2f9cdcef2f8eccaa51619ee" category="inline-link-rx"></block>。</block>
   <block id="57c3b4ba3c60295d45a2554606080eef" category="section-title">能夠使用 API 將內部部署的 ONTAP 磁碟區備份至 ONTAP S3</block>
   <block id="430a1b25bf435fd21376b7b1884b6999" category="inline-link">與 ONTAP S3 整合為目的地（使用 REST API ）</block>
-  <block id="26ec6efcc8d7c7740aceeb4c7307d184" category="paragraph">API 的新功能可讓您使用 BlueXP 雲端備份、將 Volume 快照備份至 ONTAP S3 。此功能目前僅適用於內部 ONTAP 系統。如需詳細指示、請參閱部落格<block ref="50f757899df464a10b489edfac75ae5d" category="inline-link-rx"></block>。</block>
   <block id="720734599c08f49ea57d729ec9f12d53" category="section-title">能夠將 Azure 儲存帳戶的區域備援層面從 LRS 變更為 ZRS</block>
   <block id="d9f6af5f4e2b16940729f1ac7da86d7d" category="paragraph">從 Cloud Volumes ONTAP 系統建立備份至 Azure 儲存設備時、雲端備份預設會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要在不同區域之間複寫資料、可以將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
   <block id="a7393f4b2940dc4b2ad20a62564d25be" category="section-title">工作監控的增強功能</block>
@@ -3632,7 +3613,6 @@
   <block id="a9d3c4c93c315af7f13f9b365c2adcbf" category="list-text">Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「限制模式」）。</block>
   <block id="5b477e50c905f9613c5e16e571e9e5bc" category="list-text">Connector 可安裝在 AWS 區域、且可存取完整或有限的網際網路（「 Standard 」（標準）或「 Restricted 」（限制）模式）。</block>
   <block id="e7e22b4d377bdd0d9b0cb0ec1148ae55" category="inline-link">在 AWS 區域的 Linux 主機上手動安裝 Connector</block>
-  <block id="1196ba0da50696f076c6352e9882467f" category="list-text"><block ref="1196ba0da50696f076c6352e9882467f" category="inline-link-rx"></block></block>
   <block id="04b01ab636ef32a98ac9e4e70d26301d" category="paragraph">Cloud Backup 可用於沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）、以備份 Volume 資料。此組態也支援Volume與檔案還原。在這種情況下、您需要在Dark網站上部署BlueXP Connector。</block>
   <block id="9cee8a58cb0f70566a439c4bcaed0562" category="list-text">您可以將安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統和 AWS C2S/SC2S 安全區域的資料備份到 Amazon S3 。請參閱 <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block>。</block>
   <block id="5660f9fec8990d75e681f2c7676a1132" category="list-text">您可以將安裝在 Azure 商用地區和 Azure IL6 安全區域的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。請參閱 <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
@@ -3648,4 +3628,20 @@
   <block id="042a30f816a9f3db4f832c68a750cbd0" category="paragraph">開始時間取決於每ONTAP 個來源系統設定的時區。您無法從 UI 在使用者指定的時間排程備份作業。如需詳細資訊、請聯絡您的系統工程師。</block>
   <block id="f6c25edb13a1fb5bd6c5a94f498065a2" category="summary">完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到 Amazon S3 儲存設備。</block>
   <block id="1034847477ed5a052dde5a113bf49af2" category="paragraph">當連接器部署在雲端時（而非安裝在內部部署環境中）、GovCloud區域會支援Cloud Backup。此外、您必須從AWS Marketplace部署Connector。您無法從 BlueXP SaaS 網站在政府區域部署 Connector 。</block>
+  <block id="a16acb967c4e8e9b1d495f499e535a7a" category="list-text">您在Azure中安裝了Connector。Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「限制模式」）。</block>
+  <block id="d6dafcdb12e4f86e51530ee982eab823" category="list-text"><block ref="d6dafcdb12e4f86e51530ee982eab823" category="inline-link-rx"></block></block>
+  <block id="027b143222d1d3eb38cfc1f168468c85" category="list-text"><block ref="027b143222d1d3eb38cfc1f168468c85" category="inline-link-rx"></block></block>
+  <block id="42fe5b7d13b47e1a54bdeba0b60b6fe4" category="list-text"><block ref="42fe5b7d13b47e1a54bdeba0b60b6fe4" category="inline-link-rx"></block></block>
+  <block id="9782e9b134ce2961f9658af915ee4113" category="list-text"><block ref="9782e9b134ce2961f9658af915ee4113" category="inline-link-rx"></block></block>
+  <block id="d1830c648563b369c87ce51dd1eefe60" category="list-text"><block ref="d1830c648563b369c87ce51dd1eefe60" category="inline-link-rx"></block></block>
+  <block id="323b89c418724269f9abecade7c834d3" category="list-text"><block ref="323b89c418724269f9abecade7c834d3" category="inline-link-rx"></block></block>
+  <block id="8359638cbd1b68fd640fa0f309480550" category="list-text"><block ref="8359638cbd1b68fd640fa0f309480550" category="inline-link-rx"></block></block>
+  <block id="348d63f232889527f97197322aaa8986" category="admonition">BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 <block ref="4b505ef59fae088b7538ff8d53b204e9" category="inline-link-macro-rx"></block> 若要查看每個Cloud Backup版本中的新功能、請依照下列步驟執行<block ref="665cecca74760cbd23ea14978e32ba89" category="inline-link-rx"></block> 當您想要使用新功能時。</block>
+  <block id="2ea7e7f07a1904fc4427a42a7aba9533" category="list-text"><block ref="2ea7e7f07a1904fc4427a42a7aba9533" category="inline-link-rx"></block></block>
+  <block id="1a9500ce2c4bdf3774a1abc05bae9ae2" category="list-text"><block ref="1a9500ce2c4bdf3774a1abc05bae9ae2" category="inline-link-rx"></block></block>
+  <block id="f25c47eb7d9f3c638d89723bee6d2360" category="paragraph">API 的新功能可讓您使用 BlueXP 雲端備份、將 Volume 快照備份至 ONTAP S3 。此功能目前僅適用於內部 ONTAP 系統。如需詳細指示、請參閱部落格<block ref="50f757899df464a10b489edfac75ae5d" category="inline-link-rx"></block>。</block>
+  <block id="bf561a7142f1f05d376a8d4b4beaad24" category="list-text"><block ref="bf561a7142f1f05d376a8d4b4beaad24" category="inline-link-rx"></block></block>
+  <block id="51c1a6c1e7497769792664cc458e4b3b" category="list-text"><block ref="51c1a6c1e7497769792664cc458e4b3b" category="inline-link-rx"></block></block>
+  <block id="3b3fe44fb52240d2bf1cecd954ba8f31" category="list-text"><block ref="3b3fe44fb52240d2bf1cecd954ba8f31" category="inline-link-rx"></block></block>
+  <block id="b08b0a6b8389d8eb21b696d8750a42c7" category="list-text"><block ref="b08b0a6b8389d8eb21b696d8750a42c7" category="inline-link-rx"></block></block>
 </blocks>

@@ -86,7 +86,7 @@ GCP 服務帳戶:: 您必須在Google Cloud Project中擁有預先定義儲存�
 +
 --
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["在 Google Cloud 中部署 Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html["在 Google Cloud 中部署 Connector"^]
 
 
 --

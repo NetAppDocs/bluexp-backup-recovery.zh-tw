@@ -177,13 +177,12 @@ S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支
 將資料備份StorageGRID 到不支援的地方時、內部環境中必須有連接器。您可能需要安裝新的 Connector 、或確定目前選取的 Connector 位於內部部署。連接器可安裝在有或沒有網際網路存取的站台上。
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["在可存取網際網路的Linux主機上安裝Connector"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["在無法存取網際網路的Linux主機上安裝Connector"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["在連接器之間切換"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["在可存取網際網路的Linux主機上安裝Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["在無法存取網際網路的Linux主機上安裝Connector"^]
 
 
 
-NOTE: BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["雲端備份新功能"] 若要查看每個Cloud Backup版本中的新功能、請依照下列步驟執行 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["升級Connector軟體"^] 當您想要使用新功能時。
+NOTE: BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["雲端備份新功能"] 若要查看每個Cloud Backup版本中的新功能、請依照下列步驟執行 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["升級Connector軟體"^] 當您想要使用新功能時。
 
 強烈建議您在沒有網際網路連線的站台上安裝Connector時、定期建立Cloud Backup組態資料的本機備份。 link:reference-backup-cbs-db-in-dark-site.html["瞭解如何在黑暗的站台中備份雲端備份資料"^]。
 

@@ -27,9 +27,10 @@ summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量�
 * 您在Cloud Volumes ONTAP Azure中執行的是版本號為1.7P5或更新版本ONTAP （建議使用版本號為0、8P13及更新版本）。
 * 您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。
 * 您已訂閱 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"^] NetApp的Cloud Backup BYOL授權。
-* 您在Azure中安裝了Connector。Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「限制模式」）。。image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 在新系統或現有系統上啟用Cloud Backup
+* 您在Azure中安裝了Connector。Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「限制模式」）。
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 在新系統或現有系統上啟用Cloud Backup
 [role="quick-margin-list"]
 * 新系統：工作環境精靈預設會啟用雲端備份。請務必保持啟用選項。
 * 現有系統：選取工作環境、然後按一下右窗格中備份與還原服務旁的*啟用*、然後依照設定精靈進行。
@@ -85,8 +86,8 @@ image:diagram_cloud_backup_cvo_azure.png["顯示Cloud Backup如何與來源系�
 +
 --
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["在Azure中部署Connector"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["在 Azure 區域的 Linux 主機上手動安裝 Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["在Azure中部署Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["在 Azure 區域的 Linux 主機上手動安裝 Connector"^]
 
 
 --

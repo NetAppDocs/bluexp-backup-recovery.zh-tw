@@ -98,8 +98,8 @@ VPC閘道端點必須已存在於VPC中。 https://docs.aws.amazon.com/vpc/lates
 +
 --
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["在AWS中部署Connector"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["在 AWS 區域的 Linux 主機上手動安裝 Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["在AWS中部署Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["在 AWS 區域的 Linux 主機上手動安裝 Connector"^]
 
 
 --
