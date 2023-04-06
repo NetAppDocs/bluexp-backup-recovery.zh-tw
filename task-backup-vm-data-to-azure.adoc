@@ -14,12 +14,12 @@ summary: 將資料存放區從內部部署ONTAP 的地方還原備份到Azure。
 
 
 [role="lead"]
-您可以將SnapCenter VMware vSphere的VMware vSphere for VMware Plug-in與BlueXP整合、將一或多個資料存放區備份到Microsoft Azure。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
+您可以將 SnapCenter Plug-in for VMware vSphere 主機與 BlueXP 整合、將一或多個資料存放區備份至 Microsoft Azure 。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
 
 如果資料存放區與歸檔原則相關聯、則會提供一個選項來選取歸檔層。支援的歸檔層為Azure歸檔Blob儲存設備。
 
-
-NOTE: 確保您已滿足所有需求 link:concept-protect-vm-data.html#Requirements["需求"] 將資料存放區備份到雲端之前。
+.開始之前
+確保您已滿足所有需求 link:concept-protect-vm-data.html#Requirements["需求"] 將資料存放區備份到雲端之前。
 
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *。
@@ -27,13 +27,13 @@ NOTE: 確保您已滿足所有需求 link:concept-protect-vm-data.html#Requireme
 . 在「指派原則」頁面中、選取原則、然後按「*下一步*」。
 . 新增工作環境。
 +
-設定ONTAP 您希望BlueXP探索的各個叢集、以備份資料存放區。在新增其中一個資料存放區的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他資料存放區。
+設定您要 BlueXP 探索的叢集管理 LIF 。在新增其中一個資料存放區的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他資料存放區。
 
 +
 .. 按一下與SVM對應的*新增工作環境*。
 .. 在「新增工作環境」精靈中：
 +
-... 指定ONTAP 叢集的IP位址。
+... 指定叢集管理 LIF 的 IP 位址。
 ... 指定ONTAP 叢集使用者的認證資料。
 
 
@@ -45,7 +45,7 @@ NOTE: 確保您已滿足所有需求 link:concept-protect-vm-data.html#Requireme
 .. 指定Azure訂閱ID。
 .. 選取您要建立備份的區域。
 .. 建立新的資源群組或使用現有的資源群組。
-.. 指定ONTAP 新增為工作環境的各種不完整叢集的IP位址。
+.. 指定新增為工作環境的叢集管理 LIF IP 位址。
 .. 選取歸檔層。
 +
 建議您設定歸檔層、因為這是一次性的活動、日後將不允許您設定。

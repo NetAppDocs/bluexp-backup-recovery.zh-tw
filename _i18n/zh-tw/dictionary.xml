@@ -89,7 +89,6 @@
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">取得協助</block>
   <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">這些選項可供免費使用、一天24小時、一週7天：</block>
   <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">知識庫</block>
-  <block id="fd6bb4fa1ad0caeedd6782d92cc54ea3" category="list-text"><block ref="fd6bb4fa1ad0caeedd6782d92cc54ea3" category="inline-link-rx"></block></block>
   <block id="14526abd8bda5af347775025cd5342cf" category="inline-link">社群</block>
   <block id="410fdb9caa9c64da2ff3f88f4836960d" category="list-text"><block ref="410fdb9caa9c64da2ff3f88f4836960d" category="inline-link-rx"></block></block>
   <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">文件</block>
@@ -536,7 +535,6 @@
   <block id="8b803eccc7b3025a4a30eb9283c44e50" category="list-text">在AWS存取金鑰欄位中、指定金鑰。</block>
   <block id="6e3c30245930a39c89b2820d0afecc99" category="list-text">在AWS Secret Key（AWS機密金鑰）欄位中、指定密碼。</block>
   <block id="b5d98853353bde168501864a9aa65bfd" category="list-text">選取您要建立備份的區域。</block>
-  <block id="17e71ff8be0504f2f0970de9d25aff47" category="list-text">指定ONTAP 新增為工作環境的各種不完整叢集的IP位址。</block>
   <block id="3cc0854835f3b022e6a1537884da217d" category="list-text">指定Azure訂閱ID。</block>
   <block id="438d3dd7620068789776c4fbc687ceda" category="list-text">建立新的資源群組或使用現有的資源群組。</block>
   <block id="937fe6f3b88e5f7efd348b6104efe90c" category="list-text">在「指派原則」頁面中、選取原則、然後按「*下一步*」。</block>
@@ -1221,40 +1219,25 @@
   <block id="afd87a86d8a5973d91f3fcc4e85c719f" category="section-title">適用於虛擬機器的Cloud Backup 1.1.0現已上市</block>
   <block id="db46ba2f888d41e44da25c2d8c1f406d" category="summary">您可以檢視資料存放區和虛擬機器、並編輯SnapCenter VMware vSphere執行個體的VMware vCenter外掛程式。</block>
   <block id="880521c077c3d9130e51f737ddd86b15" category="doc">管理虛擬機器的保護</block>
-  <block id="20fa0d77fdaa3a45a8f87701c0342e8b" category="paragraph">您可以檢視所有預設的預設預設預設預設預設原則。針對每個原則、當您檢視詳細資料時、會列出所有相關聯的適用於虛擬機器的Cloud Backup原則和所有相關的虛擬機器。</block>
-  <block id="0eaea88f7ff41f67b59dccbcf68165fd" category="paragraph">會列出相關的「適用於虛擬機器的雲端備份」原則和所有虛擬機器。</block>
-  <block id="c592537d7c4342754740fa8b36640686" category="section-title">檢視資料存放區和虛擬機器</block>
-  <block id="3fad99d665e8244fc38412e798c501af" category="paragraph">系統會顯示使用VMware SnapCenter vSphere的已登錄版的VMware vSphere的VMware vCenter外掛程式來保護的資料存放區和虛擬機器。</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*關於此工作*</block>
-  <block id="21d67fc25940b8b3b749e37ad8e29e79" category="list-text">按一下SnapCenter 您要查看其資料存放區和虛擬機器的VMware vSphere的「VMware vSphere的VMware vCenter外掛程式」。</block>
   <block id="b4aa547260f4fe266f03ec3a845576a5" category="section-title">編輯SnapCenter VMware vSphere執行個體的VMware vCenter外掛程式</block>
-  <block id="65e94d24e7bbe43abc97d317024d0fcd" category="list-text">按一下並選取*編輯*</block>
-  <block id="de272c17799e442dfec66612b8e9058b" category="list-text">視需要修改詳細資料</block>
   <block id="4cc186df234138a57b2e8c5d8e5f7f8d" category="list-text">按一下「 * 儲存 * 」。</block>
   <block id="1b6f5433333a05ee720166b3bef29b73" category="section-title">重新整理保護狀態</block>
-  <block id="6701db38a1eb11efa12fa6c9ee0fa66a" category="paragraph">當新磁碟區新增至資料庫、或是原則或資源群組有變更時、您應該重新整理保護。</block>
   <block id="2ffa396b01e2ea9f2f8a8e7307a1e28e" category="list-text">從*設定*下拉式清單中、按一下* SnapCenter 適用於VMware vSpher*的「*」「外掛程式」。</block>
   <block id="418c5509e2171d55b0aee5c2ea4442b5" category="inline-image-macro">行動</block>
-  <block id="f9d6d89e14fa868377d75b60a21b7841" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 對應SnapCenter 於託管虛擬機器的VMware vSphere的VMware vCenter外掛程式、然後按一下「* Refresh*（*重新整理*）」。</block>
   <block id="048b394365a250ed3a53a1b28e83733e" category="paragraph">新的變更將會被探索到。</block>
   <block id="3e99ccad833881d9a8aeec4e2665baae" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 對應於資料存放區、然後按一下*重新整理保護*、即可針對變更啟用雲端保護。</block>
   <block id="529795f55723488071425500df0ff5d6" category="summary">您可以將虛擬機器從雲端還原至內部部署SnapCenter 的內部部署。</block>
   <block id="70861b61c8a43f84ddd14a22316ee5af" category="doc">從雲端還原虛擬機器</block>
-  <block id="d464a140825c1e9f8813a3b52ebddc03" category="admonition">您無法還原跨資料存放區跨區的虛擬機器。</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link-macro">需求</block>
   <block id="1344fa03cfc0e1e9c9a94eebf3e3c1a9" category="paragraph">確保您已滿足所有需求 <block ref="a5bf58fdc6833048fad2d714a6e89f9c" category="inline-link-macro-rx"></block> 從雲端還原虛擬機器之前。</block>
-  <block id="d97e3ee694bea96c30606b68a9d786db" category="list-text">若要從資料存放區還原：</block>
   <block id="ceb4a235a226f19c172c9cf7c46d00dc" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 與您要還原的資料存放區相對應、然後按一下「*檢視詳細資料*」。</block>
   <block id="a03a09176193c264d8dcbdcb8f2f9043" category="list-text">按一下您要還原的備份對應的*還原*。</block>
-  <block id="cbf0f67cafb8adff0e22d1448f5921f1" category="list-text">若要從虛擬機器還原：</block>
   <block id="0291e73f7c30c841795ff165a80bdc0e" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 與您要還原的虛擬機器相對應、然後按一下*還原*。</block>
   <block id="42387e1cb260fd1fb8624acde3767841" category="paragraph">VM會還原至備份所在的相同位置。</block>
   <block id="9a0c42190771559c2a8da5fac845d24d" category="admonition">確保您已滿足所有需求 <block ref="a5bf58fdc6833048fad2d714a6e89f9c" category="inline-link-macro-rx"></block> 將資料存放區備份到雲端之前。</block>
   <block id="8f2653c5938080ffdd57904f850bc430" category="section-title">註冊SnapCenter VMware vSphere的VMware外掛程式</block>
-  <block id="8129ec59f397c5afc10f7d884869f8a5" category="admonition">您可以為SnapCenter VMware vSphere登錄多個VMware vCenter外掛程式。不過、一旦登錄完成、您就無法移除SnapCenter VMware vSphere的VMware vCenter外掛程式。</block>
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">按一下「*登錄SnapCenter VMware vSpher*的更新外掛程式」。</block>
-  <block id="d530421284e594531ff677ce26aca840" category="list-text">在VMware vSphere的「VMware vSphere的解決方法外掛程式」欄位中、指定VMware vSphere的「VMware vSphere的VMware vSphere的解決方法」的FQDN或IP位址。SnapCenter SnapCenter</block>
-  <block id="0db60886ecbee2c8ae4b0a650b7ef422" category="list-text">在連接埠欄位中、指定SnapCenter 執行VMware vSphere的VMware vSphere的VMware外掛程式連接埠號碼。</block>
   <block id="4eb88f79049bc78204f8659b66b7b655" category="list-text">在使用者名稱和密碼欄位中、指定具有系統管理員角色的使用者認證。</block>
   <block id="1d419e3005bf4974f6070bbb53e5816f" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 與您要備份的資料存放區相對應、然後按一下「*啟動備份*」。</block>
   <block id="925e322b8ed2bad21cf3391e5e93df0a" category="list-text">按一下與SVM對應的*新增工作環境*。</block>
@@ -1264,10 +1247,8 @@
   <block id="db7f740fbee2466830a1f559dba6b17b" category="list-text">建立新的資源群組或使用現有的資源群組。</block>
   <block id="ddac760f2c60fbb2375807e939befa9d" category="summary">深入瞭解如何保護虛擬機器上的資料、並瞭解不同的原則。</block>
   <block id="97bfb69bf5a1d719c6265b922436bbaa" category="doc">保護您的虛擬機器資料</block>
-  <block id="bf12440e355f2cc41683d5da523c5fce" category="paragraph">請先閱讀下列需求、確定您擁有支援的組態、再開始將資料存放區和虛擬機器備份至雲端服務。</block>
   <block id="d511399444cf864b695600d159b7c93b" category="list-text">VMware vSphere 4.6P1或更新版本的適用插件SnapCenter</block>
   <block id="bff3cdd2fd5f993f3bc3fbbd3c43fb30" category="list-text">VMware vSphere 4.6P1的VMware vCenter外掛程式應至少進行一次備份SnapCenter 。</block>
-  <block id="9c2d7e78a68e18061466c4c12001d828" category="list-text">對於預先安裝的原則、VMware SnapCenter vSphere的VMware vSphere及雲端的VMware Infrastructure的VMware Plug-in資料存放區排程層應相同。</block>
   <block id="ad747f24f06324c9bc58eeaa274f014a" category="list-text">請確認FlexGroup 資料存放區中沒有任何不支援的資料區、因為不FlexGroup 支援備份和還原功能。</block>
   <block id="d4e9a319924f580f8d8c025f39e06dc3" category="list-text">請確定不支援還原加密磁碟區、因此不會加密任何磁碟區。</block>
   <block id="f8038513f93eb5ca7b2505674255b67b" category="list-text">在所需的資源群組上停用「*最近*」。如果您已為資源群組啟用「*最近*」、則這些資源群組的備份將無法用於雲端的資料保護、因此無法用於還原作業。</block>
@@ -2085,7 +2066,6 @@
   <block id="fe8f95b60b7c4092ce03adfbb31e89b4" category="doc">建立備份虛擬機器的原則</block>
   <block id="43852dc1e0c3229284688eb4c01dfef0" category="paragraph">如果您不想編輯預先定義的原則、則應建立原則。</block>
   <block id="0ef51421739da7017b4d3decc1813f4a" category="list-text">在「虛擬機器」頁面的「設定」下拉式清單中、選取「*原則*」。</block>
-  <block id="a0ba49a69c26d4de1afcac95ba435828" category="paragraph">您應確保連接埠已開啟、SnapCenter 以便在VMware vSphere的VMware vSphere的VMware外掛程式與適用於虛擬機器的Cloud Backup之間進行通訊。</block>
   <block id="0b0e252af8897fbe981ec6682d2aa33b" category="section-title">支援登錄總覽</block>
   <block id="192054ad7601240a3e8be54cc5cc548e" category="paragraph">有兩種登錄形式可啟動支援服務權利：</block>
   <block id="55ff64467cd508971910145ab5d6b3b8" category="list-text">在Cloud Volumes ONTAP 雲端供應商的市場中註冊與訂閱相關的支援服務序號（這些序號為20位數909601xxxxxxxx序號）。</block>
@@ -2191,10 +2171,7 @@
   <block id="39f30cdd2630386fa4f3ba56e107c2fd" category="list-text">選擇訂購2（部署BlueXP Connector和Cloud Volumes ONTAP 更新系統的位置）和資源群組。</block>
   <block id="5e9c68a306632190e5fdfb7db87750f9" category="list-text">您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱<block ref="04e8e773ac6637419158f2743860946e" category="inline-link-rx"></block> 以取得詳細資料。</block>
   <block id="f14bda54277879b5d5f51fa405834285" category="paragraph">您必須先在ONTAP BlueXP中探索內部部署的叢集、才能開始備份大量資料。</block>
-  <block id="4222162492898e3a8b9e4698a4abb67a" category="paragraph">您可以將SnapCenter 適用於VMware vSphere的VMware vSphere的VMware vCenter外掛程式與BlueXP整合、將一或多個資料存放區備份至Amazon Web Services。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。</block>
   <block id="a9bb4a4ebd2695e50a673d0b706564b1" category="list-text">在BlueXP UI中、按一下* Protection *&gt;* Backup and recovery *&gt;* Virtual Machines *。</block>
-  <block id="abe7d23d1826e9db79e6c78593403413" category="paragraph">設定ONTAP 您希望BlueXP探索的各個叢集、以備份資料存放區。在新增其中一個資料存放區的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他資料存放區。</block>
-  <block id="52764b554e9bba6804ede67b5b8f970e" category="list-text">BlueXP 3.9或更新版本</block>
   <block id="3e6a014c15570f7f51f7fcdad349babc" category="summary">您可以檢視原則和備份。視資料庫、原則或資源群組的變更而定、您可以從BlueXP UI重新整理更新。</block>
   <block id="bc297099626ec7a9aaf08998c859562c" category="paragraph">您可以從BlueXP UI執行不同的作業來管理應用程式保護。</block>
   <block id="d4073377354088504201b6621befe095" category="list-text">按一下*備份與還原*&gt;*應用程式*。</block>
@@ -2232,9 +2209,6 @@
   <block id="aa996e20900197b0ea41485ada083d8c" category="paragraph">工作環境清單位於您在服務的最上層橫幅中所選的BlueXP帳戶、工作區和Connector範圍內。</block>
   <block id="fa6b601b2fb4e3e5c7b466ecb8bd70ac" category="paragraph">此錯誤可能表示、與該帳戶相關聯的NSS帳戶及記錄公司與BlueXP帳戶序號的記錄公司不同（例如960xxxx)或工作環境序號。您可以在「建立案例*」表單頂端查看您的NSS帳戶清單、以找出最適合的項目、或使用下列其中一個選項尋求協助：</block>
   <block id="628fb9e7ced847c110ddd7ef8f1c7362" category="paragraph">您可以ONTAP 將Cloud Backup for Applications與BlueXP和內部部署SnapCenter 的更新整合、將應用程式資料從功能更新到Amazon Web Services。</block>
-  <block id="068e918014ac9eb5e356de3a0a621d15" category="summary">在SnapCenter BlueXP中註冊VMware vSphere的功能外掛程式。</block>
-  <block id="6425eb8dd63509a5d1228d5f87438934" category="paragraph">您應該在SnapCenter BlueXP中登錄VMware vSphere的VMware vCenter外掛程式、以便在BlueXP中顯示資料存放區和虛擬機器。只有擁有管理存取權的使用者才能登錄SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式。</block>
-  <block id="3a41597d5116718fb24622669197f3e8" category="paragraph">按一下*備份與還原*&gt;*虛擬機器*、即可檢視所有符合VMware SnapCenter vSphere之已登錄版的「VMware vSphere插件」保護資格的資料存放區與虛擬機器。</block>
   <block id="d4f4c5ccc817cf84f5825246d829cabe" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。</block>
   <block id="fbd33db6168b024f7fb941bc669aa81a" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。<block ref="9f26112087077321f30a8a9a55bedf44" category="inline-link-rx"></block>。</block>
   <block id="7dbea888521fb9c4360764add4f59e05" category="list-text">必須將特定的Amazon Athena、AWS黏著及AWS S3權限新增至提供BlueXP權限的使用者角色。 <block ref="172464504974bed7b77dd155db5fb92b" category="inline-link-macro-rx"></block>。</block>
@@ -2249,14 +2223,11 @@
   <block id="91381cdaf1cff61a625d6355a34abc10" category="paragraph">客戶管理員需要在AWS中部署Connector、讓BlueXP能夠管理公有雲環境中的資源和程序。</block>
   <block id="71e064246e91e058534eb9c47cbeadcf" category="inline-link-macro">從BlueXP在AWS中建立連接器</block>
   <block id="d15bab64d8286860a0c772cefded5f73" category="paragraph">如需相關資訊、請參閱 <block ref="3fdf2a62e687b222e52b805dde381364" category="inline-link-macro-rx"></block>。</block>
-  <block id="4f72fd7ca712acaf47fd9055c7bd40b5" category="list-text">在BlueXP UI中、按一下* Protection *&gt;* Backup and recovery *&gt;* Virtual Machines *&gt;* SnapCenter VMware vSpher*的*《VMware vSphere外掛程式》、然後選取SnapCenter 您要還原其虛擬機器的VMware vSphere《VMware vSphere的還原外掛程式》。</block>
-  <block id="fcbd686b41684a3ab6f265cc8de940c9" category="admonition">如果將來源虛擬機器移至其他位置（vMotion）、而且使用者從BlueXP觸發該虛擬機器的還原、則虛擬機器將會還原至進行備份的原始來源位置。</block>
   <block id="c50c64e55455dd7f429be9192a7ad6a2" category="list-text">Cloud Backup for Applications是一組由NetApp代管的SaaS服務、以BlueXP SaaS平台為基礎。</block>
   <block id="033f9aa227c492833c2f1af28d01f134" category="list-text">您必須使用的是BlueXP 3.9.21或更新版本</block>
   <block id="a8db6f5de8da7da9d3f1b9e9e4dfc251" category="list-text">取得內含BlueXP Connector ID的X-agent-id。</block>
   <block id="6c5b6689ac55433faa02a7b00a324c53" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。<block ref="fe9c905e0ac5679eb2b5a96bea671a0a" category="inline-link-rx"></block>。</block>
   <block id="de91611ef7d87d7277497c9a2076d470" category="list-text">提供BlueXP權限的IAM角色必須包含最新版本的S3權限<block ref="7dfaeab02b2622441821b715f9d8495a" category="inline-link-rx"></block>。</block>
-  <block id="ddbe1a27c8679d52220657402cc89453" category="paragraph">您可以在備份及還原資料之前、先檢視原則、資料存放區及虛擬機器。視資料庫、原則或資源群組的變更而定、您可以從BlueXP UI重新整理更新。</block>
   <block id="9330e7377c5511f70bfc35493714892a" category="list-text">在BlueXP UI中、按一下* Protection *&gt;* Backup and recovery *&gt;* Virtual Machines *&gt;* Setting*&gt;* SnapCenter 《VMware vSpher******的*還原外掛程式》。</block>
   <block id="8fc5a6acddf8678dc2c340b6dfae42a9" category="list-text">按一下*備份與還原*&gt;*虛擬機器*。</block>
   <block id="2b36d2f46a4c7d47c05352e78b2ebe53" category="doc">將內部部署應用程式資料備份到Google Cloud Platform</block>
@@ -2265,7 +2236,6 @@
   <block id="ded90f27fe65ac910c74189d47b689e7" category="paragraph">您可以將Oracle、Microsoft SQL和SAP HANA應用程式資料從內部部署ONTAP 的支援系統備份到Amazon Web Services、Microsoft Azure、Google Cloud Platform和StorageGRID 更新版本。</block>
   <block id="d8091897da3095df0c466b9affaf9f6b" category="list-text">BlueXP 3.9..</block>
   <block id="a202549441953b34c628ace4b1179eef" category="list-text">至少有一項每日、每週或每月的政策SnapCenter 在支援服務方面、沒有標籤或標籤與BlueXP中的Cloud Backup for Applications政策相同。</block>
-  <block id="dc2f305c54bc6989c91413415c2c57b6" category="paragraph">您可以StorageGRID 將SnapCenter VMware vSphere的VMware vSphere的VMware vSphere的VMware外掛程式與BlueXP整合、將一或多個資料存放區備份至VMware。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。</block>
   <block id="b4866a33463f80d02c65e0910ff4b146" category="paragraph">您可以建立原則、或使用下列其中一項可在BlueXP中使用的預先定義原則。</block>
   <block id="600d7e7677b89e9499d2f4c0988c0755" category="paragraph">您可以ONTAP 將Cloud Backup for Applications與BlueXP和內部部署SnapCenter 的更新整合、將應用程式資料從功能性資料備份到Microsoft Azure。</block>
   <block id="ca8f6fdf6612f39d01c4ba19ddfa9742" category="list-text">確定BlueXP使用者具有「帳戶管理員」角色。</block>
@@ -2276,7 +2246,6 @@
   <block id="2622e674b3c7dc032fe079b44d6b5ede" category="list-text">提供具有權限的BlueXP Connector的IAM角色包括來自最新版本的S3權限<block ref="7dfaeab02b2622441821b715f9d8495a" category="inline-link-rx"></block>。</block>
   <block id="91e227517267fea3ffdbb117f9de554a" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。<block ref="b008743209457997d1cdda737bb04357" category="inline-link-rx"></block>。</block>
   <block id="ddb2145ba96507afdc3bec7ae412c714" category="list-text">提供BlueXP權限的IAM角色必須包含最新版本的S3權限<block ref="ff3f0e305ab9e473aa2748fcb96c0189" category="inline-link-rx"></block>。</block>
-  <block id="206a435abd7cd4811fdc6eb74ac46545" category="paragraph">您可以將SnapCenter VMware vSphere的VMware vSphere for VMware Plug-in與BlueXP整合、將一或多個資料存放區備份到Microsoft Azure。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。</block>
   <block id="ef63a877f0594c057f824f4327169a39" category="list-text">支援Google Cloud Platform（GCP）和StorageGRID 支援以備份應用程式一致的快照</block>
   <block id="3f3ac5f6857788bfe6b27f406afcffa5" category="paragraph">Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在BlueXP中啟用的雲端應用程式備份、可針對位於Amazon FSX for NetApp ONTAP 上的Oracle資料庫、提供有效率且應用程式一致的原則型備份與還原功能。<block ref="5774010e75c0af5301ef0cfe74198590" category="inline-link-rx"></block>。</block>
   <block id="314d64b29803a4017e18c95e19a18a09" category="paragraph">如果您的內部ONTAP 使用的叢集位於無法存取網際網路的站台、也稱為暗站或離線站台、現在您可以使用Cloud Backup將Volume資料備份到StorageGRID 位於同一個站台的NetApp作業系統。此功能需要同時在離線站台部署BlueXP Connector（3.9.19或更新版本）。</block>
@@ -2541,7 +2510,6 @@
   <block id="31a8f4d5116c3f4c70cbc4447d1ff546" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> 定義預設備份原則</block>
   <block id="de705e296c3c30f9201b0b19e9c260a3" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 選取您要備份的磁碟區</block>
   <block id="f436bcae123c67a5a4225fe3ca69b3a3" category="paragraph">您必須已設定服務帳戶。如果您在建立Cloud Volumes ONTAP 此系統時未選擇服務帳戶、則需要關閉系統、Cloud Volumes ONTAP 並從GCP主控台將服務帳戶新增至該服務帳戶。</block>
-  <block id="d59db7846bd10b6d60d21543df9faa9e" category="paragraph-title">您需要的產品</block>
   <block id="0c55a71a0bc58ebf3d9f8313f055deb6" category="summary">在無法存取網際網路的站台上使用Cloud Backup時、如果您遇到與BlueXP Connector主機系統有關的問題、您將需要定期備份重要的Cloud Backup檔案。這可讓您部署新的Connector、並還原重要的Cloud Backup資料。</block>
   <block id="6088e3538974515fddb9f0255e45eb94" category="doc">在黑暗的站台中備份及還原Cloud Backup資料</block>
   <block id="a098cb55e9580ad6911d6e322f45c362" category="paragraph">當您在部署BlueXP Connector的SaaS環境中使用Cloud Backup時、無論是在雲端供應商、或是在自己的主機系統上、只要能存取網際網路、所有重要的Cloud Backup組態資料都會備份並儲存在雲端中。當您在無法存取網際網路的站台（也稱為「暗站」）中使用Cloud Backup時、此Cloud Backup資訊只會儲存在本機連接器系統上。</block>
@@ -2727,7 +2695,6 @@
   <block id="531369e846100ce5d91871e142c23ed8" category="section-title">建立Oracle資料庫的隨需備份</block>
   <block id="0f375a841aae3358a6339864ccfaa86f" category="paragraph">如果資料存放區與歸檔原則相關聯、則會提供一個選項來選取歸檔層。支援的歸檔層為Azure歸檔Blob儲存設備。</block>
   <block id="e1a761122b21c1ecd586765e53dacaf5" category="list-text">選取歸檔層。</block>
-  <block id="aead5ccad47d982e42806d38753de835" category="paragraph">您可以在SnapCenter BlueXP中編輯VMware vSphere的《支援VMware vSphere的支援》外掛程式詳細資料。</block>
   <block id="98c5d692e015a6f029128bd692f9ac3d" category="paragraph">您可以ONTAP 將Cloud Backup for Applications與Cloud Manager和內部部署SnapCenter 的內部部署的整合、將應用程式資料從支援的對象備份到Google Cloud Platform。</block>
   <block id="367df4ef9103973813086656b7424c40" category="summary">在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HNAN的支援功能。</block>
   <block id="0aa4c98c108fd4eb123ca5d3e22561e8" category="paragraph">您應該在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HANA的解決方案。視SAP HANA主機是否啟用SSH金鑰型驗證而定、您可以遵循其中一種方法來部署外掛程式。</block>
@@ -2749,7 +2716,6 @@
   <block id="c0059925e8e1885f24373e5bdd9baa66" category="list-text">安裝目錄：要部署外掛程式的目錄、這是選用參數。預設值為/opt。</block>
   <block id="87f7d3321134d426b2518c004c972cc2" category="summary">將資料存放區從內部部署ONTAP 的不支援功能備份到Google Cloud Platform。</block>
   <block id="eb1ab874b09a7eab583845e8576be828" category="doc">將資料存放區備份到Google Cloud Platform</block>
-  <block id="ff71a97178182c75d3a25f7342156533" category="paragraph">您可以將SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式與BlueXP整合、將一或多個資料存放區備份到Google Cloud Platform。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。</block>
   <block id="bccdf5c7461a91341c81491a049f7917" category="list-text">選擇* Google Cloud Platform *將其設定為雲端供應商。</block>
   <block id="e29eef6ae64d545134f2b42984845a94" category="section-title">2022年12月19日</block>
   <block id="0a286ad90f3a25f45e443367036a8789" category="list-text">SAP HANA資料庫</block>
@@ -2936,11 +2902,9 @@
   <block id="9bc04b83e994e96133d24116c5a25bf5" category="list-text">@用於分隔資料與其資料庫名稱、並將值與其金鑰區隔。範例：data@rg2_scspr2417819002_07-20-2021_12.16.48.9267_0| LOG@RG2_scspr2417819002_07-20-2021_12.16.48.9267</block>
   <block id="08d3131fcf6d963372785be681e343e9" category="list-text">|用於分隔SC_backup_name參數兩個不同實體之間的資料。範例：DATA@RG2_scspr2417819002_07-20-2021_12.16.48.9267 0| LOG@RG2_scspr2417819002_07-20-2021_12.16.48.9267</block>
   <block id="1dc2b43d41c36670d82fe3076115def6" category="list-text">用於分隔同一機碼的變數集。範例：data@rg2_scspr2417819002_07-2021_12.16.48.9267_0| log@rg2_scspr2417819002_07-2021_12.16.48.9267_1、rg2_scspr2417819002_07-21 - 2021_12.16.48.9267_1_48.922_19002_20267-20267-20267-20267-202_18.202_18.202_18.202_12.267-2022_18.202_18.202_18.202_18.202_24</block>
-  <block id="2b4cd4d5e8c08204b572f3a126cb5509" category="paragraph">如果資料存放區與歸檔原則相關聯、則會提供一個選項來選取歸檔層。支援的歸檔層為Glacier和Glacier Deep。</block>
   <block id="9506c95f9ad8061d2b32d45700688c83" category="paragraph">您可以將虛擬機器從雲端還原至內部部署的vCenter。備份會還原至執行備份的完全相同位置。如果虛擬機器是使用歸檔原則備份、則您可以設定歸檔還原優先順序。</block>
   <block id="5183d16b45269aeda8f220ef35e5327c" category="list-text">選取您要從備份還原的虛擬機器。</block>
   <block id="0b204b102ed08f6af904a33d81026023" category="list-text">選取*歸檔還原優先順序*、然後按一下*下一步*。</block>
-  <block id="8088e5c36e0c98125d876c46d3a81440" category="paragraph">此選項只有在虛擬機器使用已設定歸檔設定的原則受到保護時才可使用。Amazon Web Services支援的歸檔還原優先順序高、標準且低、Microsoft Azure支援的歸檔還原優先順序高且標準。</block>
   <block id="071df86763e0e93af80e50596aa0710c" category="list-text">選取您要用來還原虛擬機器的備份。</block>
   <block id="d4f871b7d459c4ece286a475f033ca49" category="summary">建立SAP HANA資料庫的排程或隨需備份。</block>
   <block id="fd8f5388e72a984af8274823defe28fc" category="doc">備份雲端原生SAP HANA資料庫</block>
@@ -3139,8 +3103,6 @@
   <block id="f6c6e3e6b442f04060f7a2523e527fee" category="paragraph">如果登錄應用程式主機時使用的連接器不再存在或毀損、您應該部署新的連接器。部署新連接器之後、您應該執行* Connector-updated* API、以更新使用舊連接器登錄之所有主機的連接器詳細資料。</block>
   <block id="d13044a4ef6b89541aeb5868baab390c" category="paragraph">如果所有主機SnapCenter 都安裝並執行適用於SAP HANA的支援功能、而且所有主機都可從新連接器存取、連接器詳細資料將會成功更新。</block>
   <block id="d3b0d850de511531fb3f574a27d6a468" category="paragraph">CA憑證應具有連接器虛擬機器與其通訊的外掛程式主機確切名稱。</block>
-  <block id="7d83d5d5ce1c46e87b0f8c0f37208dfa" category="paragraph">您可以將SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式與BlueXP（前身為Cloud Manager）整合、以保護虛擬機器上的資料。您可以將資料存放區從內部部署的一線和二線儲存設備備份到雲端、SnapCenter 並輕鬆將虛擬機器還原回內部部署的VMware vSphere內建的「支援VMware vSphere的插件」。</block>
-  <block id="b8104f51ae1e5a69311d6b01f5409c0e" category="paragraph">您可以將資料存放區備份至Amazon Web Services S3（支援的歸檔層為Glacier和Deep Glacier）、Microsoft Azure Blob（支援的歸檔層為Azure歸檔層）、Google Cloud Platform和StorageGRID Sfor。</block>
   <block id="0fbf3afea399595219e31836afabacc9" category="list-text">您應該使用SnapCenter VMware vSphere 4.7P1或更新版本的VMware vCenter外掛程式、從內部部署的次要儲存設備備份虛擬機器。</block>
   <block id="9a3ae5d8e3738351dd9a586e8215632a" category="list-text">VMware vSphere適用的VMware vSphere中至少有一項SnapCenter 每日、每週或每月原則、沒有標籤或標籤與BlueXP中的虛擬機器原則相同。</block>
   <block id="add26d38486fad5ca461f986832fa6c3" category="inline-image-macro">架構圖</block>
@@ -3644,4 +3606,52 @@
   <block id="51c1a6c1e7497769792664cc458e4b3b" category="list-text"><block ref="51c1a6c1e7497769792664cc458e4b3b" category="inline-link-rx"></block></block>
   <block id="3b3fe44fb52240d2bf1cecd954ba8f31" category="list-text"><block ref="3b3fe44fb52240d2bf1cecd954ba8f31" category="inline-link-rx"></block></block>
   <block id="b08b0a6b8389d8eb21b696d8750a42c7" category="list-text"><block ref="b08b0a6b8389d8eb21b696d8750a42c7" category="inline-link-rx"></block></block>
+  <block id="ceb0e703e6fc4ff33d792e51790261e4" category="paragraph">您可以將資料存放區從內部部署的主要和次要儲存設備備份到雲端、以保護虛擬機器上的資料。必要時、您可以將虛擬機器還原回內部部署的 SnapCenter Plug-in for VMware vSphere 主機。</block>
+  <block id="21d7ed1a0ed596af2b79f06576c84ca9" category="paragraph">您可以將資料存放區備份至 Amazon Web Services S3 、 Microsoft Azure Blob 、 Google Cloud Platform 和 StorageGRID 。</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">開始之前</block>
+  <block id="949ad3136d64be33cc1a6a67e3add3d1" category="paragraph">請先閱讀下列需求、確定您擁有支援的組態、然後再開始將資料存放區和虛擬機器備份至雲端供應商。</block>
+  <block id="9b9477e579c3b44dd623d5a6e1ea8d78" category="list-text">藍圖</block>
+  <block id="620e81d38f76998723b0192a6d3d009a" category="list-text">對於雲端備份預先定義的原則、 SnapCenter Plug-in for VMware vSphere 和雲端中的資料存放區排程層應相同。</block>
+  <block id="75f480f92315c62b407d8ae1ad890f29" category="paragraph">您可以將一或多個資料存放區備份及歸檔至 Amazon Web Services 、以改善儲存效率和雲端移轉。</block>
+  <block id="88e6abd4ee4f112ba359e37a218778f6" category="paragraph">如果資料存放區與歸檔原則相關聯、您可以選擇歸檔層。支援的歸檔層為Glacier和Glacier Deep。</block>
+  <block id="899494c2cbe7f443bbc4d058b8ea51a6" category="paragraph">設定您要 BlueXP 探索的叢集管理 LIF 。在新增其中一個資料存放區的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他資料存放區。</block>
+  <block id="b19fb0dfd78b28bc5415a7f3f4ad6a49" category="list-text">指定叢集管理 LIF 的 IP 位址。</block>
+  <block id="8205f04ad04fda177786668dd772bbd6" category="list-text">指定新增為工作環境的叢集管理 LIF IP 位址。</block>
+  <block id="e56d2516907f7fa0a6e073e43392e9ff" category="paragraph">建議您設定歸檔層、因為這是一次性活動、您無法稍後再進行設定。</block>
+  <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">您無法還原跨資料存放區的虛擬機器。</block>
+  <block id="76edd5381919de6c1c9b123a884984f8" category="list-text">在 BlueXP UI 中、按一下 * 保護 * &gt; * 備份與還原 * &gt; * 虛擬機器 * &gt; * SnapCenter Plug-in for VMware vSphere * 、然後選取適用於 VMware vSphere 主機的 SnapCenter 外掛程式。</block>
+  <block id="873069930fc1357e9cd4216822243f14" category="admonition">如果來源虛擬機器移至其他位置（ VMotion ）、且使用者觸發從 BlueXP 還原該虛擬機器、則虛擬機器會還原至備份來源位置。</block>
+  <block id="73bc14a460209f6fd497aa9bd91fbaa6" category="list-text">您可以從資料存放區或虛擬機器還原：</block>
+  <block id="5d920b501536441ea32ecc24679c72a2" category="cell">如果您想要...</block>
+  <block id="df2d87dc916178a7076837c06010ded0" category="paragraph">從資料存放區還原</block>
+  <block id="4569e5f9f0309302f499c21fc4cb8ee6" category="paragraph">只有在虛擬機器使用設定歸檔設定的原則受到保護時、才能使用此選項。Amazon Web Services支援的歸檔還原優先順序高、標準且低、Microsoft Azure支援的歸檔還原優先順序高且標準。</block>
+  <block id="2a8a756e65415cefaa2a8f2d963e01be" category="paragraph">從虛擬機器還原</block>
+  <block id="4eb58c4143c6b0e5561211f7a2425377" category="list-text">若要將備份從物件存放區移至歸檔儲存區、您應該執行 ONTAP 9.10.1 或更新版本、 Amazon Web Services 或 Azure 應該是雲端供應商。</block>
+  <block id="5d0ad01dbdb8717fbebf1cb44a3c10cd" category="list-text">您應該為每個雲端供應商設定歸檔存取層。</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">關於這項工作</block>
+  <block id="ca69b8ee34e44ac66b7f0dfd3b786e9c" category="paragraph">BlueXP 提供下列預先定義的原則：</block>
+  <block id="7250cb0d0c1524aec805084d9f0ffc21" category="paragraph">1 年每日 LTR （長期保留）</block>
+  <block id="8016908361c8a89e5b37a2ac87b22faa" category="paragraph">您可以將 SnapCenter Plug-in for VMware vSphere 主機與 BlueXP 整合、將一或多個資料存放區備份至 Google Cloud Platform 。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。</block>
+  <block id="06ac0cb7b7615ba7b7f08032fcc97c6a" category="summary">在 BlueXP 中註冊適用於 VMware vSphere 主機的 SnapCenter 外掛程式。</block>
+  <block id="437ae89009b207d1aafce3d11e58f524" category="doc">註冊 VMware vSphere 主機的 SnapCenter 外掛程式</block>
+  <block id="8d69a4a1581a5dfb55d085bec9816e72" category="paragraph">您應該在 BlueXP 中註冊 VMware vSphere 主機的 SnapCenter 外掛程式、以便顯示資料存放區和虛擬機器。只有具有管理存取權的使用者才能登錄 VMware vSphere 主機的 SnapCenter 外掛程式。</block>
+  <block id="f352f7544724f99ab1b27e3e40291b49" category="admonition">您可以在 BlueXP 中註冊多個適用於 VMware vSphere 主機的 SnapCenter 外掛程式。不過、一旦註冊後、您就無法移除適用於 VMware vSphere 主機的 SnapCenter 外掛程式。</block>
+  <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">在 SnapCenter Plug-in for VMware vSphere 欄位中、指定 SnapCenter Plug-in for VMware vSphere 主機的 FQDN 或 IP 位址。</block>
+  <block id="463d350eb6c9887e5addb9a6561a47ad" category="list-text">在連接埠欄位中、指定 SnapCenter Plug-in for VMware vSphere 主機執行的連接埠編號。</block>
+  <block id="a3640e12809bb0c58c14ed0dc2515991" category="paragraph">您應該確定連接埠已開啟、以便在 SnapCenter Plug-in for VMware vSphere 主機和 BlueXP 之間進行通訊。</block>
+  <block id="1e88a362bd23950ee5a102f645348ac8" category="paragraph">按一下 * 備份與還原 * &gt; * 虛擬機器 * 、即可檢視所有使用 VMware vSphere 主機的已註冊 SnapCenter 外掛程式保護的資料存放區和虛擬機器。</block>
+  <block id="942c9249796cf6b78c981ebf15195809" category="list-text"><block ref="942c9249796cf6b78c981ebf15195809" category="inline-link-rx"></block></block>
+  <block id="26000c50c37289d13041f03c670085a3" category="paragraph">您可以將 SnapCenter Plug-in for VMware vSphere 主機與 BlueXP 整合、將一或多個資料存放區備份至 Microsoft Azure 。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。</block>
+  <block id="11cda0a1f9099558841d0f78195d8cf6" category="paragraph">您可以在備份及還原資料之前、先檢視原則、資料存放區及虛擬機器。視資料庫、原則或資源群組的變更而定、您可以從 BlueXP UI 檢視更新。</block>
+  <block id="5bea9354a7049a7e639553b703f18e84" category="paragraph">您可以檢視所有預設的預設預設預設預設預設原則。對於這些原則、當您檢視詳細資料時、會列出所有相關的原則和虛擬機器。</block>
+  <block id="1c281da53a696408c46b6da9d44b27e7" category="paragraph">列出相關的原則和虛擬機器。</block>
+  <block id="8ed12ef54cb1d9b3b955b96ba5173201" category="section-title">檢視資料存放區和虛擬機器</block>
+  <block id="e3dbc361d0cd589544c61663904eef2c" category="paragraph">畫面會顯示使用登錄的 SnapCenter Plug-in for VMware vSphere 主機保護的資料存放區和虛擬機器。</block>
+  <block id="0f793a67a6d50ed2f6c165bb38899ead" category="list-text">按一下您要查看其資料存放區和虛擬機器的 SnapCenter Plug-in for VMware vSphere 主機。</block>
+  <block id="09d402d9d90a8c43787a9b36dbc81909" category="paragraph">您可以在 BlueXP 中編輯 SnapCenter Plug-in for VMware vSphere 主機的詳細資料。</block>
+  <block id="8a27c524970cd13dc7b03f92b7043065" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 然後選取*編輯*。</block>
+  <block id="05c829c7b617d014c0186656453575ea" category="list-text">視需要修改詳細資料。</block>
+  <block id="63e8ab93fb455764c3aae06f874e9f89" category="paragraph">當新磁碟區新增至資料庫、或是原則或資源群組有變更時、您應該重新整理保護狀態。</block>
+  <block id="b08753885f48b8d718edd5f9d9cd7ab7" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 對應於 SnapCenter Plug-in for VMware vSphere 主機、然後按一下 * 重新整理 * 。</block>
+  <block id="9f7b95641e24cb882e149de39743a97c" category="paragraph">您可以將適用於 VMware vSphere 主機的 SnapCenter 外掛程式與 BlueXP 整合、將一或多個資料存放區備份至 StorageGRID 。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。</block>
 </blocks>

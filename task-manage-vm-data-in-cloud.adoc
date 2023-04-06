@@ -14,42 +14,42 @@ summary: 您可以檢視資料存放區和虛擬機器、並編輯SnapCenter VMw
 
 
 [role="lead"]
-您可以在備份及還原資料之前、先檢視原則、資料存放區及虛擬機器。視資料庫、原則或資源群組的變更而定、您可以從BlueXP UI重新整理更新。
+您可以在備份及還原資料之前、先檢視原則、資料存放區及虛擬機器。視資料庫、原則或資源群組的變更而定、您可以從 BlueXP UI 檢視更新。
 
 
 
 == 檢視原則
 
-您可以檢視所有預設的預設預設預設預設預設原則。針對每個原則、當您檢視詳細資料時、會列出所有相關聯的適用於虛擬機器的Cloud Backup原則和所有相關的虛擬機器。
+您可以檢視所有預設的預設預設預設預設預設原則。對於這些原則、當您檢視詳細資料時、會列出所有相關的原則和虛擬機器。
 
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *。
 . 從*設定*下拉式清單中、按一下*原則*。
 . 按一下您要檢視其詳細資料之原則的*檢視詳細資料*。
 
 
-會列出相關的「適用於虛擬機器的雲端備份」原則和所有虛擬機器。
+列出相關的原則和虛擬機器。
 
 
 
 == 檢視資料存放區和虛擬機器
 
-系統會顯示使用VMware SnapCenter vSphere的已登錄版的VMware vSphere的VMware vCenter外掛程式來保護的資料存放區和虛擬機器。
+畫面會顯示使用登錄的 SnapCenter Plug-in for VMware vSphere 主機保護的資料存放區和虛擬機器。
 
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *>* Setting*>* SnapCenter 《VMware vSpher******的*還原外掛程式》。
-. 按一下SnapCenter 您要查看其資料存放區和虛擬機器的VMware vSphere的「VMware vSphere的VMware vCenter外掛程式」。
+. 按一下您要查看其資料存放區和虛擬機器的 SnapCenter Plug-in for VMware vSphere 主機。
 
 
 
 
 == 編輯SnapCenter VMware vSphere執行個體的VMware vCenter外掛程式
 
-您可以在SnapCenter BlueXP中編輯VMware vSphere的《支援VMware vSphere的支援》外掛程式詳細資料。
+您可以在 BlueXP 中編輯 SnapCenter Plug-in for VMware vSphere 主機的詳細資料。
 
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *>* Setting*>* SnapCenter 《VMware vSpher******的*還原外掛程式》。
-. 按一下並選取*編輯*
-. 視需要修改詳細資料
+. 按一下 image:icon-action.png["行動"] 然後選取*編輯*。
+. 視需要修改詳細資料。
 . 按一下「 * 儲存 * 」。
 
 
@@ -57,11 +57,11 @@ summary: 您可以檢視資料存放區和虛擬機器、並編輯SnapCenter VMw
 
 == 重新整理保護狀態
 
-當新磁碟區新增至資料庫、或是原則或資源群組有變更時、您應該重新整理保護。
+當新磁碟區新增至資料庫、或是原則或資源群組有變更時、您應該重新整理保護狀態。
 
 . 按一下*備份與還原*>*虛擬機器*。
 . 從*設定*下拉式清單中、按一下* SnapCenter 適用於VMware vSpher*的「*」「外掛程式」。
-. 按一下 image:icon-action.png["行動"] 對應SnapCenter 於託管虛擬機器的VMware vSphere的VMware vCenter外掛程式、然後按一下「* Refresh*（*重新整理*）」。
+. 按一下 image:icon-action.png["行動"] 對應於 SnapCenter Plug-in for VMware vSphere 主機、然後按一下 * 重新整理 * 。
 +
 新的變更將會被探索到。
 
