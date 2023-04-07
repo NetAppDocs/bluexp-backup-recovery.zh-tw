@@ -24,13 +24,13 @@ summary: 瞭解Cloud Backup的新功能。
 
 === 能夠以「受限」模式、從 Cloud Volumes ONTAP 系統將資料備份到雲端
 
-現在您可以在「受限」模式下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。請參閱 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
+現在您可以在「受限」模式下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["深入瞭解 BlueXP 部署模式"^]。請參閱 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
 
 
 
 === 能夠使用 API 將內部部署的 ONTAP 磁碟區備份至 ONTAP S3
 
-API 的新功能可讓您使用 BlueXP 雲端備份、將 Volume 快照備份至 ONTAP S3 。此功能目前僅適用於內部 ONTAP 系統。如需詳細指示、請參閱部落格 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["與 ONTAP S3 整合為目的地（使用 REST API ）"^]。
+API 的新功能可讓您使用 BlueXP 雲端備份、將 Volume 快照備份至 ONTAP S3 。此功能目前僅適用於內部部署 ONTAP 系統。如需詳細指示、請參閱部落格 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["與 ONTAP S3 整合為目的地"^]。
 
 
 

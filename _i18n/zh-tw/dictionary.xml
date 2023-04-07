@@ -1151,7 +1151,6 @@
   <block id="e907b41f5f3d7332bee5a43fbbf78a08" category="sidebar">設定授權</block>
   <block id="8931c68a06f64c8d4063f2e9132e3258" category="sidebar">監控備份與還原工作的狀態</block>
   <block id="d77f82b136fbb812f5b611958407f0f0" category="sidebar">備份及還原ONTAP 資料</block>
-  <block id="e430b0c407669c38c402a4ddfaea406f" category="sidebar">保護ONTAP 您的資料</block>
   <block id="30f1797234e3bfa4ab1f707a8b681072" category="sidebar">備份Cloud Volumes ONTAP 到Amazon S3</block>
   <block id="32bfa5cb747a11af2fed4c8de1f2cc27" category="sidebar">備份Cloud Volumes ONTAP 到Azure Blob</block>
   <block id="b5b529e8dc821910caacb50b880d2487" category="sidebar">備份Cloud Volumes ONTAP 到Google Cloud</block>
@@ -2253,7 +2252,6 @@
   <block id="f464a9820cae6a24053ca10aad54bbb6" category="paragraph">過去、在雲端備份啟動之後、在工作環境中建立的新磁碟區、需要您手動套用備份原則。現在、無論磁碟區是在BlueXP、System Manager、CLI中建立、或是使用API建立、Cloud Backup都會探索磁碟區、並套用您選擇做為預設原則的備份原則。</block>
   <block id="c95623cd0395d5a6bb6105b9d32f197b" category="inline-link">藍圖XP注意事項</block>
   <block id="e8a6d0f19a957eac14b9917a6c92899b" category="list-text"><block ref="e8a6d0f19a957eac14b9917a6c92899b" category="inline-link-rx"></block></block>
-  <block id="bd5465eb0e8cf8f303aee7ea9420c8b1" category="sidebar">BlueXP部落格</block>
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">所有BlueXP文件</block>
   <block id="dbb5638e73887ef4301df1c7b10993df" category="inline-link">在AWS GovCloud區域安裝Connector</block>
   <block id="86459dce2ebdc093806a2c3cc3a8ca9e" category="list-text">在「Select Volumes（選取磁碟區）」頁面中、使用定義的備份原則選取您要備份的磁碟區。如果您想要將不同的備份原則指派給特定磁碟區、可以建立其他原則、並於稍後將其套用至這些磁碟區。</block>
@@ -3556,9 +3554,7 @@
   <block id="87a05d4200b00403ad79b218876c73d4" category="inline-link">在 Google Cloud 中部署 Connector</block>
   <block id="38d4d167f6dd9174c3535fc5c7ba4b76" category="section-title">2023 年 4 月 4 日</block>
   <block id="40c193dda1b0a4df68695abe150f234a" category="section-title">能夠以「受限」模式、從 Cloud Volumes ONTAP 系統將資料備份到雲端</block>
-  <block id="28e1f4495f1c7f5d7f7a5392a215c21a" category="paragraph">現在您可以在「受限」模式下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。請參閱<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> 和<block ref="d878e312b2f9cdcef2f8eccaa51619ee" category="inline-link-rx"></block>。</block>
   <block id="57c3b4ba3c60295d45a2554606080eef" category="section-title">能夠使用 API 將內部部署的 ONTAP 磁碟區備份至 ONTAP S3</block>
-  <block id="430a1b25bf435fd21376b7b1884b6999" category="inline-link">與 ONTAP S3 整合為目的地（使用 REST API ）</block>
   <block id="720734599c08f49ea57d729ec9f12d53" category="section-title">能夠將 Azure 儲存帳戶的區域備援層面從 LRS 變更為 ZRS</block>
   <block id="d9f6af5f4e2b16940729f1ac7da86d7d" category="paragraph">從 Cloud Volumes ONTAP 系統建立備份至 Azure 儲存設備時、雲端備份預設會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要在不同區域之間複寫資料、可以將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
   <block id="a7393f4b2940dc4b2ad20a62564d25be" category="section-title">工作監控的增強功能</block>
@@ -3601,7 +3597,6 @@
   <block id="348d63f232889527f97197322aaa8986" category="admonition">BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 <block ref="4b505ef59fae088b7538ff8d53b204e9" category="inline-link-macro-rx"></block> 若要查看每個Cloud Backup版本中的新功能、請依照下列步驟執行<block ref="665cecca74760cbd23ea14978e32ba89" category="inline-link-rx"></block> 當您想要使用新功能時。</block>
   <block id="2ea7e7f07a1904fc4427a42a7aba9533" category="list-text"><block ref="2ea7e7f07a1904fc4427a42a7aba9533" category="inline-link-rx"></block></block>
   <block id="1a9500ce2c4bdf3774a1abc05bae9ae2" category="list-text"><block ref="1a9500ce2c4bdf3774a1abc05bae9ae2" category="inline-link-rx"></block></block>
-  <block id="f25c47eb7d9f3c638d89723bee6d2360" category="paragraph">API 的新功能可讓您使用 BlueXP 雲端備份、將 Volume 快照備份至 ONTAP S3 。此功能目前僅適用於內部 ONTAP 系統。如需詳細指示、請參閱部落格<block ref="50f757899df464a10b489edfac75ae5d" category="inline-link-rx"></block>。</block>
   <block id="bf561a7142f1f05d376a8d4b4beaad24" category="list-text"><block ref="bf561a7142f1f05d376a8d4b4beaad24" category="inline-link-rx"></block></block>
   <block id="51c1a6c1e7497769792664cc458e4b3b" category="list-text"><block ref="51c1a6c1e7497769792664cc458e4b3b" category="inline-link-rx"></block></block>
   <block id="3b3fe44fb52240d2bf1cecd954ba8f31" category="list-text"><block ref="3b3fe44fb52240d2bf1cecd954ba8f31" category="inline-link-rx"></block></block>
@@ -3654,4 +3649,11 @@
   <block id="63e8ab93fb455764c3aae06f874e9f89" category="paragraph">當新磁碟區新增至資料庫、或是原則或資源群組有變更時、您應該重新整理保護狀態。</block>
   <block id="b08753885f48b8d718edd5f9d9cd7ab7" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 對應於 SnapCenter Plug-in for VMware vSphere 主機、然後按一下 * 重新整理 * 。</block>
   <block id="9f7b95641e24cb882e149de39743a97c" category="paragraph">您可以將適用於 VMware vSphere 主機的 SnapCenter 外掛程式與 BlueXP 整合、將一或多個資料存放區備份至 StorageGRID 。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。</block>
+  <block id="42d7d856cc8f6a2f82ed10cd8356e7d2" category="inline-link">深入瞭解 BlueXP 部署模式</block>
+  <block id="ed84e3ec0d45db682853810ea96888fd" category="paragraph">現在您可以在「受限」模式下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。<block ref="18611796b9b4332697b6f9bb72b16e0b" category="inline-link-rx"></block>。請參閱<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> 和<block ref="d878e312b2f9cdcef2f8eccaa51619ee" category="inline-link-rx"></block>。</block>
+  <block id="d7cfe6967f3004ef3386a27fe99a4610" category="inline-link">與 ONTAP S3 整合為目的地</block>
+  <block id="987075beb2d571b76448b0f6477c4423" category="paragraph">API 的新功能可讓您使用 BlueXP 雲端備份、將 Volume 快照備份至 ONTAP S3 。此功能目前僅適用於內部部署 ONTAP 系統。如需詳細指示、請參閱部落格<block ref="8bfab3c14784f20047e4459b814ebfe4" category="inline-link-rx"></block>。</block>
+  <block id="0149a79f6ea8841a807875892d5a71fd" category="paragraph">根據預設、 Cloud Backup 會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要確保在不同區域之間複寫資料、您可以在 Cloud Backup 啟動之後、將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
+  <block id="7126662a353f79c46a7ccefe46dc4c0a" category="sidebar">保護您的 ONTAP Volume 資料</block>
+  <block id="d5dea9a3cf9da6b76394dba2198011a1" category="sidebar">Cloud Backup 部落格</block>
 </blocks>
