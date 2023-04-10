@@ -147,7 +147,7 @@ https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-
 
 如果您將資料從內部ONTAP 的支援叢集備份到StorageGRID 無法存取網際網路的站台（也稱為暗站或離線站台）、現在您可以使用「搜尋與還原」選項在必要時還原資料。此功能需要在離線站台部署BlueXP Connector（3.9.25版或更新版本）。
 
-https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["瞭解如何ONTAP 使用Search  Restore還原資料"]。https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["瞭解如何在離線站台中安裝Connector"]。
+https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["瞭解如何ONTAP 使用Search  Restore還原資料"]。https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["瞭解如何在離線站台中安裝Connector"]。
 
 
 
@@ -216,7 +216,7 @@ https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-
 
 | \https://*.cloudmanager.cloud.netapp.com | \https://*.api.bluexp.netapp.com 
 |===
-請參閱的完整端點清單 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#outbound-internet-access["AWS"^]、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#outbound-internet-access["Google Cloud"^]或 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html#outbound-internet-access["Azure"^] 雲端環境：
+請參閱的完整端點清單 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#outbound-internet-access["AWS"^]、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#outbound-internet-access["Google Cloud"^]或 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#outbound-internet-access["Azure"^] 雲端環境：
 
 
 
@@ -449,7 +449,7 @@ Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage
 
 如果您的內部ONTAP 使用的叢集位於無法存取網際網路的站台、也稱為暗站或離線站台、現在您可以使用Cloud Backup將Volume資料備份到StorageGRID 位於同一個站台的NetApp作業系統。此功能需要同時在離線站台部署BlueXP Connector（3.9.19或更新版本）。
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["瞭解如何在離線站台中安裝Connector"]。https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html["瞭解如何在ONTAP 離線網站上備份不只是StorageGRID 資料的功能"]。
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["瞭解如何在離線站台中安裝Connector"]。https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html["瞭解如何在ONTAP 離線網站上備份不只是StorageGRID 資料的功能"]。
 
 
 
@@ -558,27 +558,3 @@ link:concept-protect-app-data-to-cloud.html["深入瞭解如何將內部部署�
 
 
 === 此版本已停止使用Cloud Data Sense掃描雲端備份檔案的試用版功能
-
-
-
-== 2022年2月14日
-
-
-
-=== 現在、您可以將備份原則指派給單一叢集中的個別磁碟區
-
-過去您只能將單一備份原則指派給叢集中的所有磁碟區。現在、您可以為單一叢集建立多個備份原則、並將不同的原則套用至不同的磁碟區。 link:task-manage-backups-ontap#changing-the-policy-assigned-to-existing-volumes["瞭解如何為叢集建立新的備份原則、並將其指派給所選的磁碟區"]。
-
-
-
-=== 新選項可讓您自動將預設備份原則套用至新建立的磁碟區
-
-過去、在雲端備份啟動之後、在工作環境中建立的新磁碟區、需要您手動套用備份原則。現在、無論磁碟區是在BlueXP、System Manager、CLI中建立、或是使用API建立、Cloud Backup都會探索磁碟區、並套用您選擇做為預設原則的備份原則。
-
-在新的工作環境中啟用備份時、或從現有工作環境的「管理磁碟區」頁面啟用備份時、都可使用此選項。
-
-
-
-=== 新的工作監控器可供查看所有備份與還原工作的處理中狀態
-
-當您針對多個磁碟區啟動作業（例如變更備份原則或刪除備份）時、「工作監視器」會很有幫助、因此您可以查看所有磁碟區上的作業何時完成。 link:task-monitor-backup-jobs.html["瞭解如何使用工作監控器"]。

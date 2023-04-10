@@ -105,7 +105,7 @@ zip -r catalogxxxxxx.zip catalogxxxxxx
 
 安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。定期變更Cloud Backup資料庫結構、可能會使較新的軟體版本與原始資料庫備份不相容。您可以 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["還原備份資料庫後、將Connector軟體升級至最新版本"^]。
 
-. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["在新的內部部署Linux主機上安裝BlueXP Connector"^]
+. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["在新的內部部署Linux主機上安裝BlueXP Connector"^]
 . 使用您剛建立的管理員使用者認證登入BlueXP。
 
 

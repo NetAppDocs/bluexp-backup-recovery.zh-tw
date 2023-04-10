@@ -274,8 +274,6 @@
   <block id="2f36514c20e3b8e4fc3d4015ec8492d3" category="list-text">需要連接器與叢集管理LIF之間的傳入連線。ONTAP連接器可位於Azure vnet中。</block>
   <block id="4ac800b4e5d934f314da963c023ec8e3" category="list-text">節點和叢集間的生命體均可存取物件存放區。</block>
   <block id="8ba57385dd56e0702c2eaf4101f0267d" category="list-text">如有必要、請更新防火牆規則、以允許Cloud Backup Service 透過ONTAP 連接埠443將物件儲存區的支援鏈路從物件儲存區連線、並透過連接埠53（TCP/IP）、將儲存VM的名稱解析流量從DNS伺服器連線至DNS伺服器。</block>
-  <block id="98ec81693c17601be27be39c9336f3b4" category="list-text">連接Cloud Backup Service 至連接埠443（HTTPS）的傳出網際網路連線</block>
-  <block id="ed5be7df16713ed4a1d631dedaea1f5e" category="list-text">透過連接埠443連線至Blob物件儲存設備的HTTPS連線</block>
   <block id="8c4b25218155a1fdb972f4169855d04f" category="section-title">支援的地區</block>
   <block id="93aa1523e92b241e9be754ad452f4026" category="inline-link">支援的地方 Cloud Volumes ONTAP</block>
   <block id="ff3e862b2a18f8bce76ed20224f2e575" category="paragraph">您可以在所有地區、從內部部署系統建立備份到Azure Blob<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>（包括Azure政府區域）。您可以指定在設定服務時儲存備份的區域。</block>
@@ -580,15 +578,6 @@
   <block id="afffc0d082245313c31dfcac23d2d8e0" category="section-title">能夠將持續磁碟區從GKE Kubernetes叢集備份到Google Cloud儲存設備</block>
   <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link">如需詳細資料、請前往此處</block>
   <block id="536f48524e36a16593703c5d8d108b79" category="section-title">此版本已停止使用Cloud Data Sense掃描雲端備份檔案的試用版功能</block>
-  <block id="f49fe4c56999dcc895c26b71ec63e34f" category="section-title">2022年2月14日</block>
-  <block id="57ccb73ee63efac047dc0eeebb63f5a1" category="section-title">現在、您可以將備份原則指派給單一叢集中的個別磁碟區</block>
-  <block id="963d2836c97952a191ac974f0e9b5e67" category="inline-link-macro">瞭解如何為叢集建立新的備份原則、並將其指派給所選的磁碟區</block>
-  <block id="15949a792d77a6efb31116510902270f" category="paragraph">過去您只能將單一備份原則指派給叢集中的所有磁碟區。現在、您可以為單一叢集建立多個備份原則、並將不同的原則套用至不同的磁碟區。 <block ref="d267d345a84c274cd28fdecc1282029a" category="inline-link-macro-rx"></block>。</block>
-  <block id="81bbbb41117b46d39dbcf4b7db2f1e38" category="section-title">新選項可讓您自動將預設備份原則套用至新建立的磁碟區</block>
-  <block id="b702b8a648700d54afccce0b8de7766a" category="paragraph">在新的工作環境中啟用備份時、或從現有工作環境的「管理磁碟區」頁面啟用備份時、都可使用此選項。</block>
-  <block id="739f8a5ac1453fdcd33ce781cd333914" category="section-title">新的工作監控器可供查看所有備份與還原工作的處理中狀態</block>
-  <block id="7a99d9487fc9540fa7bee7c2eb717413" category="inline-link-macro">瞭解如何使用工作監控器</block>
-  <block id="9d20a5735dc25af92271eea8fa797bf7" category="paragraph">當您針對多個磁碟區啟動作業（例如變更備份原則或刪除備份）時、「工作監視器」會很有幫助、因此您可以查看所有磁碟區上的作業何時完成。 <block ref="41d368101275ff882313a6db3fc29812" category="inline-link-macro-rx"></block>。</block>
   <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link">請按這裡</block>
   <block id="f6c96f9db00475dfd6c371ca50af3d5b" category="doc">將Cloud Volumes ONTAP 不支援的資料備份到Azure Blob儲存設備</block>
   <block id="fc054407571c2d4dfcfbb5057d24c238" category="list-text">您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。</block>
@@ -902,7 +891,6 @@
   <block id="9a5f1a8ca0c47b2989eff1e34ffce9a2" category="list-text">公共連線：ONTAP 使用公有Google端點、直接將該等系統連線至Google Cloud Storage。</block>
   <block id="0ee205b9a66364b8bd529d4a5a68568a" category="list-text">透過連接埠443從叢集間LIF啟動HTTPS連線至Google Cloud儲存設備、以便進行備份與還原作業。ONTAP</block>
   <block id="a45a0d78412f96d4e0612c2263af5042" category="list-text">需要連接器與叢集管理LIF之間的傳入連線。ONTAPConnector可位於Google Cloud Platform VPC中。</block>
-  <block id="c359c4549d4c72aed13558f2e3ef33a0" category="list-text">透過連接埠443連線至Google Cloud儲存設備的HTTPS連線</block>
   <block id="b092138563f7b68473c3bf2a6a23a434" category="inline-link">私有 Google 存取</block>
   <block id="8b36e9207c24c76e6719268e49201d94" category="inline-link">Google</block>
   <block id="a6dcd23c3ac238175abaf161ac1ebec0" category="list-text">您必須訂閱Google的物件儲存空間、才能找到備份所在的位置。</block>
@@ -1377,7 +1365,6 @@
   <block id="dd16b8804cbc8afa6e2f6deb9acf5bcf" category="section-title">我們新增支援功能、可在ONTAP 無法存取網際網路的站台中備份內部部署的叢集資料</block>
   <block id="6f44a1bf2246f054fd573ae9473909b6" category="inline-link">瞭解如何在離線站台中安裝Connector</block>
   <block id="826610554423c9dc8481da631ccae8be" category="inline-link">瞭解如何在ONTAP 離線網站上備份不只是StorageGRID 資料的功能</block>
-  <block id="824ce1955c2b2d5f91cb80c86545d639" category="paragraph"><block ref="eb618b89294e80d594faecbc4641afee" category="inline-link-rx"></block>。<block ref="f39d73248b535226c2e16237e43ff2d0" category="inline-link-rx"></block>。</block>
   <block id="0a0c24e7fef8cd9bcb19d6db19987b93" category="paragraph">請注意、如果您先前使用Cloud Restore執行個體/ VM、將會自動移除。雲端備份程序會每天執行一次、以刪除所有舊的Cloud Restore執行個體。這項變更是完全透明的、不會對您的資料造成任何影響、而且您不會注意到備份或還原工作有任何變更。</block>
   <block id="f213760e51bc9d7895aab74f2fba377c" category="paragraph">預設原則會每天備份磁碟區、並保留每個磁碟區最近 30 個備份複本。變更為每小時、每日、每週、每月或每年備份、 或選取其中一個系統定義的原則、以提供更多選項。您也可以變更要保留的備份複本數量。</block>
   <block id="e48ce03e2bde71049d742a96c5698f33" category="inline-image-macro">顯示Cloud Backup如何透過公共連線與叢集上的磁碟區和備份檔案所在的Google Cloud儲存設備進行通訊的圖表。</block>
@@ -1429,7 +1416,6 @@
   <block id="244b0622880fcbe1c4432e64d81bc038" category="paragraph">如果您已在AWS VPC或內部部署部署了Connector、您就能輕鬆完成所有設定。如果沒有、則您需要在上述任一位置建立連接器、以便將ONTAP 支援的資料備份到AWS S3儲存設備。您無法使用部署於其他雲端供應商的Connector。</block>
   <block id="cd10ae990b1a676dcb9da574833197dc" category="inline-link">在AWS中安裝Connector</block>
   <block id="2e379f93711508ab69eec06837dd271c" category="inline-link">請參閱端點清單</block>
-  <block id="3014a55cd7ec25590c6b5406eec324b1" category="list-text">透過連接埠443連接HTTPS、連接Cloud Backup Service 至整個物件儲存區 <block ref="2b717f51e9f0e108fc936d861142f7b4" category="inline-link-rx"></block>）</block>
   <block id="b81793c592727efa905fe3e8a74bbb9d" category="list-text">如果ONTAP 您有從您的叢集到VPC的直接連線或VPN連線、而且您想要連接器和S3之間的通訊保持在AWS內部網路（*私有*連線）中、您就必須啟用連接到S3的VPC端點介面。 <block ref="038eee040120b4244a9c2b9d19ca5787" category="inline-xref-macro-rx"></block></block>
   <block id="580798374daad69e27cac9cf6be8efde" category="paragraph">如果您使用連接埠80（HTTP）來與私有端點通訊、您就能輕鬆完成所有設定。您現在可以在叢集上啟用Cloud Backup。</block>
   <block id="670b9aef2512ae3b40b985a5adc5b434" category="cell">每個帳戶所需的額外資源庫和公有雲供應商資源</block>
@@ -2221,7 +2207,6 @@
   <block id="21465eddb0676f3918f9041ef059c735" category="paragraph">您可以使用BlueXP或AWS來建立NetApp FSX。如果您是使用AWS建立、那麼您應該在ONTAP BlueXP中探索FSXfor the Sfor the Sfor the System.</block>
   <block id="91381cdaf1cff61a625d6355a34abc10" category="paragraph">客戶管理員需要在AWS中部署Connector、讓BlueXP能夠管理公有雲環境中的資源和程序。</block>
   <block id="71e064246e91e058534eb9c47cbeadcf" category="inline-link-macro">從BlueXP在AWS中建立連接器</block>
-  <block id="d15bab64d8286860a0c772cefded5f73" category="paragraph">如需相關資訊、請參閱 <block ref="3fdf2a62e687b222e52b805dde381364" category="inline-link-macro-rx"></block>。</block>
   <block id="c50c64e55455dd7f429be9192a7ad6a2" category="list-text">Cloud Backup for Applications是一組由NetApp代管的SaaS服務、以BlueXP SaaS平台為基礎。</block>
   <block id="033f9aa227c492833c2f1af28d01f134" category="list-text">您必須使用的是BlueXP 3.9.21或更新版本</block>
   <block id="a8db6f5de8da7da9d3f1b9e9e4dfc251" category="list-text">取得內含BlueXP Connector ID的X-agent-id。</block>
@@ -2249,7 +2234,6 @@
   <block id="3f3ac5f6857788bfe6b27f406afcffa5" category="paragraph">Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在BlueXP中啟用的雲端應用程式備份、可針對位於Amazon FSX for NetApp ONTAP 上的Oracle資料庫、提供有效率且應用程式一致的原則型備份與還原功能。<block ref="5774010e75c0af5301ef0cfe74198590" category="inline-link-rx"></block>。</block>
   <block id="314d64b29803a4017e18c95e19a18a09" category="paragraph">如果您的內部ONTAP 使用的叢集位於無法存取網際網路的站台、也稱為暗站或離線站台、現在您可以使用Cloud Backup將Volume資料備份到StorageGRID 位於同一個站台的NetApp作業系統。此功能需要同時在離線站台部署BlueXP Connector（3.9.19或更新版本）。</block>
   <block id="a1bf67f5d2f66348eff06c9dbdb7636d" category="paragraph">您可以將SnapCenter VMware vSphere的VMware vSphere的VMware vCenter外掛程式與BlueXP整合、以保護虛擬機器上的資料。您可以將資料存放區備份到雲端、SnapCenter 並輕鬆將虛擬機器還原回內部部署的VMware vSphere版的內部部署功能。</block>
-  <block id="f464a9820cae6a24053ca10aad54bbb6" category="paragraph">過去、在雲端備份啟動之後、在工作環境中建立的新磁碟區、需要您手動套用備份原則。現在、無論磁碟區是在BlueXP、System Manager、CLI中建立、或是使用API建立、Cloud Backup都會探索磁碟區、並套用您選擇做為預設原則的備份原則。</block>
   <block id="c95623cd0395d5a6bb6105b9d32f197b" category="inline-link">藍圖XP注意事項</block>
   <block id="e8a6d0f19a957eac14b9917a6c92899b" category="list-text"><block ref="e8a6d0f19a957eac14b9917a6c92899b" category="inline-link-rx"></block></block>
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">所有BlueXP文件</block>
@@ -2651,7 +2635,6 @@
   <block id="06c42f4f82e29b4e90570ef70b538ed4" category="paragraph">由於Cloud Backup有所變更、您必須變更下列Connector端點、才能成功執行Cloud Backup作業：</block>
   <block id="eb75f7332becd8b3fbb2a59ea0bd0536" category="cell">舊端點</block>
   <block id="afcce2fe2d959c0f4554e7815a50e8e4" category="cell">新的端點</block>
-  <block id="0e40b9cba041560c9517bc49757da3c7" category="paragraph">請參閱的完整端點清單<block ref="4c9e3e17ba20f553394e5bc78e402946" category="inline-link-rx"></block>、<block ref="cd3c6f623ccf3e34f9d46b28c47f2a3d" category="inline-link-rx"></block>或<block ref="80755100f97c37f8aa8e3d999b0a43d9" category="inline-link-rx"></block> 雲端環境：</block>
   <block id="e3a84cf85e2ede3f349ff73485707901" category="section-title">支援在UI中選取Google Archival儲存類別</block>
   <block id="862c6bfd630667f5b535d9741b4f08fc" category="paragraph">備份檔案最初是在Google Standard儲存類別中建立。現在您可以使用Cloud Backup使用者介面、在特定天數後將舊備份分層至Google歸檔儲存設備、以進一步最佳化成本。</block>
   <block id="115781a0043a85f8707c5c99fd02dc75" category="cell">\https://cloudmanager.cloud.netapp.com</block>
@@ -2664,7 +2647,6 @@
   <block id="08c4a2a6be7b139c5a5d2a6cad19ac2b" category="summary">建立FSX,以利ONTAP 執行不必要的工作環境和連接器</block>
   <block id="0288e4d3c832d3a63fc406f64d777726" category="doc">設定FSX ONTAP 以供使用</block>
   <block id="42b641e435d9781c95ad795db19333cf" category="paragraph">您應該建立FSX,以利ONTAP 進行不工作的環境和連接器。</block>
-  <block id="839bd9c4189b78503bd77127fcecbb39" category="paragraph">建立連接器之後、按一下「*儲存設備*&gt;* Canvas*&gt;*我的工作環境*&gt;*「新增工作環境*」、然後依照提示新增工作環境。確保連接器與Oracle資料庫主機和FSX工作環境之間有連線。連接器應能連線至FSX工作環境的叢集管理IP位址。</block>
   <block id="1f32eed19bf38ccd50dd00a18fd2d95c" category="summary">打造Cloud Volumes ONTAP 可運作的環境和Connector</block>
   <block id="ef1b9121ab9ea469ad904cedd07f94d3" category="doc">設定Cloud Volumes ONTAP 功能</block>
   <block id="949d1a8fb61abab43d418c2faa10e87a" category="paragraph">您應該建立Cloud Volumes ONTAP 起運作不正常的環境和Connector。</block>
@@ -3008,7 +2990,6 @@
   <block id="4bee6fec011c2f7ac751849f160f0a3f" category="paragraph">如果資料庫位於ASM上、您也應該設定ASM設定。</block>
   <block id="83fcc800acbb114328da04dc6ed73b8f" category="summary">存取BlueXP：</block>
   <block id="035e6d59b1caedb3017d4559881471b2" category="inline-link-macro">註冊NetApp BlueXP網站</block>
-  <block id="ab26432294c471f0aa2bb50434ef5822" category="paragraph">您應該 <block ref="f8ff5153376f519ebb8fe9e2c5ab9cd8" category="inline-link-macro-rx"></block>、 <block ref="9f5c210a6685dd250338a699e76589de" category="inline-link-macro-rx"></block>，然後設定 <block ref="8a2a59f9ec508dc199624b6dfabe5c9f" category="inline-link-macro-rx"></block>。</block>
   <block id="013e38cfdb2c6d0bb3f17b59760240ff" category="summary">BlueXP提供高效、應用程式一致、原則型的備份、以及位於Amazon FSX for NetApp ONTAP 的Oracle®資料庫Cloud Volumes ONTAP 還原功能。</block>
   <block id="7105ab20f187c4c6345342e06cd1748d" category="paragraph">Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在BlueXP（前身為Cloud Manager）中啟用的雲端應用程式備份、可為下列應用程式提供高效率、應用程式一致且以原則為基礎的保護：</block>
   <block id="9b029537d0b8df0bfe13af02e2f4b676" category="list-text">Oracle資料庫位於Amazon FSX上、適用於NetApp ONTAP 的功能與Cloud Volumes ONTAP 功能</block>
@@ -3182,7 +3163,6 @@
   <block id="65432ae2b80d2de48c0eff9f34726b87" category="inline-link">還原備份資料庫後、將Connector軟體升級至最新版本</block>
   <block id="2e7f569a13a8775ddbc8714475ad7db7" category="paragraph">安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。定期變更Cloud Backup資料庫結構、可能會使較新的軟體版本與原始資料庫備份不相容。您可以<block ref="d77ae51b7aa47031957bd13dfa8d8fa8" category="inline-link-rx"></block>。</block>
   <block id="fb91cab4ff80a23255e3962dd363d180" category="inline-link">在新的內部部署Linux主機上安裝BlueXP Connector</block>
-  <block id="147eee6c59a90af6498494b9e5153835" category="list-text"><block ref="147eee6c59a90af6498494b9e5153835" category="inline-link-rx"></block></block>
   <block id="ecbcbb16fdbff1b3b59d0639b270e056" category="list-text">使用您剛建立的管理員使用者認證登入BlueXP。</block>
   <block id="5fb01033092428057d91703462850bb8" category="list-text">將MySQL備份從安全位置複製到新的Connector主機。</block>
   <block id="47088be6cbcb439bd7241ec72edf3a91" category="section-title">探索ONTAP 您的叢集與StorageGRID 功能性系統</block>
@@ -3226,7 +3206,6 @@
   <block id="cd1cceb157b5982d899b66d18217af64" category="list-text">如果您是在黑暗站台中使用Connector、則Indexed目錄資訊會儲存在Connector上（需要Connector 3.9.25版或更新版本）。</block>
   <block id="e083799711dc9b588bbb440525564506" category="section-title">我們新增支援、在沒有網際網路存取的站台中使用「搜尋與還原」來還原資料</block>
   <block id="c9ec78264dce9938676b736265201e28" category="inline-link">瞭解如何ONTAP 使用Search &amp;amp; Restore還原資料</block>
-  <block id="74aacc002c6d6d85e9786012bf71af08" category="paragraph"><block ref="fbe0ce057e5d8013a227c4cb944242a5" category="inline-link-rx"></block>。<block ref="eb618b89294e80d594faecbc4641afee" category="inline-link-rx"></block>。</block>
   <block id="4f60787e5fe87ac0aa425be67237edec" category="list-text">無法將資料區備份移至歸檔儲存設備、也無法使用DataLock和勒索軟體保護功能FlexGroup 。</block>
   <block id="0c1029565d47087d49e25dbc4e2a20e9" category="list-text">還原：可讓您執行磁碟區、檔案及資料夾層級的還原作業</block>
   <block id="b7027e7163ab44680c3c69296db41564" category="paragraph">如果內部叢集使用ONTAP 的是更新版本的版本、StorageGRID 而您的系統使用的是11.3或更新版本、則可使用此功能。<block ref="ba1010a667c53f122912d421bb932c28" category="inline-link-rx"></block>。</block>
@@ -3656,4 +3635,14 @@
   <block id="0149a79f6ea8841a807875892d5a71fd" category="paragraph">根據預設、 Cloud Backup 會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要確保在不同區域之間複寫資料、您可以在 Cloud Backup 啟動之後、將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
   <block id="7126662a353f79c46a7ccefe46dc4c0a" category="sidebar">保護您的 ONTAP Volume 資料</block>
   <block id="d5dea9a3cf9da6b76394dba2198011a1" category="sidebar">Cloud Backup 部落格</block>
+  <block id="1e209655f824e5d0966174caef1584c2" category="list-text">透過連接埠 443 連接到 Cloud Backup Service 和 Google Cloud 儲存設備的 HTTPS 連線 <block ref="d9defc1077847b67f008853c06990134" category="inline-link-rx"></block>）</block>
+  <block id="a08b19468c2c1ca9e62c072d8f0b1897" category="paragraph">如需相關資訊、請參閱 <block ref="f2f2cc81b566c493fa151c100741f24d" category="inline-link-macro-rx"></block>。</block>
+  <block id="18a49ef13ab2949d420634845599ca86" category="paragraph">建立 Connector 之後、按一下 * 儲存 * &gt; * 畫布 * &gt; * 我的工作環境 * &gt; * 新增工作環境 * 、然後依照提示新增工作環境。確保 Connector 與 Oracle 資料庫主機和 FSX 工作環境之間有連線。Connector 應該能夠連線至 FSX 工作環境的叢集管理 IP 位址。</block>
+  <block id="39ad50c1d2eeb8e8a5ce297ee25b98dc" category="list-text">透過連接埠 443 連接到 Cloud Backup Service 和 Blob 物件儲存設備的 HTTPS 連線 <block ref="5bf1914e1013b2901a1aed42fbd7a1ac" category="inline-link-rx"></block>）</block>
+  <block id="7a83a72c3d1bcda0f295b3ad0313c6dd" category="paragraph">您應該 <block ref="f8ff5153376f519ebb8fe9e2c5ab9cd8" category="inline-link-macro-rx"></block>、 <block ref="9f5c210a6685dd250338a699e76589de" category="inline-link-macro-rx"></block>，然後設定 <block ref="ee143af1c2cac202dd1b0077361e68fb" category="inline-link-macro-rx"></block>。</block>
+  <block id="9c2fdb3ded170db997a9fcf800fcf26c" category="paragraph"><block ref="fbe0ce057e5d8013a227c4cb944242a5" category="inline-link-rx"></block>。<block ref="14f29cbb042037b28f496533bcac017b" category="inline-link-rx"></block>。</block>
+  <block id="c395006d6063b66336be768382280c9e" category="paragraph">請參閱的完整端點清單<block ref="684a3f4234dd7d8f8b7d90e00da95138" category="inline-link-rx"></block>、<block ref="fd66fc554da543d0f7f94dcde36b2a2f" category="inline-link-rx"></block>或<block ref="2484264a704a749bc992bec76f43f13d" category="inline-link-rx"></block> 雲端環境：</block>
+  <block id="da51e9451a525419419d8c9da2b6fd19" category="paragraph"><block ref="14f29cbb042037b28f496533bcac017b" category="inline-link-rx"></block>。<block ref="f39d73248b535226c2e16237e43ff2d0" category="inline-link-rx"></block>。</block>
+  <block id="22af84c027176379749ae95a3dcf8328" category="list-text">透過連接埠443連接HTTPS、連接Cloud Backup Service 至整個物件儲存區 <block ref="e55fc914b3d027a7a2463283008a8fbf" category="inline-link-rx"></block>）</block>
+  <block id="1733b24a3114e19949a64706ed91c2af" category="list-text"><block ref="1733b24a3114e19949a64706ed91c2af" category="inline-link-rx"></block></block>
 </blocks>

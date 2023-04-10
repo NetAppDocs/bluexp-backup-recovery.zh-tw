@@ -155,8 +155,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 .步驟
 . 確保安裝 Connector 的網路啟用下列連線：
 +
-** 連接Cloud Backup Service 至連接埠443（HTTPS）的傳出網際網路連線
-** 透過連接埠443連線至Google Cloud儲存設備的HTTPS連線
+** 透過連接埠 443 連接到 Cloud Backup Service 和 Google Cloud 儲存設備的 HTTPS 連線 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations["請參閱端點清單"^]）
 ** 透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線
 
 

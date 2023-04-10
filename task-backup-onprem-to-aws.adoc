@@ -104,7 +104,7 @@ BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份�
 
 * 確保安裝 Connector 的網路啟用下列連線：
 +
-** 透過連接埠443連接HTTPS、連接Cloud Backup Service 至整個物件儲存區 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["請參閱端點清單"^]）
+** 透過連接埠443連接HTTPS、連接Cloud Backup Service 至整個物件儲存區 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["請參閱端點清單"^]）
 ** 透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線
 ** AWS和AWS GovCloud部署需要額外的傳入和傳出安全群組規則。請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html["AWS 中 Connector 的規則"^] 以取得詳細資料。
 
