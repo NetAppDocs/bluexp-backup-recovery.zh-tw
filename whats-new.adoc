@@ -544,17 +544,3 @@ link:concept-protect-app-data-to-cloud.html["深入瞭解如何將內部部署�
 === 全新的搜尋與還原功能、可在ONTAP 所有的還原檔案中搜尋磁碟區或檔案
 
 現在、您可以ONTAP 透過*全部的支援檔案*、以部分或完整的Volume名稱、部分或完整的檔案名稱、大小範圍及其他搜尋篩選條件來搜尋Volume或檔案。如果您不確定哪個叢集或磁碟區是資料的來源、這是尋找您要還原資料的絕佳新方法。 link:task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["瞭解如何使用搜尋"]。
-
-
-
-== 2022年3月3日
-
-
-
-=== 能夠將持續磁碟區從GKE Kubernetes叢集備份到Google Cloud儲存設備
-
-如果您的GKE叢集已安裝NetApp Astra Trident、而且使用Cloud Volumes ONTAP 適用於GCP的功能作為叢集的後端儲存設備、則您可以在Google Cloud儲存設備之間備份及還原持續的磁碟區。 link:task-backup-kubernetes-to-gcp.html["如需詳細資料、請前往此處"]。
-
-
-
-=== 此版本已停止使用Cloud Data Sense掃描雲端備份檔案的試用版功能

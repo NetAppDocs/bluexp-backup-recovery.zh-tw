@@ -574,10 +574,7 @@
   <block id="1959411b4282df2234896496da39c42f" category="paragraph">必要時、您可以將這些資料從雲端還原至內部部署。</block>
   <block id="0749ae9ea79ee87dd8c530f67a9065fe" category="section-title">全新的搜尋與還原功能、可在ONTAP 所有的還原檔案中搜尋磁碟區或檔案</block>
   <block id="abad9ff4f9967065f50634a2a3606dd0" category="inline-link">瞭解如何使用搜尋&amp;amp;還原</block>
-  <block id="983a4e7f5913304ec713a249baf7be47" category="section-title">2022年3月3日</block>
-  <block id="afffc0d082245313c31dfcac23d2d8e0" category="section-title">能夠將持續磁碟區從GKE Kubernetes叢集備份到Google Cloud儲存設備</block>
   <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link">如需詳細資料、請前往此處</block>
-  <block id="536f48524e36a16593703c5d8d108b79" category="section-title">此版本已停止使用Cloud Data Sense掃描雲端備份檔案的試用版功能</block>
   <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link">請按這裡</block>
   <block id="f6c96f9db00475dfd6c371ca50af3d5b" category="doc">將Cloud Volumes ONTAP 不支援的資料備份到Azure Blob儲存設備</block>
   <block id="fc054407571c2d4dfcfbb5057d24c238" category="list-text">您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。</block>
@@ -1266,7 +1263,6 @@
   <block id="b83e2caeb95bea361704be4e9e795cd1" category="paragraph">API可從取得<block ref="323898002645c2363c910f7c119fd4d6" category="inline-link-rx"></block>。請參閱 <block ref="cf7847f4c926eb96d69d319dfdc23654" category="inline-link-macro-rx"></block> 以取得API總覽。</block>
   <block id="45ee97ced966affff074d2bc1efe2686" category="paragraph">全新的雲端應用程式備份功能可讓您將現有的Oracle與Microsoft SQL應用程式一致的Snapshot（備份）、從內部部署的主要儲存設備卸載到Amazon S3或Azure Blob的雲端物件儲存設備。</block>
   <block id="8a0841a62164343a6bb78ffd4349420f" category="inline-link">深入瞭解如何將內部部署應用程式資料保護至雲端</block>
-  <block id="6ff133e735e841b3a54d6f8c0a84c071" category="paragraph">如果您的GKE叢集已安裝NetApp Astra Trident、而且使用Cloud Volumes ONTAP 適用於GCP的功能作為叢集的後端儲存設備、則您可以在Google Cloud儲存設備之間備份及還原持續的磁碟區。 <block ref="04c62f5c961d468f8c7e3d8b6a8a1398" category="inline-link-macro-rx"></block>。</block>
   <block id="49930e1d4376887999c072bd91775525" category="cell">備份檔案目的地ifdef：：AWS []</block>
   <block id="8889077573d45691231050324d93b6a9" category="cell">Amazon S3 endif:::AWS[] ifdef::azure[]</block>
   <block id="0959a2f5eff65303771c49363a01d789" category="cell">Azure Blob endif::azure[] ifdef：：GCP[]</block>
@@ -3550,14 +3546,9 @@
   <block id="a9d3c4c93c315af7f13f9b365c2adcbf" category="list-text">Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「限制模式」）。</block>
   <block id="5b477e50c905f9613c5e16e571e9e5bc" category="list-text">Connector 可安裝在 AWS 區域、且可存取完整或有限的網際網路（「 Standard 」（標準）或「 Restricted 」（限制）模式）。</block>
   <block id="e7e22b4d377bdd0d9b0cb0ec1148ae55" category="inline-link">在 AWS 區域的 Linux 主機上手動安裝 Connector</block>
-  <block id="04b01ab636ef32a98ac9e4e70d26301d" category="paragraph">Cloud Backup 可用於沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）、以備份 Volume 資料。此組態也支援Volume與檔案還原。在這種情況下、您需要在Dark網站上部署BlueXP Connector。</block>
-  <block id="9cee8a58cb0f70566a439c4bcaed0562" category="list-text">您可以將安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統和 AWS C2S/SC2S 安全區域的資料備份到 Amazon S3 。請參閱 <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block>。</block>
-  <block id="5660f9fec8990d75e681f2c7676a1132" category="list-text">您可以將安裝在 Azure 商用地區和 Azure IL6 安全區域的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。請參閱 <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
   <block id="ee2081007b4b41aa21ddcbdddb722d5e" category="section-title">支援連線能力有限的站台</block>
-  <block id="b2f6031ac57c2fd58a0d11d2c12f1465" category="paragraph">Cloud Backup 可用於網際網路連線能力有限（也稱為「受限模式」）的網站、以備份 Volume 資料。此組態也支援Volume與檔案還原。在這種情況下、您需要在受限區域部署 BlueXP Connector 。</block>
   <block id="a3f02510edf67619908394e8afc73938" category="list-text">您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。請參閱 <block ref="31e49e13e812c331f506a2a8e6b7ad22" category="inline-link-macro-rx"></block>。</block>
   <block id="b8507c62b8182b29a382ffefc9fab5f2" category="list-text">您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。請參閱 <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
-  <block id="1b57298c9825f880d62b2296bd4b45f2" category="paragraph">您可以選擇每小時、每日、每週、每月及每年備份所有磁碟區的組合。套用至磁碟區的 Snapshot 原則必須是 Cloud Backup 可辨識的原則之一。您也可以選擇系統定義的原則之一、提供 3 個月、 1 年及 7 年的備份與保留。這些原則包括：</block>
   <block id="a6a4730c10b1358f1c9def7ffe4b5b3e" category="summary">BlueXP 備份與還原（雲端備份）可為內部部署和雲端中的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。</block>
   <block id="7eb9cafcf06d2b2e35409b3b19eebaa6" category="summary">BlueXP 備份與還原可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
   <block id="4e16c93a7a40b92bf4ddc82057092a1f" category="paragraph">BlueXP 備份與還原（雲端備份）可為內部部署和雲端中的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
@@ -3645,4 +3636,7 @@
   <block id="da51e9451a525419419d8c9da2b6fd19" category="paragraph"><block ref="14f29cbb042037b28f496533bcac017b" category="inline-link-rx"></block>。<block ref="f39d73248b535226c2e16237e43ff2d0" category="inline-link-rx"></block>。</block>
   <block id="22af84c027176379749ae95a3dcf8328" category="list-text">透過連接埠443連接HTTPS、連接Cloud Backup Service 至整個物件儲存區 <block ref="e55fc914b3d027a7a2463283008a8fbf" category="inline-link-rx"></block>）</block>
   <block id="1733b24a3114e19949a64706ed91c2af" category="list-text"><block ref="1733b24a3114e19949a64706ed91c2af" category="inline-link-rx"></block></block>
+  <block id="ff130d4d587ae9b0b25a1a56ae928634" category="paragraph">Cloud Backup 可用於網際網路連線能力有限的站台（也稱為「受限模式」）、以備份及還原 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。</block>
+  <block id="0a4d3b56b9c686b7377816bc81da68bb" category="paragraph">Cloud Backup 可用於沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）、以備份 Volume 資料。在這種情況下、您需要在Dark網站上部署BlueXP Connector。</block>
+  <block id="b2b373cdd55c0c4cdd45eaaa104c1c58" category="paragraph">您可以選擇每小時、每日、每週、每月及每年備份所有磁碟區的組合。套用至磁碟區的 Snapshot 原則必須是 Cloud Backup 可辨識的原則之一、否則將不會建立備份檔案。您也可以選擇系統定義的原則之一、提供 3 個月、 1 年及 7 年的備份與保留。這些原則包括：</block>
 </blocks>

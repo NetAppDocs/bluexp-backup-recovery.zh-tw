@@ -91,23 +91,21 @@ Cloud Backup可讓您從ONTAP 下列工作環境備份支援下列公有雲和�
 
 
 
-=== 支援無網際網路連線的站台
-
-Cloud Backup 可用於沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）、以備份 Volume 資料。此組態也支援Volume與檔案還原。在這種情況下、您需要在Dark網站上部署BlueXP Connector。
-
-* 您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。請參閱 link:task-backup-onprem-private-cloud.html["將內部部署ONTAP 的不全資料備份StorageGRID 至不全"] 以取得詳細資料。
-* 您可以將安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統和 AWS C2S/SC2S 安全區域的資料備份到 Amazon S3 。請參閱 link:task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"]。
-* 您可以將安裝在 Azure 商用地區和 Azure IL6 安全區域的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。請參閱 link:task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
-
-
-
-
 === 支援連線能力有限的站台
 
-Cloud Backup 可用於網際網路連線能力有限（也稱為「受限模式」）的網站、以備份 Volume 資料。此組態也支援Volume與檔案還原。在這種情況下、您需要在受限區域部署 BlueXP Connector 。
+Cloud Backup 可用於網際網路連線能力有限的站台（也稱為「受限模式」）、以備份及還原 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。
 
 * 您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。請參閱 link:task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"]。
 * 您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。請參閱 link:task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
+
+
+
+
+=== 支援無網際網路連線的站台
+
+Cloud Backup 可用於沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）、以備份 Volume 資料。在這種情況下、您需要在Dark網站上部署BlueXP Connector。
+
+* 您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。請參閱 link:task-backup-onprem-private-cloud.html["將內部部署ONTAP 的不全資料備份StorageGRID 至不全"] 以取得詳細資料。
 
 
 
@@ -304,7 +302,7 @@ endif::gcp[]
 
 在工作環境中啟用Cloud Backup時、您最初選取的所有磁碟區都會使用您定義的預設備份原則進行備份。如果您想要將不同的備份原則指派給具有不同恢復點目標（RPO）的特定磁碟區、您可以為該叢集建立其他原則、並在啟用Cloud Backup之後將這些原則指派給其他磁碟區。
 
-您可以選擇每小時、每日、每週、每月及每年備份所有磁碟區的組合。套用至磁碟區的 Snapshot 原則必須是 Cloud Backup 可辨識的原則之一。您也可以選擇系統定義的原則之一、提供 3 個月、 1 年及 7 年的備份與保留。這些原則包括：
+您可以選擇每小時、每日、每週、每月及每年備份所有磁碟區的組合。套用至磁碟區的 Snapshot 原則必須是 Cloud Backup 可辨識的原則之一、否則將不會建立備份檔案。您也可以選擇系統定義的原則之一、提供 3 個月、 1 年及 7 年的備份與保留。這些原則包括：
 
 [cols="35,16,16,16,26"]
 |===
