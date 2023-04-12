@@ -1273,7 +1273,6 @@
   <block id="a9f8eef7fdd18a9397fd96b661adbbf3" category="cell">在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[]</block>
   <block id="50447057d0b53e52a90454c49619b112" category="list-text">如果您需要從已移至歸檔儲存設備的備份檔案還原Volume資料、則需要向雲端供應商收取額外的每GiB擷取費用和每次要求費用。</block>
   <block id="7f4e982bcc5753d9d97c31f1f4d46a2b" category="paragraph">有三種方式可以支付備份服務的費用。第一個選項是向雲端供應商訂閱、讓您每月付費。第二種選擇是取得年度合約。第三種選擇是直接向NetApp購買授權。閱讀 <block ref="b839456cc57645a9392f4db60a4f044a" category="inline-xref-macro-rx"></block> 章節以取得詳細資料。</block>
-  <block id="1ab00b260d8ce265da81957e2ab8768a" category="list-text">若要將較舊的備份檔案分層至歸檔儲存設備、叢集必須執行ONTAP 的是版本不支援的版本。若要從歸檔儲存設備中的備份檔案還原磁碟區、也需要目的地叢集執行ONTAP 版本為《支援資料》的版本。</block>
   <block id="54bddc4e25a88aae05bb69520422c997" category="list-text">訂閱可確保在免費試用結束後、服務不會中斷。試用結束時、您將根據備份的資料量、每小時收取一次費用。</block>
   <block id="5f5358182364ef304e26de4fc2395537" category="list-text">如果您備份的資料超過BYOL授權所允許的數量、則資料備份會透過隨用隨付訂閱繼續進行。例如、如果您有10個TiB BYOL授權、則10 TiB以外的所有容量都會透過PAYGO訂閱付費。</block>
   <block id="49871198f1fc79f432cd047f40a00a48" category="paragraph">有幾項PAYGO雲端備份計畫：</block>
@@ -3424,7 +3423,6 @@
   <block id="f791bc685c526af8296381acff10f6a0" category="list-text">*結案案例*：提供結案原因的詳細資料、然後按一下*結案案例*。</block>
   <block id="e93217b2f709a398ce3c0fb753beb05f" category="inline-image-macro">螢幕擷取畫面、顯示您在表格最後一欄選取功能表後可以採取的動作。</block>
   <block id="e9a5c374fb47ed2ae5cc6108fb36d829" category="paragraph"><block ref="e9a5c374fb47ed2ae5cc6108fb36d829" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2336f5fb78c2a5c8f2076f882bd71161" category="list-text">您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。請參閱 <block ref="14e7f2dcf692810422b10a89547f7ac5" category="inline-link-macro-rx"></block> 以取得詳細資料。</block>
   <block id="a5e6246728060cb5f413df6fa5adbf0c" category="inline-link-macro">將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob</block>
   <block id="9d5cd7f5faccdd3ae5ba70e594cc061f" category="list-text">目前Amazon S3、Azure和StorageGRID 支援物件存放區上的WORM /法規遵循模式。這稱為DataLock功能、必須使用Cloud Backup設定進行管理、而非使用雲端供應商介面。</block>
   <block id="1eea998a6969261ae6e45e41459d7ae2" category="list-text">使用ONTAP 支援更新版本的版本時、瀏覽與還原及搜尋與還原功能可還原資料夾及其中的所有檔案與子資料夾。</block>
@@ -3639,4 +3637,6 @@
   <block id="ff130d4d587ae9b0b25a1a56ae928634" category="paragraph">Cloud Backup 可用於網際網路連線能力有限的站台（也稱為「受限模式」）、以備份及還原 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。</block>
   <block id="0a4d3b56b9c686b7377816bc81da68bb" category="paragraph">Cloud Backup 可用於沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）、以備份 Volume 資料。在這種情況下、您需要在Dark網站上部署BlueXP Connector。</block>
   <block id="b2b373cdd55c0c4cdd45eaaa104c1c58" category="paragraph">您可以選擇每小時、每日、每週、每月及每年備份所有磁碟區的組合。套用至磁碟區的 Snapshot 原則必須是 Cloud Backup 可辨識的原則之一、否則將不會建立備份檔案。您也可以選擇系統定義的原則之一、提供 3 個月、 1 年及 7 年的備份與保留。這些原則包括：</block>
+  <block id="11222d6b8c3052f6f5e7aaaa5b23b929" category="list-text">您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。請參閱 <block ref="14e7f2dcf692810422b10a89547f7ac5" category="inline-link-macro-rx"></block> 以取得詳細資料。ifdef：：AWS []</block>
+  <block id="3835d8f8839ebb8c540019c7da03ff7a" category="list-text">建立或編輯備份原則時、若未將任何磁碟區指派給原則、則保留備份的數量最多可達1018個。將磁碟區指派給原則之後、您可以編輯原則、建立最多 4000 個備份。</block>
 </blocks>

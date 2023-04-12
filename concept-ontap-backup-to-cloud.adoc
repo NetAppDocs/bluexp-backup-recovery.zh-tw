@@ -95,9 +95,19 @@ Cloud Backup可讓您從ONTAP 下列工作環境備份支援下列公有雲和�
 
 Cloud Backup 可用於網際網路連線能力有限的站台（也稱為「受限模式」）、以備份及還原 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。
 
+ifdef::aws[]
+
 * 您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。請參閱 link:task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"]。
+
+
+endif::aws[]
+
+ifdef::azure[]
+
 * 您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。請參閱 link:task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
 
+
+endif::azure[]
 
 
 
@@ -105,8 +115,14 @@ Cloud Backup 可用於網際網路連線能力有限的站台（也稱為「受�
 
 Cloud Backup 可用於沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）、以備份 Volume 資料。在這種情況下、您需要在Dark網站上部署BlueXP Connector。
 
-* 您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。請參閱 link:task-backup-onprem-private-cloud.html["將內部部署ONTAP 的不全資料備份StorageGRID 至不全"] 以取得詳細資料。
+* 您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。請參閱 link:task-backup-onprem-private-cloud.html["將內部部署ONTAP 的不全資料備份StorageGRID 至不全"] 以取得詳細資料。ifdef：：AWS []
 
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
 
 
 
@@ -416,8 +432,7 @@ endif::gcp[]
 
 === 備份限制
 
-* 若要將較舊的備份檔案分層至歸檔儲存設備、叢集必須執行ONTAP 的是版本不支援的版本。若要從歸檔儲存設備中的備份檔案還原磁碟區、也需要目的地叢集執行ONTAP 版本為《支援資料》的版本。
-* 建立或編輯備份原則時、若未將任何磁碟區指派給原則、則保留備份的數量最多可達1018個。因應措施是減少建立原則所需的備份數量。然後您可以編輯原則、在指派磁碟區至原則之後、建立最多4000個備份。
+* 建立或編輯備份原則時、若未將任何磁碟區指派給原則、則保留備份的數量最多可達1018個。將磁碟區指派給原則之後、您可以編輯原則、建立最多 4000 個備份。
 * 備份資料保護（DP）磁碟區時：
 +
 ** 與SnapMirror標籤「app_nistent」和「all_source_snapshot」的關係將不會備份到雲端。

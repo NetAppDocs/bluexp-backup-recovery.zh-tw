@@ -193,14 +193,18 @@ sidebar:
     - title: 雲端備份原則設定
       url: "/concept-cloud-backup-policies.html"
     - title: 支援的AWS歸檔儲存層
+      flavor: aws
       url: "/reference-aws-backup-tiers.html"
     - title: 支援的Azure歸檔存取層
+      flavor: azure
       url: "/reference-azure-backup-tiers.html"
     - title: 支援的Google歸檔儲存層
+      flavor: gcp
       url: "/reference-google-backup-tiers.html"
     - title: 在黑暗的站台中備份Cloud Backup資料庫
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: 設定備份以在Azure中存取多個帳戶
+      flavor: azure
       url: "/reference-backup-multi-account-azure.html"
   - title: 知識與支援
     entries:
