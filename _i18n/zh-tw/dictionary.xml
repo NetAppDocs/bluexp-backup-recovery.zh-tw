@@ -304,7 +304,6 @@
   <block id="e386c51e8b46e9dad6f19dc36fbfc831" category="doc">深入瞭解Cloud Backup</block>
   <block id="1619bac39deaef2fc2adb60633af222f" category="paragraph">必要時、您可以將整個_volume從備份還原至相同或不同的工作環境。備份ONTAP 不一致的資料時、您也可以選擇將備份中的一個或多個_fil__還原到相同或不同的工作環境。</block>
   <block id="b8d82fc8540bcb0b292930e59ebdd4dd" category="inline-link-macro">深入瞭解Cloud Backup</block>
-  <block id="44eb910aad595ba9500cebcb52445bcf" category="paragraph">備份與還原可用於：</block>
   <block id="02fe91ecafd3cfc37675f0776294605f" category="inline-link-macro">請參閱此處的詳細功能</block>
   <block id="50b80798372065ac20ad628faaa584d9" category="section-title">雲端備份的運作方式</block>
   <block id="aaf08f028a79c27dca25c9e5f3b23cb9" category="paragraph">當您在Cloud Volumes ONTAP 一個不完整或內部部署ONTAP 的支援系統上啟用Cloud Backup時、服務會執行資料的完整備份。備份映像不包含 Volume 快照。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。</block>
@@ -321,8 +320,6 @@
   <block id="e029f5798c244f87b310df92d9b4527f" category="list-text">每月備份只在每月第一天午夜之後開始。</block>
   <block id="fab27e4b9f13b45f921fe1c7f42ffac1" category="section-title">備份複本會與您的NetApp帳戶建立關聯</block>
   <block id="ac252743de820aac9183d9f76d4bed67" category="inline-link">NetApp帳戶</block>
-  <block id="3ce3233955186ca42fd073f31c7b98aa" category="paragraph">備份複本與相關聯<block ref="5c84ace7b3e4263476ddf0c264272cee" category="inline-link-rx"></block> 連接器所在的位置。</block>
-  <block id="20c092d8421a998d3ac6aa33a55628ba" category="paragraph">如果您在同一個NetApp帳戶中有多個連接器、則每個連接器都會顯示相同的備份清單。這包括Cloud Volumes ONTAP 與其他ONTAP 連接器上的資料不全和內部部署的資料不全的資料。</block>
   <block id="39e8d39611d8d895cfee10cfe61f84be" category="summary">Cloud Backup提供備份與還原功能、可保護Kubernetes叢集資料並進行長期歸檔。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
   <block id="7647def7eb931bc4baefdf01a4d2a470" category="doc">使用Cloud Backup保護Kubernetes叢集資料</block>
   <block id="6e7fd38454983cfd290f28fb74c54476" category="paragraph">必要時、您可以將整個_volume從備份還原至相同或不同的工作環境。</block>
@@ -2102,7 +2099,6 @@
   <block id="328a2c1e7778e9edaf79d90c51409ac4" category="list-text">如果您有客戶層級的帳戶、可以新增一或多個NSS帳戶。</block>
   <block id="d0a875b745f9b38ce0c00471ccf26254" category="list-text">私有連線：使用VPN或Google Cloud互連、並透過使用私有IP位址的私有Google Access介面路由流量。</block>
   <block id="ac66cfcf395ec1521c28c0c64a6aac63" category="paragraph">在大多數情況下、您會將BlueXP UI用於所有備份作業。不過ONTAP 、從使用支援功能支援功能的版本起、您可以ONTAP 使用ONTAP 「支援功能」、啟動內部部署功能的內部叢集的Volume備份作業。<block ref="b4b04e1b4b3140ad1e0e3c0a94c9c848" category="inline-link-rx"></block></block>
-  <block id="bf2b1bf7aed8d75654bb42a8a53d6a96" category="paragraph">備份複本儲存在BlueXP在雲端帳戶中建立的物件存放區中。每個叢集/工作環境都有一個物件存放區、而BlueXP會將物件存放區命名如下：「NetApp-backup-clusteruuid」。請勿刪除此物件存放區。</block>
   <block id="e33931549f252451d72b5664ade6ecf0" category="list-text">在AWS中、BlueXP會啟用<block ref="b38667957fcdf9b9da65b213e7fb2492" category="inline-link-rx"></block> 在 S3 儲存桶上。</block>
   <block id="4dee49a9c46b2664e49d7142dc11104d" category="list-text">在Azure中、BlueXP會使用新的或現有的資源群組、以及Blob容器的儲存帳戶。藍圖<block ref="a7068b8d2b60241ce77a1051f3a66ed5" category="inline-link-rx"></block> 依預設。</block>
   <block id="59cbb06daac31886728833270d8bf9a2" category="list-text">在GCP中、BlueXP使用新的或現有的專案、其中含有Google Cloud Storage儲存庫的儲存帳戶。</block>
@@ -3439,8 +3435,6 @@
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">使用此選項會提示您重新登入。請注意、這些帳戶的權杖會在90天後過期。系統會張貼通知、提醒您注意此點。</block>
   <block id="aa581d4a856d4e4b679f430d75b6675b" category="list-text">備份並還原ONTAP 來自於不受資料保護的功能、以及內部部署的功能ONTAP Cloud Volumes ONTAP 。 <block ref="3033f928f79d30b4398dcd6d1b71f659" category="inline-link-macro-rx"></block>。</block>
   <block id="0ddf34ad5270eddf503a40460693fa5f" category="list-text">備份及還原Kubernetes持續磁碟區。 <block ref="03139d1d874301f535e307718cfea817" category="inline-link-macro-rx"></block>。</block>
-  <block id="630b6fb489bd2a5285488f531d84037b" category="list-text">使用Cloud Backup for Applications、從內部部署ONTAP 的支援系統備份應用程式一致的Snapshot快照。 <block ref="0cae341dd31c4bfca67f66dd24fe06e1" category="inline-link-macro-rx"></block>。</block>
-  <block id="8c9003b0bb11b5538760df9871279172" category="admonition">當BlueXP Connector部署在雲端的政府區域、或是沒有網際網路連線（黑點）的站台時、Cloud Backup僅支援ONTAP 從還原系統進行備份與還原作業。使用這些類型的部署方法時、Cloud Backup不支援從Kubernetes叢集、應用程式或虛擬機器進行備份與還原作業。</block>
   <block id="01e76ab0dacc58799dc14adbdc705ac7" category="section-title">2023年3月9日</block>
   <block id="35203f05692d5cc102a5525bf4de9733" category="section-title">資料夾層級的還原作業現在包括所有子資料夾和檔案</block>
   <block id="5463242c7cc34f92b5dbbf1ab6d87188" category="paragraph">過去當您還原資料夾時、只會還原該資料夾中的檔案、子資料夾中的任何子資料夾或檔案都不會還原。現在、如果您使用ONTAP 的是更新版本的版本、則會還原所選資料夾中的所有子資料夾和檔案。如果您在頂層資料夾中有多個巢狀資料夾、這可節省大量時間與金錢。</block>
@@ -3549,8 +3543,6 @@
   <block id="b8507c62b8182b29a382ffefc9fab5f2" category="list-text">您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。請參閱 <block ref="ab5c78f08c8780b598ee1d4de19230ab" category="inline-link-macro-rx"></block>。</block>
   <block id="a6a4730c10b1358f1c9def7ffe4b5b3e" category="summary">BlueXP 備份與還原（雲端備份）可為內部部署和雲端中的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。</block>
   <block id="7eb9cafcf06d2b2e35409b3b19eebaa6" category="summary">BlueXP 備份與還原可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
-  <block id="4e16c93a7a40b92bf4ddc82057092a1f" category="paragraph">BlueXP 備份與還原（雲端備份）可為內部部署和雲端中的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
-  <block id="d875f19aed16817841128703d062f580" category="paragraph">此服務執行區塊層級的遞增永久複寫、並保留所有儲存效率、大幅減少複寫和儲存的資料量。此外、您只需支付受保護的資源、並使用可用的最低成本儲存層、這使得雲端備份非常具成本效益。</block>
   <block id="042a30f816a9f3db4f832c68a750cbd0" category="paragraph">開始時間取決於每ONTAP 個來源系統設定的時區。您無法從 UI 在使用者指定的時間排程備份作業。如需詳細資訊、請聯絡您的系統工程師。</block>
   <block id="f6c25edb13a1fb5bd6c5a94f498065a2" category="summary">完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到 Amazon S3 儲存設備。</block>
   <block id="1034847477ed5a052dde5a113bf49af2" category="paragraph">當連接器部署在雲端時（而非安裝在內部部署環境中）、GovCloud區域會支援Cloud Backup。此外、您必須從AWS Marketplace部署Connector。您無法從 BlueXP SaaS 網站在政府區域部署 Connector 。</block>
@@ -3639,4 +3631,13 @@
   <block id="b2b373cdd55c0c4cdd45eaaa104c1c58" category="paragraph">您可以選擇每小時、每日、每週、每月及每年備份所有磁碟區的組合。套用至磁碟區的 Snapshot 原則必須是 Cloud Backup 可辨識的原則之一、否則將不會建立備份檔案。您也可以選擇系統定義的原則之一、提供 3 個月、 1 年及 7 年的備份與保留。這些原則包括：</block>
   <block id="11222d6b8c3052f6f5e7aaaa5b23b929" category="list-text">您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。請參閱 <block ref="14e7f2dcf692810422b10a89547f7ac5" category="inline-link-macro-rx"></block> 以取得詳細資料。ifdef：：AWS []</block>
   <block id="3835d8f8839ebb8c540019c7da03ff7a" category="list-text">建立或編輯備份原則時、若未將任何磁碟區指派給原則、則保留備份的數量最多可達1018個。將磁碟區指派給原則之後、您可以編輯原則、建立最多 4000 個備份。</block>
+  <block id="bb280534703ad71e61cfe80a5fe858c8" category="paragraph">BlueXP 備份與還原（雲端備份）可為內部部署和雲端環境中的 NetApp ONTAP 資料、 Kubernetes 持續容量、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
+  <block id="c046907d1d72e6426051e85493e0af8e" category="paragraph">此服務執行區塊層級的遞增永久複寫、並保留所有儲存效率、大幅減少複寫和儲存的資料量。此外、您只需支付受保護的資源、並使用可用的最低成本儲存層、這使得 Cloud Backup 非常具成本效益。</block>
+  <block id="56387194e2baefbedf3b4e19ea5780fe" category="paragraph">備份與還原可用於：</block>
+  <block id="48bcb85cafc1f72efb03d9b2b5ed82c5" category="list-text">使用適用於應用程式的雲端備份、從內部部署的 ONTAP 系統備份應用程式一致的快照。 <block ref="0cae341dd31c4bfca67f66dd24fe06e1" category="inline-link-macro-rx"></block>。</block>
+  <block id="df405fcd52dd910b780660dd568c32f0" category="admonition">當 BlueXP Connector 部署在雲端的政府區域、或是在沒有網際網路存取（黑暗網站）的網站中時、 Cloud Backup 僅支援從 ONTAP 系統進行備份與還原作業。使用這些類型的部署方法時、 Cloud Backup 不支援從 Kubernetes 叢集、應用程式或虛擬機器進行備份與還原作業。</block>
+  <block id="06548d8c3dd532a955281943d00e4ae0" category="paragraph">下圖顯示元件之間的關係：</block>
+  <block id="27af9a77d19fed3cc5992a809811dc11" category="paragraph">備份複本儲存在BlueXP在雲端帳戶中建立的物件存放區中。每個叢集 / 工作環境都有一個物件存放區、而 BlueXP 則將物件存放區命名如下：<block ref="395f30b009fd80d4c1cba9bc07db445d" prefix=" " category="inline-code"></block>。請勿刪除此物件存放區。</block>
+  <block id="6433bf341a35460ce346cdf0fc05e1b8" category="paragraph">備份複本與相關聯<block ref="5c84ace7b3e4263476ddf0c264272cee" category="inline-link-rx"></block> BlueXP Connector 所在的位置。</block>
+  <block id="610778054da9c0e7c61921555da9ddc9" category="paragraph">如果您在同一個 NetApp 帳戶中有多個 Connector 、每個 Connector 都會顯示相同的備份清單。這包括Cloud Volumes ONTAP 與其他ONTAP 連接器上的資料不全和內部部署的資料不全的資料。</block>
 </blocks>
