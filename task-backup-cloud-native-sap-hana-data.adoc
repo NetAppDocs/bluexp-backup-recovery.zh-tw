@@ -14,11 +14,11 @@ summary: 建立SAP HANA資料庫的排程或隨需備份。
 
 
 [role="lead"]
-在建立SAP HANA資料庫備份之前、您應該先新增SAP HANA資料庫主機、然後指派預先設定的原則或您建立的原則。
+您可以指派預先定義的原則或建立的原則來建立備份。
 
 
 
-== 建立保護SAP HANA資料庫的原則
+== 建立保護 SAP HANA 資料庫的原則
 
 如果您不想使用或編輯預設原則、可以建立原則。
 
@@ -28,7 +28,7 @@ summary: 建立SAP HANA資料庫的排程或隨需備份。
 . （選用）編輯Snapshot複本名稱的格式。
 . 選取原則類型。
 . 指定排程和保留詳細資料。
-. （選用）指定指令碼。 link:task-backup-cloud-native-sap-hana-data.html#prescripts-and-postscripts["深入瞭解。"]
+. （選用）指定指令碼。 link:task-backup-cloud-native-sap-hana-data.html#prescripts-and-postscripts["指令碼和後指令碼。"]
 . 按一下「 * 建立 * 」。
 
 
@@ -105,25 +105,29 @@ schedule_type
 
 您可以指派預先整合的原則、或是建立原則、然後將其指派給資料庫。一旦指派原則、便會依照原則中定義的排程建立備份。
 
+*開始之前*
+
+您應該已新增 SAP HANA 資料庫主機。link:task-deploy-snapcenter-plugin-for-sap-hana.html#add-sap-hana-database-hosts["新增SAP HANA資料庫主機"]
+
 *關於此工作*
 
-針對HANA系統複寫（HSR）、排定的備份工作只會針對主要HANA系統觸發、如果系統容錯移轉至次要HANA系統、則現有的排程會觸發目前主要HANA系統的備份。如果未將原則指派給兩個HANA系統、則在容錯移轉之後、排程將會失敗。
+針對 HANA 系統複製（ HSR ）、排程備份工作只會觸發主要 HANA 系統、如果系統容錯移轉至次要 HANA 系統、現有排程會在目前的主要 HANA 系統上觸發備份。如果原則並未同時指派給主要和次要 HANA 系統、則容錯移轉之後、排程將會失敗。
 
-如果指派不同的原則給HSR系統、系統會觸發排程備份、而次要HANA系統的備份則會失敗。
+如果將不同的原則指派給 HSR 系統、則主要和次要 HANA 系統的排程備份觸發程序、以及次要 HANA 系統的備份將會失敗。
 
 *步驟*
 
 . 在「應用程式」頁面中、如果資料庫未使用任何原則加以保護、請按一下*指派原則*。
 +
-如果資料庫受到一或多個原則的保護、您可以按一下來指派更多原則 image:icon-action.png["圖示以選取動作"] >*指派原則*。
+雖然資料庫是使用一或多個原則來保護、但如果需要、您可以按一下繼續指派更多原則 image:icon-action.png["圖示以選取動作"] >*指派原則*。
 
 . 選取原則、然後按一下*指派*。
 +
-備份將依照原則中定義的排程建立。
+根據原則中定義的排程建立備份。
 
 +
 
-NOTE: 服務帳戶（_SnapCenter-account-<account_id>_）用於執行排程的備份作業。
+NOTE: 服務帳戶（ <account_id> ）用於執行排程的備份作業。
 
 
 

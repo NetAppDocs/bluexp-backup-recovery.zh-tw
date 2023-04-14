@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-deploy-snapcenter-plugin-for-sap-hana.html 
 keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for SAP HANA, SAP HANA, database, host, deploy 
-summary: 在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HNAN的支援功能。 
+summary: 在每部 SAP HANA 資料庫主機上安裝 SnapCenter Plug-in for SAP HANA 。 
 ---
-= 部署SnapCenter 適用於SAP HANA的支援功能外掛程式、並新增資料庫主機
+= 安裝 SnapCenter Plug-in for SAP HANA 並新增資料庫主機
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,103 +14,191 @@ summary: 在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HNAN�
 
 
 [role="lead"]
-您應該在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HANA的解決方案。視SAP HANA主機是否啟用SSH金鑰型驗證而定、您可以遵循其中一種方法來部署外掛程式。
+您應該在每部 SAP HANA 資料庫主機上安裝 SnapCenter Plug-in for SAP HANA 。視 SAP HANA 主機是否已啟用 SSH 金鑰型驗證而定、您可以依照其中一種方法來安裝外掛程式。
+
+* 如果資料庫主機已啟用 SSH 、您可以使用 SSH 選項安裝外掛程式。 <<使用指令碼安裝外掛程式,深入瞭解>>。
+* 如果停用 SSH 、請手動安裝外掛程式。 <<手動安裝外掛程式,深入瞭解>>。
+
 
 
 
 == 先決條件
 
+在新增主機之前、您應確保符合先決條件。
+
 * 確保每個SAP HANA資料庫主機上都安裝了Java 11（64位元）Oracle Java或OpenJDK。
 * 您應該已新增工作環境並建立Connector。
-* 確認連接器已連線至工作環境
+* 確保 Connector 能夠連線至 SAP HANA 資料庫主機。
++
+如需如何解決連線問題的資訊、請參閱 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Cloud_Backup_Application_Failed_to_validate_connectivity_from_BlueXP_connector_host_to_application_database_host["無法驗證從 BlueXP Connector 主機到應用程式資料庫主機的連線能力"]。
+
++
+當連接器遺失或建立新的連接器時、您應該將連接器與現有的應用程式資源建立關聯。如需更新 Connector 的指示、請參閱 link:task-manage-cloud-native-app-data.html#update-the-connector-details["更新連接器詳細資料"]。
+
 * 確定BlueXP使用者具有「帳戶管理員」角色。
-* 您應該已經為SnapCenter 該位使用者建立了「Sudo」、並已設定「Sudo」SnapCenter 。如需相關資訊、請參閱 link:task-deploy-snapcenter-plugin-for-sap-hana.html#configure-sudo-for-snapcenter-user["設定Sudo for SnapCenter S供 使用者使用。"]
-* 在新增資料庫主機之前、您應該已經部署SnapCenter 了適用於SAP HANA的功能不全的外掛程式。
+* 您應該已建立 SnapCenter 使用者、並為非 root （ Sudo ）使用者設定 Sudo 。如需相關資訊、請參閱 link:task-deploy-snapcenter-plugin-for-sap-hana.html#configure-sudo-for-snapcenter-user["設定Sudo for SnapCenter S供 使用者使用。"]
+* 您應該先安裝 SnapCenter Plug-in for SAP HANA 、然後再新增資料庫主機。
 * 新增SAP HANA資料庫主機時、您應該新增HDB使用者儲存金鑰。HDB安全使用者存放區金鑰用於將SAP HANA資料庫主機的連線資訊安全地儲存在用戶端上、HDBSQL用戶端則使用安全的使用者存放區金鑰來連線至SAP HANA資料庫主機。
 * 針對HANA系統複寫（HSR）、為了保護HANA系統、您應該手動登錄主要和次要HANA系統。
-* 如果使用SSH型部署、連接器應啟用與SSH連接埠的通訊（預設值：22）。
-* 連接器應已啟用外掛連接埠的通訊功能（預設值：8145）、以便讓作業正常運作。
+* 如果執行 SSH 型安裝、請確定 Connector 已啟用與 SSH 連接埠的通訊（預設值： 22 ）。
+* 確保 Connector 已啟用外掛連接埠的通訊（預設值： 8145 ）、以便資料保護作業正常運作。
+* 確保已安裝最新版本的外掛程式。若要升級外掛程式、請參閱 <<升級 SnapCenter Plug-in for SAP HANA 資料庫>>。
 
+
+
+NOTE: 如果從 BlueXP Connector 主機到應用程式主機的連線失敗、請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Cloud_Backup_Application_Failed_to_validate_connectivity_from_BlueXP_connector_host_to_application_database_host["知識庫文章"^] 以取得資訊。
 
 
 
 == 設定Sudo for SnapCenter S供 使用者使用
 
-您應該建立SnapCenter 一個用來部署外掛程式的不必要使用者。
+建立非 root （ Sudo ）使用者以安裝外掛程式。
 
 *步驟*
 
 . 登入Connector VM。
-. 下載Linux主機外掛程式二進位檔。
-`sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
-. 取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」
-. 從複製第1行至第16行 `oracle_checksum_scs.txt` 檔案位於 `base_mount_path/version/sc-linux-host-plugin/`
-. 登入SAP HANA資料庫主機、然後執行下列步驟：
+. 複製位於下列位置的 * sudoer.txt* 內容： _manager-2_cloudmanager_cs_cloue_volume / _data/$ （ Sudo 泊塢視窗 ps|grep -po" cloudmanager_cs_clouwo:..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
+. 使用 root 使用者帳戶登入 SAP HANA 資料庫主機。
+. 將步驟 3 中複製的文字複製到 /etc/sudoers.d/snapcenter_file 、為非 root 使用者設定 Sudo 存取。
 +
-.. 建立SnapCenter 這個使用者帳戶、私密金鑰配對、然後指派權限。
-.. 將您在步驟4中複製的行貼到 `/etc/sudoers` 使用visudo Linux公用程式來建立檔案。
+在您新增至 /etc/sudoers.d/snapcenter_file 的行中、將 <LINUXUSER> 取代為非 root 使用者、將 <USER_HOME_DIRECTORY> 取代為 _home/nap_ <non-root-user> 。
+
+
+
+
+
+== 使用指令碼安裝外掛程式
+
+為 SAP HANA 主機非 root 使用者帳戶設定 SSH 金鑰型驗證、然後執行下列步驟來安裝外掛程式。
+
+* 開始之前 *
+
+確保已啟用 SSH 連線至 Connector 。
+
+*步驟*
+
+. 登入 Connector VM 。
+. 使用 Connector 中提供的指令碼安裝外掛程式。
+`sudo bash  /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
 +
-在以上各行中、將<LINUXUSER> 您SnapCenter 建立並儲存在視覺化公用程式中的支援功能取代成功能不實的使用者。
+|===
+| 名稱 | 說明 | 必填 | 預設 
+
+
+ a| 
+plugin_host
+ a| 
+指定 SAP HANA 主機
+ a| 
+是的
+ a| 
+-
 
 
 
+ a| 
+host_user_name
+ a| 
+指定在 SAP HANA 主機上具有 SSH 權限的 SnapCenter 使用者
+ a| 
+是的
+ a| 
+-
 
 
 
+ a| 
+host_ssh_key
+ a| 
+指定 SnapCenter 使用者的 SSH 金鑰、用於連線至 SAP HANA 主機
+ a| 
+是的
+ a| 
+-
 
-== 使用SSH金鑰型驗證來部署外掛程式
 
-如果HANA主機上已啟用SSH金鑰型驗證、您可以執行下列步驟來部署外掛程式。在執行這些步驟之前、請先確認已啟用連接器的SSH連線。
+
+ a| 
+plugin_port
+ a| 
+指定外掛程式使用的連接埠
+ a| 
+否
+ a| 
+8145
+
+
+
+ a| 
+host_ssh_port
+ a| 
+指定 SAP HANA 主機上的 SSH 連接埠
+ a| 
+否
+ a| 
+22
+
+|===
++
+例如、 `sudo bash /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host 10.0.1.1 --username snapcenter --sshkey /keys/netapp-ssh.ppk`
+
+
+
+安裝外掛程式之後、您應該 <<新增SAP HANA資料庫主機>>。
+
+
+
+== 手動安裝外掛程式
+
+如果 HANA 主機上未啟用 SSH 金鑰型驗證、您應該執行下列手動步驟來安裝外掛程式。
 
 *步驟*
 
 . 登入Connector VM。
-. 取得基本掛載路徑。
-`# sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
-. 部署外掛程式。
-`# sudo <base_mount_path>/scripts/hana_plugin_copy_and_install.sh --host <host_name> --sshkey <ssh_key_file> --username <user_name> --port <ssh_port> --pluginport <plugin_port> --installdir <install_dir>`
+. 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
 +
-** host_name是HANA主機的名稱、這是必要參數。
-** SSH_KEY_file是用來連線至HANA主機的SSH金鑰、這是必要參數。
-** 使用者名稱：在HANA主機上具有SSH權限的使用者、這是選用參數。預設值為azureUser。
-** SSH_port：HANA主機上的SSH連接埠、這是選用參數。預設值為22。
-** plugin_port：外掛程式使用的連接埠、這是選用參數。預設值為8145。
-** 安裝目錄：要部署外掛程式的目錄、這是選用參數。預設值為/opt。
+外掛程式二進位檔位於： _CD /var/lib/v泊 塢視窗 /volides/service-manager-2_cloudmanager_SCS_cloue_volate/_data/$（ Sudo 泊塢視窗 ps|grep -po" cloudmanager_SCS_clouy..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
 
-
-
-
-部署外掛程式之後、您應該新增 link:task-deploy-snapcenter-plugin-for-sap-hana.html#add-sap-hana-database-hosts["SAP HANA資料庫主機："]
-
-
-
-== 手動部署外掛程式
-
-如果HANA主機上未啟用SSH金鑰型驗證、您應該執行下列手動步驟來部署外掛程式。
-
-*步驟*
-
-. 登入Connector VM。
-. 下載Linux主機外掛程式二進位檔。
-`# sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
-. 取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」
-. 取得下載外掛程式的二進位路徑。「Udo ls <base_mount_path>$(sudo dod泊 塢視窗ps | grep -po" cloudmanager_SCs_clou:.*？"| sed -e 's/*$/'| cut -F2 -d":")/sc-Linux主機外掛程式/snapcenter_Linux主機外掛程式_scsscs.bin"
-. 複本 `snapcenter_linux_host_plugin_scs.bin` 使用scp或其他替代方法、將資料傳送至每個SAP HANA資料庫主機。
-. 在SAP HANA資料庫主機上、執行下列命令以啟用二進位檔案的執行權限。
+. 使用 <non root user (sudo)> scp 或其他替代方法、將 _snapcenter_linux_host_plugin_SCS.bin_ 從上述路徑複製到每個 SAP HANA 資料庫主機的 //home/Nets/.SC_NetApp_ 路徑。
+. 使用非 root （ Sudo ）帳戶登入 SAP HANA 資料庫主機。
+. 將目錄變更為 //home/NetApp/.SC_NetApp/_ <non root user> 、然後執行下列命令以啟用二進位檔案的執行權限。
 `chmod +x snapcenter_linux_host_plugin_scs.bin`
-. 將SAP HANA外掛程式部署為Sudo SnapCenter Sudo Sudo用戶。
-`./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root-user>`
-. 複本 `certificate.p12` 寄件者 `<base_mount_path>/client/certificate/` 連接器VM的路徑 `/var/opt/snapcenter/spl/etc/` 在外掛程式主機上。
+. 以 Sudo SnapCenter 使用者身分安裝 SAP HANA 外掛程式。
+`./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root>`
+. 從連接器VM的_<base_mount_path>/用戶端/憑證/_路徑、複製_imple.p12_到外掛主機的_/var/opt/snapcenter/spl/etc/_。
+. 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入憑證。「keytool-v -importkeystore -srckeystore CERT.p12 -srcstoretype pkcs12 -destkeystore keyKeystore .jks -deststoretype JKS -rcsstorepass SnapCenter sore-ascalias SnapCenter agentcert -noprompt」
+. 重新啟動SPL：「系統重新啟動spl」
+. 從Connector執行下列命令、驗證外掛程式是否可從Connector存取。
+`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/PluginService/Version --cert  config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
+. 檢閱詳細資料、然後按一下 * 「探索應用程式」 * 。
 +
-.. 瀏覽至 `/var/opt/snapcenter/spl/etc` 並執行keytools命令以匯入憑證。
-`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
-.. 重新啟動SPL：「系統重新啟動spl」
-
-
-. 從Connector執行下列命令、驗證外掛程式是否可從Connector存取：
+** 顯示主機上的所有資料庫。
+** 按一下*設定*並選取*主機*以檢視所有主機。
 +
-`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert /config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
 
+NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定主機名稱時、會顯示所有主機。
+
+** 按一下*設定*、然後選取*原則*以檢視預設原則。檢閱預先定義的原則、您可以編輯這些原則以符合您的需求、或建立新的原則。
+
+
+
+
+
+
+== 升級 SnapCenter Plug-in for SAP HANA 資料庫
+
+您應該升級 SnapCenter Plug-in for SAP HANA 資料庫、以存取最新的新功能與增強功能。
+
+*開始之前*
+
+* 請確定主機上沒有執行任何作業。
+
+
+*步驟*
+
+. 登入 Connector VM 。
+. 執行下列指令碼。
+`/var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port> --upgrade`
 
 
 
@@ -130,7 +218,7 @@ summary: 在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HNAN�
 .. 選取「系統類型」作為多租戶資料庫容器或單一容器。
 .. 輸入SAP HANA系統名稱。
 .. 指定SAP HANA系統的SID。
-.. （選用）指定HDBSQL OS使用者。
+.. （選用）修改 HDBSQL OS 使用者。
 .. 選取外掛程式主機。（可選）如果未添加主機或要添加多個主機，請單擊* Add Plug-In Host*（添加插件主機*）。
 .. 如果HANA系統設定為HANA系統複寫、請啟用* HANA系統複寫（HSR）System*。
 .. 按一下「* HDB Secure User Store Keys *（* HDB安全使用者儲存金鑰*）」文字方塊以新增使用者儲存金鑰
@@ -157,15 +245,24 @@ summary: 在SnapCenter 每個SAP HANA資料庫主機上部署適用於SAP HNAN�
 
 
 
-NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定主機名稱時、會顯示所有主機
+NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定主機名稱時、會顯示所有主機。
 
-您可以使用REST API來修改及移除SAP HANA系統。在移除HANA系統之前、您應該刪除所有相關的備份並移除保護。
+* 下一步是什麼 *
+
+* 您可以從 UI 修改或移除 SAP HANA 系統、也可以使用 REST API 。
++
+移除 SAP HANA 系統之前、您應該先刪除所有相關的備份、並移除保護。
+
+* 您可以使用 REST API 修改或移除 SAP HANA 主機。
+
 
 
 
 === 新增非資料磁碟區
 
-新增多租戶資料庫容器或單一容器類型的SAP HANA系統之後、即可新增HANA系統的非資料磁碟區。
+新增多租戶資料庫容器或單一容器類型 SAP HANA 系統之後、您可以新增 HANA 系統的非資料 Volume 。
+
+探索可用的SAP HANA資料庫之後、您可以將這些資源新增至資源群組、以執行資料保護作業。
 
 *步驟*
 
@@ -179,7 +276,7 @@ NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定�
 
 === 新增全域非資料磁碟區
 
-新增多租戶資料庫容器或單一容器類型的SAP HANA系統之後、即可新增HANA系統的全域非資料Volume。
+新增多租戶資料庫容器或單一容器類型 SAP HANA 系統之後、您可以新增 HANA 系統的 Global Non-Data Volumes 。
 
 *步驟*
 

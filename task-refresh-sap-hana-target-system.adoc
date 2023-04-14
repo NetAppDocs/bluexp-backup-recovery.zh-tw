@@ -1,0 +1,74 @@
+---
+sidebar: sidebar 
+permalink: task-refresh-sap-hana-target-system.html 
+keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for SAP HANA, SAP HANA, database, host, system refresh 
+summary: 從原始 SAP HANA 系統（正式作業資料庫）重新整理至目標系統。 
+---
+= 重新整理 SAP HANA 目標系統
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用 SAP HANA 來源系統的資料來更新 SAP HANA 目標系統。這可用於將目前的正式作業資料提供至測試系統。雲端備份可讓您從來源系統選取 Snapshot 複本、並根據 Snapshot 複本建立新的 anf Volume 。提供範例指令碼、可在資料庫主機上執行必要的作業、以恢復 SAP HANA 資料庫。
+
+*開始之前*
+
+* 您應該先安裝 SAP HANA 目標系統、然後再執行第一次重新整理作業。
+* 您應該手動將來源和目標 HANA 系統新增至雲端備份。
+* 確保 SAP HANA 資料庫版本與來源和目標系統相同。
+* 您應該已經決定要使用哪些重新整理指令碼。更新指令碼可在解決方案技術報告中找到。
++
+https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-automation-example-scripts.html#script-sc-system-refresh-sh["自動化範例指令碼"]
+
++
+您可以自訂重新整理指令碼。
+
+* 下列環境變數可作為預記錄和 PostScript 的一部分：
++
+** Clone （已複製） _Volumes_mount_path
+** <SOURCEVOLUME> 目的地
+** Hana 資料庫類型
+** 租戶資料庫名稱
+
+
+
+
+*關於此工作*
+
+* 系統更新僅支援多租戶資料庫容器 HANA 系統。
+* 系統重新整理後、現有原則將生效。
+* 建立的新磁碟區具有下列命名慣例： <sourcevolumename> <timestamp>
++
+** 時間戳記格式： <year> <month> <day> <hour> <minute> <second>
++
+例如、如果來源 Volume 是 vol1 、則重新整理的 Volume 名稱將會是 vol1-20230109-184501
+
+
+
+
+
+
+NOTE: 新的 Volume 將放置在與目標 Volume 相同的容量集區中。
+
+* 接合路徑將與磁碟區名稱相同。
+
+
+*步驟*
+
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
+. 在「*應用程式*」頁面中、按一下 image:icon-action.png["圖示以選取動作"] 圖標選擇與要刷新的系統對應的操作，然後選擇 *System Refresh* 。
+. 在 * 系統重新整理 * 頁面中、執行下列動作：
++
+.. 選取來源系統和 Snapshot 複本。
+.. 輸入可從中存取新磁碟區的匯出位址。
+.. 輸入預先記錄、 PostScript 和失敗指令碼路徑。發生故障時指令碼只有在系統重新整理作業失敗時才會執行。
+.. 選取 * 刪除關聯的 SAP HANA 備份 * 僅會刪除 Snapshot 複本。如果目標系統有任何現有備份、且未選取上述選項、系統重新整理作業將會失敗。您也可以從 *Topology* 頁面刪除備份。
+.. 按一下*重新整理*。
+
+
+

@@ -83,86 +83,83 @@ sidebar:
       url: "/task-manage-backups-kubernetes.html"
     - title: 從Kubernetes備份還原
       url: "/task-restore-backups-kubernetes.html"
-  - title: 保護應用程式資料
+  - title: 備份及還原內部部署應用程式資料
     entries:
-    - title: 保護內部部署應用程式資料
+    - title: 保護內部部署的應用程式資料
+      url: "/concept-protect-app-data-to-cloud.html"
+    - title: 註冊SnapCenter 伺服器
+      url: "/task-register-snapcenter-server.html"
+    - title: 建立備份應用程式的原則
+      url: "/task-create-policies-apps.html"
+    - title: 將內部部署應用程式資料備份至Amazon Web Services
+      flavor: aws
+      url: "/task-backup-app-data-to-aws.html"
+    - title: 將內部部署應用程式資料備份到Microsoft Azure
+      flavor: azure
+      url: "/task-backup-app-data-to-azure.html"
+    - title: 將內部部署應用程式資料備份到Google Cloud
+      flavor: gcp
+      url: "/task-backup-app-data-to-gcp.html"
+    - title: 將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方
+      url: "/task-backup-app-data-to-storagegrid.html"
+    - title: 管理應用程式保護
+      url: "/task-manage-app-backups.html"
+    - title: 還原內部部署應用程式資料
       entries:
-      - title: 保護內部部署的應用程式資料
-        url: "/concept-protect-app-data-to-cloud.html"
-      - title: 註冊SnapCenter 伺服器
-        url: "/task-register-snapcenter-server.html"
-      - title: 建立備份應用程式的原則
-        url: "/task-create-policies-apps.html"
-      - title: 將內部部署應用程式資料備份至Amazon Web Services
-        flavor: aws
-        url: "/task-backup-app-data-to-aws.html"
-      - title: 將內部部署應用程式資料備份到Microsoft Azure
-        flavor: azure
-        url: "/task-backup-app-data-to-azure.html"
-      - title: 將內部部署應用程式資料備份到Google Cloud
-        flavor: gcp
-        url: "/task-backup-app-data-to-gcp.html"
-      - title: 將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方
-        url: "/task-backup-app-data-to-storagegrid.html"
-      - title: 管理應用程式保護
-        url: "/task-manage-app-backups.html"
-      - title: 還原內部部署應用程式資料
-        entries:
-        - title: 還原Oracle資料庫
-          url: "/task-restore-oracle-data.html"
-        - title: 還原SQL Server資料庫
-          url: "/task-restore-sql-data.html"
-      - title: 掛載應用程式備份
-        url: "/task-mount-app-backup.html"
+      - title: 還原Oracle資料庫
+        url: "/task-restore-oracle-data.html"
+      - title: 還原SQL Server資料庫
+        url: "/task-restore-sql-data.html"
+    - title: 掛載應用程式備份
+      url: "/task-mount-app-backup.html"
+  - title: 備份及還原雲端原生應用程式資料
+    entries:
     - title: 保護雲端原生應用程式資料
+      url: "/concept-protect-cloud-app-data-to-cloud.html"
+    - title: 備份雲端原生Oracle資料庫
       entries:
-      - title: 保護雲端原生應用程式資料
-        url: "/concept-protect-cloud-app-data-to-cloud.html"
-      - title: 備份雲端原生應用程式資料
-        entries:
-        - title: 備份雲端原生Oracle資料庫
-          entries:
-          - title: 存取BlueXP
-            url: "/reference-access-bluexp.html"
-          - title: 設定FSX ONTAP 以供使用
-            url: "/reference-configure-fsx-for-ontap.html"
-          - title: 設定Cloud Volumes ONTAP 功能
-            url: "/reference-configure-cloud-volumes-ontap.html"
-          - title: 部署SnapCenter 適用於Oracle的支援功能外掛程式、並新增資料庫主機
-            url: "/task-add-host-discover-oracle-databases.html"
-          - title: 備份Oracle資料庫
-            url: "/task-backup-cloud-native-oracle-data.html"
-        - title: 備份雲端原生SAP HANA資料庫
-          entries:
-          - title: 存取BlueXP
-            flavor: azure
-            url: "/reference-access-bluexp.html"
-          - title: 設定Azure NetApp Files 功能
-            flavor: azure
-            url: "/reference-configure-azure-netapp-files.html"
-          - title: 部署SnapCenter 適用於SAP HANA的支援功能外掛程式、並新增資料庫主機
-            flavor: azure
-            url: "/task-deploy-snapcenter-plugin-for-sap-hana.html"
-          - title: 備份SAP HANA資料庫
-            flavor: azure
-            url: "/task-backup-cloud-native-sap-hana-data.html"
-      - title: 還原雲端原生應用程式資料
-        entries:
-        - title: 還原雲端原生Oracle資料庫
-          url: "/task-restore-cloud-native-oracle-data.html"
-        - title: 還原雲端原生SAP HANA資料庫
-          flavor: azure
-          url: "/task-restore-cloud-native-sap-hana-data.html"
-      - title: 複製雲端原生應用程式資料
-        entries:
-        - title: 複製雲端原生Oracle資料庫
-          entries:
-          - title: 複製概念與需求
-            url: "/concept-clone-cloud-native-oracle-concepts.html"
-          - title: 複製雲端原生Oracle資料庫
-            url: "/task-clone-cloud-native-oracle-data.html"
-      - title: 管理雲端原生應用程式資料的保護
-        url: "/task-manage-cloud-native-app-data.html"
+      - title: 快速入門
+        url: "/task-quick-start-oracle.html"
+      - title: 設定FSX ONTAP 以供使用
+        url: "/reference-configure-fsx-for-ontap.html"
+      - title: 設定Cloud Volumes ONTAP 功能
+        url: "/reference-configure-cloud-volumes-ontap.html"
+      - title: 設定Azure NetApp Files 功能
+        flavor: azure
+        url: "/reference-configure-azure-netapp-files.html"
+      - title: 部署SnapCenter 適用於Oracle的支援功能外掛程式、並新增資料庫主機
+        url: "/task-add-host-discover-oracle-databases.html"
+      - title: 備份Oracle資料庫
+        url: "/task-backup-cloud-native-oracle-data.html"
+    - title: 備份雲端原生SAP HANA資料庫
+      entries:
+      - title: 快速入門
+        flavor: azure
+        url: "/task-quick-start-hana.html"
+      - title: 設定Azure NetApp Files 功能
+        flavor: azure
+        url: "/reference-configure-azure-netapp-files.html"
+      - title: 部署SnapCenter 適用於SAP HANA的支援功能外掛程式、並新增資料庫主機
+        flavor: azure
+        url: "/task-deploy-snapcenter-plugin-for-sap-hana.html"
+      - title: 備份SAP HANA資料庫
+        flavor: azure
+        url: "/task-backup-cloud-native-sap-hana-data.html"
+    - title: 還原雲端原生Oracle資料庫
+      url: "/task-restore-cloud-native-oracle-data.html"
+    - title: 還原雲端原生SAP HANA資料庫
+      flavor: azure
+      url: "/task-restore-cloud-native-sap-hana-data.html"
+    - title: 重新整理 SAP HANA 目標系統
+      url: "/task-refresh-sap-hana-target-system.html"
+    - title: 複製雲端原生Oracle資料庫
+      entries:
+      - title: 複製概念與需求
+        url: "/concept-clone-cloud-native-oracle-concepts.html"
+      - title: 複製雲端原生Oracle資料庫
+        url: "/task-clone-cloud-native-oracle-data.html"
+    - title: 管理雲端原生應用程式資料的保護
+      url: "/task-manage-cloud-native-app-data.html"
   - title: 備份及還原虛擬機器資料
     entries:
     - title: 保護您的虛擬機器資料
@@ -259,7 +256,7 @@ homepage:
     - title: Kubernetes叢集至Google Cloud
       url: task-backup-kubernetes-to-gcp.html
       flavor: gcp
-  - title: 保護應用程式資料
+  - title: 將應用程式資料備份到雲端
     links:
     - title: 將內部部署應用程式資料備份至Amazon Web Services
       flavor: aws

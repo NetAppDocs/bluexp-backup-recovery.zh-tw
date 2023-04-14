@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP 
-summary: 將Cloud Backup for Applications與BlueXP和內部部署SnapCenter 的功能整合、以將應用程式一致的Snapshot從內部部署ONTAP 到雲端。 
+keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP, cloud backup 
+summary: 將 BlueXP 應用程式的備份與還原與 BlueXP 和內部部署 SnapCenter 整合、將應用程式一致的快照從內部部署 ONTAP 備份到雲端。 
 ---
 = 保護內部部署的應用程式資料
 :hardbreaks:
@@ -14,43 +14,40 @@ summary: 將Cloud Backup for Applications與BlueXP和內部部署SnapCenter 的�
 
 
 [role="lead"]
-您可以將Cloud Backup for Applications與BlueXP（前身為Cloud Manager）及內部部署SnapCenter 的內部環境整合、將應用程式一致的Snapshot從內部部署ONTAP 的更新備份到雲端。必要時、您可以從雲端還原至內部部署SnapCenter 的功能。
+BlueXP 應用程式備份與還原可為應用程式提供資料保護功能、從內部部署的 ONTAP 主快照到雲端供應商、提供應用程式一致的快照。
 
 您可以將Oracle、Microsoft SQL和SAP HANA應用程式資料從內部部署ONTAP 的支援系統備份到Amazon Web Services、Microsoft Azure、Google Cloud Platform和StorageGRID 更新版本。
 
-
-NOTE: 您應該使用SnapCenter 的是不含更新版本的軟體。
-
-如需雲端應用程式備份的詳細資訊、請參閱：
+如需應用程式 BlueXP 備份與還原的詳細資訊、請參閱：
 
 * https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["應用程式感知備份、採用Cloud Backup和SnapCenter 功能"^]
-* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["Cloud Backup for Applications Podcast"^]
+* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["BlueXP 應用程式備份與還原 Podcast"^]
 
 
 
 
 == 需求
 
-請先閱讀下列需求、確定您擁有支援的組態、再開始將應用程式資料備份至雲端服務。
+在開始將應用程式資料備份至雲端供應商之前、請先閱讀下列需求、以確保您擁有支援的組態。
 
 * 部分9.8或更新版本ONTAP
-* BlueXP 3.9..
+* 藍圖
 * 如果您想要使用下列功能、應該使用不含更新版本的伺服器4.7：SnapCenter SnapCenter
 +
-** 保護備份不受內部部署二線儲存設備的影響
-** 保護SAP HANA應用程式
-** 保護VMware環境中的Oracle和SQL應用程式
+** 保護備份不受內部部署次要儲存設備的影響
+** 保護 SAP HANA 應用程式
+** 保護 VMware 環境中的 Oracle 和 SQL 應用程式
 ** 掛載備份
 ** 停用備份
 ** 取消登SnapCenter 錄伺服器
 
 
 * 每個應用程式至少應有一個備份可供SnapCenter 使用於此伺服器
-* 至少有一項每日、每週或每月的政策SnapCenter 在支援服務方面、沒有標籤或標籤與BlueXP中的Cloud Backup for Applications政策相同。
+* 在 SnapCenter 中至少有一項每日、每週或每月政策、沒有與 BlueXP 中原則的標籤或相同標籤。
 
 
 
-NOTE: Cloud Backup for Applications不支援使用FQDN或IP位址新增的SVM上的應用程式保護。
+NOTE: 如果使用 FQDN 或 IP 位址將 SVM 新增至 SnapCenter 、則無法保護在這些 SVM 上執行的應用程式。應用程式的 BlueXP 備份與還原只能識別以名稱新增的 SVM 、或是 SnapCenter 探索到的 SVM 、這些 VM 是新增為 ONTAP 叢集的一部分。
 
 下圖顯示備份至雲端時的每個元件、以及您需要在它們之間準備的連線：
 

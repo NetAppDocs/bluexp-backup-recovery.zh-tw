@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-add-host-discover-oracle-databases.html 
-keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for Oracle, Oracle, database, host, deploy, add host, discover 
-summary: 在SnapCenter 每個Oracle資料庫主機上部署適用於Oracle的支援功能。 
+keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for Oracle, Oracle, database, host, install, add host, discover 
+summary: 在每個 Oracle 資料庫主機上安裝 SnapCenter Plug-in for Oracle 。 
 ---
-= 部署SnapCenter 適用於Oracle的支援功能外掛程式、並新增資料庫主機
+= 安裝適用於 Oracle 的 SnapCenter 外掛程式、並新增資料庫主機
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,15 @@ summary: 在SnapCenter 每個Oracle資料庫主機上部署適用於Oracle的支
 
 
 [role="lead"]
-您應該在SnapCenter 每個Oracle資料庫主機上部署適用於Oracle的支援功能、新增資料庫主機、並探索主機上的資料庫、以指派原則並建立備份。
+您應該在每個 Oracle 資料庫主機上安裝 SnapCenter Plug-in for Oracle 、新增資料庫主機、並探索主機上的資料庫、以指派原則並建立備份。
 
-* 如果資料庫主機已啟用SSH、您可以使用下列其中一種方法來部署外掛程式：
+* 如果資料庫主機已啟用 SSH 、您可以使用下列其中一種方法來安裝外掛程式：
 +
-** 部署外掛程式、並使用SSH選項新增裝載UI。 <<部署外掛程式、並使用SSH選項從UI新增主機,深入瞭解>>。
-** 使用指令碼部署外掛程式、並使用手動選項從UI新增主機。 <<使用指令碼部署外掛程式、並使用手動選項從UI新增主機,深入瞭解>>。
+** 安裝外掛程式、並使用 SSH 選項從 UI 新增主機。 <<使用 SSH 選項從 UI 新增主機,深入瞭解>>。
+** 使用指令碼安裝外掛程式、並使用手動選項從 UI 新增主機。 <<使用指令碼安裝外掛程式、並使用手動選項從 UI 新增主機,深入瞭解>>。
 
 
-* 如果停用SSH、請手動部署外掛程式、並使用手動選項從UI新增主機。 <<手動部署外掛程式、並使用手動選項從UI新增主機,深入瞭解>>。
+* 如果停用 SSH 、請手動安裝外掛程式、並使用手動選項從 UI 新增主機。 <<手動安裝外掛程式、並使用手動選項從 UI 新增主機,深入瞭解>>。
 
 
 
@@ -33,42 +33,29 @@ summary: 在SnapCenter 每個Oracle資料庫主機上部署適用於Oracle的支
 
 * 您應該已經建立了工作環境和Connector。
 * 確保連接器可連線至工作環境和Oracle資料庫主機。
++
+如需如何解決連線問題的資訊、請參閱 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Cloud_Backup_Application_Failed_to_validate_connectivity_from_BlueXP_connector_host_to_application_database_host["無法驗證從 BlueXP Connector 主機到應用程式資料庫主機的連線能力"]。
+
++
+當連接器遺失或建立新的連接器時、您應該將連接器與現有的應用程式資源建立關聯。如需更新 Connector 的指示、請參閱 link:task-manage-cloud-native-app-data.html#update-the-connector-details["更新連接器詳細資料"]。
+
 * 確定BlueXP使用者具有「帳戶管理員」角色。
 * 確保每個Oracle資料庫主機上都已安裝Java 11（64位元）Oracle Java或OpenJDK、且已適當設定Java_Home變數。
-* 您應該已經為SnapCenter 該位使用者建立了「Sudo」、並已設定「Sudo」SnapCenter 。如需相關資訊、請參閱 <<設定Sudo for SnapCenter S供 使用者使用>>。
-* 如果使用SSH型部署、請確定連接器已啟用SSH連接埠的通訊（預設值：22）。
-* 請確定連接器已啟用外掛連接埠的通訊（預設值：8145）、讓作業正常運作。
+* 如果執行 SSH 型安裝、請確定 Connector 已啟用與 SSH 連接埠的通訊（預設值： 22 ）。
+* 確保 Connector 已啟用外掛連接埠的通訊（預設值： 8145 ）、以便資料保護作業正常運作。
+* 確保已安裝最新版本的外掛程式。若要升級外掛程式、請參閱 <<升級 SnapCenter Plug-in for Oracle Database>>。
+* 在應用程式主機上建立非 root （ Sudo ）帳戶。
 
 
 
 
-=== 設定Sudo for SnapCenter S供 使用者使用
-
-您應該建立SnapCenter 一個供使用者使用的Sudo、然後為使用者設定該Sudo。
-
-*步驟*
-
-. 登入Connector VM。
-. 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
-. 取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」
-. 將第1行從* oracle_checksum _scs.txt*檔案複製到第16行、該檔案位於* base _mount_path_/_version _/sc-Linux主機外掛程式/*。
-. 登入Oracle資料庫主機、然後執行下列步驟：
-+
-.. 建立SnapCenter 這個使用者帳戶、私密金鑰配對、然後指派權限。如需相關資訊、請參閱 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html#create-user-account["建立使用者帳戶"^]。
-.. 使用visudo Linux公用程式、將您在步驟4中複製的行貼到/etc/udoers_檔案。
-+
-在以上各行中、<LINUXUSER> 將您SnapCenter 建立的支援功能取代為「支援功能」使用者、並將檔案儲存到「視覺效果」公用程式中。
-
-
-
-
-
-
-
-== 部署外掛程式、並使用SSH選項從UI新增主機
+== 使用 SSH 選項從 UI 新增主機
 
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
-. 按一下「探索應用程式」。
++
+如果您已新增主機並想要新增其他主機、請按一下 * 應用程式 * > * 管理資料庫 * > * 新增 * 、然後繼續執行步驟 5 。
+
+. 按一下「*探索應用程式*」。
 . 選取* Cloud Native *、然後按一下* Next*。
 +
 我們建立了一個具有「_SURFSystem_ SnapCenter 」角色的服務帳戶、以針對此帳戶中的所有使用者執行排程的資料保護作業。
@@ -77,70 +64,69 @@ summary: 在SnapCenter 每個Oracle資料庫主機上部署適用於Oracle的支
 ** 按一下*帳戶*>*管理帳戶*>*成員*以檢視服務帳戶。
 +
 
-NOTE: 服務帳戶（_SnapCenter-account-<accounttid>_）用於執行排程的備份作業。切勿刪除服務帳戶。
+NOTE: 服務帳戶（ <accountid> ）用於執行排程的備份作業。切勿刪除服務帳戶。
 
 
 
-. 在「Add Host（新增主機）」頁面中、執行下列步驟：
+. 選擇 Oracle 作為應用程式類型。
+. 在主機詳細資料頁面中、執行下列步驟：
 +
 .. 選擇*使用SSH*。
 .. 指定要安裝外掛程式之主機的FQDN或IP位址。
-.. 指定使用者名稱（<<Configure a sudo for SnapCenter user,Sudo SnapCenter S答案 使用者>>）將外掛程式套件複製到主機的方法。
+.. 指定將外掛程式套件複製到主機的非 root （ Sudo ）使用者。
++
+不支援 root 使用者。
+
 .. 指定SSH和外掛程式連接埠。
 +
 預設SSH連接埠為22、外掛程式連接埠為8145。
 
 +
-您可以在安裝外掛程式之後、關閉應用程式主機上的SSH連接埠。任何其他外掛程式作業都不需要SSH連接埠。
+您可以在安裝外掛程式之後、關閉應用程式主機上的SSH連接埠。任何資料保護作業都不需要 SSH 連接埠。
 
 .. 選取連接器。
 .. （選用）如果連接器與主機之間未啟用「金鑰較少」驗證、則應指定用於與主機通訊的SSH私密金鑰。
 +
 
-NOTE: SSH私密金鑰不會儲存在應用程式的任何位置、也不會用於任何其他作業。
+NOTE: SSH 私密金鑰不會儲存在應用程式的任何位置、也不會用於任何其他作業。
 
 .. 單擊 * 下一步 * 。
+
+
+. 在「組態」頁面中、執行下列步驟：
 +
-*** 顯示主機上的所有資料庫。如果已停用資料庫的OS驗證、您應該按一下「*設定*」來設定資料庫驗證。如需詳細資訊、請參閱 <<設定Oracle資料庫認證>>。
-*** 按一下*設定*並選取*主機*以檢視所有主機。按一下「*移除*」移除資料庫主機。
+.. 將文字複製到 /etc/sudoers.d/snapcenter_file 、為非 root （ Sudo ）使用者設定 Sudo 存取。
+.. 選取核取方塊、然後按一下 * 下一步 * 。
+
+
+. 檢閱詳細資料、然後按一下 * 「探索應用程式」 * 。
++
+** 安裝外掛程式之後、探索作業就會開始。您可以從 * 工作監控 * 頁面監控安裝工作。
+** 顯示主機上的所有資料庫。如果資料庫的作業系統驗證已停用、請按一下 * 組態 * 來啟用資料庫驗證。如需詳細資訊、請參閱 <<設定Oracle資料庫認證>>。
+** 按一下*設定*並選取*主機*以檢視所有主機。
 +
 
 NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定主機名稱時、會顯示所有主機。
 
-*** 按一下*設定*、然後選取*原則*以檢視預設原則。檢閱預先設定的原則、如果您想要編輯這些原則以符合您的需求、或是建立新的原則。
+** 按一下*設定*、然後選取*原則*以檢視預設原則。檢閱預先定義的原則、您可以編輯這些原則以符合您的需求、或建立新的原則。
 
 
 
 
 
 
+== 使用指令碼安裝外掛程式、並使用手動選項從 UI 新增主機
 
+為 Oracle 主機非 root 使用者帳戶設定 SSH 金鑰型驗證、然後執行下列步驟來安裝外掛程式。
 
-== 使用指令碼部署外掛程式、並使用手動選項從UI新增主機
+*開始之前*
 
-如果啟用Oracle主機上的SSH金鑰型驗證供SnapCenter 支援對象使用、您可以執行下列步驟來部署外掛程式。在執行這些步驟之前、請先確認已啟用連接器的SSH連線。
+確保已啟用 SSH 連線至 Connector 。
 
 *步驟*
 
-. 登入Connector VM。
-. 取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」
-. 使用Connector中提供的輔助程式指令碼來部署外掛程式。
-`sudo <base_mount_path>/scripts/oracle_plugin_copy_and_install.sh --host <host_name> --sshkey <ssh_key_file> --username <user_name> --port <ssh_port> --pluginport <plugin_port> --installdir <install_dir>`
-+
-** host_name是Oracle主機的名稱、這是必要的參數。
-** SSH_KEY_file是SnapCenter 支援此功能的使用者SSH金鑰、用於連線至Oracle主機。這是必要參數。
-** 使用者名稱：SnapCenter Oracle主機上具有SSH權限的支援對象、這是選用參數。預設值為EC2使用者。
-** SSH_port：Oracle主機上的SSH連接埠、此為選用參數。預設值為22
-** plugin_port：外掛程式使用的連接埠、這是選用參數。預設值為8145
-** 安裝目錄：要部署外掛程式的目錄、此為選用參數。預設值為/opt。
-+
-例如：
-`sudo /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/oracle_plugin_copy_and_install.sh --host xxx.xx.x.x --sshkey /keys/netapp-ssh.ppk`
-
-
-
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
-. 按一下「探索應用程式」。
+. 按一下「*探索應用程式*」。
 . 選取* Cloud Native *、然後按一下* Next*。
 +
 我們建立了一個具有「_SURFSystem_ SnapCenter 」角色的服務帳戶、以針對此帳戶中的所有使用者執行排程的資料保護作業。
@@ -149,14 +135,15 @@ NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定�
 ** 按一下*帳戶*>*管理帳戶*>*成員*以檢視服務帳戶。
 +
 
-NOTE: 服務帳戶（_SnapCenter-account-<accounttid>_）用於執行排程的備份作業。切勿刪除服務帳戶。
+NOTE: 服務帳戶（ <accountid> ）用於執行排程的備份作業。切勿刪除服務帳戶。
 
 
 
-. 在「Add Host（新增主機）」頁面中、執行下列步驟：
+. 選擇 Oracle 作為應用程式類型。
+. 在主機詳細資料頁面中、執行下列步驟：
 +
 .. 選擇*手動*。
-.. 指定部署外掛程式之主機的FQDN或IP位址。
+.. 指定安裝外掛程式之主機的 FQDN 或 IP 位址。
 +
 請確定連接器可以使用FQDN或IP位址與資料庫主機通訊。
 
@@ -164,85 +151,119 @@ NOTE: 服務帳戶（_SnapCenter-account-<accounttid>_）用於執行排程的�
 +
 預設連接埠為8145。
 
+.. 指定將外掛程式套件複製到主機的非 root （ Sudo ）使用者。
 .. 選取連接器。
-.. 選取核取方塊、確認外掛程式已安裝在主機上
-.. 按一下「*探索應用程式*」。
+.. 選取核取方塊以確認主機上已安裝外掛程式。
+.. 單擊 * 下一步 * 。
+
+
+. 在「組態」頁面中、執行下列步驟：
 +
-*** 顯示主機上的所有資料庫。如果已停用資料庫的OS驗證、您應該按一下「*設定*」來設定資料庫驗證。如需詳細資訊、請參閱 <<設定Oracle資料庫認證>>。
-*** 按一下*設定*並選取*主機*以檢視所有主機。按一下「*移除*」移除資料庫主機。
+.. 將文字複製到、為 SnapCenter 使用者設定 Sudo 存取 `/etc/sudoers.d/snapcenter` 檔案：
+.. 選取核取方塊、然後按一下 * 下一步 * 。
+
+
+. 登入Connector VM。
+. 使用 Connector 中提供的指令碼安裝外掛程式。
+`sudo bash  /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
++
+** plugin_host 是 Oracle 主機的名稱、這是必要參數。
+** host_user_name 是在 Oracle 主機上具有 SSH 權限的 SnapCenter 使用者、這是必要參數。
+** host_ssh_key 是 SnapCenter 使用者的 SSH 金鑰、用於連線至 Oracle 主機。這是必要參數。
+** plugin_port 是外掛程式使用的連接埠、這是選用參數。預設值為8145
+** host_ssh_port 是 Oracle 主機上的 SSH 連接埠、這是選用參數。預設值為22
++
+例如：
+`sudo bash  /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host 10.0.1.1 --username snapcenter --sshkey /keys/netapp-ssh.ppk`
+
+
+
+. 檢閱詳細資料、然後按一下 * 「探索應用程式」 * 。
++
+** 顯示主機上的所有資料庫。如果資料庫的作業系統驗證已停用、請按一下 * 組態 * 來啟用資料庫驗證。如需詳細資訊、請參閱 <<設定Oracle資料庫認證>>。
+** 按一下*設定*並選取*主機*以檢視所有主機。
 +
 
 NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定主機名稱時、會顯示所有主機。
 
-*** 按一下*設定*、然後選取*原則*以檢視預設原則。檢閱預先設定的原則、如果您想要編輯這些原則以符合您的需求、或是建立新的原則。
+** 按一下*設定*、然後選取*原則*以檢視預設原則。檢閱預先定義的原則、您可以編輯這些原則以符合您的需求、或建立新的原則。
 
 
 
 
 
 
+== 手動安裝外掛程式、並使用手動選項從 UI 新增主機
 
-
-== 手動部署外掛程式、並使用手動選項從UI新增主機
-
-如果未在Oracle資料庫主機上啟用SSH金鑰型驗證、您應該執行下列手動步驟來部署外掛程式、然後使用手動選項從UI新增主機。
+如果未在 Oracle 資料庫主機上啟用 SSH 金鑰型驗證、您應該執行下列手動步驟來安裝外掛程式、然後使用手動選項從 UI 新增主機。
 
 *步驟*
 
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
+. 按一下「*探索應用程式*」。
+. 選取* Cloud Native *、然後按一下* Next*。
++
+我們建立了一個具有「_SURFSystem_ SnapCenter 」角色的服務帳戶、以針對此帳戶中的所有使用者執行排程的資料保護作業。
+
++
+** 按一下*帳戶*>*管理帳戶*>*成員*以檢視服務帳戶。
++
+
+NOTE: 服務帳戶（ <accountid> ）用於執行排程的備份作業。切勿刪除服務帳戶。
+
+
+
+. 選擇 Oracle 作為應用程式類型。
+. 在 * 主機詳細資料 * 頁面中、執行下列步驟：
++
+.. 選擇*手動*。
+.. 指定安裝外掛程式之主機的 FQDN 或 IP 位址。
++
+請確定連接器可以使用FQDN或IP位址與資料庫主機通訊。
+
+.. 指定外掛程式連接埠。
++
+預設連接埠為8145。
+
+.. 指定 Sudo 非 root （ Sudo ）使用者、使用該使用者將外掛程式套件複製到主機。
+.. 選取連接器。
+.. 選取核取方塊以確認主機上已安裝外掛程式。
+.. 單擊 * 下一步 * 。
+
+
+. 在 * 組態 * 頁面中、執行下列步驟：
++
+.. 將文字複製到、為 SnapCenter 使用者設定 Sudo 存取 `/etc/sudoers.d/snapcenter` 檔案：
+.. 選取核取方塊、然後按一下 * 下一步 * 。
+
+
 . 登入Connector VM。
 . 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
-. 取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」
-. 取得下載外掛程式的二進位路徑。「Udo ls <base_mount_path>$(sudo dod泊 塢視窗ps | grep -po" cloudmanager_SCs_clou:.*？"| sed -e 's/*$/'| cut -F2 -d":")/sc-Linux主機外掛程式/snapcenter_Linux主機外掛程式_scsscs.bin"
-. 使用scp或其他替代方法、將_snapcenter_Linux主機_plugin_scs.bin_複製到每個Oracle資料庫主機。
 +
-_snapcenter_Linux主機外掛程式_SCS.bin_應複製到SnapCenter 可由該位使用者存取的位置。
+外掛程式二進位檔位於： _CD /var/lib/v泊 塢視窗 /volides/service-manager-2_cloudmanager_SCS_cloue_volate/_data/$（ Sudo 泊塢視窗 ps|grep -po" cloudmanager_SCS_clouy..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
 
-. 使用SnapCenter 支援程式碼的使用者帳戶登入Oracle資料庫主機、然後執行下列命令來啟用二進位檔的執行權限。
+. 使用 <non root user (sudo)> scp 或其他替代方法、將 _snapcenter_linux_host_plugin_SCS.bin_ 從上述路徑複製到每個 Oracle 資料庫主機的 __home/oracle/.sc_netapp_ 路徑。
+. 使用非 root （ Sudo ）帳戶登入 Oracle 資料庫主機。
+. 將目錄變更為 //home/NetApp/.SC_NetApp/_ <non root user> 、然後執行下列命令以啟用二進位檔案的執行權限。
 `chmod +x snapcenter_linux_host_plugin_scs.bin`
-. 將Oracle外掛程式部署為Sudo SnapCenter Sudo Sudo使用者。
-`./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<snapcenter-user>`
+. 以 Sudo SnapCenter 使用者身分安裝 Oracle 外掛程式。
+`./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root>`
 . 從連接器VM的_<base_mount_path>/用戶端/憑證/_路徑、複製_imple.p12_到外掛主機的_/var/opt/snapcenter/spl/etc/_。
 . 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入憑證。「keytool-v -importkeystore -srckeystore CERT.p12 -srcstoretype pkcs12 -destkeystore keyKeystore .jks -deststoretype JKS -rcsstorepass SnapCenter sore-ascalias SnapCenter agentcert -noprompt」
 . 重新啟動SPL：「系統重新啟動spl」
 . 從Connector執行下列命令、驗證外掛程式是否可從Connector存取。
-`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert /config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
-. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
-. 按一下「探索應用程式」。
-. 選取* Cloud Native *、然後按一下* Next*。
+`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/PluginService/Version --cert /config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
+. 檢閱詳細資料、然後按一下 * 「探索應用程式」 * 。
 +
-我們建立了一個具有「_SURFSystem_ SnapCenter 」角色的服務帳戶、以針對此帳戶中的所有使用者執行排程的資料保護作業。
-
-+
-** 按一下*帳戶*>*管理帳戶*>*成員*以檢視服務帳戶。
-+
-
-NOTE: 服務帳戶（_SnapCenter-account-<accounttid>_）用於執行排程的備份作業。切勿刪除服務帳戶。
-
-
-
-. 在「Add Host（新增主機）」頁面中、執行下列步驟：
-+
-.. 選擇*手動*。
-.. 指定部署外掛程式之主機的FQDN或IP位址。
-+
-請確定連接器可以使用FQDN或IP位址與資料庫主機通訊。
-
-.. 指定外掛程式連接埠。
-+
-預設連接埠為8145。
-
-.. 選取連接器。
-.. 選取核取方塊、確認外掛程式已安裝在主機上
-.. 按一下「*探索應用程式*」。
-+
-*** 顯示主機上的所有資料庫。如果已停用資料庫的OS驗證、您應該按一下「*設定*」來設定資料庫驗證。如需詳細資訊、請參閱 <<設定Oracle資料庫認證>>。
-*** 按一下*設定*並選取*主機*以檢視所有主機。按一下「*移除*」移除資料庫主機。
+** 顯示主機上的所有資料庫。如果資料庫的作業系統驗證已停用、請按一下 * 組態 * 來啟用資料庫驗證。如需詳細資訊、請參閱 <<設定Oracle資料庫認證>>。
+** 按一下*設定*並選取*主機*以檢視所有主機。
 +
 
 NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定主機名稱時、會顯示所有主機。
 
-*** 按一下*設定*、然後選取*原則*以檢視預設原則。檢閱預先設定的原則、如果您想要編輯這些原則以符合您的需求、或是建立新的原則。
-
+** 按一下*設定*、然後選取*原則*以檢視預設原則。檢閱預先定義的原則、您可以編輯這些原則以符合您的需求、或建立新的原則。
++
+瀏覽至 BlueXP UI 。
 
 
 
@@ -252,11 +273,11 @@ NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定�
 
 == 設定Oracle資料庫認證
 
-您應該設定用於在Oracle資料庫上執行資料保護作業的認證資料。
+您應該設定資料庫認證、以用於在 Oracle 資料庫上執行資料保護作業。
 
 *步驟*
 
-. 如果已停用資料庫的OS驗證、您應該按一下「*設定*」來設定資料庫驗證。
+. 如果資料庫的作業系統驗證已停用、請按一下 * 組態 * 來修改資料庫驗證。
 . 指定使用者名稱、密碼及連接埠詳細資料。
 +
 如果資料庫位於ASM上、您也應該設定ASM設定。
@@ -265,4 +286,38 @@ NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定�
 Oracle使用者應該擁有Sysdba權限、而ASM使用者應該擁有Sysasm權限。
 
 . 按一下「*設定*」。
+
+
+
+
+== 升級 SnapCenter Plug-in for Oracle Database
+
+您應該升級 SnapCenter Plug-in for Oracle 、以存取最新的新功能和增強功能。您可以從 BlueXP UI 或使用命令列進行升級。
+
+*開始之前*
+
+* 請確定主機上沒有執行任何作業。
+
+
+*步驟*
+
+. 按一下 * 備份與恢復 * > * 應用程式 * > * 主機 * 。
+. 檢查「整體狀態」欄位、確認任何主機是否有可用的外掛程式升級。
+. 從 UI 或使用命令列升級外掛程式。
++
+|===
+| 使用 UI 升級 | 使用命令列升級 
+
+
+ a| 
+.. 按一下 image:icon-action.png["圖示以選取動作"] 對應於主機、然後按一下 * 升級外掛程式 * 。
+.. 選取核取方塊、然後按一下 * 升級 * 。
+
+ a| 
+.. 登入 Connector VM 。
+.. 執行下列指令碼。
+`sudo bash /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port> --upgrade`
+
+
+|===
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-cloud-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Volumes ONTAP, Cloud Manager, BlueXP 
+keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Volumes ONTAP, Cloud Manager, BlueXP, cloud backup 
 summary: BlueXP提供高效、應用程式一致、原則型的備份、以及位於Amazon FSX for NetApp ONTAP 的Oracle®資料庫Cloud Volumes ONTAP 還原功能。 
 ---
 = 保護雲端原生應用程式資料
@@ -14,9 +14,9 @@ summary: BlueXP提供高效、應用程式一致、原則型的備份、以及�
 
 
 [role="lead"]
-Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage上執行的應用程式提供資料保護功能。在BlueXP（前身為Cloud Manager）中啟用的雲端應用程式備份、可為下列應用程式提供高效率、應用程式一致且以原則為基礎的保護：
+BlueXP 應用程式備份與還原是一項 SaaS 型服務、可為在 NetApp Cloud Storage 上執行的應用程式提供應用程式一致的資料保護功能。BlueXP 應用程式備份與還原可為下列應用程式提供高效率、應用程式一致且以原則為基礎的保護：
 
-* Oracle資料庫位於Amazon FSX上、適用於NetApp ONTAP 的功能與Cloud Volumes ONTAP 功能
+* 適用於 NetApp ONTAP 、 Cloud Volumes ONTAP 和 Azure NetApp Files 的 Amazon FSX 上的 Oracle 資料庫
 * SAP HANA系統駐留Azure NetApp Files 在
 
 
@@ -24,17 +24,14 @@ Cloud Backup for Applications是一項SaaS型服務、可為NetApp Cloud Storage
 
 == 架構
 
-Cloud Backup for Applications架構包含下列元件。
+Cloud Backup 架構包括下列元件。
 
-* Cloud Backup for Applications是一組由NetApp代管的SaaS服務、以BlueXP SaaS平台為基礎。
+* Cloud Backup 是一套由 NetApp 代管的 SaaS 服務、以 BlueXP SaaS 平台為基礎。
 +
 它能協調NetApp雲端儲存設備上的應用程式資料保護工作流程。
 
-* 雲端備份應用程式UI可從BlueXP UI存取。
-+
-Cloud Backup for Applications UI為應用程式提供資料保護功能。
-
-* BlueXP Connector是在使用者雲端網路中執行的元件、可與儲存系統和應用程式特定外掛程式互動。
+* Cloud Backup UI 提供應用程式的資料保護功能、可從 BlueXP UI 存取。
+* BlueXP Connector 是一個元件、可在雲端網路中執行、並與儲存系統和應用程式特定外掛程式互動。
 * 應用程式專屬外掛程式是在每個應用程式主機上執行的元件、可在執行資料保護作業時與主機上執行的資料庫互動。
 
 
@@ -42,7 +39,7 @@ Cloud Backup for Applications UI為應用程式提供資料保護功能。
 
 image:diagram_nativecloud_backup_app.png["顯示每個元件和連線需要如何準備的圖表。"]
 
-對於任何使用者啟動的要求、Cloud Backup for Applications UI會與驗證要求後處理相同程序的BlueXP SaaS進行通訊。如果要求執行備份、還原或複製等工作流程、SaaS服務會啟動工作流程、並在必要時將通話轉接至BlueXP Connector。然後Connector會與儲存系統和應用程式專屬的外掛程式通訊、以執行工作流程工作。
+對於任何使用者啟動的要求、 Cloud Backup UI 會與 BlueXP SaaS 進行通訊、而 BlueXP SaaS 在驗證要求時會以相同的方式處理。如果要求執行備份、還原或複製等工作流程、SaaS服務會啟動工作流程、並在必要時將通話轉接至BlueXP Connector。然後Connector會與儲存系統和應用程式專屬的外掛程式通訊、以執行工作流程工作。
 
 連接器可以部署在與應用程式相同的VPC或vnet中、也可以部署在不同的VPC或vnet中。如果連接器和應用程式位於不同的網路上、您應該在兩者之間建立網路連線。
 
@@ -50,37 +47,11 @@ image:diagram_nativecloud_backup_app.png["顯示每個元件和連線需要如�
 NOTE: 單一BlueXP Connector可與多個儲存系統和多個應用程式外掛程式進行通訊。只要連接器與應用程式主機之間有連線、您就需要一個連接器來管理應用程式。
 
 
-IMPORTANT: 雲端備份應用程式SaaS基礎架構可靈活因應區域內的可用度區域故障。它支援區域性故障、將故障切換至新的區域、而此容錯移轉作業需要約2小時的停機時間。
+IMPORTANT: Cloud Backup SaaS 基礎架構可因應某個區域內的可用性區域故障而恢復。它支援區域性故障、將故障切換至新的區域、而此容錯移轉作業需要約2小時的停機時間。
 
 
 
 == 保護Oracle資料庫
-
-
-
-=== 支援的組態
-
-* 作業系統：
-+
-** RHEL 7.5或更新版本及8.x
-** ol 7.5或更新版本及8.x
-
-
-* 儲存系統：
-+
-** Amazon FSX for ONTAP Sf
-** Cloud Volumes ONTAP
-
-
-* 儲存配置：
-+
-** NFS v3和v4.1（包括DNFS）
-** 使用ASM的iSCSI（ASMfd、ASMLib和ASMUDev）
-
-
-* 資料庫配置：Oracle Standard和Oracle Enterprise Standalone（舊版和多租戶CDB和pdb）
-* 資料庫版本：12cR2、18c、19c及21c
-
 
 
 
@@ -91,21 +62,24 @@ IMPORTANT: 雲端備份應用程式SaaS基礎架構可靈活因應區域內的�
 您可以手動、使用指令碼或自動部署外掛程式。
 
 * 自動探索Oracle資料庫
-* 備份Oracle資料庫
+* 備份位於 Amazon FSX for NetApp ONTAP 、 Cloud Volumes ONTAP 和 Azure NetApp Files 上的 Oracle 資料庫
 +
 ** 完整（資料+控制+歸檔記錄檔）備份
 ** 隨需備份
 ** 根據系統定義或自訂原則排程備份
 +
-您可以在原則中指定不同的排程頻率、例如每小時、每日、每週和每月。
+您可以在原則中指定不同的排程頻率、例如每小時、每日、每週和每月。您也可以指定在成功備份後執行的後置指令碼、將快照複製到次要儲存設備。
 
 
 
 * 根據原則保留備份
-* 從指定的備份還原完整的Oracle資料庫（資料檔案+控制檔）
-* 僅還原資料檔案、並僅從指定的備份控制檔案
-* 使用恢復Oracle資料庫、直到SCN、直到時間、所有可用的記錄、而且沒有恢復選項
-* 複製來源主機或替代目標主機上的Oracle資料庫
+* 還原位於 Amazon FSX for NetApp ONTAP 、 Cloud Volumes ONTAP 和 Azure NetApp Files 上的 Oracle 資料庫
++
+** 從指定的備份還原完整的Oracle資料庫（資料檔案+控制檔）
+** 使用恢復Oracle資料庫、直到SCN、直到時間、所有可用的記錄、而且沒有恢復選項
+
+
+* 將位於 Amazon FSX for NetApp ONTAP 和 Cloud Volumes ONTAP 上的 Oracle 資料庫複製到來源或替代目標主機
 +
 ** 基本一鍵複製
 ** 使用自訂複製規格檔案進行進階複製
@@ -117,6 +91,7 @@ IMPORTANT: 雲端備份應用程式SaaS基礎架構可靈活因應區域內的�
 * 監控備份、還原、複製及其他工作
 * 在儀表板上顯示保護摘要
 * 透過電子郵件傳送警示
+* 升級主機外掛程式
 
 
 
@@ -126,35 +101,13 @@ IMPORTANT: 雲端備份應用程式SaaS基礎架構可靈活因應區域內的�
 * 不支援Oracle 11g
 * 不支援備份的掛載、目錄及驗證作業
 * 不支援RAC和Data Guard上的Oracle
-* 針對功能性HA、只會使用其中一個網路介面IP Cloud Volumes ONTAP 。如果IP連線中斷、或您無法存取IP、作業就會失敗。
-* 適用於NetApp ONTAP 的Amazon FSX for NetApp的網路介面IP位址Cloud Volumes ONTAP 在BlueXP帳戶和地區中必須是唯一的。
+* 針對功能性HA、只會使用其中一個網路介面IP Cloud Volumes ONTAP 。如果 IP 連線中斷、或無法存取 IP 、資料保護作業就會失敗。
+* Amazon FSX for NetApp ONTAP 或 Cloud Volumes ONTAP 的網路介面 IP 位址在 BlueXP 帳戶和區域中必須是唯一的。
 
 
 
 
 == 保護SAP HANA資料庫
-
-
-
-=== 支援的組態
-
-* 作業系統：
-+
-** RHEL 7.5或更新版本、已通過SAP HANA認證的8.x平台
-** SLES 12 SP5或更新版本、以及15個通過SAP HANA認證的SPx平台
-
-
-* 儲存系統Azure NetApp Files
-* 儲存配置：對於資料與記錄、Azure僅支援NFSv4.1。
-* 資料庫配置：
-+
-** 單一Container版本1.0SPS12
-** SAP HANA多租戶資料庫容器（MDC）2.0SPS4、2.0SPS5、2.0SPS6（單租戶或多租戶）
-** SAP HANA單一主機系統、SAP HANA多主機系統（無待命主機）、HANA系統複寫
-
-
-* 資料庫主機上的SAP HANA外掛程式
-
 
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-mount-app-backup.html 
 keywords: mount, mount application backups, Oracle database, SAP HANA database 
-summary: 您可以將SAP HANA和Oracle備份掛載到指定的資料庫 
+summary: 您可以將 SAP HANA 和 Oracle 備份掛載到指定的主機。 
 ---
 = 掛載應用程式備份
 :hardbreaks:
@@ -14,11 +14,9 @@ summary: 您可以將SAP HANA和Oracle備份掛載到指定的資料庫
 
 
 [role="lead"]
-不支援將Oracle和HANA備份還原至替代主機。SnapCenter因此、Cloud Backup for Applications可讓您將Oracle和HANA備份掛載到指定的主機。
+BlueXP 應用程式備份與還原可讓您將 Oracle 與 HANA 備份掛載到替代主機。
 
-*您需要的是什麼*
-
-如果您想要掛載已從次要儲存設備移至物件存放區的備份、則應新增主要工作環境詳細資料、並設定IP空間。如需詳細資訊、請參閱 link:task-manage-app-backups.html#set-ip-space-of-the-primary-working-environment["設定主要工作環境的IP空間"]。
+不支援將Oracle和HANA備份還原至替代主機。SnapCenter因此、您可以選擇掛載選項、將 Oracle 和 HANA 備份掛載到替代主機。
 
 *步驟*
 
@@ -29,17 +27,19 @@ summary: 您可以將SAP HANA和Oracle備份掛載到指定的資料庫
 +
 .. 請指定下列其中一項：
 +
-... 對於NAS環境、請指定要匯出從物件存放區還原之替代磁碟區的主機FQDN或IP位址。
-... 對於SAN環境、請指定從物件存放區還原之替代磁碟區LUN的主機啟動器、以進行對應。
+... 對於 NAS 環境、請指定要將從物件存放區還原的磁碟區匯出至的主機的 FQDN 或 IP 位址。
+... 對於 SAN 環境、請指定主機的啟動器、將從物件存放區還原的磁碟區 LUN 對應到該主機的啟動器。
 
 
-.. 指定要新增至替代Volume名稱的字尾。
+.. 指定要新增至磁碟區名稱的尾碼。
 .. 如果快照位於歸檔儲存設備中、請指定從歸檔儲存設備擷取資料的優先順序。
 .. 按一下*掛載*。
 
 
 
 
-此作業只會掛載指定主機上的儲存設備。您應該手動掛載檔案系統並開啟資料庫。在使用替代Volume之後、儲存管理員可以從ONTAP 叢集刪除該Volume。
+此作業只會掛載指定主機上的儲存設備。您應該手動掛載檔案系統並開啟資料庫。使用磁碟區之後、儲存管理員可以從 ONTAP 叢集刪除磁碟區。
 
-如需如何啟動SAP HANA資料庫的詳細資訊、請參閱： https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：利用SnapCenter 下列功能自動化SAP HANA系統複製與複製作業"^]。
+* 如需有關如何啟動 Oracle 資料庫的資訊、請參閱： https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_bring_up_Oracle_Database_in_another_NFS_host_after_mounting_storage_from_backup_in_Cloud_Backup_for_Applications["知識庫文章"]。
+* 如需如何啟動SAP HANA資料庫的詳細資訊、請參閱： https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html["TR-4667 ：使用 SnapCenter 的 SAP 系統複製工作流程總覽"^] 和 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html["TR-4667 ：使用 SnapCenter 的 SAP 系統複製工作流程總覽"^]。
+

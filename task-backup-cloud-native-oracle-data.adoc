@@ -14,11 +14,11 @@ summary: 建立Oracle資料庫的排程或隨需備份。
 
 
 [role="lead"]
-您應該指派預先設定的原則或您建立的原則、然後進行備份。
+您可以指派預先定義的原則或建立的原則來建立備份。
 
 
 
-== 建立保護Oracle資料庫的原則
+== 建立原則以保護 Oracle 資料庫
 
 如果您不想編輯預先安裝的原則、可以建立原則。
 
@@ -29,6 +29,62 @@ summary: 建立Oracle資料庫的排程或隨需備份。
 . 指定原則名稱。
 . （選用）編輯備份名稱的格式。
 . 指定排程和保留詳細資料。
+. （可選）輸入在成功備份後將執行的腳本後路徑和超時值，以便將快照複製到次儲存設備。
++
+您也可以選擇性地指定引數。
+
++
+您應該將後置指令碼保留在路徑 /var/opt/snapcenter/spl/scripts_ 中。
+
++
+支援的環境變數包括：
+
++
+|===
+| 環境變數 | 說明 
+
+
+ a| 
+SC_Oracle_SID
+ a| 
+指定 Oracle 資料庫的 SID 。
+
+
+
+ a| 
+sc_host
+ a| 
+指定資料庫的主機名稱
+
+
+
+ a| 
+sc_backup_name
+ a| 
+指定備份的名稱。資料備份名稱和記錄備份名稱會使用分隔符號串連起來。
+
+
+
+ a| 
+sc_backup_policy_name
+ a| 
+指定用於建立備份的原則名稱。
+
+
+
+ a| 
+sc_primer_data_volume 完整路徑
+ a| 
+指定資料磁碟區路徑、並以「、」作為分隔符號串連。對於 ANF Volume 、資訊會使用「 / 」 / ｛ anfaccount ｝ / ｛ subscription_id ｝ / ｛ resource_group ｝ / ｛ capACT_pool ｝ / ｛ Volume Name ｝ _ 串連
+
+
+
+ a| 
+SC_PRIMARCHIVELOGS_VOLUE_Full_PATH
+ a| 
+指定使用 "," 作為分隔符號串連的歸檔記錄磁碟區路徑。對於 ANF Volume 、使用「 / 」 / ｛ anfaccount ｝ / ｛ subscription_id ｝ / ｛ resource_group ｝ / ｛ capACT_pool ｝ / ｛ Volume Name ｝ _ 串連的資訊
+
+|===
 . 按一下「 * 建立 * 」。
 
 
@@ -36,10 +92,10 @@ summary: 建立Oracle資料庫的排程或隨需備份。
 
 == 建立Oracle資料庫的備份
 
-您可以指派預先整合的原則、或是建立原則、然後將其指派給資料庫。一旦指派原則、便會依照原則中定義的排程建立備份。
+您可以指派預先定義的原則或建立原則、然後將其指派給資料庫。一旦指派原則、便會依照原則中定義的排程建立備份。
 
 
-NOTE: 對於Oracle、在建立ASM磁碟群組時、請確定磁碟群組之間沒有通用磁碟區。每個磁碟群組都需要有專屬的磁碟區。
+NOTE: 對於Oracle、在建立ASM磁碟群組時、請確定磁碟群組之間沒有通用磁碟區。每個磁碟群組都應該有專用磁碟區。
 
 *步驟*
 
@@ -53,7 +109,7 @@ NOTE: 對於Oracle、在建立ASM磁碟群組時、請確定磁碟群組之間�
 
 +
 
-NOTE: 服務帳戶（_SnapCenter-account-<account_id>_）用於執行排程的備份作業。
+NOTE: 服務帳戶（ <account_id> ）用於執行排程的備份作業。
 
 
 
@@ -69,21 +125,15 @@ NOTE: 服務帳戶（_SnapCenter-account-<account_id>_）用於執行排程的�
 . 如果有多個原則指派給應用程式、請選取原則、保留值、然後按一下*建立備份*。
 
 
-*瞭解更多資訊*
-
-還原大型資料庫（250 GB以上）之後、如果您在同一個資料庫上執行完整的線上備份、作業可能會失敗、並顯示下列錯誤：
-
-「失敗、狀態代碼為500、錯誤｛\「錯誤」：｛\「代碼」：\「app_inters_error\」、「訊息」：\「無法建立快照」。原因：由於快照備份的複本、因此不允許執行快照作業。稍後再試一次
-
-如需如何修正此問題的相關資訊、請參閱： https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Snapshot_operation_not_allowed_due_to_clones_backed_by_snapshots["由於複本以快照做為備份、因此不允許執行Snapshot作業"]。
-
 
 
 == 限制
 
-* 不支援線上資料或僅記錄備份
-* 不支援離線備份
-* 不支援備份位於循環掛載點上的Oracle資料庫
 * 不支援位於多個ASM磁碟群組中、且與FSX磁碟區重疊的Oracle資料庫之一致性群組快照
 * 如果您的Oracle資料庫是在ASM上設定、請確認您的SVM名稱在FSX系統中是唯一的。如果您在FSX系統中擁有相同的SVM名稱、則不支援備份位於這些SVM上的Oracle資料庫。
+* 還原大型資料庫（250 GB以上）之後、如果您在同一個資料庫上執行完整的線上備份、作業可能會失敗、並顯示下列錯誤：
+`failed with status code 500, error {\"error\":{\"code\":\"app_internal_error\",\"message\":\"Failed to create snapshot. Reason: Snapshot operation not allowed due to clones backed by snapshots. Try again after sometime.`
++
+如需如何修正此問題的相關資訊、請參閱： https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Snapshot_operation_not_allowed_due_to_clones_backed_by_snapshots["由於複本以快照做為備份、因此不允許執行Snapshot作業"]。
+
 

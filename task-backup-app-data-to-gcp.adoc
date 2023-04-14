@@ -14,12 +14,7 @@ summary: 請完成幾個步驟、將應用程式資料從ONTAP 功能完善的�
 
 
 [role="lead"]
-您可以ONTAP 將Cloud Backup for Applications與Cloud Manager和內部部署SnapCenter 的內部部署的整合、將應用程式資料從支援的對象備份到Google Cloud Platform。
-
-您可以使用單一原則、將一或多個應用程式同時保護到雲端。
-
-
-IMPORTANT: 如果您使用的是BlueXP GUI、一次只能保護一個應用程式。不過、如果您使用REST API、則可以同時保護多個應用程式。
+完成幾個步驟、將應用程式資料從 ONTAP 備份到 Google Cloud Platform 。
 
 *步驟*
 
@@ -28,16 +23,16 @@ IMPORTANT: 如果您使用的是BlueXP GUI、一次只能保護一個應用程�
 . 在「指派原則」頁面中、選取原則、然後按「*下一步*」。
 . 新增工作環境。
 +
-設定ONTAP 執行應用程式的SVM所在的叢集。在新增其中一個應用程式的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他應用程式。
+設定您要 BlueXP 探索的叢集管理 LIF 。在新增其中一個應用程式的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他應用程式。
 
 +
 .. 選取SVM、然後按一下*新增工作環境*。
 .. 在「新增工作環境」精靈中：
 +
-... 指定ONTAP 叢集的IP位址。
-... 指定管理認證資料。
+... 指定叢集管理 LIF 的 IP 位址。
+... 指定ONTAP 叢集使用者的認證資料。
 +
-Cloud Backup for Applications僅支援叢集管理。
+BlueXP 應用程式備份與還原僅支援叢集管理。
 
 
 
@@ -46,9 +41,9 @@ Cloud Backup for Applications僅支援叢集管理。
 
 . 選擇* Google Cloud Platform *作為雲端供應商。
 +
-.. 選取您要在其中建立Google Cloud Storage儲存庫以進行備份的Google Cloud Project。
-.. 在Google Cloud存取金鑰欄位中、指定金鑰。
-.. 在Google Cloud Secret Key（Google Cloud機密金鑰）欄位中、指定密碼。
+.. 選取您要在其中建立 Google Cloud Storage 儲存庫以進行備份的 Google Cloud Project 。
+.. 在 Google Cloud Access Key 欄位中、指定資料加密的金鑰。
+.. 在 Google Cloud Secret Key 欄位中、指定資料加密的密碼。
 .. 選取您要建立備份的區域。
 .. 指定IP空間。
 
