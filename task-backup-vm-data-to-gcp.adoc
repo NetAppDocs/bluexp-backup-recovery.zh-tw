@@ -17,7 +17,7 @@ summary: 將資料存放區從內部部署ONTAP 的不支援功能備份到Googl
 您可以將 SnapCenter Plug-in for VMware vSphere 主機與 BlueXP 整合、將一或多個資料存放區備份至 Google Cloud Platform 。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
 
 .開始之前
-確保您已滿足所有需求 link:concept-protect-vm-data.html#Requirements["需求"] 將資料存放區備份到雲端之前。
+確保您已滿足所有需求 link:concept-protect-vm-data.html["需求"] 將資料存放區備份到雲端之前。
 
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *。

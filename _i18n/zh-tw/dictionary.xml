@@ -1178,12 +1178,10 @@
   <block id="529795f55723488071425500df0ff5d6" category="summary">您可以將虛擬機器從雲端還原至內部部署SnapCenter 的內部部署。</block>
   <block id="70861b61c8a43f84ddd14a22316ee5af" category="doc">從雲端還原虛擬機器</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link-macro">需求</block>
-  <block id="1344fa03cfc0e1e9c9a94eebf3e3c1a9" category="paragraph">確保您已滿足所有需求 <block ref="a5bf58fdc6833048fad2d714a6e89f9c" category="inline-link-macro-rx"></block> 從雲端還原虛擬機器之前。</block>
   <block id="ceb4a235a226f19c172c9cf7c46d00dc" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 與您要還原的資料存放區相對應、然後按一下「*檢視詳細資料*」。</block>
   <block id="a03a09176193c264d8dcbdcb8f2f9043" category="list-text">按一下您要還原的備份對應的*還原*。</block>
   <block id="0291e73f7c30c841795ff165a80bdc0e" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 與您要還原的虛擬機器相對應、然後按一下*還原*。</block>
   <block id="42387e1cb260fd1fb8624acde3767841" category="paragraph">VM會還原至備份所在的相同位置。</block>
-  <block id="9a0c42190771559c2a8da5fac845d24d" category="admonition">確保您已滿足所有需求 <block ref="a5bf58fdc6833048fad2d714a6e89f9c" category="inline-link-macro-rx"></block> 將資料存放區備份到雲端之前。</block>
   <block id="8f2653c5938080ffdd57904f850bc430" category="section-title">註冊SnapCenter VMware vSphere的VMware外掛程式</block>
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">按一下「*登錄SnapCenter VMware vSpher*的更新外掛程式」。</block>
   <block id="4eb88f79049bc78204f8659b66b7b655" category="list-text">在使用者名稱和密碼欄位中、指定具有系統管理員角色的使用者認證。</block>
@@ -3739,4 +3737,6 @@
   <block id="a46033978f070978d19c56a083f9252f" category="sidebar">備份及還原內部部署應用程式資料</block>
   <block id="084829803f52f86aee9d787cb2c3581d" category="sidebar">備份及還原雲端原生應用程式資料</block>
   <block id="691b857c2ea9a46d47730b371ae5ac4d" category="sidebar">將應用程式資料備份到雲端</block>
+  <block id="5019db204cdfcff4225102866ab1c6bb" category="paragraph">確保您已滿足所有需求 <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> 將資料存放區備份到雲端之前。</block>
+  <block id="23b39cc9d92424089210492c9ae6a9dd" category="paragraph">確保您已滿足所有需求 <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> 從雲端還原虛擬機器之前。</block>
 </blocks>

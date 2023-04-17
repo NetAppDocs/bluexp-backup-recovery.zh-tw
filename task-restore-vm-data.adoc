@@ -20,7 +20,7 @@ summary: 您可以將虛擬機器從雲端還原至內部部署SnapCenter 的內
 NOTE: 您無法還原跨資料存放區的虛擬機器。
 
 .開始之前
-確保您已滿足所有需求 link:concept-protect-vm-data.html#Requirements["需求"] 從雲端還原虛擬機器之前。
+確保您已滿足所有需求 link:concept-protect-vm-data.html["需求"] 從雲端還原虛擬機器之前。
 
 .步驟
 . 在 BlueXP UI 中、按一下 * 保護 * > * 備份與還原 * > * 虛擬機器 * > * SnapCenter Plug-in for VMware vSphere * 、然後選取適用於 VMware vSphere 主機的 SnapCenter 外掛程式。

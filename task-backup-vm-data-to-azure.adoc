@@ -19,7 +19,7 @@ summary: 將資料存放區從內部部署ONTAP 的地方還原備份到Azure。
 如果資料存放區與歸檔原則相關聯、則會提供一個選項來選取歸檔層。支援的歸檔層為Azure歸檔Blob儲存設備。
 
 .開始之前
-確保您已滿足所有需求 link:concept-protect-vm-data.html#Requirements["需求"] 將資料存放區備份到雲端之前。
+確保您已滿足所有需求 link:concept-protect-vm-data.html["需求"] 將資料存放區備份到雲端之前。
 
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *。
