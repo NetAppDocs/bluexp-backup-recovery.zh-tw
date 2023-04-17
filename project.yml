@@ -270,9 +270,10 @@ homepage:
     - title: 將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方
       url: "/task-backup-app-data-to-storagegrid.html"
     - title: 備份雲端原生Oracle資料庫
-      url: task-backup-cloud-native-oracle-data.html
+      url: "/task-backup-cloud-native-oracle-data.html"
     - title: 備份雲端原生SAP HANA資料庫
-      url: task-backup-cloud-native-sap-hana-data.html
+      flavor: azure
+      url: "/task-backup-cloud-native-sap-hana-data.html"
   - title: 備份及還原虛擬機器資料
     links:
     - title: 將資料存放區備份至Amazon Web Services
@@ -287,7 +288,7 @@ homepage:
     - title: 將資料存放區備份StorageGRID 至
       url: "/task-backup-vm-data-to-storagegrid.html"
     - title: 從雲端還原虛擬機器
-      url: task-restore-vm-data.html
+      url: "/task-restore-vm-data.html"
   - title: 還原ONTAP 來自還原備份檔案的資料
     links:
     - title: 還原ONTAP 功能

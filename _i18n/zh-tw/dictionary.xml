@@ -560,7 +560,6 @@
   <block id="0749ae9ea79ee87dd8c530f67a9065fe" category="section-title">全新的搜尋與還原功能、可在ONTAP 所有的還原檔案中搜尋磁碟區或檔案</block>
   <block id="abad9ff4f9967065f50634a2a3606dd0" category="inline-link">瞭解如何使用搜尋&amp;amp;還原</block>
   <block id="6aa300e24ddf3ee5a99bbb1cf5bb4a72" category="inline-link">如需詳細資料、請前往此處</block>
-  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link">請按這裡</block>
   <block id="f6c96f9db00475dfd6c371ca50af3d5b" category="doc">將Cloud Volumes ONTAP 不支援的資料備份到Azure Blob儲存設備</block>
   <block id="fc054407571c2d4dfcfbb5057d24c238" category="list-text">您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。</block>
   <block id="23dbb22134961553d5b555f78c0d3634" category="list-text">新系統：工作環境精靈預設會啟用雲端備份。請務必保持啟用選項。</block>
@@ -1613,7 +1612,6 @@
   <block id="d435e298ecd3e81d33c28c2ac5aaa9cf" category="list-text">連線至cloudmanager_SCs_cloud、並將_config.yml_中的* enableCACert*修改為* true*。「Udo Docker執行-t cloudmanager_SCs_clCloud sed -I 's/enableCACert:假/enableCACert:真/g'/opp/netapp/cloudmanager-SCS-cloue/config/config.yml」</block>
   <block id="beed6a355a0f3c2fec57e272c4df9a9b" category="list-text">重新啟動cloudmanager_SCs_cloud Container。「Udo Docker重新啟動cloudmanager_SCs_cloud'</block>
   <block id="56221c5b2b531b839a3cd5c7e9c9cd9f" category="section-title">存取REST API</block>
-  <block id="e9d91293c5b15aa3d5a1944f0f3de884" category="paragraph">其餘的API可用來保護應用程式至雲端<block ref="34be8f96bca8ea568f4cd28ef35bb6b3" category="inline-link-rx"></block>。</block>
   <block id="4512b12288e7290cb279f814b15ba5dc" category="inline-link">使用同盟驗證建立使用者權杖</block>
   <block id="8753ca0304fc4dd31beb83f4a57f7b41" category="paragraph">您應該取得具有聯盟驗證的使用者權杖、以存取REST API。如需取得使用者權杖的資訊、請參閱<block ref="0eb587a835d0db317e25e938408a4ed2" category="inline-link-rx"></block>。</block>
   <block id="bea93ac0c50dbd01324ebd42ff666cd8" category="section-title">建立FSX以利ONTAP 執行不工作環境</block>
@@ -2651,7 +2649,6 @@
   <block id="9d1e8db5c5513ba1e380be173bfe943a" category="paragraph">例如、如果來源資料庫上的磁碟區名稱是_sourceVolName_、則複製的磁碟區名稱將是_sourceVolNameSC_Clone_1661420020304608825_。</block>
   <block id="4c39a98f63c172a0f1f516379767640a" category="admonition">_CurrentTimerStampNumber_提供了磁碟區名稱的唯一性。</block>
   <block id="76fbbcab41a218d428077878fdffe387" category="section-title">自動產生的命名配置</block>
-  <block id="0e6fcef1616c5d86cbfd8760ef27fec4" category="paragraph">如果您將複製配置選取為*自動產生*、則掛載點的位置和複製資料庫的磁碟群組名稱會附加一個字尾。*如果您選擇了基本的複製方法、則後置處理的是* Clone SID*。*如果您已選取規格檔案方法、則後置字元將是下載複製規格檔案時所指定的*後置字元*。</block>
   <block id="85ad7e9cd2258729935819b5b8d12c0c" category="paragraph">例如、如果來源資料庫的掛載點是_/NetApp_sourcedb/data_1_、而* Clone SID*或* Suffix*是_HR_、則複製資料庫的掛載點將是_/NetApp_sourcedb/data_1_HR_。</block>
   <block id="ede76157ac7c5bfe761f851611ff031e" category="list-text">控制檔和重作記錄檔的數量與來源相同。</block>
   <block id="950f79de2cdec1225a95d6167045afaf" category="list-text">所有的重作記錄檔和控制檔都會位於其中一個複製的資料掛載點或資料ASM磁碟群組。</block>
@@ -3739,4 +3736,8 @@
   <block id="691b857c2ea9a46d47730b371ae5ac4d" category="sidebar">將應用程式資料備份到雲端</block>
   <block id="5019db204cdfcff4225102866ab1c6bb" category="paragraph">確保您已滿足所有需求 <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> 將資料存放區備份到雲端之前。</block>
   <block id="23b39cc9d92424089210492c9ae6a9dd" category="paragraph">確保您已滿足所有需求 <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> 從雲端還原虛擬機器之前。</block>
+  <block id="05325f804117a5761ceaa9843ca9dcbd" category="paragraph">其餘的 API 可用於保護應用程式至雲端、網址為：<block ref="3b69a934f25b6e0b95aa2e5dfdea3a71" category="inline-link-rx"></block>。</block>
+  <block id="d3f281db7462fac1f93bb8cd8a846973" category="paragraph">如果您將複製配置選取為*自動產生*、則掛載點的位置和複製資料庫的磁碟群組名稱會附加一個字尾。</block>
+  <block id="b473eb967027d6cb105d361800543822" category="list-text">如果您選擇了基本的複製方法、後綴將是 * 複製 SID* 。</block>
+  <block id="7bee2ff1284f314015393080c5e56ecc" category="list-text">如果選擇了規範文件方法，則後綴將是下載克隆規範文件時指定的 *Suffix* 。</block>
 </blocks>
