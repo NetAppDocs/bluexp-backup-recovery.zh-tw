@@ -975,8 +975,6 @@
   <block id="5afde787e060c3a96f34f757eb507404" category="sidebar">Kubernetes叢集至Amazon S3</block>
   <block id="3ef08bbbf058b2bc6a87e3ff1ceecd81" category="sidebar">Kubernetes叢集至Azure Blob</block>
   <block id="d5513ddfa26c41caaba3c021a29dbe45" category="sidebar">Kubernetes叢集至Google Cloud</block>
-  <block id="e2f83fe82d1e819ed299851d4da320ce" category="sidebar">還原ONTAP 功能</block>
-  <block id="09653b9c7955d4792895fbf1fcaa6ad6" category="sidebar">還原Kubernetes磁碟區</block>
   <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">管理ONTAP 還原備份檔案</block>
   <block id="c88c557dd4e62b29bc87fc433d1738c6" category="sidebar">啟用和停用Volume備份</block>
   <block id="56b3614ad370987e8f2f3583eb78c757" category="sidebar">編輯現有的備份原則</block>
@@ -1045,7 +1043,6 @@
   <block id="4cfbdcb9aba741b123b3c46a8341bf59" category="sidebar">保護您的虛擬機器資料</block>
   <block id="b2736084b30c35472d74c3c29a818a95" category="sidebar">管理虛擬機器的保護</block>
   <block id="c2c86860cad5cd95ae9ef9c003e01d57" category="sidebar">還原虛擬機器資料</block>
-  <block id="3eb97a71011fe0dae37080fd785e4db5" category="sidebar">備份及還原虛擬機器資料</block>
   <block id="b418e05c847b656e4a8ac26f2f0cc045" category="inline-link">深入瞭解如何將虛擬機器保護至雲端</block>
   <block id="3a5ea6bb0616fe3f66bd74e5e18fd1b3" category="paragraph"><block ref="95fa49d8f0b9a0affedd5e0d4a52c2d2" category="inline-link-rx"></block>。</block>
   <block id="7c8db0bef9b3c6a1335fe8f0a09bfdef" category="sidebar">備份及還原虛擬機器資料</block>
@@ -1735,8 +1732,6 @@
   <block id="2d96aa84884717fd77e4906d82c73ddc" category="section-title">2022年9月28日</block>
   <block id="d45e0847841b73f9b8082d6a7bc89f24" category="paragraph">必要時、您可以將整個_volume、_fold__或一個或多個_fil__檔案、從備份還原至相同或不同的工作環境。</block>
   <block id="262efb8db11032d91af39217fa610e82" category="paragraph">您可以將磁碟區、資料夾或個別檔案、從ONTAP 還原備份檔還原至下列工作環境：</block>
-  <block id="5a885bd71d1142c7d1b89fcfcf197a41" category="sidebar">還原ONTAP 來自還原備份檔案的資料</block>
-  <block id="ba9a6951ecf97e593c2140f66a8574bf" category="sidebar">從ONTAP 還原磁碟區還原檔案和資料夾</block>
   <block id="855a635321caeb08d8525de5eea56651" category="list-text">若要使用「搜尋與還原」還原資料、某些資源會由您的雲端供應商進行資源配置、而且每個TiB的成本會與搜尋要求所掃描的資料量有關。（瀏覽與還原不需要這些資源。）</block>
   <block id="3b190b83ddc2ee9e610caa6dc209fbaf" category="list-text">*標籤*定義從磁碟區建立（或更新）備份檔案的頻率。您可以選擇下列類型的標籤：</block>
   <block id="42f0dfacb9775e138cb12f277162bec2" category="list-text">您可以選擇其中一個系統定義的原則、以提供3個月、1年或7年的備份與保留。</block>
@@ -3740,4 +3735,13 @@
   <block id="2e5d6ff9bc4d6b4194df020bde3f3dca" category="sidebar">在黑暗的站台中備份 BlueXP 備份與還原資料庫</block>
   <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">BlueXP 備份與還原部落格</block>
   <block id="960dd4200d015a0a12dfd299c1348c9c" category="sidebar">BlueXP 備份與還原使用案例</block>
+  <block id="ceffaf94354645ad26052bbc53604f5d" category="sidebar">將虛擬機器資料備份到雲端</block>
+  <block id="a1c18d7af73fa7e0ef0013130f15b257" category="sidebar">從雲端還原資料</block>
+  <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">還原 ONTAP Volume 資料</block>
+  <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">還原內部部署的 Oracle 應用程式資料</block>
+  <block id="6002846df6663ea571e55d74bd085335" category="sidebar">還原內部部署的 SQL Server 應用程式資料</block>
+  <block id="4bc9a14a4fac8328e801409fa8234e7e" category="sidebar">還原雲端原生 Oracle 應用程式資料</block>
+  <block id="5fd9bba0b0a00c42d3baab299425c076" category="sidebar">還原雲端原生 SAP HANA 應用程式資料</block>
+  <block id="18de97333e5776e0c135dd87c10b965c" category="sidebar">還原虛擬機器資料</block>
+  <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">還原 Kubernetes Volume 資料</block>
 </blocks>

@@ -118,6 +118,8 @@ image:screenshot_datalock_ransomware_settings.png["建立備份原則時、AWS�
 
 [role="tabbed-block"]
 ====
+ifdef::aws[]
+
 .AWS
 --
 * *無*（預設）
@@ -135,6 +137,10 @@ DataLock設為_Compliance模式、在保留期間內、任何使用者都無法�
 
 
 --
+endif::aws[]
+
+ifdef::azure[]
+
 .Azure
 --
 * *無*（預設）
@@ -152,6 +158,8 @@ DataLock保護和勒索軟體保護已停用。
 
 
 --
+endif::azure[]
+
 .StorageGRID
 --
 * *無*（預設）

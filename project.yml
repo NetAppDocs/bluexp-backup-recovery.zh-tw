@@ -257,42 +257,48 @@ homepage:
     links:
     - title: 將內部部署應用程式資料備份至Amazon Web Services
       flavor: aws
-      url: "/task-backup-app-data-to-aws.html"
+      url: task-backup-app-data-to-aws.html
     - title: 將內部部署應用程式資料備份到Microsoft Azure
       flavor: azure
-      url: "/task-backup-app-data-to-azure.html"
+      url: task-backup-app-data-to-azure.html
     - title: 將內部部署應用程式資料備份到Google Cloud
       flavor: gcp
-      url: "/task-backup-app-data-to-gcp.html"
+      url: task-backup-app-data-to-gcp.html
     - title: 將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方
-      url: "/task-backup-app-data-to-storagegrid.html"
+      url: task-backup-app-data-to-storagegrid.html
     - title: 備份雲端原生Oracle資料庫
-      url: "/task-backup-cloud-native-oracle-data.html"
+      url: task-backup-cloud-native-oracle-data.html
     - title: 備份雲端原生SAP HANA資料庫
       flavor: azure
-      url: "/task-backup-cloud-native-sap-hana-data.html"
-  - title: 備份及還原虛擬機器資料
+      url: task-backup-cloud-native-sap-hana-data.html
+  - title: 將虛擬機器資料備份到雲端
     links:
     - title: 將資料存放區備份至Amazon Web Services
       flavor: aws
-      url: "/task-backup-vm-data-to-aws.html"
+      url: task-backup-vm-data-to-aws.html
     - title: 將資料存放區備份至Microsoft Azure
       flavor: azure
-      url: "/task-backup-vm-data-to-azure.html"
+      url: task-backup-vm-data-to-azure.html
     - title: 將資料存放區備份到Google Cloud Platform
       flavor: gcp
-      url: "/task-backup-vm-data-to-gcp.html"
+      url: task-backup-vm-data-to-gcp.html
     - title: 將資料存放區備份StorageGRID 至
-      url: "/task-backup-vm-data-to-storagegrid.html"
-    - title: 從雲端還原虛擬機器
-      url: "/task-restore-vm-data.html"
-  - title: 還原ONTAP 來自還原備份檔案的資料
+      url: task-backup-vm-data-to-storagegrid.html
+  - title: 從雲端還原資料
     links:
-    - title: 還原ONTAP 功能
+    - title: 還原 ONTAP Volume 資料
       url: task-restore-backups-ontap.html
-    - title: 從ONTAP 還原磁碟區還原檔案和資料夾
-      url: task-restore-backups-ontap.html
-    - title: 還原Kubernetes磁碟區
+    - title: 還原內部部署的 Oracle 應用程式資料
+      url: task-restore-oracle-data.html
+    - title: 還原內部部署的 SQL Server 應用程式資料
+      url: task-restore-sql-data.html
+    - title: 還原雲端原生 Oracle 應用程式資料
+      url: task-restore-cloud-native-oracle-data.html
+    - title: 還原雲端原生 SAP HANA 應用程式資料
+      url: task-restore-cloud-native-sap-hana-data.html
+    - title: 還原虛擬機器資料
+      url: task-restore-vm-data.html
+    - title: 還原 Kubernetes Volume 資料
       url: task-restore-backups-kubernetes.html
   - title: 管理ONTAP 還原備份檔案
     links:
