@@ -39,11 +39,11 @@ summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資�
 ** 連接器的網路功能可將HTTPS連線傳出ONTAP 至支援叢集和StorageGRID 進行支援。
 
 
-* 您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"^] NetApp的Cloud Backup BYOL授權。
+* 您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"^] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
 * 您的支援版本為10.3或更新版本、並具有S3權限的存取金鑰。StorageGRID
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 在系統上啟用Cloud Backup
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 在系統上啟用 BlueXP 備份與還原
 [role="quick-margin-para"]
 選取來源ONTAP 的支援環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」>「備份磁碟區」*、再依照設定精靈的指示進行。
 
@@ -65,10 +65,10 @@ image:screenshot_backup_provider_settings_storagegrid.png["快照顯示將磁碟
 如果您的叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您的系統使用的是版本11.4或更新版本、您可以選擇在特定天數後、將舊版備份分層至公有雲歸檔層、以進一步最佳化成本。目前支援AWS S3 Glacier / S3 Glacier Deep歸檔或Azure歸檔儲存層。
 
 [role="quick-margin-para"]
-如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以設定其中一個_DataLock和勒索軟體Protection _設定、以保護備份免受刪除和勒索軟體攻擊。 link:concept-cloud-backup-policies.html["深入瞭解可用的Cloud Backup原則組態設定"^]。
+如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以設定其中一個_DataLock和勒索軟體Protection _設定、以保護備份免受刪除和勒索軟體攻擊。 link:concept-cloud-backup-policies.html["深入瞭解可用的 BlueXP 備份與還原原則組態設定"^]。
 
 [role="quick-margin-para"]
-image:screenshot_backup_onprem_policy.png["顯示Cloud Backup設定的快照、您可在其中選擇備份排程和保留期間。"]
+image:screenshot_backup_onprem_policy.png["顯示 BlueXP 備份與還原設定的螢幕擷取畫面、可供您選擇備份排程與保留期間。"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 選取您要備份的磁碟區
 [role="quick-margin-para"]
@@ -85,7 +85,7 @@ S3儲存區會自動建立StorageGRID 在服務帳戶中、由您輸入的S3存�
 
 下列影像顯示將內部ONTAP 系統備份至StorageGRID 支援版時的每個元件、以及您在它們之間準備所需的連線。
 
-image:diagram_cloud_backup_onprem_storagegrid.png["顯示Cloud Backup如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
+image:diagram_cloud_backup_onprem_storagegrid.png["顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
 若將Connector和內部部署ONTAP 的Esor系統 安裝於內部環境、但無法存取網際網路（「暗點」）、StorageGRID 則該系統必須位於同一個內部資料中心內。在Dark站台組態中、不支援將舊版備份檔案歸檔至公有雲。
 
@@ -103,7 +103,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 * 最低ONTAP 版本為0、9、75；ONTAP 建議使用0、8P13及更新版本。
 * SnapMirror授權（包含在優質產品組合或資料保護產品組合中）。
 +
-*附註：*使用Cloud Backup時不需要「混合式雲端產品組合」。
+* 附註： * 使用 BlueXP 備份與還原時、不需要「混合雲套裝組合」。
 
 +
 瞭解如何操作 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理叢集授權"^]。
@@ -125,12 +125,12 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 * 需要連接器與叢集管理LIF之間的傳入連線。ONTAP連接器必須位於內部部署中。
 * 裝載您要備份之磁碟區的 ONTAP 每個節點都需要叢集間 LIF 。LIF 必須與 _IPspac__ 建立關聯、 ONTAP 以便連接物件儲存設備。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["深入瞭解 IPspaces"^]。
 +
-設定Cloud Backup時、系統會提示您輸入要使用的IPspace。您應該選擇每個 LIF 所關聯的 IPspace 。這可能是您建立的「預設」 IPspace 或自訂 IPspace 。
+當您設定 BlueXP 備份與還原時、系統會提示您輸入要使用的 IPspace 。您應該選擇每個 LIF 所關聯的 IPspace 。這可能是您建立的「預設」 IPspace 或自訂 IPspace 。
 
 * 節點的叢集間LIF可存取物件存放區（當連接器安裝在「暗」站台時、則不需要）。
 * DNS伺服器已針對磁碟區所在的儲存VM進行設定。瞭解如何操作 https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["設定SVM的DNS服務"^]。
 * 請注意、如果您使用的IPspace與預設值不同、則可能需要建立靜態路由才能存取物件儲存設備。
-* 如有必要、請更新防火牆規則、以便Cloud Backup Service 透過ONTAP 您指定的連接埠（通常是連接埠443）、將來自儲存VM的名稱解析流量透過連接埠53（TCP/IP）、從物件儲存設備連線至DNS伺服器。
+* 如有必要、請更新防火牆規則、以允許 BlueXP 備份與恢復服務從 ONTAP 透過您指定的連接埠（通常是連接埠 443 ）、以及透過連接埠 53 （ TCP/UDP ）從儲存 VM 到 DNS 伺服器的名稱解析流量。
 
 
 --
@@ -153,7 +153,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支援儲存設備的存取。 https://docs.netapp.com/us-en/storagegrid-116/admin/creating-tenant-account.html["如StorageGRID 需詳細資訊、請參閱《The》（英文）"^]。
 +
 --
-當您設定將備份備份到StorageGRID SURITY時、備份精靈會提示您輸入租戶帳戶的S3存取金鑰和秘密金鑰。租戶帳戶可讓Cloud Backup驗證及存取StorageGRID 用來儲存備份的還原庫。這些金鑰是必填項目、StorageGRID 以便知道誰提出要求。
+當您設定將備份備份到StorageGRID SURITY時、備份精靈會提示您輸入租戶帳戶的S3存取金鑰和秘密金鑰。租戶帳戶可讓 BlueXP 備份與還原驗證及存取用於儲存備份的 StorageGRID 貯體。這些金鑰是必填項目、StorageGRID 以便知道誰提出要求。
 
 這些存取金鑰必須與具有下列權限的使用者相關聯：
 
@@ -182,9 +182,9 @@ S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支
 
 
 
-NOTE: BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["雲端備份新功能"] 若要查看每個Cloud Backup版本中的新功能、請依照下列步驟執行 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["升級Connector軟體"^] 當您想要使用新功能時。
+NOTE: BlueXP 備份與還原功能內建於 BlueXP Connector 中。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["BlueXP 備份與還原新功能"] 若要查看每個 BlueXP 備份與還原版本中的新功能、您可以依照步驟執行 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["升級Connector軟體"^] 當您想要使用新功能時。
 
-強烈建議您在沒有網際網路連線的站台上安裝Connector時、定期建立Cloud Backup組態資料的本機備份。 link:reference-backup-cbs-db-in-dark-site.html["瞭解如何在黑暗的站台中備份雲端備份資料"^]。
+強烈建議您在沒有網際網路連線的站台中安裝 Connector 時、定期建立 BlueXP 備份與還原組態資料的本機備份。 link:reference-backup-cbs-db-in-dark-site.html["瞭解如何在黑暗的網站中備份 BlueXP 備份與還原資料"^]。
 
 
 
@@ -197,7 +197,7 @@ NOTE: BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連�
 +
 ** 透過連接埠443連線至StorageGRID 「支援不支援的閘道節點」的HTTPS連線
 ** 透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線
-** 透過連接埠443連至Cloud Backup的傳出網際網路連線（當連接器安裝在「暗」站台時、不需要）
+** 透過連接埠 443 到 BlueXP 備份與還原的輸出網際網路連線（當 Connector 安裝在「暗」站台時、不需要）
 
 
 
@@ -245,7 +245,7 @@ NOTE: BlueXP Connector內建雲端備份功能。安裝在沒有網際網路連�
 * 啟動精靈可讓您使用現有的資源群組來管理將儲存備份的Blob容器、或是建立新的資源群組。
 
 
-定義叢集備份原則的歸檔設定時、您將輸入雲端供應商認證資料、然後選取您要使用的儲存類別。當您為叢集啟動備份時、Cloud Backup會建立雲端儲存庫。AWS和Azure歸檔儲存設備所需的資訊如下所示。
+定義叢集備份原則的歸檔設定時、您將輸入雲端供應商認證資料、然後選取您要使用的儲存類別。BlueXP 備份與還原會在您啟動叢集備份時建立雲端儲存庫。AWS和Azure歸檔儲存設備所需的資訊如下所示。
 
 image:screenshot_sg_archive_to_cloud.png["將備份檔案從StorageGRID 還原至AWS S3或Azure Blob所需資訊的快照。"]
 
@@ -255,18 +255,18 @@ image:screenshot_sg_archive_to_cloud.png["將備份檔案從StorageGRID 還原�
 
 === 授權需求
 
-若要為叢集啟動Cloud Backup、您必須先向NetApp購買並啟動Cloud Backup BYOL授權。此授權僅供帳戶使用、可在多個系統之間使用。
+您必須先購買並啟動 NetApp 的 BlueXP 備份與還原 BYOL 授權、才能啟動叢集的 BlueXP 備份與還原。此授權僅供帳戶使用、可在多個系統之間使用。
 
-您將需要NetApp的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["瞭解如何管理BYOL授權"]。
+您將需要NetApp的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["瞭解如何管理BYOL授權"]。
 
 
 TIP: 將檔案備份StorageGRID 到還原時、不支援PAYGO授權。
 
 
 
-== 啟用Cloud Backup to StorageGRID 功能
+== 啟用 BlueXP 備份與還原至 StorageGRID
 
-可隨時直接從內部部署工作環境啟用雲端備份。
+隨時直接從內部部署工作環境啟用 BlueXP 備份與還原。
 
 .步驟
 . 從「畫版」中選取內部部署工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」>「備份磁碟區」*。
@@ -283,7 +283,7 @@ image:screenshot_backup_onprem_enable.png["螢幕擷取畫面顯示「啟用備�
 .. 存取金鑰和秘密金鑰、用於存取儲存備份的儲存庫。
 .. 您要備份的磁碟區所在的叢集中的 IPspace ONTAP 。此IPspace的叢集間生命體必須具有傳出網際網路存取（當連接器安裝在「暗」站台時、則不需要）。
 +
-選擇正確的IPspace、可確保Cloud Backup能夠從ONTAP 功能區設定連接StorageGRID 到您的物件儲存區。
+選擇正確的 IPspace 可確保 BlueXP 備份與還原能夠設定從 ONTAP 到 StorageGRID 物件儲存設備的連線。
 
 +
 image:screenshot_backup_provider_settings_storagegrid.png["快照顯示將磁碟區從內部部署叢集備份到StorageGRID 還原儲存設備時、雲端供應商的詳細資料。"]
@@ -297,10 +297,10 @@ image:screenshot_backup_provider_settings_storagegrid.png["快照顯示將磁碟
 .. 如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以設定_DataLock和勒索軟體Protection來保護備份、避免遭到刪除和勒索軟體攻擊。_DataLock_可保護您的備份檔案、避免遭到修改或刪除、而_勒索 軟體保護_會掃描您的備份檔案、尋找備份檔案中勒索軟體攻擊的證據。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["深入瞭解可用的DataLock設定"^]。
 .. 如果您的叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您的系統使用的是11.4版或更新版本、您可以選擇在一定天數後、將舊版備份分層至公有雲歸檔層。目前支援AWS S3 Glacier / S3 Glacier Deep歸檔或Azure歸檔儲存層。 <<準備將較舊的備份檔案歸檔至公有雲儲存設備,瞭解如何針對此功能設定您的系統>>。
 +
-image:screenshot_backup_onprem_policy.png["顯示Cloud Backup設定的快照、您可在其中選擇備份排程和保留期間。"]
+image:screenshot_backup_onprem_policy.png["顯示 BlueXP 備份與還原設定的螢幕擷取畫面、可供您選擇備份排程與保留期間。"]
 
 +
-*重要事項：*如果您打算使用DataLock、則在啟動Cloud Backup時、您必須在第一個原則中啟用DataLock。
+* 重要： * 如果您打算使用 DataLock 、則必須在啟動 BlueXP 備份與還原時、在第一個原則中啟用。
 
 
 
@@ -315,7 +315,7 @@ image:screenshot_backup_select_volumes.png["選取要備份之磁碟區的快照
 ** 如果此工作環境中有任何讀寫磁碟區的本機Snapshot複本符合您剛才為此工作環境所選取的備份排程標籤（例如每日、每週等）、則會顯示另一個提示：「Export existing Snapshot copies to object storage as Backup copies（匯出現有的Snapshot複本至物件儲存區做為備份複本）」。如果您想要將所有歷史Snapshot複製到物件儲存設備做為備份檔案、以確保為磁碟區提供最完整的保護、請勾選此方塊。
 
 
-. 按一下「*啟動備份*」、「雲端備份」就會開始對每個選取的磁碟區進行初始備份。
+. 按一下 * 啟動備份 * 、然後 BlueXP 備份與還原會開始為每個選取的磁碟區進行初始備份。
 
 
 .結果

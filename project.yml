@@ -1,6 +1,6 @@
 ---
 settings:
-  name: Cloud Backup
+  name: BlueXP backup and recovery
   platform: cloud
   internal:
     pdf_enabled: true
@@ -24,13 +24,13 @@ settings:
   langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr
 sidebar:
   entries:
-  - title: 雲端備份文件
+  - title: BlueXP 備份與還原文件
     url: "/index.html"
   - title: 版本資訊
     url: "/whats-new.html"
   - title: 開始使用
     entries:
-    - title: 深入瞭解Cloud Backup
+    - title: 瞭解 BlueXP 備份與還原
       url: "/concept-backup-to-cloud.html"
     - title: 設定授權
       url: "/task-licensing-cloud-backup.html"
@@ -187,18 +187,15 @@ sidebar:
     url: "/api-backup-restore.html"
   - title: 參考資料
     entries:
-    - title: 雲端備份原則設定
+    - title: BlueXP 備份與還原原則設定
       url: "/concept-cloud-backup-policies.html"
     - title: 支援的AWS歸檔儲存層
-      flavor: aws
       url: "/reference-aws-backup-tiers.html"
     - title: 支援的Azure歸檔存取層
-      flavor: azure
       url: "/reference-azure-backup-tiers.html"
     - title: 支援的Google歸檔儲存層
-      flavor: gcp
       url: "/reference-google-backup-tiers.html"
-    - title: 在黑暗的站台中備份Cloud Backup資料庫
+    - title: 在黑暗的站台中備份 BlueXP 備份與還原資料庫
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: 設定備份以在Azure中存取多個帳戶
       flavor: azure
@@ -215,7 +212,7 @@ homepage:
   tiles:
   - title: 開始使用
     links:
-    - title: 深入瞭解Cloud Backup
+    - title: 瞭解 BlueXP 備份與還原
       url: concept-backup-to-cloud.html
     - title: 新增功能
       url: whats-new.html
@@ -317,9 +314,9 @@ homepage:
     links:
     - title: NetApp社群
       url: https://community.netapp.com/t5/Public-Cloud-Services/ct-p/CDS
-    - title: Cloud Backup 部落格
+    - title: BlueXP 備份與還原部落格
       url: https://bluexp.netapp.com/blog/topic/cloud-backup
-    - title: 雲端備份使用案例
+    - title: BlueXP 備份與還原使用案例
       url: https://bluexp.netapp.com/cloud-backup
     - title: 雲端網路研討會
       url: https://bluexp.netapp.com/events

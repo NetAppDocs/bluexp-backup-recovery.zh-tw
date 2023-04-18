@@ -22,7 +22,7 @@ summary: 備份會儲存在雲端帳戶的物件存放區中、以便從特定�
 
 您可以將*檔案*還原至原始工作環境中的磁碟區、使用相同雲端帳戶的不同工作環境中的磁碟區、或還原至內部部署ONTAP 的S還原 系統上的磁碟區。
 
-需要有效的Cloud Backup授權、才能將資料從備份檔案還原至正式作業系統。
+需要有效的 BlueXP 備份與還原授權、才能將資料從備份檔案還原至正式作業系統。
 
 
 
@@ -31,7 +31,7 @@ summary: 備份會儲存在雲端帳戶的物件存放區中、以便從特定�
 您可以使用還原儀表板來執行磁碟區、資料夾和檔案還原作業。若要存取「還原儀表板」、請按一下BlueXP功能表中的*備份與還原*、然後按一下*還原*索引標籤。您也可以按一下 image:screenshot_gallery_options.gif["更多按鈕"] >*從「服務」面板的「備份與還原」服務中檢視「還原儀表板」*。
 
 
-NOTE: 雲端備份必須已啟用、至少必須有一個工作環境、而且必須存在初始備份檔案。
+NOTE: 至少必須為一個工作環境啟動 BlueXP 備份與還原、而且必須存在初始備份檔案。
 
 image:screenshot_restore_dashboard.png["「還原儀表板」顯示使用瀏覽"]
 
@@ -165,7 +165,7 @@ NOTE: 如果備份檔案已設定DataLock和勒索軟體、則無法還原資料
 
 === 使用瀏覽與還原還原磁碟區
 
-當您從備份檔案還原磁碟區時、Cloud Backup會使用備份中的資料來建立_new磁碟區。您可以將資料還原至原始工作環境中的磁碟區、或還原至與來源工作環境位於相同雲端帳戶中的不同工作環境。您也可以將磁碟區還原至內部部署ONTAP 的作業系統。
+當您從備份檔案還原磁碟區時、 BlueXP 備份與還原會使用備份的資料建立 _new_ 磁碟區。您可以將資料還原至原始工作環境中的磁碟區、或還原至與來源工作環境位於相同雲端帳戶中的不同工作環境。您也可以將磁碟區還原至內部部署ONTAP 的作業系統。
 
 image:diagram_browse_restore_volume.png["顯示使用瀏覽"]
 
@@ -255,7 +255,7 @@ endif::gcp[]
 
 
 .結果
-Cloud Backup會根據您選取的備份建立新的磁碟區。您可以 link:task-manage-backups-ontap.html["管理此新Volume的備份設定"] 視需要而定。
+BlueXP 備份與還原會根據您選取的備份建立新的磁碟區。您可以 link:task-manage-backups-ontap.html["管理此新Volume的備份設定"] 視需要而定。
 
 請注意、根據歸檔層和還原優先順序、從歸檔儲存設備中的備份檔案還原磁碟區可能需要許多分鐘或數小時的時間。您可以按一下「*工作監控*」標籤來查看還原進度。
 
@@ -294,7 +294,7 @@ endif::aws[]
 
 . 若要從磁碟區備份還原資料夾或一或多個檔案、請按一下「*還原*」索引標籤、然後按一下「_瀏覽與還原_」下的「*還原檔案或資料夾*」。
 . 選取資料夾或檔案所在的來源工作環境、磁碟區和備份檔案。
-. Cloud Backup會顯示所選備份檔案中的資料夾和檔案。
+. BlueXP 備份與還原會顯示所選備份檔案中存在的資料夾與檔案。
 . 選取您要從該備份還原的資料夾或檔案。
 . 選取您要還原資料夾或檔案的目的地位置（工作環境、磁碟區和資料夾）、然後按一下*還原*。
 . 檔案即會還原。
@@ -425,9 +425,9 @@ image:screenshot_restore_select_dest.png["選取您要還原之檔案的磁碟�
 
 您可以ONTAP 使用「搜尋與還原」、從還原的還原檔還原磁碟區、資料夾或檔案。「搜尋與還原」可讓您從儲存在雲端儲存設備上的所有備份中搜尋特定的磁碟區、資料夾或檔案、以供特定供應商使用、然後執行還原。您不需要知道確切的工作環境名稱或磁碟區名稱、搜尋會查看所有的Volume備份檔案。
 
-搜尋作業也會查看ONTAP 所有適用於您的Shapes的本機Snapshot複本。由於從本機Snapshot複本還原資料的速度比從備份檔案還原更快、成本更低、因此您可能想要從Snapshot還原資料。您可以將Snapshot還原為新的Volume https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["從畫版上的Volume Details（Volume詳細資料）頁面"^] （而非雲端備份）。
+搜尋作業也會查看ONTAP 所有適用於您的Shapes的本機Snapshot複本。由於從本機Snapshot複本還原資料的速度比從備份檔案還原更快、成本更低、因此您可能想要從Snapshot還原資料。您可以將Snapshot還原為新的Volume https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["從畫版上的Volume Details（Volume詳細資料）頁面"^] （不是 BlueXP 備份與還原）。
 
-當您從備份檔案還原磁碟區時、Cloud Backup會使用備份中的資料來建立_new磁碟區。您可以將資料還原為原始工作環境中的磁碟區、或還原至與來源工作環境位於相同雲端帳戶中的不同工作環境。您也可以將磁碟區還原至內部部署ONTAP 的作業系統。
+當您從備份檔案還原磁碟區時、 BlueXP 備份與還原會使用備份的資料建立 _new_ 磁碟區。您可以將資料還原為原始工作環境中的磁碟區、或還原至與來源工作環境位於相同雲端帳戶中的不同工作環境。您也可以將磁碟區還原至內部部署ONTAP 的作業系統。
 
 您可以將資料夾或檔案還原至原始磁碟區位置、還原至相同工作環境中的不同磁碟區、或還原至使用相同雲端帳戶的不同工作環境。您也可以將資料夾和檔案還原至內部部署ONTAP 的作業系統上的磁碟區。
 
@@ -536,7 +536,7 @@ ifdef::aws[]
 +
 ** 必須將特定的Amazon Athena、AWS黏著及AWS S3權限新增至提供BlueXP權限的使用者角色。 link:task-backup-onprem-to-aws.html#set-up-s3-permissions["請確定所有權限均已正確設定"]。
 +
-請注意、如果您已經使用Cloud Backup搭配過去設定的Connector、現在就必須將Athena和黏著權限新增至BlueXP使用者角色。這些都是新功能、搜尋與還原是必備功能。
+請注意、如果您已使用過去設定的 Connector 進行 BlueXP 備份與還原、則現在您必須將 Athena 和 glue 權限新增至 BlueXP 使用者角色。這些都是新功能、搜尋與還原是必備功能。
 
 
 
@@ -551,7 +551,7 @@ ifdef::azure[]
 ** 您必須在訂閱中註冊Azure Synapse Analytics資源供應商（稱為「Microsoft.Synapse」）。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
 ** 特定Azure Synapse Workspace與Data Lake Storage帳戶權限必須新增至提供BlueXP權限的使用者角色。 link:task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["請確定所有權限均已正確設定"]。
 +
-請注意、如果您已經使用Cloud Backup搭配過去設定的Connector、現在您需要將Azure Synapse Workspace和Data Lake Storage Account權限新增至BlueXP使用者角色。這些都是新功能、搜尋與還原是必備功能。
+請注意、如果您之前使用的是 BlueXP 備份與還原、但之前已設定 Connector 、則現在您必須將 Azure Synapse Workspace 與 Data Lake Storage Account 權限新增至 BlueXP 使用者角色。這些都是新功能、搜尋與還原是必備功能。
 
 ** 連接器必須設定*不含* Proxy伺服器、才能與網際網路進行HTTP通訊。如果您已為Connector設定HTTP Proxy伺服器、則無法使用搜尋與取代功能。
 
@@ -566,7 +566,7 @@ ifdef::gcp[]
 +
 ** 必須將特定的Google BigQuery權限新增至提供BlueXP權限的使用者角色。 link:task-backup-onprem-to-gcp.html#verify-or-add-permissions-to-the-connector["請確定所有權限均已正確設定"]。
 +
-請注意、如果您已經使用Cloud Backup搭配過去設定的Connector、現在就必須將BigQuery權限新增至BlueXP使用者角色。這些都是新功能、搜尋與還原是必備功能。
+請注意、如果您過去已使用設定的 Connector 進行 BlueXP 備份與還原、您現在必須將 BigQuery 權限新增至 BlueXP 使用者角色。這些都是新功能、搜尋與還原是必備功能。
 
 
 
@@ -608,7 +608,7 @@ endif::gcp[]
 
 image:diagram_search_restore_vol_file.png["顯示使用Search  Restore執行Volume、資料夾或檔案還原作業的流程圖。"]
 
-如您所見、您真的只需要知道部分名稱、而且Cloud Backup會搜尋所有符合搜尋條件的備份檔案。
+如您所見、您真的只需要知道部分名稱、以及 BlueXP 備份與還原會搜尋符合您搜尋條件的所有備份檔案。
 
 
 
@@ -616,7 +616,7 @@ image:diagram_search_restore_vol_file.png["顯示使用Search  Restore執行Volu
 
 在使用搜尋與還原之前、您必須在每個要從中還原磁碟區或檔案的來源工作環境中啟用「索引」。這可讓索引目錄追蹤每個磁碟區和每個備份檔案、讓您的搜尋變得非常快速且有效率。
 
-啟用此功能時、Cloud Backup會在SVM上為您的磁碟區啟用SnapDiff v3、並會執行下列動作：
+啟用此功能時、 BlueXP 備份與還原可在 SVM 上為您的磁碟區啟用 SnapDiff v3 、並執行下列動作：
 
 ifdef::aws[]
 

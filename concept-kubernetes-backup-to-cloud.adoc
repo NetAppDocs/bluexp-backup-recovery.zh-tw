@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-kubernetes-backup-to-cloud.html 
 keywords: backing up, restoring, back up, backup, restore, aws, azure, s3, blob, google cloud, back up volumes, cloud backup, restore volumes, billing, cost, kubernetes 
-summary: Cloud Backup提供備份與還原功能、可保護Kubernetes叢集資料並進行長期歸檔。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。 
+summary: BlueXP 備份與還原提供備份與還原功能、可保護 Kubernetes 叢集資料、並長期歸檔資料。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。 
 ---
-= 使用Cloud Backup保護Kubernetes叢集資料
+= 使用 BlueXP 備份與還原來保護您的 Kubernetes 叢集資料
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Cloud Backup提供備份與還原功能、可保護Kubernetes叢集資�
 
 
 [role="lead"]
-Cloud Backup提供備份與還原功能、可保護Kubernetes叢集資料並進行長期歸檔。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。
+BlueXP 備份與還原提供備份與還原功能、可保護 Kubernetes 叢集資料、並長期歸檔資料。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。
 
 必要時、您可以將整個_volume從備份還原至相同或不同的工作環境。
 
@@ -41,7 +41,7 @@ Cloud Backup提供備份與還原功能、可保護Kubernetes叢集資料並進�
 
 == 支援的Kubernetes工作環境和物件儲存供應商
 
-Cloud Backup可讓您將Kubernetes磁碟區從下列工作環境備份到下列公有和私有雲端供應商的物件式儲存設備：
+BlueXP 備份與還原可讓您將 Kubernetes 磁碟區從下列工作環境備份到下列公有雲和私有雲供應商的物件儲存：
 
 [cols="45,40"]
 |===
@@ -75,11 +75,11 @@ Cloud Backup可讓您將Kubernetes磁碟區從下列工作環境備份到下列�
 
 == 成本
 
-使用Cloud Backup有兩種相關成本：資源費用和服務費用。
+使用 BlueXP 備份與恢復的相關成本有兩種類型：資源費用和服務費用。
 
 * 資源費用 *
 
-資源費用會支付給雲端供應商、以取得雲端的物件儲存容量。由於Cloud Backup保留了來源Volume的儲存效率、因此您需要支付雲端供應商的物件儲存成本、以獲得資料ONTAP 效益（在套用重複資料刪除和壓縮之後、資料量會變小）。
+資源費用會支付給雲端供應商、以取得雲端的物件儲存容量。由於 BlueXP 備份與還原可保留來源 Volume 的儲存效率、因此您必須支付雲端供應商的物件儲存成本、以獲得資料後的 ONTAP 效率（在套用重複資料刪除與壓縮之後、資料量會減少）。
 
 * 服務費用 *
 
@@ -91,7 +91,7 @@ Cloud Backup可讓您將Kubernetes磁碟區從下列工作環境備份到下列�
 
 == 授權
 
-Cloud Backup提供兩種授權選項：隨用隨付（PAYGO）、以及自帶授權（BYOL）。如果您沒有授權、則可免費試用 30 天。
+BlueXP 備份與還原有兩種授權選項：隨用隨付（ PAYGO ）、以及自帶授權（ BYOL ）。如果您沒有授權、則可免費試用 30 天。
 
 
 
@@ -105,7 +105,7 @@ Cloud Backup提供兩種授權選項：隨用隨付（PAYGO）、以及自帶授
 
 === 隨用隨付訂閱
 
-Cloud Backup以隨用隨付模式提供消費型授權。透過雲端供應商的市場訂閱之後、您需要支付每GB的備份資料費用、而無需預付任何款項。您的雲端供應商會透過每月帳單向您收費。
+BlueXP 備份與還原以隨用隨付模式提供消費型授權。透過雲端供應商的市場訂閱之後、您需要支付每GB的備份資料費用、而無需預付任何款項。您的雲端供應商會透過每月帳單向您收費。
 
 即使您有免費試用版或自帶授權（ BYOL ）、您仍應訂閱：
 
@@ -121,7 +121,7 @@ Cloud Backup以隨用隨付模式提供消費型授權。透過雲端供應商�
 
 在免費試用期間或未超過BYOL授權時、您將不會從隨用隨付訂閱中收取費用。
 
-link:task-licensing-cloud-backup.html#use-a-cloud-backup-paygo-subscription["瞭解如何設定隨用隨付訂閱"]。
+link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-paygo-subscription["瞭解如何設定隨用隨付訂閱"]。
 
 
 
@@ -131,20 +131,20 @@ BYOL以1 TB為單位、以期限為基準（12、24或36個月）_和_容量為�
 
 您將會收到一個序號、並在「BlueXP Digital Wallet」頁面中輸入以啟用服務。達到任一限制時、您都需要續約授權。備份BYOL授權適用於與相關聯的所有來源系統 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["BlueXP帳戶"^]。
 
-link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["瞭解如何管理BYOL授權"]。
+link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["瞭解如何管理BYOL授權"]。
 
 
 
-== 雲端備份的運作方式
+== BlueXP 備份與還原的運作方式
 
-當您在Kubernetes系統上啟用Cloud Backup時、該服務會執行資料的完整備份。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。
+當您在 Kubernetes 系統上啟用 BlueXP 備份與還原時、服務會執行資料的完整備份。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。
 
 
 CAUTION: 直接從雲端供應商環境中採取的任何管理或變更備份檔案的動作、都可能會毀損檔案、並導致不支援的組態。
 
 下圖顯示每個元件之間的關係：
 
-image:diagram_cloud_backup_general_k8s.png["顯示Cloud Backup如何與來源系統上的磁碟區和備份檔案所在的目的地物件儲存區進行通訊的圖表。"]
+image:diagram_cloud_backup_general_k8s.png["顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地物件儲存區進行通訊的圖表。"]
 
 
 
@@ -175,7 +175,7 @@ endif::gcp[]
 
 === 每個叢集可自訂的備份排程和保留設定
 
-在工作環境中啟用Cloud Backup時、您最初選取的所有磁碟區都會使用您定義的預設備份原則進行備份。如果您想要將不同的備份原則指派給具有不同恢復點目標（RPO）的特定磁碟區、您可以為該叢集建立其他原則、並將這些原則指派給其他磁碟區。
+當您為工作環境啟用 BlueXP 備份與還原時、您最初選取的所有磁碟區都會使用您定義的預設備份原則進行備份。如果您想要將不同的備份原則指派給具有不同恢復點目標（RPO）的特定磁碟區、您可以為該叢集建立其他原則、並將這些原則指派給其他磁碟區。
 
 您可以選擇每小時、每日、每週及每月備份所有磁碟區的組合。
 
@@ -185,7 +185,7 @@ endif::gcp[]
 
 == 支援的磁碟區
 
-Cloud Backup支援持續磁碟區（PV）。
+BlueXP 備份與還原支援持續磁碟區（ PV ）。
 
 
 

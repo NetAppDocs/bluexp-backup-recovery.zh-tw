@@ -33,22 +33,22 @@ summary: 請完成幾個步驟、開始將資料從您的持續磁碟區備份�
 
 
 * 您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。
-* 您已訂閱 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["並啟動"^] NetApp的Cloud Backup BYOL授權。
+* 您已訂閱 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"^] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
 
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 在現有的Kubernetes叢集上啟用Cloud Backup
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 在現有的 Kubernetes 叢集上啟用 BlueXP 備份與還原
 [role="quick-margin-para"]
 選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」*、再依照設定精靈的指示操作。
 
 [role="quick-margin-para"]
-image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示「啟用雲端備份」按鈕、可在您選取工作環境之後使用。"]
+image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示 BlueXP 備份與還原啟用按鈕、可在您選取工作環境之後使用。"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 定義備份原則
 [role="quick-margin-para"]
 預設原則會每天備份磁碟區、並保留每個磁碟區最近 30 個備份複本。變更為每小時、每日、每週或每月備份、或選取其中一個系統定義的原則來提供更多選項。您也可以變更要保留的備份複本數量。
 
 [role="quick-margin-para"]
-image:screenshot_backup_policy_k8s_azure.png["顯示Cloud Backup設定的快照、您可在其中選擇備份排程和保留期間。"]
+image:screenshot_backup_policy_k8s_azure.png["顯示 BlueXP 備份與還原設定的螢幕擷取畫面、可供您選擇備份排程與保留期間。"]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 選取您要備份的磁碟區
 [role="quick-margin-para"]
@@ -62,7 +62,7 @@ image:screenshot_backup_policy_k8s_azure.png["顯示Cloud Backup設定的快照�
 
 下圖顯示每個元件及其之間需要準備的連線：
 
-image:diagram_cloud_backup_k8s_cvo_azure.png["顯示Cloud Backup如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
+image:diagram_cloud_backup_k8s_cvo_azure.png["顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
 請注意、私有端點是選用的。
 
@@ -129,34 +129,34 @@ spec:
 
 
 --
-授權需求:: 對於Cloud Backup PAYGO授權、您必須先透過Azure Marketplace訂閱、才能啟用Cloud Backup。雲端備份計費是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
+授權需求:: 若為 BlueXP 備份與還原 PAYGO 授權、您必須先透過 Azure Marketplace 訂閱、才能啟用 BlueXP 備份與還原。BlueXP 備份與還原的帳單是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
 +
 --
-對於Cloud Backup BYOL授權、您需要NetApp的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-cloud-backup-byol-license["瞭解如何管理BYOL授權"]。
+對於 BlueXP 備份與恢復 BYOL 授權、您需要 NetApp 的序號、以便在授權期間和容量內使用該服務。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["瞭解如何管理BYOL授權"]。
 
 而且您必須訂閱 Microsoft Azure 、才能取得備份所在的儲存空間。
 
 --
-支援的 Azure 地區:: 所有Azure地區均支援雲端備份 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]。
+支援的 Azure 地區:: 所有 Azure 區域均支援 BlueXP 備份與還原 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]。
 
 
 
 
-== 啟用雲端備份
+== 啟用 BlueXP 備份與還原
 
-可隨時直接從Kubernetes工作環境啟用雲端備份。
+隨時直接從 Kubernetes 工作環境啟用 BlueXP 備份與還原。
 
 .步驟
 . 選取工作環境、然後按一下右窗格中備份與還原服務旁的*啟用*。
 +
-image:screenshot_backup_cvo_enable.png["螢幕擷取畫面會顯示「Cloud Backup Settings」（雲端備份設定）按鈕、您可以在選取工作環境之後使用該按鈕。"]
+image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示 BlueXP 備份與還原設定按鈕、可在您選取工作環境之後使用。"]
 
 . 輸入備份原則詳細資料、然後按一下*下一步*。
 +
 您可以定義備份排程、並選擇要保留的備份數量。
 
 +
-image:screenshot_backup_policy_k8s_azure.png["顯示Cloud Backup設定的快照、您可在其中選擇排程和備份保留。"]
+image:screenshot_backup_policy_k8s_azure.png["顯示 BlueXP 備份與還原設定的螢幕擷取畫面、可供您選擇排程與備份保留。"]
 
 . 選取您要備份的持續磁碟區。
 +
@@ -168,7 +168,7 @@ image:screenshot_backup_select_volumes_k8s.png["選取要備份之持續磁碟�
 
 
 . 如果您希望所有目前和未來的Volume都啟用備份、只要勾選「自動備份未來的Volume…」核取方塊即可。如果停用此設定、您將需要手動啟用未來磁碟區的備份。
-. 按一下「*啟動備份*」、「雲端備份」就會開始對每個選取的磁碟區進行初始備份。
+. 按一下 * 啟動備份 * 、然後 BlueXP 備份與還原會開始為每個選取的磁碟區進行初始備份。
 
 
 .結果

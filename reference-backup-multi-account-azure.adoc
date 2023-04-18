@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-multi-account-azure.html 
 keywords: microsoft azure, azure, regions, blob, multiple accounts, multiple regions, backup 
-summary: Cloud Backup可讓您在Azure帳戶中建立備份檔案、該帳戶與來源Cloud Volumes ONTAP 支援區不同、而且與BlueXP Connector所在的帳戶不同。 
+summary: BlueXP 備份與還原可讓您在 Azure 帳戶中建立不同於來源 Cloud Volumes ONTAP 磁碟區所在位置、與 BlueXP Connector 所在帳戶不同的備份檔案。 
 ---
 = 在Azure中設定多帳戶存取的備份
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cloud Backup可讓您在Azure帳戶中建立備份檔案、該帳戶與
 
 
 [role="lead"]
-Cloud Backup可讓您在Azure帳戶中建立備份檔案、而該帳戶與來源Cloud Volumes ONTAP 的支援區不同。這兩個帳戶可能不同於BlueXP Connector所在的帳戶。
+BlueXP 備份與還原可讓您在 Azure 帳戶中建立不同於來源 Cloud Volumes ONTAP 磁碟區所在位置的備份檔案。這兩個帳戶可能不同於BlueXP Connector所在的帳戶。
 
 只有在您需要時、才需要執行這些步驟 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["將Cloud Volumes ONTAP 不支援的資料備份到Azure Blob儲存設備"^]。
 
@@ -131,5 +131,5 @@ image:screenshot_azure_networking5.png[""]
 +
 現在儲存帳戶（訂閱1）可以存取Cloud Volumes ONTAP 以訂閱2執行的作業系統。
 
-. 請重試啟用Cloud Volumes ONTAP 支援整個系統的Cloud Backup、這次應該會成功。
+. 請在 Cloud Volumes ONTAP 系統上重試啟用 BlueXP 備份與還原、這次應該會成功。
 

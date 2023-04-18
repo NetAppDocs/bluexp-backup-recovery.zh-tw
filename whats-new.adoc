@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: whats-new.html 
 keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, backup, restore' 
-summary: 瞭解Cloud Backup的新功能。 
+summary: 瞭解 BlueXP 備份與還原的新功能。 
 ---
-= Cloud Backup的新功能
+= BlueXP 備份與還原的新功能
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 瞭解Cloud Backup的新功能。
 
 
 [role="lead"]
-瞭解Cloud Backup的新功能。
+瞭解 BlueXP 備份與還原的新功能。
 
 
 
@@ -64,21 +64,21 @@ summary: 瞭解Cloud Backup的新功能。
 
 === 能夠使用 API 將內部部署的 ONTAP 磁碟區備份至 ONTAP S3
 
-API 的新功能可讓您使用 BlueXP 雲端備份、將 Volume 快照備份至 ONTAP S3 。此功能目前僅適用於內部部署 ONTAP 系統。如需詳細指示、請參閱部落格 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["與 ONTAP S3 整合為目的地"^]。
+API 的新功能可讓您使用 BlueXP 備份與還原、將磁碟區快照備份至 ONTAP S3 。此功能目前僅適用於內部部署 ONTAP 系統。如需詳細指示、請參閱部落格 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-April-23-Updates/ba-p/443075#toc-hId--846533830["與 ONTAP S3 整合為目的地"^]。
 
 
 
 === 能夠將 Azure 儲存帳戶的區域備援層面從 LRS 變更為 ZRS
 
-從 Cloud Volumes ONTAP 系統建立備份至 Azure 儲存設備時、雲端備份預設會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要在不同區域之間複寫資料、可以將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示 https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["變更儲存帳戶的複寫方式"^]。
+從 Cloud Volumes ONTAP 系統建立備份至 Azure 儲存設備時、 BlueXP 備份與還原預設會將 Blob 容器與本機備援（ LRS ）一起配置、以達到成本最佳化。如果您想要在不同區域之間複寫資料、可以將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示 https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["變更儲存帳戶的複寫方式"^]。
 
 
 
 === 工作監控的增強功能
 
-* 從雲端備份 UI 和 API 啟動的使用者初始化備份和還原作業、以及系統起始的工作（例如持續的備份作業）、現在都可在執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統的 * 工作監控 * 標籤中找到。舊版 ONTAP 只會顯示使用者啟動的工作。
+* 從 BlueXP 備份與還原 UI 和 API 啟動的使用者初始化備份與還原作業、以及系統起始的工作（例如持續備份作業）、現在都可在執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統的 * 工作監控 * 標籤中找到。舊版 ONTAP 只會顯示使用者啟動的工作。
 * 除了能夠下載 CSV 檔案來報告所有工作之外、現在您可以下載 JSON 檔案來處理單一工作、並查看其詳細資料。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["深入瞭解"]。
-* 新增兩個備份工作警示：「排程工作失敗」和「還原工作完成但有警告」。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["檢閱 Cloud Backup 可以傳送的所有警示"]。
+* 新增兩個備份工作警示：「排程工作失敗」和「還原工作完成但有警告」。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["檢閱 BlueXP 備份與還原可以傳送的所有警示"]。
 
 
 
@@ -102,7 +102,7 @@ API 的新功能可讓您使用 BlueXP 雲端備份、將 Volume 快照備份至
 === 工作監控器的多項增強功能
 
 * 「工作監控」頁面新增進階篩選功能、讓您可以依時間、工作負載（磁碟區、應用程式、虛擬機器或Kubernetes）、 工作類型、狀態、工作環境和儲存VM。您也可以輸入任意文字來搜尋任何資源、例如「application_3」。  https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["瞭解如何使用進階篩選器"]。
-* 從Cloud Backup使用者介面和API啟動的使用者啟動備份和還原作業、以及系統啟動的工作（例如持續的備份作業）、現在都可在Cloud Volumes ONTAP *工作監控*索引標籤中找到、以供執行ONTAP S還原9.13.0或更新版本的系統使用。早期版本Cloud Volumes ONTAP 的不一致系統和內部部署ONTAP 的不一致系統、目前只會顯示使用者啟動的工作。
+* 從 BlueXP 備份與還原 UI 和 API 啟動的使用者初始化備份與還原作業、以及系統起始的工作（例如持續的備份作業）、現在都可在執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統的 * 工作監控 * 標籤中取得。早期版本Cloud Volumes ONTAP 的不一致系統和內部部署ONTAP 的不一致系統、目前只會顯示使用者啟動的工作。
 
 
 
@@ -135,7 +135,7 @@ Azure Blob儲存的備份檔案現在支援DataLock和勒索軟體保護。如�
 
 === 可將舊版備份移至Google Archival儲存設備Cloud Volumes ONTAP
 
-備份檔案最初是在Google Standard儲存類別中建立。現在您可以使用Cloud Backup將舊備份分層至Google歸檔儲存設備、以進一步最佳化成本。上一版僅支援內部ONTAP 使用的功能、目前Cloud Volumes ONTAP 支援部署在Google Cloud上的各種系統。
+備份檔案最初是在Google Standard儲存類別中建立。現在您可以使用 BlueXP 備份與還原、將舊備份分層化至 Google Archive 儲存設備、以進一步最佳化成本。上一版僅支援內部ONTAP 使用的功能、目前Cloud Volumes ONTAP 支援部署在Google Cloud上的各種系統。
 
 
 
@@ -167,13 +167,13 @@ https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-
 
 === 能夠在Google Cloud上選擇您自己的客戶管理金鑰來進行資料加密
 
-將ONTAP 資料從您的支援系統備份到Google Cloud Storage時、現在您可以在啟動精靈中選擇自己的客戶管理金鑰來進行資料加密、而不使用預設的Google管理加密金鑰。只要先在Google中設定客戶管理的加密金鑰、然後在啟動Cloud Backup時輸入詳細資料即可。
+將ONTAP 資料從您的支援系統備份到Google Cloud Storage時、現在您可以在啟動精靈中選擇自己的客戶管理金鑰來進行資料加密、而不使用預設的Google管理加密金鑰。只要先在 Google 中設定客戶管理的加密金鑰、然後在啟動 BlueXP 備份與還原時輸入詳細資料即可。
 
 
 
 === 服務帳戶不再需要「儲存管理員」角色、即可在Google Cloud Storage中建立備份
 
-在早期版本中、「儲存管理員」角色是讓Cloud Backup能夠存取Google Cloud Storage儲存桶的服務帳戶所需的角色。現在您可以建立自訂角色、並減少指派給服務帳戶的權限集。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["瞭解如何準備Google Cloud Storage進行備份"]。
+在舊版中、服務帳戶需要「儲存管理員」角色、才能讓 BlueXP 備份與還原存取 Google Cloud Storage 貯體。現在您可以建立自訂角色、並減少指派給服務帳戶的權限集。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["瞭解如何準備Google Cloud Storage進行備份"]。
 
 
 

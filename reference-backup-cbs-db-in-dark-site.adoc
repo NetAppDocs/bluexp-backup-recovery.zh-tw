@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database 
-summary: 在無法存取網際網路的站台上使用Cloud Backup時、如果您遇到與BlueXP Connector主機系統有關的問題、您將需要定期備份重要的Cloud Backup檔案。這可讓您部署新的Connector、並還原重要的Cloud Backup資料。 
+summary: 在無法存取網際網路的站台中使用 BlueXP 備份與還原時、如果 BlueXP Connector 主機系統發生問題、您將會想要定期備份關鍵 BlueXP 備份與還原檔案。這可讓您部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。 
 ---
-= 在黑暗的站台中備份及還原Cloud Backup資料
+= 在黑暗的站台中備份及還原 BlueXP 備份與還原資料
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,32 +14,32 @@ summary: 在無法存取網際網路的站台上使用Cloud Backup時、如果�
 
 
 [role="lead"]
-在無法存取網際網路的站台上使用Cloud Backup時、如果您遇到與BlueXP Connector主機系統有關的問題、您將需要定期備份重要的Cloud Backup檔案。這可讓您部署新的Connector、並還原重要的Cloud Backup資料。
+在無法存取網際網路的站台中使用 BlueXP 備份與還原時、如果 BlueXP Connector 主機系統發生問題、您將會想要定期備份關鍵 BlueXP 備份與還原檔案。這可讓您部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。
 
-當您在部署BlueXP Connector的SaaS環境中使用Cloud Backup時、無論是在雲端供應商、或是在自己的主機系統上、只要能存取網際網路、所有重要的Cloud Backup組態資料都會備份並儲存在雲端中。當您在無法存取網際網路的站台（也稱為「暗站」）中使用Cloud Backup時、此Cloud Backup資訊只會儲存在本機連接器系統上。
+當您在部署 BlueXP Connector 的 SaaS 環境中使用 BlueXP 備份與還原時、請將 BlueXP Connector 部署在您的雲端供應商、或是部署在您擁有網際網路存取權的主機系統上、所有重要的 BlueXP 備份與還原組態資料都會備份並儲存在雲端中。當您在無法存取網際網路的站台（也稱為「暗站」）中使用 BlueXP 備份與還原時、此 BlueXP 備份與還原資訊只會儲存在本機 Connector 系統上。
 
-本主題說明如何將重要的Cloud Backup資料備份到連線StorageGRID 的作業系統。同時也說明如何在必要時將資料還原至新的Connector。
+本主題說明如何將關鍵 BlueXP 備份與還原資料備份至連線的 StorageGRID 系統。同時也說明如何在必要時將資料還原至新的Connector。
 
 
 
-== 備份關鍵雲端備份資料
+== 備份關鍵 BlueXP 備份與還原資料
 
 您需要備份兩種類型的資料：
 
-* 雲端備份資料庫
+* BlueXP 備份與還原資料庫
 * 索引目錄檔案（用於搜尋與還原功能）
 
 
 
-NOTE: 您應計畫定期備份此Cloud Backup資料、以便隨時存取最新的資料。
+NOTE: 您應該計畫定期備份此 BlueXP 備份與還原資料、以便永遠能夠存取最新的資料。
 
-請注意、Cloud Backup資料庫或Indexed目錄檔案中從未包含任何Volume資料。
+請注意、 BlueXP 備份與還原資料庫或索引型錄檔案中從未包含任何 Volume 資料。
 
 
 
-=== 備份Cloud Backup資料庫
+=== 備份 BlueXP 備份與還原資料庫
 
-Cloud Backup資料庫包含所有磁碟區、備份檔案、備份原則和組態資訊的清單。
+BlueXP 備份與還原資料庫包含所有磁碟區、備份檔案、備份原則及組態資訊的清單。
 
 .步驟
 . 使用適當的認證資料登入Connector主機系統。
@@ -51,7 +51,7 @@ docker exec -it ds_mysql_1 sh
 ----
 . 在Container Shell中、部署「env」。
 . 您需要MySQL資料庫密碼、因此請複製「MySQL_root_password」金鑰的值。
-. 輸入下列命令來備份Cloud Backup MySQL資料庫：
+. 輸入下列命令、備份 BlueXP 備份與還原 MySQL DB ：
 +
 [source, cli]
 ----
@@ -85,14 +85,14 @@ zip -r catalogxxxxxx.zip catalogxxxxxx
 
 
 
-== 將Cloud Backup資料還原至新的Connector
+== 將 BlueXP 備份與還原資料還原至新的 Connector
 
-如果內部部署Connector發生災難性故障、您必須安裝新的Connector、然後將Cloud Backup資料還原至新的Connector。
+如果內部部署 Connector 發生災難性故障、您需要安裝新的 Connector 、然後將 BlueXP 備份與還原資料還原至新的 Connector 。
 
-您需要執行4項工作、才能將Cloud Backup系統恢復至正常運作狀態：
+您需要執行 4 項工作、才能將 BlueXP 備份與還原系統恢復至正常運作狀態：
 
 * 安裝新的BlueXP Connector
-* 還原Cloud Backup資料庫
+* 還原 BlueXP 備份與還原資料庫
 * 還原索引型目錄檔案
 * 重新探索ONTAP 所有內部的功能齊全的系統、StorageGRID 並將其整合到BlueXP UI上
 
@@ -103,7 +103,7 @@ zip -r catalogxxxxxx.zip catalogxxxxxx
 
 === 在新的內部部署Linux主機上安裝新的Connector
 
-安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。定期變更Cloud Backup資料庫結構、可能會使較新的軟體版本與原始資料庫備份不相容。您可以 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["還原備份資料庫後、將Connector軟體升級至最新版本"^]。
+安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。對 BlueXP 備份與還原資料庫結構進行定期變更、可能會使較新的軟體版本與原始資料庫備份不相容。您可以 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["還原備份資料庫後、將Connector軟體升級至最新版本"^]。
 
 . https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["在新的內部部署Linux主機上安裝BlueXP Connector"^]
 . 使用您剛建立的管理員使用者認證登入BlueXP。
@@ -111,7 +111,7 @@ zip -r catalogxxxxxx.zip catalogxxxxxx
 
 
 
-=== 還原Cloud Backup資料庫
+=== 還原 BlueXP 備份與還原資料庫
 
 . 將MySQL備份從安全位置複製到新的Connector主機。
 . 使用下列命令、將備份複製到MySQL Docker容器中：
@@ -128,13 +128,13 @@ docker exec -it ds_mysql_1 sh
 ----
 . 在Container Shell中、部署「env」。
 . 您需要MySQL資料庫密碼、因此請複製「MySQL_root_password」金鑰的值。
-. 使用下列命令還原Cloud Backup MySQL資料庫：
+. 使用下列命令還原 BlueXP 備份與還原 MySQL DB ：
 +
 [source, cli]
 ----
 mysql -u root -p cloud_backup < mysql.dump.cloud_backup.sql
 ----
-. 使用下列SQL命令、確認Cloud Backup MySQL資料庫已正確還原：
+. 使用下列 SQL 命令、確認 BlueXP 備份與還原 MySQL DB 已正確還原：
 +
 [source, cli]
 ----
@@ -208,7 +208,7 @@ curl -X GET http://10.193.192.202/tenancy/external/resource?account=account-DARK
 +
 此API會傳回如下回應。「資源識別碼」下的值代表_WorkingEnvironment ID_、而「agentId」下的值則代表_x-agent-id_。
 
-. 更新Cloud Backup資料庫、瞭解StorageGRID 與工作環境相關的更新過程。請務必輸入StorageGRID 完整的網域名稱、以及存取金鑰和儲存金鑰、如下所示：
+. 使用與工作環境相關的 StorageGRID 系統詳細資料、更新 BlueXP 備份與還原資料庫。請務必輸入StorageGRID 完整的網域名稱、以及存取金鑰和儲存金鑰、如下所示：
 +
 [source, http]
 ----
@@ -222,7 +222,7 @@ curl -X POST 'http://10.193.192.202/account/account-DARKSITE1/providers/cloudman
 
 
 
-=== 驗證雲端備份設定
+=== 驗證 BlueXP 備份與還原設定
 
 . 選取每ONTAP 個執行中的環境、然後按一下右窗格中備份與還原服務旁的*檢視備份*。
 +

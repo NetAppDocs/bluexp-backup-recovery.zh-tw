@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: concept-cloud-backup-policies.html 
 keywords: backing up, back up, backup, back up volumes, cloud backup, backup policies, policies, schedules 
-summary: 本文件說明Cloud Backup的備份原則組態設定。 
+summary: BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes ONTAP 系統建立各種組態設定的備份原則。 
 ---
-= 雲端備份原則組態設定
+= BlueXP 備份與還原原則組態設定
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary: 本文件說明Cloud Backup的備份原則組態設定。
 
 
 [role="lead"]
-本文件說明ONTAP 使用時、內部作業系統及Cloud Volumes ONTAP 支援系統的備份原則組態設定Cloud Backup Service 。
+BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes ONTAP 系統建立各種組態設定的備份原則。
 
 
 
 == 備份排程
 
-Cloud Backup可讓您針對每個工作環境（叢集）建立多個備份原則、並提供獨特的排程。您可以將不同的備份原則指派給具有不同還原點目標（RPO）的磁碟區。
+BlueXP 備份與還原可讓您針對每個工作環境（叢集）建立多個備份原則、並設定獨特的排程。您可以將不同的備份原則指派給具有不同還原點目標（RPO）的磁碟區。
 
 每個備份原則都會提供一個區段、說明您可以套用至備份檔案的_標籤與保留_。
 
@@ -51,9 +51,9 @@ image:screenshot_backup_schedule_settings.png["建立備份原則時的備份排
 
 == DataLock和勒索軟體保護
 
-Cloud Backup支援DataLock和勒索軟體保護功能、可用於磁碟區備份。這些功能可讓您鎖定備份檔案、並進行掃描、以偵測備份檔案上可能的勒索軟體。這是可選的設定、您可以在備份原則中定義、以便為叢集的磁碟區備份提供額外保護。
+BlueXP 備份與還原可為您的磁碟區備份提供 DataLock 和勒索軟體保護支援。這些功能可讓您鎖定備份檔案、並進行掃描、以偵測備份檔案上可能的勒索軟體。這是可選的設定、您可以在備份原則中定義、以便為叢集的磁碟區備份提供額外保護。
 
-這兩項功能都能保護您的備份檔案、因此當勒索軟體攻擊來源資料時、您永遠都能擁有有效的備份檔案來還原資料。此外、也有助於滿足某些法規要求、在某些情況下、備份必須鎖定並保留一段時間。啟用DataLock和勒索軟體保護後、隨附於Cloud Backup啟動的雲端儲存區將會啟用物件鎖定和物件版本管理功能。
+這兩項功能都能保護您的備份檔案、因此當勒索軟體攻擊來源資料時、您永遠都能擁有有效的備份檔案來還原資料。此外、也有助於滿足某些法規要求、在某些情況下、備份必須鎖定並保留一段時間。啟用 DataLock 和勒索軟體保護時、配置為 BlueXP 備份和恢復啟動一部分的雲端貯體將會啟用物件鎖定和物件版本控制。
 
 https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["如需詳細資料、請參閱DataLock和勒索軟體保護部落格"^]。
 
@@ -61,7 +61,7 @@ https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-
 
 [CAUTION]
 ====
-* 如果您計畫使用DataLock和勒索軟體保護、則在建立第一個備份原則並啟動該叢集的Cloud Backup時、必須啟用此功能。
+* 如果您計畫使用 DataLock 和勒索軟體保護、則必須在建立第一個備份原則、並啟用該叢集的 BlueXP 備份與還原時啟用。
 * 資料鎖定和勒索軟體保護功能一旦設定完成、就無法針對叢集停用。請勿在叢集上啟用此功能以試用。
 
 
@@ -80,7 +80,7 @@ DataLock可保護您的備份檔案、避免在一段時間內遭到修改或刪
 * 如果您建立的備份原則每天建立30個、每週7個、每月12個備份、則會有三個鎖定的保留期間。「30天」備份將保留44天（30天加上14天緩衝）、「7週」備份保留9週（7週加上14天）、「12個月」備份則保留12個月（加上14天）。
 * 如果您建立24個保留項目的每小時備份排程、您可能會認為備份會鎖定24小時。不過、由於這低於30天的最少時間、因此每個備份都會被鎖定並保留44天（30天加上14天的緩衝）。
 +
-您可以在最後一次看到、如果每個備份檔案被鎖定44天、您將會有更多的備份檔案、而不是通常以每小時24小時保留原則來保留。通常、當Cloud Backup建立第25個備份檔案時、它會刪除最舊的備份、以將保留上限維持在24（根據原則）。在這種情況下、DataLock保留設定會覆寫備份原則的原則保留設定。這可能會影響您的儲存成本、因為備份檔案將會儲存在物件存放區中一段較長的時間。
+您可以在最後一次看到、如果每個備份檔案被鎖定44天、您將會有更多的備份檔案、而不是通常以每小時24小時保留原則來保留。通常、當 BlueXP 備份與還原建立第 25 個備份檔案時、它會刪除最舊的備份、以將最大保留保持在 24 （根據原則）。在這種情況下、DataLock保留設定會覆寫備份原則的原則保留設定。這可能會影響您的儲存成本、因為備份檔案將會儲存在物件存放區中一段較長的時間。
 
 
 
@@ -292,10 +292,10 @@ endif::azure[]
 === 限制
 
 * 如果您已在備份原則中設定歸檔儲存設備、則無法使用DataLock和勒索軟體保護功能。
-* 啟動Cloud Backup時所選取的DataLock選項、必須用於該叢集的所有備份原則。
+* 啟動 BlueXP 備份與還原時所選取的 DataLock 選項必須用於該叢集的所有備份原則。
 * 您無法在單一叢集上同時使用兩種DataLock模式。
 * 如果啟用DataLock、所有Volume備份都會鎖定。您無法混合使用單一叢集的鎖定和非鎖定磁碟區備份。
-* DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。雲端備份已啟動之後、您就無法啟用此功能。
+* DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。BlueXP 備份與還原啟動後、您無法啟用此功能。
 
 
 
@@ -317,7 +317,7 @@ ifdef::aws[]
 如果您的叢集使用ONTAP 的是更新版本的版本、您可以將舊版備份分層至_S3 Glacier或_S3 Glacier Deep Archive_儲存設備。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔儲存設備"^]。
 
 +
-請注意、如果您在啟動Cloud Backup時、在第一個備份原則中選擇「_S3 Glacier」或「_S3 Glacier Deep Archive_」、則該層將是該叢集未來備份原則唯一可用的歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。
+請注意、如果您在啟動 BlueXP 備份與還原時、在第一個備份原則中選擇 _S3 Glacier 或 _S3 Glacier Deep Archive_ 、則該層將是該叢集未來備份原則可用的唯一歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。
 
 
 
@@ -337,7 +337,7 @@ ifdef::gcp[]
 
 * 在 GCP 中、備份會與 _Standard_ 儲存類別相關聯。
 +
-如果您的內部叢集使用ONTAP 的是更新版本的版本、您可以選擇在特定天數後、將舊版備份分層至Cloud Backup UI中的_Archive_儲存設備、以進一步最佳化成本。 link:reference-google-backup-tiers.html["深入瞭解Google歸檔儲存設備"^]。
+如果您的內部叢集使用 ONTAP 9.12.1 或更新版本、您可以選擇在特定天數後、將舊備份分層儲存至 BlueXP 備份與還原 UI 中的 _Archive_ 儲存設備、以進一步最佳化成本。 link:reference-google-backup-tiers.html["深入瞭解Google歸檔儲存設備"^]。
 
 
 
