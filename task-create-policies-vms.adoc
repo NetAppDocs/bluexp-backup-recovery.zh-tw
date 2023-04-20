@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: task-create-policies-vms.html 
 keywords: create policy, protection policies, predefined policies, custom policies 
-summary: 建立備份虛擬機器的原則 
+summary: 建立備份資料存放區的原則 
 ---
-= 建立備份虛擬機器的原則
+= 建立備份資料存放區的原則
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ summary: 建立備份虛擬機器的原則
 
 .開始之前
 * 如果您不想編輯預先定義的原則、則應建立原則。
-* 若要將備份從物件存放區移至歸檔儲存區、您應該執行 ONTAP 9.10.1 或更新版本、 Amazon Web Services 或 Azure 應該是雲端供應商。
+* 若要將備份從物件存放區移至歸檔儲存區、您應該執行 ONTAP 9.10.1 或更新版本、 Amazon Web Services 或 Microsoft Azure 應該是雲端供應商。
 * 您應該為每個雲端供應商設定歸檔存取層。
 
 
@@ -74,6 +74,6 @@ BlueXP 提供下列預先定義的原則：
 . 按一下「 * 建立 * 」。
 +
 
-NOTE: 您無法編輯或刪除與虛擬機器相關聯的原則。
+NOTE: 您無法編輯或刪除與資料存放區相關聯的原則。
 
 

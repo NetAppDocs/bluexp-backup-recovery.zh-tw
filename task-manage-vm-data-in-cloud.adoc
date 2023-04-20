@@ -4,7 +4,7 @@ permalink: task-manage-vm-data-in-cloud.html
 keywords: manage backups, virtual machines, view datastores, view virtual machines, edit 
 summary: 您可以檢視資料存放區和虛擬機器、並編輯SnapCenter VMware vSphere執行個體的VMware vCenter外掛程式。 
 ---
-= 管理虛擬機器的保護
+= 管理資料存放區和虛擬機器資料的保護
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: task-restore-vm-data.html
 keywords: restore virtual machines 
 summary: 您可以將虛擬機器從雲端還原至內部部署SnapCenter 的內部部署。 
 ---
-= 從雲端還原虛擬機器
+= 從雲端還原虛擬機器資料
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以將虛擬機器從雲端還原至內部部署SnapCenter 的內
 
 
 [role="lead"]
-您可以將虛擬機器從雲端還原至內部部署的vCenter。備份會還原至執行備份的完全相同位置。如果虛擬機器是使用歸檔原則備份、則您可以設定歸檔還原優先順序。
+您可以將虛擬機器資料從雲端還原回內部部署 vCenter 。備份會還原至執行備份的完全相同位置。如果虛擬機器是使用歸檔原則備份、則您可以設定歸檔還原優先順序。
 
 
 NOTE: 您無法還原跨資料存放區的虛擬機器。

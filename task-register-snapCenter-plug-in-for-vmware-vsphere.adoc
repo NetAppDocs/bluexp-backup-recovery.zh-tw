@@ -28,7 +28,7 @@ NOTE: 您可以在 BlueXP 中註冊多個適用於 VMware vSphere 主機的 Snap
 .. 在 SnapCenter Plug-in for VMware vSphere 欄位中、指定 SnapCenter Plug-in for VMware vSphere 主機的 FQDN 或 IP 位址。
 .. 在連接埠欄位中、指定 SnapCenter Plug-in for VMware vSphere 主機執行的連接埠編號。
 +
-您應該確定連接埠已開啟、以便在 SnapCenter Plug-in for VMware vSphere 主機和 BlueXP 之間進行通訊。
+您應確保在內部部署的 SnapCenter Plug-in for VMware vSphere 主機（在預設 8144 連接埠上執行）和 BlueXP Connector 執行個體（可在任何雲端供應商（ Amazon Web Services 、 Microsoft Azure 、 Google Cloud Platform ）或內部部署中執行）之間、能夠進行通訊。
 
 .. 在使用者名稱和密碼欄位中、指定具有系統管理員角色的使用者認證。
 

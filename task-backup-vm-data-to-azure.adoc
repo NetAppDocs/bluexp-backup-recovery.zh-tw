@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-vm-data-to-azure.html 
-keywords: back up, backup, backup virtual machine data, Microsoft Azure, cloud backup, backup datastores 
+keywords: back up, backup, backup datastore, Microsoft Azure, cloud backup, backup datastores 
 summary: 將資料存放區從內部部署ONTAP 的地方還原備份到Azure。 
 ---
 = 將資料存放區備份至Microsoft Azure

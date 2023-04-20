@@ -164,9 +164,9 @@ sidebar:
     entries:
     - title: 保護您的虛擬機器資料
       url: "/concept-protect-vm-data.html"
-    - title: 註冊SnapCenter VMware vSphere的VMware外掛程式
+    - title: 註冊 VMware vSphere 主機的 SnapCenter 外掛程式
       url: "/task-register-snapCenter-plug-in-for-vmware-vsphere.html"
-    - title: 建立備份虛擬機器的原則
+    - title: 建立備份資料存放區的原則
       url: "/task-create-policies-vms.html"
     - title: 將資料存放區備份至Amazon Web Services
       flavor: aws
@@ -179,7 +179,7 @@ sidebar:
       url: "/task-backup-vm-data-to-gcp.html"
     - title: 將資料存放區備份StorageGRID 至
       url: "/task-backup-vm-data-to-storagegrid.html"
-    - title: 管理虛擬機器的保護
+    - title: 管理資料存放區和虛擬機器資料的保護
       url: "/task-manage-vm-data-in-cloud.html"
     - title: 還原虛擬機器資料
       url: "/task-restore-vm-data.html"
@@ -271,7 +271,7 @@ homepage:
     - title: 備份雲端原生SAP HANA資料庫
       flavor: azure
       url: task-backup-cloud-native-sap-hana-data.html
-  - title: 將虛擬機器資料備份到雲端
+  - title: 將資料存放區備份到雲端
     links:
     - title: 將資料存放區備份至Amazon Web Services
       flavor: aws

@@ -14,16 +14,16 @@ summary: 深入瞭解如何保護虛擬機器上的資料、並瞭解不同的�
 
 
 [role="lead"]
-您可以將資料存放區從內部部署的主要和次要儲存設備備份到雲端、以保護虛擬機器上的資料。必要時、您可以將虛擬機器還原回內部部署的 SnapCenter Plug-in for VMware vSphere 主機。
+BlueXP 虛擬機器備份與還原功能可備份資料存放區還原虛擬機器、藉此提供資料保護功能。
 
-您可以將資料存放區備份至 Amazon Web Services S3 、 Microsoft Azure Blob 、 Google Cloud Platform 和 StorageGRID 。
+您可以將資料存放區備份至 Amazon Web Services S3 、 Microsoft Azure Blob 、 Google Cloud Platform 和 StorageGRID 、並將虛擬機器還原至內部部署的 SnapCenter Plug-in for VMware vSphere 主機。
 
 .開始之前
 請先閱讀下列需求、確定您擁有支援的組態、然後再開始將資料存放區和虛擬機器備份至雲端供應商。
 
 * VMware vSphere 4.6P1或更新版本的適用插件SnapCenter
 +
-** 您應該使用SnapCenter VMware vSphere 4.7P1或更新版本的VMware vCenter外掛程式、從內部部署的次要儲存設備備份虛擬機器。
+** 您應該使用 SnapCenter Plug-in for VMware vSphere 4.7P1 或更新版本、從內部部署的次要儲存設備備份資料存放區。
 
 
 * 部分9.8或更新版本ONTAP

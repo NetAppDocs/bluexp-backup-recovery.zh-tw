@@ -1006,7 +1006,6 @@
   <block id="35902f649443d8dd6c5f04595fff3035" category="paragraph">如果您在雲端備份啟動後、將新的持續磁碟區新增至Kubernetes叢集、過去您需要記住為這些磁碟區設定備份。現在、您可以選取要自動套用至新建立磁碟區的原則。當為新的Kubernetes叢集啟動Cloud Backup時、此選項可在設定精靈中使用。</block>
   <block id="afd87a86d8a5973d91f3fcc4e85c719f" category="section-title">適用於虛擬機器的Cloud Backup 1.1.0現已上市</block>
   <block id="db46ba2f888d41e44da25c2d8c1f406d" category="summary">您可以檢視資料存放區和虛擬機器、並編輯SnapCenter VMware vSphere執行個體的VMware vCenter外掛程式。</block>
-  <block id="880521c077c3d9130e51f737ddd86b15" category="doc">管理虛擬機器的保護</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*關於此工作*</block>
   <block id="b4aa547260f4fe266f03ec3a845576a5" category="section-title">編輯SnapCenter VMware vSphere執行個體的VMware vCenter外掛程式</block>
   <block id="4cc186df234138a57b2e8c5d8e5f7f8d" category="list-text">按一下「 * 儲存 * 」。</block>
@@ -1016,13 +1015,11 @@
   <block id="048b394365a250ed3a53a1b28e83733e" category="paragraph">新的變更將會被探索到。</block>
   <block id="3e99ccad833881d9a8aeec4e2665baae" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 對應於資料存放區、然後按一下*重新整理保護*、即可針對變更啟用雲端保護。</block>
   <block id="529795f55723488071425500df0ff5d6" category="summary">您可以將虛擬機器從雲端還原至內部部署SnapCenter 的內部部署。</block>
-  <block id="70861b61c8a43f84ddd14a22316ee5af" category="doc">從雲端還原虛擬機器</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link-macro">需求</block>
   <block id="ceb4a235a226f19c172c9cf7c46d00dc" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 與您要還原的資料存放區相對應、然後按一下「*檢視詳細資料*」。</block>
   <block id="a03a09176193c264d8dcbdcb8f2f9043" category="list-text">按一下您要還原的備份對應的*還原*。</block>
   <block id="0291e73f7c30c841795ff165a80bdc0e" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 與您要還原的虛擬機器相對應、然後按一下*還原*。</block>
   <block id="42387e1cb260fd1fb8624acde3767841" category="paragraph">VM會還原至備份所在的相同位置。</block>
-  <block id="8f2653c5938080ffdd57904f850bc430" category="section-title">註冊SnapCenter VMware vSphere的VMware外掛程式</block>
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">按一下「*登錄SnapCenter VMware vSpher*的更新外掛程式」。</block>
   <block id="4eb88f79049bc78204f8659b66b7b655" category="list-text">在使用者名稱和密碼欄位中、指定具有系統管理員角色的使用者認證。</block>
   <block id="1d419e3005bf4974f6070bbb53e5816f" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 與您要備份的資料存放區相對應、然後按一下「*啟動備份*」。</block>
@@ -1040,12 +1037,8 @@
   <block id="f8038513f93eb5ca7b2505674255b67b" category="list-text">在所需的資源群組上停用「*最近*」。如果您已為資源群組啟用「*最近*」、則這些資源群組的備份將無法用於雲端的資料保護、因此無法用於還原作業。</block>
   <block id="391eb750d98c55b72607ff6ec6311db2" category="list-text">確保虛擬機器還原所在的目的地資料存放區擁有足夠空間、可容納VMDK、VMX、VMSD等所有虛擬機器檔案的複本。</block>
   <block id="6ee2c41b7a9bfae5bb618327d9499834" category="list-text">請確認目的地資料存放區沒有舊的虛擬機器檔案、其格式為先前還原作業失敗中的「還原xxx」xxxxxx_Filename。在觸發還原作業之前、您應該先刪除過時的檔案。</block>
-  <block id="4cfbdcb9aba741b123b3c46a8341bf59" category="sidebar">保護您的虛擬機器資料</block>
-  <block id="b2736084b30c35472d74c3c29a818a95" category="sidebar">管理虛擬機器的保護</block>
-  <block id="c2c86860cad5cd95ae9ef9c003e01d57" category="sidebar">還原虛擬機器資料</block>
   <block id="b418e05c847b656e4a8ac26f2f0cc045" category="inline-link">深入瞭解如何將虛擬機器保護至雲端</block>
   <block id="3a5ea6bb0616fe3f66bd74e5e18fd1b3" category="paragraph"><block ref="95fa49d8f0b9a0affedd5e0d4a52c2d2" category="inline-link-rx"></block>。</block>
-  <block id="7c8db0bef9b3c6a1335fe8f0a09bfdef" category="sidebar">備份及還原虛擬機器資料</block>
   <block id="338b73eb5ee02b02ceb307b68866c9f2" category="section-title">不需要Cloud Restore執行個體、ONTAP 即可執行瀏覽與還原功能</block>
   <block id="c2f301bf47b0e51a835909a868e786b5" category="paragraph">用於從S3和Blob儲存設備進行檔案層級瀏覽與還原作業時、需要使用獨立的雲端還原執行個體/虛擬機器。此執行個體不使用時會關閉、但還原檔案時仍會增加一些時間和成本。此功能已由免費容器取代、可在需要時部署在Connector上。它具有下列優點：</block>
   <block id="b7a41babdf28bb4d456f0725ccfbc402" category="list-text">無需增加檔案層級還原作業的成本</block>
@@ -1693,7 +1686,6 @@
   <block id="ba7b66b996d8928df996e4fd4fffa4a4" category="doc">將資料存放區備份StorageGRID 至</block>
   <block id="cf4e6e70123f43cdec5ffd93f792c083" category="list-text">指定儲存伺服器IP。</block>
   <block id="10303a499a9e21a77e6dad69618c622b" category="list-text">選取存取金鑰和秘密金鑰。</block>
-  <block id="fe8f95b60b7c4092ce03adfbb31e89b4" category="doc">建立備份虛擬機器的原則</block>
   <block id="43852dc1e0c3229284688eb4c01dfef0" category="paragraph">如果您不想編輯預先定義的原則、則應建立原則。</block>
   <block id="0ef51421739da7017b4d3decc1813f4a" category="list-text">在「虛擬機器」頁面的「設定」下拉式清單中、選取「*原則*」。</block>
   <block id="0b0e252af8897fbe981ec6682d2aa33b" category="section-title">支援登錄總覽</block>
@@ -2143,7 +2135,6 @@
   <block id="244bf1b38515bb301b6d835e3906b9a1" category="paragraph">檔案層中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您必須考慮從歸檔備份檔案還原資料的頻率。</block>
   <block id="373e31603b5a78ab3bc84cbe57c892b5" category="paragraph">每個備份原則都會提供一節_Archival Policy_、您可以套用至備份檔案。</block>
   <block id="0776412162b9ad0d387bbf818146d659" category="sidebar">支援的Google歸檔儲存層</block>
-  <block id="91770f038cd944a1d3b9b347edeb2b10" category="sidebar">新增功能</block>
   <block id="b2ff0fb046b03e40e599f1561ed5ebd3" category="list-text">不FlexGroup 支援從支援的範圍內將資料從支援的資料區還原為FlexVol 資料區、或FlexVol 將資料區還原FlexGroup 為資料區。</block>
   <block id="30bc6b6cbbb254a1299f2544d8a09731" category="paragraph">撥打API呼叫時、您將在「授權」標頭中新增使用者權杖、並在X-agent-id標頭中新增BlueXP Connector ID。您應該在API中使用BlueXP帳戶ID。</block>
   <block id="710f97f519c3a0c08777096972387f3c" category="list-text">從NetApp BlueXP網站取得使用者權杖。</block>
@@ -2196,7 +2187,6 @@
   <block id="c816d65f45a034b0842bc039567fcb6b" category="inline-link-macro">在Google Cloud中快速入門Cloud Volumes ONTAP</block>
   <block id="d6758ec75f0ff2bab6d8a4d6b6f79cf1" category="list-text"><block ref="d6758ec75f0ff2bab6d8a4d6b6f79cf1" category="inline-link-macro-rx"></block></block>
   <block id="2a60e5494e07cff54330378780f8e2a4" category="list-text">（可選）如果要在成本最佳化的特定天數後、將備份從物件存放區移至歸檔儲存區、請選取「*將備份層級移至歸檔*」核取方塊、然後輸入備份歸檔的天數。</block>
-  <block id="2918bd1eb41f17cc6bbd51b50460f7dc" category="admonition">您無法編輯或刪除與虛擬機器相關聯的原則。</block>
   <block id="d5b842bb75f6d0fd358e7a35f06b5354" category="summary">建立Oracle資料庫的排程或隨需備份。</block>
   <block id="b83d0a6a6920d792bf1e5421f574e4d8" category="doc">備份雲端原生Oracle資料庫</block>
   <block id="436faef9b95757e54b257ab16a914324" category="section-title">建立Oracle資料庫的備份</block>
@@ -2381,7 +2371,6 @@
   <block id="9bc04b83e994e96133d24116c5a25bf5" category="list-text">@用於分隔資料與其資料庫名稱、並將值與其金鑰區隔。範例：data@rg2_scspr2417819002_07-20-2021_12.16.48.9267_0| LOG@RG2_scspr2417819002_07-20-2021_12.16.48.9267</block>
   <block id="08d3131fcf6d963372785be681e343e9" category="list-text">|用於分隔SC_backup_name參數兩個不同實體之間的資料。範例：DATA@RG2_scspr2417819002_07-20-2021_12.16.48.9267 0| LOG@RG2_scspr2417819002_07-20-2021_12.16.48.9267</block>
   <block id="1dc2b43d41c36670d82fe3076115def6" category="list-text">用於分隔同一機碼的變數集。範例：data@rg2_scspr2417819002_07-2021_12.16.48.9267_0| log@rg2_scspr2417819002_07-2021_12.16.48.9267_1、rg2_scspr2417819002_07-21 - 2021_12.16.48.9267_1_48.922_19002_20267-20267-20267-20267-202_18.202_18.202_18.202_12.267-2022_18.202_18.202_18.202_18.202_24</block>
-  <block id="9506c95f9ad8061d2b32d45700688c83" category="paragraph">您可以將虛擬機器從雲端還原至內部部署的vCenter。備份會還原至執行備份的完全相同位置。如果虛擬機器是使用歸檔原則備份、則您可以設定歸檔還原優先順序。</block>
   <block id="5183d16b45269aeda8f220ef35e5327c" category="list-text">選取您要從備份還原的虛擬機器。</block>
   <block id="0b204b102ed08f6af904a33d81026023" category="list-text">選取*歸檔還原優先順序*、然後按一下*下一步*。</block>
   <block id="071df86763e0e93af80e50596aa0710c" category="list-text">選取您要用來還原虛擬機器的備份。</block>
@@ -2471,7 +2460,6 @@
   <block id="e3b72f702a3b0c42e864fe0ad9eb9453" category="paragraph"><block ref="e3b72f702a3b0c42e864fe0ad9eb9453" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2c9139d12cc7ddacb93c941d4bf412a2" category="paragraph">連接器可以部署在與應用程式相同的VPC或vnet中、也可以部署在不同的VPC或vnet中。如果連接器和應用程式位於不同的網路上、您應該在兩者之間建立網路連線。</block>
   <block id="e3a2981d750d1d4a623860068a07cc70" category="admonition">單一BlueXP Connector可與多個儲存系統和多個應用程式外掛程式進行通訊。只要連接器與應用程式主機之間有連線、您就需要一個連接器來管理應用程式。</block>
-  <block id="11db7b880ef2ebba3ee0a02b685e8da0" category="section-title">保護Oracle資料庫</block>
   <block id="18cf072964a583150dd247485ba75b92" category="list-text">Amazon FSX for ONTAP Sf</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="09417dd7907c94abc22203ab06dade6c" category="list-text">儲存配置：</block>
@@ -2488,7 +2476,6 @@
   <block id="5669d4dde41a20620530fdebbd1d9492" category="list-text">監控備份、還原、複製及其他工作</block>
   <block id="9518d577aae2b3d43b6dd0f41fb999e1" category="list-text">不支援Oracle 11g</block>
   <block id="d67615cd9765a283fd8a9d06cd5d44a1" category="list-text">不支援備份的掛載、目錄及驗證作業</block>
-  <block id="9317a56cfedd80231a539c42f44d9c8d" category="section-title">保護SAP HANA資料庫</block>
   <block id="494c3084e3990387ac3b46cb5749bb65" category="list-text">RHEL 7.5或更新版本、已通過SAP HANA認證的8.x平台</block>
   <block id="504d22b0e020e0b365851eef08a1e4ca" category="list-text">SLES 12 SP5或更新版本、以及15個通過SAP HANA認證的SPx平台</block>
   <block id="c7325743e6b1be5853672e4ed19d279b" category="list-text">資料庫配置：</block>
@@ -2533,7 +2520,6 @@
   <block id="0939e02b7faf70738951c4d3dac49c2d" category="list-text">按一下 <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> 與您要刪除的複本相對應、然後按一下*刪除*。</block>
   <block id="6c2d45f01ff62f51f26b2e2555360189" category="list-text">（選用）選取「*強制刪除*」核取方塊。</block>
   <block id="d13044a4ef6b89541aeb5868baab390c" category="paragraph">如果所有主機SnapCenter 都安裝並執行適用於SAP HANA的支援功能、而且所有主機都可從新連接器存取、連接器詳細資料將會成功更新。</block>
-  <block id="0fbf3afea399595219e31836afabacc9" category="list-text">您應該使用SnapCenter VMware vSphere 4.7P1或更新版本的VMware vCenter外掛程式、從內部部署的次要儲存設備備份虛擬機器。</block>
   <block id="9a3ae5d8e3738351dd9a586e8215632a" category="list-text">VMware vSphere適用的VMware vSphere中至少有一項SnapCenter 每日、每週或每月原則、沒有標籤或標籤與BlueXP中的虛擬機器原則相同。</block>
   <block id="add26d38486fad5ca461f986832fa6c3" category="inline-image-macro">架構圖</block>
   <block id="955c6f1851b4039bd20ae31d5f14d338" category="paragraph"><block ref="955c6f1851b4039bd20ae31d5f14d338" category="inline-image-macro-rx" type="image"></block></block>
@@ -2924,8 +2910,6 @@
   <block id="51c1a6c1e7497769792664cc458e4b3b" category="list-text"><block ref="51c1a6c1e7497769792664cc458e4b3b" category="inline-link-rx"></block></block>
   <block id="3b3fe44fb52240d2bf1cecd954ba8f31" category="list-text"><block ref="3b3fe44fb52240d2bf1cecd954ba8f31" category="inline-link-rx"></block></block>
   <block id="b08b0a6b8389d8eb21b696d8750a42c7" category="list-text"><block ref="b08b0a6b8389d8eb21b696d8750a42c7" category="inline-link-rx"></block></block>
-  <block id="ceb0e703e6fc4ff33d792e51790261e4" category="paragraph">您可以將資料存放區從內部部署的主要和次要儲存設備備份到雲端、以保護虛擬機器上的資料。必要時、您可以將虛擬機器還原回內部部署的 SnapCenter Plug-in for VMware vSphere 主機。</block>
-  <block id="21d7ed1a0ed596af2b79f06576c84ca9" category="paragraph">您可以將資料存放區備份至 Amazon Web Services S3 、 Microsoft Azure Blob 、 Google Cloud Platform 和 StorageGRID 。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">開始之前</block>
   <block id="949ad3136d64be33cc1a6a67e3add3d1" category="paragraph">請先閱讀下列需求、確定您擁有支援的組態、然後再開始將資料存放區和虛擬機器備份至雲端供應商。</block>
   <block id="9b9477e579c3b44dd623d5a6e1ea8d78" category="list-text">藍圖</block>
@@ -2939,12 +2923,10 @@
   <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">您無法還原跨資料存放區的虛擬機器。</block>
   <block id="76edd5381919de6c1c9b123a884984f8" category="list-text">在 BlueXP UI 中、按一下 * 保護 * &gt; * 備份與還原 * &gt; * 虛擬機器 * &gt; * SnapCenter Plug-in for VMware vSphere * 、然後選取適用於 VMware vSphere 主機的 SnapCenter 外掛程式。</block>
   <block id="873069930fc1357e9cd4216822243f14" category="admonition">如果來源虛擬機器移至其他位置（ VMotion ）、且使用者觸發從 BlueXP 還原該虛擬機器、則虛擬機器會還原至備份來源位置。</block>
-  <block id="73bc14a460209f6fd497aa9bd91fbaa6" category="list-text">您可以從資料存放區或虛擬機器還原：</block>
   <block id="5d920b501536441ea32ecc24679c72a2" category="cell">如果您想要...</block>
   <block id="df2d87dc916178a7076837c06010ded0" category="paragraph">從資料存放區還原</block>
   <block id="4569e5f9f0309302f499c21fc4cb8ee6" category="paragraph">只有在虛擬機器使用設定歸檔設定的原則受到保護時、才能使用此選項。Amazon Web Services支援的歸檔還原優先順序高、標準且低、Microsoft Azure支援的歸檔還原優先順序高且標準。</block>
   <block id="2a8a756e65415cefaa2a8f2d963e01be" category="paragraph">從虛擬機器還原</block>
-  <block id="4eb58c4143c6b0e5561211f7a2425377" category="list-text">若要將備份從物件存放區移至歸檔儲存區、您應該執行 ONTAP 9.10.1 或更新版本、 Amazon Web Services 或 Azure 應該是雲端供應商。</block>
   <block id="5d0ad01dbdb8717fbebf1cb44a3c10cd" category="list-text">您應該為每個雲端供應商設定歸檔存取層。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">關於這項工作</block>
   <block id="ca69b8ee34e44ac66b7f0dfd3b786e9c" category="paragraph">BlueXP 提供下列預先定義的原則：</block>
@@ -2956,7 +2938,6 @@
   <block id="f352f7544724f99ab1b27e3e40291b49" category="admonition">您可以在 BlueXP 中註冊多個適用於 VMware vSphere 主機的 SnapCenter 外掛程式。不過、一旦註冊後、您就無法移除適用於 VMware vSphere 主機的 SnapCenter 外掛程式。</block>
   <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">在 SnapCenter Plug-in for VMware vSphere 欄位中、指定 SnapCenter Plug-in for VMware vSphere 主機的 FQDN 或 IP 位址。</block>
   <block id="463d350eb6c9887e5addb9a6561a47ad" category="list-text">在連接埠欄位中、指定 SnapCenter Plug-in for VMware vSphere 主機執行的連接埠編號。</block>
-  <block id="a3640e12809bb0c58c14ed0dc2515991" category="paragraph">您應該確定連接埠已開啟、以便在 SnapCenter Plug-in for VMware vSphere 主機和 BlueXP 之間進行通訊。</block>
   <block id="1e88a362bd23950ee5a102f645348ac8" category="paragraph">按一下 * 備份與還原 * &gt; * 虛擬機器 * 、即可檢視所有使用 VMware vSphere 主機的已註冊 SnapCenter 外掛程式保護的資料存放區和虛擬機器。</block>
   <block id="942c9249796cf6b78c981ebf15195809" category="list-text"><block ref="942c9249796cf6b78c981ebf15195809" category="inline-link-rx"></block></block>
   <block id="26000c50c37289d13041f03c670085a3" category="paragraph">您可以將 SnapCenter Plug-in for VMware vSphere 主機與 BlueXP 整合、將一或多個資料存放區備份至 Microsoft Azure 。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。</block>
@@ -3490,7 +3471,6 @@
   <block id="5c92c4685a32fe7d41d3f537c7f5116b" category="paragraph">* 重要： * 如果您打算使用 DataLock 、則必須在啟動 BlueXP 備份與還原時、在第一個原則中啟用。</block>
   <block id="0331809832826b1a244aca026a9b2d64" category="list-text">按一下 * 啟動備份 * 、然後 BlueXP 備份與還原會開始為每個選取的磁碟區進行初始備份。</block>
   <block id="ba48140a3394818b661e6fd497e203a7" category="doc">瞭解 BlueXP 備份與還原</block>
-  <block id="fa3178fc47dcb8e792e863ce59dac949" category="paragraph">BlueXP 備份與還原可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 永續性磁碟區、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
   <block id="af4d8d7b56820e969dfbdcfe2654b5b3" category="paragraph">此服務執行區塊層級的遞增永久複寫、並保留所有儲存效率、大幅減少複寫和儲存的資料量。此外、您只需支付受保護的費用、並使用可用的最低成本儲存層、使 BlueXP 備份與還原非常具成本效益。</block>
   <block id="723a81a7ee0b42134a46c1aaa0d99371" category="inline-link">深入瞭解 BlueXP 備份與還原</block>
   <block id="9eb420abad7616344371178eb6cfb9a7" category="paragraph"><block ref="63f4276e2fdf1ca315cba1b1fcff7250" category="inline-link-rx"></block>。</block>
@@ -3735,7 +3715,6 @@
   <block id="2e5d6ff9bc4d6b4194df020bde3f3dca" category="sidebar">在黑暗的站台中備份 BlueXP 備份與還原資料庫</block>
   <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">BlueXP 備份與還原部落格</block>
   <block id="960dd4200d015a0a12dfd299c1348c9c" category="sidebar">BlueXP 備份與還原使用案例</block>
-  <block id="ceffaf94354645ad26052bbc53604f5d" category="sidebar">將虛擬機器資料備份到雲端</block>
   <block id="a1c18d7af73fa7e0ef0013130f15b257" category="sidebar">從雲端還原資料</block>
   <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">還原 ONTAP Volume 資料</block>
   <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">還原內部部署的 Oracle 應用程式資料</block>
@@ -3744,4 +3723,21 @@
   <block id="5fd9bba0b0a00c42d3baab299425c076" category="sidebar">還原雲端原生 SAP HANA 應用程式資料</block>
   <block id="18de97333e5776e0c135dd87c10b965c" category="sidebar">還原虛擬機器資料</block>
   <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">還原 Kubernetes Volume 資料</block>
+  <block id="70dfad9357f3b3b710b73d8eb3666851" category="paragraph">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續磁碟區、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
+  <block id="9a3f2e7eb30992bb084418711e5093f2" category="doc">管理資料存放區和虛擬機器資料的保護</block>
+  <block id="2131f85f2f51908e5c573c231b274f4c" category="paragraph">您應確保在內部部署的 SnapCenter Plug-in for VMware vSphere 主機（在預設 8144 連接埠上執行）和 BlueXP Connector 執行個體（可在任何雲端供應商（ Amazon Web Services 、 Microsoft Azure 、 Google Cloud Platform ）或內部部署中執行）之間、能夠進行通訊。</block>
+  <block id="de437d1f424b507f3d7be645ac0952c2" category="paragraph">BlueXP 虛擬機器備份與還原功能可備份資料存放區還原虛擬機器、藉此提供資料保護功能。</block>
+  <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">您可以將資料存放區備份至 Amazon Web Services S3 、 Microsoft Azure Blob 、 Google Cloud Platform 和 StorageGRID 、並將虛擬機器還原至內部部署的 SnapCenter Plug-in for VMware vSphere 主機。</block>
+  <block id="2a18af02b6c0b7e92a17df9509574f26" category="list-text">您應該使用 SnapCenter Plug-in for VMware vSphere 4.7P1 或更新版本、從內部部署的次要儲存設備備份資料存放區。</block>
+  <block id="9fe2f95002b4b4815d52173b68bf9862" category="summary">建立備份資料存放區的原則</block>
+  <block id="38fb3153d6139974d24ba11e28a0718d" category="list-text">若要將備份從物件存放區移至歸檔儲存區、您應該執行 ONTAP 9.10.1 或更新版本、 Amazon Web Services 或 Microsoft Azure 應該是雲端供應商。</block>
+  <block id="44dae527927c9be3aabaf37ba09b9068" category="admonition">您無法編輯或刪除與資料存放區相關聯的原則。</block>
+  <block id="ffa1e37a2c6478ff157a0a7d25a607e9" category="doc">從雲端還原虛擬機器資料</block>
+  <block id="95513dac8a621e64dcee2a0f311b0e66" category="paragraph">您可以將虛擬機器資料從雲端還原回內部部署 vCenter 。備份會還原至執行備份的完全相同位置。如果虛擬機器是使用歸檔原則備份、則您可以設定歸檔還原優先順序。</block>
+  <block id="6c0dd80335ed3d649017aa79a23eddae" category="list-text">您可以從資料存放區或虛擬機器還原：</block>
+  <block id="54a98d3cca3d552c2562869bfcebf735" category="section-title">保護Oracle資料庫</block>
+  <block id="b45eb079efd4b3748b1efc669c02c01c" category="section-title">保護SAP HANA資料庫</block>
+  <block id="3eb97a71011fe0dae37080fd785e4db5" category="sidebar">備份及還原虛擬機器資料</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
+  <block id="7048662b75c8f210e59f898d992521cc" category="sidebar">將資料存放區備份到雲端</block>
 </blocks>
