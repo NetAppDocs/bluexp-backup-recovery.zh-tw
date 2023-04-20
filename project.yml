@@ -295,6 +295,7 @@ homepage:
     - title: 還原雲端原生 Oracle 應用程式資料
       url: task-restore-cloud-native-oracle-data.html
     - title: 還原雲端原生 SAP HANA 應用程式資料
+      flavor: azure
       url: task-restore-cloud-native-sap-hana-data.html
     - title: 還原虛擬機器資料
       url: task-restore-vm-data.html
