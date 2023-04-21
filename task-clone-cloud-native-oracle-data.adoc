@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-clone-cloud-native-oracle-data.html 
-keywords: cloud native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
+keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
 summary: 將資料庫複製到來源主機或替代主機。 
 ---
-= 複製雲端原生Oracle資料庫
+= 複製雲端原生 Oracle 資料庫
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

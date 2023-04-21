@@ -4,7 +4,7 @@ permalink: task-backup-cloud-native-oracle-data.html
 keywords: admin role, service account, pre-canned policies, cloud manager, BlueXP, scheduled backups, on-demand backups, create policy, Oracle database, backup limitations 
 summary: 建立Oracle資料庫的排程或隨需備份。 
 ---
-= 備份雲端原生Oracle資料庫
+= 備份雲端原生 Oracle 資料庫
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

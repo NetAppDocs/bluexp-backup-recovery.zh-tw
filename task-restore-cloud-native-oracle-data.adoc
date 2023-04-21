@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-restore-cloud-native-oracle-data.html 
-keywords: cloud native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
+keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
 summary: 還原資料檔案、控制檔或兩者、然後還原資料庫。 
 ---
-= 還原雲端原生Oracle資料庫
+= 還原雲端原生 Oracle 資料庫
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ summary: 還原資料檔案、控制檔或兩者、然後還原資料庫。
 
 *開始之前*
 
-如果Oracle 21c資料庫處於「已啟動」狀態、還原作業將會失敗。您應該執行下列步驟、以成功還原資料庫。
+如果Oracle 21c資料庫處於「已啟動」狀態、還原作業將會失敗。您應該執行下列命令、以成功還原資料庫。
 `cp -f <ORACLE_HOME>/jdbc/lib/ojdbc8.jar /opt/NetApp/snapcenter/spl/plugins/sco/lib/ojdbc8-8.jar`
 
 *步驟*

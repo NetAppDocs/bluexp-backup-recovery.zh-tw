@@ -4,7 +4,7 @@ permalink: concept-protect-cloud-app-data-to-cloud.html
 keywords: backing up, back up, backup, backup application data, Amazon EC2, Amazon Web services, Amazon FSx, Cloud Backup, Oracle database, requirements, prerequisites, Cloud Volumes ONTAP, Cloud Manager, BlueXP, cloud backup 
 summary: BlueXP提供高效、應用程式一致、原則型的備份、以及位於Amazon FSX for NetApp ONTAP 的Oracle®資料庫Cloud Volumes ONTAP 還原功能。 
 ---
-= 保護雲端原生應用程式資料
+= 保護您的雲端原生應用程式資料
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: BlueXP提供高效、應用程式一致、原則型的備份、以及�
 
 
 [role="lead"]
-BlueXP 應用程式備份與還原是一項 SaaS 型服務、可為在 NetApp Cloud Storage 上執行的應用程式提供應用程式一致的資料保護功能。BlueXP 應用程式備份與還原可為下列應用程式提供高效率、應用程式一致且以原則為基礎的保護：
+BlueXP 應用程式備份與還原是一項 SaaS 型服務、可為在 NetApp Cloud Storage 上執行的應用程式提供應用程式一致的資料保護功能。BlueXP 備份與還原可為下列應用程式提供高效率、應用程式一致且以原則為基礎的保護：
 
 * 適用於 NetApp ONTAP 、 Cloud Volumes ONTAP 和 Azure NetApp Files 的 Amazon FSX 上的 Oracle 資料庫
 * SAP HANA系統駐留Azure NetApp Files 在

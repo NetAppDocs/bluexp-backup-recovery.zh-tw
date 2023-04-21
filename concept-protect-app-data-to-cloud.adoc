@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-app-data-to-cloud.html 
-keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, Cloud Backup, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP, cloud backup 
+keywords: backing up, back up, backup, backup application data, Azure, Amazon Web services, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, policy, requirements, SAP HANA database, Cloud Manager, BlueXP, backup and recovery 
 summary: 將 BlueXP 應用程式的備份與還原與 BlueXP 和內部部署 SnapCenter 整合、將應用程式一致的快照從內部部署 ONTAP 備份到雲端。 
 ---
 = 保護內部部署的應用程式資料
@@ -20,7 +20,7 @@ BlueXP 應用程式備份與還原可為應用程式提供資料保護功能、�
 
 如需應用程式 BlueXP 備份與還原的詳細資訊、請參閱：
 
-* https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["應用程式感知備份、採用Cloud Backup和SnapCenter 功能"^]
+* https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["採用 BlueXP 備份與還原及 SnapCenter 的應用程式感知備份"^]
 * https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["BlueXP 應用程式備份與還原 Podcast"^]
 
 
@@ -51,8 +51,4 @@ NOTE: 如果使用 FQDN 或 IP 位址將 SVM 新增至 SnapCenter 、則無法�
 
 下圖顯示備份至雲端時的每個元件、以及您需要在它們之間準備的連線：
 
-image:diagram_cloud_backup_app.png["顯示Cloud Backup如何與內部部署應用程式及備份檔案所在的目的地儲存設備進行通訊的圖表。"]
-
-下列影像顯示備份StorageGRID 到還原時的每個元件、以及您在它們之間準備所需的連線：
-
-image:diagram_cloud_backup_onprem_storagegrid.png["顯示Cloud Backup如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
+image:diagram_cloud_backup_app.png["顯示 BlueXP 備份與還原如何與內部部署應用程式及備份檔案所在目的地儲存設備進行通訊的圖表。"]

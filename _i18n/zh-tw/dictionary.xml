@@ -19,8 +19,6 @@
   <block id="528441340754fa21a4883d97b6fcd1aa" category="paragraph">在「Select Volumes（選取磁碟區）」頁面中、使用預設的備份原則來識別要備份的磁碟區。如果您想要將不同的備份原則指派給特定磁碟區、可以建立其他原則、並於稍後套用至磁碟區。</block>
   <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="section-title">需求</block>
   <block id="da95680877c2d8ff430e738df948144e" category="paragraph">請先閱讀下列要求、確認您擁有支援的組態、再開始將內部部署的Volume備份StorageGRID 到原地。</block>
-  <block id="362e1fd025fbc54170675a786630faff" category="inline-image-macro">顯示Cloud Backup如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。</block>
-  <block id="7c9c2c9135c9dd5b2198f3d2e909e271" category="paragraph"><block ref="7c9c2c9135c9dd5b2198f3d2e909e271" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5c611511bb6c7851d2e8d2dda1c92506" category="section-title">準備 ONTAP 您的叢集</block>
   <block id="b020365bc471630c977d9fcc2c5ea1d1" category="inline-link">瞭解如何探索叢集</block>
   <block id="6ff483ff43e1d1341ed8bca213a5d6c2" category="paragraph"><block ref="781159370dedb574e61a716048070385" category="inline-link-rx"></block>。</block>
@@ -79,13 +77,9 @@
   <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">文件</block>
   <block id="80b1b0d2b1ebf2b3cba2d25759801afd" category="list-text">mailto：ng-cloudmanager-feedback@netapp.com [意見反應電子郵件]</block>
   <block id="18a6c204240510c87aba39d6d8b5d26b" category="doc">保護內部部署的應用程式資料</block>
-  <block id="ca6aeed84517a7133f1abaebed19854e" category="inline-link">應用程式感知備份、採用Cloud Backup和SnapCenter 功能</block>
-  <block id="ef3b2f715336b2a637c8e6704ee4bf21" category="list-text"><block ref="ef3b2f715336b2a637c8e6704ee4bf21" category="inline-link-rx"></block></block>
   <block id="c3ce6809be6bdc67ae978395484d0585" category="list-text">部分9.8或更新版本ONTAP</block>
   <block id="f3753469514d2cda99cee390aa2bf172" category="list-text">每個應用程式至少應有一個備份可供SnapCenter 使用於此伺服器</block>
   <block id="455299fd2e4b438ff8661df0bfd1cace" category="paragraph">下圖顯示每個元件及其之間需要準備的連線：</block>
-  <block id="c895d0010b397b55778718d6ccc26b78" category="inline-image-macro">顯示Cloud Backup如何與內部部署應用程式及備份檔案所在的目的地儲存設備進行通訊的圖表。</block>
-  <block id="bc983d441473b5c9a47c39b5fb57e53f" category="paragraph"><block ref="bc983d441473b5c9a47c39b5fb57e53f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="002f7378a5fcfc2f66cfea851a7fd5f4" category="cell">原則名稱</block>
   <block id="b021df6aac4654c454f46c77646e745f" category="cell">標籤</block>
   <block id="dfa56cb0ff8ac0e7087134a3d7e1f39d" category="cell">保留價值</block>
@@ -1363,10 +1357,8 @@
   <block id="7600e0a33882cda0be97bd2356d39bbe" category="paragraph"><block ref="7600e0a33882cda0be97bd2356d39bbe" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1487a5e00d27aaaa91d1643104c20943" category="paragraph">勒索軟體掃描欄會顯示掃描正在進行中。</block>
   <block id="15471566ffb385e256937957990dd60d" category="section-title">2022年8月18日</block>
-  <block id="d583f1393e45db7abf2dbb15da48eaad" category="section-title">新增支援以保護雲端原生應用程式資料</block>
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link">深入瞭解</block>
   <block id="d1e18cf16b83a90a2911458097d3358c" category="summary">檢視備份詳細資料、並監控所有工作的狀態。</block>
-  <block id="a0535e3da7a79865ac35aff6cbcd9919" category="doc">管理雲端原生應用程式資料的保護</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="section-title">監控工作</block>
   <block id="a5cae278ab84c15ead127cbc4d6b2fc5" category="paragraph">您可以監控已在工作環境中初始化的工作狀態。這可讓您查看已成功完成的工作、目前進行中的工作、以及已失敗的工作、以便診斷及修正任何問題。</block>
   <block id="e645e09bf2ae6466ce5a92513bf9c99b" category="section-title">檢視備份詳細資料</block>
@@ -1422,7 +1414,6 @@
   <block id="478ed3048c4d215862134df0ae0d59db" category="list-text">（選用）編輯備份名稱的格式。</block>
   <block id="241958803b06afbd6f6eb3ef7dbbe9d8" category="list-text">指定排程和保留詳細資料。</block>
   <block id="f2a42a68e067e481d094b018459ef895" category="list-text">按一下「 * 建立 * 」。</block>
-  <block id="eb5668f5c3459c84cc715cf197e7c91a" category="doc">保護雲端原生應用程式資料</block>
   <block id="2d242bb36ec91b32005f9296ff03a912" category="section-title">架構</block>
   <block id="5aa6aa9ade143b785fa0243d0138a6b5" category="paragraph">它能協調NetApp雲端儲存設備上的應用程式資料保護工作流程。</block>
   <block id="0f0f84cb9775a6f4ad6b4796bfcedfe9" category="list-text">作業系統：</block>
@@ -1659,12 +1650,10 @@
   <block id="8e9f3213cd82bd04250d546c82ac9bcc" category="paragraph">請以「FQDN：連接埠」格式輸入詳細資料。</block>
   <block id="351f25e3e7fc628f73a433013b9820a6" category="list-text">如果您想要使用下列功能、應該使用不含更新版本的伺服器4.7：SnapCenter SnapCenter</block>
   <block id="29d7639a0c7b9ce1eeb1a132409265c0" category="paragraph">下圖顯示備份至雲端時的每個元件、以及您需要在它們之間準備的連線：</block>
-  <block id="908a0e47cd03ccd04955cb93b0d41ef4" category="paragraph">下列影像顯示備份StorageGRID 到還原時的每個元件、以及您在它們之間準備所需的連線：</block>
   <block id="cba6a24686804eb1d7fea3608588a013" category="doc">將內部部署應用程式資料備份到Google Cloud</block>
   <block id="fa860b204216c5fc8423fbeb3cc0cb75" category="list-text">選擇* Google Cloud Platform *作為雲端供應商。</block>
   <block id="fa0f3e6189a17df2b37f1f89872dbee4" category="list-text">在Google Cloud存取金鑰欄位中、指定金鑰。</block>
   <block id="3ee34b7fd8f9ec35694f9ada246e9a7b" category="list-text">在Google Cloud Secret Key（Google Cloud機密金鑰）欄位中、指定密碼。</block>
-  <block id="5f1ca0dc5a7a1c5b872ab6837d27232f" category="summary">您可以使用預先整合的原則、或是建立自己的原則來保護應用程式。</block>
   <block id="8a4528cef726e4e36a30d918236162fc" category="doc">建立備份應用程式的原則</block>
   <block id="d25a033ca2c7e38b92faa1b51d470cd4" category="list-text">從「設定」下拉式清單中、按一下「*原則*」&gt;「*建立原則*」。</block>
   <block id="6c643a108a881a4245932f23d7c76c22" category="list-text">在「原則詳細資料」區段中、指定原則名稱。</block>
@@ -2199,13 +2188,11 @@
   <block id="2c35eeb424b768876f1774567e7bf2f5" category="list-text">支援以原則為基礎的Oracle資料庫備份與還原、這些資料庫位於Amazon FSX for NetApp ONTAP</block>
   <block id="88094c6c8ad963e6131e3c23988917d4" category="list-text">支援使用連線與複製方法還原Oracle資料庫</block>
   <block id="7d6f6d1efeae8c573a74a091cc119cb9" category="list-text">支援Oracle 21c</block>
-  <block id="35d9afe1e1e85a29b0de625fd2a9a44a" category="list-text">支援複製雲端原生Oracle資料庫</block>
   <block id="137f19e6e2dc1219f33553b812627bc2" category="list-text">虛擬機器</block>
   <block id="c2452add37f94598e06d237edc68078b" category="list-text">從內部部署的次要儲存設備備份虛擬機器</block>
   <block id="8e21c62b69b7c01b40ec93ceb9c4b5cd" category="list-text">支援Google Cloud Platform（GCP）備份一或多個資料存放區</block>
   <block id="6480beff3c438303fc8c6d8b4009f381" category="list-text">支援低成本的雲端儲存設備、例如Glacier、Deep Glacier和Azure歸檔</block>
   <block id="4dbebe33c4927d0c2034e3f9d520ba42" category="summary">將資料庫複製到來源主機或替代主機。</block>
-  <block id="027ad436d33a0bd111ed11873f94c74b" category="doc">複製雲端原生Oracle資料庫</block>
   <block id="0b5992955627a4d221dfaf4d434b9596" category="paragraph">您可以使用資料庫備份複製Oracle資料庫至來源資料庫主機或備用主機。</block>
   <block id="91af1a160d0e82dc6915ed84b13cb026" category="paragraph">您可能會因為下列原因而複製資料庫：</block>
   <block id="f808e6b1f9f18d3401fa365d39ab80f4" category="list-text">在應用程式開發週期期間、測試必須使用目前資料庫結構和內容來實作的功能。</block>
@@ -2231,7 +2218,6 @@
   <block id="b44a2ec7d100bd7fbbcef764a835ae72" category="paragraph">如果您選取*自動產生*、則應指定字尾。</block>
   <block id="01fc6bc870eb60d107c41c724b7c0f61" category="list-text">根據需求編輯規格檔案、然後按一下*瀏覽*按鈕加以上傳。</block>
   <block id="46630b95005d23b3ccd9d9af01eed5bc" category="list-text">按一下 <block ref="b7288b7453abfa8f93e33ab940aa7109" category="inline-image-macro-rx" type="image"></block> 緊鄰*篩選條件*、然後選取* Clone選項*&gt;* Clons*以檢視複本。</block>
-  <block id="3d580f21069642f6846c9301b0b69c5a" category="doc">還原雲端原生Oracle資料庫</block>
   <block id="72ec364974b7acfa78aac57b443cca2c" category="paragraph">在SAN配置中、如果SnapCenter Oracle的Estrate-Plug-in在ASM磁碟群組中找到Oracle資料檔案以外的任何外部檔案、則會執行連線和複製還原方法。外部檔案可以是下列一種或多種類型：</block>
   <block id="69eb10e6fd10e7913d2a8eeccd333a93" category="paragraph">「*強制就地還原*」選項會覆寫類型參數、密碼及歸檔記錄的外部檔案。選取「*強制就地還原*」選項時、您應該使用最新的備份。</block>
   <block id="09685971b3e1f16bca6b8635b76dffd8" category="summary">在複製資料庫之前、請先瞭解複製概念。</block>
@@ -2486,7 +2472,6 @@
   <block id="85b4745a4d1440f87a65d816457ed9c6" category="list-text">對於HSR組態、僅支援2節點HSR（1個主要節點和1個次要節點）</block>
   <block id="277fd7b361991606890ebf27911b589f" category="list-text">如果在還原作業期間、PostScript失敗、則不會觸發保留</block>
   <block id="5cca45bd52ac035de73ec0e76f0e5043" category="summary">還原資料檔案、然後還原資料庫。</block>
-  <block id="e648f70e1fb5d17870bf65097e43c5a6" category="doc">還原雲端原生SAP HANA資料庫</block>
   <block id="26661dc24144ed594be15c07b300db39" category="paragraph">在資料遺失的情況下、您可以還原資料和非資料檔案、然後還原資料庫。</block>
   <block id="8f0f4ecd6bb49079fb488435d58bf611" category="list-text">還原之後、請手動還原SAP HANA系統、或提供執行SAP HANA系統還原的PostScript。</block>
   <block id="aafa017aee26c3860dee1aac06cc22e5" category="section-title">還原非資料磁碟區</block>
@@ -2516,8 +2501,6 @@
   <block id="add26d38486fad5ca461f986832fa6c3" category="inline-image-macro">架構圖</block>
   <block id="955c6f1851b4039bd20ae31d5f14d338" category="paragraph"><block ref="955c6f1851b4039bd20ae31d5f14d338" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d1444f985888131065bf58d488e5a34f" category="sidebar">還原內部部署應用程式資料</block>
-  <block id="1c157808ae21e883235bd19d5c13f45e" category="sidebar">備份Oracle資料庫</block>
-  <block id="b0c92f6f27a434824e7723b42147cce3" category="sidebar">備份SAP HANA資料庫</block>
   <block id="fd9064c3951e4ceddd0e2ae6bf2708e5" category="paragraph">*附註：*如果包含您要還原之資料的備份檔案位於歸檔儲存設備（從ONTAP 版本號9.10.1開始）中、還原作業將需要較長的時間、而且會產生成本。此外、目的地叢集也必須執行ONTAP 適用於Volume還原的版本為《支援還原功能》、適用於檔案還原的版本為《支援功能》、適用於Google歸檔和StorageGRID 《支援功能》的版本則為《支援功能》、適用於Google歸檔和《支援功能》。</block>
   <block id="c003f27675e7048b4dd9d00ba4f2f343" category="paragraph">如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行ONTAP 支援磁碟區還原的版本為《支援使用者支援者支援者支援對象》（更新版本）、適用於檔案還原的版本為《支援者支援者支援者支援者》（9.11.1）、以及適用於Google歸檔與StorageGRID 更新版本的</block>
   <block id="aba6991b1b269dad52e52cd4c3998779" category="list-text">必須在磁碟區上啟用NFS（支援NFS和SMB/CIFS磁碟區）。</block>
@@ -2733,12 +2716,10 @@
   <block id="08d96fdd1a845d80db99e6e1dffb8bc7" category="list-text">在「*資源*」頁面上、選擇「技術支援」下的其中一個可用選項：</block>
   <block id="5be2e1dfe4bf215289731df45ec8157b" category="list-text">按一下*建立案例*、與NetApp支援專家一起開啟問題單：</block>
   <block id="32ecc38b872b5f889b952ca26b4c9e01" category="list-text">SAP HANA系統駐留Azure NetApp Files 在</block>
-  <block id="2aebd4a586327a155f5ad3b448f755af" category="doc">部署SnapCenter 適用於SAP HANA的支援功能外掛程式、並新增資料庫主機</block>
   <block id="269c48e37c80fdf85eed155628bc58de" category="inline-link-macro">設定Sudo for SnapCenter S供 使用者使用。</block>
   <block id="b010a3fdc0e4a30de49959a04a4e75e0" category="section-title">設定Sudo for SnapCenter S供 使用者使用</block>
   <block id="ed4c596de80903a7b24e5ada4ad1cb18" category="section-title">新增全域非資料磁碟區</block>
   <block id="fcdf1a1b46f3b7e8ad6ff82010438a90" category="list-text">支援以原則為基礎的SAP HANA資料庫備份與還原Azure NetApp Files 功能、這些資料庫位於支援中心</block>
-  <block id="626a739569b9dd0c59a5743d227d6123" category="doc">部署SnapCenter 適用於Oracle的支援功能外掛程式、並新增資料庫主機</block>
   <block id="d2b32f39697a5b013948d2ec66933921" category="list-text">工作：管理BlueXP資料庫上的工作詳細資料項目</block>
   <block id="608448c2576128ccc8c2f959d59e20b4" category="list-text">連接器需求</block>
   <block id="c9069f67c447a0a15bda0467230c3148" category="inline-link">在AWS中部署Connector</block>
@@ -3086,8 +3067,6 @@
   <block id="c79eb0bf5a61fc9579b3f63e3958e469" category="paragraph">您應該在Azure NetApp Files 託管資料庫的環境中建立不必要的工作環境。如需詳細資訊、請參閱 <block ref="e42252aa263ed60f84feb7fdedc741c2" category="inline-link-macro-rx"></block> 和 <block ref="08189a1662d35a0f6c5c7b20dd7f30c3" category="inline-link-macro-rx"></block>。</block>
   <block id="0496db92b8208ffdfc7b84a2c4d6cbbb" category="paragraph">BlueXP 帳戶管理員應在 Azure 中部署 Connector 、讓 BlueXP 能夠在您的公有雲環境中管理資源和程序。</block>
   <block id="c12c07c58c5db36f5c4864f275d4c11f" category="list-text">您應該使用相同的連接器來管理 Azure NetApp Files 工作環境和資料庫。</block>
-  <block id="92d58d2bf7a748ab0734161ced9285dc" category="list-text">如果您的 Azure NetApp Files 工作環境和資料庫位於同一個虛擬私有雲（ VPC ）中、則可以在同一個 VPC 中部署連接器。</block>
-  <block id="d74e17272bd25e73d7a1c8a126a3744a" category="list-text">如果您的 Azure NetApp Files 工作環境和資料庫位於不同的 VPC 中、且在 Azure NetApp Files 上設定了 NAS （ NFS ）工作負載、則可以在任一部 VPC 上建立連接器。</block>
   <block id="4e5ad280767f2ab5aa5de64be61d55d5" category="paragraph">建立連接器後、請執行下列步驟：</block>
   <block id="c3b81703083be6a60b46bc530dce3152" category="paragraph">確保連接器與資料庫主機和 Azure NetApp Files 工作環境之間有連線。連接器應連接至 Azure NetApp Files 工作環境。</block>
   <block id="f20cd1b900b89f55ebfb06447e182090" category="summary">在每個 Oracle 資料庫主機上安裝 SnapCenter Plug-in for Oracle 。</block>
@@ -3172,7 +3151,6 @@
   <block id="35d45d5c5ce076e306b520a11aca5200" category="list-text">在存取金鑰欄位中、指定資料加密的金鑰。</block>
   <block id="f42df8d50c905dc42d79abceb255aab1" category="list-text">在「秘密金鑰」欄位中、指定資料加密的密碼。</block>
   <block id="256c6643ca1c733f72685d5a161161f5" category="section-title">2023 年 4 月 14 日</block>
-  <block id="490df703588f640c6679be6bc3bfb6a8" category="section-title">應用程式（雲端原生） BlueXP 備份與還原的增強功能</block>
   <block id="c0c906f83c940d4d16ffb433d7a368ca" category="list-text">支援指令碼型系統重新整理</block>
   <block id="b53bbb0902c6b7a25e7c1ac484d9fec2" category="list-text">如果已設定 Azure NetApp Files 備份、則支援單一檔案快照還原</block>
   <block id="14860ef57cb4190ea449b13f7f0c8ea1" category="list-text">支援外掛程式升級</block>
@@ -3181,7 +3159,6 @@
   <block id="d21798a5d9e370e5fbb0150023dfaa38" category="list-text">支援將 Oracle 資料庫還原至原始位置、並提供精細的還原功能</block>
   <block id="a1501619265b99c9d02aefcdb1128d6d" category="section-title">應用程式（混合式） BlueXP 備份與還原的增強功能</block>
   <block id="61d664f90cea3bf652d380cd39162905" category="list-text">應用程式（混合式）的 BlueXP 備份與還原是從 SaaS 控制層面驅動。</block>
-  <block id="c91aa555304f2dfcde890c20b48de4d1" category="list-text">修改混合式 REST API 以符合雲端原生 API 。</block>
   <block id="91dd9ae8b3342cf7e40f497897ce70d7" category="list-text">支援電子郵件通知</block>
   <block id="b1ff80e0381bc83ddd14f54747d1f9ab" category="summary">在每部 SAP HANA 資料庫主機上安裝 SnapCenter Plug-in for SAP HANA 。</block>
   <block id="71a4cab5aa6b73aefb296b68bc2acb46" category="doc">安裝 SnapCenter Plug-in for SAP HANA 並新增資料庫主機</block>
@@ -3236,7 +3213,6 @@
   <block id="82079d60037e9d0df21acad72b86e52d" category="list-text">（選用）修改 HDBSQL OS 使用者。</block>
   <block id="bf5b83e4fce51c42d6592beefd18ac45" category="list-text">您可以從 UI 修改或移除 SAP HANA 系統、也可以使用 REST API 。</block>
   <block id="1cb5dc89376339563335539bf6e6b34f" category="paragraph">移除 SAP HANA 系統之前、您應該先刪除所有相關的備份、並移除保護。</block>
-  <block id="c844eed2ba93cf171bd3a9e1ed93bb68" category="list-text">您可以使用 REST API 修改或移除 SAP HANA 主機。</block>
   <block id="ed610882a056fb1f63c13e2a503a9aad" category="paragraph">新增多租戶資料庫容器或單一容器類型 SAP HANA 系統之後、您可以新增 HANA 系統的非資料 Volume 。</block>
   <block id="d9242f06d616d0d0d92448044927a033" category="paragraph">探索可用的SAP HANA資料庫之後、您可以將這些資源新增至資源群組、以執行資料保護作業。</block>
   <block id="ae2f6000d9cdad6b8f7e1ca8fca0b847" category="paragraph">新增多租戶資料庫容器或單一容器類型 SAP HANA 系統之後、您可以新增 HANA 系統的 Global Non-Data Volumes 。</block>
@@ -3279,7 +3255,6 @@
   <block id="d1855d4cda620fe92adb2f981fed02d4" category="list-text">在 Connector 上執行下列步驟、以便 Connector 驗證外掛程式的憑證。</block>
   <block id="baa45a9561ae264c9c17bfc76784fe10" category="list-text">將根 CA 和中繼 CA 檔案複製到伺服器目錄下。<block ref="3a2959e990df17f13fc29e6af626f37d" prefix=" " category="inline-code"></block><block ref="568c59dff00aad73acfc6a0bba0e73f1" prefix=" " category="inline-code"></block></block>
   <block id="68553a1f6aeafb6e270057c83458f0ea" category="paragraph">CA 檔案應為 pem 格式。</block>
-  <block id="14343ef6b7a9ffecc00e523d714c022f" category="paragraph">如果Oracle 21c資料庫處於「已啟動」狀態、還原作業將會失敗。您應該執行下列步驟、以成功還原資料庫。<block ref="160ee41b32c5f5be43397b4b028828c5" prefix=" " category="inline-code"></block></block>
   <block id="f2a41ed5adc439ab3b0dc591d647b2c9" category="list-text">按一下 <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> 對應至您要還原的資料庫、然後按一下 * 還原 * 。</block>
   <block id="9a746f42430ce856d696ca2d13f1b5f4" category="list-text">選取資料庫應還原的還原點、然後按一下 * 還原至原始位置 * 。</block>
   <block id="a7e4f5d7b5114b57c09100d5e6f4adbf" category="admonition">不支援使用控制檔還原資料檔案、或在 ASM 配置上僅還原 iSCSI 的控制檔、以及還原資料表空間和 PDB 。</block>
@@ -3325,7 +3300,6 @@
   <block id="caf3f609386a7e9cbf196c14d7c951ff" category="list-text">Oracle 軟體應安裝在替代主機上。</block>
   <block id="6303e0e569ab48a5e97ac5729b7354b5" category="list-text">sc_backup_name 指定備份的名稱。此參數將會填入應用程式磁碟區。範例：</block>
   <block id="fcf3dae76ca88120872e44d0e2a8632a" category="list-text">SC_TART_SID 指定複製資料庫的 SID 。對於pdb複製工作流程、此參數的值將不會預先定義。此參數將會填入應用程式磁碟區。範例：clonedb</block>
-  <block id="711a474ead316224d3300e00a237829f" category="paragraph">BlueXP 應用程式備份與還原是一項 SaaS 型服務、可為在 NetApp Cloud Storage 上執行的應用程式提供應用程式一致的資料保護功能。BlueXP 應用程式備份與還原可為下列應用程式提供高效率、應用程式一致且以原則為基礎的保護：</block>
   <block id="77488205944ea72e9e23e95280d03937" category="list-text">適用於 NetApp ONTAP 、 Cloud Volumes ONTAP 和 Azure NetApp Files 的 Amazon FSX 上的 Oracle 資料庫</block>
   <block id="19c84e82fa4984f5df63ce4f98f092e3" category="paragraph">Cloud Backup 架構包括下列元件。</block>
   <block id="c172c6b44294844886abdf85bca67551" category="list-text">Cloud Backup 是一套由 NetApp 代管的 SaaS 服務、以 BlueXP SaaS 平台為基礎。</block>
@@ -3342,7 +3316,6 @@
   <block id="20d112bbc5f1942b3e0e448e4e89747a" category="list-text">針對功能性HA、只會使用其中一個網路介面IP Cloud Volumes ONTAP 。如果 IP 連線中斷、或無法存取 IP 、資料保護作業就會失敗。</block>
   <block id="7c47521b95a312ac4eb933479f7a14a8" category="list-text">Amazon FSX for NetApp ONTAP 或 Cloud Volumes ONTAP 的網路介面 IP 位址在 BlueXP 帳戶和區域中必須是唯一的。</block>
   <block id="a46033978f070978d19c56a083f9252f" category="sidebar">備份及還原內部部署應用程式資料</block>
-  <block id="084829803f52f86aee9d787cb2c3581d" category="sidebar">備份及還原雲端原生應用程式資料</block>
   <block id="691b857c2ea9a46d47730b371ae5ac4d" category="sidebar">將應用程式資料備份到雲端</block>
   <block id="5019db204cdfcff4225102866ab1c6bb" category="paragraph">確保您已滿足所有需求 <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> 將資料存放區備份到雲端之前。</block>
   <block id="23b39cc9d92424089210492c9ae6a9dd" category="paragraph">確保您已滿足所有需求 <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> 從雲端還原虛擬機器之前。</block>
@@ -3713,7 +3686,6 @@
   <block id="70dfad9357f3b3b710b73d8eb3666851" category="paragraph">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續磁碟區、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
   <block id="9a3f2e7eb30992bb084418711e5093f2" category="doc">管理資料存放區和虛擬機器資料的保護</block>
   <block id="2131f85f2f51908e5c573c231b274f4c" category="paragraph">您應確保在內部部署的 SnapCenter Plug-in for VMware vSphere 主機（在預設 8144 連接埠上執行）和 BlueXP Connector 執行個體（可在任何雲端供應商（ Amazon Web Services 、 Microsoft Azure 、 Google Cloud Platform ）或內部部署中執行）之間、能夠進行通訊。</block>
-  <block id="de437d1f424b507f3d7be645ac0952c2" category="paragraph">BlueXP 虛擬機器備份與還原功能可備份資料存放區還原虛擬機器、藉此提供資料保護功能。</block>
   <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">您可以將資料存放區備份至 Amazon Web Services S3 、 Microsoft Azure Blob 、 Google Cloud Platform 和 StorageGRID 、並將虛擬機器還原至內部部署的 SnapCenter Plug-in for VMware vSphere 主機。</block>
   <block id="2a18af02b6c0b7e92a17df9509574f26" category="list-text">您應該使用 SnapCenter Plug-in for VMware vSphere 4.7P1 或更新版本、從內部部署的次要儲存設備備份資料存放區。</block>
   <block id="9fe2f95002b4b4815d52173b68bf9862" category="summary">建立備份資料存放區的原則</block>
@@ -3740,4 +3712,28 @@
   <block id="b23b97d3c26b0f7e2265329756cea9ca" category="paragraph">在您支付授權費用並向 NetApp 支援網站 註冊之後、 BlueXP 會自動更新 BlueXP 數位錢包中的授權、而「資料服務授權」頁面則會在 5 到 10 分鐘內反映變更。</block>
   <block id="858d57a70137ab2d1ecb54acde00b982" category="list-text">在 BlueXP 數位錢包頁面 _Data Services Licenses_ 標籤上、按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 如需您要更新的服務序號、請按一下*更新授權*。</block>
   <block id="59c9e6a866010a647915edad57105749" category="paragraph">BlueXP 備份與還原中定義了十種端點類別：</block>
+  <block id="ed9447a1f476cad2b945e6cd0c6af9f8" category="doc">還原雲端原生 SAP HANA 資料庫</block>
+  <block id="272ea43c17bb748acf948f028cd26513" category="summary">建立您自己的原則來保護應用程式。</block>
+  <block id="df0c923800c467f891c33cea961511ff" category="doc">備份雲端原生 Oracle 資料庫</block>
+  <block id="9647181c2307f39ebfee949998c189db" category="paragraph">BlueXP 虛擬機器的備份與還原功能可備份資料存放區及還原虛擬機器、提供資料保護功能。</block>
+  <block id="e048aa26e0a328ac61083504bfb7933c" category="doc">複製雲端原生 Oracle 資料庫</block>
+  <block id="931e4fe861e71fa09533d16b71275f23" category="list-text">如果您在同一個虛擬網路（ vnet ）中擁有 Azure NetApp Files 工作環境和資料庫、則可以在同一個 vnet 中部署連接器。</block>
+  <block id="31e91372a63a60de9acc2a68995fa974" category="list-text">如果您的 Azure NetApp Files 工作環境和資料庫位於不同的 VNets 中、且在 Azure NetApp Files 上設定了 NAS （ NFS ）工作負載、則可以在任一 VNets 上建立連接器。</block>
+  <block id="197747cde80c31576877de78be696240" category="section-title">應用程式（雲端原生）的 BlueXP 備份與還原功能增強功能</block>
+  <block id="abfdb85669faee0a0fe78a3ddd25158b" category="list-text">修改混合式 REST API 以符合雲端原生 API 。</block>
+  <block id="6aed75aba7c0fd43b22d758888e056e5" category="list-text">支援雲端原生 Oracle 資料庫的複製</block>
+  <block id="7f7d1a32b5fedca3a771d2900e5395cd" category="section-title">新增支援以保護雲端原生應用程式資料</block>
+  <block id="dc553b3a8ff149a0efb878a07b9d8ec0" category="doc">管理雲端原生應用程式資料的保護</block>
+  <block id="f48626282fa7688ef2e0f91ee72f0675" category="doc">還原雲端原生 Oracle 資料庫</block>
+  <block id="634e2ab135fc91c3a377e944e4ac17ef" category="paragraph">如果Oracle 21c資料庫處於「已啟動」狀態、還原作業將會失敗。您應該執行下列命令、以成功還原資料庫。<block ref="160ee41b32c5f5be43397b4b028828c5" prefix=" " category="inline-code"></block></block>
+  <block id="1d9ea4875c4899d53fe18b313e3814a8" category="doc">備份雲端原生 SAP HANA 資料庫</block>
+  <block id="3a462fe0425c18b634a1f644c1b6e5b0" category="inline-link">採用 BlueXP 備份與還原及 SnapCenter 的應用程式感知備份</block>
+  <block id="d924f26cc49b9ff35abdb19f684eccab" category="list-text"><block ref="d924f26cc49b9ff35abdb19f684eccab" category="inline-link-rx"></block></block>
+  <block id="ddc4eff2345788fc606fb71155e77e08" category="inline-image-macro">顯示 BlueXP 備份與還原如何與內部部署應用程式及備份檔案所在目的地儲存設備進行通訊的圖表。</block>
+  <block id="5900ca7e734dbd4ebfc5c92beb6901ad" category="paragraph"><block ref="5900ca7e734dbd4ebfc5c92beb6901ad" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e2b884e233698d79dba9ae1a61ec9653" category="doc">保護您的雲端原生應用程式資料</block>
+  <block id="eef768141b9dd395f1e8b3aeeac1b961" category="paragraph">BlueXP 應用程式備份與還原是一項 SaaS 型服務、可為在 NetApp Cloud Storage 上執行的應用程式提供應用程式一致的資料保護功能。BlueXP 備份與還原可為下列應用程式提供高效率、應用程式一致且以原則為基礎的保護：</block>
+  <block id="8c7c81dd2ca4a5ab651c1cfb30a19c0e" category="sidebar">備份及還原雲端原生應用程式資料</block>
+  <block id="1aac38ab9167eb6ae3a199d0a8bc7915" category="sidebar">備份Oracle資料庫</block>
+  <block id="7394e84832837e7d0dc503d85eb3f36c" category="sidebar">備份SAP HANA資料庫</block>
 </blocks>

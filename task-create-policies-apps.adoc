@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-create-policies-apps.html 
 keywords: policy, create, pre-canned polices, custom policies, protection policies 
-summary: 您可以使用預先整合的原則、或是建立自己的原則來保護應用程式。 
+summary: 建立您自己的原則來保護應用程式。 
 ---
 = 建立備份應用程式的原則
 :hardbreaks:

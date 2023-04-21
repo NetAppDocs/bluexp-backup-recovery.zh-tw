@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-app-data-to-aws.html 
-keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, Cloud Backup, cloud backup service, Oracle database, Microsoft SQL Server database, SAP HANA database 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: 完成幾個步驟、將應用程式資料從ONTAP 功能完善的資料備份到AWS。 
 ---
 = 將內部部署應用程式資料備份至Amazon Web Services

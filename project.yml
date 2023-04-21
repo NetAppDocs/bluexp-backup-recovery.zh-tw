@@ -114,9 +114,9 @@ sidebar:
       url: "/task-mount-app-backup.html"
   - title: 備份及還原雲端原生應用程式資料
     entries:
-    - title: 保護雲端原生應用程式資料
+    - title: 保護您的雲端原生應用程式資料
       url: "/concept-protect-cloud-app-data-to-cloud.html"
-    - title: 備份雲端原生Oracle資料庫
+    - title: 備份雲端原生 Oracle 資料庫
       entries:
       - title: 快速入門
         url: "/task-quick-start-oracle.html"
@@ -127,11 +127,11 @@ sidebar:
       - title: 設定Azure NetApp Files 功能
         flavor: azure
         url: "/reference-configure-azure-netapp-files.html"
-      - title: 部署SnapCenter 適用於Oracle的支援功能外掛程式、並新增資料庫主機
+      - title: 安裝適用於 Oracle 的 SnapCenter 外掛程式、並新增資料庫主機
         url: "/task-add-host-discover-oracle-databases.html"
       - title: 備份Oracle資料庫
         url: "/task-backup-cloud-native-oracle-data.html"
-    - title: 備份雲端原生SAP HANA資料庫
+    - title: 備份雲端原生 SAP HANA 資料庫
       entries:
       - title: 快速入門
         flavor: azure
@@ -139,24 +139,24 @@ sidebar:
       - title: 設定Azure NetApp Files 功能
         flavor: azure
         url: "/reference-configure-azure-netapp-files.html"
-      - title: 部署SnapCenter 適用於SAP HANA的支援功能外掛程式、並新增資料庫主機
+      - title: 安裝 SnapCenter Plug-in for SAP HANA 並新增資料庫主機
         flavor: azure
         url: "/task-deploy-snapcenter-plugin-for-sap-hana.html"
       - title: 備份SAP HANA資料庫
         flavor: azure
         url: "/task-backup-cloud-native-sap-hana-data.html"
-    - title: 還原雲端原生Oracle資料庫
+    - title: 還原雲端原生 Oracle 資料庫
       url: "/task-restore-cloud-native-oracle-data.html"
-    - title: 還原雲端原生SAP HANA資料庫
+    - title: 還原雲端原生 SAP HANA 資料庫
       flavor: azure
       url: "/task-restore-cloud-native-sap-hana-data.html"
     - title: 重新整理 SAP HANA 目標系統
       url: "/task-refresh-sap-hana-target-system.html"
-    - title: 複製雲端原生Oracle資料庫
+    - title: 複製雲端原生 Oracle 資料庫
       entries:
       - title: 複製概念與需求
         url: "/concept-clone-cloud-native-oracle-concepts.html"
-      - title: 複製雲端原生Oracle資料庫
+      - title: 複製雲端原生 Oracle 資料庫
         url: "/task-clone-cloud-native-oracle-data.html"
     - title: 管理雲端原生應用程式資料的保護
       url: "/task-manage-cloud-native-app-data.html"

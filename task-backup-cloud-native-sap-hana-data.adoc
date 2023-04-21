@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-cloud-native-sap-hana-data.html 
-keywords: cloud native, application data, back up, policy, pre-canned policies, scheduled backups, on-demand backups, cloud manager, BlueXP, add hosts, create policy, SAP HANA Database 
+keywords: cloud-native, application data, back up, policy, pre-canned policies, scheduled backups, on-demand backups, cloud manager, BlueXP, add hosts, create policy, SAP HANA Database 
 summary: 建立SAP HANA資料庫的排程或隨需備份。 
 ---
-= 備份雲端原生SAP HANA資料庫
+= 備份雲端原生 SAP HANA 資料庫
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

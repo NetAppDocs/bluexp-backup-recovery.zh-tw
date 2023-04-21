@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-app-data-to-gcp.html 
-keywords: backing up, back up, backup, backup application data, Google Cloud Platform, GCP, Cloud Backup, cloud backup service, Oracle database, Microsoft SQL Server database, SAP HANA database 
+keywords: backing up, back up, backup, backup application data, Google Cloud Platform, GCP, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: 請完成幾個步驟、將應用程式資料從ONTAP 功能完善的資料備份到GCP。 
 ---
 = 將內部部署應用程式資料備份到Google Cloud Platform

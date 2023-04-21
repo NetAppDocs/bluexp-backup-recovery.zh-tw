@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-clone-cloud-native-oracle-concepts.html 
-keywords: cloud native, application data, clone, Cloud Manager, BlueXP, Oracle database, Oracle, clone limitations, clone methods, clone naming scheme, requirements, clone specification file 
+keywords: cloud-native application data, clone, Cloud Manager, BlueXP, Oracle database, Oracle, clone limitations, clone methods, clone naming scheme, requirements, clone specification file 
 summary: 在複製資料庫之前、請先瞭解複製概念。 
 ---
 = 複製概念與需求

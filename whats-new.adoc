@@ -22,7 +22,7 @@ summary: 瞭解 BlueXP 備份與還原的新功能。
 
 
 
-=== 應用程式（雲端原生） BlueXP 備份與還原的增強功能
+=== 應用程式（雲端原生）的 BlueXP 備份與還原功能增強功能
 
 * SAP HANA資料庫
 +
@@ -211,7 +211,7 @@ https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-
 ** 支援以原則為基礎的Oracle資料庫備份與還原、這些資料庫位於Amazon FSX for NetApp ONTAP
 ** 支援使用連線與複製方法還原Oracle資料庫
 ** 支援Oracle 21c
-** 支援複製雲端原生Oracle資料庫
+** 支援雲端原生 Oracle 資料庫的複製
 
 
 
