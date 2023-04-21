@@ -44,12 +44,12 @@ BlueXP 備份與恢復 30 天免費試用版可從雲端供應商市場的隨用
 * 如果您備份的資料超過BYOL授權所允許的數量、則資料備份會透過隨用隨付訂閱繼續進行。例如、如果您有10個TiB BYOL授權、則10 TiB以外的所有容量都會透過PAYGO訂閱付費。
 
 
-在免費試用期間或未超過BYOL授權時、您將不會從隨用隨付訂閱中收取費用。
+免費試用期間、如果您未超過 BYOL 授權、您將不會從隨用隨付訂閱中收取費用。
 
 BlueXP 備份與還原有幾個 PAYGO 計畫：
 
 * 「Cloud Backup Cloud Volumes ONTAP 」套件可讓您備份內部部署ONTAP 的各種資料。
-* 「 CVO 專業版」套件、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原搭售。這包括Cloud Volumes ONTAP 使用授權對整個過程進行無限的備份（備份容量不計入授權容量）。此選項無法讓您備份內部部署ONTAP 的支援資料。
+* 「 CVO 專業版」套件、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原搭售。這包括Cloud Volumes ONTAP 使用授權對整個過程進行無限的備份（備份容量不計入授權容量）。此選項無法讓您備份內部部署的 ONTAP 資料。
 * 「 CVO Edge Cache 」套件的功能與「 CVO Professional 」套件相同、但也支援 https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["BlueXP 邊緣快取"^] 服務：您有權在Cloud Volumes ONTAP 整個作業系統上、為3個已配置容量的TiB部署一個Global File Cache Edge系統。此選項可透過 Azure 和 Google Marketplaces 取得、但無法讓您備份內部部署的 ONTAP 資料。
 
 
@@ -90,9 +90,9 @@ ifdef::aws[]
 
 * 「雲端備份」計畫、可讓您備份Cloud Volumes ONTAP 內部部署ONTAP 的支援資料。
 +
-如果您要使用此選項、請從「市場」頁面設定您的訂閱、然後再進行設定 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["將訂閱與AWS認證資料建立關聯"^]。請注意Cloud Volumes ONTAP 、您也需要使用這份年度合約訂閱來支付您的不二系統費用、因為您只能在BlueXP中將一個有效訂閱指派給AWS認證。
+如果您要使用此選項、請從「市場」頁面設定您的訂閱、然後再進行設定 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["將訂閱與AWS認證資料建立關聯"^]。請注意、您也需要使用這項年度合約訂閱來支付 Cloud Volumes ONTAP 系統的費用、因為您只能在 BlueXP 中指派一個有效訂閱給 AWS 認證。
 
-* 「 CVO 專業人員」計畫、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原作業結合在一起。這包括Cloud Volumes ONTAP 使用授權對整個過程進行無限的備份（備份容量不計入授權容量）。此選項無法讓您備份內部部署ONTAP 的支援資料。
+* 「 CVO 專業人員」計畫、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原作業結合在一起。這包括Cloud Volumes ONTAP 使用授權對整個過程進行無限的備份（備份容量不計入授權容量）。此選項無法讓您備份內部部署的 ONTAP 資料。
 +
 請參閱 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["介紹授權主題Cloud Volumes ONTAP"^] 以深入瞭解此授權選項。
 

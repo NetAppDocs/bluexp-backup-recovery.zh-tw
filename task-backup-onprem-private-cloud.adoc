@@ -147,7 +147,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 --
 若要使用DataLock和勒索軟體保護來進行備份、StorageGRID 您的系統必須執行11.6.0.3版或更新版本。
 
-若要將較舊的備份分層保存至雲端歸檔儲存設備、StorageGRID 您的不穩定系統必須執行11.3版或更新版本。
+若要將較舊的備份分層保存至雲端歸檔儲存設備、StorageGRID 您的不穩定系統必須執行11.3版或更新版本。此外、您必須將 StorageGRID 系統探索到 BlueXP Canvas 。
 
 --
 S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支援儲存設備的存取。 https://docs.netapp.com/us-en/storagegrid-116/admin/creating-tenant-account.html["如StorageGRID 需詳細資訊、請參閱《The》（英文）"^]。

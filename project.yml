@@ -66,23 +66,6 @@ sidebar:
       url: "/task-manage-backup-settings-ontap.html"
     - title: 從ONTAP 還原備份還原
       url: "/task-restore-backups-ontap.html"
-  - title: 備份及還原Kubernetes資料
-    entries:
-    - title: 保護您的Kubernetes資料
-      url: "/concept-kubernetes-backup-to-cloud.html"
-    - title: 備份至 Amazon S3
-      flavor: aws
-      url: "/task-backup-kubernetes-to-s3.html"
-    - title: 備份至Azure Blob
-      flavor: azure
-      url: "/task-backup-kubernetes-to-azure.html"
-    - title: 備份至Google Cloud
-      flavor: gcp
-      url: "/task-backup-kubernetes-to-gcp.html"
-    - title: 管理Kubernetes備份
-      url: "/task-manage-backups-kubernetes.html"
-    - title: 從Kubernetes備份還原
-      url: "/task-restore-backups-kubernetes.html"
   - title: 備份及還原內部部署應用程式資料
     entries:
     - title: 保護內部部署的應用程式資料
@@ -151,6 +134,7 @@ sidebar:
       flavor: azure
       url: "/task-restore-cloud-native-sap-hana-data.html"
     - title: 重新整理 SAP HANA 目標系統
+      flavor: azure
       url: "/task-refresh-sap-hana-target-system.html"
     - title: 複製雲端原生 Oracle 資料庫
       entries:
@@ -183,6 +167,23 @@ sidebar:
       url: "/task-manage-vm-data-in-cloud.html"
     - title: 還原虛擬機器資料
       url: "/task-restore-vm-data.html"
+  - title: 備份及還原Kubernetes資料
+    entries:
+    - title: 保護您的Kubernetes資料
+      url: "/concept-kubernetes-backup-to-cloud.html"
+    - title: 備份至 Amazon S3
+      flavor: aws
+      url: "/task-backup-kubernetes-to-s3.html"
+    - title: 備份至Azure Blob
+      flavor: azure
+      url: "/task-backup-kubernetes-to-azure.html"
+    - title: 備份至Google Cloud
+      flavor: gcp
+      url: "/task-backup-kubernetes-to-gcp.html"
+    - title: 管理Kubernetes備份
+      url: "/task-manage-backups-kubernetes.html"
+    - title: 從Kubernetes備份還原
+      url: "/task-restore-backups-kubernetes.html"
   - title: 使用REST API進行自動化
     url: "/api-backup-restore.html"
   - title: 參考資料
@@ -195,11 +196,13 @@ sidebar:
       url: "/reference-azure-backup-tiers.html"
     - title: 支援的Google歸檔儲存層
       url: "/reference-google-backup-tiers.html"
-    - title: 在黑暗的站台中備份 BlueXP 備份與還原資料庫
-      url: "/reference-backup-cbs-db-in-dark-site.html"
-    - title: 設定備份以在Azure中存取多個帳戶
+    - title: 在Azure中設定多帳戶存取的備份
       flavor: azure
       url: "/reference-backup-multi-account-azure.html"
+    - title: 在黑暗的站台中備份 BlueXP 備份與還原資料庫
+      url: "/reference-backup-cbs-db-in-dark-site.html"
+    - title: 重新啟動 BlueXP 備份與還原
+      url: "/reference-restart-backup.html"
   - title: 知識與支援
     entries:
     - title: 註冊以取得支援
@@ -242,17 +245,22 @@ homepage:
       flavor: gcp
     - title: 內部部署ONTAP 的功能從功能到StorageGRID 功能
       url: task-backup-onprem-private-cloud.html
-  - title: 將Kubernetes資料備份到雲端
+  - title: 管理ONTAP 還原備份檔案
     links:
-    - title: Kubernetes叢集至Amazon S3
-      url: task-backup-kubernetes-to-s3.html
-      flavor: aws
-    - title: Kubernetes叢集至Azure Blob
-      url: task-backup-kubernetes-to-azure.html
-      flavor: azure
-    - title: Kubernetes叢集至Google Cloud
-      url: task-backup-kubernetes-to-gcp.html
-      flavor: gcp
+    - title: 啟用和停用Volume備份
+      url: task-manage-backups-ontap.html#enabling-and-disabling-backups-of-volumes
+    - title: 編輯現有的備份原則
+      url: task-manage-backups-ontap.html#editing-an-existing-backup-policy
+    - title: 新增備份原則
+      url: task-manage-backups-ontap.html#adding-a-new-backup-policy
+    - title: 變更指派給現有磁碟區的原則
+      url: task-manage-backups-ontap.html#changing-the-policy-assigned-to-existing-volumes
+    - title: 建立手動Volume備份
+      url: task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time
+    - title: 檢視每個磁碟區的備份清單
+      url: task-manage-backups-ontap.html#viewing-the-list-of-backups-for-each-volume
+    - title: 刪除備份
+      url: task-manage-backups-ontap.html#deleting-backups
   - title: 將應用程式資料備份到雲端
     links:
     - title: 將內部部署應用程式資料備份至Amazon Web Services
@@ -266,9 +274,9 @@ homepage:
       url: task-backup-app-data-to-gcp.html
     - title: 將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方
       url: task-backup-app-data-to-storagegrid.html
-    - title: 備份雲端原生Oracle資料庫
+    - title: 備份雲端原生 Oracle 資料庫
       url: task-backup-cloud-native-oracle-data.html
-    - title: 備份雲端原生SAP HANA資料庫
+    - title: 備份雲端原生 SAP HANA 資料庫
       flavor: azure
       url: task-backup-cloud-native-sap-hana-data.html
   - title: 將資料存放區備份到雲端
@@ -301,22 +309,17 @@ homepage:
       url: task-restore-vm-data.html
     - title: 還原 Kubernetes Volume 資料
       url: task-restore-backups-kubernetes.html
-  - title: 管理ONTAP 還原備份檔案
+  - title: 將Kubernetes資料備份到雲端
     links:
-    - title: 啟用和停用Volume備份
-      url: task-manage-backups-ontap.html#enabling-and-disabling-backups-of-volumes
-    - title: 編輯現有的備份原則
-      url: task-manage-backups-ontap.html#editing-an-existing-backup-policy
-    - title: 新增備份原則
-      url: task-manage-backups-ontap.html#adding-a-new-backup-policy
-    - title: 變更指派給現有磁碟區的原則
-      url: task-manage-backups-ontap.html#changing-the-policy-assigned-to-existing-volumes
-    - title: 建立手動Volume備份
-      url: task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time
-    - title: 檢視每個磁碟區的備份清單
-      url: task-manage-backups-ontap.html#viewing-the-list-of-backups-for-each-volume
-    - title: 刪除備份
-      url: task-manage-backups-ontap.html#deleting-backups
+    - title: Kubernetes叢集至Amazon S3
+      url: task-backup-kubernetes-to-s3.html
+      flavor: aws
+    - title: Kubernetes叢集至Azure Blob
+      url: task-backup-kubernetes-to-azure.html
+      flavor: azure
+    - title: Kubernetes叢集至Google Cloud
+      url: task-backup-kubernetes-to-gcp.html
+      flavor: gcp
   - title: 部落格社群
     links:
     - title: NetApp社群
@@ -325,7 +328,7 @@ homepage:
       url: https://bluexp.netapp.com/blog/topic/cloud-backup
     - title: BlueXP 備份與還原使用案例
       url: https://bluexp.netapp.com/cloud-backup
-    - title: 雲端網路研討會
+    - title: BlueXP 網路研討會
       url: https://bluexp.netapp.com/events
 product-family:
   name: BlueXP

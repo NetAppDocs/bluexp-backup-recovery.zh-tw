@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: reference-restart-backup.html 
+keywords: backup restart, restart backup 
+summary: 您可能需要重新啟動 BlueXP 備份與還原服務。 
+---
+= 重新啟動 BlueXP 備份與還原服務
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可能需要重新啟動 BlueXP 備份與還原服務。
+
+BlueXP 備份與還原功能內建於 BlueXP Connector 中。您必須依照不同的初始步驟來重新啟動服務、視您是在雲端部署 Connector 、還是在 Linux 系統上手動安裝 Connector 而定。
+
+.步驟
+. 連線至 Connector 執行的 Linux 系統。
++
+[cols="25,50"]
+|===
+| 連接器位置 | 程序 
+
+
+| 雲端部署 | 請依照的指示進行 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["連線至 Connector Linux 虛擬機器"^] 視您使用的雲端供應商而定。 
+
+
+| 手動安裝 | 登入 Linux 系統。 
+|===
+. 輸入命令以重新啟動服務。
++
+[cols="45,45"]
+|===
+| 連接器位置 | 命令 
+
+
+| 雲端部署 | `docker restart cloudmanager_cbs` 
+
+
+| 可存取網際網路的手動安裝 | `docker restart cloudmanager_cbs` 
+
+
+| 無需網際網路存取的手動安裝 | `docker restart ds_cloudmanager_cbs_1` 
+|===
+
