@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protect-vm-data.html 
-keywords: protect virtual machines, vm, policy, policies, backup back up, restore, SnapCenter Plug-in, Cloud Manager, BlueXP, Cloud backup for virtual machines 
+keywords: protect virtual machines, vm, policy, policies, backup back up, restore, SnapCenter Plug-in, Cloud Manager, BlueXP 
 summary: 深入瞭解如何保護虛擬機器上的資料、並瞭解不同的原則。 
 ---
 = 保護您的虛擬機器資料
@@ -31,7 +31,7 @@ BlueXP 虛擬機器的備份與還原功能可備份資料存放區及還原虛�
 * 僅支援NFS資料存放區。不支援以iSCSI/FC/NVMe和vVols為基礎的VMFS資料存放區。
 * VMware vSphere 4.6P1的VMware vCenter外掛程式應至少進行一次備份SnapCenter 。
 * VMware vSphere適用的VMware vSphere中至少有一項SnapCenter 每日、每週或每月原則、沒有標籤或標籤與BlueXP中的虛擬機器原則相同。
-* 對於雲端備份預先定義的原則、 SnapCenter Plug-in for VMware vSphere 和雲端中的資料存放區排程層應相同。
+* 對於預先定義的原則、 SnapCenter Plug-in for VMware vSphere 和雲端中的資料存放區排程層應相同。
 * 請確認FlexGroup 資料存放區中沒有任何不支援的資料區、因為不FlexGroup 支援備份和還原功能。
 * 請確定不支援還原加密磁碟區、因此不會加密任何磁碟區。
 * 在所需的資源群組上停用「*最近*」。如果您已為資源群組啟用「*最近*」、則這些資源群組的備份將無法用於雲端的資料保護、因此無法用於還原作業。

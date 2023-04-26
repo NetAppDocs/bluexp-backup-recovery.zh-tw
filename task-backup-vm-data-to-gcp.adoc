@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-vm-data-to-gcp.html 
-keywords: back up, backup, backup datastore, gcp, google cloud platform, cloud backup, backup datastores 
+keywords: back up, backup, backup datastore, gcp, google cloud platform, backup datastores 
 summary: 將資料存放區從內部部署ONTAP 的不支援功能備份到Google Cloud Platform。 
 ---
 = 將資料存放區備份到Google Cloud Platform

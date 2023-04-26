@@ -2875,7 +2875,6 @@
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">開始之前</block>
   <block id="949ad3136d64be33cc1a6a67e3add3d1" category="paragraph">請先閱讀下列需求、確定您擁有支援的組態、然後再開始將資料存放區和虛擬機器備份至雲端供應商。</block>
   <block id="9b9477e579c3b44dd623d5a6e1ea8d78" category="list-text">藍圖</block>
-  <block id="620e81d38f76998723b0192a6d3d009a" category="list-text">對於雲端備份預先定義的原則、 SnapCenter Plug-in for VMware vSphere 和雲端中的資料存放區排程層應相同。</block>
   <block id="75f480f92315c62b407d8ae1ad890f29" category="paragraph">您可以將一或多個資料存放區備份及歸檔至 Amazon Web Services 、以改善儲存效率和雲端移轉。</block>
   <block id="88e6abd4ee4f112ba359e37a218778f6" category="paragraph">如果資料存放區與歸檔原則相關聯、您可以選擇歸檔層。支援的歸檔層為Glacier和Glacier Deep。</block>
   <block id="899494c2cbe7f443bbc4d058b8ea51a6" category="paragraph">設定您要 BlueXP 探索的叢集管理 LIF 。在新增其中一個資料存放區的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他資料存放區。</block>
@@ -3291,12 +3290,7 @@
   <block id="6303e0e569ab48a5e97ac5729b7354b5" category="list-text">sc_backup_name 指定備份的名稱。此參數將會填入應用程式磁碟區。範例：</block>
   <block id="fcf3dae76ca88120872e44d0e2a8632a" category="list-text">SC_TART_SID 指定複製資料庫的 SID 。對於pdb複製工作流程、此參數的值將不會預先定義。此參數將會填入應用程式磁碟區。範例：clonedb</block>
   <block id="77488205944ea72e9e23e95280d03937" category="list-text">適用於 NetApp ONTAP 、 Cloud Volumes ONTAP 和 Azure NetApp Files 的 Amazon FSX 上的 Oracle 資料庫</block>
-  <block id="19c84e82fa4984f5df63ce4f98f092e3" category="paragraph">Cloud Backup 架構包括下列元件。</block>
-  <block id="c172c6b44294844886abdf85bca67551" category="list-text">Cloud Backup 是一套由 NetApp 代管的 SaaS 服務、以 BlueXP SaaS 平台為基礎。</block>
-  <block id="182bd05f63635c015828e6ea29df8f87" category="list-text">Cloud Backup UI 提供應用程式的資料保護功能、可從 BlueXP UI 存取。</block>
   <block id="ca8bb01c601877e87fd9c90bc1063d4e" category="list-text">BlueXP Connector 是一個元件、可在雲端網路中執行、並與儲存系統和應用程式特定外掛程式互動。</block>
-  <block id="d22e0f69ea6e44134be4670e0ae7fce7" category="paragraph">對於任何使用者啟動的要求、 Cloud Backup UI 會與 BlueXP SaaS 進行通訊、而 BlueXP SaaS 在驗證要求時會以相同的方式處理。如果要求執行備份、還原或複製等工作流程、SaaS服務會啟動工作流程、並在必要時將通話轉接至BlueXP Connector。然後Connector會與儲存系統和應用程式專屬的外掛程式通訊、以執行工作流程工作。</block>
-  <block id="596d8d0a85b032b70cc48497df12dfed" category="admonition">Cloud Backup SaaS 基礎架構可因應某個區域內的可用性區域故障而恢復。它支援區域性故障、將故障切換至新的區域、而此容錯移轉作業需要約2小時的停機時間。</block>
   <block id="16c125a4350a830ef25b444e7c8e77ae" category="paragraph">您可以手動、使用指令碼或自動部署外掛程式。</block>
   <block id="2883368889244856ee2153e7da94f334" category="list-text">備份位於 Amazon FSX for NetApp ONTAP 、 Cloud Volumes ONTAP 和 Azure NetApp Files 上的 Oracle 資料庫</block>
   <block id="d8d6e412c9a8b94c54f1f0b85341ce79" category="paragraph">您可以在原則中指定不同的排程頻率、例如每小時、每日、每週和每月。您也可以指定在成功備份後執行的後置指令碼、將快照複製到次要儲存設備。</block>
@@ -3756,4 +3750,10 @@
   <block id="2f1042d0e59ea2a8ebfd0fb9bb5c169f" category="sidebar">還原雲端原生 Oracle 應用程式資料</block>
   <block id="54d6597fa185df5cd22caa81d7e9d4d9" category="sidebar">還原雲端原生 SAP HANA 應用程式資料</block>
   <block id="f93e4e0ba0745745e36a3b67b14a8a5b" category="sidebar">BlueXP 網路研討會</block>
+  <block id="a3e9bcad86b818f7875704d49bbe6240" category="list-text">對於預先定義的原則、 SnapCenter Plug-in for VMware vSphere 和雲端中的資料存放區排程層應相同。</block>
+  <block id="eb7084fa002dda093f8d4e3d744ec8c3" category="paragraph">BlueXP 應用程式架構的備份與還原包括下列元件。</block>
+  <block id="94e1a3fbef097baefd6187935d2712fd" category="list-text">BlueXP 備份與還原是一組由 NetApp 代管的 SaaS 服務、以 BlueXP SaaS 平台為基礎。</block>
+  <block id="9bc4ac9aec3ce95487de5999da3a7e13" category="list-text">BlueXP UI 為應用程式提供資料保護功能、可從 BlueXP UI 存取。</block>
+  <block id="5f6363d5a5bf731c42038bd14750276a" category="paragraph">對於任何使用者啟動的要求、 BlueXP UI 會與 BlueXP SaaS 進行通訊、而 BlueXP SaaS 在驗證要求時會以相同的方式進行處理。如果要求執行備份、還原或複製等工作流程、SaaS服務會啟動工作流程、並在必要時將通話轉接至BlueXP Connector。然後Connector會與儲存系統和應用程式專屬的外掛程式通訊、以執行工作流程工作。</block>
+  <block id="49e77e013cd6e44ddab4df1881f2dd91" category="admonition">BlueXP SaaS 基礎架構可因應區域內的可用性區域故障而靈活應變。它支援區域性故障、將故障切換至新的區域、而此容錯移轉作業需要約2小時的停機時間。</block>
 </blocks>

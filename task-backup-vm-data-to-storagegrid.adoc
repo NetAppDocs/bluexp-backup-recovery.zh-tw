@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-vm-data-to-storagegrid.html 
-keywords: back up, backup, backup datastore, storagegrid, cloud backup, backup datastores 
+keywords: back up, backup, backup datastore, storagegrid, backup datastores 
 summary: 從內部部署ONTAP 的地方將資料存放區備份到StorageGRID 原地。 
 ---
 = 將資料存放區備份StorageGRID 至
