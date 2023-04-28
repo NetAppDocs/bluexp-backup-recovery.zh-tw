@@ -170,18 +170,9 @@ host_ssh_port
 . 重新啟動SPL：「系統重新啟動spl」
 . 從Connector執行下列命令、驗證外掛程式是否可從Connector存取。
 `docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/PluginService/Version --cert  config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
-. 檢閱詳細資料、然後按一下 * 「探索應用程式」 * 。
-+
-** 顯示主機上的所有資料庫。
-** 按一下*設定*並選取*主機*以檢視所有主機。
-+
-
-NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定主機名稱時、會顯示所有主機。
-
-** 按一下*設定*、然後選取*原則*以檢視預設原則。檢閱預先定義的原則、您可以編輯這些原則以符合您的需求、或建立新的原則。
 
 
-
+安裝外掛程式之後、您應該 <<新增SAP HANA資料庫主機>>。
 
 
 
@@ -246,8 +237,6 @@ NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定�
 
 
 NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定主機名稱時、會顯示所有主機。
-
-* 下一步是什麼 *
 
 您可以從 UI 修改或移除 SAP HANA 系統、也可以使用 REST API 。
 

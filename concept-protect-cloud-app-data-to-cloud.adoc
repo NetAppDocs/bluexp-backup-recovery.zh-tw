@@ -59,7 +59,7 @@ IMPORTANT: BlueXP SaaS 基礎架構可因應區域內的可用性區域故障而
 
 * 新增主機並部署外掛程式
 +
-您可以手動、使用指令碼或自動部署外掛程式。
+您可以使用 UI 、指令碼或手動部署外掛程式。
 
 * 自動探索Oracle資料庫
 * 備份位於 Amazon FSX for NetApp ONTAP 、 Cloud Volumes ONTAP 和 Azure NetApp Files 上的 Oracle 資料庫

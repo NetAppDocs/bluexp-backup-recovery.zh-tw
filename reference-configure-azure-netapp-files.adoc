@@ -28,21 +28,11 @@ summary: 打造Azure NetApp Files 可運作的環境和Connector
 
 BlueXP 帳戶管理員應在 Azure 中部署 Connector 、讓 BlueXP 能夠在您的公有雲環境中管理資源和程序。
 
-
-NOTE: 您無法從UI更新新的連接器ID。
-
 如需相關資訊、請參閱 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["從BlueXP在Azure中建立連接器"]。
 
-* 您應該使用相同的連接器來管理 Azure NetApp Files 工作環境和資料庫。
+* 確保連接器與資料庫主機之間有連線。
 * 如果您在同一個虛擬網路（ vnet ）中擁有 Azure NetApp Files 工作環境和資料庫、則可以在同一個 vnet 中部署連接器。
 * 如果您的 Azure NetApp Files 工作環境和資料庫位於不同的 VNets 中、且在 Azure NetApp Files 上設定了 NAS （ NFS ）工作負載、則可以在任一 VNets 上建立連接器。
 
 
-建立連接器後、請執行下列步驟：
-
-* 按一下 * 儲存 * > * 畫布 * > * 我的工作環境 * > * 新增工作環境 * 來新增工作環境。
-+
-確保連接器與資料庫主機和 Azure NetApp Files 工作環境之間有連線。連接器應連接至 Azure NetApp Files 工作環境。
-
-* 按一下 *Connector > Manage Connectors* 並選取 Connector 名稱、以複製 Connector ID 。
-
+建立連接器之後、按一下 * 儲存 * > * 畫布 * > * 我的工作環境 * > * 新增工作環境 * 、即可新增工作環境。

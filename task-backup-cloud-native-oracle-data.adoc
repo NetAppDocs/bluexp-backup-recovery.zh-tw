@@ -37,7 +37,7 @@ summary: 建立Oracle資料庫的排程或隨需備份。
 您應該將後置指令碼保留在路徑 /var/opt/snapcenter/spl/scripts_ 中。
 
 +
-支援的環境變數包括：
+POST 指令碼支援一組環境變數。
 
 +
 |===
@@ -95,7 +95,7 @@ SC_PRIMARCHIVELOGS_VOLUE_Full_PATH
 您可以指派預先定義的原則或建立原則、然後將其指派給資料庫。一旦指派原則、便會依照原則中定義的排程建立備份。
 
 
-NOTE: 對於Oracle、在建立ASM磁碟群組時、請確定磁碟群組之間沒有通用磁碟區。每個磁碟群組都應該有專用磁碟區。
+NOTE: 在 Amazon FSX for NetApp ONTAP 或 Cloud Volumes ONTAP 上建立 ASM 磁碟群組時、請確保磁碟群組之間沒有通用磁碟區。每個磁碟群組都應該有專用磁碟區。
 
 *步驟*
 
@@ -122,7 +122,7 @@ NOTE: 服務帳戶（ <account_id> ）用於執行排程的備份作業。
 *步驟*
 
 . 在「應用程式」頁面中、按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*隨需備份*。
-. 如果有多個原則指派給應用程式、請選取原則、保留值、然後按一下*建立備份*。
+. 如果將多個原則指派給應用程式、請選取原則、保留層、然後按一下 * 建立備份 * 。
 
 
 
@@ -130,7 +130,7 @@ NOTE: 服務帳戶（ <account_id> ）用於執行排程的備份作業。
 == 限制
 
 * 不支援位於多個ASM磁碟群組中、且與FSX磁碟區重疊的Oracle資料庫之一致性群組快照
-* 如果您的Oracle資料庫是在ASM上設定、請確認您的SVM名稱在FSX系統中是唯一的。如果您在FSX系統中擁有相同的SVM名稱、則不支援備份位於這些SVM上的Oracle資料庫。
+* 如果您的 Oracle 資料庫位於 Amazon FSX for NetApp ONTAP 或 Cloud Volumes ONTAP 上、並在 ASM 上設定、請確保 SVM 名稱在整個 FSX 系統中是唯一的。如果您在FSX系統中擁有相同的SVM名稱、則不支援備份位於這些SVM上的Oracle資料庫。
 * 還原大型資料庫（250 GB以上）之後、如果您在同一個資料庫上執行完整的線上備份、作業可能會失敗、並顯示下列錯誤：
 `failed with status code 500, error {\"error\":{\"code\":\"app_internal_error\",\"message\":\"Failed to create snapshot. Reason: Snapshot operation not allowed due to clones backed by snapshots. Try again after sometime.`
 +

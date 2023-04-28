@@ -55,7 +55,7 @@ summary: 還原資料檔案、控制檔或兩者、然後還原資料庫。
 您也可以選取*強制就地還原*核取方塊。
 
 +
-在SAN配置中、如果SnapCenter Oracle的Estrate-Plug-in在ASM磁碟群組中找到Oracle資料檔案以外的任何外部檔案、則會執行連線和複製還原方法。外部檔案可以是下列一種或多種類型：
+在 Amazon FSX for NetApp ONTAP 或 Cloud Volumes ONTAP SAN 配置中、如果 SnapCenter Plug-in for Oracle 在 ASM 磁碟群組上找到 Oracle 資料檔案以外的任何外部檔案、則會執行連線和複製還原方法。外部檔案可以是下列一種或多種類型：
 
 +
 ** 參數
