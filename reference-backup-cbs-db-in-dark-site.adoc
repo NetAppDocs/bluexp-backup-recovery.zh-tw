@@ -16,9 +16,9 @@ summary: 在無法存取網際網路的站台中使用 BlueXP 備份與還原時
 [role="lead"]
 在無法存取網際網路的站台中使用 BlueXP 備份與還原時、如果 BlueXP Connector 主機系統發生問題、您將會想要定期備份關鍵 BlueXP 備份與還原檔案。這可讓您部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。
 
-當您在部署 BlueXP Connector 的 SaaS 環境中使用 BlueXP 備份與還原時、請將 BlueXP Connector 部署在您的雲端供應商、或是部署在您擁有網際網路存取權的主機系統上、所有重要的 BlueXP 備份與還原組態資料都會備份並儲存在雲端中。當您在無法存取網際網路的站台（也稱為「暗站」）中使用 BlueXP 備份與還原時、此 BlueXP 備份與還原資訊只會儲存在本機 Connector 系統上。
+當您在部署 BlueXP Connector 的 SaaS 環境中使用 BlueXP 備份與還原時、請將 BlueXP Connector 部署在您的雲端供應商、或是部署在您擁有網際網路存取權的主機系統上、所有重要的 BlueXP 備份與還原組態資料都會備份並儲存在雲端中。當您在無法存取網際網路的站台（稱為「受限模式」或「暗點」）中使用 BlueXP 備份與還原時、此 BlueXP 備份與還原資訊只會儲存在本機 Connector 系統上。
 
-本主題說明如何將關鍵 BlueXP 備份與還原資料備份至連線的 StorageGRID 系統。同時也說明如何在必要時將資料還原至新的Connector。
+我們將說明如何將關鍵 BlueXP 備份與還原資料備份至您的連線 StorageGRID 系統、以及如何在必要時將資料還原至新的 Connector 。
 
 
 

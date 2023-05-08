@@ -29,7 +29,7 @@ summary: 完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資�
 * 您已訂閱 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["BlueXP Marketplace備份產品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS年度合約"]或您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
 * 您在 AWS 中安裝了 Connector ：
 +
-** Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「限制模式」）。
+** Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「受限模式」）。
 ** 提供具有權限的BlueXP Connector的IAM角色包括來自最新版本的S3權限 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html["BlueXP原則"^]。
 
 
@@ -94,18 +94,16 @@ VPC閘道端點必須已存在於VPC中。 https://docs.aws.amazon.com/vpc/lates
 
 --
 使用客戶管理金鑰進行資料加密的必要資訊:: 您可以在啟動精靈中選擇自己的客戶管理資料加密金鑰、而非使用預設的Amazon S3加密金鑰。在此情況下、您必須先設定加密管理金鑰。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的金鑰"^]。
-連接器需求:: Connector 可安裝在 AWS 區域、且可存取完整或有限的網際網路（「 Standard 」（標準）或「 Restricted 」（限制）模式）。
+連接器需求:: Connector 可以安裝在 AWS 區域、且網際網路存取完全或有限（「標準」或「受限」模式）。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["如需詳細資訊、請參閱 BlueXP 部署模式"^]。
 +
 --
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["在AWS中部署Connector"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["在 AWS 區域的 Linux 主機上手動安裝 Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["以標準模式在 AWS 中部署 Connector （完整網際網路存取）"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-restricted-mode.html["以受限模式安裝 Connector （有限的輸出存取）"^]
 
 
 --
-
-
-必要的AWS Connector權限:: 提供BlueXP權限的IAM角色必須包含最新版本的S3權限 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]。
+必要的AWS Connector權限:: 提供BlueXP權限的IAM角色必須包含最新版本的S3權限 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]。如果原則未包含所有這些權限、請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS文件：編輯IAM原則"]。
 +
 --
 以下是原則的特定權限：
@@ -172,7 +170,8 @@ VPC閘道端點必須已存在於VPC中。 https://docs.aws.amazon.com/vpc/lates
 --
 
 
-如果您使用3.9.21版或更新版本部署Connector、則這些權限應已成為IAM角色的一部分。否則您必須新增遺失的權限。特別是「Athena」和「黏著」權限、因為它們是搜尋與還原所需的權限。
+
+NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如 `arn:aws-cn:s3:::netapp-backup-*`。
 
 必要的AWS Cloud Volumes ONTAP 功能:: 當您的 Cloud Volumes ONTAP 系統執行 ONTAP 9.12.1 或更新版本的軟體時、提供具有權限的工作環境的 IAM 角色必須包含一組新的 S3 權限、專門用於最新的 BlueXP 備份與還原 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html["政策Cloud Volumes ONTAP"^]。
 +

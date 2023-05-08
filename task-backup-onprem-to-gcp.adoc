@@ -243,10 +243,11 @@ storage.objects.update
 
 ==== 使用客戶管理的加密金鑰（CMEK）
 
-您可以使用自己的客戶管理金鑰進行資料加密、而非使用預設的Google管理加密金鑰。在這種情況下、您必須擁有金鑰環和金鑰名稱、才能在啟動精靈中新增此資訊。 https://cloud.google.com/kms/docs/cmek["深入瞭解客戶管理的加密金鑰"^]。
+您可以使用自己的客戶管理金鑰進行資料加密、而非使用預設的Google管理加密金鑰。跨區域和跨專案金鑰都受到支援、因此您可以為與 CMEK 金鑰專案不同的貯體選擇專案。如果您打算使用自己的客戶管理金鑰：
 
-您也需要在Connector for CCMEK角色中新增這些必要權限、才能正常運作：
-
+* 您必須擁有金鑰環和金鑰名稱、才能在啟動精靈中新增此資訊。 https://cloud.google.com/kms/docs/cmek["深入瞭解客戶管理的加密金鑰"^]。
+* 您需要確認 Connector 的角色中是否包含這些必要權限：
++
 [source, json]
 ----
 cloudkms.cryptoKeys.get
@@ -258,9 +259,12 @@ cloudkms.keyRings.getIamPolicy
 cloudkms.keyRings.list
 cloudkms.keyRings.setIamPolicy
 ----
+* 您必須確認專案中已啟用 Google 「 Cloud Key Management Service （ KMS ）」 API 。請參閱 https://cloud.google.com/apis/docs/getting-started#enabling_apis["Google Cloud 文件：啟用 API"] 以取得詳細資料。
+
+
 * CMEK注意事項：*
 
-* 同時支援HSM（硬體備份）和軟體產生的金鑰。
+* 同時支援 HSM （硬體支援）和軟體產生的金鑰。
 * 同時支援新建立或匯入的雲端KMS金鑰。
 * 僅支援區域金鑰、不支援全域金鑰。
 * 目前僅支援「對稱加密/解密」用途。

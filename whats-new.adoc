@@ -18,6 +18,36 @@ summary: 瞭解 BlueXP 備份與還原的新功能。
 
 
 
+== 2023 年 5 月 8 日
+
+
+
+=== 資料夾層級的還原作業現在可從歸檔儲存設備和鎖定的備份中獲得支援
+
+如果備份檔案已設定為 DataLock 和勒索軟體保護、或是備份檔案位於歸檔儲存區、則當叢集執行 ONTAP 9.13.1 或更新版本時、現在支援資料夾層級的還原作業。
+
+
+
+=== 將磁碟區備份至 Google Cloud 時、支援跨區域和跨專案客戶管理的金鑰
+
+現在您可以選擇與客戶管理的加密金鑰（ CMEK ）專案不同的儲存庫。
+
+
+
+=== AWS 中國地區現在支援備份檔案
+
+如果叢集執行的是 ONTAP 9.12.1 或更新版本、則 AWS 中國北京（ CN-north-1 ）和寧夏（ CN-n前來 -1 ）地區現在都支援做為備份檔案的目的地。
+
+請注意、指派給 BlueXP Connector 的 IAM 原則需要將所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如「 arn:AWS-CN:S3 ：：：： NetApp-backup-* 」。請參閱 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-to-aws.html["將內部部署 ONTAP 資料備份至 Amazon S3"] 以取得詳細資料。
+
+
+
+=== 工作監控的增強功能
+
+系統啟動的工作（例如持續的備份作業）現在可在 * 工作監控 * 標籤中找到、適用於執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統。舊版 ONTAP 只會顯示使用者啟動的工作。
+
+
+
 == 2023 年 4 月 14 日
 
 
@@ -45,7 +75,7 @@ summary: 瞭解 BlueXP 備份與還原的新功能。
 
 === 應用程式（混合式） BlueXP 備份與還原的增強功能
 
-* 應用程式（混合式）的 BlueXP 備份與還原是從 SaaS 控制層面驅動。
+* 應用程式（混合式）的 BlueXP 備份與還原是從 SaaS 控制層面驅動
 * 修改混合式 REST API 以符合雲端原生 API 。
 * 支援電子郵件通知
 
@@ -58,7 +88,7 @@ summary: 瞭解 BlueXP 備份與還原的新功能。
 
 === 能夠以「受限」模式、從 Cloud Volumes ONTAP 系統將資料備份到雲端
 
-現在您可以在「受限」模式下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["深入瞭解 BlueXP 部署模式"^]。請參閱 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
+現在您可以在「受限模式」下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["深入瞭解 BlueXP 部署模式"^]。請參閱 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
 
 
 
@@ -76,7 +106,7 @@ API 的新功能可讓您使用 BlueXP 備份與還原、將磁碟區快照備�
 
 === 工作監控的增強功能
 
-* 從 BlueXP 備份與還原 UI 和 API 啟動的使用者初始化備份與還原作業、以及系統起始的工作（例如持續備份作業）、現在都可在執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統的 * 工作監控 * 標籤中找到。舊版 ONTAP 只會顯示使用者啟動的工作。
+* 從 BlueXP 備份與還原 UI 和 API 啟動的使用者初始化備份與還原作業、以及系統起始的工作（例如持續的備份作業）、現在都可在執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統的 * 工作監控 * 標籤中取得。舊版 ONTAP 只會顯示使用者啟動的工作。
 * 除了能夠下載 CSV 檔案來報告所有工作之外、現在您可以下載 JSON 檔案來處理單一工作、並查看其詳細資料。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#download-job-monitoring-results-as-a-report["深入瞭解"]。
 * 新增兩個備份工作警示：「排程工作失敗」和「還原工作完成但有警告」。 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["檢閱 BlueXP 備份與還原可以傳送的所有警示"]。
 
@@ -558,23 +588,3 @@ API可從取得 https://docs.netapp.com/us-en/cloud-manager-automation/cbs/overv
 
 
 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-licensing-cloud-backup.html["深入瞭解可用的授權模式"]。
-
-
-
-== 2022年4月4日
-
-
-
-=== Cloud Backup for Applications 1.1.0 SnapCenter （以支援功能為基礎）現已成為正式上市
-
-全新的雲端應用程式備份功能可讓您將現有的Oracle與Microsoft SQL應用程式一致的Snapshot（備份）、從內部部署的主要儲存設備卸載到Amazon S3或Azure Blob的雲端物件儲存設備。
-
-必要時、您可以將這些資料從雲端還原至內部部署。
-
-link:concept-protect-app-data-to-cloud.html["深入瞭解如何將內部部署應用程式資料保護至雲端"]。
-
-
-
-=== 全新的搜尋與還原功能、可在ONTAP 所有的還原檔案中搜尋磁碟區或檔案
-
-現在、您可以ONTAP 透過*全部的支援檔案*、以部分或完整的Volume名稱、部分或完整的檔案名稱、大小範圍及其他搜尋篩選條件來搜尋Volume或檔案。如果您不確定哪個叢集或磁碟區是資料的來源、這是尋找您要還原資料的絕佳新方法。 link:task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore["瞭解如何使用搜尋"]。

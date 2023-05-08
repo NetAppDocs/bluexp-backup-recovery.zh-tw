@@ -113,7 +113,7 @@ endif::azure[]
 
 === 支援無網際網路連線的站台
 
-BlueXP 備份與還原可在沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）中使用、以備份大量資料。在這種情況下、您需要在Dark網站上部署BlueXP Connector。
+BlueXP 備份與還原可在沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）中使用、以備份大量資料。在這種情況下、您需要以私有模式部署 BlueXP Connector 。
 
 * 您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。請參閱 link:task-backup-onprem-private-cloud.html["將內部部署ONTAP 的不全資料備份StorageGRID 至不全"] 以取得詳細資料。ifdef：：AWS []
 
@@ -245,7 +245,7 @@ ifdef::aws[]
 
 使用AWS時、每年有兩份合約可供12、24或36個月使用：
 
-* 「 BlueXP 備份與還原」計畫、可讓您備份 Cloud Volumes ONTAP 資料和內部部署 ONTAP 資料。
+* 「雲端備份」計畫、可讓您備份Cloud Volumes ONTAP 內部部署ONTAP 的支援資料。
 * 「 CVO 專業人員」計畫、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原作業結合在一起。這包括Cloud Volumes ONTAP 不受限制地備份此授權所收取的所有數量（備份容量不計入授權）。
 
 
@@ -439,7 +439,8 @@ endif::gcp[]
 ** 如果您在SnapMirror目的地磁碟區上建立Snapshot的本機複本（無論使用的是SnapMirror標籤）、這些Snapshot將不會作為備份移至雲端。此時、您需要建立一個 Snapshot 原則、並將所需的標籤貼到來源 DP Volume 、以便 BlueXP 備份和還原進行備份。
 
 
-* 無法將資料區備份移至歸檔儲存設備、也無法使用DataLock和勒索軟體保護功能FlexGroup 。
+* FlexGroup Volume 備份無法移至歸檔儲存設備。
+* FlexGroup Volume 備份無法使用 DataLock 和勒索軟體保護。
 * SVM-DR磁碟區備份受到下列限制的支援：
 +
 ** 備份僅支援ONTAP 來自於不支援的支援。
@@ -476,8 +477,9 @@ endif::gcp[]
 +
 使用ONTAP 9.11.1版之前的版本時、不支援資料夾還原。
 
-* 目前不支援FlexGroup 將目錄/資料夾還原至不支援的功能。
-* 如果備份檔案位於歸檔儲存設備中、則無法還原個別資料夾。
+* 僅當叢集執行 ONTAP 9.13.1 以上版本時、才支援儲存在歸檔儲存設備中的資料還原目錄 / 資料夾。
+* 僅當叢集執行 ONTAP 9.13.1 以上版本時、才支援使用 DataLock 保護的資料還原目錄 / 資料夾。
+* FlexGroup Volume 備份目前不支援目錄 / 資料夾還原。
 * 不FlexGroup 支援從支援的範圍內將資料從支援的資料區還原為FlexVol 資料區、或FlexVol 將資料區還原FlexGroup 為資料區。
 * 要還原的檔案必須使用與目的地Volume上語言相同的語言。如果語言不同、您將會收到錯誤訊息。
 * 從Azure歸檔儲存設備還原資料至StorageGRID 支援的系統不支援_高_還原優先順序。

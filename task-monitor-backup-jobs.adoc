@@ -31,15 +31,11 @@ summary: 您可以監控排程的備份工作狀態、或是您已在工作環�
 * 失敗
 
 
-從 BlueXP 備份與還原 UI 和 API 啟動的使用者初始化備份與還原作業、以及系統起始的工作（例如持續排程備份作業）、都可以在執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統的 * 工作監控 * 標籤中找到。
-
-[TIP]
-====
-* 在 Cloud Volumes ONTAP 系統或內部部署 ONTAP 系統上執行舊版 ONTAP 時、只會顯示使用者啟動的工作。
-* 如果您已將 Cloud Volumes ONTAP 系統升級至 9.13.x 、但在「工作監控」中沒有看到持續排程的備份作業、則需要重新啟動 BlueXP 備份與還原服務。 link:reference-restart-backup.html["瞭解如何重新啟動 BlueXP 備份與還原"^]。
+從 Cloud Backup UI 和 API 啟動的使用者初始化備份和還原作業、以及持續排程備份作業等系統起始工作、都可以在 Job Monitoring （工作監控）標籤中找到。不過、這僅適用於執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統、以及執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統。執行舊版 ONTAP 時、只會顯示使用者啟動的工作。
 
 
-====
+NOTE: 如果您已將 ONTAP 系統升級至 9.13.x 、但在「工作監控」中沒有看到持續排程的備份作業、則需要重新啟動 BlueXP 備份與還原服務。 link:reference-restart-backup.html["瞭解如何重新啟動 BlueXP 備份與還原"]。
+
 .步驟
 . 從BlueXP功能表中、選取* Protection > Backup and recovery *。
 . 選取 * 工作監控 * 標籤。
@@ -141,17 +137,17 @@ BlueXP 通知中心會追蹤您已啟動的備份和還原工作進度、以便�
 
 
  a| 
-Adhoc（隨需）磁碟區備份失敗
+臨機操作磁碟區備份失敗
 | 錯誤 
 
 
  a| 
-在工作環境中、 BlueXP 備份與還原啟動失敗
+工作環境中的備份啟動失敗
 | 關鍵 
 
 
  a| 
-BlueXP 備份與還原作業失敗
+還原作業失敗
 | 關鍵 
 
 
@@ -161,7 +157,7 @@ BlueXP 備份與還原作業失敗
 
 
  a| 
-還原工作完成但出現警告
+還原工作已完成、但有警告
 | 警告 
 
 
@@ -174,7 +170,7 @@ NOTE: 從 Cloud Volumes ONTAP 9.13.0 開始、所有警示都會出現。對於�
 
 根據預設、 BlueXP 帳戶管理員會收到所有「重大」和「建議」警示的電子郵件。根據預設、所有其他使用者和收件者都會設定為不接收任何通知電子郵件。電子郵件可傳送給任何屬於您NetApp雲端帳戶一部分的BlueXP使用者、或傳送給任何其他需要注意備份與還原活動的收件者。
 
-若要接收 BlueXP 備份與還原電子郵件警示、您必須選取通知嚴重性類型「重大」和「錯誤」。
+若要接收 BlueXP 備份與還原電子郵件警示、您必須選取通知嚴重性類型「重大」、「警告」和「錯誤」。
 
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作"^]。
 

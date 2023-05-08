@@ -199,7 +199,7 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
 
 
 .步驟
-. 確認下列S3權限（從最新版本開始） https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]）是IAM角色的一部分、可為Connector提供權限。
+. 確認下列S3權限（從最新版本開始） https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]）是IAM角色的一部分、可為Connector提供權限。如果沒有、請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS文件：編輯IAM原則"]。
 +
 [source, json]
 ----
@@ -261,7 +261,8 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
       },
 ----
 +
-如果您使用3.9.21版或更新版本部署Connector、則這些權限應已成為IAM角色的一部分。否則您必須新增遺失的權限。特別是「Athena」和「黏著」權限、因為它們是搜尋與還原所需的權限。請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS文件：編輯IAM原則"]。
+
+NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如 `arn:aws-cn:s3:::netapp-backup-*`。
 
 . 啟動服務時、備份精靈會提示您輸入存取金鑰和秘密金鑰。這些認證資料會傳遞ONTAP 給整個叢集、ONTAP 以便讓支援中心能夠將資料備份並還原至S3儲存區。因此、您需要建立具有下列權限的IAM使用者：
 +

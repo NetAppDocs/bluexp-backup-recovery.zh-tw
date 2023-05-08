@@ -179,6 +179,7 @@ S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["在可存取網際網路的Linux主機上安裝Connector"^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["在無法存取網際網路的Linux主機上安裝Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["在連接器之間切換"^]
 
 
 
