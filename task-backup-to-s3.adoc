@@ -26,11 +26,11 @@ summary: 完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資�
 [role="quick-margin-list"]
 * 您正在Cloud Volumes ONTAP AWS中執行更新版本的支援功能（ONTAP 建議使用更新版本的支援功能）。
 * 您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。
-* 您已訂閱 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["BlueXP Marketplace備份產品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS年度合約"]或您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
+* 您已訂閱 https://["BlueXP Marketplace備份產品"]、 https://["AWS年度合約"]或您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
 * 您在 AWS 中安裝了 Connector ：
 +
 ** Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「受限模式」）。
-** 提供具有權限的BlueXP Connector的IAM角色包括來自最新版本的S3權限 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html["BlueXP原則"^]。
+** 提供具有權限的BlueXP Connector的IAM角色包括來自最新版本的S3權限 https://["BlueXP原則"^]。
 
 
 
@@ -78,13 +78,13 @@ image:screenshot_backup_policy_aws.png["顯示 BlueXP 備份與還原設定的�
 
 image:diagram_cloud_backup_cvo_aws.png["顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
-VPC閘道端點必須已存在於VPC中。 https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-s3.html["深入瞭解閘道端點"^]。
+VPC閘道端點必須已存在於VPC中。 https://["深入瞭解閘道端點"^]。
 
 支援 ONTAP 的支援版本:: 最低ONTAP 版本為0、9、75；ONTAP 建議使用0、8P13及更新版本。
-授權需求:: 對於 BlueXP 備份與還原 PAYGO 授權、 AWS Marketplace 提供 BlueXP 訂閱、可部署 Cloud Volumes ONTAP 和 BlueXP 備份與還原。您需要 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["訂閱此BlueXP訂閱"^] 在您啟用 BlueXP 備份與還原之前。BlueXP 備份與還原的帳單是透過此訂閱完成。
+授權需求:: 對於 BlueXP 備份與還原 PAYGO 授權、 AWS Marketplace 提供 BlueXP 訂閱、可部署 Cloud Volumes ONTAP 和 BlueXP 備份與還原。您需要 https://["訂閱此BlueXP訂閱"^] 在您啟用 BlueXP 備份與還原之前。BlueXP 備份與還原的帳單是透過此訂閱完成。
 +
 --
-如需一年一度的合約、而該合約可讓您同時備份Cloud Volumes ONTAP 支援不必要資料和內部部署ONTAP 的不必要資料、您必須從訂閱 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace頁面"^] 然後 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html["將訂閱與AWS認證資料建立關聯"^]。
+如需一年一度的合約、而該合約可讓您同時備份Cloud Volumes ONTAP 支援不必要資料和內部部署ONTAP 的不必要資料、您必須從訂閱 https://["AWS Marketplace頁面"^] 然後 https://["將訂閱與AWS認證資料建立關聯"^]。
 
 若要取得一年一度的合約、讓您能夠搭售 Cloud Volumes ONTAP 和 BlueXP 備份與還原、則必須在建立 Cloud Volumes ONTAP 工作環境時設定年度合約。此選項無法讓您備份內部資料。
 
@@ -93,17 +93,17 @@ VPC閘道端點必須已存在於VPC中。 https://docs.aws.amazon.com/vpc/lates
 而且您需要有AWS帳戶來存放備份所在的儲存空間。
 
 --
-使用客戶管理金鑰進行資料加密的必要資訊:: 您可以在啟動精靈中選擇自己的客戶管理資料加密金鑰、而非使用預設的Amazon S3加密金鑰。在此情況下、您必須先設定加密管理金鑰。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的金鑰"^]。
-連接器需求:: Connector 可以安裝在 AWS 區域、且網際網路存取完全或有限（「標準」或「受限」模式）。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["如需詳細資訊、請參閱 BlueXP 部署模式"^]。
+使用客戶管理金鑰進行資料加密的必要資訊:: 您可以在啟動精靈中選擇自己的客戶管理資料加密金鑰、而非使用預設的Amazon S3加密金鑰。在此情況下、您必須先設定加密管理金鑰。 https://["瞭解如何使用您自己的金鑰"^]。
+連接器需求:: Connector 可以安裝在 AWS 區域、且網際網路存取完全或有限（「標準」或「受限」模式）。 https://["如需詳細資訊、請參閱 BlueXP 部署模式"^]。
 +
 --
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["以標準模式在 AWS 中部署 Connector （完整網際網路存取）"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-restricted-mode.html["以受限模式安裝 Connector （有限的輸出存取）"^]
+* https://["深入瞭解連接器"^]
+* https://["以標準模式在 AWS 中部署 Connector （完整網際網路存取）"^]
+* https://["以受限模式安裝 Connector （有限的輸出存取）"^]
 
 
 --
-必要的AWS Connector權限:: 提供BlueXP權限的IAM角色必須包含最新版本的S3權限 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]。如果原則未包含所有這些權限、請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS文件：編輯IAM原則"]。
+必要的AWS Connector權限:: 提供BlueXP權限的IAM角色必須包含最新版本的S3權限 https://["BlueXP原則"^]。如果原則未包含所有這些權限、請參閱 https://["AWS文件：編輯IAM原則"]。
 +
 --
 以下是原則的特定權限：
@@ -173,18 +173,18 @@ VPC閘道端點必須已存在於VPC中。 https://docs.aws.amazon.com/vpc/lates
 
 NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如 `arn:aws-cn:s3:::netapp-backup-*`。
 
-必要的AWS Cloud Volumes ONTAP 功能:: 當您的 Cloud Volumes ONTAP 系統執行 ONTAP 9.12.1 或更新版本的軟體時、提供具有權限的工作環境的 IAM 角色必須包含一組新的 S3 權限、專門用於最新的 BlueXP 備份與還原 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-set-up-iam-roles.html["政策Cloud Volumes ONTAP"^]。
+必要的AWS Cloud Volumes ONTAP 功能:: 當您的 Cloud Volumes ONTAP 系統執行 ONTAP 9.12.1 或更新版本的軟體時、提供具有權限的工作環境的 IAM 角色必須包含一組新的 S3 權限、專門用於最新的 BlueXP 備份與還原 https://["政策Cloud Volumes ONTAP"^]。
 +
 --
 如果您Cloud Volumes ONTAP 使用BlueXP 3.9.23版或更新版本建立了這個功能完善的環境、這些權限應該已經成為IAM角色的一部分。否則您必須新增遺失的權限。
 
 --
-支援的 AWS 區域:: 所有 AWS 區域均支援 BlueXP 備份與還原 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]；包括AWS GovCloud區域。
+支援的 AWS 區域:: 所有 AWS 區域均支援 BlueXP 備份與還原 https://["支援的地方 Cloud Volumes ONTAP"^]；包括AWS GovCloud區域。
 在不同的AWS帳戶中建立備份所需的設定:: 根據預設、備份會使用Cloud Volumes ONTAP 與您的作業系統相同的帳戶建立。如果您想要使用不同的AWS帳戶進行備份、您必須：
 +
 --
 * 驗證「S3：PuttBucketPolicy」和「S3：PuttBucketOwnershipControl」權限是否為IAM角色的一部分、該角色可為BlueXP Connector提供權限。
-* 在BluXP中新增目的地AWS帳戶認證資料。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#add-additional-credentials-to-a-connector["瞭解如何做到這一點"^]。
+* 在BluXP中新增目的地AWS帳戶認證資料。 https://["瞭解如何做到這一點"^]。
 * 在第二個帳戶的使用者認證中新增下列權限：
 +
 ....
@@ -210,7 +210,7 @@ NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Re
 
 在工作環境精靈中、預設會啟用 BlueXP 備份與還原。請務必保持啟用選項。
 
-請參閱 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["在 Cloud Volumes ONTAP AWS 中啟動"^] 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。
+請參閱 https://["在 Cloud Volumes ONTAP AWS 中啟動"^] 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。
 
 .步驟
 . 按一下「 * 建立 Cloud Volumes ONTAP 參考 * 」。
@@ -247,7 +247,7 @@ image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示「啟用備份�
 如果您想要使用不同的AWS帳戶進行備份、則必須在BlueXP中新增目的地AWS帳戶認證、並將「S3：PuttBucketPolicy」和「S3：PuttketOwnershipControl」權限新增至IAM角色、以便為BlueXP提供權限。
 
 .. 儲存備份的區域。這可能與Cloud Volumes ONTAP 駐留的地方不同。
-.. 無論您是使用預設的Amazon S3加密金鑰、還是從AWS帳戶選擇自己的客戶管理金鑰、都能管理資料的加密。 (https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的加密金鑰"]）。
+.. 無論您是使用預設的Amazon S3加密金鑰、還是從AWS帳戶選擇自己的客戶管理金鑰、都能管理資料的加密。 (https://["瞭解如何使用您自己的加密金鑰"]）。
 +
 image:screenshot_backup_provider_settings_aws.png["快照顯示將磁碟區從Cloud Volumes ONTAP 某個系統備份到AWS S3時、雲端供應商的詳細資料。"]
 

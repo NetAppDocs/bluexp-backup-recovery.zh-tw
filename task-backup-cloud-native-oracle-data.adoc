@@ -134,6 +134,6 @@ NOTE: 服務帳戶（ <account_id> ）用於執行排程的備份作業。
 * 還原大型資料庫（250 GB以上）之後、如果您在同一個資料庫上執行完整的線上備份、作業可能會失敗、並顯示下列錯誤：
 `failed with status code 500, error {\"error\":{\"code\":\"app_internal_error\",\"message\":\"Failed to create snapshot. Reason: Snapshot operation not allowed due to clones backed by snapshots. Try again after sometime.`
 +
-如需如何修正此問題的相關資訊、請參閱： https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Snapshot_operation_not_allowed_due_to_clones_backed_by_snapshots["由於複本以快照做為備份、因此不允許執行Snapshot作業"]。
+如需如何修正此問題的相關資訊、請參閱： https://["由於複本以快照做為備份、因此不允許執行Snapshot作業"]。
 
 

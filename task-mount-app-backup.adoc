@@ -40,6 +40,6 @@ BlueXP 應用程式備份與還原可讓您將 Oracle 與 HANA 備份掛載到�
 
 此作業只會掛載指定主機上的儲存設備。您應該手動掛載檔案系統並開啟資料庫。使用磁碟區之後、儲存管理員可以從 ONTAP 叢集刪除磁碟區。
 
-* 如需有關如何啟動 Oracle 資料庫的資訊、請參閱： https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_bring_up_Oracle_Database_in_another_NFS_host_after_mounting_storage_from_backup_in_Cloud_Backup_for_Applications["知識庫文章"]。
-* 如需如何啟動SAP HANA資料庫的詳細資訊、請參閱： https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html["TR-4667 ：使用 SnapCenter 的 SAP 系統複製工作流程總覽"^] 和 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html["TR-4667 ：使用 SnapCenter 的 SAP 系統複製工作流程總覽"^]。
+* 如需有關如何啟動 Oracle 資料庫的資訊、請參閱： https://["知識庫文章"]。
+* 如需如何啟動SAP HANA資料庫的詳細資訊、請參閱： https://["TR-4667 ：使用 SnapCenter 的 SAP 系統複製工作流程總覽"^] 和 https://["TR-4667 ：使用 SnapCenter 的 SAP 系統複製工作流程總覽"^]。
 

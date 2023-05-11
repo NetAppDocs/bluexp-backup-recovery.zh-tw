@@ -16,7 +16,7 @@ summary: BlueXP 備份與還原可讓您在 Azure 帳戶中建立不同於來源
 [role="lead"]
 BlueXP 備份與還原可讓您在 Azure 帳戶中建立不同於來源 Cloud Volumes ONTAP 磁碟區所在位置的備份檔案。這兩個帳戶可能不同於BlueXP Connector所在的帳戶。
 
-只有在您需要時、才需要執行這些步驟 https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["將Cloud Volumes ONTAP 不支援的資料備份到Azure Blob儲存設備"^]。
+只有在您需要時、才需要執行這些步驟 https://["將Cloud Volumes ONTAP 不支援的資料備份到Azure Blob儲存設備"^]。
 
 只要遵循下列步驟、就能以這種方式設定組態。
 

@@ -46,7 +46,7 @@ summary: 在每部 SAP HANA 資料庫主機上安裝 SnapCenter Plug-in for SAP 
 
 
 
-NOTE: 如果從 BlueXP Connector 主機到應用程式主機的連線失敗、請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Cloud_Backup_Application_Failed_to_validate_connectivity_from_BlueXP_connector_host_to_application_database_host["知識庫文章"^] 以取得資訊。
+NOTE: 如果從 BlueXP Connector 主機到應用程式主機的連線失敗、請參閱 https://["知識庫文章"^] 以取得資訊。
 
 
 
@@ -155,7 +155,7 @@ host_ssh_port
 *步驟*
 
 . 登入Connector VM。
-. 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
+. 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://[]
 +
 外掛程式二進位檔位於： _CD /var/lib/v泊 塢視窗 /volides/service-manager-2_cloudmanager_SCS_cloue_volate/_data/$（ Sudo 泊塢視窗 ps|grep -po" cloudmanager_SCS_clouy..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
 

@@ -26,7 +26,7 @@ summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 確認您的組態支援
 [role="quick-margin-list"]
-* 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
+* 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://["探索 ONTAP 叢集"^] 以取得詳細資料。
 +
 ** 叢集執行 ONTAP 的是更新版本的 1.7P5 。
 ** 叢集具有SnapMirror授權、包含在優質產品組合或資料保護產品組合中。
@@ -95,7 +95,7 @@ image:diagram_cloud_backup_onprem_storagegrid.png["顯示 BlueXP 備份與還原
 
 您必須先在ONTAP BlueXP中探索內部部署的叢集、才能開始備份大量資料。
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
+https://["瞭解如何探索叢集"^]。
 
 需求 ONTAP::
 +
@@ -106,11 +106,11 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 * 附註： * 使用 BlueXP 備份與還原時、不需要「混合雲套裝組合」。
 
 +
-瞭解如何操作 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理叢集授權"^]。
+瞭解如何操作 https://["管理叢集授權"^]。
 
 * 時間和時區設定正確。
 +
-瞭解如何操作 https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["設定叢集時間"^]。
+瞭解如何操作 https://["設定叢集時間"^]。
 
 
 
@@ -123,12 +123,12 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 可在物件儲存設備中讀取及寫入資料。 ONTAP物件儲存設備從未啟動、只是回應而已。
 
 * 需要連接器與叢集管理LIF之間的傳入連線。ONTAP連接器必須位於內部部署中。
-* 裝載您要備份之磁碟區的 ONTAP 每個節點都需要叢集間 LIF 。LIF 必須與 _IPspac__ 建立關聯、 ONTAP 以便連接物件儲存設備。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["深入瞭解 IPspaces"^]。
+* 裝載您要備份之磁碟區的 ONTAP 每個節點都需要叢集間 LIF 。LIF 必須與 _IPspac__ 建立關聯、 ONTAP 以便連接物件儲存設備。 https://["深入瞭解 IPspaces"^]。
 +
 當您設定 BlueXP 備份與還原時、系統會提示您輸入要使用的 IPspace 。您應該選擇每個 LIF 所關聯的 IPspace 。這可能是您建立的「預設」 IPspace 或自訂 IPspace 。
 
 * 節點的叢集間LIF可存取物件存放區（當連接器安裝在「暗」站台時、則不需要）。
-* DNS伺服器已針對磁碟區所在的儲存VM進行設定。瞭解如何操作 https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["設定SVM的DNS服務"^]。
+* DNS伺服器已針對磁碟區所在的儲存VM進行設定。瞭解如何操作 https://["設定SVM的DNS服務"^]。
 * 請注意、如果您使用的IPspace與預設值不同、則可能需要建立靜態路由才能存取物件儲存設備。
 * 如有必要、請更新防火牆規則、以允許 BlueXP 備份與恢復服務從 ONTAP 透過您指定的連接埠（通常是連接埠 443 ）、以及透過連接埠 53 （ TCP/UDP ）從儲存 VM 到 DNS 伺服器的名稱解析流量。
 
@@ -140,7 +140,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 
 === 準備 StorageGRID
 
-必須符合下列需求。 StorageGRID請參閱 https://docs.netapp.com/us-en/storagegrid-116/["本文檔StorageGRID"^] 以取得更多資訊。
+必須符合下列需求。 StorageGRID請參閱 https://["本文檔StorageGRID"^] 以取得更多資訊。
 
 支援 StorageGRID 的支援版本:: 支援不支援更新版本的支援。StorageGRID
 +
@@ -150,7 +150,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 若要將較舊的備份分層保存至雲端歸檔儲存設備、StorageGRID 您的不穩定系統必須執行11.3版或更新版本。此外、您必須將 StorageGRID 系統探索到 BlueXP Canvas 。
 
 --
-S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支援儲存設備的存取。 https://docs.netapp.com/us-en/storagegrid-116/admin/creating-tenant-account.html["如StorageGRID 需詳細資訊、請參閱《The》（英文）"^]。
+S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支援儲存設備的存取。 https://["如StorageGRID 需詳細資訊、請參閱《The》（英文）"^]。
 +
 --
 當您設定將備份備份到StorageGRID SURITY時、備份精靈會提示您輸入租戶帳戶的S3存取金鑰和秘密金鑰。租戶帳戶可讓 BlueXP 備份與還原驗證及存取用於儲存備份的 StorageGRID 貯體。這些金鑰是必填項目、StorageGRID 以便知道誰提出要求。
@@ -176,14 +176,14 @@ S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支
 
 將資料備份StorageGRID 到不支援的地方時、內部環境中必須有連接器。您可能需要安裝新的 Connector 、或確定目前選取的 Connector 位於內部部署。連接器可安裝在有或沒有網際網路存取的站台上。
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["在可存取網際網路的Linux主機上安裝Connector"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["在無法存取網際網路的Linux主機上安裝Connector"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["在連接器之間切換"^]
+* https://["深入瞭解連接器"^]
+* https://["在可存取網際網路的Linux主機上安裝Connector"^]
+* https://["在無法存取網際網路的Linux主機上安裝Connector"^]
+* https://["在連接器之間切換"^]
 
 
 
-NOTE: BlueXP 備份與還原功能內建於 BlueXP Connector 中。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["BlueXP 備份與還原新功能"] 若要查看每個 BlueXP 備份與還原版本中的新功能、您可以依照步驟執行 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["升級Connector軟體"^] 當您想要使用新功能時。
+NOTE: BlueXP 備份與還原功能內建於 BlueXP Connector 中。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["BlueXP 備份與還原新功能"] 若要查看每個 BlueXP 備份與還原版本中的新功能、您可以依照步驟執行 https://["升級Connector軟體"^] 當您想要使用新功能時。
 
 強烈建議您在沒有網際網路連線的站台中安裝 Connector 時、定期建立 BlueXP 備份與還原組態資料的本機備份。 link:reference-backup-cbs-db-in-dark-site.html["瞭解如何在黑暗的網站中備份 BlueXP 備份與還原資料"^]。
 
@@ -219,7 +219,7 @@ NOTE: BlueXP 備份與還原功能內建於 BlueXP Connector 中。安裝在沒�
 *《要求》* StorageGRID
 
 * 您的產品必須使用11.4或更新版本StorageGRID
-* 您的需求必須是StorageGRID https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["已探索並可在BlueXP畫版中使用"^]。
+* 您的需求必須是StorageGRID https://["已探索並可在BlueXP畫版中使用"^]。
 
 
 * Amazon S3需求*
@@ -250,7 +250,7 @@ NOTE: BlueXP 備份與還原功能內建於 BlueXP Connector 中。安裝在沒�
 
 image:screenshot_sg_archive_to_cloud.png["將備份檔案從StorageGRID 還原至AWS S3或Azure Blob所需資訊的快照。"]
 
-您選取的歸檔原則設定將會在StorageGRID 還原中產生資訊生命週期管理（ILM）原則、並將設定新增為「規則」。如果有現有的作用中ILM原則、則新規則會新增至ILM原則、以將資料移至歸檔層。如果現有的ILM原則處於「建議」狀態、則無法建立及啟動新的ILM原則。 https://docs.netapp.com/us-en/storagegrid-116/ilm/index.html["深入瞭解StorageGRID 《ILM原則與規則》"^]。
+您選取的歸檔原則設定將會在StorageGRID 還原中產生資訊生命週期管理（ILM）原則、並將設定新增為「規則」。如果有現有的作用中ILM原則、則新規則會新增至ILM原則、以將資料移至歸檔層。如果現有的ILM原則處於「建議」狀態、則無法建立及啟動新的ILM原則。 https://["深入瞭解StorageGRID 《ILM原則與規則》"^]。
 
 
 

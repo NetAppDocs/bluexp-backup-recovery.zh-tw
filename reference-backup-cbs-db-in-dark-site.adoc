@@ -103,9 +103,9 @@ zip -r catalogxxxxxx.zip catalogxxxxxx
 
 === 在新的內部部署Linux主機上安裝新的Connector
 
-安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。對 BlueXP 備份與還原資料庫結構進行定期變更、可能會使較新的軟體版本與原始資料庫備份不相容。您可以 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["還原備份資料庫後、將Connector軟體升級至最新版本"^]。
+安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。對 BlueXP 備份與還原資料庫結構進行定期變更、可能會使較新的軟體版本與原始資料庫備份不相容。您可以 https://["還原備份資料庫後、將Connector軟體升級至最新版本"^]。
 
-. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["在新的內部部署Linux主機上安裝BlueXP Connector"^]
+. https://["在新的內部部署Linux主機上安裝BlueXP Connector"^]
 . 使用您剛建立的管理員使用者認證登入BlueXP。
 
 
@@ -172,15 +172,15 @@ unzip catalogxxxxxx.zip
 
 === 探索ONTAP 您的叢集與StorageGRID 功能性系統
 
-. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["探索ONTAP 所有內部環境"^] 您先前環境中可用的。
-. https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["探索StorageGRID 您的系統"^]。
+. https://["探索ONTAP 所有內部環境"^] 您先前環境中可用的。
+. https://["探索StorageGRID 您的系統"^]。
 
 
 
 
 === 設定StorageGRID 有關支援環境的詳細資料
 
-在StorageGRID 原始Connector設定中使用設定時、新增與ONTAP 您的不支援功能環境相關的詳細資訊 https://docs.netapp.com/us-en/cloud-manager-automation/index.html["BlueXP API"^]。
+在StorageGRID 原始Connector設定中使用設定時、新增與ONTAP 您的不支援功能環境相關的詳細資訊 https://["BlueXP API"^]。
 
 您需要針對ONTAP 每個將資料備份StorageGRID 到EFlash的支援系統執行這些步驟。
 

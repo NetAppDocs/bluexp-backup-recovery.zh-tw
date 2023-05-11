@@ -26,7 +26,7 @@ BlueXP 備份與還原支援一個 Azure 歸檔存取層和大部分地區。
 
 請注意、當您使用此類型的生命週期規則來設定 BlueXP 備份與還原時、在 Azure 帳戶中設定容器時、不得設定任何生命週期規則。
 
-https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["瞭解Azure Blob存取層級"^]。
+https://["瞭解Azure Blob存取層級"^]。
 
 
 
@@ -41,7 +41,7 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["瞭�
 * *標準*：擷取速度較慢、成本較低
 
 
-每種方法都有不同的每GB擷取費用和每個要求的費用。如需Azure區域的Azure歸檔詳細定價資訊、請參閱 https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Azure定價頁面"^]。
+每種方法都有不同的每GB擷取費用和每個要求的費用。如需Azure區域的Azure歸檔詳細定價資訊、請參閱 https://["Azure定價頁面"^]。
 
 --
 
@@ -61,7 +61,7 @@ NOTE: 當從Azure還原資料至StorageGRID 支援的系統時、不支援高優
 * *還原時間*：從冷卻儲存設備中的備份檔案還原資料的時間。這一次與一般直接從冷卻儲存設備進行還原作業（不使用歸檔層時）並無不同。
 
 
-如需Azure歸檔擷取選項的詳細資訊、請參閱 https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq["本Azure常見問題集"^]。
+如需Azure歸檔擷取選項的詳細資訊、請參閱 https://["本Azure常見問題集"^]。
 
 --
 

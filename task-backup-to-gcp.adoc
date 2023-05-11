@@ -27,7 +27,7 @@ summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量�
 * 您正在Cloud Volumes ONTAP GCP中執行更新版本的《支援》（ONTAP 建議使用更新版本的《支援》）。
 * 您擁有有效的 GCP 訂閱、可用於存放備份的儲存空間。
 * 您的Google Cloud Project中有一個服務帳戶、該帳戶具有預先定義的儲存管理角色。
-* 您已訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"^] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
+* 您已訂閱 https://["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"^] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
 * 您已在 Google Cloud 中安裝 Connector 。
 
 
@@ -72,7 +72,7 @@ image:screenshot_backup_policy_gcp.png["顯示 BlueXP 備份與還原設定的�
 image:diagram_cloud_backup_cvo_google.png["顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
 支援 ONTAP 的支援版本:: 最低ONTAP 版本為0、9、75；ONTAP 建議使用0、8P13及更新版本。
-授權需求:: 如需 BlueXP 備份與還原 PAYGO 授權、請透過訂閱 BlueXP https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["GCP 市場"^] 是啟用 BlueXP 備份與還原之前的必要項目。BlueXP 備份與還原的帳單是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
+授權需求:: 如需 BlueXP 備份與還原 PAYGO 授權、您可以在 Google Marketplace 中訂閱 BlueXP 、以便部署 Cloud Volumes ONTAP 與 BlueXP 備份與還原。您需要 https://["訂閱此BlueXP訂閱"^] 在您啟用 BlueXP 備份與還原之前。BlueXP 備份與還原的帳單是透過此訂閱完成。 https://["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
 +
 --
 對於 BlueXP 備份與恢復 BYOL 授權、您需要 NetApp 的序號、以便在授權期間和容量內使用該服務。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["瞭解如何管理BYOL授權"^]。
@@ -80,20 +80,20 @@ image:diagram_cloud_backup_cvo_google.png["顯示 BlueXP 備份與還原如何�
 而且您需要 Google 訂閱備份所在的儲存空間。
 
 --
-支援的 GCP 區域:: 所有 GCP 區域均支援 BlueXP 備份與還原 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]。
-GCP 服務帳戶:: 您必須在Google Cloud Project中擁有預先定義儲存管理角色的服務帳戶。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html["瞭解如何建立服務帳戶"^]。
+支援的 GCP 區域:: 所有 GCP 區域均支援 BlueXP 備份與還原 https://["支援的地方 Cloud Volumes ONTAP"^]。
+GCP 服務帳戶:: 您必須在Google Cloud Project中擁有預先定義儲存管理角色的服務帳戶。 https://["瞭解如何建立服務帳戶"^]。
 連接器需求:: Connector 必須安裝在可存取網際網路的 Google 區域。
 +
 --
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html["在 Google Cloud 中部署 Connector"^]
+* https://["深入瞭解連接器"^]
+* https://["在 Google Cloud 中部署 Connector"^]
 
 
 --
 驗證或新增連接器權限:: 若要使用 BlueXP 備份與還原「搜尋與還原」功能、您必須擁有 Connector 角色的特定權限、才能存取 Google Cloud BigQuery 服務。請參閱下列權限、如果您需要修改原則、請遵循這些步驟。
 +
 --
-. 在中 https://console.cloud.google.com["雲端主控台"^]請移至*角色*頁面。
+. 在中 https://["雲端主控台"^]請移至*角色*頁面。
 . 使用頁面頂端的下拉式清單、選取包含您要編輯之角色的專案或組織。
 . 按一下自訂角色。
 . 按一下*編輯角色*以更新角色的權限。
@@ -119,7 +119,7 @@ bigquery.tables.create
 使用客戶管理的加密金鑰（CMEK）所需的資訊:: 您可以使用自己的客戶管理金鑰進行資料加密、而非使用預設的Google管理加密金鑰。跨區域和跨專案金鑰都受到支援、因此您可以為與 CMEK 金鑰專案不同的貯體選擇專案。如果您打算使用自己的客戶管理金鑰：
 +
 --
-* 您必須擁有金鑰環和金鑰名稱、才能在啟動精靈中新增此資訊。 https://cloud.google.com/kms/docs/cmek["深入瞭解客戶管理的加密金鑰"^]。
+* 您必須擁有金鑰環和金鑰名稱、才能在啟動精靈中新增此資訊。 https://["深入瞭解客戶管理的加密金鑰"^]。
 * 您需要確認 Connector 的角色中是否包含這些必要權限：
 +
 [source, json]
@@ -133,7 +133,7 @@ cloudkms.keyRings.getIamPolicy
 cloudkms.keyRings.list
 cloudkms.keyRings.setIamPolicy
 ----
-* 您必須確認專案中已啟用 Google 「 Cloud Key Management Service （ KMS ）」 API 。請參閱 https://cloud.google.com/apis/docs/getting-started#enabling_apis["Google Cloud 文件：啟用 API"] 以取得詳細資料。
+* 您必須確認專案中已啟用 Google 「 Cloud Key Management Service （ KMS ）」 API 。請參閱 https://["Google Cloud 文件：啟用 API"] 以取得詳細資料。
 * * CMEK注意事項：*
 +
 ** 同時支援 HSM （硬體支援）和軟體產生的金鑰。
@@ -156,7 +156,7 @@ cloudkms.keyRings.setIamPolicy
 
 您必須已設定服務帳戶。如果您在建立Cloud Volumes ONTAP 此系統時未選擇服務帳戶、則需要關閉系統、Cloud Volumes ONTAP 並從GCP主控台將服務帳戶新增至該服務帳戶。
 
-請參閱 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["在 Cloud Volumes ONTAP GCP 中啟動"^] 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。
+請參閱 https://["在 Cloud Volumes ONTAP GCP 中啟動"^] 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。
 
 .步驟
 . 在「工作環境」頁面上、按一下「 * 新增工作環境 * 」、然後依照提示進行。
@@ -180,7 +180,7 @@ image:screenshot_backup_to_gcp_new_env.png["顯示如何在工作環境精靈中
 +
 image:screenshot_backup_to_gcp.png["顯示工作環境精靈中的 BlueXP 備份與還原選項。"]
 
-. 請完成精靈中的頁面、依照中所述部署系統 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["在 Cloud Volumes ONTAP GCP 中啟動"^]。
+. 請完成精靈中的頁面、依照中所述部署系統 https://["在 Cloud Volumes ONTAP GCP 中啟動"^]。
 
 
 .結果
@@ -203,7 +203,7 @@ image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示 BlueXP 備份�
 . 選取供應商詳細資料、然後按*下一步*。
 +
 .. 您想要在其中建立Google Cloud Storage儲存庫以進行備份的Google Cloud Project和地區。
-.. 無論您是使用預設的Google管理加密金鑰、還是選擇自己的客戶管理金鑰來管理資料加密。若要使用CMEK、您必須擁有金鑰環和金鑰名稱。 https://cloud.google.com/kms/docs/cmek["深入瞭解客戶管理的加密金鑰"^]。
+.. 無論您是使用預設的Google管理加密金鑰、還是選擇自己的客戶管理金鑰來管理資料加密。若要使用CMEK、您必須擁有金鑰環和金鑰名稱。 https://["深入瞭解客戶管理的加密金鑰"^]。
 +
 image:screenshot_backup_provider_settings_gcp.png["快照顯示雲端供應商將磁碟區從 Cloud Volumes ONTAP 安裝在 GCP 上的某個系統備份到 Google Cloud Storage 儲存庫時的詳細資料。"]
 
@@ -239,7 +239,7 @@ image:screenshot_backup_select_volumes.png["選取要備份之磁碟區的快照
 .結果
 Google Cloud Storage儲存庫會自動在您輸入的Google存取金鑰和秘密金鑰所指示的服務帳戶中建立、並儲存備份檔案。Volume Backup Dashboard隨即顯示、以便您監控備份狀態。您也可以使用監控備份與還原工作的狀態 link:task-monitor-backup-jobs.html["「工作監控」面板"^]。
 
-根據預設、備份會與_Standard_儲存類別相關聯。您可以使用成本較低的_Nearlin__、_Coldlin__或_Archive_儲存類別。不過、您可以透過 Google 來設定儲存類別、而不是透過 BlueXP 備份與還原 UI 來設定。請參閱Google主題 https://cloud.google.com/storage/docs/changing-default-storage-class["變更儲存區的預設儲存類別"^] 以取得詳細資料。
+根據預設、備份會與_Standard_儲存類別相關聯。您可以使用成本較低的_Nearlin__、_Coldlin__或_Archive_儲存類別。不過、您可以透過 Google 來設定儲存類別、而不是透過 BlueXP 備份與還原 UI 來設定。請參閱Google主題 https://["變更儲存區的預設儲存類別"^] 以取得詳細資料。
 
 
 
