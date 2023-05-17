@@ -244,6 +244,40 @@ NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定�
 
 
 
+=== 刪除 SAP HANA 資料庫主機
+
+您只能使用 REST API 移除 SAP HANA 資料庫主機。
+
+*步驟*
+
+. 使用 UI 或使用下列 REST API 刪除與 SAP HANA 資料庫主機相關的所有系統。
+`DELETE /saphana/and/systems/(id)`
+. 請執行下列步驟移除 SAP HANA 資料庫主機。
++
+.. 使用 Get REST API 取得必須刪除的 SAP HANA 資料庫主機 ID 。
+`GET /saphana/hosts`
+   `{`
+    `"num_records": 1,`
+    `"records": [`
+        `{`
+            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
+            `"host_name": "galaxy-vm134.netapp.com",`
+            `"port": 443,`
+            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
+       
+`}`
+    `]`
+`}`
+.. 透過從下列 REST API 傳遞 ID 來刪除 SAP HANA 資料庫主機。
+`DELETE /saphana/hosts/(id)`
+.. 使用下列命令、在資料庫主機上解除安裝 SAP HANA Linux 外掛程式。
+`/opt/NetApp/snapcenter/spl/installation/plugins/uninstall`
+
+
+
+
+
+
 === 新增非資料磁碟區
 
 新增多租戶資料庫容器或單一容器類型 SAP HANA 系統之後、您可以新增 HANA 系統的非資料 Volume 。
@@ -283,4 +317,29 @@ NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定�
 .. 檢閱所有詳細資料、然後按一下*「Add System*（新增系統*）」。
 
 
+
+
+
+
+=== 修改 SAP HANA 資料庫主機
+
+新增 SAP HANA 資料庫主機之後、您可以使用 REST API 修改主機名稱或外掛連接埠。
+
+*步驟*
+
+. 使用 Get REST API 取得必須刪除的 SAP HANA 資料庫主機 ID 。 `GET /saphana/hosts`
+   `{`
+    `"num_records": 1,`
+    `"records": [`
+        `{`
+            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
+            `"host_name": "galaxy-vm134.netapp.com",`
+            `"port": 443,`
+            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
+       
+`}`
+    `]`
+`}`
+. 使用下列修補程式 API 修改主機名稱或外掛程式連接埠。
+`PATCH /saphana/hosts/(id)``
 

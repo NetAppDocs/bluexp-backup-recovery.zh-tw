@@ -3762,4 +3762,35 @@
   <block id="7eb75a0482cc00856d6f59785ed2196a" category="list-text">如需 BlueXP 備份與還原 PAYGO 授權、您需要訂閱<block ref="72b5d28b0fc68220ca561b42693848df" category="inline-link-rx"></block>。BlueXP 備份與還原的帳單是透過此訂閱完成。</block>
   <block id="e59cc93e05cd1a09fee0d3400cb6594b" category="inline-link">Azure Marketplace 提供的 NetApp BlueXP 產品</block>
   <block id="1ec47f8d2867e62133816fe5c965e4ea" category="list-text">如需 BlueXP 備份與還原 PAYGO 授權、您需要訂閱<block ref="2fad159ac15feeefc5347d9f8b6dbeab" category="inline-link-rx"></block>。BlueXP 備份與還原的帳單是透過此訂閱完成。</block>
+  <block id="297636b2bcb79ee4ccd3bb7671403999" category="section-title">刪除 SAP HANA 資料庫主機</block>
+  <block id="a2d13879a7b76ffe897fe8103b434355" category="paragraph">您只能使用 REST API 移除 SAP HANA 資料庫主機。</block>
+  <block id="a8a535cce11f864e14e13eff6e6b9d73" category="list-text">使用 UI 或使用下列 REST API 刪除與 SAP HANA 資料庫主機相關的所有系統。<block ref="f43e4584db76b7893255f556ed8c0765" prefix=" " category="inline-code"></block></block>
+  <block id="b7f6974b5d69aff198f9237a0a2c094d" category="list-text">請執行下列步驟移除 SAP HANA 資料庫主機。</block>
+  <block id="200afc5eca1ab2aaaf44d39b4e461f2a" category="list-text">使用 Get REST API 取得必須刪除的 SAP HANA 資料庫主機 ID 。<block ref="51dad906998af1627cfd8c445b8b43ab" prefix=" " category="inline-code"></block>
+  <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
+   <block ref="a641cfb5b011b5cb49303b34c80a6cfb" prefix=" " category="inline-code"></block>
+   <block ref="f3b599239bed41162cfb754c5bb9df44" prefix=" " category="inline-code"></block>
+       <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
+           <block ref="ed7b8bd22adb1714fa637cd7b3b4331b" prefix=" " category="inline-code"></block>
+           <block ref="f7c6ee9d9565c48c4aa24578d992f34b" prefix=" " category="inline-code"></block>
+           <block ref="095c01fe765e288681985447a475baee" prefix=" " category="inline-code"></block>
+           <block ref="db764a9381e247045b4f4a6c09e121b0" prefix=" " category="inline-code"></block>
+       <block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block>
+   <block ref="0fbd1776e1ad22c59a7080d35c7fd4db" prefix=" " category="inline-code"></block><block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block></block>
+  <block id="51a11f42ba598ff4a34cf79c1f4610af" category="list-text">透過從下列 REST API 傳遞 ID 來刪除 SAP HANA 資料庫主機。<block ref="60ca3266dc3cf7874e88782aed985504" prefix=" " category="inline-code"></block></block>
+  <block id="d8328889034337fbd81cf76d0c3dce07" category="list-text">使用下列命令、在資料庫主機上解除安裝 SAP HANA Linux 外掛程式。<block ref="45dc69782ede4b4cd03c3ab1172c0756" prefix=" " category="inline-code"></block></block>
+  <block id="190be79bcda9073c7cc174d89a62b124" category="section-title">修改 SAP HANA 資料庫主機</block>
+  <block id="b5c57e960c8315130e111d59c3f6629e" category="paragraph">新增 SAP HANA 資料庫主機之後、您可以使用 REST API 修改主機名稱或外掛連接埠。</block>
+  <block id="25e29ce32228dfb20b227bafb1c5eff6" category="list-text">使用 Get REST API 取得必須刪除的 SAP HANA 資料庫主機 ID 。<block ref="51dad906998af1627cfd8c445b8b43ab" prefix=" " category="inline-code"></block>
+  <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
+   <block ref="a641cfb5b011b5cb49303b34c80a6cfb" prefix=" " category="inline-code"></block>
+   <block ref="f3b599239bed41162cfb754c5bb9df44" prefix=" " category="inline-code"></block>
+       <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
+           <block ref="ed7b8bd22adb1714fa637cd7b3b4331b" prefix=" " category="inline-code"></block>
+           <block ref="f7c6ee9d9565c48c4aa24578d992f34b" prefix=" " category="inline-code"></block>
+           <block ref="095c01fe765e288681985447a475baee" prefix=" " category="inline-code"></block>
+           <block ref="db764a9381e247045b4f4a6c09e121b0" prefix=" " category="inline-code"></block>
+       <block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block>
+   <block ref="0fbd1776e1ad22c59a7080d35c7fd4db" prefix=" " category="inline-code"></block><block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block></block>
+  <block id="cab82189f2bc3aa6ebb43c8830e47693" category="list-text">使用下列修補程式 API 修改主機名稱或外掛程式連接埠。<block ref="1fcec45b91ad39b0aa8d1cf2b8d5e031" prefix=" " category="inline-code"></block></block>
 </blocks>
