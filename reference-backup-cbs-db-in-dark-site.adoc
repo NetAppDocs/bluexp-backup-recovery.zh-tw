@@ -72,7 +72,7 @@ docker cp ds_mysql_1:/mysql.dump.cloud_backup.sql .
 
 索引目錄用於搜尋與還原功能。其中包含每個磁碟區和每個備份檔案的相關資訊、可讓您在尋找想要還原的磁碟區資料時、快速又有效率地進行搜尋。
 
-. 在Connector主機系統上、將目錄變更為「/tmp」。
+. 在 Connector 主機系統上、將目錄變更為「 /opt/application/NetApp/CBS 」。
 . 找到索引目錄資料夾。它以字串*型錄*開頭。
 . 輸入下列命令、壓縮「catalog（型錄）<_xxxxxx_>」資料夾：
 +
@@ -158,7 +158,7 @@ mysql> select * from volume;
 
 === 還原索引型目錄檔案
 
-. 將「索引目錄」備份壓縮檔從安全位置複製到「/tmp」資料夾中的新Connector主機。
+. 將 Indexed Catalog 備份 zip 檔案從安全位置複製到「 /opt/application/NetApp/CBS 」資料夾中的新 Connector 主機。
 . 使用下列命令解壓縮「catalogxxxxxx.zip」檔案：
 +
 [source, cli]

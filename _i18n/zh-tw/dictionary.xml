@@ -2011,7 +2011,6 @@
   <block id="fb4d2049eb8a30a41f47794ab189550a" category="list-text">您需要MySQL資料庫密碼、因此請複製「MySQL_root_password」金鑰的值。</block>
   <block id="7db6ebf161f7a9da5769ee912be2da41" category="list-text">輸入下列命令、從MySQL Docker容器複製MySQL DB備份：</block>
   <block id="155dea4952585272f1c0844ef81cfd9a" category="section-title">備份索引型錄檔案</block>
-  <block id="ef634fffc66ae93838b8ca070447f663" category="list-text">在Connector主機系統上、將目錄變更為「/tmp」。</block>
   <block id="7cb88c443fc924903c835b571b479a4e" category="list-text">找到索引目錄資料夾。它以字串*型錄*開頭。</block>
   <block id="8569fa5b25edd3388fba8c4d5fbbdf9d" category="list-text">輸入下列命令、壓縮「catalog（型錄）&lt;_xxxxxx_&gt;」資料夾：</block>
   <block id="a343bcd32b68b96334fcf073958cc3da" category="list-text">將壓縮備份複製到網路中的安全位置。</block>
@@ -2022,7 +2021,6 @@
   <block id="bb319ca7a8d748d2ce5adf7548a5803c" category="list-text">使用下列命令輸入MySQL Container Shell：</block>
   <block id="1a411806f1f54597b7259137d2e753db" category="paragraph">輸入密碼。</block>
   <block id="3ec8f556a760c1ea438f0c8012517d09" category="paragraph">檢查顯示的磁碟區是否與原始環境中的磁碟區相同。</block>
-  <block id="f9083b6cbd32e754624254bf8a15bbd5" category="list-text">將「索引目錄」備份壓縮檔從安全位置複製到「/tmp」資料夾中的新Connector主機。</block>
   <block id="4137b6be705d5f9d9f9bcc8018e1f70a" category="list-text">使用下列命令解壓縮「catalogxxxxxx.zip」檔案：</block>
   <block id="82ed93b77a5223377d1a45ab463f6fb3" category="list-text">執行* ls-*命令、確認已建立資料夾「catalogxxxxxx」、並在其下方加入子資料夾「變更」和「快照」。</block>
   <block id="202fec1254d856dde5dee6e53f5eb9e9" category="inline-link">探索ONTAP 所有內部環境</block>
@@ -3698,7 +3696,6 @@
   <block id="aad236ec8e2b61a79fb4bb3a416a2e06" category="paragraph">如果叢集執行的是 ONTAP 9.12.1 或更新版本、則 AWS 中國北京（ CN-north-1 ）和寧夏（ CN-n前來 -1 ）地區現在都支援做為備份檔案的目的地。</block>
   <block id="c93bfe725726f47fe3bfcc0e95f8ec7d" category="inline-link">將內部部署 ONTAP 資料備份至 Amazon S3</block>
   <block id="afe182ec329d300711f89a81223f8fe1" category="paragraph">請注意、指派給 BlueXP Connector 的 IAM 原則需要將所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如「 arn:AWS-CN:S3 ：：：： NetApp-backup-* 」。請參閱<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> 和<block ref="98f7c8e7ee596af91f0142606f0617c9" category="inline-link-rx"></block> 以取得詳細資料。</block>
-  <block id="5db93da6e314f6aa0349c5e8f35f4b9a" category="paragraph">系統啟動的工作（例如持續的備份作業）現在可在 * 工作監控 * 標籤中找到、適用於執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統。舊版 ONTAP 只會顯示使用者啟動的工作。</block>
   <block id="4d5789e8f025b3895d94f1b6a7225e4a" category="list-text">應用程式（混合式）的 BlueXP 備份與還原是從 SaaS 控制層面驅動</block>
   <block id="53eb0fdde70aa10525b581e17b5d6f86" category="paragraph">現在您可以在「受限模式」下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。<block ref="18611796b9b4332697b6f9bb72b16e0b" category="inline-link-rx"></block>。請參閱<block ref="0607f60a93455f62c98c67f333a631e0" category="inline-link-rx"></block> 和<block ref="d878e312b2f9cdcef2f8eccaa51619ee" category="inline-link-rx"></block>。</block>
   <block id="f1a109ae8d953da8e05cf5534df6b22b" category="list-text">從 BlueXP 備份與還原 UI 和 API 啟動的使用者初始化備份與還原作業、以及系統起始的工作（例如持續的備份作業）、現在都可在執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統的 * 工作監控 * 標籤中取得。舊版 ONTAP 只會顯示使用者啟動的工作。</block>
@@ -3793,4 +3790,7 @@
        <block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block>
    <block ref="0fbd1776e1ad22c59a7080d35c7fd4db" prefix=" " category="inline-code"></block><block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block></block>
   <block id="cab82189f2bc3aa6ebb43c8830e47693" category="list-text">使用下列修補程式 API 修改主機名稱或外掛程式連接埠。<block ref="1fcec45b91ad39b0aa8d1cf2b8d5e031" prefix=" " category="inline-code"></block></block>
+  <block id="c325ed37b6a44d9e765cfd2dd7779cfb" category="paragraph">系統啟動的工作（例如持續的備份作業）現在可在 * 工作監控 * 標籤中找到、適用於執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統。舊版 ONTAP 只會顯示使用者啟動的工作。</block>
+  <block id="62bcc3625fd0e0ab73db7f861ea43e38" category="list-text">在 Connector 主機系統上、將目錄變更為「 /opt/application/NetApp/CBS 」。</block>
+  <block id="471862806e2663ce1f62d2a75294c7f4" category="list-text">將 Indexed Catalog 備份 zip 檔案從安全位置複製到「 /opt/application/NetApp/CBS 」資料夾中的新 Connector 主機。</block>
 </blocks>
