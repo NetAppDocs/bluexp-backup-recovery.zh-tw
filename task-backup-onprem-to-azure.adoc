@@ -26,7 +26,7 @@ summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 確認您的組態支援
 [role="quick-margin-list"]
-* 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://["探索 ONTAP 叢集"^] 以取得詳細資料。
+* 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
 +
 ** 叢集執行ONTAP 的是1.7P5或更新版本（ONTAP 建議使用更新版本的版本號為0。
 ** 叢集具有SnapMirror授權、包含在優質產品組合或資料保護產品組合中。
@@ -101,7 +101,7 @@ image:diagram_cloud_backup_onprem_azure_private.png["顯示 BlueXP 備份與還�
 
 您必須先在ONTAP BlueXP中探索內部部署的叢集、才能開始備份大量資料。
 
-https://["瞭解如何探索叢集"^]。
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
 
 需求 ONTAP::
 +
@@ -112,11 +112,11 @@ https://["瞭解如何探索叢集"^]。
 * 附註： * 使用 BlueXP 備份與還原時、不需要「混合雲套裝組合」。
 
 +
-瞭解如何操作 https://["管理叢集授權"^]。
+瞭解如何操作 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理叢集授權"^]。
 
 * 時間和時區設定正確。
 +
-瞭解如何操作 https://["設定叢集時間"^]。
+瞭解如何操作 https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["設定叢集時間"^]。
 
 
 
@@ -129,12 +129,12 @@ https://["瞭解如何探索叢集"^]。
 可在物件儲存設備中讀取及寫入資料。 ONTAP物件儲存設備從未啟動、只是回應而已。
 
 * 需要連接器與叢集管理LIF之間的傳入連線。ONTAP連接器可位於Azure vnet中。
-* 裝載您要備份之磁碟區的 ONTAP 每個節點都需要叢集間 LIF 。LIF 必須與 _IPspac__ 建立關聯、 ONTAP 以便連接物件儲存設備。 https://["深入瞭解 IPspaces"^]。
+* 裝載您要備份之磁碟區的 ONTAP 每個節點都需要叢集間 LIF 。LIF 必須與 _IPspac__ 建立關聯、 ONTAP 以便連接物件儲存設備。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["深入瞭解 IPspaces"^]。
 +
 當您設定 BlueXP 備份與還原時、系統會提示您輸入要使用的 IPspace 。您應該選擇每個 LIF 所關聯的 IPspace 。這可能是您建立的「預設」 IPspace 或自訂 IPspace 。
 
 * 節點和叢集間的生命體均可存取物件存放區。
-* DNS伺服器已針對磁碟區所在的儲存VM進行設定。瞭解如何操作 https://["設定SVM的DNS服務"^]。
+* DNS伺服器已針對磁碟區所在的儲存VM進行設定。瞭解如何操作 https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["設定SVM的DNS服務"^]。
 * 請注意、如果您使用的IPspace與預設值不同、則可能需要建立靜態路由才能存取物件儲存設備。
 * 如有必要、請更新防火牆規則、以允許 BlueXP 備份與恢復服務從 ONTAP 透過連接埠 443 連線至物件儲存區、以及透過連接埠 53 （ TCP/UDP ）從儲存 VM 傳輸至 DNS 伺服器的名稱解析流量。
 
@@ -148,10 +148,10 @@ https://["瞭解如何探索叢集"^]。
 
 如果您已在Azure vnet或內部部署了Connector、您就能輕鬆完成設定。如果沒有、您需要在其中任一位置建立連接器、以便將ONTAP 還原資料備份到Azure Blob儲存設備。您無法使用部署於其他雲端供應商的Connector。
 
-* https://["深入瞭解連接器"^]
-* https://["在Azure中安裝Connector"^]
-* https://["在內部環境中安裝連接器"^]
-* https://["在Azure政府區域安裝Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["在Azure中安裝Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["在內部環境中安裝連接器"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["在Azure政府區域安裝Connector"^]
 +
 當 Connector 部署在雲端時、 Azure Government 地區支援 BlueXP 備份與還原、而非安裝在內部部署時。此外、您必須從Azure Marketplace部署Connector。您無法從 BlueXP SaaS 網站在政府區域部署 Connector 。
 
@@ -166,10 +166,10 @@ https://["瞭解如何探索叢集"^]。
 .步驟
 . 確保安裝 Connector 的網路啟用下列連線：
 +
-** 透過連接埠 443 連接到 BlueXP 備份與恢復服務、以及到 Blob 物件儲存設備的 HTTPS 連線 (https://["請參閱端點清單"^]）
+** 透過連接埠 443 連接到 BlueXP 備份與恢復服務、以及到 Blob 物件儲存設備的 HTTPS 連線 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["請參閱端點清單"^]）
 ** 透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線
 ** 為了讓 BlueXP 備份與還原搜尋與還原功能正常運作、連接埠 1433 必須開啟、才能在 Connector 與 Azure Synapse SQL 服務之間進行通訊。
-** Azure和Azure政府部署需要額外的傳入安全性群組規則。請參閱 https://["Azure 中的 Connector 規則"^] 以取得詳細資料。
+** Azure和Azure政府部署需要額外的傳入安全性群組規則。請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Azure 中的 Connector 規則"^] 以取得詳細資料。
 
 
 . 啟用vnet私有端點對Azure儲存設備。如果ONTAP 從您的DB2叢集到vnet有ExpressRoute或VPN連線、而且您想要連接器與Blob儲存設備之間的通訊保持在虛擬私有網路（*私有*連線）中、就需要此功能。
@@ -182,7 +182,7 @@ https://["瞭解如何探索叢集"^]。
 若要使用 BlueXP 備份與還原搜尋與還原功能、您必須擁有 Connector 角色的特定權限、才能存取 Azure Synapse Workspace 和 Data Lake Storage 帳戶。請參閱下列權限、如果您需要修改原則、請遵循這些步驟。
 
 .開始之前
-您必須在訂閱中註冊Azure Synapse Analytics資源供應商（稱為「Microsoft.Synapse」）。 https://["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
+您必須在訂閱中註冊Azure Synapse Analytics資源供應商（稱為「Microsoft.Synapse」）。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
 
 .步驟
 . 識別指派給Connector虛擬機器的角色：
@@ -246,7 +246,7 @@ https://["瞭解如何探索叢集"^]。
 "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
 +
-https://["檢視原則的完整Json格式"^]
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["檢視原則的完整Json格式"^]
 
 .. 按一下「*檢閱+更新*」、然後按一下「*更新*」。
 
@@ -257,7 +257,7 @@ https://["檢視原則的完整Json格式"^]
 
 === 支援的地區
 
-您可以在所有地區、從內部部署系統建立備份到Azure Blob https://["支援的地方 Cloud Volumes ONTAP"^]（包括Azure政府區域）。您可以指定在設定服務時儲存備份的區域。
+您可以在所有地區、從內部部署系統建立備份到Azure Blob https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]（包括Azure政府區域）。您可以指定在設定服務時儲存備份的區域。
 
 
 
@@ -265,13 +265,13 @@ https://["檢視原則的完整Json格式"^]
 
 * 您必須先向 Azure 訂購隨用隨付（ PAYGO ） BlueXP Marketplace 產品、或是向 NetApp 購買並啟動 BlueXP 備份與恢復 BYOL 授權、才能啟動叢集的 BlueXP 備份與還原。這些授權適用於您的帳戶、可在多個系統上使用。
 +
-** 如需 BlueXP 備份與還原 PAYGO 授權、您需要訂閱 https://["Azure Marketplace 提供的 NetApp BlueXP 產品"^]。BlueXP 備份與還原的帳單是透過此訂閱完成。
+** 如需 BlueXP 備份與還原 PAYGO 授權、您需要訂閱 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["Azure Marketplace 提供的 NetApp BlueXP 產品"^]。BlueXP 備份與還原的帳單是透過此訂閱完成。
 ** 對於 BlueXP 備份與恢復 BYOL 授權、您需要 NetApp 的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["瞭解如何管理BYOL授權"]。
 
 
 * 您必須訂閱Azure、才能取得備份所在的物件儲存空間。
 +
-您可以在所有地區、從內部部署系統建立備份到Azure Blob https://["支援的地方 Cloud Volumes ONTAP"^]（包括Azure政府區域）。您可以指定在設定服務時儲存備份的區域。
+您可以在所有地區、從內部部署系統建立備份到Azure Blob https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]（包括Azure政府區域）。您可以指定在設定服務時儲存備份的區域。
 
 
 
@@ -279,8 +279,8 @@ https://["檢視原則的完整Json格式"^]
 
 === 準備Azure Blob儲存設備進行備份
 
-. 您可以在啟動精靈中使用自己的自訂管理金鑰進行資料加密、而非使用預設的Microsoft管理加密金鑰。在此情況下、您必須擁有Azure訂閱、Key Vault名稱及金鑰。 https://["瞭解如何使用您自己的金鑰"^]。
-. 如果您想要透過公用網際網路從內部資料中心連線至vnet、可以在啟動精靈中設定Azure私有端點。在這種情況下、您需要知道此連線的vnet和子網路。 https://["如需使用私有端點的詳細資訊、請參閱"^]。
+. 您可以在啟動精靈中使用自己的自訂管理金鑰進行資料加密、而非使用預設的Microsoft管理加密金鑰。在此情況下、您必須擁有Azure訂閱、Key Vault名稱及金鑰。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["瞭解如何使用您自己的金鑰"^]。
+. 如果您想要透過公用網際網路從內部資料中心連線至vnet、可以在啟動精靈中設定Azure私有端點。在這種情況下、您需要知道此連線的vnet和子網路。 https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["如需使用私有端點的詳細資訊、請參閱"^]。
 
 
 
@@ -302,7 +302,7 @@ image:screenshot_backup_onprem_enable.png["螢幕擷取畫面顯示「啟用備�
 +
 .. 用於備份的 Azure 訂閱、以及儲存備份的 Azure 區域。
 .. 管理Blob容器的資源群組-您可以建立新的資源群組或選取現有的資源群組。
-.. 無論您是使用預設的Microsoft管理加密金鑰、還是選擇自己的客戶管理金鑰來管理資料加密。 (https://["瞭解如何使用您自己的金鑰"^]）。
+.. 無論您是使用預設的Microsoft管理加密金鑰、還是選擇自己的客戶管理金鑰來管理資料加密。 (https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["瞭解如何使用您自己的金鑰"^]）。
 +
 image:screenshot_backup_onprem_to_azure.png["此螢幕快照顯示將磁碟區從內部部署叢集備份到Azure Blob儲存設備時、雲端供應商的詳細資料。"]
 
@@ -312,7 +312,7 @@ image:screenshot_backup_onprem_to_azure.png["此螢幕快照顯示將磁碟區�
 . 輸入網路詳細資料、然後按*下一步*。
 +
 .. 您要備份的磁碟區所在的叢集中的 IPspace ONTAP 。此IPspace的叢集間生命體必須具有傳出網際網路存取。
-.. 您也可以選擇是否要設定Azure私有端點。 https://["如需使用私有端點的詳細資訊、請參閱"^]。
+.. 您也可以選擇是否要設定Azure私有端點。 https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["如需使用私有端點的詳細資訊、請參閱"^]。
 +
 image:screenshot_backup_onprem_azure_networking.png["快照顯示將磁碟區從ONTAP 某個系統備份到Azure Blob儲存設備時的網路詳細資料。"]
 

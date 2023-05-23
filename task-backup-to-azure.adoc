@@ -26,7 +26,7 @@ summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量�
 [role="quick-margin-list"]
 * 您在Cloud Volumes ONTAP Azure中執行的是版本號為1.7P5或更新版本ONTAP （建議使用版本號為0、8P13及更新版本）。
 * 您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。
-* 您已訂閱 https://["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"^] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
+* 您已訂閱 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"^] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
 * 您在Azure中安裝了Connector。Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「受限模式」）。
 
 
@@ -74,7 +74,7 @@ image:screenshot_backup_policy_azure.png["顯示 BlueXP 備份與還原設定的
 image:diagram_cloud_backup_cvo_azure.png["顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
 支援 ONTAP 的支援版本:: 最低ONTAP 版本為0、9、75；ONTAP 建議使用0、8P13及更新版本。
-授權需求:: 若為 BlueXP 備份與還原 PAYGO 授權、您必須先透過 Azure Marketplace 訂閱、才能啟用 BlueXP 備份與還原。BlueXP 備份與還原的帳單是透過此訂閱完成。 https://["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
+授權需求:: 若為 BlueXP 備份與還原 PAYGO 授權、您必須先透過 Azure Marketplace 訂閱、才能啟用 BlueXP 備份與還原。BlueXP 備份與還原的帳單是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
 +
 --
 對於 BlueXP 備份與恢復 BYOL 授權、您需要 NetApp 的序號、以便在授權期間和容量內使用該服務。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["瞭解如何管理BYOL授權"]。當 Connector 和 Cloud Volumes ONTAP 系統部署在黑暗的站台（「私有模式」）時、您必須使用 BYOL 授權。
@@ -82,12 +82,12 @@ image:diagram_cloud_backup_cvo_azure.png["顯示 BlueXP 備份與還原如何與
 而且您必須訂閱 Microsoft Azure 、才能取得備份所在的儲存空間。
 
 --
-連接器需求:: Connector 可安裝在 Azure 區域、且可存取完整或有限的網際網路（「標準」或「受限」模式）。 https://["如需詳細資訊、請參閱 BlueXP 部署模式"^]。
+連接器需求:: Connector 可安裝在 Azure 區域、且可存取完整或有限的網際網路（「標準」或「受限」模式）。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["如需詳細資訊、請參閱 BlueXP 部署模式"^]。
 +
 --
-* https://["深入瞭解連接器"^]
-* https://["以標準模式在 Azure 中部署 Connector （完整網際網路存取）"^]
-* https://["以受限模式安裝 Connector （有限的輸出存取）"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["以標準模式在 Azure 中部署 Connector （完整網際網路存取）"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-restricted-mode.html["以受限模式安裝 Connector （有限的輸出存取）"^]
 
 
 --
@@ -97,7 +97,7 @@ image:diagram_cloud_backup_cvo_azure.png["顯示 BlueXP 備份與還原如何與
 +
 --
 .開始之前
-* 您必須在訂閱中註冊Azure Synapse Analytics資源供應商（稱為「Microsoft.Synapse」）。 https://["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
+* 您必須在訂閱中註冊Azure Synapse Analytics資源供應商（稱為「Microsoft.Synapse」）。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
 * 連接埠1433必須開啟、以便連接器與Azure Synapse SQL服務之間進行通訊。
 +
 .步驟
@@ -162,7 +162,7 @@ image:diagram_cloud_backup_cvo_azure.png["顯示 BlueXP 備份與還原如何與
 "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
 +
-https://["檢視原則的完整Json格式"^]
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["檢視原則的完整Json格式"^]
 
 ... 按一下「*檢閱+更新*」、然後按一下「*更新*」。
 
@@ -172,14 +172,14 @@ https://["檢視原則的完整Json格式"^]
 
 
 --
-支援的 Azure 地區:: 所有 Azure 區域均支援 BlueXP 備份與還原 https://["支援的地方 Cloud Volumes ONTAP"^]（包括Azure政府區域）。
+支援的 Azure 地區:: 所有 Azure 區域均支援 BlueXP 備份與還原 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]（包括Azure政府區域）。
 +
 --
-根據預設、 BlueXP 備份與還原會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要確保在不同區域之間複寫資料、您可以在 BlueXP 備份與還原啟動之後、將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示 https://["變更儲存帳戶的複寫方式"^]。
+根據預設、 BlueXP 備份與還原會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要確保在不同區域之間複寫資料、您可以在 BlueXP 備份與還原啟動之後、將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示 https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["變更儲存帳戶的複寫方式"^]。
 
 --
 在不同Azure訂閱中建立備份所需的設定:: 根據預設、備份會使用與Cloud Volumes ONTAP 您的作業系統相同的訂閱方式建立。如果您想要使用不同的Azure訂閱來進行備份、您必須使用 link:reference-backup-multi-account-azure.html["登入Azure入口網站並連結這兩份訂閱"]。
-使用客戶管理金鑰進行資料加密的必要資訊:: 您可以在啟動精靈中使用自己的客戶管理金鑰進行資料加密、而非使用預設的Microsoft管理加密金鑰。在此情況下、您必須擁有Azure訂閱、Key Vault名稱及金鑰。 https://["瞭解如何使用您自己的金鑰"^]。
+使用客戶管理金鑰進行資料加密的必要資訊:: 您可以在啟動精靈中使用自己的客戶管理金鑰進行資料加密、而非使用預設的Microsoft管理加密金鑰。在此情況下、您必須擁有Azure訂閱、Key Vault名稱及金鑰。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["瞭解如何使用您自己的金鑰"^]。
 
 
 
@@ -188,7 +188,7 @@ https://["檢視原則的完整Json格式"^]
 
 在工作環境精靈中、預設會啟用 BlueXP 備份與還原。請務必保持啟用選項。
 
-請參閱 https://["在 Cloud Volumes ONTAP Azure 中啟動"^] 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。
+請參閱 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["在 Cloud Volumes ONTAP Azure 中啟動"^] 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。
 
 
 NOTE: 如果您想要選擇資源群組的名稱、請在部署 Cloud Volumes ONTAP 時 * 停用 * BlueXP 備份與還原。請依照的步驟執行 <<enabling-bluexp-backup-and-recovery-on-an-existing-system,在現有系統上啟用 BlueXP 備份與還原>> 若要啟用 BlueXP 備份與還原、請選擇資源群組。
@@ -230,7 +230,7 @@ image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示 BlueXP 備份�
 
 .. 儲存備份的區域。這可能與Cloud Volumes ONTAP 駐留的地方不同。
 .. 管理Blob容器的資源群組-您可以建立新的資源群組或選取現有的資源群組。
-.. 無論您是使用預設的Microsoft管理加密金鑰、還是選擇自己的客戶管理金鑰來管理資料加密。 (https://["瞭解如何使用您自己的金鑰"]）。
+.. 無論您是使用預設的Microsoft管理加密金鑰、還是選擇自己的客戶管理金鑰來管理資料加密。 (https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["瞭解如何使用您自己的金鑰"]）。
 +
 image:screenshot_backup_provider_settings_azure.png["快照顯示雲端供應商將磁碟區從Cloud Volumes ONTAP 某個系統備份到Azure Blob層時的詳細資料。"]
 
@@ -266,7 +266,7 @@ Blob儲存容器會自動建立在您輸入的資源群組中、並儲存備份�
 
 Volume Backup Dashboard隨即顯示、以便您監控備份狀態。您也可以使用監控備份與還原工作的狀態 link:task-monitor-backup-jobs.html["「工作監控」面板"^]。
 
-根據預設、 BlueXP 備份與還原會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要確保資料在不同區域之間複寫、可以將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示 https://["變更儲存帳戶的複寫方式"^]。
+根據預設、 BlueXP 備份與還原會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要確保資料在不同區域之間複寫、可以將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示 https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["變更儲存帳戶的複寫方式"^]。
 
 
 

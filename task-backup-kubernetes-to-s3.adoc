@@ -33,8 +33,8 @@ summary: 請完成幾個步驟、開始將EKS Kubernetes叢集上持續磁碟區
 
 
 * 您已訂閱有效的雲端供應商、以取得備份所在的儲存空間。
-* 您已訂閱 https://["BlueXP Marketplace備份產品"]、 https://["AWS年度合約"]或您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
-* 提供具有權限的BlueXP Connector的IAM角色包括來自最新版本的S3權限 https://["BlueXP原則"^]。
+* 您已訂閱 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["BlueXP Marketplace備份產品"]、 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS年度合約"]或您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
+* 提供具有權限的BlueXP Connector的IAM角色包括來自最新版本的S3權限 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]。
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 在現有的 Kubernetes 叢集上啟用 BlueXP 備份與還原
@@ -70,8 +70,8 @@ image:diagram_cloud_backup_k8s_cvo_aws.png["顯示 BlueXP 備份與還原如何�
 Kubernetes 叢集需求::
 +
 --
-* 您已將Kubernetes叢集探索為藍圖XP工作環境。 https://["瞭解如何探索Kubernetes叢集"^]。
-* 叢集上必須安裝Trident、Trident版本必須至少21.1。請參閱 https://["如何安裝Trident"^] 或 https://["如何升級Trident版本"^]。
+* 您已將Kubernetes叢集探索為藍圖XP工作環境。 https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-kubernetes-discover-aws.html["瞭解如何探索Kubernetes叢集"^]。
+* 叢集上必須安裝Trident、Trident版本必須至少21.1。請參閱 https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-manage-trident.html["如何安裝Trident"^] 或 https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["如何升級Trident版本"^]。
 * 叢集必須在Cloud Volumes ONTAP AWS上使用以做為其後端儲存設備。
 * 此支援系統必須與Kubernetes叢集位於相同的AWS區域、且必須執行更新版本的版本號為《支援更新版本》（建議使用更新版本的版本號為《支援更新版本》）Cloud Volumes ONTAP ONTAP ONTAP 。
 +
@@ -130,10 +130,10 @@ spec:
 
 
 --
-授權需求:: 對於 BlueXP 備份與還原 PAYGO 授權、 AWS Marketplace 提供訂閱服務、可部署 Cloud Volumes ONTAP 和 BlueXP 備份與還原。您需要 https://["訂閱此BlueXP訂閱"^] 在您啟用 BlueXP 備份與還原之前。BlueXP 備份與還原的帳單是透過此訂閱完成。
+授權需求:: 對於 BlueXP 備份與還原 PAYGO 授權、 AWS Marketplace 提供訂閱服務、可部署 Cloud Volumes ONTAP 和 BlueXP 備份與還原。您需要 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["訂閱此BlueXP訂閱"^] 在您啟用 BlueXP 備份與還原之前。BlueXP 備份與還原的帳單是透過此訂閱完成。
 +
 --
-如需一年一度的合約、而該合約可讓您同時備份Cloud Volumes ONTAP 支援不必要資料和內部部署ONTAP 的不必要資料、您必須從訂閱 https://["AWS Marketplace頁面"^] 然後 https://["將訂閱與AWS認證資料建立關聯"^]。
+如需一年一度的合約、而該合約可讓您同時備份Cloud Volumes ONTAP 支援不必要資料和內部部署ONTAP 的不必要資料、您必須從訂閱 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace頁面"^] 然後 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html["將訂閱與AWS認證資料建立關聯"^]。
 
 若要取得一年一度的合約、讓您能夠搭售 Cloud Volumes ONTAP 和 BlueXP 備份與還原、則必須在建立 Cloud Volumes ONTAP 工作環境時設定年度合約。此選項無法讓您備份內部資料。
 
@@ -142,8 +142,8 @@ spec:
 而且您需要有AWS帳戶來存放備份所在的儲存空間。
 
 --
-支援的 AWS 區域:: 所有 AWS 區域均支援 BlueXP 備份與還原 https://["支援的地方 Cloud Volumes ONTAP"^]。
-需要AWS備份權限:: 提供BlueXP權限的IAM角色必須包含最新版本的S3權限 https://["BlueXP原則"^]。
+支援的 AWS 區域:: 所有 AWS 區域均支援 BlueXP 備份與還原 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]。
+需要AWS備份權限:: 提供BlueXP權限的IAM角色必須包含最新版本的S3權限 https://mysupport.netapp.com/site/info/cloud-manager-policies["BlueXP原則"^]。
 +
 --
 以下是原則中的特定S3權限：

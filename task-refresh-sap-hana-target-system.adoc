@@ -23,7 +23,7 @@ summary: 從原始 SAP HANA 系統（正式作業資料庫）重新整理至目�
 * 確保 SAP HANA 資料庫版本與來源和目標系統相同。
 * 您應該已經決定要使用哪些重新整理指令碼。更新指令碼可在解決方案技術報告中找到。
 +
-https://["自動化範例指令碼"]
+https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-automation-example-scripts.html#script-sc-system-refresh-sh["自動化範例指令碼"]
 
 +
 您可以自訂重新整理指令碼。

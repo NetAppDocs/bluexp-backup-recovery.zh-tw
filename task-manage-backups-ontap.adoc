@@ -220,7 +220,7 @@ NOTE: 如果您在啟動此叢集的 BlueXP 備份與還原時、在初始原則
 
 如果您在啟用此叢集的 BlueXP 備份與還原時啟用 _DataLock 與勒索軟體保護、則隨需備份也會使用 DataLock 進行設定、保留期將為 30 天。對點對點備份不支援勒索軟體掃描。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["深入瞭解DataLock和勒索軟體保護"^]。
 
-請注意、建立ad -ad hocent備份時、會在來源磁碟區上建立Snapshot。由於此Snapshot並非正常Snapshot排程的一部分、因此不會關閉。備份完成後、您可能想要從來源Volume手動刪除此Snapshot。如此一來、就能釋出與此Snapshot相關的區塊。Snapshot的名稱將以「CBS快照-adhoc-」開頭。 https://["瞭解如何使用ONTAP CLI刪除Snapshot"^]。
+請注意、建立ad -ad hocent備份時、會在來源磁碟區上建立Snapshot。由於此Snapshot並非正常Snapshot排程的一部分、因此不會關閉。備份完成後、您可能想要從來源Volume手動刪除此Snapshot。如此一來、就能釋出與此Snapshot相關的區塊。Snapshot的名稱將以「CBS快照-adhoc-」開頭。 https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["瞭解如何使用ONTAP CLI刪除Snapshot"^]。
 
 
 NOTE: 資料保護磁碟區不支援隨需磁碟區備份。
@@ -367,7 +367,7 @@ image:screenshot_delete_one_backup.png["顯示如何刪除單一備份檔案的�
 
 此功能僅在系統執行ONTAP 的是更新版本的更新版本時才可使用。
 
-您無法從 BlueXP 備份與還原使用者介面刪除來源磁碟區。不過、您可以在畫版上開啟「Volume Details」（Volume詳細資料）頁面、以及 https://["從該處刪除磁碟區"]。
+您無法從 BlueXP 備份與還原使用者介面刪除來源磁碟區。不過、您可以在畫版上開啟「Volume Details」（Volume詳細資料）頁面、以及 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["從該處刪除磁碟區"]。
 
 
 NOTE: 一旦關係被刪除、您就無法刪除個別的Volume備份檔案。不過、您可以 link:task-manage-backups-ontap.html#deleting-all-backup-files-for-a-volume["刪除磁碟區的所有備份"] 如果您要移除所有備份檔案。

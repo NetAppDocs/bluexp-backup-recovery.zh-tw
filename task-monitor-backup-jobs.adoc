@@ -127,7 +127,7 @@ image:screenshot_backup_job_monitor_details2.png["顯示備份工作詳細資料
 
 BlueXP 通知中心會追蹤您已啟動的備份和還原工作進度、以便您確認作業是否成功。
 
-除了檢視 BlueXP 通知清單中的警示之外、您也可以設定 BlueXP 以電子郵件方式傳送通知作為警示、讓您即使未登入系統、也能得知重要的系統活動。 https://["深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作"^]。
+除了檢視 BlueXP 通知清單中的警示之外、您也可以設定 BlueXP 以電子郵件方式傳送通知作為警示、讓您即使未登入系統、也能得知重要的系統活動。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作"^]。
 
 下列事件會觸發電子郵件警示：
 
@@ -172,7 +172,7 @@ NOTE: 從 Cloud Volumes ONTAP 9.13.0 開始、所有警示都會出現。對於�
 
 若要接收 BlueXP 備份與還原電子郵件警示、您必須選取通知嚴重性類型「重大」、「警告」和「錯誤」。
 
-https://["深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作"^]。
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作"^]。
 
 .步驟
 . 選取 * 工作監控 * 標籤。

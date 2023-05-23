@@ -20,8 +20,8 @@ BlueXP 應用程式備份與還原可為應用程式提供資料保護功能、�
 
 如需應用程式 BlueXP 備份與還原的詳細資訊、請參閱：
 
-* https://["採用 BlueXP 備份與還原及 SnapCenter 的應用程式感知備份"^]
-* https://["BlueXP 應用程式備份與還原 Podcast"^]
+* https://cloud.netapp.com/blog/cbs-cloud-backup-and-snapcenter-integration["採用 BlueXP 備份與還原及 SnapCenter 的應用程式感知備份"^]
+* https://soundcloud.com/techontap_podcast/episode-322-cloud-backup-for-applications["BlueXP 應用程式備份與還原 Podcast"^]
 
 
 

@@ -268,7 +268,7 @@ NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定�
 
 
 . 登入Connector VM。
-. 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://[]
+. 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
 +
 外掛程式二進位檔位於： _CD /var/lib/v泊 塢視窗 /volides/service-manager-2_cloudmanager_SCS_cloue_volate/_data/$（ Sudo 泊塢視窗 ps|grep -po" cloudmanager_SCS_clouy..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
 

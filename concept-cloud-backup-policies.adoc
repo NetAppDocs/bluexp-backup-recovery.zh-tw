@@ -55,9 +55,9 @@ BlueXP 備份與還原可為您的磁碟區備份提供 DataLock 和勒索軟體
 
 這兩項功能都能保護您的備份檔案、讓您隨時都能擁有有效的備份檔案、以便在發生勒索軟體攻擊時、從備份中恢復資料。此外、也有助於滿足某些法規要求、在某些情況下、備份必須鎖定並保留一段時間。啟用 DataLock 和勒索軟體保護時、配置為 BlueXP 備份和恢復啟動一部分的雲端貯體將會啟用物件鎖定和物件版本控制。
 
-https://["如需詳細資料、請參閱DataLock和勒索軟體保護部落格"^]。
+https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["如需詳細資料、請參閱DataLock和勒索軟體保護部落格"^]。
 
-此功能無法為來源磁碟區提供保護、只能用於這些來源磁碟區的備份。使用NetApp https://["不再是不一樣的Cloud Insights Cloud Secure"^]或部分 https://["提供來自VMware的反勒索軟體保護ONTAP"^] 保護來源磁碟區。
+此功能無法為來源磁碟區提供保護、只能用於這些來源磁碟區的備份。使用NetApp https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["不再是不一樣的Cloud Insights Cloud Secure"^]或部分 https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["提供來自VMware的反勒索軟體保護ONTAP"^] 保護來源磁碟區。
 
 [CAUTION]
 ====
@@ -233,7 +233,7 @@ ifdef::aws[]
 *** S3：GetBucketLocation
 *** S3：GetObjectVersion
 +
-https://["檢視原則的完整Json格式、您可以在其中複製及貼上所需的權限"^]。
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["檢視原則的完整Json格式、您可以在其中複製及貼上所需的權限"^]。
 
 
 

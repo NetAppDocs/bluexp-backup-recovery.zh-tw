@@ -161,7 +161,7 @@ BlueXP 備份與還原支援下列類型的磁碟區：
 ifdef::aws[]
 
 +
-** 在AWS中、 https://["Amazon Athena"^] 和 https://["AWS黏著劑"^] 資源部署在新的S3儲存區。
+** 在AWS中、 https://aws.amazon.com/athena/faqs/["Amazon Athena"^] 和 https://aws.amazon.com/glue/faqs/["AWS黏著劑"^] 資源部署在新的S3儲存區。
 +
 endif::aws[]
 
@@ -171,7 +171,7 @@ endif::aws[]
 ifdef::azure[]
 
 +
-** 在Azure中 https://["Azure Synapse工作區"^] 和 https://["Azure Data Lake儲存設備"^] 可在您的儲存帳戶中進行資源配置、以儲存及分析您的資料。
+** 在Azure中 https://azure.microsoft.com/en-us/services/synapse-analytics/?&ef_id=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE:G:s&gclid=EAIaIQobChMI46_bxcWZ-QIVjtiGCh2CfwCsEAAYASAAEgKwjvD_BwE["Azure Synapse工作區"^] 和 https://azure.microsoft.com/en-us/services/storage/data-lake-storage/?&ef_id=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&OCID=AIDcmm5edswduu_SEM_EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE:G:s&gclid=EAIaIQobChMIuYz0qsaZ-QIVUDizAB1EmACvEAAYASAAEgJH5fD_BwE["Azure Data Lake儲存設備"^] 可在您的儲存帳戶中進行資源配置、以儲存及分析您的資料。
 +
 endif::azure[]
 
@@ -181,7 +181,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* 在Google中、部署了新的儲存庫、以及 https://["Google Cloud BigQuery服務"^] 在帳戶/專案層級上進行資源配置。
+* 在Google中、部署了新的儲存庫、以及 https://cloud.google.com/bigquery["Google Cloud BigQuery服務"^] 在帳戶/專案層級上進行資源配置。
 
 
 endif::gcp[]
@@ -223,7 +223,7 @@ BlueXP 備份與還原功能適用於下列使用模式：
 
 BYOL是以期為基準（12、24或36個月）_和_容量為基準、以1 TiB為增量。您向NetApp支付一段時間使用服務費用、例如1年、如果容量上限為10 TiB。
 
-您會在 BlueXP 數位錢包頁面中輸入序號、以啟用服務。達到任一限制時、您都需要續約授權。備份BYOL授權適用於與相關聯的所有來源系統 https://["BlueXP帳戶"^]。
+您會在 BlueXP 數位錢包頁面中輸入序號、以啟用服務。達到任一限制時、您都需要續約授權。備份BYOL授權適用於與相關聯的所有來源系統 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-netapp-accounts.html["BlueXP帳戶"^]。
 
 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["瞭解如何管理BYOL授權"]。
 
@@ -271,7 +271,7 @@ link:task-licensing-cloud-backup.html#use-an-annual-contract["瞭解如何設定
 
 == BlueXP 備份與還原的運作方式
 
-當您在 Cloud Volumes ONTAP 或內部部署 ONTAP 系統上啟用 BlueXP 備份與還原時、服務會執行資料的完整備份。備份映像不包含 Volume 快照。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。BlueXP 備份與還原是建立在的基礎之上 https://["NetApp SnapMirror雲端技術"^]。
+當您在 Cloud Volumes ONTAP 或內部部署 ONTAP 系統上啟用 BlueXP 備份與還原時、服務會執行資料的完整備份。備份映像不包含 Volume 快照。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。BlueXP 備份與還原是建立在的基礎之上 https://docs.netapp.com/us-en/ontap/concepts/snapmirror-cloud-backups-object-store-concept.html["NetApp SnapMirror雲端技術"^]。
 
 
 CAUTION: 直接從雲端供應商環境中採取的任何管理或變更備份檔案的動作、都可能會毀損檔案、並導致不支援的組態。
@@ -288,14 +288,14 @@ image:diagram_cloud_backup_general.png["顯示 BlueXP 備份與還原如何與�
 
 ifdef::aws[]
 
-* 在AWS中、BlueXP會啟用 https://["Amazon S3 封鎖公共存取功能"^] 在 S3 儲存桶上。
+* 在AWS中、BlueXP會啟用 https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html["Amazon S3 封鎖公共存取功能"^] 在 S3 儲存桶上。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* 在Azure中、BlueXP會使用新的或現有的資源群組、以及Blob容器的儲存帳戶。藍圖 https://["封鎖對Blob資料的公開存取"] 依預設。
+* 在Azure中、BlueXP會使用新的或現有的資源群組、以及Blob容器的儲存帳戶。藍圖 https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent["封鎖對Blob資料的公開存取"] 依預設。
 
 
 endif::azure[]

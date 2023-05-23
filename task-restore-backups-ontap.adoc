@@ -423,7 +423,7 @@ image:screenshot_restore_select_dest.png["選取您要還原之檔案的磁碟�
 
 您可以ONTAP 使用「搜尋與還原」、從還原的還原檔還原磁碟區、資料夾或檔案。「搜尋與還原」可讓您從儲存在雲端儲存設備上的所有備份中搜尋特定的磁碟區、資料夾或檔案、以供特定供應商使用、然後執行還原。您不需要知道確切的工作環境名稱或磁碟區名稱、搜尋會查看所有的Volume備份檔案。
 
-搜尋作業也會查看ONTAP 所有適用於您的Shapes的本機Snapshot複本。由於從本機Snapshot複本還原資料的速度比從備份檔案還原更快、成本更低、因此您可能想要從Snapshot還原資料。您可以將Snapshot還原為新的Volume https://["從畫版上的Volume Details（Volume詳細資料）頁面"^] （不是 BlueXP 備份與還原）。
+搜尋作業也會查看ONTAP 所有適用於您的Shapes的本機Snapshot複本。由於從本機Snapshot複本還原資料的速度比從備份檔案還原更快、成本更低、因此您可能想要從Snapshot還原資料。您可以將Snapshot還原為新的Volume https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["從畫版上的Volume Details（Volume詳細資料）頁面"^] （不是 BlueXP 備份與還原）。
 
 當您從備份檔案還原磁碟區時、 BlueXP 備份與還原會使用備份的資料建立 _new_ 磁碟區。您可以將資料還原為原始工作環境中的磁碟區、或還原至與來源工作環境位於相同雲端帳戶中的不同工作環境。您也可以將磁碟區還原至內部部署ONTAP 的作業系統。
 
@@ -546,7 +546,7 @@ ifdef::azure[]
 
 * Azure要求：
 +
-** 您必須在訂閱中註冊Azure Synapse Analytics資源供應商（稱為「Microsoft.Synapse」）。 https://["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
+** 您必須在訂閱中註冊Azure Synapse Analytics資源供應商（稱為「Microsoft.Synapse」）。 https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#register-resource-provider["請參閱如何註冊此資源供應商以取得您的訂閱"^]。您必須是訂閱*擁有者*或*貢獻者*才能登錄資源提供者。
 ** 特定Azure Synapse Workspace與Data Lake Storage帳戶權限必須新增至提供BlueXP權限的使用者角色。 link:task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector["請確定所有權限均已正確設定"]。
 +
 請注意、如果您之前使用的是 BlueXP 備份與還原、但之前已設定 Connector 、則現在您必須將 Azure Synapse Workspace 與 Data Lake Storage Account 權限新增至 BlueXP 使用者角色。這些都是新功能、搜尋與還原是必備功能。
@@ -579,7 +579,7 @@ endif::gcp[]
 +
 ** 如果您的帳戶中沒有雲端供應商認證資料、則索引目錄資訊會儲存在Connector上。
 ** 如果您是在黑暗站台中使用Connector、則Indexed目錄資訊會儲存在Connector上（需要Connector 3.9.25版或更新版本）。
-** 如果您有 https://["AWS認證資料"^] 或 https://["Azure認證"^] 在帳戶中、索引目錄會儲存在雲端供應商、就像部署在雲端的Connector一樣。（如果您同時擁有這兩項認證、則AWS預設為選取狀態。）
+** 如果您有 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html["AWS認證資料"^] 或 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html["Azure認證"^] 在帳戶中、索引目錄會儲存在雲端供應商、就像部署在雲端的Connector一樣。（如果您同時擁有這兩項認證、則AWS預設為選取狀態。）
 +
 即使您使用的是內部部署Connector、也必須同時滿足Connector權限和雲端供應商資源的雲端供應商需求。使用此實作時、請參閱上述AWS和Azure需求。
 
@@ -618,7 +618,7 @@ image:diagram_search_restore_vol_file.png["顯示使用Search  Restore執行Volu
 
 ifdef::aws[]
 
-* 對於儲存在AWS中的備份、它會配置新的S3儲存區和 https://["Amazon Athena互動查詢服務"^] 和 https://["AWS黏著伺服器無資料整合服務"^]。
+* 對於儲存在AWS中的備份、它會配置新的S3儲存區和 https://aws.amazon.com/athena/faqs/["Amazon Athena互動查詢服務"^] 和 https://aws.amazon.com/glue/faqs/["AWS黏著伺服器無資料整合服務"^]。
 
 
 endif::aws[]
@@ -632,7 +632,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* 對於儲存在Google Cloud中的備份、IT會配置新的儲存庫、以及 https://["Google Cloud BigQuery服務"^] 在帳戶/專案層級上進行資源配置。
+* 對於儲存在Google Cloud中的備份、IT會配置新的儲存庫、以及 https://cloud.google.com/bigquery["Google Cloud BigQuery服務"^] 在帳戶/專案層級上進行資源配置。
 
 
 endif::gcp[]

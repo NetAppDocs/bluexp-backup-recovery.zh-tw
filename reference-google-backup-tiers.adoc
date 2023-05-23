@@ -26,7 +26,7 @@ BlueXP 備份與還原支援單一 Google 歸檔儲存類別和大多數地區�
 
 請注意、當您使用此類型的生命週期規則來設定 BlueXP 備份與還原時、在 Google 帳戶中設定儲存庫時、不得設定任何生命週期規則。
 
-https://["深入瞭解Google儲存課程"^]。
+https://cloud.google.com/storage/docs/storage-classes["深入瞭解Google儲存課程"^]。
 
 
 
@@ -34,7 +34,7 @@ https://["深入瞭解Google儲存課程"^]。
 
 雖然在歸檔儲存設備中儲存較舊的備份檔案比標準儲存設備便宜得多、但從歸檔儲存設備中的備份檔案存取資料以進行還原作業需要較長的時間、而且成本較高。
 
-從Google歸檔還原資料需要多少成本？:: 如需各地區的詳細Google Cloud Storage定價資訊、請參閱 https://["Google Cloud Storage定價頁面"^]。
+從Google歸檔還原資料需要多少成本？:: 如需各地區的詳細Google Cloud Storage定價資訊、請參閱 https://cloud.google.com/storage/pricing["Google Cloud Storage定價頁面"^]。
 還原在Google歸檔中歸檔的物件需要多久時間？:: 共有2個部分可構成總還原時間：
 +
 --

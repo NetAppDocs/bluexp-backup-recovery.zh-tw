@@ -89,10 +89,10 @@ BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份�
 
 如果您已在AWS VPC或內部部署部署了Connector、您就能輕鬆完成所有設定。如果沒有、則您需要在上述任一位置建立連接器、以便將ONTAP 支援的資料備份到AWS S3儲存設備。您無法使用部署於其他雲端供應商的Connector。
 
-* https://["深入瞭解連接器"^]
-* https://["在AWS中安裝Connector"^]
-* https://["在內部環境中安裝連接器"^]
-* https://["在AWS GovCloud區域安裝Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["在AWS中安裝Connector"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["在內部環境中安裝連接器"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["在AWS GovCloud區域安裝Connector"^]
 +
 當 Connector 部署在雲端時、 GovCloud 地區支援 BlueXP 備份與還原、而非安裝在內部部署時。此外、您必須從AWS Marketplace部署Connector。您無法從 BlueXP SaaS 網站在政府區域部署 Connector 。
 
@@ -104,9 +104,9 @@ BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份�
 
 * 確保安裝 Connector 的網路啟用下列連線：
 +
-** 透過連接埠 443 連接到 BlueXP 備份與還原服務、以及 S3 物件儲存設備的 HTTPS 連線 (https://["請參閱端點清單"^]）
+** 透過連接埠 443 連接到 BlueXP 備份與還原服務、以及 S3 物件儲存設備的 HTTPS 連線 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["請參閱端點清單"^]）
 ** 透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線
-** AWS和AWS GovCloud部署需要額外的傳入和傳出安全群組規則。請參閱 https://["AWS 中 Connector 的規則"^] 以取得詳細資料。
+** AWS和AWS GovCloud部署需要額外的傳入和傳出安全群組規則。請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html["AWS 中 Connector 的規則"^] 以取得詳細資料。
 
 
 * link:task-backup-onprem-to-aws.html#set-up-s3-permissions["確認Connector具有管理S3儲存區的權限"]。
@@ -123,7 +123,7 @@ BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份�
 
 您必須先在ONTAP BlueXP中探索內部部署的叢集、才能開始備份Volume資料。您必須知道叢集管理IP位址和管理使用者帳戶的密碼、才能新增叢集。
 
-https://["瞭解如何探索叢集"^]。
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
 
 
 
@@ -135,11 +135,11 @@ https://["瞭解如何探索叢集"^]。
 * 附註： * 使用 BlueXP 備份與還原時、不需要「混合雲套裝組合」。
 
 +
-瞭解如何操作 https://["管理叢集授權"^]。
+瞭解如何操作 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理叢集授權"^]。
 
 * 時間和時區設定正確。
 +
-瞭解如何操作 https://["設定叢集時間"^]。
+瞭解如何操作 https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["設定叢集時間"^]。
 
 
 
@@ -152,7 +152,7 @@ https://["瞭解如何探索叢集"^]。
 +
 叢集會透過連接埠443、從叢集間的LIF連線到Amazon S3儲存設備、以進行備份與還原作業。從物件儲存設備中讀取和寫入資料、物件儲存設備永遠不會啟動、只是回應而已。ONTAP
 
-* 叢集間生命體必須與_IPspacer_建立關聯、ONTAP 以便連接物件儲存設備。 https://["深入瞭解 IPspaces"^]。
+* 叢集間生命體必須與_IPspacer_建立關聯、ONTAP 以便連接物件儲存設備。 https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html["深入瞭解 IPspaces"^]。
 +
 當您設定 BlueXP 備份與還原時、系統會提示您輸入要使用的 IPspace 。您應該選擇這些生命區相關的IPspace。這可能是您建立的「預設」 IPspace 或自訂 IPspace 。
 
@@ -162,7 +162,7 @@ https://["瞭解如何探索叢集"^]。
 +
 IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權。如果您無法針對目前的IPspace進行設定、則必須建立專屬的IPspace、讓所有叢集間生命週期都能存取物件存放區。
 
-* DNS伺服器必須已針對磁碟區所在的儲存VM進行設定。瞭解如何操作 https://["設定SVM的DNS服務"^]。
+* DNS伺服器必須已針對磁碟區所在的儲存VM進行設定。瞭解如何操作 https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html["設定SVM的DNS服務"^]。
 * 如有必要、請更新防火牆規則、以允許 BlueXP 從 ONTAP 備份和恢復連線、透過連接埠 443 、以及從儲存 VM 透過連接埠 53 （ TCP/UDP ）到 DNS 伺服器的名稱解析流量。
 * 如果您使用AWS中的私有VPC介面端點進行S3連線、則為了使用https/443、您必須將S3端點憑證載入ONTAP 到叢集。 <<使用VPC端點介面設定系統的私有連線,瞭解如何設定VPC端點介面並載入S3憑證。>>
 * link:task-backup-onprem-to-aws.html#set-up-s3-permissions["確保ONTAP 您的叢集擁有存取S3儲存區的權限"]。
@@ -174,13 +174,13 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
 
 * 您必須先向 AWS 訂購隨用隨付（ PAYGO ） BlueXP Marketplace 產品、或是向 NetApp 購買並啟動 BlueXP 備份與恢復 BYOL 授權、才能啟動叢集的 BlueXP 備份與還原。這些授權適用於您的帳戶、可在多個系統上使用。
 +
-** 如需 BlueXP 備份與還原 PAYGO 授權、您需要訂閱 https://["AWS Marketplace 提供的 NetApp BlueXP 產品"^]。BlueXP 備份與還原的帳單是透過此訂閱完成。
+** 如需 BlueXP 備份與還原 PAYGO 授權、您需要訂閱 https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["AWS Marketplace 提供的 NetApp BlueXP 產品"^]。BlueXP 備份與還原的帳單是透過此訂閱完成。
 ** 對於 BlueXP 備份與恢復 BYOL 授權、您需要 NetApp 的序號、以便在授權期間和容量內使用服務。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["瞭解如何管理BYOL授權"]。
 
 
 * 您需要訂閱AWS、以取得備份所在的物件儲存空間。
 +
-您可以在所有地區、從內部部署系統建立備份到Amazon S3 https://["支援的地方 Cloud Volumes ONTAP"^]；包括AWS GovCloud區域。您可以指定在設定服務時儲存備份的區域。
+您可以在所有地區、從內部部署系統建立備份到Amazon S3 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]；包括AWS GovCloud區域。您可以指定在設定服務時儲存備份的區域。
 
 
 
@@ -199,7 +199,7 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
 
 
 .步驟
-. 確認下列S3權限（從最新版本開始） https://["BlueXP原則"^]）是IAM角色的一部分、可為Connector提供權限。如果沒有、請參閱 https://["AWS文件：編輯IAM原則"]。
+. 確認下列S3權限（從最新版本開始） https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]）是IAM角色的一部分、可為Connector提供權限。如果沒有、請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS文件：編輯IAM原則"]。
 +
 [source, json]
 ----
@@ -319,7 +319,7 @@ NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Re
 }
 ----
 +
-請參閱 https://["AWS 文件：建立角色、將權限委派給 IAM 使用者"^] 以取得詳細資料。
+請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS 文件：建立角色、將權限委派給 IAM 使用者"^] 以取得詳細資料。
 
 
 
@@ -329,7 +329,7 @@ NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Re
 
 如果您想要使用預設的Amazon S3加密金鑰來加密在內部叢集和S3儲存區之間傳輸的資料、那麼您就會被設定、因為預設安裝會使用該類型的加密。
 
-如果您想要使用自己的客戶管理金鑰進行資料加密、而不是使用預設金鑰、則必須先設定加密託管金鑰、才能啟動 BlueXP 備份與還原精靈。 https://["瞭解如何使用您自己的金鑰"^]。
+如果您想要使用自己的客戶管理金鑰進行資料加密、而不是使用預設金鑰、則必須先設定加密託管金鑰、才能啟動 BlueXP 備份與還原精靈。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的金鑰"^]。
 
 
 
@@ -339,7 +339,7 @@ NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Re
 
 如果您想要透過網際網路從內部資料中心連線至VPC、可以在備份啟動精靈中選取AWS Private Link連線。如果您打算使用VPN或AWS Direct Connect、透過使用私有IP位址的VPC端點介面來連接內部部署系統、就必須使用此功能。這種連線類型顯示於 link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["第二個圖表"]。
 
-. 使用Amazon VPC主控台或命令列建立介面端點組態。 https://["如需使用AWS Private Link for Amazon S3的詳細資訊、請參閱"^]。
+. 使用Amazon VPC主控台或命令列建立介面端點組態。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["如需使用AWS Private Link for Amazon S3的詳細資訊、請參閱"^]。
 . 修改與BlueXP Connector相關的安全性群組組態。您必須將原則變更為「Custom（自訂）」（從「Full Access（完整存取）」）、而且您必須如此 <<設定S3權限,從備份原則新增S3權限>> 如前所示。
 +
 image:screenshot_backup_aws_sec_group.png["與Connector相關聯的AWS安全性群組快照。"]
@@ -354,7 +354,7 @@ image:screenshot_backup_aws_sec_group.png["與Connector相關聯的AWS安全性�
 +
 image:screenshot_endpoint_dns_aws_console.png["AWS主控台VPC端點的DNS名稱快照。"]
 
-. 從VPC S3端點取得憑證。您的做法是 https://["登入裝載BlueXP Connector的VM"^] 並執行下列命令。輸入端點的DNS名稱時、請在開頭加入「pucket」、取代「*」：
+. 從VPC S3端點取得憑證。您的做法是 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["登入裝載BlueXP Connector的VM"^] 並執行下列命令。輸入端點的DNS名稱時、請在開頭加入「pucket」、取代「*」：
 +
 [source, text]
 ----
@@ -405,7 +405,7 @@ image:screenshot_backup_onprem_enable.png["螢幕擷取畫面顯示「啟用備�
 存取金鑰和秘密金鑰適用於您所建立的IAM使用者、以便ONTAP 讓該叢集能夠存取S3儲存區。
 
 .. 儲存備份的AWS區域。
-.. 無論您是使用預設的Amazon S3加密金鑰、還是從AWS帳戶選擇自己的客戶管理金鑰、都能管理資料的加密。 (https://["瞭解如何使用您自己的金鑰"]）。
+.. 無論您是使用預設的Amazon S3加密金鑰、還是從AWS帳戶選擇自己的客戶管理金鑰、都能管理資料的加密。 (https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的金鑰"]）。
 +
 image:screenshot_backup_provider_settings_aws.png["快照顯示將磁碟區從ONTAP 某個系統備份到AWS S3時、雲端供應商的詳細資料。"]
 
@@ -415,7 +415,7 @@ image:screenshot_backup_provider_settings_aws.png["快照顯示將磁碟區從ON
 . 輸入網路詳細資料、然後按*下一步*。
 +
 .. 您要備份的磁碟區所在的叢集中的 IPspace ONTAP 。此IPspace的叢集間生命體必須具有傳出網際網路存取。
-.. 您也可以選擇是否要使用先前設定的AWS Private Link。 https://["如需使用AWS Private Link for Amazon S3的詳細資訊、請參閱"^]。
+.. 您也可以選擇是否要使用先前設定的AWS Private Link。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["如需使用AWS Private Link for Amazon S3的詳細資訊、請參閱"^]。
 +
 image:screenshot_backup_onprem_aws_networking.png["螢幕快照顯示將磁碟區從ONTAP 某個系統備份到AWS S3時的網路詳細資料。"]
 
