@@ -367,7 +367,7 @@ image:screenshot_delete_one_backup.png["顯示如何刪除單一備份檔案的�
 
 此功能僅在系統執行ONTAP 的是更新版本的更新版本時才可使用。
 
-您無法從 BlueXP 備份與還原使用者介面刪除來源磁碟區。不過、您可以在畫版上開啟「Volume Details」（Volume詳細資料）頁面、以及 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["從該處刪除磁碟區"]。
+您無法從 BlueXP 備份與還原使用者介面刪除來源磁碟區。不過、您可以在畫版上開啟「Volume Details」（Volume詳細資料）頁面、以及 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["從該處刪除磁碟區"]。
 
 
 NOTE: 一旦關係被刪除、您就無法刪除個別的Volume備份檔案。不過、您可以 link:task-manage-backups-ontap.html#deleting-all-backup-files-for-a-volume["刪除磁碟區的所有備份"] 如果您要移除所有備份檔案。

@@ -26,7 +26,7 @@ summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 確認您的組態支援
 [role="quick-margin-list"]
-* 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
+* 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
 +
 ** 叢集執行 ONTAP 的是更新版本的 1.7P5 。
 ** 叢集具有SnapMirror授權、包含在優質產品組合或資料保護產品組合中。
@@ -95,7 +95,7 @@ image:diagram_cloud_backup_onprem_storagegrid.png["顯示 BlueXP 備份與還原
 
 您必須先在ONTAP BlueXP中探索內部部署的叢集、才能開始備份大量資料。
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
 
 需求 ONTAP::
 +
@@ -176,14 +176,14 @@ S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支
 
 將資料備份StorageGRID 到不支援的地方時、內部環境中必須有連接器。您可能需要安裝新的 Connector 、或確定目前選取的 Connector 位於內部部署。連接器可安裝在有或沒有網際網路存取的站台上。
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["在可存取網際網路的Linux主機上安裝Connector"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["在無法存取網際網路的Linux主機上安裝Connector"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["在連接器之間切換"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["深入瞭解連接器"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["在可存取網際網路的Linux主機上安裝Connector"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["在無法存取網際網路的Linux主機上安裝Connector"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html["在連接器之間切換"^]
 
 
 
-NOTE: BlueXP 備份與還原功能內建於 BlueXP Connector 中。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["BlueXP 備份與還原新功能"] 若要查看每個 BlueXP 備份與還原版本中的新功能、您可以依照步驟執行 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["升級Connector軟體"^] 當您想要使用新功能時。
+NOTE: BlueXP 備份與還原功能內建於 BlueXP Connector 中。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["BlueXP 備份與還原新功能"] 若要查看每個 BlueXP 備份與還原版本中的新功能、您可以依照步驟執行 https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["升級Connector軟體"^] 當您想要使用新功能時。
 
 強烈建議您在沒有網際網路連線的站台中安裝 Connector 時、定期建立 BlueXP 備份與還原組態資料的本機備份。 link:reference-backup-cbs-db-in-dark-site.html["瞭解如何在黑暗的網站中備份 BlueXP 備份與還原資料"^]。
 
@@ -219,7 +219,7 @@ NOTE: BlueXP 備份與還原功能內建於 BlueXP Connector 中。安裝在沒�
 *《要求》* StorageGRID
 
 * 您的產品必須使用11.4或更新版本StorageGRID
-* 您的需求必須是StorageGRID https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["已探索並可在BlueXP畫版中使用"^]。
+* 您的需求必須是StorageGRID https://docs.netapp.com/us-en/bluexp-storagegrid/task-discover-storagegrid.html["已探索並可在BlueXP畫版中使用"^]。
 
 
 * Amazon S3需求*

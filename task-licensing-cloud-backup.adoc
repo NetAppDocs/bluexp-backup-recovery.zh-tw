@@ -50,10 +50,10 @@ BlueXP 備份與還原有幾個 PAYGO 計畫：
 
 * 「Cloud Backup Cloud Volumes ONTAP 」套件可讓您備份內部部署ONTAP 的各種資料。
 * 「 CVO 專業版」套件、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原搭售。這包括Cloud Volumes ONTAP 使用授權對整個過程進行無限的備份（備份容量不計入授權容量）。此選項無法讓您備份內部部署的 ONTAP 資料。
-* 「 CVO Edge Cache 」套件的功能與「 CVO Professional 」套件相同、但也支援 https://docs.netapp.com/us-en/cloud-manager-file-cache/concept-gfc.html["BlueXP 邊緣快取"^] 服務：您有權在 Cloud Volumes ONTAP 系統上為每 3 TiB 的已配置容量部署一個 BlueXP 邊緣快取邊緣系統。此選項可透過 Azure 和 Google Marketplaces 取得、但無法讓您備份內部部署的 ONTAP 資料。
+* 「 CVO Edge Cache 」套件的功能與「 CVO Professional 」套件相同、但也支援 https://docs.netapp.com/us-en/bluexp-edge-caching/concept-gfc.html["BlueXP 邊緣快取"^] 服務：您有權在 Cloud Volumes ONTAP 系統上為每 3 TiB 的已配置容量部署一個 BlueXP 邊緣快取邊緣系統。此選項可透過 Azure 和 Google Marketplaces 取得、但無法讓您備份內部部署的 ONTAP 資料。
 
 
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["深入瞭解這些容量型授權套件"]。
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["深入瞭解這些容量型授權套件"]。
 
 請使用以下連結、向您的雲端供應商市場訂閱 BlueXP 備份與還原：
 
@@ -90,11 +90,11 @@ ifdef::aws[]
 
 * 「雲端備份」計畫、可讓您備份Cloud Volumes ONTAP 內部部署ONTAP 的支援資料。
 +
-如果您要使用此選項、請從「市場」頁面設定您的訂閱、然後再進行設定 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["將訂閱與AWS認證資料建立關聯"^]。請注意、您也需要使用這項年度合約訂閱來支付 Cloud Volumes ONTAP 系統的費用、因為您只能在 BlueXP 中指派一個有效訂閱給 AWS 認證。
+如果您要使用此選項、請從「市場」頁面設定您的訂閱、然後再進行設定 https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription["將訂閱與AWS認證資料建立關聯"^]。請注意、您也需要使用這項年度合約訂閱來支付 Cloud Volumes ONTAP 系統的費用、因為您只能在 BlueXP 中指派一個有效訂閱給 AWS 認證。
 
 * 「 CVO 專業人員」計畫、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原作業結合在一起。這包括Cloud Volumes ONTAP 使用授權對整個過程進行無限的備份（備份容量不計入授權容量）。此選項無法讓您備份內部部署的 ONTAP 資料。
 +
-請參閱 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html["介紹授權主題Cloud Volumes ONTAP"^] 以深入瞭解此授權選項。
+請參閱 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["介紹授權主題Cloud Volumes ONTAP"^] 以深入瞭解此授權選項。
 
 +
 如果您想要使用此選項、可以在建立Cloud Volumes ONTAP 一套運作環境時、設定年度合約、而BlueXP會提示您訂閱AWS Marketplace。
@@ -125,7 +125,7 @@ BYOL BlueXP 備份與還原授權是浮動授權、可讓您在與 BlueXP 帳戶
 
 如果您沒有 BlueXP 備份與還原 BYOL 授權、請按一下 BlueXP 右下角的聊天圖示以購買。
 
-或者、如果您沒有使用未指派的 Cloud Volumes ONTAP 節點型授權、您可以將其轉換為具有相同美元對等和相同到期日的 BlueXP 備份與還原授權。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["如需詳細資料、請前往此處"^]。
+或者、如果您沒有使用未指派的 Cloud Volumes ONTAP 節點型授權、您可以將其轉換為具有相同美元對等和相同到期日的 BlueXP 備份與還原授權。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses["如需詳細資料、請前往此處"^]。
 
 您可以使用 BlueXP 數位錢包來管理 BYOL 授權。您可以新增授權、更新現有授權、以及從 BlueXP 數位錢包檢視授權狀態。
 
@@ -166,7 +166,7 @@ image:screenshot_cloud_backup_license_step2.gif["螢幕擷取畫面會顯示「G
 +
 ** 如果您有備份授權序號並知道您的nss,請選取*輸入序號*選項並輸入該資訊。
 +
-如果下拉式清單中沒有您的 NetApp 支援網站帳戶， https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["將新增至BlueXP的NSS帳戶"^]。
+如果下拉式清單中沒有您的 NetApp 支援網站帳戶， https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html["將新增至BlueXP的NSS帳戶"^]。
 
 ** 如果您有備份授權檔案（安裝在暗處時需要）、請選取*上傳授權檔案*選項、然後依照提示附加檔案。
 +
@@ -183,7 +183,7 @@ BlueXP 新增授權、使 BlueXP 備份與還原成為作用中狀態。
 
 === 更新 BlueXP 備份與還原 BYOL 授權
 
-如果授權期限即將到期、或授權容量已達到上限、您將會在備份UI中收到通知。此狀態也會出現在 BlueXP 數位電子錢包頁面和中 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["通知"]。
+如果授權期限即將到期、或授權容量已達到上限、您將會在備份UI中收到通知。此狀態也會出現在 BlueXP 數位電子錢包頁面和中 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["通知"]。
 
 image:screenshot_services_license_expire.png["BlueXP 數位錢包頁面中顯示過期授權的螢幕擷取畫面。"]
 

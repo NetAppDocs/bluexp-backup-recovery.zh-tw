@@ -19,7 +19,7 @@ summary: 檢視備份詳細資料、並監控所有工作的狀態。
 
 您可以監控已在工作環境中初始化的工作狀態。這可讓您查看已成功完成的工作、目前進行中的工作、以及已失敗的工作、以便診斷及修正任何問題。
 
-如需詳細資訊、請參閱 link:https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html["監控工作狀態"]。
+如需詳細資訊、請參閱 link:https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["監控工作狀態"]。
 
 
 
@@ -220,4 +220,4 @@ CA 檔案應為 pem 格式。
 
 其餘的 API 可用於保護應用程式至雲端、網址為： https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/[]。
 
-您應該取得具有聯盟驗證的使用者權杖、以存取REST API。如需取得使用者權杖的資訊、請參閱 https://docs.netapp.com/us-en/cloud-manager-automation/platform/create_user_token.html#create-a-user-token-with-federated-authentication["使用同盟驗證建立使用者權杖"]。
+您應該取得具有聯盟驗證的使用者權杖、以存取REST API。如需取得使用者權杖的資訊、請參閱 https://docs.netapp.com/us-en/bluexp-automation/platform/create_user_token.html#create-a-user-token-with-federated-authentication["使用同盟驗證建立使用者權杖"]。

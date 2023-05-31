@@ -186,4 +186,4 @@ curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpT
 
 == API 參考
 
-每個 BlueXP 備份與還原 API 的文件均可從取得 https://docs.netapp.com/us-en/cloud-manager-automation/cbs/overview.html[]。
+每個 BlueXP 備份與還原 API 的文件均可從取得 https://docs.netapp.com/us-en/bluexp-automation/cbs/overview.html[]。

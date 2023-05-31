@@ -20,7 +20,7 @@ summary: 打造Azure NetApp Files 可運作的環境和Connector
 
 == 打造Azure NetApp Files 可運作的環境
 
-您應該在Azure NetApp Files 託管資料庫的環境中建立不必要的工作環境。如需詳細資訊、請參閱 link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/concept-azure-netapp-files.html["深入瞭解 Azure NetApp Files"] 和 link:https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-create-working-env.html["打造 Azure NetApp Files 一個不一樣的工作環境"]。
+您應該在Azure NetApp Files 託管資料庫的環境中建立不必要的工作環境。如需詳細資訊、請參閱 link:https://docs.netapp.com/us-en/bluexp-azure-netapp-files/concept-azure-netapp-files.html["深入瞭解 Azure NetApp Files"] 和 link:https://docs.netapp.com/us-en/bluexp-azure-netapp-files/task-create-working-env.html["打造 Azure NetApp Files 一個不一樣的工作環境"]。
 
 
 
@@ -28,7 +28,7 @@ summary: 打造Azure NetApp Files 可運作的環境和Connector
 
 BlueXP 帳戶管理員應在 Azure 中部署 Connector 、讓 BlueXP 能夠在您的公有雲環境中管理資源和程序。
 
-如需相關資訊、請參閱 link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["從BlueXP在Azure中建立連接器"]。
+如需相關資訊、請參閱 link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-creating-connectors-azure.html["從BlueXP在Azure中建立連接器"]。
 
 * 確保連接器與資料庫主機之間有連線。
 * 如果您在同一個虛擬網路（ vnet ）中擁有 Azure NetApp Files 工作環境和資料庫、則可以在同一個 vnet 中部署連接器。

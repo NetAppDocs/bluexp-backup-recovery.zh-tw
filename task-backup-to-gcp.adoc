@@ -72,7 +72,7 @@ image:screenshot_backup_policy_gcp.png["顯示 BlueXP 備份與還原設定的�
 image:diagram_cloud_backup_cvo_google.png["顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
 支援 ONTAP 的支援版本:: 最低ONTAP 版本為0、9、75；ONTAP 建議使用0、8P13及更新版本。
-授權需求:: 如需 BlueXP 備份與還原 PAYGO 授權、您可以在 Google Marketplace 中訂閱 BlueXP 、以便部署 Cloud Volumes ONTAP 與 BlueXP 備份與還原。您需要 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["訂閱此BlueXP訂閱"^] 在您啟用 BlueXP 備份與還原之前。BlueXP 備份與還原的帳單是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
+授權需求:: 如需 BlueXP 備份與還原 PAYGO 授權、您可以在 Google Marketplace 中訂閱 BlueXP 、以便部署 Cloud Volumes ONTAP 與 BlueXP 備份與還原。您需要 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["訂閱此BlueXP訂閱"^] 在您啟用 BlueXP 備份與還原之前。BlueXP 備份與還原的帳單是透過此訂閱完成。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
 +
 --
 對於 BlueXP 備份與恢復 BYOL 授權、您需要 NetApp 的序號、以便在授權期間和容量內使用該服務。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["瞭解如何管理BYOL授權"^]。
@@ -81,12 +81,12 @@ image:diagram_cloud_backup_cvo_google.png["顯示 BlueXP 備份與還原如何�
 
 --
 支援的 GCP 區域:: 所有 GCP 區域均支援 BlueXP 備份與還原 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]。
-GCP 服務帳戶:: 您必須在Google Cloud Project中擁有預先定義儲存管理角色的服務帳戶。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-creating-gcp-service-account.html["瞭解如何建立服務帳戶"^]。
+GCP 服務帳戶:: 您必須在Google Cloud Project中擁有預先定義儲存管理角色的服務帳戶。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-creating-gcp-service-account.html["瞭解如何建立服務帳戶"^]。
 連接器需求:: Connector 必須安裝在可存取網際網路的 Google 區域。
 +
 --
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-google.html["在 Google Cloud 中部署 Connector"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["深入瞭解連接器"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["在 Google Cloud 中部署 Connector"^]
 
 
 --
@@ -156,7 +156,7 @@ cloudkms.keyRings.setIamPolicy
 
 您必須已設定服務帳戶。如果您在建立Cloud Volumes ONTAP 此系統時未選擇服務帳戶、則需要關閉系統、Cloud Volumes ONTAP 並從GCP主控台將服務帳戶新增至該服務帳戶。
 
-請參閱 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["在 Cloud Volumes ONTAP GCP 中啟動"^] 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。
+請參閱 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["在 Cloud Volumes ONTAP GCP 中啟動"^] 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。
 
 .步驟
 . 在「工作環境」頁面上、按一下「 * 新增工作環境 * 」、然後依照提示進行。
@@ -180,7 +180,7 @@ image:screenshot_backup_to_gcp_new_env.png["顯示如何在工作環境精靈中
 +
 image:screenshot_backup_to_gcp.png["顯示工作環境精靈中的 BlueXP 備份與還原選項。"]
 
-. 請完成精靈中的頁面、依照中所述部署系統 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["在 Cloud Volumes ONTAP GCP 中啟動"^]。
+. 請完成精靈中的頁面、依照中所述部署系統 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["在 Cloud Volumes ONTAP GCP 中啟動"^]。
 
 
 .結果

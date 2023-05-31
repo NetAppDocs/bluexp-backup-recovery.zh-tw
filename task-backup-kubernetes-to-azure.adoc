@@ -69,8 +69,8 @@ image:diagram_cloud_backup_k8s_cvo_azure.png["顯示 BlueXP 備份與還原如�
 Kubernetes 叢集需求::
 +
 --
-* 您已將Kubernetes叢集探索為藍圖XP工作環境。 https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-kubernetes-discover-azure.html["瞭解如何探索Kubernetes叢集"^]。
-* 叢集上必須安裝Trident、Trident版本必須至少21.1。請參閱 https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-manage-trident.html["如何安裝Trident"^] 或 https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["如何升級Trident版本"^]。
+* 您已將Kubernetes叢集探索為藍圖XP工作環境。 https://docs.netapp.com/us-en/bluexp-kubernetes/task/task-kubernetes-discover-azure.html["瞭解如何探索Kubernetes叢集"^]。
+* 叢集上必須安裝Trident、Trident版本必須至少21.1。請參閱 https://docs.netapp.com/us-en/bluexp-kubernetes/task/task-k8s-manage-trident.html["如何安裝Trident"^] 或 https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["如何升級Trident版本"^]。
 * 叢集必須在Cloud Volumes ONTAP Azure上使用以做為其後端儲存設備。
 * 該系統必須與Kubernetes叢集位於同一個Azure區域、且必須執行更新版本的版本號為《S時 局》（建議使用更新版本的版本號為《時局》）Cloud Volumes ONTAP ONTAP ONTAP 。
 +
@@ -129,7 +129,7 @@ spec:
 
 
 --
-授權需求:: 若為 BlueXP 備份與還原 PAYGO 授權、您必須先透過 Azure Marketplace 訂閱、才能啟用 BlueXP 備份與還原。BlueXP 備份與還原的帳單是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
+授權需求:: 若為 BlueXP 備份與還原 PAYGO 授權、您必須先透過 Azure Marketplace 訂閱、才能啟用 BlueXP 備份與還原。BlueXP 備份與還原的帳單是透過此訂閱完成。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
 +
 --
 對於 BlueXP 備份與恢復 BYOL 授權、您需要 NetApp 的序號、以便在授權期間和容量內使用該服務。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["瞭解如何管理BYOL授權"]。

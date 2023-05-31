@@ -89,10 +89,10 @@ BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份�
 
 如果您已在AWS VPC或內部部署部署了Connector、您就能輕鬆完成所有設定。如果沒有、則您需要在上述任一位置建立連接器、以便將ONTAP 支援的資料備份到AWS S3儲存設備。您無法使用部署於其他雲端供應商的Connector。
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["在AWS中安裝Connector"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["在內部環境中安裝連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["在AWS GovCloud區域安裝Connector"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["深入瞭解連接器"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["在AWS中安裝Connector"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["在內部環境中安裝連接器"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-restricted-mode.html["在AWS GovCloud區域安裝Connector"^]
 +
 當 Connector 部署在雲端時、 GovCloud 地區支援 BlueXP 備份與還原、而非安裝在內部部署時。此外、您必須從AWS Marketplace部署Connector。您無法從 BlueXP SaaS 網站在政府區域部署 Connector 。
 
@@ -104,9 +104,9 @@ BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份�
 
 * 確保安裝 Connector 的網路啟用下列連線：
 +
-** 透過連接埠 443 連接到 BlueXP 備份與還原服務、以及 S3 物件儲存設備的 HTTPS 連線 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["請參閱端點清單"^]）
+** 透過連接埠 443 連接到 BlueXP 備份與還原服務、以及 S3 物件儲存設備的 HTTPS 連線 (https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations["請參閱端點清單"^]）
 ** 透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線
-** AWS和AWS GovCloud部署需要額外的傳入和傳出安全群組規則。請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html["AWS 中 Connector 的規則"^] 以取得詳細資料。
+** AWS和AWS GovCloud部署需要額外的傳入和傳出安全群組規則。請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["AWS 中 Connector 的規則"^] 以取得詳細資料。
 
 
 * link:task-backup-onprem-to-aws.html#set-up-s3-permissions["確認Connector具有管理S3儲存區的權限"]。
@@ -123,7 +123,7 @@ BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份�
 
 您必須先在ONTAP BlueXP中探索內部部署的叢集、才能開始備份Volume資料。您必須知道叢集管理IP位址和管理使用者帳戶的密碼、才能新增叢集。
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
 
 
 
@@ -199,7 +199,7 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
 
 
 .步驟
-. 確認下列S3權限（從最新版本開始） https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html["BlueXP原則"^]）是IAM角色的一部分、可為Connector提供權限。如果沒有、請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS文件：編輯IAM原則"]。
+. 確認下列S3權限（從最新版本開始） https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["BlueXP原則"^]）是IAM角色的一部分、可為Connector提供權限。如果沒有、請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS文件：編輯IAM原則"]。
 +
 [source, json]
 ----
@@ -329,7 +329,7 @@ NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Re
 
 如果您想要使用預設的Amazon S3加密金鑰來加密在內部叢集和S3儲存區之間傳輸的資料、那麼您就會被設定、因為預設安裝會使用該類型的加密。
 
-如果您想要使用自己的客戶管理金鑰進行資料加密、而不是使用預設金鑰、則必須先設定加密託管金鑰、才能啟動 BlueXP 備份與還原精靈。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的金鑰"^]。
+如果您想要使用自己的客戶管理金鑰進行資料加密、而不是使用預設金鑰、則必須先設定加密託管金鑰、才能啟動 BlueXP 備份與還原精靈。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的金鑰"^]。
 
 
 
@@ -354,7 +354,7 @@ image:screenshot_backup_aws_sec_group.png["與Connector相關聯的AWS安全性�
 +
 image:screenshot_endpoint_dns_aws_console.png["AWS主控台VPC端點的DNS名稱快照。"]
 
-. 從VPC S3端點取得憑證。您的做法是 https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["登入裝載BlueXP Connector的VM"^] 並執行下列命令。輸入端點的DNS名稱時、請在開頭加入「pucket」、取代「*」：
+. 從VPC S3端點取得憑證。您的做法是 https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["登入裝載BlueXP Connector的VM"^] 並執行下列命令。輸入端點的DNS名稱時、請在開頭加入「pucket」、取代「*」：
 +
 [source, text]
 ----
@@ -405,7 +405,7 @@ image:screenshot_backup_onprem_enable.png["螢幕擷取畫面顯示「啟用備�
 存取金鑰和秘密金鑰適用於您所建立的IAM使用者、以便ONTAP 讓該叢集能夠存取S3儲存區。
 
 .. 儲存備份的AWS區域。
-.. 無論您是使用預設的Amazon S3加密金鑰、還是從AWS帳戶選擇自己的客戶管理金鑰、都能管理資料的加密。 (https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的金鑰"]）。
+.. 無論您是使用預設的Amazon S3加密金鑰、還是從AWS帳戶選擇自己的客戶管理金鑰、都能管理資料的加密。 (https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-kms.html["瞭解如何使用您自己的金鑰"]）。
 +
 image:screenshot_backup_provider_settings_aws.png["快照顯示將磁碟區從ONTAP 某個系統備份到AWS S3時、雲端供應商的詳細資料。"]
 

@@ -26,7 +26,7 @@ summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 確認您的組態支援
 [role="quick-margin-list"]
-* 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
+* 您已探索內部部署叢集、並將其新增至BlueXP的工作環境。請參閱 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["探索 ONTAP 叢集"^] 以取得詳細資料。
 +
 ** 叢集執行ONTAP 的是1.7P5或更新版本（ONTAP 建議使用更新版本的版本號為0。
 ** 叢集具有SnapMirror授權、包含在優質產品組合或資料保護產品組合中。
@@ -101,7 +101,7 @@ image:diagram_cloud_backup_onprem_azure_private.png["顯示 BlueXP 備份與還�
 
 您必須先在ONTAP BlueXP中探索內部部署的叢集、才能開始備份大量資料。
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
 
 需求 ONTAP::
 +
@@ -148,10 +148,10 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 
 如果您已在Azure vnet或內部部署了Connector、您就能輕鬆完成設定。如果沒有、您需要在其中任一位置建立連接器、以便將ONTAP 還原資料備份到Azure Blob儲存設備。您無法使用部署於其他雲端供應商的Connector。
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["在Azure中安裝Connector"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["在內部環境中安裝連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-restricted-mode.html["在Azure政府區域安裝Connector"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["深入瞭解連接器"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["在Azure中安裝Connector"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["在內部環境中安裝連接器"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-restricted-mode.html["在Azure政府區域安裝Connector"^]
 +
 當 Connector 部署在雲端時、 Azure Government 地區支援 BlueXP 備份與還原、而非安裝在內部部署時。此外、您必須從Azure Marketplace部署Connector。您無法從 BlueXP SaaS 網站在政府區域部署 Connector 。
 
@@ -166,10 +166,10 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 .步驟
 . 確保安裝 Connector 的網路啟用下列連線：
 +
-** 透過連接埠 443 連接到 BlueXP 備份與恢復服務、以及到 Blob 物件儲存設備的 HTTPS 連線 (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["請參閱端點清單"^]）
+** 透過連接埠 443 連接到 BlueXP 備份與恢復服務、以及到 Blob 物件儲存設備的 HTTPS 連線 (https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations["請參閱端點清單"^]）
 ** 透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線
 ** 為了讓 BlueXP 備份與還原搜尋與還原功能正常運作、連接埠 1433 必須開啟、才能在 Connector 與 Azure Synapse SQL 服務之間進行通訊。
-** Azure和Azure政府部署需要額外的傳入安全性群組規則。請參閱 https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Azure 中的 Connector 規則"^] 以取得詳細資料。
+** Azure和Azure政府部署需要額外的傳入安全性群組規則。請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html["Azure 中的 Connector 規則"^] 以取得詳細資料。
 
 
 . 啟用vnet私有端點對Azure儲存設備。如果ONTAP 從您的DB2叢集到vnet有ExpressRoute或VPN連線、而且您想要連接器與Blob儲存設備之間的通訊保持在虛擬私有網路（*私有*連線）中、就需要此功能。
@@ -246,7 +246,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
 +
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["檢視原則的完整Json格式"^]
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["檢視原則的完整Json格式"^]
 
 .. 按一下「*檢閱+更新*」、然後按一下「*更新*」。
 

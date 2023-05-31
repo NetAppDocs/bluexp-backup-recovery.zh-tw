@@ -74,7 +74,7 @@ image:screenshot_backup_policy_azure.png["顯示 BlueXP 備份與還原設定的
 image:diagram_cloud_backup_cvo_azure.png["顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
 支援 ONTAP 的支援版本:: 最低ONTAP 版本為0、9、75；ONTAP 建議使用0、8P13及更新版本。
-授權需求:: 若為 BlueXP 備份與還原 PAYGO 授權、您必須先透過 Azure Marketplace 訂閱、才能啟用 BlueXP 備份與還原。BlueXP 備份與還原的帳單是透過此訂閱完成。 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
+授權需求:: 若為 BlueXP 備份與還原 PAYGO 授權、您必須先透過 Azure Marketplace 訂閱、才能啟用 BlueXP 備份與還原。BlueXP 備份與還原的帳單是透過此訂閱完成。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["您可以從工作環境精靈的詳細資料  認證頁面訂閱"^]。
 +
 --
 對於 BlueXP 備份與恢復 BYOL 授權、您需要 NetApp 的序號、以便在授權期間和容量內使用該服務。 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["瞭解如何管理BYOL授權"]。當 Connector 和 Cloud Volumes ONTAP 系統部署在黑暗的站台（「私有模式」）時、您必須使用 BYOL 授權。
@@ -82,12 +82,12 @@ image:diagram_cloud_backup_cvo_azure.png["顯示 BlueXP 備份與還原如何與
 而且您必須訂閱 Microsoft Azure 、才能取得備份所在的儲存空間。
 
 --
-連接器需求:: Connector 可安裝在 Azure 區域、且可存取完整或有限的網際網路（「標準」或「受限」模式）。 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["如需詳細資訊、請參閱 BlueXP 部署模式"^]。
+連接器需求:: Connector 可安裝在 Azure 區域、且可存取完整或有限的網際網路（「標準」或「受限」模式）。 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["如需詳細資訊、請參閱 BlueXP 部署模式"^]。
 +
 --
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["深入瞭解連接器"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["以標準模式在 Azure 中部署 Connector （完整網際網路存取）"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-restricted-mode.html["以受限模式安裝 Connector （有限的輸出存取）"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["深入瞭解連接器"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["以標準模式在 Azure 中部署 Connector （完整網際網路存取）"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-restricted-mode.html["以受限模式安裝 Connector （有限的輸出存取）"^]
 
 
 --
@@ -162,7 +162,7 @@ image:diagram_cloud_backup_cvo_azure.png["顯示 BlueXP 備份與還原如何與
 "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
 +
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["檢視原則的完整Json格式"^]
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["檢視原則的完整Json格式"^]
 
 ... 按一下「*檢閱+更新*」、然後按一下「*更新*」。
 
@@ -188,7 +188,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-az
 
 在工作環境精靈中、預設會啟用 BlueXP 備份與還原。請務必保持啟用選項。
 
-請參閱 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["在 Cloud Volumes ONTAP Azure 中啟動"^] 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。
+請參閱 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["在 Cloud Volumes ONTAP Azure 中啟動"^] 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。
 
 
 NOTE: 如果您想要選擇資源群組的名稱、請在部署 Cloud Volumes ONTAP 時 * 停用 * BlueXP 備份與還原。請依照的步驟執行 <<enabling-bluexp-backup-and-recovery-on-an-existing-system,在現有系統上啟用 BlueXP 備份與還原>> 若要啟用 BlueXP 備份與還原、請選擇資源群組。
