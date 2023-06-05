@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-monitor-backup-jobs.html 
-keywords: cloud backup, cloud backup service, backup, restore, status, monitor, alert, notification 
+keywords: cloud backup, bluexp backup and recovery, backup, restore, status, monitor, alert, notification 
 summary: 您可以監控排程的備份工作狀態、或是您已在工作環境中起始和還原工作的狀態。您可以查看已成功完成的工作、目前正在進行的工作、以及失敗的工作、以便診斷和修正問題。您也可以將通知設定為透過電子郵件傳送、如此即使您尚未登入系統、也能得知重要的系統活動。 
 ---
 = 監控備份與還原工作的狀態
@@ -14,7 +14,7 @@ summary: 您可以監控排程的備份工作狀態、或是您已在工作環�
 
 
 [role="lead"]
-您可以監控排程的備份工作狀態、或是您已在工作環境中起始和還原工作的狀態。您可以查看已成功完成的工作、目前正在進行的工作、以及失敗的工作、以便診斷和修正問題。您也可以將通知設定為透過電子郵件傳送、如此即使您尚未登入系統、也能得知重要的系統活動。
+您可以監控您所起始或排程的備份工作狀態、並還原您所起始的工作。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。
 
 
 
@@ -45,12 +45,14 @@ image:screenshot_backup_job_monitor.png["在「工作監控」儀表板中顯示
 +
 此螢幕擷取畫面會顯示預設欄標題。
 
-. 若要顯示其他四欄（工作環境、 SVM 、使用者名稱和工作負載）、請選取 image:button_plus_sign_round.png["加號按鈕"]。
+. 顯示其他欄（工作環境、 SVM 、使用者名稱、工作負載、原則、 和 Snapshot Label ）、請選取 image:button_plus_sign_round.png["加號按鈕"]。
 
 
 
 
 === 搜尋並篩選工作清單
+
+您可以使用多個篩選器（例如備份原則和 Snapshot 標籤）來篩選「工作監控」頁面上的作業。
 
 根據預設、「工作監控」頁面會顯示過去24小時內的工作。
 
@@ -123,6 +125,22 @@ image:screenshot_backup_job_monitor_details2.png["顯示備份工作詳細資料
 
 
 
+== 檢閱備份生命週期工作
+
+監控備份生命週期流程、有助於確保稽核完整性、責任歸屬及備份安全。為了協助您追蹤備份生命週期、您可能想要識別所有備份複本的到期日。
+
+備份生命週期工作會追蹤所有已刪除的快照複本或要刪除的佇列中的快照複本。從 ONTAP 9.13 開始、您可以在「工作監控」頁面上查看所有稱為「備份生命週期」的工作類型。
+
+「備份生命週期」工作類型會擷取在受 BlueXP 備份與還原保護的磁碟區上啟動的所有快照刪除工作。
+
+.步驟
+. 選取 * 工作監控 * 標籤。
+. 選取 * 進階搜尋與篩選 * 區域以開啟「搜尋」面板。
+. 選取「備份生命週期」工作類型。
+
+
+
+
 == 檢閱 BlueXP 通知中心的備份與還原警示
 
 BlueXP 通知中心會追蹤您已啟動的備份和還原工作進度、以便您確認作業是否成功。
@@ -143,6 +161,11 @@ BlueXP 通知中心會追蹤您已啟動的備份和還原工作進度、以便�
 
  a| 
 工作環境中的備份啟動失敗
+| 關鍵 
+
+
+ a| 
+未建立備份檔案、因為 Snapshot 原則標籤不相符
 | 關鍵 
 
 
@@ -179,3 +202,11 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html
 . 選取（image:icon_bell.png["通知鈴聲"]）。
 . 檢閱通知。
 
+
+
+
+== 檢閱 BlueXP 時間表中的作業活動
+
+您可以在 BlueXP 時間表中檢視備份與還原作業的詳細資料、以供進一步調查。BlueXP 時間表提供每個事件的詳細資料、無論是使用者啟動或系統啟動、並顯示在 UI 或透過 API 啟動的動作。
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["瞭解時間表與通知中心之間的差異"^]。

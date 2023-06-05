@@ -174,7 +174,7 @@ S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支
 
 === 建立或切換連接器
 
-將資料備份StorageGRID 到不支援的地方時、內部環境中必須有連接器。您可能需要安裝新的 Connector 、或確定目前選取的 Connector 位於內部部署。連接器可安裝在有或沒有網際網路存取的站台上。
+將資料備份至 StorageGRID 時、您的內部環境必須有 BlueXP Connector 。您可能需要安裝新的 Connector 、或確定目前選取的 Connector 位於內部部署。連接器可安裝在有或沒有網際網路存取的站台上。
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["深入瞭解連接器"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["在可存取網際網路的Linux主機上安裝Connector"^]
@@ -183,24 +183,22 @@ S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支
 
 
 
-NOTE: BlueXP 備份與還原功能內建於 BlueXP Connector 中。安裝在沒有網際網路連線的站台時、您需要定期更新Connector軟體、才能存取新功能。請檢查 link:whats-new.html["BlueXP 備份與還原新功能"] 若要查看每個 BlueXP 備份與還原版本中的新功能、您可以依照步驟執行 https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["升級Connector軟體"^] 當您想要使用新功能時。
 
-強烈建議您在沒有網際網路連線的站台中安裝 Connector 時、定期建立 BlueXP 備份與還原組態資料的本機備份。 link:reference-backup-cbs-db-in-dark-site.html["瞭解如何在黑暗的網站中備份 BlueXP 備份與還原資料"^]。
+==== 連接器網路需求
 
+確保安裝 Connector 的網路啟用下列連線：
 
-
-=== 為連接器準備網路
-
-確認連接器具備所需的網路連線。
-
-.步驟
-. 確保安裝 Connector 的網路啟用下列連線：
-+
-** 透過連接埠443連線至StorageGRID 「支援不支援的閘道節點」的HTTPS連線
-** 透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線
-** 透過連接埠 443 到 BlueXP 備份與還原的輸出網際網路連線（當 Connector 安裝在「暗」站台時、不需要）
+* 透過連接埠443連線至StorageGRID 「支援不支援的閘道節點」的HTTPS連線
+* 透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線
+* 透過連接埠 443 到 BlueXP 備份與還原的輸出網際網路連線（當 Connector 安裝在「暗」站台時、不需要）
 
 
+
+
+==== 私有模式（暗網站）考量
+
+* BlueXP 備份與還原功能內建於 BlueXP Connector 中。以私有模式安裝時、您必須定期更新 Connector 軟體、才能存取新功能。請檢查 link:whats-new.html["BlueXP 備份與還原新功能"] 查看每個 BlueXP 備份與還原版本的新功能。若要使用新功能、請依照步驟執行 https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["升級Connector軟體"^]。
+* 在 SaaS 環境中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到雲端。在無法存取網際網路的站台中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 儲存區。如果您的私有模式站台發生 Connector 故障、您可以 link:reference-backup-cbs-db-in-dark-site.html["將 BlueXP 備份與還原資料還原至新的 Connector"^]。
 
 
 
@@ -265,7 +263,7 @@ TIP: 將檔案備份StorageGRID 到還原時、不支援PAYGO授權。
 
 
 
-== 啟用 BlueXP 備份與還原至 StorageGRID
+== 啟用 BlueXP 備份與還原
 
 隨時直接從內部部署工作環境啟用 BlueXP 備份與還原。
 

@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database 
-summary: 在無法存取網際網路的站台中使用 BlueXP 備份與還原時、如果 BlueXP Connector 主機系統發生問題、您將會想要定期備份關鍵 BlueXP 備份與還原檔案。這可讓您部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。 
+summary: 在無法存取網際網路的站台（稱為「私有模式」）中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 儲存庫中。如果您未來的 BlueXP Connector 主機系統發生問題、您可以部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。 
 ---
-= 在黑暗的站台中備份及還原 BlueXP 備份與還原資料
+= 在黑暗的站台中還原 BlueXP 備份與還原資料
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,74 +14,20 @@ summary: 在無法存取網際網路的站台中使用 BlueXP 備份與還原時
 
 
 [role="lead"]
-在無法存取網際網路的站台中使用 BlueXP 備份與還原時、如果 BlueXP Connector 主機系統發生問題、您將會想要定期備份關鍵 BlueXP 備份與還原檔案。這可讓您部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。
+在無法存取網際網路的站台（稱為「私有模式」或「暗點」）中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 儲存庫中。如果您未來的 BlueXP Connector 主機系統發生問題、您可以部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。
 
-當您在部署 BlueXP Connector 的 SaaS 環境中使用 BlueXP 備份與還原時、請將 BlueXP Connector 部署在您的雲端供應商、或是部署在您擁有網際網路存取權的主機系統上、所有重要的 BlueXP 備份與還原組態資料都會備份並儲存在雲端中。當您在無法存取網際網路的站台（稱為「受限模式」或「暗點」）中使用 BlueXP 備份與還原時、此 BlueXP 備份與還原資訊只會儲存在本機 Connector 系統上。
+請注意、當您在雲端供應商部署 BlueXP Connector 的 SaaS 環境中使用 BlueXP 備份與還原、或是在擁有網際網路存取權的主機系統上使用時、所有重要的 BlueXP 備份與還原組態資料都會在雲端中備份與保護。如果您對 Connector 有任何問題、只要建立新的 Connector 並新增工作環境、備份詳細資料就會自動還原。
 
-我們將說明如何將關鍵 BlueXP 備份與還原資料備份至您的連線 StorageGRID 系統、以及如何在必要時將資料還原至新的 Connector 。
+備份的資料有兩種類型：
 
-
-
-== 備份關鍵 BlueXP 備份與還原資料
-
-您需要備份兩種類型的資料：
-
-* BlueXP 備份與還原資料庫
-* 索引目錄檔案（用於搜尋與還原功能）
+* BlueXP 備份與還原資料庫：包含所有磁碟區、備份檔案、備份原則及組態資訊的清單。
+* 索引型錄檔案 - 包含用於搜尋與還原功能的詳細索引、可讓您在尋找要還原的 Volume 資料時、快速又有效率地進行搜尋。
 
 
-
-NOTE: 您應該計畫定期備份此 BlueXP 備份與還原資料、以便永遠能夠存取最新的資料。
-
-請注意、 BlueXP 備份與還原資料庫或索引型錄檔案中從未包含任何 Volume 資料。
+此資料每天午夜備份一次、每個檔案最多保留 7 份複本。如果 Connector 正在管理多個內部部署 ONTAP 工作環境、則 BlueXP 備份與還原檔案將位於最先啟動的工作環境中的工作環境中。
 
 
-
-=== 備份 BlueXP 備份與還原資料庫
-
-BlueXP 備份與還原資料庫包含所有磁碟區、備份檔案、備份原則及組態資訊的清單。
-
-.步驟
-. 使用適當的認證資料登入Connector主機系統。
-. 輸入下列命令、輸入MySQL Container Shell：
-+
-[source, cli]
-----
-docker exec -it ds_mysql_1 sh
-----
-. 在Container Shell中、部署「env」。
-. 您需要MySQL資料庫密碼、因此請複製「MySQL_root_password」金鑰的值。
-. 輸入下列命令、備份 BlueXP 備份與還原 MySQL DB ：
-+
-[source, cli]
-----
-mysqldump --user root --password -p cloud_backup --result-file=mysql.dump.cloud_backup.sql
-----
-. 輸入下列命令、從MySQL Docker容器複製MySQL DB備份：
-+
-[source, cli]
-----
-docker cp ds_mysql_1:/mysql.dump.cloud_backup.sql .
-----
-. 將備份複製到網路中的安全位置。如果您要建立一個本地的不全區的還原磁碟區備份到該位置、就可以使用該StorageGRID 系統ONTAP 。
-
-
-
-
-=== 備份索引型錄檔案
-
-索引目錄用於搜尋與還原功能。其中包含每個磁碟區和每個備份檔案的相關資訊、可讓您在尋找想要還原的磁碟區資料時、快速又有效率地進行搜尋。
-
-. 在 Connector 主機系統上、將目錄變更為「 /opt/application/NetApp/CBS 」。
-. 找到索引目錄資料夾。它以字串*型錄*開頭。
-. 輸入下列命令、壓縮「catalog（型錄）<_xxxxxx_>」資料夾：
-+
-[source, cli]
-----
-zip -r catalogxxxxxx.zip catalogxxxxxx
-----
-. 將壓縮備份複製到網路中的安全位置。
-
+TIP: BlueXP 備份與還原資料庫或索引型錄檔案中從未包含任何 Volume 資料。
 
 
 
@@ -99,6 +45,19 @@ zip -r catalogxxxxxx.zip catalogxxxxxx
 
 一旦您確認系統恢復正常運作、建議您建立新的備份檔案。
 
+.您需要的產品
+您需要從儲存備份檔案的 StorageGRID 儲存庫中存取最新的資料庫和索引備份：
+
+* BlueXP 備份與還原 MySQL 資料庫檔案
++
+此檔案位於貯體中的下列位置 `netapp-backup-<GUID>/mysql_backup/`，其名稱為 `CBS_DB_Backup_<day>_<month>_<year>.sql`。
+
+* 索引型錄備份 zip 檔案
++
+此檔案位於貯體中的下列位置 `netapp-backup-<GUID>/catalog_backup/`，其名稱為 `Indexed_Catalog_DB_Backup_<db_name>_<day>_<month>_<year>.zip`。
+
+
+
 
 
 === 在新的內部部署Linux主機上安裝新的Connector
@@ -113,12 +72,12 @@ zip -r catalogxxxxxx.zip catalogxxxxxx
 
 === 還原 BlueXP 備份與還原資料庫
 
-. 將MySQL備份從安全位置複製到新的Connector主機。
+. 將 MySQL 備份從備份位置複製到新的 Connector 主機。我們將使用下方的範例檔案名稱「 CBS_DB_Backup_23_05_2023.SQL 」。
 . 使用下列命令、將備份複製到MySQL Docker容器中：
 +
 [source, cli]
 ----
-docker cp mysql.dump.cloud_backup.sql ds_mysql_1:/.
+docker cp CBS_DB_Backup_23_05_2023.sql ds_mysql_1:/.
 ----
 . 使用下列命令輸入MySQL Container Shell：
 +
@@ -132,13 +91,13 @@ docker exec -it ds_mysql_1 sh
 +
 [source, cli]
 ----
-mysql -u root -p cloud_backup < mysql.dump.cloud_backup.sql
+mysql -u root -p cloud_backup < CBS_DB_Backup_23_05_2023.sql
 ----
 . 使用下列 SQL 命令、確認 BlueXP 備份與還原 MySQL DB 已正確還原：
 +
 [source, cli]
 ----
-# mysql -u root -p cloud_backup
+mysql -u root -p cloud_backup
 ----
 +
 輸入密碼。
@@ -158,14 +117,14 @@ mysql> select * from volume;
 
 === 還原索引型目錄檔案
 
-. 將 Indexed Catalog 備份 zip 檔案從安全位置複製到「 /opt/application/NetApp/CBS 」資料夾中的新 Connector 主機。
-. 使用下列命令解壓縮「catalogxxxxxx.zip」檔案：
+. 將 Indexed Catalog 備份 zip 檔案（我們會使用範例檔案名稱「 Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip 」）從備份位置複製到「 /opt/application/NetApp/CBS 」資料夾中的新 Connector 主機。
+. 使用下列命令解壓縮「 Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip 」檔案：
 +
 [source, cli]
 ----
-unzip catalogxxxxxx.zip
+unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 ----
-. 執行* ls-*命令、確認已建立資料夾「catalogxxxxxx」、並在其下方加入子資料夾「變更」和「快照」。
+. 執行 *ls* 命令、確定已建立資料夾「 catalogdb1 」、其下方有子資料夾「變更」和「快照」。
 
 
 

@@ -34,6 +34,10 @@ sidebar:
       url: "/concept-backup-to-cloud.html"
     - title: 設定授權
       url: "/task-licensing-cloud-backup.html"
+  - title: 監控資料保護
+    entries:
+    - title: 報告資料保護涵蓋範圍
+      url: "/task-report-inventory.html"
     - title: 監控備份與還原工作的狀態
       url: "/task-monitor-backup-jobs.html"
   - title: 備份及還原ONTAP 資料
@@ -199,7 +203,7 @@ sidebar:
     - title: 在Azure中設定多帳戶存取的備份
       flavor: azure
       url: "/reference-backup-multi-account-azure.html"
-    - title: 在黑暗的站台中備份 BlueXP 備份與還原資料庫
+    - title: 在黑暗的站台中還原 BlueXP 備份與還原資料庫
       url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: 重新啟動 BlueXP 備份與還原
       url: "/reference-restart-backup.html"

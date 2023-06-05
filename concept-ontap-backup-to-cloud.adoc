@@ -440,7 +440,7 @@ endif::gcp[]
 
 
 * FlexGroup Volume 備份無法移至歸檔儲存設備。
-* FlexGroup Volume 備份無法使用 DataLock 和勒索軟體保護。
+* 如果叢集執行的是 ONTAP 9.13.1 或更新版本、 FlexGroup Volume 備份可以使用 DataLock 和勒索軟體保護。
 * SVM-DR磁碟區備份受到下列限制的支援：
 +
 ** 備份僅支援ONTAP 來自於不支援的支援。
