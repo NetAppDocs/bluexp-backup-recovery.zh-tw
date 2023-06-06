@@ -32,7 +32,7 @@ NOTE: 「工作監控」記錄中會監控報告活動、以便您稽核所有�
 BlueXP 備份與還原報告提供下列各方面的資訊：
 
 * * 連接器位置 * ：內部部署或雲端
-* * 資料來源 * ： Cloud Volumes ONTAP 、內部部署、應用程式或 Kubernetes
+* * 來源 * ： Cloud Volumes ONTAP Volume 、內部部署 ONTAP Volume 、應用程式或 Kubernetes 持續磁碟區
 * * 目的地 * ：任何雲端供應商、 NetApp StorageGRID 或 ONTAP S3
 * * ONTAP 版本 * ： 9.13.0
 

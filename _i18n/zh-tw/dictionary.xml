@@ -1138,37 +1138,26 @@
   <block id="7effdaab63f2a455255267b1c45a602d" category="section-title">在帳戶之間設定vnet對等關係</block>
   <block id="7be5dff9f26dd0cfb7e5896d6142d4c7" category="list-text">登入Azure入口網站、然後從家中選取「Virtual Networks（虛擬網路）」。</block>
   <block id="24d6ea8c256f982be40d4e8e87a36c2c" category="list-text">選取您要作為訂閱1使用的訂閱、然後按一下要設定對等的vnet。</block>
-  <block id="010f020ec46dae654334c56b074681e9" category="paragraph"><block ref="010f020ec46dae654334c56b074681e9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ff903d724a3c43c1027ecc76bb702e6b" category="list-text">選取「* cbsnetwork*」、然後從左側面板按一下「*服務*」、再按一下「*新增*」。</block>
-  <block id="48f2a3e5416499a845b82d79729c9d24" category="paragraph"><block ref="48f2a3e5416499a845b82d79729c9d24" category="inline-image-macro-rx" type="image"></block></block>
   <block id="29352d6eba72ea7dbb14542cfe329be6" category="list-text">在對等頁面上輸入下列資訊、然後按一下「*新增*」。</block>
   <block id="35a314f287f704bbad5bca1d051178df" category="list-text">此網路的對等連結名稱：您可以指定任何名稱來識別對等連線。</block>
   <block id="23a50db2830b340ce45406a69594314e" category="list-text">遠端虛擬網路對等連結名稱：輸入名稱以識別遠端Vnet。</block>
   <block id="23251ed1ab3cfb08802622b5c2f690d3" category="list-text">將所有選取項目保留為預設值。</block>
   <block id="f6158ca7f18c6d458f457bd8d96c59b3" category="list-text">在「訂購」下、選取「訂購2」。</block>
   <block id="4949fa102af5d259068b046bbcf72842" category="list-text">虛擬網路、請在訂購2中選取您要設定對等的虛擬網路。</block>
-  <block id="25e65bc02464ec916d34bab534d7035e" category="paragraph"><block ref="25e65bc02464ec916d34bab534d7035e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1995f9fb02d5dc1ec670c575158c4755" category="list-text">在訂購2 vnet中執行相同步驟、並指定訂購1的訂閱和遠端vnet詳細資料。</block>
-  <block id="70ad9b34a75d793ad5ca4592ae835d9e" category="paragraph"><block ref="70ad9b34a75d793ad5ca4592ae835d9e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="51578c8638d5ef3ad9f76229b740c313" category="paragraph">系統會新增對等設定。</block>
-  <block id="daacd9916a3d67dff4ea461056675145" category="paragraph"><block ref="daacd9916a3d67dff4ea461056675145" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2aa38dadb98b1cc114f5605565fc8460" category="section-title">為儲存帳戶建立私有端點</block>
   <block id="65f2f7b74f3cf2f1a25c4c81a6aaa2ee" category="paragraph">現在您需要為儲存帳戶建立私有端點。在此範例中、儲存帳戶是在訂閱1中建立、Cloud Volumes ONTAP 而該系統正在訂閱2中執行。</block>
   <block id="720247e8961069a5c025366867b8b8fb" category="admonition">您需要網路參與者權限才能執行下列動作。</block>
-  <block id="1da2c465a0473c669ecf45690f9c77f8" category="list-text">前往儲存帳戶&gt;網路&gt;私有端點連線、然後按一下*+私有端點*。</block>
-  <block id="ab018e3a2da472dd06615e08149c8ae2" category="paragraph"><block ref="ab018e3a2da472dd06615e08149c8ae2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2e0fccb2492335abb1bf03e7895e57b1" category="list-text">在Private Endpoint _Basics頁面：</block>
   <block id="dcf7853e5720d1d4006d6354680dfca5" category="list-text">輸入端點名稱。</block>
   <block id="8632ba911e67cd674d7aa46e9c33ca03" category="list-text">選取區域。</block>
-  <block id="8de80de63c22bf5501105fe1221042c7" category="paragraph"><block ref="8de80de63c22bf5501105fe1221042c7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="86429c7405c9ff23bac7996b6cc76306" category="list-text">在「資源_」頁面中、選取「目標子資源」做為* blob*。</block>
-  <block id="78ce42b66c723160afef603d60cfbd83" category="paragraph"><block ref="78ce42b66c723160afef603d60cfbd83" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4f45f5d0c19691a0eac82881ce091080" category="list-text">在「組態」頁面中：</block>
   <block id="e17a8b8467cfbf9720f1af51cc6f6419" category="list-text">選取虛擬網路和子網路。</block>
   <block id="a9faeeb34299d046e7a14a5d1df3950a" category="list-text">按一下「*是*」選項按鈕以「與私有DNS區域整合」。</block>
-  <block id="cec5fb61420f116b9d3e7afb6183499d" category="paragraph"><block ref="cec5fb61420f116b9d3e7afb6183499d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="872d4b2a2e61a2a07fc61a362e17881d" category="list-text">在「私有DNS區域」清單中、確定已從正確的「區域」選取「私有區域」、然後按一下「*檢閱+建立*」。</block>
-  <block id="865c712e84080e3a8a2a2e9f3ced5e13" category="paragraph"><block ref="865c712e84080e3a8a2a2e9f3ced5e13" category="inline-image-macro-rx" type="image"></block></block>
   <block id="547e2a5eac8fbdbb2c8f7a56f61c8cbe" category="paragraph">現在儲存帳戶（訂閱1）可以存取Cloud Volumes ONTAP 以訂閱2執行的作業系統。</block>
   <block id="5203ff4556ed5037a1fa6c4dbbdecaa2" category="list-text">在不同的AWS帳戶中建立備份所需的設定</block>
   <block id="89a08cbf2161e1e600bebd7775c52152" category="paragraph">下圖顯示*公用連線*方法、以及元件之間需要準備的連線。您可以使用已安裝在內部部署中的Connector、或是已部署在Azure vnet中的Connector。</block>
@@ -1291,9 +1280,6 @@
   <block id="ad3ed17097701c874fe6d082544e8ccb" category="list-text">按一下「* Volumes（* Volume）」索引標籤、即可檢視Cloud Volumes ONTAP 已備份的for the S還原 與內部部署ONTAP 的系統Volume清單。</block>
   <block id="f50c680c14d8afac3d005a6dee0819cd" category="list-text">在「備份設定」頁面中、按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 針對您要變更原則設定的工作環境、選取*管理原則*。</block>
   <block id="9c230c0e21c24d1d4e90c857d5894cbf" category="list-text">在「管理原則」頁面中、按一下「*編輯*」以取得您要在該工作環境中變更的備份原則。</block>
-  <block id="41b3017e09c02234f784bce8cad145cc" category="paragraph">附註：您可以按一下 <block ref="6be018d461f0945956e868c034bab91d" category="inline-image-macro-rx" type="image"></block> 以檢視原則的完整詳細資料。</block>
-  <block id="9f02efef52b11198bc6f5331a1f0845b" category="list-text">在「編輯原則」頁面中、按一下 <block ref="6be018d461f0945956e868c034bab91d" category="inline-image-macro-rx" type="image"></block> 若要展開「_標籤與保留_」區段以變更排程及/或備份保留、請按一下「*儲存*」。</block>
-  <block id="d664f6c85ff8f12dd3e11609510142dc" category="list-text">在「新增原則」頁面中、按一下 <block ref="6be018d461f0945956e868c034bab91d" category="inline-image-macro-rx" type="image"></block> 若要展開「_標籤與保留_」區段以定義排程與備份保留、然後按一下「*儲存*」。</block>
   <block id="6ee3062ac668cf28f71bf489fd741bcd" category="inline-link-macro">深入瞭解DataLock和勒索軟體保護</block>
   <block id="57cb86318c67c4a35e81edad7ab08d71" category="paragraph">請注意、建立ad -ad hocent備份時、會在來源磁碟區上建立Snapshot。由於此Snapshot並非正常Snapshot排程的一部分、因此不會關閉。備份完成後、您可能想要從來源Volume手動刪除此Snapshot。如此一來、就能釋出與此Snapshot相關的區塊。Snapshot的名稱將以「CBS快照-adhoc-」開頭。<block ref="7e565776b86561f26a3208af24c76dc9" category="inline-link-rx"></block>。</block>
   <block id="66f850eb747f4dcaaf562e34ad616b77" category="section-title">在Volume備份上執行勒索軟體掃描</block>
@@ -3260,7 +3246,6 @@
   <block id="8c77f5d3d64f827c40ceefa4640053e2" category="paragraph"><block ref="8c77f5d3d64f827c40ceefa4640053e2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7ef4f9c84de50739290a8a747d41cb8d" category="paragraph"><block ref="7ef4f9c84de50739290a8a747d41cb8d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c73a012d76ee166592a25a8ebd3e01ef" category="summary">BlueXP 備份與還原可讓您在 Azure 帳戶中建立不同於來源 Cloud Volumes ONTAP 磁碟區所在位置、與 BlueXP Connector 所在帳戶不同的備份檔案。</block>
-  <block id="47528e7beca17f8cf55f4a42e05d76e4" category="paragraph">BlueXP 備份與還原可讓您在 Azure 帳戶中建立不同於來源 Cloud Volumes ONTAP 磁碟區所在位置的備份檔案。這兩個帳戶可能不同於BlueXP Connector所在的帳戶。</block>
   <block id="4bd946b57d99bd5b3f564041e093db5c" category="list-text">請在 Cloud Volumes ONTAP 系統上重試啟用 BlueXP 備份與還原、這次應該會成功。</block>
   <block id="771af8d455877d836933c4cd418d328e" category="summary">您可以變更許多叢集層級的備份設定、這些設定是在為每個 ONTAP 系統啟動 BlueXP 備份與還原時所設定的。您也可以修改某些套用為「預設」備份設定的設定。這包括變更儲存金鑰、將備份傳輸至物件儲存設備的速度、是否將歷史Snapshot複本匯出為備份檔案等。</block>
   <block id="bc9c577416d12a6ca412691275080bbc" category="paragraph">當您為工作環境啟動 BlueXP 備份與還原時、根據預設、 ONTAP 可以使用無限量的頻寬、將備份資料從工作環境中的磁碟區傳輸至物件儲存區。如果您注意到備份流量會影響一般使用者工作負載、您可以限制傳輸期間所使用的網路頻寬量。您可以選擇1到1、000 Mbps之間的值作為最大傳輸率。</block>
@@ -3786,7 +3771,6 @@
   <block id="b9388c240794b8c3c4269e032a040c26" category="section-title">報告範圍</block>
   <block id="d4e9fdb94405dbff49a3feb26599c37d" category="paragraph">BlueXP 備份與還原報告提供下列各方面的資訊：</block>
   <block id="3836890870b8ddc941f0e578f70711aa" category="list-text">* 連接器位置 * ：內部部署或雲端</block>
-  <block id="6ae02a56712ac674d3b26dbbcb432186" category="list-text">* 資料來源 * ： Cloud Volumes ONTAP 、內部部署、應用程式或 Kubernetes</block>
   <block id="dd4543716a6056c2ae27a8132114fdf7" category="list-text">* 目的地 * ：任何雲端供應商、 NetApp StorageGRID 或 ONTAP S3</block>
   <block id="e692b7fe3cb28b404bc6ca3af827d329" category="list-text">* ONTAP 版本 * ： 9.13.0</block>
   <block id="cb43048793076d3b50ea5dc6ba1e276c" category="section-title">建立備份庫存報告</block>
@@ -3864,4 +3848,36 @@
   <block id="e3bc6d35311568d55f1c8ea11984b964" category="paragraph">這些 NSS 認證會與您的特定 BlueXP 帳戶 ID 相關聯。屬於BlueXP帳戶的使用者可以從*支援&gt; nss管理*存取這些認證資料。</block>
   <block id="f1d083b91d676646b3b9c05e92adeceb" category="sidebar">監控資料保護</block>
   <block id="7b3531405cf0ef11d1ff0b6e4af62659" category="sidebar">在黑暗的站台中還原 BlueXP 備份與還原資料庫</block>
+  <block id="444a8054fb02fac3bf777cf53bfc46a2" category="paragraph">請注意、備份與還原支援 _Azure 存取原則 _ 做為權限模型。目前不支援 _Azure 角色型存取控制 _ （ Azure RBAC ）權限模式。</block>
+  <block id="f101fabb54ec4d8b174645abe2ebf725" category="paragraph">BlueXP 備份與還原可讓您在 Azure 帳戶中建立不同於來源 Cloud Volumes ONTAP 磁碟區所在位置的備份檔案。這兩個帳戶可能不同於 BlueXP Connector 所在的帳戶。</block>
+  <block id="07d34410905760bde20fdb63ed31144f" category="inline-image-macro">選取訂閱 1 和要設定對等關係的 vnet 的螢幕擷取畫面。</block>
+  <block id="fb1dc02cd132935f4053af66afc48c60" category="paragraph"><block ref="fb1dc02cd132935f4053af66afc48c60" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="83e915c6e7e7062c9cd8608b5e3f2a01" category="inline-image-macro">為訂閱新增 vnet 對等項的螢幕擷取畫面 1 。</block>
+  <block id="dc5db5eb0a0b4ec35420ffab93b73ace" category="paragraph"><block ref="dc5db5eb0a0b4ec35420ffab93b73ace" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="709eb5d0485c10464b3571c76182a410" category="inline-image-macro">選取訂閱 2 和要設定對等關係的 vnet 的螢幕擷取畫面。</block>
+  <block id="a00f2c9eab0cd0391c31d7894688a92e" category="paragraph"><block ref="a00f2c9eab0cd0391c31d7894688a92e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="79520a9e99311190ee909e9f8d5dd60c" category="inline-image-macro">為訂閱新增 vnet 對等項的螢幕擷取畫面 2.</block>
+  <block id="17939e4b4a2986d200c88aae6366e213" category="paragraph"><block ref="17939e4b4a2986d200c88aae6366e213" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="707727b212e0d31a584b632b8cd67ff6" category="inline-image-macro">顯示對等組態結果的螢幕擷取畫面。</block>
+  <block id="5a085bdfc0e83ffb98f87e8ff91cad9d" category="paragraph"><block ref="5a085bdfc0e83ffb98f87e8ff91cad9d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f5795d526ae72abf715b69fcc042d544" category="list-text">移至儲存帳戶 &gt; 網路 &gt; 私有端點連線、然後按一下 *+ 私有端點 * 。</block>
+  <block id="f254275661fff420bcb804a971000888" category="inline-image-macro">開啟儲存帳戶的私有端點組態的螢幕快照。</block>
+  <block id="1e5251a20d1487ab70b1904135f48e64" category="paragraph"><block ref="1e5251a20d1487ab70b1904135f48e64" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ccdcc6bc4b20620f4a75b50e38f7dbd2" category="inline-image-macro">顯示「私有端點基礎知識」頁面詳細資料的螢幕擷取畫面。</block>
+  <block id="ea692baa5211d33eb5ba3eaf981083c9" category="paragraph"><block ref="ea692baa5211d33eb5ba3eaf981083c9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="18dc15061e7476362b8ef290cd96ae03" category="inline-image-macro">顯示「私有端點資源」頁面詳細資料的螢幕擷取畫面。</block>
+  <block id="6d05ebaf7d4c763d545c7818e77f7daa" category="paragraph"><block ref="6d05ebaf7d4c763d545c7818e77f7daa" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c1dfe7d36721bb06cc5b4caa70a9a99d" category="inline-image-macro">顯示「私有端點組態」頁面詳細資料的螢幕擷取畫面。</block>
+  <block id="727ec019e03973afc5f16b2144de9e80" category="paragraph"><block ref="727ec019e03973afc5f16b2144de9e80" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fd1f1bbf131c989b07443ab96601cbbe" category="inline-image-macro">螢幕擷取畫面顯示「私有端點組態」頁面中的私有區域選擇。</block>
+  <block id="fe5eb2266351d487097e58cd93818ab8" category="paragraph"><block ref="fe5eb2266351d487097e58cd93818ab8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e5d5b752cdb14505ba3ec9b2bd2be013" category="section-title">不相符原則標籤的額外通知警示</block>
+  <block id="92c58fc811dad1461929803e5f5d9205" category="paragraph">新增了備份警示：「 Snapshot 原則標籤不相符、因此未建立備份檔案」。如果備份原則中定義的 _label_ 在 Snapshot 原則中沒有相符的 _label_ 、則不會建立備份檔案。您需要使用系統管理員或 ONTAP CLI 、將遺失的標籤新增至 Volume Snapshot 原則。</block>
+  <block id="809c5429fbc9708f2c659ca056b2c098" category="paragraph"><block ref="1fa18ad5aa31d9e300f41aa2d9a59bdd" category="inline-link-rx"></block>。</block>
+  <block id="4dfad254c5822c7c53407757d42fec0e" category="list-text">* 來源 * ： Cloud Volumes ONTAP Volume 、內部部署 ONTAP Volume 、應用程式或 Kubernetes 持續磁碟區</block>
+  <block id="0231cb971bb3375c29d3f87768ec4489" category="inline-image-macro">向下箭號按鈕</block>
+  <block id="a4b9e2d363f6ae41eb2ce095cefe91de" category="paragraph">附註：您可以按一下 <block ref="68009ec8a10651d6de3d648624efb837" category="inline-image-macro-rx" type="image"></block> 以檢視原則的完整詳細資料。</block>
+  <block id="ba85eaabcb89510a63df45c18680ba9a" category="list-text">在「編輯原則」頁面中、按一下 <block ref="68009ec8a10651d6de3d648624efb837" category="inline-image-macro-rx" type="image"></block> 若要展開「_標籤與保留_」區段以變更排程及/或備份保留、請按一下「*儲存*」。</block>
+  <block id="aafc4372a2c5748961cfe050c997ca42" category="list-text">在「新增原則」頁面中、按一下 <block ref="68009ec8a10651d6de3d648624efb837" category="inline-image-macro-rx" type="image"></block> 若要展開「_標籤與保留_」區段以定義排程與備份保留、然後按一下「*儲存*」。</block>
+  <block id="27b14a69b7d1dfde3096980cc202af91" category="sidebar">建立資料保護涵蓋範圍的報告</block>
 </blocks>

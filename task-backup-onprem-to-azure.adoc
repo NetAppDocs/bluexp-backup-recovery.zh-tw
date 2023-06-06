@@ -280,6 +280,9 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.htm
 === 準備Azure Blob儲存設備進行備份
 
 . 您可以在啟動精靈中使用自己的自訂管理金鑰進行資料加密、而非使用預設的Microsoft管理加密金鑰。在此情況下、您必須擁有Azure訂閱、Key Vault名稱及金鑰。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["瞭解如何使用您自己的金鑰"^]。
++
+請注意、備份與還原支援 _Azure 存取原則 _ 做為權限模型。目前不支援 _Azure 角色型存取控制 _ （ Azure RBAC ）權限模式。
+
 . 如果您想要透過公用網際網路從內部資料中心連線至vnet、可以在啟動精靈中設定Azure私有端點。在這種情況下、您需要知道此連線的vnet和子網路。 https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["如需使用私有端點的詳細資訊、請參閱"^]。
 
 

@@ -180,6 +180,11 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.htm
 --
 在不同Azure訂閱中建立備份所需的設定:: 根據預設、備份會使用與Cloud Volumes ONTAP 您的作業系統相同的訂閱方式建立。如果您想要使用不同的Azure訂閱來進行備份、您必須使用 link:reference-backup-multi-account-azure.html["登入Azure入口網站並連結這兩份訂閱"]。
 使用客戶管理金鑰進行資料加密的必要資訊:: 您可以在啟動精靈中使用自己的客戶管理金鑰進行資料加密、而非使用預設的Microsoft管理加密金鑰。在此情況下、您必須擁有Azure訂閱、Key Vault名稱及金鑰。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["瞭解如何使用您自己的金鑰"^]。
++
+--
+請注意、備份與還原支援 _Azure 存取原則 _ 做為權限模型。目前不支援 _Azure 角色型存取控制 _ （ Azure RBAC ）權限模式。
+
+--
 
 
 
