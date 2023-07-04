@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: task-restore-hana-backup.html 
+keywords: restore, mount application backups, SAP HANA database 
+summary: 您可以將 SAP HANA 資料庫從雲端還原至內部部署的 SnapCenter Server 。 
+---
+= 還原 SAP HANA 資料庫
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以將 SAP HANA 資料庫還原至同一部主機。
+
+*步驟*
+
+. 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
+. 在 * 篩選條件 * 欄位中、選取篩選條件 * 類型 * 、然後從下拉式清單中選取 * HANA * 。
+. 按一下您要還原之資料庫的*檢視詳細資料*、然後按一下*還原*。
+. 在「還原選項」頁面中、指定下列其中一項：
++
+.. 對於 NAS 環境、請指定要將從物件存放區還原的磁碟區匯出至的主機的 FQDN 或 IP 位址。
+.. 對於 SAN 環境、請指定主機的啟動器、將從物件存放區還原的磁碟區 LUN 對應到該主機的啟動器。
+
+
+. 如果快照位於歸檔儲存設備中、請選擇從歸檔儲存設備還原資料的優先順序。
++
+
+NOTE: 只有當您使用 Amazon Web Services 或 Microsoft Azure 作為雲端供應商時、才需要指定優先順序。
+
+. 如果來源儲存空間不足、或來源儲存空間關閉、請選取 * 變更儲存位置 * 。
+. 單擊 * 下一步 * 。
+. 在「儲存設備對應」頁面中、指定儲存物件存放區還原資料的替代儲存位置詳細資料。
+. 單擊 * 下一步 * 。
+. 檢閱詳細資料、然後按一下*還原*。
+
+
+此作業只會匯出指定主機上所選備份的儲存區。您應該手動掛載檔案系統並開啟資料庫。使用磁碟區之後、儲存管理員可以從 ONTAP 叢集刪除磁碟區。
+
+如需如何啟動SAP HANA資料庫的詳細資訊、請參閱： https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html["TR-4667 ：使用 SnapCenter 的 SAP 系統複製工作流程總覽"^] 和 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html["TR-4667 ：使用 SnapCenter 的 SAP 系統複製工作流程總覽"^]。

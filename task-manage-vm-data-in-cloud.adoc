@@ -55,17 +55,34 @@ summary: 您可以檢視資料存放區和虛擬機器、並編輯SnapCenter VMw
 
 
 
-== 重新整理保護狀態
+== 重新整理資源與備份
 
-當新磁碟區新增至資料庫、或是原則或資源群組有變更時、您應該重新整理保護狀態。
+如果您想要檢視已新增至應用程式的最新資料存放區和備份、您應該重新整理資源和備份。如此將會開始探索資源和備份、並顯示最新的詳細資料。
 
 . 按一下*備份與還原*>*虛擬機器*。
 . 從*設定*下拉式清單中、按一下* SnapCenter 適用於VMware vSpher*的「*」「外掛程式」。
-. 按一下 image:icon-action.png["行動"] 對應於 SnapCenter Plug-in for VMware vSphere 主機、然後按一下 * 重新整理 * 。
-+
-新的變更將會被探索到。
+. 按一下 image:icon-action.png["行動"] 對應於 SnapCenter Plug-in for VMware vSphere 主機、然後按一下 * 重新整理資源與備份 * 。
 
-. 按一下 image:icon-action.png["行動"] 對應於資料存放區、然後按一下*重新整理保護*、即可針對變更啟用雲端保護。
+
+
+
+== 重新整理原則或資源群組
+
+如果原則或資源群組有變更、您應該重新整理保護關係。
+
+. 按一下*備份與還原*>*虛擬機器*。
+. 按一下 image:icon-action.png["行動"] 對應至資料存放區、然後按一下 * 重新整理保護 * 。
+
+
+
+
+== 取消註冊 VMware vSphere 主機的 SnapCenter 外掛程式
+
+與 SnapCenter Plug-in for VMware vSphere 主機相關的所有資料存放區和虛擬機器將不受保護。
+
+. 按一下*備份與還原*>*虛擬機器*。
+. 從*設定*下拉式清單中、按一下* SnapCenter 適用於VMware vSpher*的「*」「外掛程式」。
+. 按一下 image:icon-action.png["行動"] 對應於 SnapCenter Plug-in for VMware vSphere 主機、然後按一下 * 取消登錄 * 。
 
 
 

@@ -16,14 +16,18 @@ summary: 建立您自己的原則來保護應用程式。
 [role="lead"]
 您應該建立原則、將應用程式資料備份到雲端。
 
-*開始之前*
+.開始之前
+* 如果您想要將備份從物件存放區移至歸檔儲存區、請確定您使用的是所需的 ONTAP 版本。
++
+** 如果您使用的是 Amazon Web Services 、則應使用 ONTAP 9.10.1 或更新版本
+** 如果您使用的是 Microsoft Azure 、則應該使用 ONTAP 9.10.1 或更新版本
+** 如果您使用的是 Google Cloud 、則應該使用 ONTAP 9.12.1 或更新版本
 
-* 如果您想要將備份從物件儲存區移至歸檔儲存區、請確定您使用 ONTAP 9.10.1 或更新版本、以及 Amazon Web Services 或 Azure 作為雲端供應商。
+
 * 您應該為每個雲端供應商設定歸檔存取層。
 
 
-*步驟*
-
+.步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 從「設定」下拉式清單中、按一下「*原則*」>「*建立原則*」。
 . 在「原則詳細資料」區段中、指定原則名稱。

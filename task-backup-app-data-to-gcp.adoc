@@ -16,8 +16,7 @@ summary: 請完成幾個步驟、將應用程式資料從ONTAP 功能完善的�
 [role="lead"]
 完成幾個步驟、將應用程式資料從 ONTAP 備份到 Google Cloud Platform 。
 
-*步驟*
-
+.步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*啟動備份*。
 . 在「指派原則」頁面中、選取原則、然後按「*下一步*」。
@@ -42,10 +41,14 @@ BlueXP 應用程式備份與還原僅支援叢集管理。
 . 選擇* Google Cloud Platform *作為雲端供應商。
 +
 .. 選取您要在其中建立 Google Cloud Storage 儲存庫以進行備份的 Google Cloud Project 。
-.. 在 Google Cloud Access Key 欄位中、指定資料加密的金鑰。
-.. 在 Google Cloud Secret Key 欄位中、指定資料加密的密碼。
+.. 在Google Cloud存取金鑰欄位中、指定金鑰。
+.. 在Google Cloud Secret Key（Google Cloud機密金鑰）欄位中、指定密碼。
 .. 選取您要建立備份的區域。
 .. 指定IP空間。
+.. 選取歸檔層。
++
+建議您設定歸檔層、因為這是一次性的活動、日後將不允許您設定。
+
 
 
 . 檢閱詳細資料、然後按一下*啟動備份*。

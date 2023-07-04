@@ -23,12 +23,10 @@ summary: 將資料庫複製到來源主機或替代主機。
 * 以恢復錯誤刪除或變更的資料。
 
 
-*開始之前*
-
+.開始之前
 您應該瞭解複製概念、並確保符合所有需求。 link:concept-clone-cloud-native-oracle-concepts.html["深入瞭解"]。
 
-*步驟*
-
+.步驟
 . 按一下 image:icon-action.png["圖示以選取動作"] 與您要複製的資料庫相對應、然後按一下「*檢視詳細資料*」。
 . 按一下 image:icon-action.png["圖示以選取動作"] 對應於資料備份、然後按一下* Clone（複製）*。
 . 在「Clone Details」（複製詳細資料）頁面中、選取其中一個複製選項。

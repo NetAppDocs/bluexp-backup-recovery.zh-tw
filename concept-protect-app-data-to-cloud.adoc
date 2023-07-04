@@ -32,22 +32,29 @@ BlueXP 應用程式備份與還原可為應用程式提供資料保護功能、�
 
 * 部分9.8或更新版本ONTAP
 * 藍圖
-* 如果您想要使用下列功能、應該使用不含更新版本的伺服器4.7：SnapCenter SnapCenter
+* SnapCenter Server 4.6 或更新版本
 +
-** 保護備份不受內部部署次要儲存設備的影響
-** 保護 SAP HANA 應用程式
-** 保護 VMware 環境中的 Oracle 和 SQL 應用程式
-** 掛載備份
-** 停用備份
-** 取消登SnapCenter 錄伺服器
+** 如果您要使用下列功能、則應該使用 SnapCenter Server 4.7 或更新版本：
++
+*** 保護備份不受內部部署次要儲存設備的影響
+*** 保護 SAP HANA 應用程式
+*** 保護 VMware 環境中的 Oracle 和 SQL 應用程式
+*** 備份的儲存匯出
+*** 停用備份
+*** 取消登SnapCenter 錄伺服器
+
+
+** 如果您要使用下列功能、則應該使用 SnapCenter Server 4.9 ：
++
+*** 掛載 Oracle 資料庫備份
+*** 還原至替代儲存設備
+
+
 
 
 * 每個應用程式至少應有一個備份可供SnapCenter 使用於此伺服器
 * 在 SnapCenter 中至少有一項每日、每週或每月政策、沒有與 BlueXP 中原則的標籤或相同標籤。
 
-
-
-NOTE: 如果使用 FQDN 或 IP 位址將 SVM 新增至 SnapCenter 、則無法保護在這些 SVM 上執行的應用程式。應用程式的 BlueXP 備份與還原只能識別以名稱新增的 SVM 、或是 SnapCenter 探索到的 SVM 、這些 VM 是新增為 ONTAP 叢集的一部分。
 
 下圖顯示備份至雲端時的每個元件、以及您需要在它們之間準備的連線：
 

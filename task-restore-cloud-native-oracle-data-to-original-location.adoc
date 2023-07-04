@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task-restore-cloud-native-oracle-data.html 
-keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
-summary: 還原資料檔案、控制檔或兩者、然後還原資料庫。 
+permalink: task-restore-cloud-native-oracle-data-to-original-location.html 
+keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle, original location 
+summary: 將資料檔案、控制檔或兩者還原至原始位置、然後恢復資料庫。 
 ---
-= 還原雲端原生 Oracle 資料庫
+= 將雲端原生 Oracle 資料庫還原至原始位置
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,13 @@ summary: 還原資料檔案、控制檔或兩者、然後還原資料庫。
 
 
 [role="lead"]
-在資料遺失的情況下、您可以還原資料檔案、控制檔或兩者、然後還原資料庫。
+萬一資料遺失、您可以將資料檔案、控制檔或兩者還原至原始位置、然後恢復資料庫。
 
-*開始之前*
-
+.開始之前
 如果Oracle 21c資料庫處於「已啟動」狀態、還原作業將會失敗。您應該執行下列命令、以成功還原資料庫。
 `cp -f <ORACLE_HOME>/jdbc/lib/ojdbc8.jar /opt/NetApp/snapcenter/spl/plugins/sco/lib/ojdbc8-8.jar`
 
-*步驟*
-
+.步驟
 . 按一下 image:icon-action.png["圖示以選取動作"] 對應至您要還原的資料庫、然後按一下 * 還原 * 。
 . 選取資料庫應還原的還原點、然後按一下 * 還原至原始位置 * 。
 . 在「還原範圍」區段中、執行下列動作：
@@ -65,10 +63,6 @@ summary: 還原資料檔案、控制檔或兩者、然後還原資料庫。
 ** ASM參數檔案。
 +
 「*強制就地還原*」選項會覆寫類型參數、密碼及歸檔記錄的外部檔案。選取「*強制就地還原*」選項時、您應該使用最新的備份。
-
-+
-
-NOTE: 不支援使用控制檔還原資料檔案、或在 ASM 配置上僅還原 iSCSI 的控制檔、以及還原資料表空間和 PDB 。
 
 
 

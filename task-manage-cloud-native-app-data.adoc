@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-manage-cloud-native-app-data.html 
-keywords: manage, view backup, monitor jobs, monitor, Cloud Manager, BlueXP 
-summary: 檢視備份詳細資料、並監控所有工作的狀態。 
+keywords: manage, view backup, monitor jobs, monitor, Cloud Manager, BlueXP, delete clone, audit data, CA certificate, host maintenance 
+summary: 您可以檢視備份詳細資料、監控所有工作的狀態、刪除複本、稽核資料、更新連接器詳細資料、設定 CA 憑證、 並管理主機。 
 ---
 = 管理雲端原生應用程式資料的保護
 :hardbreaks:
@@ -23,6 +23,42 @@ summary: 檢視備份詳細資料、並監控所有工作的狀態。
 
 
 
+== 維護 Oracle 資料庫主機
+
+管理員可以手動將資料庫主機置於維護模式、以便在主機上執行維護工作。在升級期間、主機會自動進入維護模式、升級後、主機會自動切換至正式作業模式。
+
+當主機進入維護模式時、隨需操作會失敗、並略過排程工作。
+
+
+NOTE: 在將主機置於維護模式之前、您無法驗證是否有任何工作正在主機上執行資源。
+
+.步驟
+. 在 BlueXP UI 中、按一下 * 保護 * > * 備份與恢復 * > * 應用程式 *
+. 選擇 * Oracle* 作為應用程式類型。
+. 按一下 * 設定 * > * 主機 * 。
+. 執行下列其中一項動作：
++
+|===
+| 如果您... | 執行此動作... 
+
+
+ a| 
+希望將主機置於維護模式
+ a| 
+按一下 image:icon-action.png["圖示以選取動作"] 對應於主機、然後選取 * 啟用維護模式 * 。
+
+
+
+ a| 
+想要將主機從維護模式中移出
+ a| 
+按一下 image:icon-action.png["圖示以選取動作"] 對應於正在維護的主機、並選取 * 停用維護模式 * 。
+
+|===
+
+
+
+
 == 稽核資料
 
 當您直接執行 API 或使用 UI 來呼叫 BlueXP 備份和恢復應用程式的任何外部公開 API 時、要求的詳細資料、例如標頭、角色、要求主體、 而 API 資訊將記錄在 BlueXP 時間表中、稽核項目將永遠保留在時間表中。API呼叫的狀態和錯誤回應也會在作業完成後進行稽核。在非同步API回應（例如工作）的情況下、工作ID也會記錄為回應的一部分。
@@ -35,6 +71,7 @@ BlueXP 應用程式的備份與還原會記錄諸如主機 IP 、要求本文、
 
 您可以檢視建立的備份總數、用於建立備份的原則、資料庫版本和代理程式ID。
 
+.步驟
 . 按一下*備份與還原*>*應用程式*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*檢視詳細資料*。
 
@@ -48,6 +85,7 @@ IMPORTANT: 代理程式ID與Connector相關聯。如果登錄SAP HANA主機時�
 
 如果不再需要複本、您可以刪除複本。
 
+.步驟
 . 按一下 image:button_plus_sign_square.png["圖示以選取動作"] 緊鄰*篩選條件*、然後選取* Clone選項*>* Clone父項*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*檢視詳細資料*。
 . 在「資料庫詳細資料」頁面中、按一下 image:button_plus_sign_square.png["圖示以選取動作"] 緊鄰*篩選條件*、然後選取* Clone（複製）*。
@@ -61,6 +99,24 @@ IMPORTANT: 代理程式ID與Connector相關聯。如果登錄SAP HANA主機時�
 
 如果在登錄應用程式主機期間使用的 Connector 不再存在或毀損、則應部署新的 Connector 。部署新連接器之後、您應該執行* Connector-updated* API、以更新使用舊連接器登錄之所有主機的連接器詳細資料。
 
+更新 Oracle 或 SAP HANA 主機的 Connector 詳細資料後、請執行下列步驟、以確保 Connector 詳細資料已成功更新。
+
+.步驟
+. 登入 BlueXP Connector VM 並執行下列步驟：
++
+.. 從Connector執行下列命令、驗證外掛程式是否可從Connector存取。
+`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert/config/client/certificate/certificate.pem --key/config/client/certificate/key.pem`
+.. 取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」
+.. 從連接器 VM 的 <base_mount_path> / 用戶端 / 憑證 / 路徑複製 certificate .pem 到外掛主機上的 /var/opt/snapcenter/spl/etc/_ 。
+
+
+. 登入外掛主機、然後執行下列步驟：
++
+.. 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入認證.p12檔案。
+`keytool -import -alias agentcert -file certificate.pem  -keystore keystore.jks -deststorepass snapcenter -noprompt`
+.. 重新啟動SPL：「系統重新啟動spl」
+.. 執行下列其中一項：
++
 |===
 | 如果您在 ... | 執行此動作... 
 
@@ -68,21 +124,19 @@ IMPORTANT: 代理程式ID與Connector相關聯。如果登錄SAP HANA主機時�
  a| 
 Oracle 資料庫主機
  a| 
-. 確保所有的 link:task-add-host-discover-oracle-databases.html#prerequisites["先決條件"] 達成。
-. 按一下 * 備份與恢復 * > * 應用程式 *
-. 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*檢視詳細資料*。
-. 修改 * 連接器 ID* 。
+... 確保所有的 link:task-add-host-discover-oracle-databases.html#prerequisites["先決條件"] 達成。
+... 按一下 * 備份與恢復 * > * 應用程式 *
+... 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*檢視詳細資料*。
+... 修改 * 連接器 ID* 。
 
-
-ifdef::azure[]
 
 
 
  a| 
 SAP HANA 資料庫主機
  a| 
-. 確保所有的 link:task-deploy-snapcenter-plugin-for-sap-hana.html#prerequisites["先決條件"] 達成。
-. 執行下列命令：
+... 確保所有的 link:task-deploy-snapcenter-plugin-for-sap-hana.html#prerequisites["先決條件"] 達成。
+... 執行下列命令：
 
 
 [listing]
@@ -94,28 +148,11 @@ curl --location --request PATCH
 --header 'Content-Type: application/json' \
 --data-raw '{
 "old_connector_id": "Old connector id that no longer exists",
-"new_connector_id": "New connector Id"
-}
+"new_connector_id": "New connector Id"}
 ----
 如果所有主機都已安裝並執行 SnapCenter Plug-in for SAP HANA 服務、而且所有主機都可從新的 Connector 存取、連接器詳細資料將會成功更新。
 
-endif::azure[]
-
 |===
-更新 Oracle 或 SAP HANA 主機的 Connector 詳細資料後、請執行下列步驟、以確保 Connector 詳細資料已成功更新。
-
-. 登入 BlueXP Connector VM 並執行下列步驟：
-+
-.. 從Connector執行下列命令、驗證外掛程式是否可從Connector存取。
-`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert/config/client/certificate/certificate.pem --key/config/client/certificate/key.pem`
-.. 取得基本掛載路徑。「Udo Docker Volume ls | Grep SCS_Cloud Volume | awk｛'print $2'｝| xargs Sudo Docker Volume Check | Grep mountpoint」
-.. 將 <base_mount_path> 連接器 VM 的 _CVE/ 用戶端 / 憑證 / 路徑中的 certificate .p12 複製到外掛主機上的 /var/opt/snapcenter/spl/etc/_ 。
-
-
-. 登入外掛主機、然後執行下列步驟：
-+
-.. 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入認證.p12檔案。「keytool-v -importkeystore -srckeystore CERT.p12 -srcstoretype pkcs12 -destkeystore keyKeystore .jks -deststoretype JKS -rcsstorepass SnapCenter sore-ascalias SnapCenter agentcert -noprompt」
-.. 重新啟動SPL：「系統重新啟動spl」
 
 
 
@@ -132,15 +169,12 @@ endif::azure[]
 
 連接器使用自我簽署的憑證來與外掛程式通訊。自我簽署的憑證會透過安裝指令碼匯入至Keystore。您可以執行下列步驟、以CA簽署的憑證取代自我簽署的憑證。
 
-*開始之前*
-
-您可以執行下列命令來取得_<base_mount_path>_：「'Udo dDocker volume ls | grep scs_Cloud | awk｛'print $2'｝| xargs sudo dark volume det檢查| grep mountpoint」
-
-*步驟*
-
+.步驟
 . 當 Connector 與外掛程式連線時、請在 Connector 上執行下列步驟、以使用 CA 憑證做為用戶端憑證。
 +
 .. 登入Connector。
+.. 執行下列命令以取得 <base_mount_path> ：
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 .. 刪除 <base_mount_path> 位於 Connector 中 _client/certificate 的所有現有檔案。
 .. 將 CA 簽署的憑證和金鑰檔案複製到 Connector 中的 <base_mount_path> / 用戶端 / 憑證 _ 。
 +
@@ -150,17 +184,18 @@ endif::azure[]
 +
 範例： openssl PKCS12 -inkey key.pem -in certificate .pem -export -out certificate .p12
 
-.. 將所有中繼 CA 和根 CA 的 certificate.p12 和憑證複製到位於 /var/opt/snapcenter/spl/etc/_ 的外掛主機。
-+
-
-NOTE: 中介 CA 和根 CA 憑證的格式應為 .crt 格式。
-
 
 
 . 在外掛主機上執行下列步驟、以驗證 Connector 傳送的憑證。
 +
 .. 登入外掛程式主機。
-.. 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入認證.p12檔案。「keytool-v -importkeystore -srckeystore CERT.p12 -srcstoretype pkcs12 -destkeystore keyKeystore .jks -deststoretype JKS -rcsstorepass SnapCenter sore-ascalias SnapCenter agentcert -noprompt」
+.. 將所有中繼 CA 和根 CA 的 certificate.pem 和憑證從 Connector 複製到位於 /var/opt/snapcenter/spl/etc/_ 的外掛主機。
++
+
+NOTE: 中介 CA 和根 CA 憑證的格式應為 .crt 格式。
+
+.. 瀏覽至 /var/opt/snapcenter/spl/etc/_ 、然後執行 keytool 命令以匯入 certificate .pem 檔案。
+`keytool -import -alias agentcert -file certificate.pem  -keystore keystore.jks -deststorepass snapcenter -noprompt`
 .. 匯入根CA和中繼憑證。「keytool-import-caclacerts -keystore keystor.jks -storepass SnapCenter -alias cedca -file <ima.crt>'
 +
 
@@ -177,12 +212,7 @@ NOTE: certificate.crt 是指根 CA 和中繼 CA 的憑證。
 
 CA 憑證的名稱應與外掛主機在 Cloud Backup 中註冊的名稱相同。
 
-*開始之前*
-
-您可以執行下列命令來取得_<base_mount_path>_：「'Udo dDocker volume ls | grep scs_Cloud | awk｛'print $2'｝| xargs sudo dark volume det檢查| grep mountpoint」
-
-*步驟*
-
+.步驟
 . 在外掛主機上執行下列步驟、以使用 CA 憑證來裝載外掛程式。
 +
 .. 瀏覽至包含 SPL Keystore 的資料夾： /var/opt/snapcenter/spl/etc/.
@@ -202,6 +232,8 @@ certificate.pem應該擁有中繼CA和根CA等整個憑證鏈結。
 . 在 Connector 上執行下列步驟、以便 Connector 驗證外掛程式的憑證。
 +
 .. 以非root使用者身分登入Connector。
+.. 執行下列命令以取得 <base_mount_path> ：
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
 .. 將根 CA 和中繼 CA 檔案複製到伺服器目錄下。
 `cd <base_mount_path>`
 `mkdir server`

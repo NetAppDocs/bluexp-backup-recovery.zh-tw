@@ -16,8 +16,7 @@ summary: 完成幾個步驟、將應用程式資料從ONTAP 功能完善的資�
 [role="lead"]
 完成幾個步驟、將應用程式資料從 ONTAP 備份到 Amazon Web Services 。
 
-*步驟*
-
+.步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*啟動備份*。
 . 在「指派原則」頁面中、選取原則、然後按「*下一步*」。
@@ -42,8 +41,8 @@ BlueXP 應用程式備份與還原僅支援叢集管理。
 . 選擇* Amazon Web Services*作為雲端供應商。
 +
 .. 指定AWS帳戶。
-.. 在AWS存取金鑰欄位中、指定資料加密的金鑰。
-.. 在AWS Secret Key（AWS機密金鑰）欄位中、指定資料加密的密碼。
+.. 在AWS存取金鑰欄位中、指定金鑰。
+.. 在AWS Secret Key（AWS機密金鑰）欄位中、指定密碼。
 .. 選取您要建立備份的區域。
 .. 指定IP空間。
 .. 選取歸檔層。

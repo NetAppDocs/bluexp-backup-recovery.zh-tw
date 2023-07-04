@@ -16,8 +16,7 @@ summary: 請完成幾個步驟、將應用程式資料從ONTAP 無法恢復的�
 [role="lead"]
 完成幾個步驟、將應用程式資料從 ONTAP 備份到 Microsoft Azure 。
 
-*步驟*
-
+.步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*啟動備份*。
 . 在「指派原則」頁面中、選取原則、然後按「*下一步*」。

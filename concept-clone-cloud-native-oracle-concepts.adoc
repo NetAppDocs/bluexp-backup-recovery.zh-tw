@@ -56,6 +56,8 @@ summary: 在複製資料庫之前、請先瞭解複製概念。
 * 不支援複製位於 Azure NetApp Files 上的資料庫。
 * 不支援複製位於Qtree上的資料庫。
 * 不支援備份複製的資料庫。
+* 如果在 Amazon FSX for NetApp ONTAP 上啟用每日自動備份、則無法從 BlueXP UI 刪除 Amazon FSX for NetApp ONTAP 上的複製磁碟區、因為 FSX 會在複製的磁碟區上建立備份。
+您應該在從 FSX UI 刪除磁碟區的所有備份後、刪除複製的磁碟區、然後使用強制選項從 BlueXP UI 刪除複製。
 
 
 

@@ -97,8 +97,8 @@ sidebar:
         url: "/task-restore-oracle-data.html"
       - title: 還原SQL Server資料庫
         url: "/task-restore-sql-data.html"
-    - title: 掛載應用程式備份
-      url: "/task-mount-app-backup.html"
+      - title: 還原 SAP HANA 資料庫
+        url: "/task-restore-hana-backup.html"
   - title: 備份及還原雲端原生應用程式資料
     entries:
     - title: 保護您的雲端原生應用程式資料
@@ -133,7 +133,11 @@ sidebar:
         flavor: azure
         url: "/task-backup-cloud-native-sap-hana-data.html"
     - title: 還原雲端原生 Oracle 資料庫
-      url: "/task-restore-cloud-native-oracle-data.html"
+      entries:
+      - title: 還原至原始位置
+        url: "/task-restore-cloud-native-oracle-data-to-original-location.html"
+      - title: 還原至替代位置
+        url: "/task-restore-cloud-native-oracle-data-to-alternate-location.html"
     - title: 還原雲端原生 SAP HANA 資料庫
       flavor: azure
       url: "/task-restore-cloud-native-sap-hana-data.html"

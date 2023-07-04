@@ -14,7 +14,7 @@ summary: 從原始 SAP HANA 系統（正式作業資料庫）重新整理至目�
 
 
 [role="lead"]
-您可以使用 SAP HANA 來源系統的資料來更新 SAP HANA 目標系統。這可用於將目前的正式作業資料提供至測試系統。雲端備份可讓您從來源系統選取 Snapshot 複本、並根據 Snapshot 複本建立新的 anf Volume 。提供範例指令碼、可在資料庫主機上執行必要的作業、以恢復 SAP HANA 資料庫。
+您可以使用 SAP HANA 來源系統的資料來更新 SAP HANA 目標系統。這可用於將目前的正式作業資料提供至測試系統。雲端備份可讓您從來源系統選取 Snapshot 複本、並根據 Snapshot 複本建立新的 Azure NetApp Files Volume 。提供範例指令碼、可在資料庫主機上執行必要的作業、以恢復 SAP HANA 資料庫。
 
 *開始之前*
 
@@ -56,6 +56,8 @@ https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-autom
 NOTE: 新的 Volume 將放置在與目標 Volume 相同的容量集區中。
 
 * 接合路徑將與磁碟區名稱相同。
+* 新磁碟區的「最大處理量數量」是從目標系統的 Volume 中選取、並使用手動服務品質（ QoS ）容量集區。
+對於自動 QoS 容量集區、處理量是由來源磁碟區的容量所定義。
 
 
 *步驟*
@@ -67,7 +69,6 @@ NOTE: 新的 Volume 將放置在與目標 Volume 相同的容量集區中。
 .. 選取來源系統和 Snapshot 複本。
 .. 輸入可從中存取新磁碟區的匯出位址。
 .. 輸入預先記錄、 PostScript 和失敗指令碼路徑。發生故障時指令碼只有在系統重新整理作業失敗時才會執行。
-.. 選取 * 刪除關聯的 SAP HANA 備份 * 僅會刪除 Snapshot 複本。如果目標系統有任何現有備份、且未選取上述選項、系統重新整理作業將會失敗。您也可以從 *Topology* 頁面刪除備份。
 .. 按一下*重新整理*。
 
 

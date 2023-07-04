@@ -40,13 +40,14 @@ summary: 在每部 SAP HANA 資料庫主機上安裝 SnapCenter Plug-in for SAP 
 * 您應該先安裝 SnapCenter Plug-in for SAP HANA 、然後再新增資料庫主機。
 * 新增SAP HANA資料庫主機時、您應該新增HDB使用者儲存金鑰。HDB安全使用者存放區金鑰用於將SAP HANA資料庫主機的連線資訊安全地儲存在用戶端上、HDBSQL用戶端則使用安全的使用者存放區金鑰來連線至SAP HANA資料庫主機。
 * 針對HANA系統複寫（HSR）、為了保護HANA系統、您應該手動登錄主要和次要HANA系統。
++
+
+NOTE: 主機名稱必須與用於 HSR 複寫的主機相同。
+
 * 如果執行 SSH 型安裝、請確定 Connector 已啟用與 SSH 連接埠的通訊（預設值： 22 ）。
 * 確保 Connector 已啟用外掛連接埠的通訊（預設值： 8145 ）、以便資料保護作業正常運作。
 * 確保已安裝最新版本的外掛程式。若要升級外掛程式、請參閱 <<升級 SnapCenter Plug-in for SAP HANA 資料庫>>。
 
-
-
-NOTE: 如果從 BlueXP Connector 主機到應用程式主機的連線失敗、請參閱 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Cloud_Backup_Application_Failed_to_validate_connectivity_from_BlueXP_connector_host_to_application_database_host["知識庫文章"^] 以取得資訊。
 
 
 
@@ -54,11 +55,11 @@ NOTE: 如果從 BlueXP Connector 主機到應用程式主機的連線失敗、�
 
 建立非 root （ Sudo ）使用者以安裝外掛程式。
 
-*步驟*
-
+.步驟
 . 登入Connector VM。
-. 複製位於下列位置的 * sudoer.txt* 內容： _manager-2_cloudmanager_cs_cloue_volume / _data/$ （ Sudo 泊塢視窗 ps|grep -po" cloudmanager_cs_clouwo:..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
-. 使用 root 使用者帳戶登入 SAP HANA 資料庫主機。
+. 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
+. 複製位於下列位置的 * sudoer.txt* 內容： /var/lib/v泊 塢視窗 / Volume / 服務管理員 [1] - 2_cloudmanager_cs_cloue_volume / _data/$ （ Sudo 泊塢視窗 ps|grep -po" cloudmanager_cs_clouwo..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
+. 使用 root 使用者帳戶登入 SAP HANA 系統主機。
 . 將步驟 3 中複製的文字複製到 /etc/sudoers.d/snapcenter_file 、為非 root 使用者設定 Sudo 存取。
 +
 在您新增至 /etc/sudoers.d/snapcenter_file 的行中、將 <LINUXUSER> 取代為非 root 使用者、將 <USER_HOME_DIRECTORY> 取代為 _home/nap_ <non-root-user> 。
@@ -71,15 +72,17 @@ NOTE: 如果從 BlueXP Connector 主機到應用程式主機的連線失敗、�
 
 為 SAP HANA 主機非 root 使用者帳戶設定 SSH 金鑰型驗證、然後執行下列步驟來安裝外掛程式。
 
-* 開始之前 *
-
+.開始之前
 確保已啟用 SSH 連線至 Connector 。
 
-*步驟*
-
+.步驟
 . 登入 Connector VM 。
 . 使用 Connector 中提供的指令碼安裝外掛程式。
-`sudo bash  /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
+`sudo bash /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
++
+如果您使用的是舊版 Connector 、請執行下列命令來安裝外掛程式。
+`sudo /var/lib/docker/volumes/cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port>`
+
 +
 |===
 | 名稱 | 說明 | 必填 | 預設 
@@ -140,7 +143,7 @@ host_ssh_port
 
 |===
 +
-例如、 `sudo bash /var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host 10.0.1.1 --username snapcenter --sshkey /keys/netapp-ssh.ppk`
+例如、「 sdo bash /var/lib/pappar/svoles/service-manager-2_cloudmanager_scs_cloue_volate/_data/scripts/linux_plugin_copy_and_install.sh --host 10.0.1.1 --username SnapCenter --sshkey /keys/netapp_ssh.ppk
 
 
 
@@ -154,10 +157,10 @@ host_ssh_port
 
 *步驟*
 
-. 登入Connector VM。
+. 登入 Connector VM 。
 . 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
 +
-外掛程式二進位檔位於： _CD /var/lib/v泊 塢視窗 /volides/service-manager-2_cloudmanager_SCS_cloue_volate/_data/$（ Sudo 泊塢視窗 ps|grep -po" cloudmanager_SCS_clouy..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
+外掛程式二進位檔位於： _CD /var/lib/v泊 塢視窗 / 磁碟區 / 服務管理程式 [1] - 2_cloudmanager_SCS_cloue_volid/_data/$ （ Sudo 泊塢視窗 ps|grep -po 「 cloudmanager_SCS_clouy..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
 
 . 使用 <non root user (sudo)> scp 或其他替代方法、將 _snapcenter_linux_host_plugin_SCS.bin_ 從上述路徑複製到每個 SAP HANA 資料庫主機的 //home/Nets/.SC_NetApp_ 路徑。
 . 使用非 root （ Sudo ）帳戶登入 SAP HANA 資料庫主機。
@@ -187,9 +190,13 @@ host_ssh_port
 
 *步驟*
 
-. 登入 Connector VM 。
+. 設定Sudo for SnapCenter S供 使用者使用。如需相關資訊、請參閱 <<設定Sudo for SnapCenter S供 使用者使用>>。
 . 執行下列指令碼。
 `/var/lib/docker/volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port> --upgrade`
++
+如果您使用的是舊版 Connector 、請執行下列命令來升級外掛程式。
+`/var/lib/docker/volumes/cloudmanager_scs_cloud_volume/_data/scripts/linux_plugin_copy_and_install.sh --host <plugin_host> --username <host_user_name> --sshkey <host_ssh_key> --pluginport <plugin_port> --sshport <host_ssh_port> --upgrade`
+
 
 
 
@@ -210,7 +217,8 @@ host_ssh_port
 .. 輸入SAP HANA系統名稱。
 .. 指定SAP HANA系統的SID。
 .. （選用）修改 HDBSQL OS 使用者。
-.. 選取外掛程式主機。（可選）如果未添加主機或要添加多個主機，請單擊* Add Plug-In Host*（添加插件主機*）。
+.. 選取外掛程式主機。
+（可選）如果未添加主機，請單擊 * 添加插件主機 * 。
 .. 如果HANA系統設定為HANA系統複寫、請啟用* HANA系統複寫（HSR）System*。
 .. 按一下「* HDB Secure User Store Keys *（* HDB安全使用者儲存金鑰*）」文字方塊以新增使用者儲存金鑰
 +
@@ -226,7 +234,7 @@ host_ssh_port
 +
 .. 選取工作環境並指定NetApp帳戶。
 +
-移至* Canvas*頁面以新增工作環境
+從左側導覽窗格中、選取 BlueXP * Canvas * 以新增工作環境。
 
 .. 選取所需的磁碟區。
 .. 按一下「*新增儲存設備*」。
@@ -235,10 +243,7 @@ host_ssh_port
 . 檢閱所有詳細資料、然後按一下*「Add System*（新增系統*）」。
 
 
-
-NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定主機名稱時、會顯示所有主機。
-
-您可以從 UI 修改或移除 SAP HANA 系統、也可以使用 REST API 。
+您可以從 UI 修改或移除 SAP HANA 系統。
 
 移除 SAP HANA 系統之前、您應該先刪除所有相關的備份、並移除保護。
 
@@ -251,7 +256,7 @@ NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定�
 *步驟*
 
 . 使用 UI 或使用下列 REST API 刪除與 SAP HANA 資料庫主機相關的所有系統。
-`DELETE /saphana/and/systems/(id)`
+`DELETE /saphana/anf/systems/(id)`
 . 請執行下列步驟移除 SAP HANA 資料庫主機。
 +
 .. 使用 Get REST API 取得必須刪除的 SAP HANA 資料庫主機 ID 。
@@ -310,9 +315,6 @@ NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定�
 .. 輸入SAP HANA系統名稱。
 .. 指定SAP HANA系統的相關SSID。
 .. 選取外掛程式主機
-+
-（可選）要添加多個主機，請單擊* Add Plug-In Host*（添加插件主機*）並指定主機名和端口，然後單擊* Add Host*（添加主機*）。
-
 .. 單擊 * 下一步 * 。
 .. 檢閱所有詳細資料、然後按一下*「Add System*（新增系統*）」。
 
@@ -341,5 +343,9 @@ NOTE: 檢視特定主機的篩選器無法運作。當您在篩選器中指定�
     `]`
 `}`
 . 使用下列修補程式 API 修改主機名稱或外掛程式連接埠。
-`PATCH /saphana/hosts/(id)``
+`PATCH /saphana/hosts/(id)`
+`{`
+`"host_name": "vm136.dummy.com",`
+`"port": 8145,`
+`}`
 

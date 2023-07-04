@@ -16,14 +16,12 @@ summary: 請完成幾個步驟、將應用程式資料從ONTAP 功能完善的�
 [role="lead"]
 完成幾個步驟、將應用程式資料從 ONTAP 備份到 StorageGRID 。
 
-*您需要的是什麼*
-
+.開始之前
 將資料備份StorageGRID 到不支援的地方時、內部環境中必須有連接器。您可能需要安裝新的Connector、或確定目前選取的Connector位於內部部署。連接器可安裝在有或沒有網際網路存取的站台上。
 
 如需相關資訊、請參閱 link:task-backup-onprem-private-cloud.html#creating-or-switching-connectors["建立連接器StorageGRID 以利實現效能"]。
 
-*步驟*
-
+.步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*啟動備份*。
 . 在「指派原則」頁面中、選取原則、然後按「*下一步*」。
@@ -51,8 +49,8 @@ BlueXP 應用程式備份與還原僅支援叢集管理。
 +
 請以「FQDN：連接埠」格式輸入詳細資料。
 
-.. 在存取金鑰欄位中、指定資料加密的金鑰。
-.. 在「秘密金鑰」欄位中、指定資料加密的密碼。
+.. 在存取金鑰欄位中、指定金鑰。
+.. 在「Secret Key（機密金鑰）」欄位中、指定密碼。
 .. 指定IP空間。
 
 

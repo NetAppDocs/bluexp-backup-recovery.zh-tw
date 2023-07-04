@@ -22,6 +22,7 @@ summary: 請完成幾個步驟、開始備份 Oracle 資料庫。
 +
 ** RHEL 7.5或更新版本及8.x
 ** ol 7.5或更新版本及8.x
+** SLES 15 SP4
 
 
 * NetApp 雲端儲存：
@@ -42,7 +43,7 @@ NOTE: Azure NetApp Files 不支援 SAN 環境。
 
 
 * 資料庫配置：Oracle Standard和Oracle Enterprise Standalone（舊版和多租戶CDB和pdb）
-* 資料庫版本：12cR2、18c、19c及21c
+* 資料庫版本： 19C 和 21c
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 註冊BlueXP

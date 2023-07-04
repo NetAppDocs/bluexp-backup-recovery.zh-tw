@@ -18,6 +18,46 @@ summary: 瞭解 BlueXP 備份與還原的新功能。
 
 
 
+== 2023 年 7 月 4 日
+
+
+
+=== 應用程式（雲端原生）的 BlueXP 備份與還原功能增強功能
+
+* SAP HANA 系統
++
+** 支援非資料磁碟區和具有 Azure NetApp Files 次要保護的全域非資料磁碟區的連線和複本還原
+
+
+* Oracle資料庫
++
+** 支援將 Azure NetApp Files 上的 Oracle 資料庫還原至其他位置
+** 支援 Oracle Recovery Manager （ RMAN ）在 Azure NetApp Files 上分類備份 Oracle 資料庫
+** 可讓您將資料庫主機設為維護模式、以執行維護工作
+
+
+
+
+
+
+=== 應用程式（混合式） BlueXP 備份與還原的增強功能
+
+* 支援還原至其他位置
+* 可讓您掛載 Oracle 資料庫備份
+* 支援將備份從 GCP 移至歸檔層
+
+
+
+
+=== 虛擬機器（混合式） BlueXP 備份與還原的增強功能
+
+* 支援 NFS 和 VMFS 類型的資料存放區保護
+* 可讓您取消登錄 VMware vSphere 主機的 SnapCenter 外掛程式
+* 支援重新整理及探索最新的資料存放區和備份
+
+
+
+
 == 2023 年 6 月 5 日
 
 

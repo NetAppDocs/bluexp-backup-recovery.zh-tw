@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-cloud-native-oracle-data.html 
-keywords: admin role, service account, pre-canned policies, cloud manager, BlueXP, scheduled backups, on-demand backups, create policy, Oracle database, backup limitations 
-summary: 建立Oracle資料庫的排程或隨需備份。 
+keywords: admin role, service account, pre-canned policies, cloud manager, BlueXP, scheduled backups, on-demand backups, create policy, Oracle database, backup limitations, RMAN, catalog, RMAN catalog 
+summary: 建立具有或不啟用 RMAN 的原則、指派原則、然後建立 Oracle 資料庫的排程或隨選備份。 
 ---
 = 備份雲端原生 Oracle 資料庫
 :hardbreaks:
@@ -14,7 +14,9 @@ summary: 建立Oracle資料庫的排程或隨需備份。
 
 
 [role="lead"]
-您可以指派預先定義的原則或建立的原則來建立備份。
+您可以指派預先定義的原則或建立的原則、來建立排程或隨需備份。
+
+如果您在建立原則時已啟用目錄功能、也可以使用 Oracle Recovery Manager （ RMAN ）來編錄 Oracle 資料庫備份。(RMAN) 目錄只支援 Azure NetApp Files 上的資料庫。目錄式備份稍後可用於區塊層級還原或表格空間時間點還原作業。資料庫必須處於掛載狀態或更高狀態、才能進行分類。
 
 
 
@@ -29,7 +31,8 @@ summary: 建立Oracle資料庫的排程或隨需備份。
 . 指定原則名稱。
 . （選用）編輯備份名稱的格式。
 . 指定排程和保留詳細資料。
-. （可選）輸入在成功備份後將執行的腳本後路徑和超時值，以便將快照複製到次儲存設備。
+. 如果您已選擇 _Daily 和 _EURY_ 作為排程、且想要啟用 RMAN 目錄功能、請選擇 * 使用 Oracle Recovery Manager （ RMAN ） * 進行目錄備份。
+. （選用）輸入在成功備份後執行的指令碼後路徑和逾時值、例如將快照複製到次要儲存設備。
 +
 您也可以選擇性地指定引數。
 
@@ -75,17 +78,37 @@ sc_backup_policy_name
  a| 
 sc_primer_data_volume 完整路徑
  a| 
-指定資料磁碟區路徑、並以「、」作為分隔符號串連。對於 ANF Volume 、資訊會使用「 / 」 / ｛ anfaccount ｝ / ｛ subscription_id ｝ / ｛ resource_group ｝ / ｛ capACT_pool ｝ / ｛ Volume Name ｝ _ 串連
+指定資料磁碟區路徑、並以「、」作為分隔符號串連。
+對於 Azure NetApp Files Volume 、資訊會使用「 / 」串連
+_ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / 供應商 / ｛ provider ｝ /netAppAccounts / ｛ anfaccount ｝ / 容量 Pools / ｛ capacityPool ｝ / Volume / ｛ Volume Name ｝ _
 
 
 
  a| 
 SC_PRIMARCHIVELOGS_VOLUE_Full_PATH
  a| 
-指定使用 "," 作為分隔符號串連的歸檔記錄磁碟區路徑。對於 ANF Volume 、使用「 / 」 / ｛ anfaccount ｝ / ｛ subscription_id ｝ / ｛ resource_group ｝ / ｛ capACT_pool ｝ / ｛ Volume Name ｝ _ 串連的資訊
+指定使用 "," 作為分隔符號串連的歸檔記錄磁碟區路徑。
+對於 Azure NetApp Files Volume 、使用「 / 」串連的資訊
+_ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / 供應商 / ｛ provider ｝ /netAppAccounts / ｛ anfaccount ｝ / 容量 Pools / ｛ capacityPool ｝ / Volume / ｛ Volume Name ｝ _
 
 |===
 . 按一下「 * 建立 * 」。
+
+
+
+
+== 設定 RMAN 目錄儲存庫
+
+您可以將恢復目錄資料庫設定為 RMAN 目錄儲存庫。如果您未設定儲存庫、根據預設、目標資料庫的控制檔會變成 RMAN 目錄儲存庫。
+
+.開始之前
+您應該手動向 RMAN 目錄資料庫登錄目標資料庫。
+
+.步驟
+. 在「應用程式」頁面中、按一下 image:icon-action.png["圖示以選取動作"] >* 檢視詳細資料 * 。
+. 按一下 [ 資料庫詳細資料 ] 區段中的 image:icon-edit-pen.png["IconTo 編輯"] 設定 RMAN 目錄儲存庫。
+. 使用 RMAN 指定用於編錄備份的認證、以及目錄還原資料庫的透明網路基底（ TNS ）名稱。
+. 按一下「*設定*」。
 
 
 
@@ -105,7 +128,7 @@ NOTE: 在 Amazon FSX for NetApp ONTAP 或 Cloud Volumes ONTAP 上建立 ASM 磁�
 
 . 選取原則、然後按一下*指派*。
 +
-備份將依照原則中定義的排程建立。
+備份將依照原則中定義的排程建立。如果您已在原則中啟用 RMAN 目錄、則工作流程結束時的備份會以個別工作的形式啟動編目作業。您可以從「工作監控」中看到分類的進度。成功分類後、 * 備份詳細資料 * 會顯示每個備份的目錄狀態。
 
 +
 
@@ -123,6 +146,9 @@ NOTE: 服務帳戶（ <account_id> ）用於執行排程的備份作業。
 
 . 在「應用程式」頁面中、按一下 image:icon-action.png["圖示以選取動作"] 與應用程式對應、然後按一下*隨需備份*。
 . 如果將多個原則指派給應用程式、請選取原則、保留層、然後按一下 * 建立備份 * 。
++
+如果您已在原則中啟用 RMAN 目錄、則工作流程結束時的備份會以個別工作的形式啟動編目作業。您可以從「工作監控」中看到分類的進度。成功分類後、 * 備份詳細資料 * 會顯示每個備份的目錄狀態。
+
 
 
 

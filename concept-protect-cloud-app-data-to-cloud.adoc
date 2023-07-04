@@ -14,7 +14,7 @@ summary: BlueXP提供高效、應用程式一致、原則型的備份、以及�
 
 
 [role="lead"]
-BlueXP 應用程式備份與還原是一項 SaaS 型服務、可為在 NetApp Cloud Storage 上執行的應用程式提供應用程式一致的資料保護功能。BlueXP 備份與還原可為下列應用程式提供高效率、應用程式一致且以原則為基礎的保護：
+BlueXP 應用程式備份與還原可為在 NetApp 雲端儲存上執行的應用程式提供應用程式一致的資料保護功能。BlueXP 備份與還原可為下列應用程式提供高效率、應用程式一致且以原則為基礎的保護：
 
 * 適用於 NetApp ONTAP 、 Cloud Volumes ONTAP 和 Azure NetApp Files 的 Amazon FSX 上的 Oracle 資料庫
 * SAP HANA系統駐留Azure NetApp Files 在
@@ -72,6 +72,7 @@ IMPORTANT: BlueXP SaaS 基礎架構可因應區域內的可用性區域故障而
 
 
 
+* Azure NetApp Files 上的 Oracle 資料庫備份可以使用 Oracle RMAN 進行分類
 * 根據原則保留備份
 * 還原位於 Amazon FSX for NetApp ONTAP 、 Cloud Volumes ONTAP 和 Azure NetApp Files 上的 Oracle 資料庫
 +
@@ -79,6 +80,7 @@ IMPORTANT: BlueXP SaaS 基礎架構可因應區域內的可用性區域故障而
 ** 使用恢復Oracle資料庫、直到SCN、直到時間、所有可用的記錄、而且沒有恢復選項
 
 
+* 將 Azure NetApp Files 上的 Oracle 資料庫還原至其他位置
 * 將位於 Amazon FSX for NetApp ONTAP 和 Cloud Volumes ONTAP 上的 Oracle 資料庫複製到來源或替代目標主機
 +
 ** 基本一鍵複製

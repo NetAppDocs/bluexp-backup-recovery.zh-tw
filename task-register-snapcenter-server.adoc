@@ -16,8 +16,7 @@ summary: 請完成幾個步驟來登錄SnapCenter 到此伺服器。
 [role="lead"]
 只有具備SnapCenterAdmin角色的使用者、才能登錄SnapCenter 執行哪些主機的支援。您可以在 BlueXP 中註冊多部 SnapCenter 伺服器主機。
 
-*步驟*
-
+.步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
 . 從*設定*下拉式清單中、按一下* SnapCenter 《伺服器*》。
 . 按一下「*登錄SnapCenter 」「伺服器*」。
@@ -39,12 +38,8 @@ summary: 請完成幾個步驟來登錄SnapCenter 到此伺服器。
 . 按一下 * 註冊 * 。
 
 
-*完成後*
-
+.完成後
 按一下*備份與還原*>*應用程式*、即可檢視使用註冊SnapCenter 的支援服務器主機保護的所有應用程式。根據預設、應用程式會每天午夜自動探索。
-
-
-IMPORTANT: 如果使用 FQDN 或 IP 位址將 SVM 新增至 SnapCenter 、則無法保護在這些 SVM 上執行的應用程式。應用程式的 BlueXP 備份與還原只能識別以名稱新增的 SVM 、或是 SnapCenter 探索到的 SVM 、這些 VM 是新增為 ONTAP 叢集的一部分。
 
 支援的應用程式及其組態包括：
 
