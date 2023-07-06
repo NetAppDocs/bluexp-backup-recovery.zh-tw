@@ -97,7 +97,7 @@ TIP: 只有在您第一次選取「工作環境」時、才能在特定的「SVM
 還原工作會顯示備份目標供應商（ Amazon Web Services 、 Microsoft Azure 、 Google Cloud 、內部部署）、 S3 儲存庫名稱、 SVM 名稱、來源 Volume 名稱、目的地 Volume 、 Snapshot 標籤、恢復的物件數、 檔案名稱、檔案大小、上次修改日期和完整檔案路徑。
 
 
-NOTE: 工作詳細資料僅會顯示在 ONTAP Volume 備份與還原工作中。排程備份工作詳細資料僅會顯示在 ONTAP 9.13.0 開頭的 Cloud Volumes ONTAP 系統上。將顯示進行中和已完成工作的工作詳細資料。
+NOTE: ONTAP 備份工作（包括臨機操作和排程、排程工作僅適用於 ONTAP 9.13.0 或更新版本）和所有還原工作的工作詳細資料都會出現。將顯示進行中和已完成工作的工作詳細資料。
 
 .步驟
 . 選取 * 工作監控 * 標籤。
@@ -145,9 +145,9 @@ image:screenshot_backup_job_monitor_details2.png["顯示備份工作詳細資料
 
 BlueXP 通知中心會追蹤您已啟動的備份和還原工作進度、以便您確認作業是否成功。
 
-除了檢視 BlueXP 通知清單中的警示之外、您也可以設定 BlueXP 以電子郵件方式傳送通知作為警示、讓您即使未登入系統、也能得知重要的系統活動。 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作"^]。
+除了在通知中心中檢視警示外、您還可以設定 BlueXP 以電子郵件方式傳送特定類型的通知作為警示、讓您即使未登入系統、也能得知重要的系統活動。 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作"^]。
 
-下列事件會觸發電子郵件警示：
+通知中心會顯示許多事件、但只有下列備份與還原事件會觸發電子郵件警示：
 
 [cols="3a,1d"]
 |===
@@ -189,13 +189,13 @@ BlueXP 通知中心會追蹤您已啟動的備份和還原工作進度、以便�
 | 錯誤 
 |===
 
-NOTE: 從 Cloud Volumes ONTAP 9.13.0 開始、所有警示都會出現。對於具有 Cloud Volumes ONTAP 9.13.0 和內部部署 ONTAP 的系統、只會顯示與還原工作相關的警示、並顯示警告。
+NOTE: 從 ONTAP 9.13.0 開始、 Cloud Volumes ONTAP 和內部部署 ONTAP 系統的所有警示都會出現。對於具有 Cloud Volumes ONTAP 9.13.0 和內部部署 ONTAP 的系統、只會出現「還原工作已完成但有警告」的相關警示。
 
-根據預設、 BlueXP 帳戶管理員會收到所有「重大」和「建議」警示的電子郵件。根據預設、所有其他使用者和收件者都會設定為不接收任何通知電子郵件。電子郵件可傳送給任何屬於您NetApp雲端帳戶一部分的BlueXP使用者、或傳送給任何其他需要注意備份與還原活動的收件者。
+根據預設、 BlueXP 帳戶管理員會收到所有「重大」和「建議」警示的電子郵件。根據預設、所有其他使用者和收件者都不會收到任何通知電子郵件。電子郵件可傳送給任何屬於您NetApp雲端帳戶一部分的BlueXP使用者、或傳送給任何其他需要注意備份與還原活動的收件者。
 
-若要接收 BlueXP 備份與還原電子郵件警示、您必須選取通知嚴重性類型「重大」、「警告」和「錯誤」。
+若要接收 BlueXP 備份與還原電子郵件警示、您必須在「警示與通知設定」頁面中選取通知嚴重性類型「重大」、「警告」和「錯誤」。
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作"^]。
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["瞭解如何傳送備份與還原工作的警示電子郵件"^]。
 
 .步驟
 . 選取 * 工作監控 * 標籤。

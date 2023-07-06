@@ -1,0 +1,43 @@
+= 探索 BlueXP 中的 ONTAP 系統
+:allow-uri-read: 
+
+
+您需要準備來源內部部署 ONTAP 系統和任何次要內部部署 ONTAP 或 Cloud Volumes ONTAP 系統。
+
+準備 ONTAP 叢集包括下列步驟：
+
+* 探索 BlueXP 中的 ONTAP 系統
+* 驗證 ONTAP 系統需求
+* 驗證 ONTAP 網路連線需求、以將資料備份到物件儲存設備
+* 驗證複寫磁碟區的 ONTAP 網路需求
+
+
+
+
+=== 探索 BlueXP 中的 ONTAP 系統
+
+您的來源內部部署 ONTAP 系統和任何次要內部部署 ONTAP 或 Cloud Volumes ONTAP 系統都必須在 BlueXP Canvas 上提供。
+
+您必須知道叢集管理IP位址和管理使用者帳戶的密碼、才能新增叢集。
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["瞭解如何探索叢集"^]。
+
+
+
+=== 驗證 ONTAP 系統需求
+
+確保符合下列 ONTAP 需求：
+
+* 最低 ONTAP 9.8 ；建議使用 ONTAP 9.8P13 及更新版本。
+* SnapMirror授權（包含在優質產品組合或資料保護產品組合中）。
++
+* 附註： * 使用 BlueXP 備份與還原時、不需要「混合雲套裝組合」。
+
++
+瞭解操作方法 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理叢集授權"^]。
+
+* 時間和時區設定正確。瞭解操作方法 https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["設定叢集時間"^]。
+* 如果您要複寫資料、則在複寫資料之前、應先確認來源和目的地磁碟區執行的是相容的 ONTAP 版本。
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["檢視SnapMirror ONTAP 關係的相容版本"^]。
+
+

@@ -17,6 +17,9 @@ summary: BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes 
 BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes ONTAP 系統建立各種組態設定的備份原則。
 
 
+NOTE: 這些原則設定僅適用於備份至物件儲存設備。這些設定都不會影響您的 Snapshot 或複寫原則。未來將會新增快照和複製的類似原則設定。
+
+
 
 == 備份排程
 
@@ -70,7 +73,7 @@ https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-
 
 === 什麼是DataLock
 
-DataLock可保護您的備份檔案、避免在一段時間內遭到修改或刪除。此功能使用物件儲存供應商的技術來「物件鎖定」。備份檔案被鎖定（並保留）的期間稱為DataLock保留期間。它是根據您定義的備份原則排程和保留設定、加上14天的緩衝區。任何少於30天的DataLock保留原則、最短四捨五入至30天。
+DataLock 可保護您的備份檔案、避免在一段時間內遭到修改或刪除、也稱為不可變儲存設備。此功能使用物件儲存供應商的技術來「物件鎖定」。備份檔案被鎖定（並保留）的期間稱為DataLock保留期間。它是根據您定義的備份原則排程和保留設定、加上14天的緩衝區。任何少於30天的DataLock保留原則、最短四捨五入至30天。
 
 請注意、舊備份會在DataLock保留期間到期後刪除、而非在備份原則保留期間到期後刪除。
 
@@ -325,7 +328,10 @@ ifdef::aws[]
 如果您的叢集使用ONTAP 的是更新版本的版本、您可以將舊版備份分層至_S3 Glacier或_S3 Glacier Deep Archive_儲存設備。 link:reference-aws-backup-tiers.html["深入瞭解AWS歸檔儲存設備"^]。
 
 +
-請注意、如果您在啟動 BlueXP 備份與還原時、在第一個備份原則中選擇 _S3 Glacier 或 _S3 Glacier Deep Archive_ 、則該層將是該叢集未來備份原則可用的唯一歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。
+** 如果您在啟動 BlueXP 備份與還原時、在第一個備份原則中選取「無歸檔層」、那麼 _S3 Glacier 將是您未來原則的唯一歸檔選項。
+** 如果您在第一個備份原則中選取 _S3 Glacier 、則可以變更至 _S3 Glacier Deep Archive_ 層、以供該叢集未來的備份原則使用。
+** 如果您在第一個備份原則中選取 _S3 Glacier Deep Archive_ 、則該層將是該叢集未來備份原則可用的唯一歸檔層。
+
 
 
 
