@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-monitor-backup-jobs.html 
 keywords: cloud backup, bluexp backup and recovery, backup, restore, status, monitor, alert, notification 
-summary: 您可以監控排程的備份工作狀態、或是您已在工作環境中起始和還原工作的狀態。您可以查看已成功完成的工作、目前正在進行的工作、以及失敗的工作、以便診斷和修正問題。您也可以將通知設定為透過電子郵件傳送、如此即使您尚未登入系統、也能得知重要的系統活動。 
+summary: 您可以監控所有備份與還原工作的狀態。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。 
 ---
 = 監控備份與還原工作的狀態
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 您可以監控排程的備份工作狀態、或是您已在工作環�
 
 
 [role="lead"]
-您可以監控您所起始或排程的備份工作狀態、並還原您所起始的工作。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。
+您可以監控您所起始或排程的備份工作狀態、以及還原您所起始的工作。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。
 
 
 
@@ -31,7 +31,7 @@ summary: 您可以監控排程的備份工作狀態、或是您已在工作環�
 * 失敗
 
 
-從 Cloud Backup UI 和 API 啟動的使用者初始化備份和還原作業、以及持續排程備份作業等系統起始工作、都可以在 Job Monitoring （工作監控）標籤中找到。不過、這僅適用於執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統、以及執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統。執行舊版 ONTAP 時、只會顯示使用者啟動的工作。
+您從 BlueXP 備份與還原 UI 和 API 啟動的備份與還原作業、以及持續排程備份作業等系統起始工作、都可以在「工作監控」標籤中找到。不過、這僅適用於執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統、以及執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統。執行舊版 ONTAP 時、只會顯示使用者啟動的工作。
 
 
 NOTE: 如果您已將 ONTAP 系統升級至 9.13.x 、但在「工作監控」中沒有看到持續排程的備份作業、則需要重新啟動 BlueXP 備份與還原服務。 link:reference-restart-backup.html["瞭解如何重新啟動 BlueXP 備份與還原"]。
@@ -45,7 +45,7 @@ image:screenshot_backup_job_monitor.png["在「工作監控」儀表板中顯示
 +
 此螢幕擷取畫面會顯示預設欄標題。
 
-. 顯示其他欄（工作環境、 SVM 、使用者名稱、工作負載、原則、 和 Snapshot Label ）、請選取 image:button_plus_sign_round.png["加號按鈕"]。
+. 顯示其他欄（工作環境、 SVM 、使用者名稱、工作負載、原則名稱、 和 Snapshot Label ）、請選取 image:button_plus_sign_round.png["加號按鈕"]。
 
 
 
@@ -147,7 +147,7 @@ BlueXP 通知中心會追蹤您已啟動的備份和還原工作進度、以便�
 
 除了在通知中心中檢視警示外、您還可以設定 BlueXP 以電子郵件方式傳送特定類型的通知作為警示、讓您即使未登入系統、也能得知重要的系統活動。 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作"^]。
 
-通知中心會顯示許多事件、但只有下列備份與還原事件會觸發電子郵件警示：
+通知中心會顯示許多備份與還原事件、但只有下列事件會觸發電子郵件警示：
 
 [cols="3a,1d"]
 |===
@@ -198,8 +198,7 @@ NOTE: 從 ONTAP 9.13.0 開始、 Cloud Volumes ONTAP 和內部部署 ONTAP 系�
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["瞭解如何傳送備份與還原工作的警示電子郵件"^]。
 
 .步驟
-. 選取 * 工作監控 * 標籤。
-. 選取（image:icon_bell.png["通知鈴聲"]）。
+. 從 BlueXP 功能表列中、選取（image:icon_bell.png["通知鈴聲"]）。
 . 檢閱通知。
 
 

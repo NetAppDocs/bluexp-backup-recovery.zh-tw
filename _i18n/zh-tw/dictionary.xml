@@ -18,7 +18,6 @@
   <block id="cf4f978809886b33abb134b8d95a53fa" category="list-text">DNS伺服器已針對磁碟區所在的儲存VM進行設定。瞭解如何操作<block ref="f1c08d303d78e879204468f0ff96d977" category="inline-link-rx"></block>。</block>
   <block id="6f10fb0bdda82988a0fa6dcc2515c346" category="list-text">請注意、如果您使用的IPspace與預設值不同、則可能需要建立靜態路由才能存取物件儲存設備。</block>
   <block id="3778f3873debfe11e2ace6bb6af1e417" category="inline-link">本文檔StorageGRID</block>
-  <block id="c1d703bdf53bad5718c774b5ba1504f9" category="paragraph">必須符合下列需求。 StorageGRID請參閱<block ref="a9591d68f190d64ce21caf15a77d51e9" category="inline-link-rx"></block> 以取得更多資訊。</block>
   <block id="793640ee72b7150dff71a288a821c67c" category="list-text">支援 StorageGRID 的支援版本</block>
   <block id="8a456872aea50fd247449bd552854586" category="list-text">支援不支援更新版本的支援。StorageGRID</block>
   <block id="ca00250851f3a70617fb3099c4414b66" category="list-text">S3 認證</block>
@@ -1133,7 +1132,6 @@
   <block id="9644265a314e497bc18814e1694c3d27" category="paragraph">請務必從下列連結產生重新整理權杖：https://services.cloud.netapp.com/refresh-token/。重新整理權杖是一個英數字元字串、可用來產生使用者權杖。</block>
   <block id="22c37949858e0a6877e1770be16db62b" category="paragraph">若要使用DataLock和勒索軟體保護來進行備份、StorageGRID 您的系統必須執行11.6.0.3版或更新版本。</block>
   <block id="5a7e671d36e7ddbd948f2001988ffe33" category="inline-link">如StorageGRID 需詳細資訊、請參閱《The》（英文）</block>
-  <block id="8891c4e57a35fdfe946dfc0b3b7397a7" category="list-text">您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支援儲存設備的存取。<block ref="6204e1ab37c5b3d32abd50f4f1f64c36" category="inline-link-rx"></block>。</block>
   <block id="168036087bcdae960471ab9c23a03efa" category="list-text">您不得StorageGRID 在物件存放區上手動啟用物件版本管理功能。</block>
   <block id="7ada527d1dd84b409531cc41597f383e" category="paragraph">您可以將*資料夾*還原至原始工作環境中的磁碟區、使用相同雲端帳戶的不同工作環境中的磁碟區、或還原至內部部署ONTAP 的S還原 系統上的磁碟區。</block>
   <block id="d04e8ed2daf2cfbac4df96c77bda4638" category="cell">瀏覽資料夾樣式的結構、找出單一備份檔案中的磁碟區、資料夾或檔案</block>
@@ -2147,7 +2145,6 @@
   <block id="1cdf820a77c583c660d65df7b1ca03b8" category="inline-link">瞭解如何使用進階篩選器</block>
   <block id="1625899745083f00e310fe6a84e9582c" category="list-text">下列S3權限必須是為Connector提供權限的IAM角色的一部分：</block>
   <block id="30c580a99dd8f8145066f47bf26ac29f" category="paragraph">此螢幕快照顯示如何在「上週」中搜尋所有「Volume」「Backup」工作、以搜尋名為「Volume _1」的磁碟區。</block>
-  <block id="51b623efdc27fe6f448c8ac3c9969630" category="paragraph">大部分篩選條件都是不言自明的。「工作負載」篩選器可讓您檢視下列類別中的工作：</block>
   <block id="dd9313799fa929f642611d4d86e9e772" category="paragraph">只有在您第一次選取「工作環境」時、才能在特定的「SVM」中搜尋資料。</block>
   <block id="e429a3dcdf9ca5d36834b72490aae784" category="admonition">將資料從Azure歸檔儲存設備還原StorageGRID 至支援的系統不支援高優先順序。</block>
   <block id="5a583661a8908e9d0eb4e2adb7e14660" category="paragraph">使用ONTAP 支援更新版本的支援功能時、您可以還原資料夾及其中的所有檔案和子資料夾。使用ONTAP 9.13.0之前的版本時、只會還原該資料夾中的檔案、子資料夾中的任何子資料夾或檔案都不會還原。</block>
@@ -2159,7 +2156,6 @@
   <block id="95fa16fe802a71eca4c0ade2049c7325" category="inline-link">變更儲存帳戶的複寫方式</block>
   <block id="fd32f35db4beea68175faf51895e4286" category="list-text">StorageGRID - 擷取 StorageGRID 伺服器的詳細資料、並可讓您探索 StorageGRID 伺服器</block>
   <block id="49f2fa5360686148867b942e73c164ea" category="summary">請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份至 Azure Blob 儲存設備。</block>
-  <block id="58d10a6e5e45d1a8458204e47220c68c" category="summary">您可以監控排程的備份工作狀態、或是您已在工作環境中起始和還原工作的狀態。您可以查看已成功完成的工作、目前正在進行的工作、以及失敗的工作、以便診斷和修正問題。您也可以將通知設定為透過電子郵件傳送、如此即使您尚未登入系統、也能得知重要的系統活動。</block>
   <block id="6e20e21fbdfeb7c2ac6f9d0235b820c4" category="section-title">在工作監控器上檢視備份與還原工作狀態</block>
   <block id="5b48d2885665cc3dce56d742d3ec50c4" category="paragraph">您可以在「*工作監控*」標籤中檢視所有備份與還原作業及其目前狀態的清單。這包括 Cloud Volumes ONTAP 、內部部署 ONTAP 、應用程式、虛擬機器和 Kubernetes 系統的作業。每個作業或工作都有唯一的ID和狀態。</block>
   <block id="6c99ceac3d4ecb03d01e55de5bf1dadf" category="paragraph">備份與還原狀態可以是：</block>
@@ -2193,8 +2189,6 @@
   <block id="278d01e5af56273bae1bb99a98b370cd" category="cell">關鍵</block>
   <block id="4df68e0b98ba0691ff46f48eff2a2f3f" category="paragraph">在您的系統上偵測到可能的勒索軟體攻擊</block>
   <block id="160157a33511dda5495776f0fcfc771d" category="paragraph">排程工作失敗</block>
-  <block id="9b5f00722faa27f8d92c452deb45e908" category="list-text">選取（<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>）。</block>
-  <block id="43a7ffdce907a49598d2965f30856cee" category="list-text">檢閱通知。</block>
   <block id="fb902a35540ad53bda044609815ee278" category="summary">請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到 NetApp StorageGRID 系統的物件儲存設備。</block>
   <block id="4ab7d99363507ea7d2dfa59860eae018" category="summary">請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Google Cloud 儲存設備。</block>
   <block id="2ec8fbded5e88799ebd7fdba2189b818" category="paragraph">請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Google Cloud Storage 。</block>
@@ -2938,7 +2932,6 @@
   <block id="db058563d6eb243b453d48635769d049" category="list-text">同時支援 HSM （硬體支援）和軟體產生的金鑰。</block>
   <block id="90a4c64194204c56808168a2ae360226" category="summary">您可以向雲端供應商購買隨用隨付或年度市場訂閱、或是向 NetApp 購買自帶授權、以取得 BlueXP 備份與恢復的授權。您需要有效的授權、才能在工作環境中啟動 BlueXP 備份與還原、建立正式作業資料的備份、以及將備份資料還原至正式作業系統。</block>
   <block id="6b238043e3f0cbcb294416f3238efea2" category="admonition">在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
-  <block id="5a0e26d771129c9b2e2c18c2a55a2693" category="paragraph">從 Cloud Backup UI 和 API 啟動的使用者初始化備份和還原作業、以及持續排程備份作業等系統起始工作、都可以在 Job Monitoring （工作監控）標籤中找到。不過、這僅適用於執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統、以及執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統。執行舊版 ONTAP 時、只會顯示使用者啟動的工作。</block>
   <block id="72c7fe989ff4840809134384de3dd80c" category="admonition">如果您已將 ONTAP 系統升級至 9.13.x 、但在「工作監控」中沒有看到持續排程的備份作業、則需要重新啟動 BlueXP 備份與還原服務。 <block ref="bdf197dfe0363b0f0f92ecc4a997870a" category="inline-link-macro-rx"></block>。</block>
   <block id="f4ceecec904030bc411eb94dfb80f45a" category="paragraph">臨機操作磁碟區備份失敗</block>
   <block id="3765aea02f52c67dc2bb0f95b961f55e" category="paragraph">工作環境中的備份啟動失敗</block>
@@ -3134,8 +3127,6 @@
   <block id="cd979c7356414580d564b463e3fe798a" category="list-text">您無法在單一叢集上使用多個 DataLock 模式。</block>
   <block id="e7d60457cf8d5955e88e40aa083c07fa" category="list-text">FlexGroup Volume 只有在使用 ONTAP 9.13.1 或更新版本時、才能使用 DataLock 和勒索軟體保護。</block>
   <block id="5e5c52eb046d9534a5304cfb91b3736a" category="list-text">如果叢集執行的是 ONTAP 9.13.1 或更新版本、 FlexGroup Volume 備份可以使用 DataLock 和勒索軟體保護。</block>
-  <block id="062059692404411848a017472898ba37" category="paragraph">您可以監控您所起始或排程的備份工作狀態、並還原您所起始的工作。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。</block>
-  <block id="747ab4e57729ad952df86b61ce8fa363" category="list-text">顯示其他欄（工作環境、 SVM 、使用者名稱、工作負載、原則、 和 Snapshot Label ）、請選取 <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="ef01d887513738e3083dc9422947bd11" category="paragraph">您可以使用多個篩選器（例如備份原則和 Snapshot 標籤）來篩選「工作監控」頁面上的作業。</block>
   <block id="d119f82d01fe8b24b109c5ce80991809" category="section-title">檢閱備份生命週期工作</block>
   <block id="93d7343c1b7b9d802947b5e6175b94db" category="paragraph">監控備份生命週期流程、有助於確保稽核完整性、責任歸屬及備份安全。為了協助您追蹤備份生命週期、您可能想要識別所有備份複本的到期日。</block>
@@ -3961,7 +3952,6 @@ ifdef：：AWS []</block>
   <block id="861cb48bf82afb2d1addc6ef6c8ff905" category="doc">將內部部署的 ONTAP 資料備份至 StorageGRID</block>
   <block id="1c217460a8591d40515e5ac52003a8a3" category="paragraph">請完成幾個步驟、開始將內部部署主要 ONTAP 系統的 Volume 資料備份到次要儲存系統、以及 NetApp StorageGRID 系統中的物件儲存設備。</block>
   <block id="78cd41832e44ff3412f34a5c7037262b" category="paragraph">請檢閱如何透過公用網際網路將內部部署 ONTAP 叢集直接連線至 StorageGRID 、或是是否使用 VPN 並將流量透過私有 VPC 端點介面路由至 StorageGRID 。</block>
-  <block id="fbd75c16bafd2c07d83915ddf5e96776" category="paragraph">如果您的 StorageGRID 或內部部署中已部署 Connector 、那麼您就可以設定好所有的連接器。如果沒有、則需要建立 BlueXP Connector 、將 ONTAP 資料備份到 StorageGRID 。您也需要自訂 Connector 的網路設定、以便連接至 StorageGRID 。</block>
   <block id="d311cb365e159296336d1969d8b3eaa1" category="paragraph">您必須檢查 StorageGRID 和 BlueXP 的授權要求。</block>
   <block id="eb0c38f90fc27e7262d8f96bbee133fa" category="paragraph">探索 BlueXP 中的 ONTAP 叢集、確認叢集符合最低需求、並自訂網路設定、讓叢集能夠連線至 StorageGRID 。</block>
   <block id="343d4384d85ca06cf7070e8b9ce58985" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 準備 StorageGRID 做為備份目標</block>
@@ -3974,8 +3964,6 @@ ifdef：：AWS []</block>
   <block id="dd61dca07c56e04220c21764b917992f" category="section-title">準備 Connector 網路連線需求</block>
   <block id="420f74958ffaef4d8f08ce850e97c52e" category="list-text">BlueXP 備份與還原功能內建於 BlueXP Connector 中。以私有模式安裝時、您必須定期更新 Connector 軟體、才能存取新功能。請檢查 <block ref="f2b1fe06debcbb7b96badbcb85471310" category="inline-link-macro-rx"></block> 查看每個 BlueXP 備份與還原版本的新功能。若要使用新功能、請依照步驟執行<block ref="164e4794420610da956934de57a9da8a" category="inline-link-rx"></block>。</block>
   <block id="2c4e4b23bf49a867077416ba2dd23a7d" category="list-text">當您在 SaaS 環境中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到雲端。當您在無法存取網際網路的站台中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 儲存區。如果您的私有模式站台發生 Connector 故障、您可以 <block ref="21b30d1009822b1f508f80c6007a3164" category="inline-link-macro-rx"></block>。</block>
-  <block id="86a426afb07ffa9282c6529687b1ddd0" category="list-text">使用扇出備份架構時、必須在主要儲存系統上設定下列設定。</block>
-  <block id="6e3d72c990b9259f1262b3a7a3403e5d" category="list-text">使用串聯備份架構時、必須在次要儲存系統上設定下列設定。</block>
   <block id="113b5e7186c305ad07d9c9c046e30198" category="list-text">如果您使用的 IPspace 與預設的不同、則可能需要建立靜態路由、才能存取物件儲存區。</block>
   <block id="08cdeb7ce64fda06111111c8fea66510" category="section-title">準備 StorageGRID 做為備份目標</block>
   <block id="ed7694068a182dc8a1f5bc691be01032" category="section-title">準備將舊的備份檔案歸檔到公有雲儲存設備</block>
@@ -3986,7 +3974,6 @@ ifdef：：AWS []</block>
   <block id="337633c8e91ca2d8e0a8de99f528f661" category="list-text">如果現有的ILM原則處於「建議」狀態、則無法建立及啟動新的ILM原則。<block ref="8f705117b479c6c746fcadf50adb4986" category="inline-link-rx"></block>。</block>
   <block id="c47ef8c4ea84fc2692a07f1f13a4dc0a" category="paragraph">如果備份目的地在 Canvas 上作為工作環境存在、您可以將 ONTAP 叢集拖曳到物件儲存設備上。</block>
   <block id="f6403db43da3baca399962b8fdf07d76" category="list-text">* 層疊 * ：資訊從主要儲存設備流向次要儲存設備、再從次要儲存設備流向物件儲存設備、從次要儲存設備流向物件儲存設備。</block>
-  <block id="637991aaf3d0bbf10fb193c93774551a" category="list-text">* 扇出 * ：資訊從主要儲存設備流向次要儲存設備、從來源儲存設備流向物件儲存設備。</block>
   <block id="749ef9bfd50fd41baeffea89c1ed7056" category="list-text">* 供應商 * ：選擇 * StorageGRID * 。</block>
   <block id="d1928cac8c40b2b3b7b9d626779aa44b" category="list-text">* 供應商設定 * ：輸入供應商閘道節點 FQDN 詳細資料、連接埠、存取金鑰和秘密金鑰。</block>
   <block id="a77d2d2e75b6e2609083f1568a865982" category="paragraph">存取金鑰和秘密金鑰適用於您建立的 IAM 使用者、以授予 ONTAP 叢集對儲存庫的存取權。</block>
@@ -4054,7 +4041,6 @@ ifdef：：AWS []</block>
   <block id="fd8e00004c8fa188a1fbd959a0eb17ba" category="paragraph">Blob 儲存容器會建立在您輸入的資源群組中、備份檔案會儲存在該處。</block>
   <block id="e1ea8c5cdcdb91c8a11dbc07eb9caa42" category="admonition">ONTAP 備份工作（包括臨機操作和排程、排程工作僅適用於 ONTAP 9.13.0 或更新版本）和所有還原工作的工作詳細資料都會出現。將顯示進行中和已完成工作的工作詳細資料。</block>
   <block id="a43bcfae03cdf5644c6276826ab45140" category="paragraph">除了在通知中心中檢視警示外、您還可以設定 BlueXP 以電子郵件方式傳送特定類型的通知作為警示、讓您即使未登入系統、也能得知重要的系統活動。<block ref="f55b5f666e66870081886e35a4868f02" category="inline-link-rx"></block>。</block>
-  <block id="c116d91220698401a0a999c9099f35b2" category="paragraph">通知中心會顯示許多事件、但只有下列備份與還原事件會觸發電子郵件警示：</block>
   <block id="910e8697aa5e0e59e920af3a4cf26b12" category="admonition">從 ONTAP 9.13.0 開始、 Cloud Volumes ONTAP 和內部部署 ONTAP 系統的所有警示都會出現。對於具有 Cloud Volumes ONTAP 9.13.0 和內部部署 ONTAP 的系統、只會出現「還原工作已完成但有警告」的相關警示。</block>
   <block id="309311e3de2537adb09a82ea24c863ec" category="paragraph">根據預設、 BlueXP 帳戶管理員會收到所有「重大」和「建議」警示的電子郵件。根據預設、所有其他使用者和收件者都不會收到任何通知電子郵件。電子郵件可傳送給任何屬於您NetApp雲端帳戶一部分的BlueXP使用者、或傳送給任何其他需要注意備份與還原活動的收件者。</block>
   <block id="62b4689602c4298e3a38df54594adea1" category="paragraph">若要接收 BlueXP 備份與還原電子郵件警示、您必須在「警示與通知設定」頁面中選取通知嚴重性類型「重大」、「警告」和「錯誤」。</block>
@@ -4316,4 +4302,22 @@ ifdef：：AWS []</block>
   <block id="f717a77f4fa4c437e114a568e845c80e" category="sidebar">管理叢集層級的物件備份設定</block>
   <block id="a7b1a9069e674c0aac2afe848aefc5a0" category="sidebar">在其他磁碟區上啟用磁碟區備份</block>
   <block id="90f7372e4d5f7acc9a7ad384567a8fb1" category="sidebar">管理複寫關係</block>
+  <block id="4e94aca278bbfbf09c063f578946bd47" category="paragraph">如果您的內部部署已部署 Connector 、那麼您就可以設定好所有的連接器。如果沒有、則需要建立 BlueXP Connector 、將 ONTAP 資料備份到 StorageGRID 。您也需要自訂 Connector 的網路設定、以便連接至 StorageGRID 。</block>
+  <block id="54c50d39294a1455c6b25fe6e2d434fb" category="paragraph">或者、您也可以連線到位於同一個內部部署位置的次要 ONTAP 系統、以複寫磁碟區。</block>
+  <block id="cde30b836a89432bbe569f5477e106cb" category="paragraph">BlueXP 的新版本備份與還原、除了可將備份建立至物件儲存設備之外、還能排程及建立 Snapshot 複本與複寫磁碟區、因此您必須使用 BlueXP Connector 3.9.31 版或更新版本。因此建議您取得此最新版本來管理所有備份。</block>
+  <block id="40d44bba5c6a2c9aca170a8b84c19f0c" category="list-text">使用扇出備份架構時、必須在 _primary 儲存系統上設定下列設定。</block>
+  <block id="e3bd260295f830fcbec8503fe0a5aef8" category="list-text">使用串聯備份架構時、必須在 _secondary 儲存系統上設定下列設定。</block>
+  <block id="ef58a6d55100435043d388bfdf72c624" category="paragraph">必須符合下列需求。 StorageGRID請參閱<block ref="babf3072d9403ab5e1ffb9e4bb9a27cb" category="inline-link-rx"></block> 以取得更多資訊。</block>
+  <block id="c794a55c739e453d58e6bcd42293fda2" category="list-text">您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支援儲存設備的存取。<block ref="71eb6cc3bcb687d271a4ec87759d7b9d" category="inline-link-rx"></block>。</block>
+  <block id="c3ca0f055412e6bfd28263e582bd783d" category="list-text">您選取的磁碟區也必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。（目前不支援採用 SnapLock Compliance 模式的 Volume 。） 您無法選擇鎖定和解除鎖定的磁碟區組合。</block>
+  <block id="757ddf3a67f3bb933e1f0daa98d655c1" category="list-text">* 架構 * ：如果您同時選擇複寫和備份、請選擇下列其中一種資訊流程：</block>
+  <block id="6265c5dd2df1738680598ec60ee975a7" category="list-text">* 級聯 * ：資訊從主要傳輸到次要傳輸、然後從次要傳輸到物件儲存。</block>
+  <block id="6330eaebaad367e2965b4ee081f23be3" category="summary">您可以監控所有備份與還原工作的狀態。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。</block>
+  <block id="de7564b6e4d771be6301318ae3cf3193" category="paragraph">您可以監控您所起始或排程的備份工作狀態、以及還原您所起始的工作。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。</block>
+  <block id="8d44a80823662750411d0c8c0de286df" category="paragraph">您從 BlueXP 備份與還原 UI 和 API 啟動的備份與還原作業、以及持續排程備份作業等系統起始工作、都可以在「工作監控」標籤中找到。不過、這僅適用於執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統、以及執行 ONTAP 9.13.1 或更新版本的內部部署 ONTAP 系統。執行舊版 ONTAP 時、只會顯示使用者啟動的工作。</block>
+  <block id="11f3249974d1af28e5974c48a4560eeb" category="list-text">顯示其他欄（工作環境、 SVM 、使用者名稱、工作負載、原則名稱、 和 Snapshot Label ）、請選取 <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block>。</block>
+  <block id="327b66d091add79b859ef84933343b9b" category="paragraph">大部分篩選條件都是不言自明的。「工作負載」篩選器可讓您檢視下列類別中的工作：</block>
+  <block id="e0db2fdf8995a741b4ad4157a88c1cae" category="paragraph">通知中心會顯示許多備份與還原事件、但只有下列事件會觸發電子郵件警示：</block>
+  <block id="45b54b60106a7f59e33240f6ddaac7e1" category="list-text">從 BlueXP 功能表列中、選取（<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>）。</block>
+  <block id="5beb7331041291762b098f18521055a9" category="list-text">檢閱通知。</block>
 </blocks>

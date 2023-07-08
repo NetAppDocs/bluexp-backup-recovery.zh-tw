@@ -34,7 +34,7 @@ NOTE: 「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 準備您的BlueXP Connector
 [role="quick-margin-para"]
-如果您的 StorageGRID 或內部部署中已部署 Connector 、那麼您就可以設定好所有的連接器。如果沒有、則需要建立 BlueXP Connector 、將 ONTAP 資料備份到 StorageGRID 。您也需要自訂 Connector 的網路設定、以便連接至 StorageGRID 。
+如果您的內部部署已部署 Connector 、那麼您就可以設定好所有的連接器。如果沒有、則需要建立 BlueXP Connector 、將 ONTAP 資料備份到 StorageGRID 。您也需要自訂 Connector 的網路設定、以便連接至 StorageGRID 。
 
 [role="quick-margin-para"]
 <<準備您的BlueXP Connector,瞭解如何建立 Connector 、以及如何定義必要的網路設定。>>
@@ -73,7 +73,7 @@ NOTE: 「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統�
 
 下列影像顯示將內部部署 ONTAP 系統備份至 StorageGRID 時的每個元件、以及在兩者之間準備所需的連線。
 
-或者、您也可以使用公用或私有連線、連線至複寫磁碟區的次要 ONTAP 系統。
+或者、您也可以連線到位於同一個內部部署位置的次要 ONTAP 系統、以複寫磁碟區。
 
 image:diagram_cloud_backup_onprem_storagegrid.png["顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
@@ -113,6 +113,9 @@ BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份�
 ==== 私有模式（暗網站）考量
 
 * BlueXP 備份與還原功能內建於 BlueXP Connector 中。以私有模式安裝時、您必須定期更新 Connector 軟體、才能存取新功能。請檢查 link:whats-new.html["BlueXP 備份與還原新功能"] 查看每個 BlueXP 備份與還原版本的新功能。若要使用新功能、請依照步驟執行 https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["升級Connector軟體"^]。
++
+BlueXP 的新版本備份與還原、除了可將備份建立至物件儲存設備之外、還能排程及建立 Snapshot 複本與複寫磁碟區、因此您必須使用 BlueXP Connector 3.9.31 版或更新版本。因此建議您取得此最新版本來管理所有備份。
+
 * 當您在 SaaS 環境中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到雲端。當您在無法存取網際網路的站台中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 儲存區。如果您的私有模式站台發生 Connector 故障、您可以 link:reference-backup-cbs-db-in-dark-site.html["將 BlueXP 備份與還原資料還原至新的 Connector"^]。
 
 
@@ -177,8 +180,8 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 您必須在連線至物件儲存設備的系統上設定下列需求。
 
-* 使用扇出備份架構時、必須在主要儲存系統上設定下列設定。
-* 使用串聯備份架構時、必須在次要儲存系統上設定下列設定。
+* 使用扇出備份架構時、必須在 _primary 儲存系統上設定下列設定。
+* 使用串聯備份架構時、必須在 _secondary 儲存系統上設定下列設定。
 
 
 需要下列 ONTAP 叢集網路需求：
@@ -225,7 +228,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 == 準備 StorageGRID 做為備份目標
 
-必須符合下列需求。 StorageGRID請參閱 https://docs.netapp.com/us-en/storagegrid-116/["本文檔StorageGRID"^] 以取得更多資訊。
+必須符合下列需求。 StorageGRID請參閱 https://docs.netapp.com/us-en/storagegrid-117/["本文檔StorageGRID"^] 以取得更多資訊。
 
 支援 StorageGRID 的支援版本:: 支援不支援更新版本的支援。StorageGRID
 +
@@ -235,7 +238,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 若要將較舊的備份分層保存至雲端歸檔儲存設備、StorageGRID 您的不穩定系統必須執行11.3版或更新版本。此外、您必須將 StorageGRID 系統探索到 BlueXP Canvas 。
 
 --
-S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支援儲存設備的存取。 https://docs.netapp.com/us-en/storagegrid-116/admin/creating-tenant-account.html["如StorageGRID 需詳細資訊、請參閱《The》（英文）"^]。
+S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支援儲存設備的存取。 https://docs.netapp.com/us-en/storagegrid-117/admin/creating-tenant-account.html["如StorageGRID 需詳細資訊、請參閱《The》（英文）"^]。
 +
 --
 當您設定將備份備份到StorageGRID SURITY時、備份精靈會提示您輸入租戶帳戶的S3存取金鑰和秘密金鑰。租戶帳戶可讓 BlueXP 備份與還原驗證及存取用於儲存備份的 StorageGRID 貯體。這些金鑰是必填項目、StorageGRID 以便知道誰提出要求。
@@ -406,10 +409,10 @@ NOTE: 如果您選擇的磁碟區具有不同於您在此步驟中選取的原�
 ** * 備份 * ：將磁碟區備份至物件儲存。
 
 
-. * 架構 * ：如果您選擇複寫與備份、請選擇下列其中一種資訊流程：
+. * 架構 * ：如果您同時選擇複寫和備份、請選擇下列其中一種資訊流程：
 +
-** * 層疊 * ：資訊從主要儲存設備流向次要儲存設備、再從次要儲存設備流向物件儲存設備、從次要儲存設備流向物件儲存設備。
-** * 扇出 * ：資訊從主要儲存設備流向次要儲存設備、從來源儲存設備流向物件儲存設備。
+** * 級聯 * ：資訊從主要傳輸到次要傳輸、然後從次要傳輸到物件儲存。
+** * 扇出 * ：資訊會從主要儲存設備流向次要儲存設備（及）。
 +
 如需這些架構的詳細資訊、請參閱 link:concept-protection-journey.html["規劃您的保護旅程"]。
 
@@ -498,6 +501,6 @@ Volume Backup Dashboard隨即顯示、以便您監控備份狀態。
 == 接下來呢？
 
 * 您可以 link:task-manage-backups-ontap.html["管理備份檔案與備份原則"^]。這包括開始和停止備份、刪除備份、新增和變更備份排程等。
-* 您可以 link:task-manage-backup-settings-ontap.html["管理叢集層級的備份設定"^]。這包括變更ONTAP 用來存取雲端儲存設備的儲存金鑰、變更可將備份上傳至物件儲存設備的網路頻寬、變更未來磁碟區的自動備份設定等。
+* 您可以 link:task-manage-backup-settings-ontap.html["管理叢集層級的備份設定"^]。這包括變更可上傳備份至物件儲存設備的網路頻寬、變更未來磁碟區的自動備份設定等。
 * 您也可以 link:task-restore-backups-ontap.html["從備份檔案還原磁碟區、資料夾或個別檔案"^] 內部部署ONTAP 的系統。
 
