@@ -215,10 +215,13 @@ NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Re
 
 
 --
-建立您自己的儲存庫:: 依預設、服務會為您建立儲存區。或者、如果您想要使用自己的貯體、您可以在啟動備份啟動精靈之前建立它們、然後在精靈中選取這些貯體。
-
-
+建立您自己的儲存庫:: 依預設、服務會為您建立儲存區。如果您想要使用自己的儲存區、可以在啟動備份啟動精靈之前建立儲存區、然後在精靈中選取這些儲存區。
++
+--
 如果您建立自己的儲存區、則應使用儲存區名稱「 NetApp-backup 」。
+
+--
+
 
 
 
@@ -239,7 +242,7 @@ NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Re
 * 如果叢集位於內部部署、您應該要在雲端供應商中、從公司網路連線到虛擬網路。這通常是VPN連線。
 * 叢集必須符合額外的子網路、連接埠、防火牆和叢集需求。 ONTAP
 +
-由於您可以複寫到 Cloud Volumes ONTAP 或內部部署系統、因此請檢閱內部部署 ONTAP 系統的對等關係要求。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["請參閱ONTAP 《知識庫》文件中的叢集對等條件"^]。
+由於您可以複寫到 Cloud Volumes ONTAP 或內部部署系統、因此請檢閱內部部署 ONTAP 系統的對等關係要求。 https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["請參閱ONTAP 《知識庫》文件中的叢集對等條件"^]。
 
 
 
@@ -250,7 +253,7 @@ NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Re
 
 == 在 Cloud Volumes ONTAP 上啟用 BlueXP 備份與還原
 
-輕鬆啟用 BluXP 備份與還原。這些步驟會因您現有的 Cloud Volumes ONTAP 系統或新系統而稍有不同。
+啟用 BlueXP 備份與還原非常簡單。這些步驟會因您現有的 Cloud Volumes ONTAP 系統或新系統而稍有不同。
 
 * 在新系統上啟用 BlueXP 備份與還原 *
 
@@ -270,11 +273,11 @@ image:screenshot_backup_to_gcp.png["顯示工作環境精靈中的 BlueXP 備份
 
 
 .結果
-系統上啟用 BlueXP 備份與還原功能、並每天備份磁碟區、並保留最近 30 份備份複本。
+系統上已啟用 BlueXP 備份與還原。在這些 Cloud Volumes ONTAP 系統上建立磁碟區之後、請啟動 BlueXP 備份與還原、以及 link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["在您要保護的每個磁碟區上啟動備份"]。
 
 * 在現有系統上啟用 BlueXP 備份與還原 *
 
-隨時直接從工作環境啟用 BlueXP 備份與還原。
+在現有系統上隨時直接從工作環境中啟用 BlueXP 備份與還原。
 
 .步驟
 . 在 BlueXP Canvas 中、選取工作環境、然後在右側面板的備份與還原服務旁選取 * 啟用 * 。

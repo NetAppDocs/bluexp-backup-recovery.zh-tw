@@ -50,7 +50,7 @@ image:diagram-321-overview.png["顯示備份檔案在來源系統上如何作為
 
 您可以選擇在另一個 ONTAP 儲存系統上建立複寫的磁碟區、以及在雲端中建立備份檔案。或者、您也可以選擇僅建立複寫的磁碟區或備份檔案、這是您的選擇。
 
-總而言之、這些是您可以在 ONTAP 工作環境中為 Volume 或所有磁碟區建立的有效保護流程：
+總而言之、這些是您可以在 ONTAP 工作環境中為 Volume 建立的有效保護流程：
 
 * 來源 Volume -> Snapshot copy -> replated volume -> Backup file
 * 來源 Volume -> Snapshot copy -> Backup 檔案
@@ -87,11 +87,11 @@ NOTE: 初始建立複寫的磁碟區或備份檔案時、會包含完整的來�
 
 建立複寫的磁碟區和備份檔案時、您可以選擇扇出或串聯架構來備份磁碟區。
 
-_fan-Out_ 架構會將 Snapshot 複本分別傳輸到雲端中的目的地儲存系統和備份物件。
+* 扇出 * 架構會將 Snapshot 複本分別傳輸到雲端的目的地儲存系統和備份物件。
 
 image:diagram-321-fanout-detailed.png["顯示如何使用磁碟區的 Snapshot 複本來建立及更新複寫的磁碟區和備份檔案的圖表。"]
 
-_ 串聯 _ 架構會先將 Snapshot 複本傳輸到目的地儲存系統、然後再將複本傳輸到雲端的備份物件。
+* 串聯 * 架構會先將 Snapshot 複本傳輸到目的地儲存系統、然後再將複本傳輸到雲端的備份物件。
 
 image:diagram-321-cascade-detailed.png["顯示如何使用磁碟區的 Snapshot 複本來建立及更新複寫的磁碟區和備份檔案的圖表。"]
 
@@ -124,21 +124,25 @@ image:diagram-321-cascade-detailed.png["顯示如何使用磁碟區的 Snapshot 
 
 如果您建立複寫或備份的自訂原則、則原則標籤（例如「每日」或「每週」）必須符合 Snapshot 原則中存在的標籤、否則將不會建立複寫的磁碟區和備份檔案。您可以使用系統管理員或 ONTAP 命令列介面（ CLI ）來建立自訂原則。
 
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["使用 System Manager 建立快照原則"^]
 https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["使用 ONTAP CLI 建立快照原則"^]
+https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["使用 System Manager 建立複寫原則"^]
 https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["使用 ONTAP CLI 建立複寫原則"^]
 https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["使用 System Manager 建立備份原則"^]
 https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["使用 ONTAP CLI 建立備份原則"^]
 
+* 備註： * 使用 System Manager 時、請選取 * Asynynbling* 作為複寫原則的原則類型、然後選取 * AsynynAsynAs* 和 * 備份至雲端 * 以備份至物件原則。
 
-NOTE: 如果您打算在使用串聯架構時建立自訂原則、則需要在建立複寫磁碟區的次要系統上建立物件原則的備份。如果您使用的是預設原則、則您都已設定好。
-
-您可以在 BleXP 備份與還原 UI 中建立物件儲存原則的備份。請參閱的一節 link:task-manage-backups-ontap.html#add-a-new-backup-policy["新增備份原則"] 以取得詳細資料。您需要使用系統管理員或 ONTAP CLI 建立 Snapshot 和 Replication 原則。
+您可以在 BlueXP 備份與還原 UI 中建立物件儲存原則的備份。請參閱的一節 link:task-manage-backups-ontap.html#add-a-new-backup-policy["新增備份原則"] 以取得詳細資料。您需要使用系統管理員或 ONTAP CLI 建立 Snapshot 和 Replication 原則。
 
 以下是幾個 ONTAP CLI 命令範例、如果您要建立自訂原則、這些命令可能會很有幫助。請注意、您必須使用 _admin_ vserver （儲存 VM ）做為 `<vserver_name>` 在這些命令中。
 
 [cols="30,70"]
 |===
 | 原則說明 | 命令 
+
+
+| Simple Snapshot 原則 | `snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly` 
 
 
 | 輕鬆備份至雲端 | `snapmirror policy create -policy <policy_name> -transfer-priority normal -vserver <vserver_name> -create-snapshot-on-source false -type vault`
@@ -158,6 +162,34 @@ NOTE: 如果您打算在使用串聯架構時建立自訂原則、則需要在�
 |===
 
 NOTE: 只有資料保險箱原則可用於備份至雲端關係。
+
+
+
+=== 我的原則位於何處？
+
+備份原則位於不同位置、視您打算使用的備份架構而定：扇出或階層式。複寫原則和備份原則的設計方式並不相同、因為複寫配對兩個 ONTAP 儲存系統和備份至物件會使用儲存提供者做為目的地。
+
+Snapshot 原則一律位於主要儲存系統上。
+
+複寫原則一律位於次要儲存系統上。
+
+備份至物件原則是在來源磁碟區所在的系統上建立、這是用於扇出組態的主要叢集、也是用於串聯組態的次要叢集。
+
+這些差異如表所示。
+
+[cols="25,25,25,25"]
+|===
+| 架構 | Snapshot原則 | 複寫原則 | 備份原則 
+
+
+| * 扇出 * | 主要 | 次要 | 主要 
+
+
+| * Cascade * | 主要 | 次要 | 次要 
+|===
+因此、如果您打算在使用串聯架構時建立自訂原則、則需要在建立複寫磁碟區的次要系統上建立複寫和備份物件原則。如果您打算在使用扇出架構時建立自訂原則、則需要在建立複寫磁碟區的次要系統上建立複寫原則、並將其備份至主要系統上的物件原則。
+
+如果您使用的是所有 ONTAP 系統上存在的預設原則、則您都已設定好。
 
 
 
@@ -195,29 +227,29 @@ https://www.netapp.tv/details/30567["觀看這段關於 BlueXP 部署模式的�
 
 ifdef::aws[]
 
-* link:task-backup-to-s3.html["將 Cloud Volumes ONTAP 資料備份至 Amazon S3"]。
-* link:task-backup-onprem-to-aws.html["將內部部署的 ONTAP 資料備份至 Amazon S3"]。
+* link:task-backup-to-s3.html["將 Cloud Volumes ONTAP 資料備份至 Amazon S3"]
+* link:task-backup-onprem-to-aws.html["將內部部署的 ONTAP 資料備份至 Amazon S3"]
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* link:task-backup-to-azure.html["將 Cloud Volumes ONTAP 資料備份至 Azure Blob"]。
-* link:task-backup-onprem-to-azure.html["將內部部署的 ONTAP 資料備份至 Azure Blob"]。
+* link:task-backup-to-azure.html["將 Cloud Volumes ONTAP 資料備份至 Azure Blob"]
+* link:task-backup-onprem-to-azure.html["將內部部署的 ONTAP 資料備份至 Azure Blob"]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* link:task-backup-to-gcp.html["將 Cloud Volumes ONTAP 資料備份至 Google Cloud"]。
-* link:task-backup-onprem-to-gcp.html["將內部部署的 ONTAP 資料備份至 Google Cloud"]。
+* link:task-backup-to-gcp.html["將 Cloud Volumes ONTAP 資料備份至 Google Cloud"]
+* link:task-backup-onprem-to-gcp.html["將內部部署的 ONTAP 資料備份至 Google Cloud"]
 
 
 endif::gcp[]
 
-* link:task-backup-onprem-private-cloud.html["將內部部署的 ONTAP 資料備份至 StorageGRID"]。
+* link:task-backup-onprem-private-cloud.html["將內部部署的 ONTAP 資料備份至 StorageGRID"]
 
 
 

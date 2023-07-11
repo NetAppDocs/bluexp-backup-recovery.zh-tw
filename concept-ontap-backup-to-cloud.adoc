@@ -23,7 +23,7 @@ BlueXP 備份與還原服務可提供備份與還原功能、以保護 ONTAP Vol
 * 備份物件儲存區中的磁碟區
 
 
-image:diagram-321-overview.png["顯示備份檔案在來源系統上如何作為 Snapshot 複本、在次要儲存系統上作為複寫磁碟區、以及在物件儲存中作為備份檔案存在的圖表。"]
+image:diagram-321-overview-mkt.png["顯示備份檔案在來源系統上如何作為 Snapshot 複本、在次要儲存系統上作為複寫磁碟區、以及在物件儲存中作為備份檔案存在的圖表。"]
 
 BlueXP 備份與還原利用 NetApp 的 SnapMirror 資料複寫技術、建立 Snapshot 複本並將其傳輸至備份位置、以確保所有備份都完全同步。
 

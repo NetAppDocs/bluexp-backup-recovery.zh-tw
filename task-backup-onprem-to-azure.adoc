@@ -27,7 +27,7 @@ NOTE: 「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"] 找出您要使用的連線方法
 [role="quick-margin-para"]
-您可以選擇是透過公用網際網路將內部部署的 ONTAP 叢集直接連線至 Azure 、還是使用 VPN 或 Azure ExpressRoute 、並將流量透過私有 VPC 端點介面路由至 Azure 。
+您可以選擇是否透過公用網際網路將內部部署的 ONTAP 叢集直接連線至 Azure 、或是使用 VPN 或 Azure ExpressRoute 、並將流量透過私有 VPC 端點介面路由至 Azure 。
 
 [role="quick-margin-para"]
 <<識別連線方法>>。
@@ -213,7 +213,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.htm
 
 == 驗證授權需求
 
-您需要驗證 Azure 和 BlueXP 的授權需求：
+您需要驗證 Azure 和 BlueXP 的授權要求：
 
 * 您必須先向 Azure 訂購隨用隨付（ PAYGO ） BlueXP Marketplace 產品、或是向 NetApp 購買並啟動 BlueXP 備份與恢復 BYOL 授權、才能啟動叢集的 BlueXP 備份與還原。這些授權適用於您的帳戶、可在多個系統上使用。
 +
@@ -318,7 +318,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 * 如果叢集位於內部部署、您應該要在雲端供應商中、從公司網路連線到虛擬網路。這通常是VPN連線。
 * 叢集必須符合額外的子網路、連接埠、防火牆和叢集需求。 ONTAP
 +
-由於您可以複寫到 Cloud Volumes ONTAP 或內部部署系統、因此請檢閱內部部署 ONTAP 系統的對等關係要求。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["請參閱ONTAP 《知識庫》文件中的叢集對等條件"^]。
+由於您可以複寫到 Cloud Volumes ONTAP 或內部部署系統、因此請檢閱內部部署 ONTAP 系統的對等關係要求。 https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["請參閱ONTAP 《知識庫》文件中的叢集對等條件"^]。
 
 
 
@@ -335,9 +335,11 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 
 
-=== 建立您自己的儲存庫
+=== 建立 Azure Blob 儲存帳戶
 
-依預設、服務會為您建立儲存區。或者、如果您想要使用自己的貯體、您可以在啟動備份啟動精靈之前建立它們、然後在精靈中選取這些貯體。
+依預設、服務會為您建立儲存帳戶。如果您想要使用自己的儲存帳戶、可以在啟動備份啟動精靈之前建立帳戶、然後在精靈中選取這些儲存帳戶。
+
+如果您建立自己的儲存帳戶、則應使用「 NetApp-backup 」的儲存帳戶名稱。
 
 
 

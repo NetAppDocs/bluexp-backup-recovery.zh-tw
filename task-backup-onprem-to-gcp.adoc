@@ -55,10 +55,10 @@ NOTE: 「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 準備 Google Cloud 做為備份目標
 [role="quick-margin-para"]
-設定 Connector 建立及管理 Azure Bucket 的權限。您也需要設定內部部署 ONTAP 叢集的權限、才能讀取資料並將資料寫入 Azure 儲存區。
+設定 Connector 的權限、以建立和管理 Google Cloud 儲存庫。您也需要設定內部部署 ONTAP 叢集的權限、才能讀取資料並將資料寫入 Google Cloud 儲存庫。
 
 [role="quick-margin-para"]
-您也可以自行設定資料加密的自訂管理金鑰、而非使用預設的 Azure 加密金鑰。 <<準備 Azure Blob 做為備份目標,瞭解如何讓 Azure 環境準備好接收 ONTAP 備份。>>
+或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。 <<Prepare Google Cloud as your backup target,瞭解如何讓您的 Google Cloud 環境準備好接收 ONTAP 備份。>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 啟動 ONTAP 磁碟區上的備份
 [role="quick-margin-para"]
@@ -263,7 +263,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 * 如果叢集位於內部部署、您應該要在雲端供應商中、從公司網路連線到虛擬網路。這通常是VPN連線。
 * 叢集必須符合額外的子網路、連接埠、防火牆和叢集需求。 ONTAP
 +
-由於您可以複寫到 Cloud Volumes ONTAP 或內部部署系統、因此請檢閱內部部署 ONTAP 系統的對等關係要求。請參閱 https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["請參閱ONTAP 《知識庫》文件中的叢集對等條件"^]。
+由於您可以複寫到 Cloud Volumes ONTAP 或內部部署系統、因此請檢閱內部部署 ONTAP 系統的對等關係要求。 https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["請參閱ONTAP 《知識庫》文件中的叢集對等條件"^]。
 
 
 

@@ -2761,7 +2761,6 @@
   <block id="404ad1bc321be3b042156261e6ba2b4f" category="paragraph">在工作環境精靈中、預設會啟用 BlueXP 備份與還原。請務必保持啟用選項。</block>
   <block id="4f2a0931f8313551f535951dc36ca589" category="inline-xref">在現有系統上啟用 BlueXP 備份與還原</block>
   <block id="c53a7ec6ddfd9f1e05e3e3cfcd2c964c" category="admonition">如果您想要選擇資源群組的名稱、請在部署 Cloud Volumes ONTAP 時 * 停用 * BlueXP 備份與還原。請依照的步驟執行 <block ref="a16f34e9e42db7156a23b1a727a1a752" category="inline-xref-macro-rx"></block> 若要啟用 BlueXP 備份與還原、請選擇資源群組。</block>
-  <block id="3c109ca3c8fa9a28c55f534f9e003b51" category="paragraph">系統上啟用 BlueXP 備份與還原功能、並每天備份磁碟區、並保留最近 30 份備份複本。</block>
   <block id="b8a6a9c5fa81a9fc0842c6df5d41e302" category="paragraph">隨時直接從工作環境啟用 BlueXP 備份與還原。</block>
   <block id="95c42891a35fe848a9c33b8c9e21abd6" category="paragraph">根據預設、 BlueXP 備份與還原會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要確保資料在不同區域之間複寫、可以將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
   <block id="a6824c9b13690f6bdd92d0879a455c1d" category="inline-link-macro">BlueXP 備份與還原注意事項</block>
@@ -3663,23 +3662,19 @@ _ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / �
   <block id="ae8eba8963c30867457e97dd99e8fff7" category="list-text">僅支援區域金鑰；不支援通用金鑰。</block>
   <block id="fdbd81a7d2b282a658a8b0e7b92cdebc" category="section-title">建立您自己的儲存庫</block>
   <block id="74d8456ec74a0cc3a517057feb10fb90" category="paragraph">依預設、服務會為您建立儲存區。或者、如果您想要使用自己的貯體、您可以在啟動備份啟動精靈之前建立它們、然後在精靈中選取這些貯體。</block>
-  <block id="50af2238e1149fc4e9c6d4a91ec928b7" category="paragraph">如果您建立自己的儲存區、則應使用儲存區名稱「 NetApp-backup 」。</block>
   <block id="d4ab2296bb945d417a8addf4512bf51b" category="section-title">驗證複寫磁碟區的 ONTAP 網路需求</block>
   <block id="ea6fd0bb1b39590b996d07b96d466780" category="paragraph">在 BlueXP 備份與還原中啟動備份之前、請先確定來源與目的地系統符合 ONTAP 版本與網路需求。</block>
   <block id="d4bf25559c8ed55928a387cd23720e35" category="section-title">Cloud Volumes ONTAP 網路需求</block>
-  <block id="f8ddaef2a077514c95bf1ab920675fc9" category="paragraph">執行個體的安全性群組必須包含必要的傳入和傳出規則：特別是 ICMP 和連接埠 11104 和 11105 的規則。這些規則包含在預先定義的安全性群組中。</block>
   <block id="0736192094f1dc9a582442df0a017527" category="section-title">內部部署 ONTAP 網路需求</block>
   <block id="ab255acccc17b6b850a499063aaf4ef1" category="list-text">如果叢集位於內部部署、您應該要在雲端供應商中、從公司網路連線到虛擬網路。這通常是VPN連線。</block>
   <block id="1fbce003d68708feb24931b9e6366f50" category="list-text">叢集必須符合額外的子網路、連接埠、防火牆和叢集需求。 ONTAP</block>
   <block id="d7bb556723e915c43fe4fd9b0f90d545" category="inline-link">請參閱ONTAP 《知識庫》文件中的叢集對等條件</block>
-  <block id="3bab5731acdafc9aee7c0eb1d8b0217d" category="paragraph">由於您可以複寫到 Cloud Volumes ONTAP 或內部部署系統、因此請檢閱內部部署 ONTAP 系統的對等關係要求。請參閱<block ref="f62b93c20d5bac3c11ab8a3b52ce12c9" category="inline-link-rx"></block>。</block>
   <block id="c08b01fe5c09939cdbabcb370734dad8" category="list-text">若要在 Cloud Volumes ONTAP 不同子網路中的兩個子網路之間複寫資料、必須將子網路路由在一起（這是預設設定）。</block>
   <block id="a8597301498b7ba277bd04c5d9cec26a" category="section-title">在 Cloud Volumes ONTAP 上啟用 BlueXP 備份與還原</block>
   <block id="3a3585e7353e26db7ebd817873594905" category="paragraph">輕鬆啟用 BluXP 備份與還原。這些步驟會因您現有的 Cloud Volumes ONTAP 系統或新系統而稍有不同。</block>
   <block id="8a8476fd6836ec12c30dec20bc5004af" category="paragraph">* 在新系統上啟用 BlueXP 備份與還原 *</block>
   <block id="901ae31ede407d1b2f9642db905682f2" category="list-text">從 BlueXP Canvas 中選取 * 新增工作環境 * 、選擇雲端供應商、然後選取 * 新增 * 。選取 * 建立 Cloud Volumes ONTAP * 。</block>
   <block id="2804562bc1e662a5b5b8ecf3b0be67c6" category="admonition">若要修改備份設定或新增複寫、請參閱 <block ref="5cd1a7d7fa9fd41e0b8e095748eb7b5f" category="inline-link-macro-rx"></block>。</block>
-  <block id="8f68c2bda59a58c30828aa9f67c7f46d" category="paragraph">系統上已啟用 BlueXP 備份與還原、可備份您每天建立的磁碟區、並保留最近 30 份備份複本。</block>
   <block id="fc90b8f1413f3c199581e8299d3f470a" category="paragraph">* 在現有系統上啟用 BlueXP 備份與還原 *</block>
   <block id="f44b20d5d9a676a009838194fcecc749" category="list-text">在 BlueXP Canvas 中、選取工作環境、然後在右側面板的備份與還原服務旁選取 * 啟用 * 。</block>
   <block id="4ade5af203d6e65a0d4f2dfba9bb43b8" category="section-title">啟動 ONTAP 磁碟區上的備份</block>
@@ -3761,7 +3756,6 @@ _ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / �
   <block id="0565cf043978c615b1f8f7cad9c764d4" category="paragraph">請完成幾個步驟、開始將內部部署主要 ONTAP 系統的大量資料備份到次要儲存系統和 Google Cloud Storage 。</block>
   <block id="0c0bf2caafe0a0bcf95f58c110265658" category="admonition">「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統。</block>
   <block id="8679d305959a742634fdc19258f41c4e" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 找出您要使用的連線方法</block>
-  <block id="6cf819bd9293aa813cfa27132d7de812" category="paragraph">您可以選擇是透過公用網際網路將內部部署的 ONTAP 叢集直接連線至 Google 雲端儲存設備、還是使用 VPN 或 Google 雲端互連、並透過使用私有 IP 位址的私有 Google Access 介面路由流量。</block>
   <block id="8ec119f44cc76251903e9141fc7c49c4" category="paragraph"><block ref="d61bfca6e72207060fa33f0ff3f8d293" category="inline-xref-macro-rx"></block>。</block>
   <block id="b59dc58d729f5c77a50756af1a9eb983" category="paragraph">如果您已在 Google Cloud 或內部部署了 Connector 、那麼您就能輕鬆完成所有設定。如果沒有、您需要建立 BlueXP Connector 、將 ONTAP 資料備份到 Google Cloud 儲存設備。您也必須自訂 Connector 的網路設定、才能連線至 Google Cloud 。</block>
   <block id="1e4b37a7966ae0a6eb7927e68e223924" category="inline-xref">瞭解如何建立 Connector 、以及如何定義必要的網路設定。</block>
@@ -3983,7 +3977,6 @@ ifdef：：AWS []</block>
   <block id="9bdfbf10688e2b38e82b1ddeb1a0af32" category="paragraph">BlueXP 備份與還原會開始為您的磁碟區進行初始備份。複寫磁碟區和備份檔案的基礎傳輸包含完整的來源資料複本。後續傳輸包含 Snapshot 複本中所含主要儲存資料的差異複本。</block>
   <block id="c6f935fce64d135ae3250df1beb9c2aa" category="doc">將內部部署的 ONTAP 資料備份至 Azure Blob 儲存設備</block>
   <block id="b26f7b31288fff69c8d3c7065e19c5d4" category="paragraph">請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到次要儲存系統和 Azure Blob 儲存設備。</block>
-  <block id="facdda46f755c89c58831dda3b15ddef" category="paragraph">您可以選擇是透過公用網際網路將內部部署的 ONTAP 叢集直接連線至 Azure 、還是使用 VPN 或 Azure ExpressRoute 、並將流量透過私有 VPC 端點介面路由至 Azure 。</block>
   <block id="57baa3c287eb66f99ca7a7281024c30a" category="paragraph">如果您已在Azure vnet或內部部署了Connector、您就能輕鬆完成設定。如果沒有、您需要建立 BlueXP Connector 、將 ONTAP 資料備份到 Azure Blob 儲存設備。您也需要自訂 Connector 的網路設定、以便連接至 Azure 。</block>
   <block id="9175d0745db62701ca4f4b1f795bc78e" category="paragraph">探索 BlueXP 中的 ONTAP 叢集、確認叢集符合最低需求、並自訂網路設定、讓叢集能夠連線至 Azure 。</block>
   <block id="45b0dc574541901afc9c84c2a03ebe28" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 準備 Azure Blob 做為備份目標</block>
@@ -4004,7 +3997,6 @@ ifdef：：AWS []</block>
   <block id="5e1b8f741e88cd7d205e1784bab10a4d" category="list-text">選取自訂角色的省略符號（ * ... * ）、然後選取 * 編輯 * 。</block>
   <block id="148cf82a167a4c42f015c88ac109090a" category="list-text">選取 * JSON* 並新增下列權限：</block>
   <block id="6df6e5e28f7a16afde6dc4915de4a5ca" category="list-text">選取 * 檢閱 + 更新 * 、然後選取 * 更新 * 。</block>
-  <block id="0deda7204e72e002187e85560cc2206f" category="paragraph">您需要驗證 Azure 和 BlueXP 的授權需求：</block>
   <block id="dc6287483bb6663eb24a6b4a97292566" category="section-title">準備 Azure Blob 做為備份目標</block>
   <block id="e6a4bcd05aae8d20923024df759b8204" category="inline-link">瞭解如何使用自己的金鑰</block>
   <block id="7c6c6d3f55cf70ec4e78761174989411" category="list-text">您可以在啟動精靈中使用自己的自訂管理金鑰進行資料加密、而非使用預設的Microsoft管理加密金鑰。在此情況下、您必須擁有Azure訂閱、Key Vault名稱及金鑰。<block ref="5499082d3ade4f2b56fcc95816a14476" category="inline-link-rx"></block>。</block>
@@ -4130,7 +4122,6 @@ ifdef：：AWS []</block>
   <block id="33f10a7c625758670c871505fd040a03" category="cell">建立資料備份至雲端、以保護資料、並用於長期歸檔。如有必要、您可以將磁碟區、資料夾或個別檔案從備份還原至相同或不同的工作環境。</block>
   <block id="84d2eb5ebd4a59c9d3a33c1ddc7bf406" category="paragraph">快照是所有備份方法的基礎、必須使用備份與還原服務。Snapshot複本是磁碟區的唯讀時間點映像。映像會佔用最少的儲存空間、而且會產生可忽略的效能負荷、因為它只會記錄自上次Snapshot複本以來對檔案所做的變更。在您的磁碟區上建立的 Snapshot 複本、可用於將複寫的磁碟區和備份檔案與對來源磁碟區所做的變更保持同步、如圖所示。</block>
   <block id="112d5b2e7f70a350b739f08063ce85af" category="paragraph">您可以選擇在另一個 ONTAP 儲存系統上建立複寫的磁碟區、以及在雲端中建立備份檔案。或者、您也可以選擇僅建立複寫的磁碟區或備份檔案、這是您的選擇。</block>
-  <block id="f76d5fec0b4dd48f5a1f783d14d860b5" category="paragraph">總而言之、這些是您可以在 ONTAP 工作環境中為 Volume 或所有磁碟區建立的有效保護流程：</block>
   <block id="f46d552561904382654668028ef332b7" category="list-text">來源 Volume -&gt; Snapshot copy -&gt; replated volume -&gt; Backup file</block>
   <block id="6e0f3f7af71dbdcd66969d229d562636" category="list-text">來源 Volume -&gt; Snapshot copy -&gt; Backup 檔案</block>
   <block id="416d6dba97115e0823c4346a7315efbf" category="list-text">來源 Volume -&gt; Snapshot copy -&gt; replated Volume</block>
@@ -4156,10 +4147,8 @@ ifdef：：AWS []</block>
   <block id="2b769a9268eb2aee4276cba6c57ef0e9" category="cell">高（供應商費用）</block>
   <block id="f20b3ca4032bc39e75089941e59da9ae" category="section-title">您將使用哪種備份架構</block>
   <block id="df2734a3248ea58d4bd1131a234481c4" category="paragraph">建立複寫的磁碟區和備份檔案時、您可以選擇扇出或串聯架構來備份磁碟區。</block>
-  <block id="8601698382afe44631c1bb72709c3331" category="paragraph">_fan-Out_ 架構會將 Snapshot 複本分別傳輸到雲端中的目的地儲存系統和備份物件。</block>
   <block id="fca2f290b176dda18963912f7b942907" category="inline-image-macro">顯示如何使用磁碟區的 Snapshot 複本來建立及更新複寫的磁碟區和備份檔案的圖表。</block>
   <block id="ffd891a8050a93a047c73180f9384213" category="paragraph"><block ref="ffd891a8050a93a047c73180f9384213" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f7be3b6161c8430044f21d47653acb13" category="paragraph">_ 串聯 _ 架構會先將 Snapshot 複本傳輸到目的地儲存系統、然後再將複本傳輸到雲端的備份物件。</block>
   <block id="47439f17d6378e02c6cc8d869a82c912" category="paragraph"><block ref="47439f17d6378e02c6cc8d869a82c912" category="inline-image-macro-rx" type="image"></block></block>
   <block id="500ecf85d81873182f0cadf3300f909e" category="section-title">不同架構選擇的比較</block>
   <block id="688c41a4a08a3e0f4011a51649a5a459" category="paragraph">此表提供了扇出和串聯架構的比較。</block>
@@ -4176,16 +4165,8 @@ ifdef：：AWS []</block>
   <block id="a67640f7cdcc52eaa3b856d6e91a1c2b" category="list-text">預設的備份原則會每天和每週複寫 Snapshot 複本、保留每天 7 份和每週 52 份 Snapshot 複本。</block>
   <block id="1711f5c46c237530499df8bd10af41fc" category="paragraph">如果您建立複寫或備份的自訂原則、則原則標籤（例如「每日」或「每週」）必須符合 Snapshot 原則中存在的標籤、否則將不會建立複寫的磁碟區和備份檔案。您可以使用系統管理員或 ONTAP 命令列介面（ CLI ）來建立自訂原則。</block>
   <block id="d4c627b86ea7fcc97aab9ca0d343fcbe" category="inline-link">使用 ONTAP CLI 建立快照原則</block>
-  <block id="a697a4067d71d212d6d90b5a40b65f6c" category="inline-link">使用 ONTAP CLI 建立複寫原則</block>
-  <block id="4852ced598798ace63321af55f321cf8" category="inline-link">使用 System Manager 建立備份原則</block>
   <block id="350061f867dc1c5e72f04f985e74baee" category="inline-link">使用 ONTAP CLI 建立備份原則</block>
-  <block id="a9ae4c6a697b11fdfda0bb4e732b5ea6" category="paragraph"><block ref="d8ea6acc45a89d2ab361031769419dd5" category="inline-link-rx"></block>
-<block ref="f13ee848e87c0aa36c394e684eee24d7" category="inline-link-rx"></block>
-<block ref="ec7e1f50f366316f4481f1b489263d62" category="inline-link-rx"></block>
-<block ref="d73f218743fa1184e2a040cf646f920f" category="inline-link-rx"></block></block>
-  <block id="d5221819c45343b141dfebcdd736932f" category="admonition">如果您打算在使用串聯架構時建立自訂原則、則需要在建立複寫磁碟區的次要系統上建立物件原則的備份。如果您使用的是預設原則、則您都已設定好。</block>
   <block id="8cb2e913decbf9b532c186901104e076" category="inline-link-macro">新增備份原則</block>
-  <block id="6b411d4748b120033618a859a297c783" category="paragraph">您可以在 BleXP 備份與還原 UI 中建立物件儲存原則的備份。請參閱的一節 <block ref="535e99780197daca673e274e7a26ba94" category="inline-link-macro-rx"></block> 以取得詳細資料。您需要使用系統管理員或 ONTAP CLI 建立 Snapshot 和 Replication 原則。</block>
   <block id="61dc4b0620e6a61c45bae3557cb28951" category="paragraph">以下是幾個 ONTAP CLI 命令範例、如果您要建立自訂原則、這些命令可能會很有幫助。請注意、您必須使用 _admin_ vserver （儲存 VM ）做為<block ref="f536bcc8fda7ee8ba21dea42b5b1c44d" prefix=" " category="inline-code"></block> 在這些命令中。</block>
   <block id="dbb3987abbdf9be78435bfb97c6a1e83" category="cell">原則說明</block>
   <block id="357b8b980947b6d9681d42119e03c9ad" category="cell">輕鬆備份至雲端</block>
@@ -4217,17 +4198,10 @@ ifdef：：AWS []</block>
   <block id="0f8751300c4a6857f8a492b7f39fba12" category="inline-link-macro">請參閱支援的備份目的地完整清單</block>
   <block id="df28403f823a8cccd6d3aa652ebe7892" category="paragraph">當 BlueXP 備份與還原用於具有完整網際網路連線能力的站台（也稱為「標準模式」或「 SaaS 模式」）時、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、 您也可以在任何支援的雲端供應商的物件儲存設備上建立備份檔案。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
   <block id="cd6458cee7347b844e32d364eccbaa5c" category="paragraph">請參閱雲端供應商的備份主題、您打算在其中建立有效 Connector 位置清單的備份檔案。在某些限制下、 Connector 必須手動安裝在 Linux 機器上、或部署在特定雲端供應商中。</block>
-  <block id="0b1927d444be0de7978184d22b87a396" category="list-text"><block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>。</block>
-  <block id="73787881c6954ed3921a1d5b06187a75" category="list-text"><block ref="7f5adf3b5d9ef637dacd0fcd7017c33f" category="inline-link-macro-rx"></block>。</block>
   <block id="2e87d4ef1e0516d893da73de140af706" category="inline-link-macro">將 Cloud Volumes ONTAP 資料備份至 Azure Blob</block>
-  <block id="a2c543723fe6f91d3006330134ace7bf" category="list-text"><block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>。</block>
   <block id="32f34f4c2eca6b21bfa54bfe2cf7ad10" category="inline-link-macro">將內部部署的 ONTAP 資料備份至 Azure Blob</block>
-  <block id="44f7f5461565516d1ed5aad1af7bb2fb" category="list-text"><block ref="9e6e068583778aa95480a42c46f57b8a" category="inline-link-macro-rx"></block>。</block>
   <block id="a6102a3b147e0d099222dfd5f8fa1b0b" category="inline-link-macro">將 Cloud Volumes ONTAP 資料備份至 Google Cloud</block>
-  <block id="4ea849b0335489aba8b4800f940ce2c9" category="list-text"><block ref="0746a14ab26f1c77013b1b74f69b0e83" category="inline-link-macro-rx"></block>。</block>
   <block id="ee45da3db51b4bd67f3174dd7bdd4bc3" category="inline-link-macro">將內部部署的 ONTAP 資料備份至 Google Cloud</block>
-  <block id="a1b5afc48ce1f15676f11eb72385bfbe" category="list-text"><block ref="7f2906feb9bed8771e4967ea2ed8b648" category="inline-link-macro-rx"></block>。</block>
-  <block id="116403f07f9b0bd589c333bd72de20e9" category="list-text"><block ref="80288d2da91f9794088785363d31b6b5" category="inline-link-macro-rx"></block>。</block>
   <block id="2714d7e7e24c727c2c54bb6ba96c4617" category="section-title">支援網際網路連線能力有限的網站</block>
   <block id="e5f27584b8554a76c0aba2da480263ad" category="paragraph">BlueXP 備份與還原可在網際網路連線能力有限（也稱為「受限模式」）的站台中使用、以備份 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。</block>
   <block id="8f573a29259b458aa4c98898b8a3c1ab" category="list-text">您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。瞭解如何操作 <block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>。</block>
@@ -4320,4 +4294,61 @@ ifdef：：AWS []</block>
   <block id="e0db2fdf8995a741b4ad4157a88c1cae" category="paragraph">通知中心會顯示許多備份與還原事件、但只有下列事件會觸發電子郵件警示：</block>
   <block id="45b54b60106a7f59e33240f6ddaac7e1" category="list-text">從 BlueXP 功能表列中、選取（<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>）。</block>
   <block id="5beb7331041291762b098f18521055a9" category="list-text">檢閱通知。</block>
+  <block id="07412ae70c8f432b19c5d424dc630dcf" category="paragraph">依預設、服務會為您建立儲存區。如果您想要使用自己的儲存區、可以在啟動備份啟動精靈之前建立儲存區、然後在精靈中選取這些儲存區。</block>
+  <block id="5ea0826986e3031f8bd8e643d1b37ce9" category="paragraph">如果您建立自己的儲存區、則應使用儲存區名稱「 NetApp-backup 」。</block>
+  <block id="b79f5207c4b1f2d320c8d5fe3eb33f63" category="paragraph">執行個體的安全性群組必須包含必要的傳入和傳出規則：特別是 ICMP 和連接埠 11104 和 11105 的規則。這些規則包含在預先定義的安全性群組中。</block>
+  <block id="e9926e61defd3a286477d3a785a7fd6a" category="paragraph">由於您可以複寫到 Cloud Volumes ONTAP 或內部部署系統、因此請檢閱內部部署 ONTAP 系統的對等關係要求。<block ref="f62b93c20d5bac3c11ab8a3b52ce12c9" category="inline-link-rx"></block>。</block>
+  <block id="d39d5fd7cc5ced3c60a045dedddc0e68" category="inline-link-macro">在您要保護的每個磁碟區上啟動備份</block>
+  <block id="a7ab7e41ab0b37b5c56042c5e14df4ff" category="paragraph">系統上已啟用 BlueXP 備份與還原。在這些 Cloud Volumes ONTAP 系統上建立磁碟區之後、請啟動 BlueXP 備份與還原、以及 <block ref="70d7256195ed88e78bc7994f2215f899" category="inline-link-macro-rx"></block>。</block>
+  <block id="b7d972f6553934b1eea5e57436b58de2" category="paragraph">您可以選擇是透過公用網際網路將內部部署的 ONTAP 叢集直接連線至 Google 雲端儲存設備、還是使用 VPN 或 Google 雲端互連、並透過使用私有 IP 位址的私有 Google Access 介面路由流量。</block>
+  <block id="061189bcae2d45b758f44b801f0cafa0" category="paragraph">設定 Connector 的權限、以建立和管理 Google Cloud 儲存庫。您也需要設定內部部署 ONTAP 叢集的權限、才能讀取資料並將資料寫入 Google Cloud 儲存庫。</block>
+  <block id="965fc2d93c14a05bf6aa6d11dccdf7f3" category="inline-xref">瞭解如何讓您的 Google Cloud 環境準備好接收 ONTAP 備份。</block>
+  <block id="3142575a0ab456d6fc41027f31a44400" category="paragraph">或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。 <block ref="24a7679356370a79eec97a5aa8f7e0f4" category="inline-xref-macro-rx"></block></block>
+  <block id="9ad048774cfb757660014ae8b3a5e963" category="paragraph">啟用 BlueXP 備份與還原非常簡單。這些步驟會因您現有的 Cloud Volumes ONTAP 系統或新系統而稍有不同。</block>
+  <block id="50ecfa827055391d1f79881e9faaa9d5" category="paragraph">在現有系統上隨時直接從工作環境中啟用 BlueXP 備份與還原。</block>
+  <block id="4dd14adc068a21e0671c3acde608dda6" category="paragraph"><block ref="4dd14adc068a21e0671c3acde608dda6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e357379ef349802fe3a5b7a0ea16b622" category="paragraph">您可以選擇是否透過公用網際網路將內部部署的 ONTAP 叢集直接連線至 Azure 、或是使用 VPN 或 Azure ExpressRoute 、並將流量透過私有 VPC 端點介面路由至 Azure 。</block>
+  <block id="bda2bf5fb0b6ef0e110cf67c341d2f58" category="paragraph">您需要驗證 Azure 和 BlueXP 的授權要求：</block>
+  <block id="219920185164037444cf297ee6db557a" category="section-title">建立 Azure Blob 儲存帳戶</block>
+  <block id="f7fd8d98e8242ad43571b2edbb91b9fc" category="paragraph">依預設、服務會為您建立儲存帳戶。如果您想要使用自己的儲存帳戶、可以在啟動備份啟動精靈之前建立帳戶、然後在精靈中選取這些儲存帳戶。</block>
+  <block id="83da16eb347a649074af6b8a1c3d92ae" category="paragraph">如果您建立自己的儲存帳戶、則應使用「 NetApp-backup 」的儲存帳戶名稱。</block>
+  <block id="1de16ec5bb8b26ffbf7189e724790630" category="paragraph">總而言之、這些是您可以在 ONTAP 工作環境中為 Volume 建立的有效保護流程：</block>
+  <block id="62fab0bd5cf92ab36f27224d46c5f233" category="paragraph">* 扇出 * 架構會將 Snapshot 複本分別傳輸到雲端的目的地儲存系統和備份物件。</block>
+  <block id="f47293eaa2dd8607290525b210ac8d72" category="paragraph">* 串聯 * 架構會先將 Snapshot 複本傳輸到目的地儲存系統、然後再將複本傳輸到雲端的備份物件。</block>
+  <block id="3477dac7879a3f44096cb4f68455f180" category="inline-link">使用 System Manager 建立快照原則</block>
+  <block id="c614d93309389f7373130aa7f9186f5d" category="inline-link">使用 System Manager 建立複寫原則</block>
+  <block id="8a95d969b59555a0a73e2a674b580a6e" category="inline-link">使用 ONTAP CLI 建立複寫原則</block>
+  <block id="096dfb23f9de3e352342395b7762f0ba" category="inline-link">使用 System Manager 建立備份原則</block>
+  <block id="b7ad321010459984fa60de2cd7631626" category="paragraph"><block ref="244560fcf5d380e290ecd4b178a412c9" category="inline-link-rx"></block>
+<block ref="d8ea6acc45a89d2ab361031769419dd5" category="inline-link-rx"></block>
+<block ref="6a671fae687ae09ed6ec2eb759a70329" category="inline-link-rx"></block>
+<block ref="76f9b86225921137bc166f71caebf3f1" category="inline-link-rx"></block>
+<block ref="21814359fa3d01fa463924248dc4810b" category="inline-link-rx"></block>
+<block ref="d73f218743fa1184e2a040cf646f920f" category="inline-link-rx"></block></block>
+  <block id="bf322ff91252b9377a00e3301a9fb8de" category="paragraph">* 備註： * 使用 System Manager 時、請選取 * Asynynbling* 作為複寫原則的原則類型、然後選取 * AsynynAsynAs* 和 * 備份至雲端 * 以備份至物件原則。</block>
+  <block id="8c84db8980c0dedab8ce56db7fdbd716" category="paragraph">您可以在 BlueXP 備份與還原 UI 中建立物件儲存原則的備份。請參閱的一節 <block ref="535e99780197daca673e274e7a26ba94" category="inline-link-macro-rx"></block> 以取得詳細資料。您需要使用系統管理員或 ONTAP CLI 建立 Snapshot 和 Replication 原則。</block>
+  <block id="434e82511bf6b4566a7be6239e737769" category="cell">Simple Snapshot 原則</block>
+  <block id="c404f3312a8eec0338ecbc78bdc024ec" category="cell"><block ref="cfcc1000298a724899b278b1bbdc36d0" prefix="" category="inline-code"></block></block>
+  <block id="cc5c8f317eab661af83024bda7eef553" category="section-title">我的原則位於何處？</block>
+  <block id="9c58074fed28efa853a138fdba79e26e" category="paragraph">備份原則位於不同位置、視您打算使用的備份架構而定：扇出或階層式。複寫原則和備份原則的設計方式並不相同、因為複寫配對兩個 ONTAP 儲存系統和備份至物件會使用儲存提供者做為目的地。</block>
+  <block id="7a1f25bd1db088139566bfc0df899cb7" category="paragraph">Snapshot 原則一律位於主要儲存系統上。</block>
+  <block id="631c0944218c78537d6a82498f43a669" category="paragraph">複寫原則一律位於次要儲存系統上。</block>
+  <block id="fc33e7c5f1bd8227aeae99689d9aafed" category="paragraph">備份至物件原則是在來源磁碟區所在的系統上建立、這是用於扇出組態的主要叢集、也是用於串聯組態的次要叢集。</block>
+  <block id="724e50bbeb42e94a045cb1c6c16bd50e" category="paragraph">這些差異如表所示。</block>
+  <block id="4c0abf2d4c54820b8d33061abaf30759" category="cell">Snapshot原則</block>
+  <block id="afce532bad172bcef50d75935d2ed43b" category="cell">複寫原則</block>
+  <block id="7759a4720271a1ab3b4e6b1c36a67058" category="cell">備份原則</block>
+  <block id="98f03716d5ab40042e83bb54bfdb8ae3" category="cell">* 扇出 *</block>
+  <block id="074de7e7c226d5c60f8af14c20725352" category="cell">主要</block>
+  <block id="0c7d6cf19426e01dcfa32434828ed266" category="cell">次要</block>
+  <block id="d3e1c79e680fc97c2e4901838347539e" category="cell">* Cascade *</block>
+  <block id="4f3e03eb9457fe07aacd5615dc75a081" category="paragraph">因此、如果您打算在使用串聯架構時建立自訂原則、則需要在建立複寫磁碟區的次要系統上建立複寫和備份物件原則。如果您打算在使用扇出架構時建立自訂原則、則需要在建立複寫磁碟區的次要系統上建立複寫原則、並將其備份至主要系統上的物件原則。</block>
+  <block id="c9edc6898a1228f4b0c190dac5f6dd15" category="paragraph">如果您使用的是所有 ONTAP 系統上存在的預設原則、則您都已設定好。</block>
+  <block id="b4a611717e08ba4c0f2fa5390556e4e1" category="list-text"><block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block></block>
+  <block id="7f5adf3b5d9ef637dacd0fcd7017c33f" category="list-text"><block ref="7f5adf3b5d9ef637dacd0fcd7017c33f" category="inline-link-macro-rx"></block></block>
+  <block id="d0f49153a0d69289bf4d240d8900efdd" category="list-text"><block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block></block>
+  <block id="9e6e068583778aa95480a42c46f57b8a" category="list-text"><block ref="9e6e068583778aa95480a42c46f57b8a" category="inline-link-macro-rx"></block></block>
+  <block id="0746a14ab26f1c77013b1b74f69b0e83" category="list-text"><block ref="0746a14ab26f1c77013b1b74f69b0e83" category="inline-link-macro-rx"></block></block>
+  <block id="7f2906feb9bed8771e4967ea2ed8b648" category="list-text"><block ref="7f2906feb9bed8771e4967ea2ed8b648" category="inline-link-macro-rx"></block></block>
+  <block id="80288d2da91f9794088785363d31b6b5" category="list-text"><block ref="80288d2da91f9794088785363d31b6b5" category="inline-link-macro-rx"></block></block>
 </blocks>
