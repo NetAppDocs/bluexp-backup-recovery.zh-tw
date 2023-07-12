@@ -39,7 +39,7 @@ summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 驗證授權需求
 [role="quick-margin-para"]
-您必須檢查 Azure 和 BlueXP 的授權要求。
+您必須檢查 Google Cloud 和 BlueXP 的授權要求。
 
 [role="quick-margin-para"]
 <<驗證授權需求>>。
@@ -170,7 +170,7 @@ cloudkms.keyRings.setIamPolicy
 
 依預設、服務會為您建立儲存區。如果您想要使用自己的儲存區、可以在啟動備份啟動精靈之前建立儲存區、然後在精靈中選取這些儲存區。
 
-如果您建立自己的儲存區、則應使用儲存區名稱「 NetApp-backup 」。
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["深入瞭解如何建立自己的貯體"^]。
 
 
 

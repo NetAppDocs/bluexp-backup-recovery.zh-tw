@@ -193,18 +193,42 @@ Snapshot 原則一律位於主要儲存系統上。
 
 
 
-== 您是否希望服務為您建立雲端儲存區
+== 是否要建立自己的物件儲存容器
 
-當您在雲端儲存空間中建立備份檔案時、根據預設、備份與還原服務會建立備份檔案所在的儲存區。如果您想要使用特定名稱或指派特殊屬性、可以自行建立貯體。如果您想要建立自己的貯體、則必須先建立貯體、然後再啟動啟動精靈。
+當您在工作環境的物件儲存區中建立備份檔案時、根據預設、備份與還原服務會為您設定的物件儲存帳戶中的備份檔案建立容器（儲存區或儲存帳戶）。AWS 或 GCP 貯體預設為「 <uuid> 」。Azure Blob 儲存帳戶的名稱為「 netappback.過 <uuid> 」。
 
-您可以從 BlueXP 或雲端供應商建立容器。
+如果您想要使用某個字首或指派特殊屬性、可以在物件提供者帳戶中自行建立容器。如果您想要建立自己的容器、則必須先建立容器、然後再啟動啟動精靈。容器必須專門用於儲存 ONTAP Volume 備份檔案、無法用於任何其他用途。備份啟動精靈會自動探索所選帳戶和認證的已佈建容器、以便您選取要使用的容器。
+
+您可以從 BlueXP 或雲端供應商建立儲存庫。
 
 * https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["從 BlueXP 建立 S3 儲存區"]
 * https://docs.netapp.com/us-en/bluexp-blob-storage/task-add-blob-storage.html["從 BlueXP 建立 Azure Blob 儲存帳戶"]
 * https://docs.netapp.com/us-en/bluexp-google-cloud-storage/task-add-gcp-bucket.html["從 BlueXP 建立 Google Cloud Storage 貯體"]
 
 
-請注意、在 StorageGRID 系統中建立備份時、您無法建立自己的 S3 儲存區。
+* 注意： * 目前您無法在 StorageGRID 系統中建立備份時使用自己的 S3 儲存區。
+
+如果您計畫使用與「 NetApp-backup-xxxxxx 」不同的儲存區首碼、則需要修改 Connector IAM 角色的 S3 權限。如需詳細資訊、請參閱建立備份至 AWS S3 的主題。
+
+
+
+=== 進階貯體設定
+
+如果您打算將舊的備份檔案移至歸檔儲存區、或是打算啟用 DataLock 和勒索軟體保護來鎖定備份檔案、並掃描其是否有可能的勒索軟體、則需要使用特定組態設定來建立容器：
+
+* 在叢集上使用 ONTAP 9.10.1 或更新版本的軟體時、 AWS S3 儲存設備目前支援您自己儲存區上的歸檔儲存設備。根據預設、備份會從 S3 _Standard_ 儲存類別開始。確保您使用適當的生命週期規則來建立貯體：
++
+** 30 天後、將貯體整個範圍內的物件移至 S3 _Standard-IA_ 。
+** 將標籤為「 smc pb_to_to-_archive ： true 」的物件移至 _Glacier Flexible Retriev_ （舊稱為 S3 Glacier ）
+
+
+* 在叢集上使用 ONTAP 9.11.1 或更新版本的軟體時、 AWS 儲存設備支援 DataLock 和勒索軟體保護、而在使用 ONTAP 9.12.1 或更新版本的軟體時、 Azure 儲存設備則支援 DataLock 和勒索軟體保護。
++
+** 對於 AWS 、您必須使用 30 天的保留期間、在貯體上啟用物件鎖定。
+** 對於 Azure 而言、您需要建立具有版本層級不變支援的儲存類別。
+
+
+
 
 
 

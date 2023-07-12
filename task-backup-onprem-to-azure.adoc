@@ -339,7 +339,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 依預設、服務會為您建立儲存帳戶。如果您想要使用自己的儲存帳戶、可以在啟動備份啟動精靈之前建立帳戶、然後在精靈中選取這些儲存帳戶。
 
-如果您建立自己的儲存帳戶、則應使用「 NetApp-backup 」的儲存帳戶名稱。
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["深入瞭解如何建立自己的儲存帳戶"^]。
 
 
 
