@@ -227,7 +227,7 @@ link:concept-protection-journey.html#do-you-want-to-create-your-own-object-stora
 
 == 驗證複寫磁碟區的 ONTAP 網路需求
 
-在 BlueXP 備份與還原中啟動備份之前、請先確定來源與目的地系統符合 ONTAP 版本與網路需求。
+在 BlueXP 備份與還原中啟動備份之前、請先確定來源與目的地系統符合下列網路需求。
 
 
 
@@ -339,29 +339,24 @@ image:screenshot_backup_onprem_enable.png["螢幕擷取畫面、顯示選取工�
 
 === 選取您要備份的磁碟區
 
-選擇您要保護的磁碟區。您可以選擇保護 FlexVol 或 FlexGroup 磁碟區、但無法針對您選擇保護的工作環境、選擇這些磁碟區的組合。
+選擇您要保護的磁碟區。受保護的磁碟區具有下列一項或多項： Snapshot 原則、複寫原則、備份至物件原則。
+
+您可以選擇保護 FlexVol 或 FlexGroup 磁碟區、但是在為工作環境啟動備份時、您無法選擇這些磁碟區的混合。瞭解如何操作 link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["啟動工作環境中其他磁碟區的備份"] （ FlexVol 或 FlexGroup ）。
 
 [NOTE]
 ====
 * 您一次只能在單一 FlexGroup 磁碟區上啟動備份。
-* 您選取的磁碟區也必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。（目前不支援採用 SnapLock Compliance 模式的 Volume 。） 您無法選擇鎖定和解除鎖定的磁碟區組合。
+* 您選取的磁碟區必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。（目前不支援採用 SnapLock Compliance 模式的 Volume 。）
 
 
 ====
-受保護的磁碟區具有下列一項或多項： Snapshot 原則、複寫原則、備份至物件原則。
-
-
-NOTE: 如果您選擇的磁碟區具有不同於稍後所選原則的 Snapshot 和複寫原則、則現有原則將會遭到覆寫。
-
 .步驟
+請注意、如果您選擇的磁碟區已套用 Snapshot 或複寫原則、稍後您選取的原則將會覆寫這些現有原則。
+
 . 在「選取磁碟區」頁面中、選取您要保護的磁碟區。
 +
 ** 您也可以篩選資料列、僅顯示具有特定 Volume 類型、樣式等的 Volume 、以便更輕鬆地進行選擇。
-** 選取第一個磁碟區之後、您就可以選取所有 FlexVol 磁碟區。若要備份所有現有的 FlexVol Volume 和未來新增的任何 FlexVol Volume 、請先勾選一個 Volume 、然後勾選標題列中的方塊。（image:button_backup_all_volumes.png[""]）。
-+
-
-TIP: 我們建議您使用此選項、以便備份所有的磁碟區、而且您永遠不需要記住為新的磁碟區啟用備份。
-
+** 選取第一個磁碟區之後、您可以選取所有 FlexVol 磁碟區（ FlexGroup 磁碟區一次只能選取一個）。若要備份所有現有的 FlexVol Volume 、請先勾選一個 Volume 、然後勾選標題列中的方塊。（image:button_backup_all_volumes.png[""]）。
 ** 若要備份個別磁碟區、請勾選每個磁碟區的方塊（image:button_backup_1_volume.png[""]）。
 
 
@@ -445,7 +440,7 @@ NOTE: 如果您選擇現有的儲存區、則加密資訊已可供使用、因�
 
 TIP: 如果您想要建立自訂原則、可以使用系統管理員或 ONTAP CLI `snapmirror policy create` 命令。請參閱。
 
-** * 將現有的 Snapshot 複本匯出至物件儲存區做為備份複本 * ：如果此工作環境中有任何本機 Snapshot 複本用於讀取 / 寫入磁碟區、且與您剛為此工作環境選取的備份排程標籤相符（例如每日、每週等）、則會顯示此額外提示。核取此方塊、將所有歷史快照複製到物件儲存區做為備份檔案、以確保磁碟區獲得最完整的保護。
+** * 將現有的 Snapshot 複本匯出至物件儲存區做為備份複本 * ：如果此工作環境中有任何本機 Snapshot 複本符合您剛為此工作環境選取的備份排程標籤（例如每日、每週等）、則會顯示此額外提示。核取此方塊、將所有歷史快照複製到物件儲存區做為備份檔案、以確保磁碟區獲得最完整的保護。
 
 
 . 選擇*下一步*。

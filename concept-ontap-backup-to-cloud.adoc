@@ -114,7 +114,28 @@ ifdef：：AWS []
 
 
 | 內部部署 ONTAP 的作業系統 | Cloud Volumes ONTAP
-內部部署 ONTAP 的作業系統 | ifdef：：AWS：Amazon S3 endif：：AWS [] ifdef：：azure[] Azure Blob endif：：azure[] ifdef：：gcp[] Google Cloud Storage endif：：gcp[] NetApp StorageGRID 
+內部部署 ONTAP 的作業系統 | ifdef：：AWS []
+
+Amazon S3
+
+endif::AWS []
+
+
+ifdef：：azure[]
+
+Azure Blob
+
+endif::azure[]
+
+
+ifdef ：： GCP[]
+
+Google Cloud Storage
+
+endif::GCP[]
+
+NetApp StorageGRID
+SS3 ONTAP 
 |===
 
 
@@ -143,6 +164,10 @@ ifdef：：AWS []
 
 
 | NetApp StorageGRID | 內部部署 ONTAP 的作業系統
+Cloud Volumes ONTAP | 內部部署 ONTAP 的作業系統 
+
+
+| SS3 ONTAP | 內部部署 ONTAP 的作業系統
 Cloud Volumes ONTAP | 內部部署 ONTAP 的作業系統 
 |===
 請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能
@@ -231,6 +256,8 @@ BlueXP 備份與還原功能適用於下列使用模式：
 * *年度*：雲端供應商市場的年度合約。
 
 
+備份授權僅適用於從物件儲存設備進行備份與還原。建立 Snapshot 複本和複寫磁碟區不需要授權。
+
 
 
 === 請自帶授權
@@ -298,6 +325,8 @@ image:diagram-backup-recovery-general.png["顯示 BlueXP 備份與還原如何�
 
 === 備份所在位置
 
+根據備份類型、備份位於特定位置：
+
 * _Snapshot copies _ 位於來源工作環境中的來源磁碟區上。
 * _ 複寫磁碟區 _ 位於次要儲存系統 - Cloud Volumes ONTAP 或內部部署 ONTAP 系統。
 * 備份複本 _ 儲存在 BlueXP 在雲端帳戶中建立的物件存放區中。每個叢集/工作環境都有一個物件存放區、而BlueXP會將物件存放區命名如下：「NetApp-backup-clusteruuid」。請勿刪除此物件存放區。
@@ -325,9 +354,11 @@ ifdef::gcp[]
 endif::gcp[]
 
 +
-** 在 StorageGRID 中、 BlueXP 會使用現有的儲存帳戶來儲存物件儲存區貯體。
+** 在 StorageGRID 中、 BlueXP 使用現有的 S3 儲存區租戶帳戶。
 
 +
+** 在 ONTAP S3 中、 BlueXP 使用現有的使用者帳戶來處理 S3 儲存區。
+
 如果您想要在未來變更叢集的目的地物件存放區、則必須進行變更 link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["取消註冊工作環境的 BlueXP 備份與還原"^]然後使用新的雲端供應商資訊來啟用 BlueXP 備份與還原。
 
 

@@ -201,12 +201,12 @@ Snapshot 原則一律位於主要儲存系統上。
 
 您可以從 BlueXP 或雲端供應商建立儲存庫。
 
-* https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["從 BlueXP 建立 S3 儲存區"]
+* https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["從 BlueXP 建立 Amazon S3 儲存區"]
 * https://docs.netapp.com/us-en/bluexp-blob-storage/task-add-blob-storage.html["從 BlueXP 建立 Azure Blob 儲存帳戶"]
 * https://docs.netapp.com/us-en/bluexp-google-cloud-storage/task-add-gcp-bucket.html["從 BlueXP 建立 Google Cloud Storage 貯體"]
 
 
-* 注意： * 目前您無法在 StorageGRID 系統中建立備份時使用自己的 S3 儲存區。
+* 注意： * 目前您無法在 StorageGRID 系統或 ONTAP S3 中建立備份時使用自己的 S3 儲存區。
 
 如果您計畫使用與「 NetApp-backup-xxxxxx 」不同的儲存區首碼、則需要修改 Connector IAM 角色的 S3 權限。如需詳細資訊、請參閱建立備份至 AWS S3 的主題。
 
@@ -274,6 +274,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * link:task-backup-onprem-private-cloud.html["將內部部署的 ONTAP 資料備份至 StorageGRID"]
+* link:task-backup-onprem-to-ontap-s3.html["將內部部署 ONTAP 備份至 ONTAP S3"]
 
 
 
@@ -302,7 +303,8 @@ endif::azure[]
 
 BlueXP 備份與還原可在沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）中使用、以備份大量資料。在這種情況下、您需要在同一個站台的 Linux 主機上部署 BlueXP Connector 。
 
-* 您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。瞭解如何操作  link:task-backup-onprem-private-cloud.html["將內部部署的 ONTAP 資料備份至 StorageGRID"] 以取得詳細資料。
+* 您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。瞭解如何操作 link:task-backup-onprem-private-cloud.html["將內部部署的 ONTAP 資料備份至 StorageGRID"] 以取得詳細資料。
+* 您可以將資料從本機內部部署 ONTAP 系統備份到本機內部部署 ONTAP 系統、或是設定為 S3 物件儲存的 Cloud Volumes ONTAP 系統。瞭解如何操作 link:task-backup-onprem-to-ontap-s3.html["將內部部署的 ONTAP 資料備份到 ONTAP S3"] 以取得詳細資料。
 ifdef：：AWS []
 
 

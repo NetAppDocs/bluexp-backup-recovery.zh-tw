@@ -36,7 +36,7 @@ https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["�
 瞭解操作方法 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理叢集授權"^]。
 
 * 時間和時區設定正確。瞭解操作方法 https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["設定叢集時間"^]。
-* 如果您要複寫資料、則在複寫資料之前、應先確認來源和目的地磁碟區執行的是相容的 ONTAP 版本。
+* 如果您要複寫資料、您應該先確認來源和目的地系統執行相容的 ONTAP 版本、然後再複寫資料。
 +
 https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["檢視SnapMirror ONTAP 關係的相容版本"^]。
 

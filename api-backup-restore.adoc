@@ -97,8 +97,6 @@ Header:
 
 以下範例顯示在 Azure 雲端的 East-US-2 地區、透過新原則在工作環境中啟用 BlueXP 備份與還原的 API 呼叫、該原則設定了每日、每小時和每週的標籤、將天後歸檔設定為 180 天。請注意、這只會在工作環境中啟用備份、但不會備份任何磁碟區。
 
-如果您選擇「自動備份已啟用」：「true」、則系統中已存在的任何磁碟區都會備份、而且未來也會備份任何磁碟區。
-
 .API要求
 您會發現我們使用的是BlueXP帳戶ID `account-DpTFcxN3`、BlueXP Connector ID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`和使用者權杖 `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` 在此命令中。
 

@@ -154,6 +154,10 @@ NOTE: 將資料從Azure歸檔儲存設備還原StorageGRID 至支援的系統不
 
 | NetApp StorageGRID | 內部部署 ONTAP 的作業系統
 Cloud Volumes ONTAP | 內部部署 ONTAP 的作業系統 
+
+
+| SS3 ONTAP | 內部部署 ONTAP 的作業系統
+Cloud Volumes ONTAP | 內部部署 ONTAP 的作業系統 
 |===
 ifdef::aws[]
 
@@ -191,6 +195,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * 若為僅供部分使用、連接器必須部署在內部部署、無論是否可存取網際網路StorageGRID
+* 對於 ONTAP S3 、 Connector 可部署在內部部署（可存取或不存取網際網路）或雲端供應商環境中
 
 
 請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能
@@ -262,6 +267,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * 從StorageGRID 物件還原時、請輸入StorageGRID 用來ONTAP 與StorageGRID 物件進行HTTPS通訊的支援伺服器FQDN和連接埠、選擇存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 位於目的地Volume所在之資料中心內的IPspace。
+* 從 ONTAP S3 還原時、請輸入 ONTAP S3 伺服器的 FQDN 和 ONTAP 與 ONTAP S3 進行 HTTPS 通訊時應使用的連接埠、選取存取物件儲存設備所需的存取金鑰和秘密金鑰、 以及目的地磁碟區所在的 ONTAP 叢集中的 IPspace 。
 +
 .. 輸入您要用於還原磁碟區的名稱、然後選取磁碟區所在的Storage VM和Aggregate。還原FlexGroup 某個卷時、您可以選擇多個集合體。根據預設、*<SOUR_volume名稱>_restore *會用作磁碟區名稱。
 +
@@ -307,8 +313,13 @@ BlueXP 備份與還原會根據您選取的備份建立新的磁碟區。
 
 如果您只需要從ONTAP 一個還原磁碟區備份中還原幾個檔案、您可以選擇還原資料夾或個別檔案、而非還原整個磁碟區。您可以將資料夾和檔案還原至原始工作環境中的現有磁碟區、或還原至使用相同雲端帳戶的不同工作環境。您也可以將資料夾和檔案還原至內部部署ONTAP 的作業系統上的磁碟區。
 
-* 注意： * 您目前只能從物件儲存區中的備份檔案還原資料夾或個別檔案。目前不支援從本機 Snapshot 複本或位於次要工作環境（複寫磁碟區）的備份檔案還原檔案和資料夾。
+[NOTE]
+====
+* 您目前只能從物件儲存區中的備份檔案還原資料夾或個別檔案。目前不支援從本機 Snapshot 複本或位於次要工作環境（複寫磁碟區）的備份檔案還原檔案和資料夾。
+* ONTAP S3 物件儲存區中的磁碟區目前不支援還原檔案和資料夾。
 
+
+====
 如果您選取多個檔案、所有檔案都會還原至您選擇的相同目的地Volume。因此、如果您想要將檔案還原至不同的磁碟區、就必須執行多次還原程序。
 
 使用ONTAP 支援更新版本的支援功能時、您可以還原資料夾及其中的所有檔案和子資料夾。使用ONTAP 9.13.0之前的版本時、只會還原該資料夾中的檔案、子資料夾中的任何子資料夾或檔案都不會還原。
@@ -500,6 +511,7 @@ endif::gcp[]
 * 如果物件儲存設備中的備份檔案已設定為 DataLock 和勒索軟體保護、則只有在 ONTAP 版本為 9.13.1 或更新版本時、才支援資料夾層級還原。如果您使用的是舊版 ONTAP 、您可以從備份檔案還原整個磁碟區、然後存取所需的資料夾和檔案。
 * 如果物件儲存設備中的備份檔案位於歸檔儲存設備中、則只有在 ONTAP 版本為 9.13.1 或更新版本時、才支援資料夾層級還原。如果您使用的是舊版 ONTAP 、您可以從尚未歸檔的較新備份檔案還原資料夾、也可以從歸檔備份還原整個磁碟區、然後存取所需的資料夾和檔案。
 * 將資料從 Azure 歸檔儲存設備還原至 StorageGRID 系統時、不支援「高」還原優先順序。
+* ONTAP S3 物件儲存區中的磁碟區目前不支援還原資料夾。
 
 
 ====
@@ -538,6 +550,10 @@ video::RZktLe32hhQ[youtube,width=848,height=480]
 
 | NetApp StorageGRID | 內部部署 ONTAP 的作業系統
 Cloud Volumes ONTAP | 內部部署 ONTAP 的作業系統 
+
+
+| SS3 ONTAP | 內部部署 ONTAP 的作業系統
+Cloud Volumes ONTAP | 內部部署 ONTAP 的作業系統 
 |===
 對於搜尋與還原、連接器可安裝在下列位置：
 
@@ -563,6 +579,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * 若為僅供部分使用、連接器必須部署在內部部署、無論是否可存取網際網路StorageGRID
+* 對於 ONTAP S3 、 Connector 可部署在內部部署（可存取或不存取網際網路）或雲端供應商環境中
 
 
 請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能
@@ -625,7 +642,7 @@ ifdef::gcp[]
 
 endif::gcp[]
 
-* 需求：StorageGRID
+* StorageGRID 和 ONTAP S3 要求：
 +
 根據您的組態、有兩種方法可以實作搜尋與還原：
 
@@ -690,7 +707,7 @@ ifdef::gcp[]
 
 endif::gcp[]
 
-* 對於StorageGRID 儲存在還原中的備份、它會在Connector或雲端供應商環境中配置空間。
+* 對於儲存在 StorageGRID 或 ONTAP S3 中的備份、它會在 Connector 或雲端供應商環境中配置空間。
 
 
 如果您的工作環境已啟用索引、請前往下一節還原資料。
@@ -751,7 +768,7 @@ image:screenshot_restore_step2_search_restore.png["顯示如何檢視符合搜�
 ifdef::aws[]
 
 +
-*** 從Amazon S3還原時、請在ONTAP 目標Volume所在的叢集中選取IPspace、輸入您所建立之使用者的存取金鑰和秘密金鑰、以便ONTAP 讓該叢集能夠存取S3儲存區、 此外、您也可以選擇私有VPC端點來進行安全的資料傳輸。 link:task-backup-onprem-to-aws.html#cluster-networking-requirements["請參閱這些需求的詳細資料"]。
+*** 從Amazon S3還原時、請在ONTAP 目標Volume所在的叢集中選取IPspace、輸入您所建立之使用者的存取金鑰和秘密金鑰、以便ONTAP 讓該叢集能夠存取S3儲存區、 此外、您也可以選擇私有VPC端點來進行安全的資料傳輸。 link:task-backup-onprem-to-aws.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["請參閱這些需求的詳細資料"]。
 
 
 
@@ -762,19 +779,20 @@ endif::aws[]
 
 ifdef::azure[]
 
-* 從Azure Blob還原時、請在ONTAP 目的地Volume所在的叢集中選取IPspace、然後選取vnet和Subnet（子網路）、以選擇性地選擇私有端點進行安全資料傳輸。 link:task-backup-onprem-to-azure.html#requirements["請參閱這些需求的詳細資料"]。
+* 從Azure Blob還原時、請在ONTAP 目的地Volume所在的叢集中選取IPspace、然後選取vnet和Subnet（子網路）、以選擇性地選擇私有端點進行安全資料傳輸。 link:task-backup-onprem-to-azure.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["請參閱這些需求的詳細資料"]。
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* 從Google Cloud Storage還原時、請在ONTAP 目的地Volume所在的叢集中選取IPspace、然後選取存取金鑰和秘密金鑰以存取物件儲存設備。 link:task-backup-onprem-to-gcp.html#requirements["請參閱這些需求的詳細資料"]。
+* 從Google Cloud Storage還原時、請在ONTAP 目的地Volume所在的叢集中選取IPspace、然後選取存取金鑰和秘密金鑰以存取物件儲存設備。 link:task-backup-onprem-to-gcp.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["請參閱這些需求的詳細資料"]。
 
 
 endif::gcp[]
 
-* 從StorageGRID 物件還原時、請輸入StorageGRID 支援ONTAP 以HTTPS通訊的支援對象伺服器的FQDN和連接埠StorageGRID 、輸入存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 目的地Volume所在的物件叢集中的IPspace。 link:task-backup-onprem-private-cloud.html#requirements["請參閱這些需求的詳細資料"]。
+* 從StorageGRID 物件還原時、請輸入StorageGRID 支援ONTAP 以HTTPS通訊的支援對象伺服器的FQDN和連接埠StorageGRID 、輸入存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 目的地Volume所在的物件叢集中的IPspace。 link:task-backup-onprem-private-cloud.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["請參閱這些需求的詳細資料"]。
+* 從 ONTAP S3 還原時、請輸入 ONTAP S3 伺服器的 FQDN 和 ONTAP 與 ONTAP S3 進行 HTTPS 通訊時應使用的連接埠、選取存取物件儲存設備所需的存取金鑰和秘密金鑰、 以及目的地磁碟區所在的 ONTAP 叢集中的 IPspace 。 link:task-backup-onprem-to-ontap-s3.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["請參閱這些需求的詳細資料"]。
 
 
 .結果
