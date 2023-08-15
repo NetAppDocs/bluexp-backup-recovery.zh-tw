@@ -1305,7 +1305,6 @@
   <block id="ea8bcfb1baf19f84e4a5e1f8a744b022" category="list-text">從BlueXP功能表中、選取* Protection &gt; Backup and recovery *。</block>
   <block id="d24c531f67e59e16184a6f74c9a59f91" category="paragraph">如果您想要使用此選項、可以在建立Cloud Volumes ONTAP 一套運作環境時、設定年度合約、而BlueXP會提示您訂閱AWS Marketplace。</block>
   <block id="f68bf28051d836364652b5a91d1bcd3a" category="list-text">輸入您的BlueXP帳戶ID（在支援網站上稱為「租戶ID」）、然後按一下*提交*下載授權檔案。</block>
-  <block id="257ff1df6b80ed0bf9b3463d53be79f9" category="paragraph">您可以從BlueXP頂端選取「*帳戶*」下拉式清單、然後按一下帳戶旁的「*管理帳戶*」、即可找到您的BlueXP帳戶ID。您的帳戶ID位於「總覽」索引標籤。</block>
   <block id="8d080a0104c2b8b29f5fc2be913926af" category="list-text">在BlueXP功能表中、按一下*管理&gt;數位錢包*、然後選取*資料服務授權*索引標籤。</block>
   <block id="bae190eec3db4a0dd635ae72756acde8" category="inline-link">將新增至BlueXP的NSS帳戶</block>
   <block id="379dea20c8734742bd3f9c78de134135" category="paragraph">當您看到這些警告時、請使用BlueXP介面右下角的聊天圖示來續約授權。</block>
@@ -4456,7 +4455,6 @@ SS3 ONTAP</block>
   <block id="e4cf85fe9c170bcb24ec06be023db892" category="paragraph">您需要從儲存備份檔案的 StorageGRID 或 ONTAP S3 儲存區存取最新的資料庫和索引備份：</block>
   <block id="b805aeaea109186b2d372f733c8143b0" category="list-text"><block ref="9b634f22874d44b1e001e536ff14de06" category="inline-link-rx"></block> 您先前環境中可用的。這包括您用作 S3 伺服器的 ONTAP 系統。</block>
   <block id="ca8395d0f02816c74d48e7e263466096" category="section-title">2023 年 8 月 1 日</block>
-  <block id="a94cc1f58758ef957ce137579b41fcfe" category="paragraph">由於 Connector 具備重要的安全性增強功能、因此現在需要對另外兩個端點進行輸出網際網路存取、才能在公有雲環境中管理備份與還原資源。如果這些端點尚未在防火牆中列入白名單、您會在 UI 中看到「服務無法使用」或「無法判斷服務狀態」的錯誤：</block>
   <block id="0d087a4d2e8c88a4f4a80cf0360fd410" category="paragraph">\https://api.cloud.netapp.com
 \https://netapp-cloud-account.auth0.com/userinfo</block>
   <block id="e752fa0925615f823987d88e457d59fd" category="section-title">新增支援功能、可將磁碟區備份至 S3 組態 ONTAP 系統上的貯體</block>
@@ -4474,4 +4472,6 @@ SS3 ONTAP</block>
   <block id="bf6c8f020a512a9accf77240c1333a16" category="paragraph"><block ref="f412c2e0203811d72b16f88cf9eb5d19" category="inline-link-rx"></block>。</block>
   <block id="f0de192c113fd89f1d8027714c573105" category="sidebar">內部部署 ONTAP 至 ONTAP S3</block>
   <block id="d09fe30f62c514ce3f7fb2767974cf23" category="sidebar">BlueXP 備份與還原影片</block>
+  <block id="b2263890e0533b772d021294e4d3aa41" category="paragraph">您可以從BlueXP頂端選取「*帳戶*」下拉式清單、然後按一下帳戶旁的「*管理帳戶*」、即可找到您的BlueXP帳戶ID。您的帳戶ID位於「總覽」索引標籤。若為無法存取網際網路的私人模式網站、請使用 *account-DARKSITE1* 。</block>
+  <block id="c098886cae0a337e7ab216f45f15ced7" category="paragraph">由於 Connector 具備重要的安全性增強功能、因此現在需要對另外兩個端點進行輸出網際網路存取、才能在公有雲環境中管理備份與還原資源。如果尚未將這些端點新增至防火牆的「允許」清單、您會在 UI 中看到「服務無法使用」或「無法判斷服務狀態」的錯誤：</block>
 </blocks>
