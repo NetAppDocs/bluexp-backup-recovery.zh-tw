@@ -3662,7 +3662,6 @@ _ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / �
   <block id="0c0bf2caafe0a0bcf95f58c110265658" category="admonition">「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統。</block>
   <block id="8679d305959a742634fdc19258f41c4e" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 找出您要使用的連線方法</block>
   <block id="8ec119f44cc76251903e9141fc7c49c4" category="paragraph"><block ref="d61bfca6e72207060fa33f0ff3f8d293" category="inline-xref-macro-rx"></block>。</block>
-  <block id="b59dc58d729f5c77a50756af1a9eb983" category="paragraph">如果您已在 Google Cloud 或內部部署了 Connector 、那麼您就能輕鬆完成所有設定。如果沒有、您需要建立 BlueXP Connector 、將 ONTAP 資料備份到 Google Cloud 儲存設備。您也必須自訂 Connector 的網路設定、才能連線至 Google Cloud 。</block>
   <block id="1e4b37a7966ae0a6eb7927e68e223924" category="inline-xref">瞭解如何建立 Connector 、以及如何定義必要的網路設定。</block>
   <block id="9bf5b2de8cbde5c1020f2aa415499eaa" category="paragraph"><block ref="1593de3ac475c5e8957b366dc033730b" category="inline-xref-macro-rx"></block></block>
   <block id="efc9a74c13e86547b20ec65d6f0f8292" category="paragraph">您必須檢查 Google Cloud 和 BlueXP 的授權要求。</block>
@@ -4428,9 +4427,7 @@ SS3 ONTAP</block>
   <block id="86fa0897ffcce46e8eca8c43e8684ef8" category="paragraph">備份生命週期工作會追蹤所有已刪除的 Snapshot 複本、或是要刪除的佇列中的所有 Snapshot 複本。從 ONTAP 9.13 開始、您可以在「工作監控」頁面上查看所有稱為「保留」的工作類型。</block>
   <block id="cd1b897c85b8fe28d7eeba9cb930852d" category="paragraph">「保留」工作類型會擷取在受 BlueXP 備份與還原保護的磁碟區上所起始的所有 Snapshot 刪除工作。</block>
   <block id="7ef34b031a64c8523d3cc6b68b45c80f" category="list-text">選取「保留」工作類型。</block>
-  <block id="5d6894ee8382920bc03b0dc52a562317" category="paragraph">通知中心會顯示許多 Snapshot 、複寫、備份至雲端和還原事件、但只有下列事件會觸發電子郵件警示：</block>
   <block id="9e35f94818feb2156d0744e4be9fb2ea" category="cell">作業類型</block>
-  <block id="2a78ed76450c3cb42320882b3e055b31" category="cell">營運</block>
   <block id="630469b1210edbcdbdfbbd418f05c1ca" category="cell">警示層級</block>
   <block id="cfa4593b1fb6aea2e32d9928f2c4349b" category="cell">電子郵件已傳送</block>
   <block id="a9a62e70841c4d06dd16306a85700d36" category="cell">啟動</block>
@@ -4455,8 +4452,6 @@ SS3 ONTAP</block>
   <block id="e4cf85fe9c170bcb24ec06be023db892" category="paragraph">您需要從儲存備份檔案的 StorageGRID 或 ONTAP S3 儲存區存取最新的資料庫和索引備份：</block>
   <block id="b805aeaea109186b2d372f733c8143b0" category="list-text"><block ref="9b634f22874d44b1e001e536ff14de06" category="inline-link-rx"></block> 您先前環境中可用的。這包括您用作 S3 伺服器的 ONTAP 系統。</block>
   <block id="ca8395d0f02816c74d48e7e263466096" category="section-title">2023 年 8 月 1 日</block>
-  <block id="0d087a4d2e8c88a4f4a80cf0360fd410" category="paragraph">\https://api.cloud.netapp.com
-\https://netapp-cloud-account.auth0.com/userinfo</block>
   <block id="e752fa0925615f823987d88e457d59fd" category="section-title">新增支援功能、可將磁碟區備份至 S3 組態 ONTAP 系統上的貯體</block>
   <block id="2f90f6337bfaddfb7cef01155147c18e" category="paragraph">現在您可以使用已設定為簡易儲存服務（ S3 ）的 ONTAP 系統、將磁碟區備份至物件儲存。內部部署 ONTAP 系統和 Cloud Volumes ONTAP 系統皆支援此功能。此組態可在雲端部署和內部部署位置中支援、無需網際網路存取（「私有」模式部署）。</block>
   <block id="d93a426929555b449107b332f0c5df78" category="paragraph"><block ref="2d1eb9b9d1143acaa6fbfc289c32041b" category="inline-link-rx"></block>。</block>
@@ -4473,5 +4468,9 @@ SS3 ONTAP</block>
   <block id="f0de192c113fd89f1d8027714c573105" category="sidebar">內部部署 ONTAP 至 ONTAP S3</block>
   <block id="d09fe30f62c514ce3f7fb2767974cf23" category="sidebar">BlueXP 備份與還原影片</block>
   <block id="b2263890e0533b772d021294e4d3aa41" category="paragraph">您可以從BlueXP頂端選取「*帳戶*」下拉式清單、然後按一下帳戶旁的「*管理帳戶*」、即可找到您的BlueXP帳戶ID。您的帳戶ID位於「總覽」索引標籤。若為無法存取網際網路的私人模式網站、請使用 *account-DARKSITE1* 。</block>
-  <block id="c098886cae0a337e7ab216f45f15ced7" category="paragraph">由於 Connector 具備重要的安全性增強功能、因此現在需要對另外兩個端點進行輸出網際網路存取、才能在公有雲環境中管理備份與還原資源。如果尚未將這些端點新增至防火牆的「允許」清單、您會在 UI 中看到「服務無法使用」或「無法判斷服務狀態」的錯誤：</block>
+  <block id="35abe2d136b4990eddee4a79d5635e4e" category="paragraph">如果您的Google Cloud Platform VPC中已部署Connector、您就能輕鬆完成所有設定。如果沒有、您需要建立 BlueXP Connector 、將 ONTAP 資料備份到 Google Cloud 儲存設備。您也必須自訂 Connector 的網路設定、才能連線至 Google Cloud 。</block>
+  <block id="3b27991b1aa229f52835df236ba4b917" category="paragraph">通知中心會顯示許多 Snapshot 、複寫、備份至雲端和還原事件、但只有某些事件會觸發電子郵件警示：</block>
+  <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">活動</block>
+  <block id="94798620994cb827b675957027c80437" category="paragraph">由於 Connector 具備重要的安全性增強功能、因此現在需要透過外部網際網路存取額外的端點、才能在公有雲環境中管理備份與還原資源。如果此端點尚未新增至防火牆的「允許」清單、您會在 UI 中看到「服務無法使用」或「無法判斷服務狀態」的錯誤：</block>
+  <block id="300f031c227ed1b4448a8bb51abec2bb" category="paragraph">\https://netapp-cloud-account.auth0.com</block>
 </blocks>

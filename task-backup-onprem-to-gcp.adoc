@@ -34,7 +34,7 @@ NOTE: 「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統�
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 準備您的BlueXP Connector
 [role="quick-margin-para"]
-如果您已在 Google Cloud 或內部部署了 Connector 、那麼您就能輕鬆完成所有設定。如果沒有、您需要建立 BlueXP Connector 、將 ONTAP 資料備份到 Google Cloud 儲存設備。您也必須自訂 Connector 的網路設定、才能連線至 Google Cloud 。
+如果您的Google Cloud Platform VPC中已部署Connector、您就能輕鬆完成所有設定。如果沒有、您需要建立 BlueXP Connector 、將 ONTAP 資料備份到 Google Cloud 儲存設備。您也必須自訂 Connector 的網路設定、才能連線至 Google Cloud 。
 
 [role="quick-margin-para"]
 <<準備您的BlueXP Connector,瞭解如何建立 Connector 、以及如何定義必要的網路設定。>>
