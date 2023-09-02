@@ -157,7 +157,6 @@ VPC閘道端點必須已存在於VPC中。 https://docs.aws.amazon.com/vpc/lates
                 "s3:GetObjectRetention",
                 "s3:DeleteObjectVersionTagging",
                 "s3:PutBucketObjectLockConfiguration",
-                "s3:ListBucketByTags",
                 "s3:DeleteObjectVersion",
                 "s3:GetObjectTagging",
                 "s3:PutBucketVersioning",

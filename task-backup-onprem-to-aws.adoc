@@ -307,7 +307,6 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
               "s3:GetObjectRetention",
               "s3:DeleteObjectVersionTagging",
               "s3:PutBucketObjectLockConfiguration",
-              "s3:ListBucketByTags",
               "s3:DeleteObjectVersion",
               "s3:GetObjectTagging",
               "s3:PutBucketVersioning",

@@ -220,7 +220,6 @@ ifdef::aws[]
 *** S3：GetObject
 *** S3：PuttBucketObjectLockConfiguration
 *** S3：Get生命 週期組態
-*** S3：listBucketByTags
 *** S3：GetBucketting
 *** S3：刪除ObjectVersion
 *** S3：listBucketVerions
@@ -277,7 +276,6 @@ endif::azure[]
 *** S3：GetObject
 *** S3：PuttBucketObjectLockConfiguration
 *** S3：Get生命 週期組態
-*** S3：listBucketByTags
 *** S3：GetBucketting
 *** S3：刪除ObjectVersion
 *** S3：listBucketVerions
