@@ -46,6 +46,8 @@ sidebar:
       url: "/concept-ontap-backup-to-cloud.html"
     - title: 規劃您的保護旅程
       url: "/concept-protection-journey.html"
+    - title: 管理 ONTAP 磁碟區的原則
+      url: "/task-create-policies-ontap.html"
     - title: 備份Cloud Volumes ONTAP 到Amazon S3
       flavor: aws
       url: "/task-backup-to-s3.html"

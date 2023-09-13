@@ -179,13 +179,10 @@ Cloud Volumes ONTAP | 內部部署 ONTAP 的作業系統
 BlueXP 備份與還原支援下列類型的磁碟區：
 
 * 可讀寫的磁碟區FlexVol
-* SnapMirror資料保護（DP）目的地磁碟區
-* 《企業版》（需使用更新版本的版本）SnapLock ONTAP
-+
-** 目前不支援「符合法規」磁碟區SnapLock 。
-
-
 * 不含更新版本的ONTAP FlexGroup
+* 《企業版》（需使用更新版本的版本）SnapLock ONTAP
+* SnapLock Compliance Volume （需要 ONTAP 9.14 或更新版本）
+* SnapMirror資料保護（DP）目的地磁碟區
 
 
 請參閱的章節 <<限制,備份與還原限制>> 以瞭解其他需求與限制。

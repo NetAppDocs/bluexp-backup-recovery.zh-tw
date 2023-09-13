@@ -966,7 +966,6 @@
   <block id="53cfd5032381d05f65cbc6d64e0004f5" category="list-text">S3：GetObject</block>
   <block id="63c20717f207c238dd1a7f80b31c8b44" category="list-text">S3：PuttBucketObjectLockConfiguration</block>
   <block id="0c1b0b85cf95eb29ecb3d5b774e010c2" category="list-text">S3：Get生命 週期組態</block>
-  <block id="2720ba253382275ebb851de5d590b5cc" category="list-text">S3：listBucketByTags</block>
   <block id="70c72880a06cb649d8a568819cf5e5d1" category="list-text">S3：GetBucketting</block>
   <block id="538e4e83b58b6bce3bde0ae671e33b67" category="list-text">S3：刪除ObjectVersion</block>
   <block id="30756eb77e955d4514eb285a2d31ee73" category="list-text">S3：listBucketVerions</block>
@@ -1502,7 +1501,6 @@
   <block id="36c688567530141607520ff8f371abad" category="paragraph">您應該能夠查看為磁碟區建立的所有備份。</block>
   <block id="ca58572920332b0113296b57e60a56de" category="list-text">在「還原儀表板」的「搜尋與還原」區段下、按一下「*索引設定*」。</block>
   <block id="080b8dd3f3323a86a22c3af13ee1c495" category="list-text">在「搜尋與還原」頁面中、執行幾項目錄搜尋、以確認已成功完成索引目錄還原。</block>
-  <block id="650c5c3b9794e3433e90f3f1f307a2c3" category="list-text">目前不支援「符合法規」磁碟區SnapLock 。</block>
   <block id="bab09e9304b5c4bff1eb4287ce6071b7" category="list-text">不含更新版本的ONTAP FlexGroup</block>
   <block id="181beb5ba2cd4630deb7eb4905bcf5d0" category="list-text">在 GCP 中、備份會與 _Standard_ 儲存類別相關聯。</block>
   <block id="e3ef2b7eb11e46c821f75f7c65663319" category="inline-link-macro">深入瞭解Google歸檔儲存設備</block>
@@ -3720,7 +3718,6 @@ _ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / �
   <block id="0d8299302957cb3fba22b94473c12c7d" category="paragraph">您可以使用自己的客戶管理金鑰進行資料加密、而非使用預設的Google管理加密金鑰。跨區域和跨專案金鑰都受到支援、因此您可以為與 CMEK 金鑰專案不同的貯體選擇專案。</block>
   <block id="309939239d7103f08e00804428d22284" category="paragraph">如果您打算使用自己的客戶管理金鑰：</block>
   <block id="8b9e35eb97786c146adac12f589d404b" category="paragraph">如果用於備份的 Google Cloud Storage 目的地在 Canvas 上作為工作環境存在、您可以將 ONTAP 叢集拖曳到 Google Cloud 物件儲存設備上。</block>
-  <block id="ce60c44daed8a68a91ece5b6596057cc" category="list-text">在備份和恢復欄中選擇 * Volumes （卷） * 。從 Volumes （磁碟區）索引標籤中、選取 * Actions （ ... ） * 選項、然後針對單一磁碟區選取 * Activate Backup* （啟動備份）（尚未啟用複寫或備份至物件儲存區）。。</block>
   <block id="6726285215cd3fb82b2bc565d1c05a91" category="list-text">* 級聯 * ：資訊從主要儲存設備流向次要儲存設備、從次要儲存設備流向物件儲存設備。</block>
   <block id="cd20fb22a544b75dcfdc55e676a57177" category="list-text">* 扇出 * ：資訊會從主要儲存設備流向次要儲存設備（及）。</block>
   <block id="62f87cf8c16c2da5d5b4f260c306b995" category="paragraph">您可以建立新的貯體、或是選取您已建立的貯體。</block>
@@ -3730,7 +3727,6 @@ _ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / �
   <block id="351ef22e858cc4f3282062dfc08b26c6" category="admonition">如果您選擇現有的 Google Cloud 儲存帳戶、則加密資訊已可供使用、因此您不需要立即輸入。</block>
   <block id="e0278e3316b81b329baced2d53dcdc63" category="paragraph">如果您選擇使用自己的客戶管理金鑰、請輸入金鑰環和金鑰名稱。<block ref="f8e0e63bffb58004a25f7278cd43c42c" category="inline-link-rx"></block>。</block>
   <block id="5ff1fe0a088aed28b3f32142c788c3d5" category="list-text">* 網路 * ：選擇 IPspace 。</block>
-  <block id="880f6f7d5949be70d701b695256a4761" category="admonition">如果您想要建立自訂原則、可以使用系統管理員或 ONTAP CLI 。請參閱 &lt;link&gt; 。</block>
   <block id="bf125f3150943c9c18a4cd821384babe" category="paragraph">複寫的磁碟區會建立在目的地叢集中、並與來源磁碟區同步。</block>
   <block id="a3c584a28c3b65e7dd15a0fab91559ce" category="paragraph">Google Cloud Storage儲存庫會自動在您輸入的Google存取金鑰和秘密金鑰所指示的服務帳戶中建立、並儲存備份檔案。Volume Backup Dashboard隨即顯示、以便您監控備份狀態。</block>
   <block id="be7c136f5c48ebfb72acc7a3f7f76696" category="doc">將 Cloud Volumes ONTAP 資料備份至 Amazon S3</block>
@@ -4311,7 +4307,6 @@ Cloud Volumes ONTAP 系統需要 ONTAP 9.9.1 及更新版本。</block>
   <block id="51c1c5aa077ac8366955ff0cfc3e181a" category="paragraph">選擇您要保護的磁碟區。受保護的磁碟區具有下列一項或多項： Snapshot 原則、複寫原則、備份至物件原則。</block>
   <block id="e16bee3ecafb1ee1c54b43ad85dd8215" category="inline-link-macro">啟動工作環境中其他磁碟區的備份</block>
   <block id="bb3015339c2686a35dc74324b8e4e4ea" category="paragraph">您可以選擇保護 FlexVol 或 FlexGroup 磁碟區、但是在為工作環境啟動備份時、您無法選擇這些磁碟區的混合。瞭解如何操作 <block ref="d59114f3cd03b41fa3f830654247699f" category="inline-link-macro-rx"></block> （ FlexVol 或 FlexGroup ）。</block>
-  <block id="6af8d284e8fb7d947e52105e66ccd610" category="list-text">您選取的磁碟區必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。（目前不支援採用 SnapLock Compliance 模式的 Volume 。）</block>
   <block id="cc54d40dc91fd9f2adf463d5e6a20e64" category="paragraph">請注意、如果您選擇的磁碟區已套用 Snapshot 或複寫原則、稍後您選取的原則將會覆寫這些現有原則。</block>
   <block id="faf9e3428a892363316a8c1e34a4551b" category="list-text">您也可以篩選資料列、僅顯示具有特定 Volume 類型、樣式等的 Volume 、以便更輕鬆地進行選擇。</block>
   <block id="0e118ce24ee3412ae2c2aa20c222f02f" category="list-text">選取第一個磁碟區之後、您可以選取所有 FlexVol 磁碟區（ FlexGroup 磁碟區一次只能選取一個）。若要備份所有現有的 FlexVol Volume 、請先勾選一個 Volume 、然後勾選標題列中的方塊。（<block ref="2b1190f90c2c717d2aa70aabd2fc4c36" category="inline-image-macro-rx" type="image"></block>）。</block>
@@ -4362,7 +4357,6 @@ ifdef：：AWS []</block>
   <block id="470964c6383a21c37ec7c78148306066" category="list-text">對於 ONTAP S3 、 Connector 可部署在內部部署（可存取或不存取網際網路）或雲端供應商環境中</block>
   <block id="f19394f3b7f64df50fbe3cf08b518aa3" category="list-text">從 ONTAP S3 還原時、請輸入 ONTAP S3 伺服器的 FQDN 和 ONTAP 與 ONTAP S3 進行 HTTPS 通訊時應使用的連接埠、選取存取物件儲存設備所需的存取金鑰和秘密金鑰、 以及目的地磁碟區所在的 ONTAP 叢集中的 IPspace 。</block>
   <block id="6b2e325b80840b0a9d8b16c541de5ba2" category="list-text">您目前只能從物件儲存區中的備份檔案還原資料夾或個別檔案。目前不支援從本機 Snapshot 複本或位於次要工作環境（複寫磁碟區）的備份檔案還原檔案和資料夾。</block>
-  <block id="74869d9e98fa5c8ed15010d55dad05c7" category="list-text">ONTAP S3 物件儲存區中的磁碟區目前不支援還原檔案和資料夾。</block>
   <block id="24ac68c9fd3a2031d9d90480b0b100c4" category="list-text">ONTAP S3 物件儲存區中的磁碟區目前不支援還原資料夾。</block>
   <block id="6f09a8c8e8b4f8b3acf1f96e43dca354" category="list-text">StorageGRID 和 ONTAP S3 要求：</block>
   <block id="8100b28bcfd3e23e2256df4e160ffe93" category="list-text">對於儲存在 StorageGRID 或 ONTAP S3 中的備份、它會在 Connector 或雲端供應商環境中配置空間。</block>
@@ -4473,4 +4467,118 @@ SS3 ONTAP</block>
   <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">活動</block>
   <block id="94798620994cb827b675957027c80437" category="paragraph">由於 Connector 具備重要的安全性增強功能、因此現在需要透過外部網際網路存取額外的端點、才能在公有雲環境中管理備份與還原資源。如果此端點尚未新增至防火牆的「允許」清單、您會在 UI 中看到「服務無法使用」或「無法判斷服務狀態」的錯誤：</block>
   <block id="300f031c227ed1b4448a8bb51abec2bb" category="paragraph">\https://netapp-cloud-account.auth0.com</block>
+  <block id="809c75c03a253c08bfaa32177821bc49" category="list-text">您選取的磁碟區必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。（採用 SnapLock Compliance 模式的 Volume 需要 ONTAP 9.14 或更新版本。）</block>
+  <block id="437f900a689b3effaba13525bf426e50" category="inline-link-macro">建立原則</block>
+  <block id="e4847718f673436ca61df1d6ff85e9ad" category="admonition">若要使用 UI 建立自訂原則、請參閱 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
+  <block id="63ded913a4470920f93edd534ec90156" category="section-title">2023 年 9 月 11 日</block>
+  <block id="101143ec501ddd03e76bf93ad136c2de" category="section-title">ONTAP 資料的新原則管理</block>
+  <block id="d3744875712ea1e210c10ab00d139b5b" category="paragraph">此版本包含 UI 內的功能、可建立自訂的 Snapshot 原則、複寫原則、以及將 ONTAP 資料備份至物件儲存區的原則。</block>
+  <block id="99a56480b438dfe7afa3558f8c8e61d0" category="inline-link">深入瞭解原則</block>
+  <block id="53a26cd89d8676b12d682e92f9b49a79" category="paragraph"><block ref="99a3bdb35a901d86516bb48e573064a3" category="inline-link-rx"></block>。</block>
+  <block id="90bd868a90cdf44166755a0fdec24b6e" category="section-title">支援從 ONTAP S3 物件儲存區的磁碟區還原檔案和資料夾</block>
+  <block id="efec702225db296adcaac3abb0665451" category="paragraph">以前、當磁碟區備份到 ONTAP S3 物件儲存時、您無法使用「瀏覽與還原」功能還原檔案和資料夾。此版本可移除此限制。</block>
+  <block id="38da59f967f6f913365cf5cefb459344" category="inline-link">深入瞭解還原資料</block>
+  <block id="7b3040066d7e59383891bdcb2977076f" category="paragraph"><block ref="bfc7bc1f2f7fff3212c093c1fc6b6317" category="inline-link-rx"></block>。</block>
+  <block id="52cc7bb26d5185a2c3b92b71a3d6e319" category="section-title">額外支援備份與還原 SnapLock Volume</block>
+  <block id="4cb4cd292be9258bfc850d1aa644d9f6" category="paragraph">備份與還原現在可以備份使用 SnapLock Compliance 或 SnapLock Enterprise 保護模式設定的 FlexVol 和 FlexGroup 磁碟區。您的叢集必須執行 ONTAP 9.14 或更新版本、才能獲得此支援。自 ONTAP 9.11.1 版起、就支援使用 SnapLock 企業模式備份 FlexVol Volume 。較早的 ONTAP 版本不支援備份 SnapLock 保護磁碟區。</block>
+  <block id="115e674b1dc0942f53bc91e279bbd7eb" category="inline-link">深入瞭解如何保護 ONTAP 資料</block>
+  <block id="5ea7c922bf64f9c4520ccdf833e34e39" category="paragraph"><block ref="287ce1c3ffcd9fd04ac3fb9608fef690" category="inline-link-rx"></block>。</block>
+  <block id="7b666c0edc9876b87778d0969629cfbf" category="list-text">在備份和恢復欄中選擇 * Volumes （卷） * 。從 Volumes （卷）選項卡中，選擇 *Actions* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示並選取 * 啟動單一磁碟區的備份 * （尚未啟用複寫或備份至物件儲存設備的磁碟區）。</block>
+  <block id="fee16c8f65e9221b33938ce4c94bb0de" category="admonition">若要建立自訂原則、請參閱 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
+  <block id="c1e74c6339bd5a7ce0c8f49560afe41d" category="list-text">* 備份原則 * ：選取現有的備份至物件儲存原則。</block>
+  <block id="718dfdf9ba4cd59f98163d4d75844472" category="list-text">SnapLock Compliance Volume （需要 ONTAP 9.14 或更新版本）</block>
+  <block id="ef8c31bba1fe5a62e7a6cfedbb9d29da" category="summary">您可以使用 NetApp 提供的預設備份原則來建立備份、也可以建立自訂原則。原則會規範備份類型、備份架構、儲存系統和備份頻率。</block>
+  <block id="defb6c38e16057d80b8b116a92ab8665" category="doc">管理 ONTAP 磁碟區的備份原則</block>
+  <block id="7ee9b8ccc530c51b1215b5f1266eee5e" category="paragraph">您可以使用 NetApp 提供的預設備份原則來建立備份、也可以建立自訂原則。原則會控制備份頻率、備份時間、以及保留的備份檔案數量。</block>
+  <block id="1023513b30fa21977b0dbd6b2e65992c" category="paragraph">當您使用啟動精靈為磁碟區啟用備份與還原服務時、可以從工作環境（ Cloud Volumes ONTAP 或內部部署 ONTAP 系統）中選取預設原則和任何其他原則。如果您想要使用不同於現有原則的原則、則必須先建立原則、然後再啟動啟動精靈。</block>
+  <block id="c5e61d7841bf9a1c1ef625157d503535" category="paragraph">若要瞭解所提供的預設備份原則、請參閱 <block ref="26e6d65b3efbcdaf9fdb0f41b6ffe1ab" category="inline-link-macro-rx"></block>。</block>
+  <block id="bea7279384d85082d745d10903672658" category="paragraph">BlueXP 備份與還原提供三種類型的 ONTAP 資料備份：快照、複製及備份至物件儲存設備。由於您使用的架構和備份類型、其原則位於不同的位置：</block>
+  <block id="9c2cf3d903ec11e031aac200337d550f" category="cell">Snapshot 原則儲存位置</block>
+  <block id="03cef7774b631377e1518e05ea03e5f0" category="cell">複寫原則儲存位置</block>
+  <block id="47678324688906f6896f307bc4023541" category="cell">備份至物件原則儲存位置</block>
+  <block id="1be22c5f78f317083889cb6e2929d752" category="paragraph">根據您的環境、偏好設定和保護類型、使用下列工具建立備份原則：</block>
+  <block id="4539bbf69cf6212ec275958c8953cb21" category="list-text">BlueXP UI</block>
+  <block id="4b5f4ae9ecbdcd94e894932f499d9381" category="list-text">System Manager UI</block>
+  <block id="de134183bea5df515a6756a539ce6f18" category="list-text">CLI ONTAP</block>
+  <block id="9ea44de032373e29ccec8880ba060c49" category="admonition">使用 System Manager 時、請選取 * AsynAsyn* 做為複寫原則的原則類型、然後選取 * AsynynAs* 和 * 備份至雲端 * 以備份至物件原則。</block>
+  <block id="7677a1d2704f93f5cc1c8fd7d26f85d3" category="section-title">檢視工作環境的原則</block>
+  <block id="72fb2dcef5a06d29aaae7643f0eb8635" category="list-text">在 BlueXP UI 中、選取 * Volumes （磁碟區） * &gt; * Backup settings （備份設定） * 。</block>
+  <block id="5af3f75fe74a0c63676cb0ebc8ea40bb" category="list-text">從「備份設定」頁面選取工作環境、然後選取 * 動作 * <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示、然後選取 * 原則管理 * 。</block>
+  <block id="ad1858c9b18af8cbe0b4325833b61ce0" category="paragraph">此時會出現「原則管理」頁面。</block>
+  <block id="e3b8283edc07b71aba66f3cad9a2de47" category="inline-image-macro">原則管理頁面</block>
+  <block id="296b9ff4c428eb1b284df172e8f937be" category="paragraph"><block ref="296b9ff4c428eb1b284df172e8f937be" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0829ebf3236644a786e081485a185704" category="paragraph">預設會顯示 Snapshot 原則。</block>
+  <block id="490ebe8423732c19d7c4ed267db26f2f" category="list-text">若要檢視工作環境中存在的其他原則、請選取 * 複寫原則 * 或 * 備份原則 * 。如果現有的原則可用於備份計畫、您就能設定好所有原則。如果您需要具有不同特性的原則、可以從此頁面建立新原則。</block>
+  <block id="8fb446fc6204f4002da66fd95a8ebf7d" category="section-title">建立Snapshot原則</block>
+  <block id="cbad557bcb30ebd6fc0cb19c52d98918" category="paragraph">3-2-1 策略的一部分是在 * 主要 * 儲存系統上建立磁碟區的 Snapshot 複本。</block>
+  <block id="87d7b16c83e147764f7157c544e8b1f0" category="paragraph">原則建立程序的一部分涉及識別快照和 SnapMirror 標籤、以表示排程和保留。您可以使用預先定義的標籤或建立自己的標籤。</block>
+  <block id="5bbd322028180cb2d9c51ea786314b04" category="list-text">在「原則」頁面中、選取 * 建立新原則 * &gt; * 建立 Snapshot 原則 * 。</block>
+  <block id="b7eb033e2f95b4885d2ab78242e53701" category="list-text">指定原則名稱。</block>
+  <block id="8ea6a94b6e34dd5df6320e7e8b8a2514" category="list-text">選取 Snapshot 排程或排程。最多可有 5 個標籤。或者、建立排程。</block>
+  <block id="4b97d1b547dd6a60145647bd089cb09b" category="list-text">如果您選擇建立排程：</block>
+  <block id="7106575767318bcd310114183d6baad1" category="list-text">選取每小時、每天、每週、每月或每年的頻率。</block>
+  <block id="e44b517397b0ade092a5c512079728c8" category="list-text">指定表示排程和保留的 Snapshot 標籤。</block>
+  <block id="0779f4f56c0897ff7ffb03c6b275ee51" category="list-text">輸入拍攝 Snapshot 的時間和頻率。</block>
+  <block id="f5ed7a849165313457c0aac7b3379f97" category="list-text">保留：輸入要保留的快照數。</block>
+  <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">選擇* Create *（建立*）。</block>
+  <block id="8bddac47f7f2312dbc2c31cf92766f2b" category="section-title">使用串聯架構的 Snapshot 原則範例</block>
+  <block id="ab3e57896123f7580b91c4f58922e7db" category="paragraph">此範例建立具有兩個叢集的 Snapshot 原則：</block>
+  <block id="dc30a10b7f3dac3bcce7b54e12502e89" category="list-text">叢集1：</block>
+  <block id="021a6f1742e889f9d4e45828420cb0cf" category="list-text">選取原則頁面上的叢集 1 。</block>
+  <block id="6bb6c0bda8ce0184ecb36d092b4d1e63" category="list-text">忽略複寫和備份至物件原則區段。</block>
+  <block id="1714f47626850cab3042950c5841ba26" category="list-text">建立 Snapshot 原則。</block>
+  <block id="83655cf6beab33b344c9ae17bec532d0" category="list-text">叢集 2 ：</block>
+  <block id="e2db720dd9637e04a09a88a6c179ea4c" category="list-text">選取「原則」頁面上的「叢集 2 」。</block>
+  <block id="0ef5b185a636e8d973f33fc4c87833bd" category="list-text">忽略 Snapshot 原則區段。</block>
+  <block id="8dd072d2922c8edc60aa60c9bc0cdc46" category="list-text">設定複寫和備份至物件原則。</block>
+  <block id="b67380033d7d5bdab053c0dad43a80c0" category="section-title">建立複寫原則</block>
+  <block id="3dec072d7e14f395b6012bebe3b45fad" category="paragraph">您的 3-2-1 策略可能包括在不同的儲存系統上複寫磁碟區。複寫原則位於 * 次要 * 儲存系統上。</block>
+  <block id="a279488f43a48271cf71b391369880a3" category="list-text">在「原則」頁面中、選取 * 建立新原則 * &gt; * 建立新的複寫原則 * 。</block>
+  <block id="82927e590f678cf898b673e8ed85274d" category="list-text">指定 SnapMirror 標籤（最多 5 個）、表示每個標籤的保留。</block>
+  <block id="d034072367cfae53d523d1b9d4c614d7" category="list-text">指定傳輸排程。</block>
+  <block id="f578bfb9ea0e0cda707a0426ef4bdd1e" category="section-title">建立備份至物件儲存原則</block>
+  <block id="4a9a4e09559bd837deb6b0db0f17b586" category="paragraph">您的 3-2-1 策略可能包括將磁碟區備份至物件儲存。</block>
+  <block id="1a730740674df2bc24af9ce2e66da7df" category="paragraph">根據備份架構、此儲存原則位於不同的儲存系統位置：</block>
+  <block id="7c8ffe07bb7dc70647a194385ea66773" category="list-text">Out-Out ：主儲存系統</block>
+  <block id="96ab2d22b4464dc324915df8e5067ca9" category="list-text">串聯：次要儲存系統</block>
+  <block id="868680c8c14bb13ca00e6f4892aeb3c3" category="list-text">在「原則管理」頁面中、選取 * 建立新原則 * &gt; * 建立新的備份原則 * 。</block>
+  <block id="bfd2bf5ca91b1984485de4fe52e739a9" category="list-text">指定設定、包括傳輸排程和備份歸檔時間。</block>
+  <block id="ddb011fe917012a700049a04ecd807d0" category="list-text">（可選）要在一定天數後將較舊的備份文件移至較低成本的存儲類或訪問層，請選擇 *Archive* 選項並指明在歸檔數據之前應經過的天數。</block>
+  <block id="88b38144f5678f838e589bb3f66fb7c3" category="inline-link">深入瞭解歸檔儲存設定</block>
+  <block id="2f06c0f9a9c55e002f0fca564655709f" category="paragraph"><block ref="2b8c84e24d5058cbeba0f5b8c6d03c2f" category="inline-link-rx"></block>。</block>
+  <block id="de7befde4d7cc6f9bdfc275272097393" category="list-text">（選用）若要保護您的備份不受修改或刪除、請選取 * DataLock &amp; 勒索軟體保護 * 選項。</block>
+  <block id="2d9688ca19f23219c0b4f9a9455f77b5" category="paragraph">如果您的叢集使用的是 ONTAP 9.11.1 或更新版本、您可以選擇設定 _DataLock_ 和 _勒索 軟體保護 _ 、以保護備份免遭刪除。</block>
+  <block id="8b8b4afe72e073cb2f31b19794927e17" category="paragraph"><block ref="a1590ca0a57c2e20ed40ac0f3384a5af" category="inline-link-macro-rx"></block>。</block>
+  <block id="fb6e9d876191a4c0c156e739e377be59" category="section-title">編輯原則</block>
+  <block id="b633d734395141aa32f026fd1762bc20" category="paragraph">您可以編輯自訂的 Snapshot 、複寫或備份原則。</block>
+  <block id="dab1e1444e686afc30710bb64ca8164a" category="paragraph">變更備份原則會影響使用該原則的所有磁碟區。</block>
+  <block id="4285bd228d80d45d4b3b9af468f2244e" category="list-text">在「原則管理」頁面中、選取原則、然後選取 * 動作 * <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示、然後選取 * 編輯原則 * 。</block>
+  <block id="34297ffa69670c3dc8b036dedd867ac3" category="admonition">複寫和備份原則的程序相同。</block>
+  <block id="58a58cd0a42d2dd49b74b06f28da7dda" category="list-text">在「編輯原則」頁面中、進行變更。</block>
+  <block id="10492389e94efdebbb66f7b0cd8a1324" category="list-text">選擇*保存*。</block>
+  <block id="8b6af900279ab887f7d317420c8ef15c" category="section-title">刪除原則</block>
+  <block id="75ce7dc717739caa5a73dc6d99a13b85" category="paragraph">您可以刪除與任何磁碟區無關的原則。</block>
+  <block id="8e387edf6d63170eca6d1d1b9175d85b" category="paragraph">如果原則與磁碟區相關聯、而且您想要刪除原則、則必須先從磁碟區移除原則。</block>
+  <block id="7c8a6ef0dcbcbfb263df1c751ccb1918" category="list-text">在「原則管理」頁面中、選取原則、然後選取 * 動作 * <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示、然後選取 * 刪除 Snapshot 原則 * 。</block>
+  <block id="0f024621e0673f1f4e657983682d6e72" category="list-text">選擇*刪除*。</block>
+  <block id="9c83e144e5481ac6766f4055e566594d" category="section-title">如需詳細資訊、請參閱</block>
+  <block id="739525550bd3f8378558eb1d87764bde" category="paragraph">如需使用系統管理員或 ONTAP CLI 建立原則的相關指示、請參閱下列內容：</block>
+  <block id="4a7bfaa61b260e84e240b222e517825e" category="inline-link">使用 System Manager 建立 Snapshot 原則</block>
+  <block id="18f722142cf1242ec6d2b1e76122b14a" category="inline-link">使用 ONTAP CLI 建立 Snapshot 原則</block>
+  <block id="9d089a52567a29f4f420f7f2f76246ac" category="inline-link">使用 System Manager 建立物件儲存原則的備份</block>
+  <block id="fb258284d7569744ca758873d339532b" category="inline-link">使用 ONTAP CLI 建立物件儲存原則的備份</block>
+  <block id="bc7ba4c7d62d6d4917e638edbc43dbb5" category="paragraph"><block ref="1d5508fcd8027e26b48962bd984558d5" category="inline-link-rx"></block>
+<block ref="25d9216966497b44f1274c2fdc3f62ee" category="inline-link-rx"></block>
+<block ref="6a671fae687ae09ed6ec2eb759a70329" category="inline-link-rx"></block>
+<block ref="76f9b86225921137bc166f71caebf3f1" category="inline-link-rx"></block>
+<block ref="ab2445e139747cf732d46d877cc62a64" category="inline-link-rx"></block>
+<block ref="9c225a8772c7b3c40b62701739b123cf" category="inline-link-rx"></block></block>
+  <block id="b58c28277f6391f0fef677b518977600" category="list-text">在備份和恢復欄中選擇 * Volumes （卷） * 。從 Volumes （卷）選項卡中，選擇 *Actions* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示並選取 * 啟動單一磁碟區的備份 * （尚未啟用複寫或備份至物件儲存設備的磁碟區）。。</block>
+  <block id="fd3268ccfb501d98109da6d282e89db0" category="list-text">在備份和恢復欄中選擇 * Volumes （卷） * 。從 Volumes （卷）選項卡中，選擇 *Actions* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示選項、並針對單一磁碟區選取 * 啟動備份 * （尚未啟用複寫或備份至物件儲存區的磁碟區）。</block>
+  <block id="78720f30e58d9a141f5d550176409702" category="admonition">若要建立自訂原則、請參閱 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>...</block>
+  <block id="311000e4ce9d283fb43e8211781ee9e3" category="list-text">在備份和恢復欄中選擇 * Volumes （卷） * 。從 Volumes （卷）選項卡中，選擇 *Actions* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示並選取 * 啟動單一磁碟區的備份 * （尚未啟用複寫或備份至物件儲存設備的磁碟區）。</block>
+  <block id="e89b128dbf2037e11616e345055bbd03" category="list-text">您選取的磁碟區必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。（目前不支援採用 SnapLock Compliance 模式的 Volume 、需要 ONTAP 9.14 或更新版本。）</block>
+  <block id="33846815732f0a61e794b0e44401b00f" category="admonition">若要建立自訂原則、請參閱
+<block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
+  <block id="6b28ac02ff2a9de6b423b9f57d6a4d09" category="sidebar">管理 ONTAP 磁碟區的原則</block>
 </blocks>
