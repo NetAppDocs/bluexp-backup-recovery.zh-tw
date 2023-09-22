@@ -2094,7 +2094,6 @@
   <block id="01e76ab0dacc58799dc14adbdc705ac7" category="section-title">2023年3月9日</block>
   <block id="35203f05692d5cc102a5525bf4de9733" category="section-title">資料夾層級的還原作業現在包括所有子資料夾和檔案</block>
   <block id="5463242c7cc34f92b5dbbf1ab6d87188" category="paragraph">過去當您還原資料夾時、只會還原該資料夾中的檔案、子資料夾中的任何子資料夾或檔案都不會還原。現在、如果您使用ONTAP 的是更新版本的版本、則會還原所選資料夾中的所有子資料夾和檔案。如果您在頂層資料夾中有多個巢狀資料夾、這可節省大量時間與金錢。</block>
-  <block id="bbe776d643f3b0568f3c2fa216a50124" category="section-title">能夠在Cloud Volumes ONTAP 黑暗的環境中備份來自於各種系統的資料</block>
   <block id="1cdf820a77c583c660d65df7b1ca03b8" category="inline-link">瞭解如何使用進階篩選器</block>
   <block id="1625899745083f00e310fe6a84e9582c" category="list-text">下列S3權限必須是為Connector提供權限的IAM角色的一部分：</block>
   <block id="dd9313799fa929f642611d4d86e9e772" category="paragraph">只有在您第一次選取「工作環境」時、才能在特定的「SVM」中搜尋資料。</block>
@@ -2990,7 +2989,6 @@
   <block id="cfc826b330f7a25cc3c4e115a9fcca13" category="paragraph">請注意、指派給 BlueXP Connector 的 IAM 原則需要將所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如「 arn:AWS-CN:S3 ：：：： NetApp-backup-* 」。請參閱<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> 和<block ref="bb86d78b7593b3e1252f277b7dd6e017" category="inline-link-rx"></block> 以取得詳細資料。</block>
   <block id="3f95b7ff004c9ea7ba2c076aa81ddbd8" category="list-text">除了能夠下載 CSV 檔案來報告所有工作之外、現在您可以下載 JSON 檔案來處理單一工作、並查看其詳細資料。<block ref="c5e8ac86e60de65889ee067b8ca8ac22" category="inline-link-rx"></block>。</block>
   <block id="aca6a48e798dafa8a873544468b60e06" category="list-text">新增兩個備份工作警示：「排程工作失敗」和「還原工作完成但有警告」。<block ref="a4848a9ae757d04f84e693376feb04c0" category="inline-link-rx"></block>。</block>
-  <block id="cb388daef1ecf4d75abae922da7c4ccd" category="paragraph">現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要在商業區域的Linux主機上安裝Connector、也需要在Cloud Volumes ONTAP 該處部署該系統。請參閱<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> 和<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
   <block id="7397c46a6bf6fde87c1217e8c8bbab15" category="list-text">「工作監控」頁面新增進階篩選功能、讓您可以依時間、工作負載（磁碟區、應用程式、虛擬機器或Kubernetes）、 工作類型、狀態、工作環境和儲存VM。您也可以輸入任意文字來搜尋任何資源、例如「application_3」。 <block ref="3ed9d480474f89776ff0bf3cbda69d30" category="inline-link-rx"></block>。</block>
   <block id="72577c9cc3c11c1b1c16727589471767" category="paragraph">如果內部叢集使用ONTAP 的是更新版本的版本、StorageGRID 而您的系統使用的是11.4或更新版本、則可使用此功能。<block ref="a928050165abd52aa438367540434489" category="inline-link-rx"></block>。</block>
   <block id="3171c3474d761b0543c2bd83d1d3f702" category="paragraph">Azure Blob儲存的備份檔案現在支援DataLock和勒索軟體保護。如果Cloud Volumes ONTAP 您的支援對象ONTAP 為執行ONTAP 支援的支援對象、那麼您現在可以鎖定備份檔案、然後掃描檔案、以偵測可能的勒索軟體。<block ref="2045a684ba4b47f5626fcfb6a06714da" category="inline-link-rx"></block>。</block>
@@ -4581,4 +4579,6 @@ SS3 ONTAP</block>
   <block id="33846815732f0a61e794b0e44401b00f" category="admonition">若要建立自訂原則、請參閱
 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
   <block id="6b28ac02ff2a9de6b423b9f57d6a4d09" category="sidebar">管理 ONTAP 磁碟區的原則</block>
+  <block id="49f768fa096c849abfc2310e4f864f5e" category="section-title">能夠在具有有限輸出連線能力的站台中、從 Cloud Volumes ONTAP 系統備份資料</block>
+  <block id="39539808000ad0a6d6ca39474e4fb77b" category="paragraph">現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要您在商業地區的 Linux 主機上以「受限模式」安裝 Connector 、並在該處部署 Cloud Volumes ONTAP 系統。請參閱<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> 和<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
 </blocks>

@@ -306,9 +306,9 @@ API 的新功能可讓您使用 BlueXP 備份與還原、將磁碟區快照備�
 
 
 
-=== 能夠在Cloud Volumes ONTAP 黑暗的環境中備份來自於各種系統的資料
+=== 能夠在具有有限輸出連線能力的站台中、從 Cloud Volumes ONTAP 系統備份資料
 
-現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要在商業區域的Linux主機上安裝Connector、也需要在Cloud Volumes ONTAP 該處部署該系統。請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
+現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要您在商業地區的 Linux 主機上以「受限模式」安裝 Connector 、並在該處部署 Cloud Volumes ONTAP 系統。請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
 
 
 
