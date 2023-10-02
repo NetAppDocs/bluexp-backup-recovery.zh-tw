@@ -70,8 +70,6 @@ sidebar:
       url: "/task-backup-onprem-to-ontap-s3.html"
     - title: 將內部部署ONTAP 的內部部署資料備份至StorageGRID
       url: "/task-backup-onprem-private-cloud.html"
-    - title: 將內部部署 ONTAP 備份至 ONTAP S3
-      url: "/task-backup-onprem-to-ontap-s3.html"
     - title: 管理ONTAP 還原備份
       url: "/task-manage-backups-ontap.html"
     - title: 從ONTAP 還原備份還原
@@ -243,30 +241,28 @@ homepage:
       url: task-report-inventory.html
   - title: 將ONTAP 資料還原至雲端
     links:
-    - title: 支援Amazon S3 Cloud Volumes ONTAP
+    - title: 備份Cloud Volumes ONTAP 到Amazon S3
       url: task-backup-to-s3.html
       flavor: aws
-    - title: 適用於Azure Blob Cloud Volumes ONTAP
+    - title: 備份Cloud Volumes ONTAP 到Azure Blob
       url: task-backup-to-azure.html
       flavor: azure
-    - title: 從NetApp移轉至Google Cloud Cloud Volumes ONTAP
+    - title: 備份Cloud Volumes ONTAP 到Google Cloud
       url: task-backup-to-gcp.html
       flavor: gcp
-    - title: 內部部署ONTAP 的不支援Amazon S3
+    - title: 將內部部署ONTAP 的不支援資料備份至Amazon S3
       url: task-backup-onprem-to-aws.html
       flavor: aws
-    - title: 內部部署ONTAP 的不只是Azure Blob
+    - title: 將內部部署ONTAP 的資料備份到Azure Blob
       url: task-backup-onprem-to-azure.html
       flavor: azure
-    - title: 內部部署ONTAP 的不只是Google Cloud
+    - title: 將內部部署ONTAP 的不全資料備份到Google Cloud
       url: task-backup-onprem-to-gcp.html
       flavor: gcp
-    - title: 內部部署 ONTAP 至 ONTAP S3
+    - title: 將內部部署 ONTAP 備份至 ONTAP S3
       url: task-backup-onprem-to-ontap-s3.html
-    - title: 內部部署ONTAP 的功能從功能到StorageGRID 功能
+    - title: 將內部部署ONTAP 的內部部署資料備份至StorageGRID
       url: task-backup-onprem-private-cloud.html
-    - title: 內部部署 ONTAP 至 ONTAP S3
-      url: task-backup-onprem-to-ontap-s3.html
   - title: 管理ONTAP 還原備份檔案
     links:
     - title: 在其他磁碟區上啟用磁碟區備份
@@ -335,13 +331,13 @@ homepage:
       url: task-restore-backups-kubernetes.html
   - title: 將Kubernetes資料備份到雲端
     links:
-    - title: Kubernetes叢集至Amazon S3
+    - title: 將 Kubernetes 叢集備份至 Amazon S3
       url: task-backup-kubernetes-to-s3.html
       flavor: aws
-    - title: Kubernetes叢集至Azure Blob
+    - title: 將 Kubernetes 叢集備份至 Azure Blob
       url: task-backup-kubernetes-to-azure.html
       flavor: azure
-    - title: Kubernetes叢集至Google Cloud
+    - title: 將 Kubernetes 叢集備份至 Google Cloud
       url: task-backup-kubernetes-to-gcp.html
       flavor: gcp
   - title: 部落格社群

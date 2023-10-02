@@ -704,17 +704,7 @@
   <block id="9f442565cfeffa804173efd111c4d74c" category="sidebar">支援的Azure歸檔存取層</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">知識與支援</block>
   <block id="c1d2d81968b4f89d4185d4baf66ba468" category="sidebar">將ONTAP 資料還原至雲端</block>
-  <block id="8c603f955aa6e872271a6e7adacc3d3b" category="sidebar">支援Amazon S3 Cloud Volumes ONTAP</block>
-  <block id="9b26267f3d6e18a8491eff1a814d7b23" category="sidebar">適用於Azure Blob Cloud Volumes ONTAP</block>
-  <block id="3b88facfb34d4da775fc57a250c85673" category="sidebar">從NetApp移轉至Google Cloud Cloud Volumes ONTAP</block>
-  <block id="15ac6d2e3c559ba77cd5cac8d88c156c" category="sidebar">內部部署ONTAP 的不支援Amazon S3</block>
-  <block id="e1e83764be739c6efa6bfd1bfc931713" category="sidebar">內部部署ONTAP 的不只是Azure Blob</block>
-  <block id="d7f9435c5f217087b84ece89a062a9b3" category="sidebar">內部部署ONTAP 的不只是Google Cloud</block>
-  <block id="1318af17a0aa27abdccc56db6a9dc399" category="sidebar">內部部署ONTAP 的功能從功能到StorageGRID 功能</block>
   <block id="4001622cdabc59603efa5eed8e44df9e" category="sidebar">將Kubernetes資料備份到雲端</block>
-  <block id="5afde787e060c3a96f34f757eb507404" category="sidebar">Kubernetes叢集至Amazon S3</block>
-  <block id="3ef08bbbf058b2bc6a87e3ff1ceecd81" category="sidebar">Kubernetes叢集至Azure Blob</block>
-  <block id="d5513ddfa26c41caaba3c021a29dbe45" category="sidebar">Kubernetes叢集至Google Cloud</block>
   <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">管理ONTAP 還原備份檔案</block>
   <block id="9ad6a8ad1e5cd26c5022383b87ca0567" category="sidebar">變更指派給現有磁碟區的原則</block>
   <block id="0dcde7b293f3d0e01f5ffaf43f982c8d" category="sidebar">建立手動Volume備份</block>
@@ -4457,7 +4447,6 @@ SS3 ONTAP</block>
   <block id="04afa98530b9fa98eb8d1adf9da08f7f" category="paragraph">「備份生命週期」類型篩選器已重新命名為「保留」。使用此篩選器可追蹤備份生命週期、並識別所有備份複本的到期日。「保留」工作類型會擷取在受 BlueXP 備份與還原保護的磁碟區上所起始的所有 Snapshot 刪除工作。</block>
   <block id="751f8afbc94898745cc6e2ea8a5ccd4c" category="inline-link">深入瞭解更新的工作監控器</block>
   <block id="bf6c8f020a512a9accf77240c1333a16" category="paragraph"><block ref="f412c2e0203811d72b16f88cf9eb5d19" category="inline-link-rx"></block>。</block>
-  <block id="f0de192c113fd89f1d8027714c573105" category="sidebar">內部部署 ONTAP 至 ONTAP S3</block>
   <block id="d09fe30f62c514ce3f7fb2767974cf23" category="sidebar">BlueXP 備份與還原影片</block>
   <block id="b2263890e0533b772d021294e4d3aa41" category="paragraph">您可以從BlueXP頂端選取「*帳戶*」下拉式清單、然後按一下帳戶旁的「*管理帳戶*」、即可找到您的BlueXP帳戶ID。您的帳戶ID位於「總覽」索引標籤。若為無法存取網際網路的私人模式網站、請使用 *account-DARKSITE1* 。</block>
   <block id="35abe2d136b4990eddee4a79d5635e4e" category="paragraph">如果您的Google Cloud Platform VPC中已部署Connector、您就能輕鬆完成所有設定。如果沒有、您需要建立 BlueXP Connector 、將 ONTAP 資料備份到 Google Cloud 儲存設備。您也必須自訂 Connector 的網路設定、才能連線至 Google Cloud 。</block>
@@ -4581,4 +4570,8 @@ SS3 ONTAP</block>
   <block id="6b28ac02ff2a9de6b423b9f57d6a4d09" category="sidebar">管理 ONTAP 磁碟區的原則</block>
   <block id="49f768fa096c849abfc2310e4f864f5e" category="section-title">能夠在具有有限輸出連線能力的站台中、從 Cloud Volumes ONTAP 系統備份資料</block>
   <block id="39539808000ad0a6d6ca39474e4fb77b" category="paragraph">現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要您在商業地區的 Linux 主機上以「受限模式」安裝 Connector 、並在該處部署 Cloud Volumes ONTAP 系統。請參閱<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> 和<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
+  <block id="998e825e50e0075b888cb10290b5aad3" category="sidebar">將內部部署 ONTAP 備份至 ONTAP S3</block>
+  <block id="a856f192005c2a27d642572c6eabcaf3" category="sidebar">將 Kubernetes 叢集備份至 Amazon S3</block>
+  <block id="d8aa0af6f24f3e5cbb56b502233a7241" category="sidebar">將 Kubernetes 叢集備份至 Azure Blob</block>
+  <block id="f91d920c6ff7bb789d8210aebe92e10e" category="sidebar">將 Kubernetes 叢集備份至 Google Cloud</block>
 </blocks>
