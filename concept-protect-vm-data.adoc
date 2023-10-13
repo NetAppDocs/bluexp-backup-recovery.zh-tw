@@ -16,7 +16,7 @@ summary: 深入瞭解如何保護虛擬機器上的資料、並瞭解不同的�
 [role="lead"]
 BlueXP 虛擬機器的備份與還原功能可備份資料存放區及還原虛擬機器、提供資料保護功能。
 
-您可以將資料存放區備份至 Amazon Web Services S3 、 Microsoft Azure Blob 、 Google Cloud Platform 和 StorageGRID 、並將虛擬機器還原至內部部署的 SnapCenter Plug-in for VMware vSphere 主機。
+您可以將資料存放區備份至 Amazon Web Services S3 、 Microsoft Azure Blob 、 Google Cloud Platform 和 StorageGRID 、並將虛擬機器還原至內部部署的 SnapCenter Plug-in for VMware vSphere 主機。BlueXP 虛擬機器備份與還原也支援 Connector Proxy 部署模式。
 
 .開始之前
 請先閱讀下列需求、確定您擁有支援的組態、然後再開始將資料存放區和虛擬機器備份至雲端供應商。
@@ -37,6 +37,7 @@ BlueXP 虛擬機器的備份與還原功能可備份資料存放區及還原虛�
 * 在所需的資源群組上停用「*最近*」。如果您已為資源群組啟用「*最近*」、則這些資源群組的備份將無法用於雲端的資料保護、因此無法用於還原作業。
 * 確保虛擬機器還原所在的目的地資料存放區擁有足夠空間、可容納VMDK、VMX、VMSD等所有虛擬機器檔案的複本。
 * 請確認目的地資料存放區沒有舊的虛擬機器檔案、其格式為先前還原作業失敗中的「還原xxx」xxxxxx_Filename。在觸發還原作業之前、您應該先刪除過時的檔案。
+* 若要部署已設定 Proxy 的連接器、請確定所有傳出的連接器通話都是透過 Proxy 伺服器路由傳送。
 
 
 下圖顯示每個元件及其之間需要準備的連線：

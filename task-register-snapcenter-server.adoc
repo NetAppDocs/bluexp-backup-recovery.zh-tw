@@ -67,6 +67,9 @@ summary: 請完成幾個步驟來登錄SnapCenter 到此伺服器。
 ** 非資料磁碟區（NDV）資源、例如HANA二進位檔、HANA歸檔記錄磁碟區、HANA共享磁碟區等
 
 
+* MongoDB
+* MySQL
+* PostgreSQL
 
 
 不會顯示下列資料庫：

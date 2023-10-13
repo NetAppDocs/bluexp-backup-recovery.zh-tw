@@ -282,8 +282,9 @@ host_ssh_port
 `chmod +x snapcenter_linux_host_plugin_scs.bin`
 . 以 Sudo SnapCenter 使用者身分安裝 Oracle 外掛程式。
 `./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root>`
-. 從連接器VM的_<base_mount_path>/用戶端/憑證/_路徑、複製_imple.p12_到外掛主機的_/var/opt/snapcenter/spl/etc/_。
-. 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入憑證。「keytool-v -importkeystore -srckeystore CERT.p12 -srcstoretype pkcs12 -destkeystore keyKeystore .jks -deststoretype JKS -rcsstorepass SnapCenter sore-ascalias SnapCenter agentcert -noprompt」
+. 將 <base_mount_path> 連接器 VM 的 _vmware/client/certificate / 路徑中的 _certificate .pem_ 複製到外掛主機上的 /var/opt/snapcenter/spl/etc/_ 。
+. 瀏覽至 /var/opt/snapcenter/spl/etc/_ 、然後執行 keytool 命令以匯入 certificate .pem 。
+`keytool -import -alias agentcert -file certificate.pem -keystore keystore.jks -deststorepass snapcenter -noprompt`
 . 重新啟動SPL：「系統重新啟動spl」
 . 從Connector執行下列命令、驗證外掛程式是否可從Connector存取。
 `docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/PluginService/Version --cert /config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`

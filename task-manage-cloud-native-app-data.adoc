@@ -19,6 +19,9 @@ summary: 您可以檢視備份詳細資料、監控所有工作的狀態、刪�
 
 您可以監控已在工作環境中初始化的工作狀態。這可讓您查看已成功完成的工作、目前進行中的工作、以及已失敗的工作、以便診斷及修正任何問題。
 
+
+NOTE: 排程工作會在工作完成時間延遲 5 分鐘（最長）後、列在 BlueXP 工作監控頁面中。
+
 如需詳細資訊、請參閱 link:https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["監控工作狀態"]。
 
 
@@ -112,7 +115,7 @@ IMPORTANT: 代理程式ID與Connector相關聯。如果登錄SAP HANA主機時�
 
 . 登入外掛主機、然後執行下列步驟：
 +
-.. 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入認證.p12檔案。
+.. 瀏覽至 /var/opt/snapcenter/spl/etc/_ 、然後執行 keytool 命令以匯入 certificate .pem 檔案。
 `keytool -import -alias agentcert -file certificate.pem  -keystore keystore.jks -deststorepass snapcenter -noprompt`
 .. 重新啟動SPL：「系統重新啟動spl」
 .. 執行下列其中一項：

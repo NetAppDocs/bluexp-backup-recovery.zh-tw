@@ -22,6 +22,7 @@ summary: 建立您自己的原則來保護應用程式。
 ** 如果您使用的是 Amazon Web Services 、則應使用 ONTAP 9.10.1 或更新版本
 ** 如果您使用的是 Microsoft Azure 、則應該使用 ONTAP 9.10.1 或更新版本
 ** 如果您使用的是 Google Cloud 、則應該使用 ONTAP 9.12.1 或更新版本
+** 如果您使用的是 StorageGRID 、則應該使用 ONTAP 9.12.1 或更新版本
 
 
 * 您應該為每個雲端供應商設定歸檔存取層。

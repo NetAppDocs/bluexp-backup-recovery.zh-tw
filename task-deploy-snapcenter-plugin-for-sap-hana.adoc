@@ -58,7 +58,7 @@ NOTE: 主機名稱必須與用於 HSR 複寫的主機相同。
 .步驟
 . 登入Connector VM。
 . 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
-. 複製位於下列位置的 * sudoer.txt* 內容： /var/lib/v泊 塢視窗 / Volume / 服務管理員 [1] - 2_cloudmanager_cs_cloue_volume / _data/$ （ Sudo 泊塢視窗 ps|grep -po" cloudmanager_cs_clouwo..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
+. 複製位於下列位置的 * sudoer.txt* 內容： _/var/lib/v泊 塢視窗 /Volumes/service-manager-2_cloudmanager_css_cloue_Volume/_data/$ （ Sudo 泊塢視窗 ps|grep -po" cloudmanager_cs_clouwy..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
 . 使用 root 使用者帳戶登入 SAP HANA 系統主機。
 . 將步驟 3 中複製的文字複製到 /etc/sudoers.d/snapcenter_file 、為非 root 使用者設定 Sudo 存取。
 +
@@ -160,7 +160,7 @@ host_ssh_port
 . 登入 Connector VM 。
 . 下載SnapCenter 《支援Linux主機的二進位程式》。「Udo Docker執行- IT cloudmanager_SCs_cloul -X Get 'http://127.0.0.1/deploy/downloadLinuxPlugin'`[]
 +
-外掛程式二進位檔位於： _CD /var/lib/v泊 塢視窗 / 磁碟區 / 服務管理程式 [1] - 2_cloudmanager_SCS_cloue_volid/_data/$ （ Sudo 泊塢視窗 ps|grep -po 「 cloudmanager_SCS_clouy..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
+外掛程式二進位檔位於： _CD /var/lib/v泊 塢視窗 /volides/service-manager-2_cloudmanager_SCS_cloue_volate/_data/$（ Sudo 泊塢視窗 ps|grep -po" cloudmanager_SCS_clouy..* ？"|sed -e 's/*$//'|cut -F2 -d":")/sc-linux-host-plugin_
 
 . 使用 <non root user (sudo)> scp 或其他替代方法、將 _snapcenter_linux_host_plugin_SCS.bin_ 從上述路徑複製到每個 SAP HANA 資料庫主機的 //home/Nets/.SC_NetApp_ 路徑。
 . 使用非 root （ Sudo ）帳戶登入 SAP HANA 資料庫主機。
@@ -168,8 +168,9 @@ host_ssh_port
 `chmod +x snapcenter_linux_host_plugin_scs.bin`
 . 以 Sudo SnapCenter 使用者身分安裝 SAP HANA 外掛程式。
 `./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root>`
-. 從連接器VM的_<base_mount_path>/用戶端/憑證/_路徑、複製_imple.p12_到外掛主機的_/var/opt/snapcenter/spl/etc/_。
-. 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入憑證。「keytool-v -importkeystore -srckeystore CERT.p12 -srcstoretype pkcs12 -destkeystore keyKeystore .jks -deststoretype JKS -rcsstorepass SnapCenter sore-ascalias SnapCenter agentcert -noprompt」
+. 將 <base_mount_path> 連接器 VM 的 _vmware/client/certificate / 路徑中的 _certificate .pem_ 複製到外掛主機上的 /var/opt/snapcenter/spl/etc/_ 。
+. 瀏覽至_/var/opt/snapcenter/spl/etc/、然後執行keytoole命令以匯入憑證。
+`keytool -import -alias agentcert -file certificate.pem -keystore keystore.jks -deststorepass snapcenter -noprompt`
 . 重新啟動SPL：「系統重新啟動spl」
 . 從Connector執行下列命令、驗證外掛程式是否可從Connector存取。
 `docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/PluginService/Version --cert  config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
@@ -207,20 +208,18 @@ host_ssh_port
 
 *步驟*
 
-. 在* BlueXP* UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
-. 按一下「*探索應用程式*」。
-. 選取* Cloud Native *>* SAP HANA *、然後按一下* Next*。
-. 在「*應用程式*」頁面中、按一下「*新增系統*」。
+. 在 *BlueXP* UI 中，選擇 * 保護 * > * 備份與恢復 * > * 應用程式 * 。
+. 選取 * 探索應用程式 * 。
+. 選取 * 雲端原生 * > * SAP HANA * 、然後選取 * 下一步 * 。
+. 在 * 應用程式 * 頁面中、選取 * 新增系統 * 。
 . 在*系統詳細資料*頁面中、執行下列動作：
 +
-.. 選取「系統類型」作為多租戶資料庫容器或單一容器。
+.. 選取「系統類型」做為「多租戶資料庫容器」或「全域非資料磁碟區」。
 .. 輸入SAP HANA系統名稱。
 .. 指定SAP HANA系統的SID。
-.. （選用）修改 HDBSQL OS 使用者。
-.. 選取外掛程式主機。
-（可選）如果未添加主機，請單擊 * 添加插件主機 * 。
+.. （選用）修改 OSDB 使用者。
 .. 如果HANA系統設定為HANA系統複寫、請啟用* HANA系統複寫（HSR）System*。
-.. 按一下「* HDB Secure User Store Keys *（* HDB安全使用者儲存金鑰*）」文字方塊以新增使用者儲存金鑰
+.. 選取 * HDB 安全使用者儲存金鑰 * 文字方塊以新增使用者儲存金鑰詳細資料。
 +
 指定金鑰名稱、系統詳細資料、使用者名稱和密碼、然後按一下*新增金鑰*。
 
@@ -229,18 +228,36 @@ host_ssh_port
 
 
 
-. 單擊 * 下一步 * 。
-. 在「*儲存設備佔用空間*」頁面中、按一下「*新增儲存空間*」、然後執行下列步驟：
+. 選擇*下一步*。
+. 在 * 主機詳細資料 * 頁面中、執行下列動作：
++
+.. 選取 * 新增主機 * 或 * 使用現有主機 * 。
+.. 選擇 * 使用 SSH* 或 * 手冊 * 。
++
+若為手動、請輸入主機 FQDN 或 IP 、連接器、使用者名稱、 SSH 連接埠、外掛連接埠、 並選擇性地新增和驗證 SSH 私密金鑰。
+
++
+對於 SSH 、請輸入主機 FQDN 或 IP 、 Connector 、使用者名稱和外掛程式連接埠。
+
+.. 選擇*下一步*。
+
+
+. 在 * 主機組態 * 頁面中、確認是否符合組態需求。
++
+選取核取方塊以確認。
+
+. 選擇*下一步*。
+. 在 *Storage Footprint * 頁面中、選取 * 新增儲存設備 * 、然後執行下列步驟：
 +
 .. 選取工作環境並指定NetApp帳戶。
 +
 從左側導覽窗格中、選取 BlueXP * Canvas * 以新增工作環境。
 
 .. 選取所需的磁碟區。
-.. 按一下「*新增儲存設備*」。
+.. 選取 * 新增儲存設備 * 。
 
 
-. 檢閱所有詳細資料、然後按一下*「Add System*（新增系統*）」。
+. 檢閱所有詳細資料、然後選取 * 新增系統 * 。
 
 
 您可以從 UI 修改或移除 SAP HANA 系統。
@@ -249,43 +266,9 @@ host_ssh_port
 
 
 
-=== 刪除 SAP HANA 資料庫主機
-
-您只能使用 REST API 移除 SAP HANA 資料庫主機。
-
-*步驟*
-
-. 使用 UI 或使用下列 REST API 刪除與 SAP HANA 資料庫主機相關的所有系統。
-`DELETE /saphana/anf/systems/(id)`
-. 請執行下列步驟移除 SAP HANA 資料庫主機。
-+
-.. 使用 Get REST API 取得必須刪除的 SAP HANA 資料庫主機 ID 。
-`GET /saphana/hosts`
-   `{`
-    `"num_records": 1,`
-    `"records": [`
-        `{`
-            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
-            `"host_name": "galaxy-vm134.netapp.com",`
-            `"port": 443,`
-            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
-       
-`}`
-    `]`
-`}`
-.. 透過從下列 REST API 傳遞 ID 來刪除 SAP HANA 資料庫主機。
-`DELETE /saphana/hosts/(id)`
-.. 使用下列命令、在資料庫主機上解除安裝 SAP HANA Linux 外掛程式。
-`/opt/NetApp/snapcenter/spl/installation/plugins/uninstall`
-
-
-
-
-
-
 === 新增非資料磁碟區
 
-新增多租戶資料庫容器或單一容器類型 SAP HANA 系統之後、您可以新增 HANA 系統的非資料 Volume 。
+新增多租戶資料庫容器類型 SAP HANA 系統之後、您可以新增 HANA 系統的非資料 Volume 。
 
 探索可用的SAP HANA資料庫之後、您可以將這些資源新增至資源群組、以執行資料保護作業。
 
@@ -301,7 +284,7 @@ host_ssh_port
 
 === 新增全域非資料磁碟區
 
-新增多租戶資料庫容器或單一容器類型 SAP HANA 系統之後、您可以新增 HANA 系統的 Global Non-Data Volumes 。
+新增多租戶資料庫容器類型 SAP HANA 系統之後、您可以新增 HANA 系統的 Global Non-Data Volumes 。
 
 *步驟*
 
@@ -313,39 +296,14 @@ host_ssh_port
 +
 .. 從System Type（系統類型）下拉式清單中、選取* Global Non-Data Volume（*全域非資料Volume）*。
 .. 輸入SAP HANA系統名稱。
+
+
+. 。在 * 主機詳細資料 * 頁面中、執行下列動作：
++
 .. 指定SAP HANA系統的相關SSID。
 .. 選取外掛程式主機
 .. 單擊 * 下一步 * 。
 .. 檢閱所有詳細資料、然後按一下*「Add System*（新增系統*）」。
 
 
-
-
-
-
-=== 修改 SAP HANA 資料庫主機
-
-新增 SAP HANA 資料庫主機之後、您可以使用 REST API 修改主機名稱或外掛連接埠。
-
-*步驟*
-
-. 使用 Get REST API 取得必須刪除的 SAP HANA 資料庫主機 ID 。 `GET /saphana/hosts`
-   `{`
-    `"num_records": 1,`
-    `"records": [`
-        `{`
-            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
-            `"host_name": "galaxy-vm134.netapp.com",`
-            `"port": 443,`
-            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
-       
-`}`
-    `]`
-`}`
-. 使用下列修補程式 API 修改主機名稱或外掛程式連接埠。
-`PATCH /saphana/hosts/(id)`
-`{`
-`"host_name": "vm136.dummy.com",`
-`"port": 8145,`
-`}`
 
