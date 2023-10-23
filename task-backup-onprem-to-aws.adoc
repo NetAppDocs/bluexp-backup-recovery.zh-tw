@@ -597,20 +597,38 @@ NOTE: 如果您選擇的磁碟區具有不同於您在此步驟中選取的原�
 
 
 
-. * 本機 Snapshot * ：選擇現有的 Snapshot 原則。
+. * 本機 Snapshot * ：選擇現有的 Snapshot 原則或建立原則。
 +
 
-TIP: 若要建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+TIP: 若要在啟動 Snapshot 之前建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+** 輸入原則名稱。
+** 最多可選取 5 個排程、通常是不同的頻率。
+** 選擇* Create *（建立*）。
+
 
 . * 複寫 * ：設定下列選項：
 +
 ** * 複寫目標 * ：選取目的地工作環境和 SVM 。您也可以選擇要新增至複寫磁碟區名稱的目的地集合體、集合體和前置詞或尾碼。
-** * 複寫原則 * ：選擇現有的複寫原則。
-
-
+** * 複寫原則 * ：選擇現有的複寫原則或建立原則。
 +
 
-TIP: 若要建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+TIP: 若要在啟動複寫之前建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+*** 輸入原則名稱。
+*** 最多可選取 5 個排程、通常是不同的頻率。
+*** 選擇* Create *（建立*）。
+
+
+
 
 . * 備份到物件 * ：如果您選取 * 備份 * 、請設定下列選項：
 +
@@ -634,10 +652,19 @@ NOTE: 如果您選擇現有的儲存區、則加密資訊已可供使用、因�
 ... 您也可以選擇是否要使用先前設定的AWS Private Link。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["如需使用AWS Private Link for Amazon S3的詳細資訊、請參閱"^]。
 
 
-** * 備份原則 * ：選取現有的備份原則。
+** * 備份原則 * ：選取現有的備份原則或建立原則。
 +
 
-TIP: 若要建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+TIP: 若要在啟動備份之前建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+*** 輸入原則名稱。
+*** 最多可選取 5 個排程、通常是不同的頻率。
+*** 選擇* Create *（建立*）。
+
 
 ** * 將現有的 Snapshot 複本匯出至物件儲存區做為備份複本 * ：如果此工作環境中有任何本機 Snapshot 複本符合您剛為此工作環境選取的備份排程標籤（例如每日、每週等）、則會顯示此額外提示。核取此方塊、將所有歷史快照複製到物件儲存區做為備份檔案、以確保磁碟區獲得最完整的保護。
 

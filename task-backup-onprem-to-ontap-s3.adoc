@@ -359,15 +359,37 @@ S3 認證:: 您必須建立 S3 使用者、才能控制對 ONTAP S3 儲存設備
 
 
 
-. * 本機 Snapshot * ：選擇現有的 Snapshot 原則。
+. * 本機 Snapshot * ：選擇現有的 Snapshot 原則或建立新的 Snapshot 原則。
 +
 
-TIP: 如果您想要建立自訂原則、可以使用系統管理員或 ONTAP CLI `snapmirror policy create` 命令。請參閱。
+TIP: 如果您想要在啟動 Snapshot 之前建立自訂原則、可以使用系統管理員或 ONTAP CLI `snapmirror policy create` 命令。請參閱。
+
++
+
+TIP: 若要在啟動 Snapshot 之前使用此服務建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+** 輸入原則名稱。
+** 最多可選取 5 個排程、通常是不同的頻率。
+** 選擇* Create *（建立*）。
+
 
 . * 複寫 * ：如果您選取 * 複寫 * 、請設定下列選項：
 +
 ** * 複寫目標 * ：選取目的地工作環境和 SVM 。您也可以選擇目的地集合體（或 FlexGroup Volume 的集合體）、以及要新增至複寫磁碟區名稱的前置詞或後置詞。
-** * 複寫原則 * ：選擇現有的複寫原則。
+** * 複寫原則 * ：選擇現有的複寫原則或建立新的複寫原則。
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+*** 輸入原則名稱。
+*** 最多可選取 5 個排程、通常是不同的頻率。
+*** 選擇* Create *（建立*）。
+
+
 
 
 . * 備份到物件 * ：如果您選取 * 備份 * 、請設定下列選項：
@@ -382,14 +404,23 @@ TIP: 如果您想要建立自訂原則、可以使用系統管理員或 ONTAP CL
 
 TIP: 選擇正確的 IPspace 可確保 BlueXP 備份與還原能夠設定從 ONTAP 到 ONTAP S3 物件儲存設備的連線。
 
-** * 備份原則 * ：選取現有的備份原則。
+** * 備份原則 * ：選取現有的備份原則或建立新的備份原則。
 +
 
-TIP: 如果您想要建立自訂原則、可以使用系統管理員或 ONTAP CLI `snapmirror policy create` 命令。請參閱。
+TIP: 您可以使用系統管理員或 ONTAP CLI 建立原則。使用 ONTAP CLI 建立自訂原則 `snapmirror policy create` 命令、請參閱。
 
 +
 
-TIP: 若要使用 UI 建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+TIP: 若要在使用 UI 啟動備份之前建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+*** 輸入原則名稱。
+*** 最多可選取 5 個排程、通常是不同的頻率。
+*** 選擇* Create *（建立*）。
+
 
 
 

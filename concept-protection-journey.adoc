@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-protection-journey.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, on-premises ontap, onprem, replication, backup and recovery 
+keywords: backing up, restoring, recovery, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, on-premises ontap, onprem, replication, backup and recovery 
 summary: BlueXP 備份與還原服務可讓您建立最多三個來源磁碟區複本、以保護您的資料。在磁碟區上啟用此服務時、您可以選擇許多選項、因此您應該檢閱您的選擇、以便做好準備。 
 ---
 = 規劃您的保護旅程
@@ -20,7 +20,7 @@ BlueXP 備份與還原服務可讓您建立最多三個來源磁碟區複本、�
 
 * 您將使用哪些保護功能：快照複本、複寫磁碟區和 / 或備份至雲端
 * 您將使用哪種備份架構：串聯或展開磁碟區備份
-* 您會使用預設的備份原則、還是需要在開始之前建立自訂原則
+* 您是使用預設的備份原則、還是需要建立自訂原則
 * 您想要服務為您建立雲端儲存區、還是想要在開始之前建立物件儲存容器
 * 您使用哪種 BlueXP Connector 部署模式（標準、受限或私有模式）
 
@@ -58,7 +58,7 @@ image:diagram-321-overview.png["顯示備份檔案在來源系統上如何作為
 
 
 
-NOTE: 初始建立複寫的磁碟區或備份檔案時、會包含完整的來源資料複本、這稱為基礎傳輸。後續傳輸僅包含來源資料的差異複本（ Snapshot ）。
+NOTE: 初始建立複寫的磁碟區或備份檔案時、會包含完整的來源資料複本、這稱為 _ 基準傳輸 _ 。後續傳輸僅包含來源資料的差異複本（ Snapshot ）。
 
 
 
@@ -113,19 +113,21 @@ image:diagram-321-cascade-detailed.png["顯示如何使用磁碟區的 Snapshot 
 |===
 
 
-== 您是否會將預設備份原則用於快照、複製和備份
+== 您是否會使用 Snapshot 複本、複製和備份的預設備份原則
 
-您可以使用 NetApp 提供的預設原則來建立備份、也可以建立自訂原則。當您使用啟動精靈為磁碟區啟用備份與還原服務時、可以從工作環境（ Cloud Volumes ONTAP 或內部部署 ONTAP 系統）中選取預設原則和任何其他原則。如果您想要使用不同於現有原則的原則、則必須先建立原則、然後再啟動啟動精靈。
+您可以使用 NetApp 提供的預設原則來建立備份、也可以建立自訂原則。當您使用啟動精靈為磁碟區啟用備份與還原服務時、可以從工作環境（ Cloud Volumes ONTAP 或內部部署 ONTAP 系統）中選取預設原則和任何其他原則。如果您想要使用不同於現有原則的原則、可以在啟動或使用啟動精靈之前建立原則。
 
-* 預設的 Snapshot 原則會建立每小時、每天和每週的 Snapshot 複本、保留 6 小時、每天 2 份和每週 2 份 Snapshot 複本。
+* 預設的 Snapshot 原則會建立每小時、每天和每週的 Snapshot 複本、保留每小時 6 次、每天 2 次和每週 2 次 Snapshot 複本。
 * 預設複寫原則會每天和每週複寫 Snapshot 複本、保留每天 7 份 Snapshot 複本和每週 52 份 Snapshot 複本。
 * 預設的備份原則會每天和每週複寫 Snapshot 複本、保留每天 7 份和每週 52 份 Snapshot 複本。
 
 
-如果您建立複寫或備份的自訂原則、則原則標籤（例如「每日」或「每週」）必須符合 Snapshot 原則中存在的標籤、否則將不會建立複寫的磁碟區和備份檔案。您可以使用系統管理員或 ONTAP 命令列介面（ CLI ）來建立自訂原則。
+如果您建立複寫或備份的自訂原則、則原則標籤（例如「每日」或「每週」）必須符合 Snapshot 原則中存在的標籤、否則將不會建立複寫的磁碟區和備份檔案。
 
-https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["使用 System Manager 建立快照原則"^]
-https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["使用 ONTAP CLI 建立快照原則"^]
+您可以使用 BlueXP 備份還原、系統管理員或 ONTAP 命令列介面（ CLI ）來建立自訂原則。
+
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["使用 System Manager 建立 Snapshot 原則"^]
+https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["使用 ONTAP CLI 建立 Snapshot 原則"^]
 https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["使用 System Manager 建立複寫原則"^]
 https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["使用 ONTAP CLI 建立複寫原則"^]
 https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["使用 System Manager 建立備份原則"^]
@@ -133,7 +135,7 @@ https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#descr
 
 * 備註： * 使用 System Manager 時、請選取 * Asynynbling* 作為複寫原則的原則類型、然後選取 * AsynynAsynAs* 和 * 備份至雲端 * 以備份至物件原則。
 
-您可以在 BlueXP 備份與還原 UI 中建立物件儲存原則的備份。請參閱的一節 link:task-manage-backups-ontap.html#add-a-new-backup-policy["新增備份原則"] 以取得詳細資料。您需要使用系統管理員或 ONTAP CLI 建立 Snapshot 和 Replication 原則。
+您可以在 BlueXP 備份與還原 UI 中建立 Snapshot 、複寫及備份至物件儲存原則。請參閱的一節 link:task-manage-backups-ontap.html#add-a-new-backup-policy["新增備份原則"] 以取得詳細資料。
 
 以下是幾個 ONTAP CLI 命令範例、如果您要建立自訂原則、這些命令可能會很有幫助。請注意、您必須使用 _admin_ vserver （儲存 VM ）做為 `<vserver_name>` 在這些命令中。
 

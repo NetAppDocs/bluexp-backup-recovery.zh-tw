@@ -135,9 +135,9 @@ BYOL BlueXP 備份與還原授權是浮動授權、可讓您在與 BlueXP 帳戶
 
 === 取得 BlueXP 備份與還原授權檔案
 
-購買 BlueXP 備份與還原（ Cloud Backup ）授權後、您可以輸入 BlueXP 備份與還原序號和 NSS 帳戶、或上傳 NLF 授權檔案、在 BlueXP 中啟動授權。下列步驟說明如果您打算使用NLF授權檔案、該如何取得該檔案。
+購買 BlueXP 備份與還原（雲端備份）授權後、您可以輸入 BlueXP 備份與還原序號和 NetApp 支援網站 （ NSS ）帳戶、或上傳 NetApp 授權檔案（ NLF ）、在 BlueXP 中啟動授權。下列步驟說明如果您打算使用NLF授權檔案、該如何取得該檔案。
 
-如果您在內部部署站台上執行 BlueXP 備份與還原、但該站台無法存取網際網路、則表示您已在中部署 BlueXP Connector https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode["私有模式"^]、您必須從連線網際網路的系統取得授權檔案。使用序號啟動授權、而 NSS 帳戶無法用於私有模式安裝。
+如果您在內部部署站台上執行 BlueXP 備份與還原、但該站台無法存取網際網路、則表示您已在中部署 BlueXP Connector https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode["私有模式"^]、您必須從連線網際網路的系統取得授權檔案。使用序號和 NetApp 支援網站 帳戶啟動使用許可無法用於私有模式安裝。
 
 .開始之前
 開始之前、您必須先取得下列資訊：

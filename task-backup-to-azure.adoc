@@ -325,7 +325,7 @@ image:screenshot_backup_onprem_enable.png["螢幕擷取畫面、顯示選取工�
 
 === 選取您要備份的磁碟區
 
-選擇您要保護的磁碟區。受保護的磁碟區具有下列一項或多項： Snapshot 原則、複寫原則、備份至物件原則。
+選擇您要保護的磁碟區。受保護的磁碟區具有下列一項或多項： Snapshot 原則、複寫原則、備份對物件原則。
 
 您可以選擇保護 FlexVol 或 FlexGroup 磁碟區、但是在為工作環境啟動備份時、您無法選擇這些磁碟區的混合。瞭解如何操作 link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["啟動工作環境中其他磁碟區的備份"] （ FlexVol 或 FlexGroup ）。
 
@@ -342,7 +342,7 @@ image:screenshot_backup_onprem_enable.png["螢幕擷取畫面、顯示選取工�
 . 在「選取磁碟區」頁面中、選取您要保護的磁碟區。
 +
 ** 您也可以篩選資料列、僅顯示具有特定 Volume 類型、樣式等的 Volume 、以便更輕鬆地進行選擇。
-** 選取第一個磁碟區之後、您可以選取所有 FlexVol 磁碟區（ FlexGroup 磁碟區一次只能選取一個）。若要備份所有現有的 FlexVol Volume 、請先勾選一個 Volume 、然後勾選標題列中的方塊。（image:button_backup_all_volumes.png[""]）。
+** 選取第一個磁碟區之後、您就可以選取所有 FlexVol 磁碟區。（ FlexGroup 磁碟區一次只能選取一個）。 若要備份所有現有的 FlexVol Volume 、請先勾選一個 Volume 、然後勾選標題列中的方塊。（image:button_backup_all_volumes.png[""]）。
 ** 若要備份個別磁碟區、請勾選每個磁碟區的方塊（image:button_backup_1_volume.png[""]）。
 
 
@@ -383,18 +383,36 @@ NOTE: 如果您選擇的磁碟區具有不同於您在此步驟中選取的原�
 
 
 
-. * 本機 Snapshot * ：選擇現有的 Snapshot 原則。
+. * 本機 Snapshot * ：選擇現有的 Snapshot 原則或建立一個。
 +
 
-TIP: 若要建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+TIP: 若要在啟動 Snapshot 之前建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+** 輸入原則名稱。
+** 最多可選取 5 個排程、通常是不同的頻率。
+** 選擇* Create *（建立*）。
+
 
 . * 複寫 * ：設定下列選項：
 +
 ** * 複寫目標 * ：選取目的地工作環境和 SVM 。您也可以選擇要新增至複寫磁碟區名稱的目的地集合體、集合體和前置詞或尾碼。
-** * 複寫原則 * ：選擇現有的複寫原則。
+** * 複寫原則 * ：選擇現有的複寫原則或建立複寫原則。
 +
 
-TIP: 若要建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+TIP: 若要在啟動複寫之前建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+*** 輸入原則名稱。
+*** 最多可選取 5 個排程、通常是不同的頻率。
+*** 選擇* Create *（建立*）。
+
 
 
 
@@ -442,7 +460,16 @@ NOTE: 如果您選擇現有的 Microsoft 儲存帳戶、則加密資訊已可供
 ** * 備份原則 * ：選取現有的備份至物件儲存原則。
 +
 
-TIP: 若要建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+TIP: 若要在啟動備份之前建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+*** 輸入原則名稱。
+*** 最多可選取 5 個排程、通常是不同的頻率。
+*** 選擇* Create *（建立*）。
+
 
 ** * 將現有的 Snapshot 複本匯出至物件儲存區做為備份複本 * ：如果此工作環境中有任何本機 Snapshot 複本符合您剛為此工作環境選取的備份排程標籤（例如每日、每週等）、則會顯示此額外提示。核取此方塊、將所有歷史快照複製到物件儲存區做為備份檔案、以確保磁碟區獲得最完整的保護。
 

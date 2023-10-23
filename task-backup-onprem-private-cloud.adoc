@@ -413,22 +413,38 @@ NOTE: 如果您選擇的磁碟區具有不同於您在此步驟中選取的原�
 
 
 
-. * 本機 Snapshot * ：選擇現有的 Snapshot 原則。
+. * 本機 Snapshot * ：選擇現有的 Snapshot 原則或建立新的 Snapshot 原則。
 +
 
-TIP: 若要建立自訂原則、請參閱
-link:task-create-policies-ontap.html["建立原則"]。
+TIP: 若要在啟動 Snapshot 之前建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+** 輸入原則名稱。
+** 最多可選取 5 個排程、通常是不同的頻率。
+** 選擇* Create *（建立*）。
+
 
 . * 複寫 * ：設定下列選項：
 +
 ** * 複寫目標 * ：選取目的地工作環境和 SVM 。您也可以選擇要新增至複寫磁碟區名稱的目的地集合體、集合體和前置詞或尾碼。
-** * 複寫原則 * ：選擇現有的複寫原則。
-
-
+** * 複寫原則 * ：選擇現有的複寫原則或建立複寫原則。
 +
 
-TIP: 若要建立自訂原則、請參閱
-link:task-create-policies-ontap.html["建立原則"]。
+TIP: 若要在啟動複寫之前建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
+
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+*** 輸入原則名稱。
+*** 最多可選取 5 個排程、通常是不同的頻率。
+*** 選擇* Create *（建立*）。
+
+
+
 
 . * 備份到物件 * ：如果您選取 * 備份 * 、請設定下列選項：
 +
@@ -442,17 +458,25 @@ link:task-create-policies-ontap.html["建立原則"]。
 
 TIP: 選擇正確的 IPspace 可確保 BlueXP 備份與還原能夠設定從 ONTAP 到 StorageGRID 物件儲存設備的連線。
 
-** * 備份原則 * ：選取現有的備份至物件儲存原則。
+** * 備份原則 * ：選取現有的備份至物件儲存原則或建立一個。
 +
 
-TIP: 若要建立自訂原則、請參閱
-link:task-create-policies-ontap.html["建立原則"]。
+TIP: 若要在啟動備份之前建立自訂原則、請參閱 link:task-create-policies-ontap.html["建立原則"]。
 
++
+若要建立原則、請選取 * 建立新原則 * 、然後執行下列步驟：
+
++
+*** 輸入原則名稱。
+*** 最多可選取 5 個排程、通常是不同的頻率。
+*** 選擇* Create *（建立*）。
 +
 如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以設定_DataLock和勒索軟體Protection來保護備份、避免遭到刪除和勒索軟體攻擊。_DataLock_可保護您的備份檔案、避免遭到修改或刪除、而_勒索 軟體保護_會掃描您的備份檔案、尋找備份檔案中勒索軟體攻擊的證據。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["深入瞭解可用的DataLock設定"^]。
 
 +
 如果您的叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您的系統使用的是11.4版或更新版本、您可以選擇在一定天數後、將舊版備份分層至公有雲歸檔層。目前支援AWS S3 Glacier / S3 Glacier Deep歸檔或Azure歸檔儲存層。 <<Preparing to archive older backup files to public cloud storage,瞭解如何針對此功能設定您的系統>>。
+
+
 
 ** * 分層備份至公有雲 * ：選取您要分層備份的雲端供應商、然後輸入供應商詳細資料。
 +
