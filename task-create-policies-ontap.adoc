@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-create-policies-ontap.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, amazon s3, government 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: 您可以使用 NetApp 提供的預設備份原則來建立備份、也可以建立自訂原則。原則會規範備份類型、備份架構、儲存系統和備份頻率。 
 ---
 = 管理 ONTAP 磁碟區的備份原則
@@ -141,9 +141,9 @@ image:screenshot_policies_management.png["原則管理頁面"]
 . 在「原則詳細資料」區段中、指定原則名稱。
 . 指定 SnapMirror 標籤（最多 5 個）、表示每個標籤的保留。
 . 指定設定、包括傳輸排程和備份歸檔時間。
-. （可選）要在一定天數後將較舊的備份文件移至較低成本的存儲類或訪問層，請選擇 *Archive* 選項並指明在歸檔數據之前應經過的天數。
+. （可選）要在一定天數後將較舊的備份文件移至較低成本的存儲類或訪問層，請選擇 *Archive* 選項並指明在歸檔數據之前應經過的天數。輸入 *0* 作為「日後歸檔」、將備份檔案直接傳送至歸檔儲存設備。
 +
-https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html#archival-storage-settings["深入瞭解歸檔儲存設定"]。
+link:concept-cloud-backup-policies.html#archival-storage-settings["深入瞭解歸檔儲存設定"]。
 
 . （選用）若要保護您的備份不受修改或刪除、請選取 * DataLock & 勒索軟體保護 * 選項。
 +
