@@ -66,6 +66,7 @@ https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-
 ====
 * 如果您計畫使用 DataLock 和勒索軟體保護、則必須在建立第一個備份原則、並啟用該叢集的 BlueXP 備份與還原時啟用。
 * 資料鎖定和勒索軟體保護功能一旦設定完成、就無法針對叢集停用。請勿在叢集上啟用此功能以試用。
+* 當 BlueXP 在還原磁碟區資料時掃描備份檔案以取得勒索軟體時、您將需要向雲端供應商支付額外的出口成本、才能存取備份檔案的內容。
 
 
 ====

@@ -1096,7 +1096,6 @@
   <block id="db6e1cf4c1d9707cf6370182a43333c0" category="list-text">在_選取來源_頁面中、瀏覽至包含您要還原之資料夾或檔案的磁碟區備份檔案。選取*工作環境*、*磁碟區*和*備份*、其中含有您要還原檔案的日期/時間戳記。</block>
   <block id="666ed8be10916b8df1e91c68afc70837" category="inline-image-macro">選取要還原項目的磁碟區和備份的快照。</block>
   <block id="3241f00f6afec47c1dd4ded721e91f06" category="paragraph"><block ref="3241f00f6afec47c1dd4ded721e91f06" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ebbb5acf9eeef476ac9814c657f478a6" category="paragraph">+如果備份檔案的勒索軟體保護功能為作用中（如果您在備份原則中啟用DataLock和勒索軟體保護）、則系統會在還原資料之前、提示您在備份檔案上執行額外的勒索軟體掃描。我們建議您掃描備份檔案以尋找勒索軟體。</block>
   <block id="7bb9fd3f9e0a378a25dd32a5202de877" category="inline-image-macro">「選取項目」頁面的快照、可讓您瀏覽至要還原的項目。</block>
   <block id="f0d4d7f2cce1062f2b862ef90b4ef0c0" category="paragraph">+<block ref="fc9c529c4f71392c736c88c8ef2b4e72" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ca22cc6140bd8c54eb21a12417ea6dee" category="list-text">在_選取項目_頁面中、選取您要還原的資料夾或檔案、然後按一下*繼續*。若要協助您尋找項目：</block>
@@ -3683,7 +3682,6 @@ Cloud Volumes ONTAP</block>
   <block id="cacc0f1cc9cd6741d9e30b806ce36daf" category="paragraph">使用 BlueXP 備份與還原搭配 ONTAP 系統的相關成本有兩種類型：資源費用與服務費用。這兩項費用都是用於備份至服務的物件部分。</block>
   <block id="1854bdaf3ded217ffdff52794b6c84fc" category="paragraph">建立 Snapshot 複本或複寫磁碟區不需付費、但儲存 Snapshot 複本和複寫磁碟區所需的磁碟空間除外。</block>
   <block id="da8845e5304a59d7d37af79e23b5072b" category="list-text">對於備份至物件儲存、您需要支付雲端供應商的物件儲存成本。</block>
-  <block id="78e2dd72962866a86860001ab2ade24b" category="list-text">如果您需要從已移至歸檔物件儲存區的備份檔案還原 Volume 資料、則需要向雲端供應商收取額外的每 GiB 擷取費用和每項要求費用。</block>
   <block id="060b6e252a88502e803f6fdc3115b5d9" category="paragraph">服務費用是支付給 NetApp 的、同時涵蓋 _ 建立 _ 備份到物件儲存設備的成本、以及 _ 還原 _ 磁碟區或檔案的成本。您只需支付物件儲存中所保護的資料、這是由備份到物件儲存的 ONTAP 磁碟區的來源邏輯使用容量（ _ 之前 _ ONTAP 效率）所計算得出。此容量也稱為前端TB（FTB）。</block>
   <block id="255e7de3fa398fdd52f91ef58bfebde4" category="paragraph">當您在 Cloud Volumes ONTAP 或內部部署 ONTAP 系統上啟用 BlueXP 備份與還原時、服務會執行資料的完整備份。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。備份至物件儲存設備是建立在的上方<block ref="d8c60b64404c334d98470563ebc11aa0" category="inline-link-rx"></block>。</block>
   <block id="435d2218ff597c0925356208def09d75" category="admonition">直接從雲端供應商環境執行的任何管理或變更雲端備份檔案的動作、都可能損毀檔案、導致組態不受支援。</block>
@@ -3993,7 +3991,6 @@ ifdef：：AWS []</block>
   <block id="bb52ad67a6160989e585657353648e45" category="paragraph">從複寫的磁碟區還原時、您可以將磁碟區還原至原始工作環境、或還原至 Cloud Volumes ONTAP 或內部部署 ONTAP 系統。</block>
   <block id="44f3c574b5983f4ad30068b5afb3882a" category="paragraph">如您所見、您必須知道來源工作環境名稱、儲存 VM 、 Volume 名稱和備份檔案日期、才能執行 Volume 還原。</block>
   <block id="c884a3e70e8bce1d15f993ac9cb50a73" category="paragraph">「位置 * 」欄顯示備份檔案（ Snapshot ）是 * 本機 * （來源系統上的 Snapshot 複本）、 * 次要 * （次要 ONTAP 系統上的複寫磁碟區）、還是 * 物件儲存 * （物件儲存中的備份檔案）。選擇您要還原的檔案。</block>
-  <block id="ef0fcda1c8af84b95c5ba9db58b558ed" category="paragraph">請注意、如果您在物件儲存區中選取備份檔案、且該備份的勒索軟體保護為作用中（如果您在備份原則中啟用 DataLock 和勒索軟體保護）、則系統會提示您在還原資料之前、對備份檔案執行額外的勒索軟體掃描。我們建議您掃描備份檔案以尋找勒索軟體。</block>
   <block id="4f77ec7cb4d938e815d515d86daf431e" category="list-text">從物件儲存設備還原備份檔案時、如果您選取內部部署 ONTAP 系統、但尚未設定叢集連線至物件儲存設備、系統會提示您提供其他資訊：</block>
   <block id="f75114a933eef4dfbad580f177284e12" category="paragraph">BlueXP 備份與還原會根據您選取的備份建立新的磁碟區。</block>
   <block id="310dbba96c4cb79d0f5f822051257fc8" category="section-title">使用瀏覽安培還原資料夾與檔案</block>
@@ -4763,4 +4760,10 @@ SS3 ONTAP</block>
   <block id="09e167bf2b5bda581990fa1f93a488dc" category="list-text">如果您已啟用 DataLock 、則無法使用歸檔儲存設備。</block>
   <block id="324aabe08d5432a326f39205133865e5" category="list-text">選擇 *0* 天後無法更改歸檔策略（立即歸檔）。</block>
   <block id="ead9580c0d6ff558e5f419a89f784e01" category="paragraph">請注意、此選項也需要備份與恢復 PAYGO 訂閱、但符合資格的 Cloud Volumes ONTAP 系統將不會產生任何費用。</block>
+  <block id="bfcf2f3ddacfecb0010a2a12007c49bf" category="paragraph">請注意、如果您在物件儲存區中選取備份檔案、且該備份的勒索軟體保護為作用中（如果您在備份原則中啟用 DataLock 和勒索軟體保護）、則系統會提示您在還原資料之前、對備份檔案執行額外的勒索軟體掃描。我們建議您掃描備份檔案以尋找勒索軟體。（您將需要向雲端供應商支付額外的出口成本、才能存取備份檔案的內容。）</block>
+  <block id="b35840b98f7248c2e0c3a6b17bd33299" category="paragraph">+
+如果備份檔案的勒索軟體保護為作用中（如果您在備份原則中啟用 DataLock 和勒索軟體保護）、則系統會提示您在還原資料之前、對備份檔案執行額外的勒索軟體掃描。我們建議您掃描備份檔案以尋找勒索軟體。（您將需要向雲端供應商支付額外的出口成本、才能存取備份檔案的內容。）</block>
+  <block id="f1f644db5655e70aeceadaa6b299010c" category="list-text">當 BlueXP 在還原磁碟區資料時掃描備份檔案以取得勒索軟體時、您將需要向雲端供應商支付額外的出口成本、才能存取備份檔案的內容。</block>
+  <block id="705d7d5204c001ada8d7869c065a6a70" category="list-text">如果您計畫從已移至歸檔物件儲存區的備份檔案還原 Volume 資料、則雲端供應商會收取額外的每 GiB 擷取費用和每項要求費用。</block>
+  <block id="832fd1c3441239683a98428c909ca909" category="list-text">如果您計畫在還原磁碟區資料的過程中掃描備份檔案以取得勒索軟體（如果您已為雲端備份啟用 DataLock 和勒索軟體保護功能）、那麼您也會從雲端供應商處獲得額外的出口成本。</block>
 </blocks>
