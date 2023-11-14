@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-licensing-cloud-backup.html 
-keywords: license, licensing, install, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
+keywords: license, licensing, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
 summary: 您可以向雲端供應商購買隨用隨付或年度市場訂閱、或是向 NetApp 購買自帶授權、以取得 BlueXP 備份與恢復的授權。您需要有效的授權、才能在工作環境中啟動 BlueXP 備份與還原、建立正式作業資料的備份、以及將備份資料還原至正式作業系統。 
 ---
 = 設定 BlueXP 備份與還原的授權
@@ -30,7 +30,7 @@ link:concept-ontap-backup-to-cloud.html#cost["深入瞭解使用 BlueXP 備份�
 
 == 30 天免費試用
 
-BlueXP 備份與恢復 30 天免費試用版可從雲端供應商市場的隨用隨付訂閱中取得。免費試用版會在您訂閱市場上市時開始。請注意、如果您在部署 Cloud Volumes ONTAP 系統時支付市場訂閱費用、然後在 10 天之後開始 BlueXP 備份與恢復免費試用、您將有 20 天的時間可以免費試用。
+如果您在雲端供應商的市場中註冊「隨用隨付」訂閱、則可免費試用 BlueXP 備份與恢復 30 天。免費試用版會在您訂閱市場上市時開始。請注意、如果您在部署 Cloud Volumes ONTAP 系統時支付市場訂閱費用、然後在 10 天之後開始 BlueXP 備份與恢復免費試用版、您將有 20 天的時間可以使用免費試用版。
 
 免費試用結束時、您將自動切換至 PAYGO 訂閱、不會中斷。如果您決定不繼續使用 BlueXP 備份與還原、只要 link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["從工作環境中取消註冊 BlueXP 備份與還原"] 在試用結束之前、您將不會被收取任何費用。
 
@@ -41,7 +41,7 @@ BlueXP 備份與恢復 30 天免費試用版可從雲端供應商市場的隨用
 若為隨用隨付、您只需單一訂閱、就能支付雲端供應商的物件儲存成本和NetApp備份授權成本（每小時）。即使您有免費試用版或自帶授權（ BYOL ）、您仍應訂閱：
 
 * 訂閱可確保在免費試用結束後、服務不會中斷。試用結束時、您將根據備份的資料量、每小時收取一次費用。
-* 如果您備份的資料超過BYOL授權所允許的數量、則資料備份會透過隨用隨付訂閱繼續進行。例如、如果您有10個TiB BYOL授權、則10 TiB以外的所有容量都會透過PAYGO訂閱付費。
+* 如果您備份的資料量超過 BYOL 授權允許的數量、則資料備份與還原作業會透過隨用隨付訂閱繼續進行。例如、如果您有10個TiB BYOL授權、則10 TiB以外的所有容量都會透過PAYGO訂閱付費。
 
 
 免費試用期間、如果您未超過 BYOL 授權、您將不會從隨用隨付訂閱中收取費用。
@@ -62,7 +62,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#
 
 ifdef::aws[]
 
-* AWS ： https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa["如需價格詳細資料、請前往BlueXP Marketplace產品"^]。
+* AWS ： https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["如需價格詳細資料、請前往BlueXP Marketplace產品"^]。
 
 
 endif::aws[]
@@ -76,7 +76,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-* GCP ： https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["如需價格詳細資料、請前往BlueXP Marketplace產品"^]。
+* Google Cloud： https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["如需價格詳細資料、請前往BlueXP Marketplace產品"^]。
 
 
 endif::gcp[]
@@ -85,11 +85,13 @@ endif::gcp[]
 
 == 使用年度合約
 
-購買年度合約、每年支付 BlueXP 備份與恢復費用。
+購買年度合約、每年支付 BlueXP 備份與恢復費用。提供 1 年、 2 年或 3 年的條款。
+
+如果您擁有市場的年度合約、則所有 BlueXP 備份與恢復使用量都會根據該合約收費。您無法與BYOL混搭一年一度的市場合約。
 
 ifdef::aws[]
 
-使用AWS時、可從取得兩份年度合約 https://aws.amazon.com/marketplace/pp/B086PDWSS8["AWS Marketplace頁面"^] 適用於Cloud Volumes ONTAP 內部和內部部署ONTAP 的不全系統。提供1年、2年或3年期限：
+使用AWS時、可從取得兩份年度合約 https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri["AWS Marketplace頁面"^] 對於 Cloud Volumes ONTAP 和內部部署 ONTAP 系統：
 
 * 「雲端備份」計畫、可讓您備份Cloud Volumes ONTAP 內部部署ONTAP 的支援資料。
 +
@@ -108,17 +110,30 @@ endif::aws[]
 
 ifdef::azure[]
 
-使用Azure時、請聯絡您的NetApp銷售代表以購買年度合約。該合約可在Azure Marketplace以私人優惠形式提供。NetApp 與您分享私人優惠後、您可以在 BlueXP 備份與恢復啟動期間、從 Azure Marketplace 訂閱年度方案。
+使用 Azure 時、有兩份年度合約可從取得 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp["Azure Marketplace 頁面"^] 對於 Cloud Volumes ONTAP 和內部部署 ONTAP 系統：
+
+* 「雲端備份」計畫、可讓您備份Cloud Volumes ONTAP 內部部署ONTAP 的支援資料。
++
+如果您要使用此選項、請從「市場」頁面設定您的訂閱、然後再進行設定 https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html#subscribe["將訂閱與 Azure 認證建立關聯"^]。請注意、您也需要使用這項年度合約訂閱來支付 Cloud Volumes ONTAP 系統的費用、因為您只能在 BlueXP 中指派一個有效訂閱給 Azure 認證。
+
+* 「 CVO 專業人員」計畫、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原作業結合在一起。這包括Cloud Volumes ONTAP 使用授權對整個過程進行無限的備份（備份容量不計入授權容量）。此選項無法讓您備份內部部署的 ONTAP 資料。
++
+請參閱 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["介紹授權主題Cloud Volumes ONTAP"^] 以深入瞭解此授權選項。
+
++
+如果您想要使用此選項、可以在建立 Cloud Volumes ONTAP 工作環境時設定年度合約、而 BlueXP 會提示您訂閱 Azure Marketplace 。
+
+
 
 endif::azure[]
 
 ifdef::gcp[]
 
-使用GCP時、請聯絡您的NetApp銷售代表以購買年度合約。合約可在Google Cloud Marketplace以私人優惠形式提供。NetApp 與您分享私人優惠後、您可以在 BlueXP 備份與恢復啟動期間、從 Google Cloud Marketplace 訂閱年度方案。
+使用GCP時、請聯絡您的NetApp銷售代表以購買年度合約。合約可在Google Cloud Marketplace以私人優惠形式提供。
+
+NetApp 與您分享私人優惠後、您可以在 BlueXP 備份與恢復啟動期間、從 Google Cloud Marketplace 訂閱年度方案。
 
 endif::gcp[]
-
-如果您擁有市場的年度合約、則所有 BlueXP 備份與恢復使用量都會根據該合約收費。您無法與BYOL混搭一年一度的市場合約。
 
 
 
@@ -238,7 +253,7 @@ BlueXP 會更新授權、讓 BlueXP 備份與還原功能持續作用。
 
 當BYOL授權過期時、可能會發生兩件事：
 
-* 如果您使用的帳戶擁有市場帳戶、備份服務仍會繼續執行、但您會轉到PAYGO授權模式。您需要支付備份所使用的容量。
+* 如果您使用的帳戶有 PAYGO 市場帳戶、則備份服務會繼續執行、但您會改用 PAYGO 授權模式。您需要支付備份所使用的容量。
 * 如果您使用的帳戶沒有市場帳戶、備份服務會繼續執行、但您仍會看到警告。
 
 

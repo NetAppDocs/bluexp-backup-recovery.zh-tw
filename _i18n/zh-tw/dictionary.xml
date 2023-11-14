@@ -404,7 +404,6 @@
   <block id="7425d5f89a4e332992c97c91d4ed6317" category="list-text">當備份已達到授權容量的 80% 時、當您達到限制時、也會再次顯示</block>
   <block id="d8ea74d0bc0e6f3c5be22312a953d7fb" category="list-text">授權到期前 30 天、授權到期後再一次</block>
   <block id="1c13d659a0c62fc2dcf4332ea8957263" category="paragraph">當BYOL授權過期時、可能會發生兩件事：</block>
-  <block id="b02a15fbd7729c5f87ea7b28e29e6fd5" category="list-text">如果您使用的帳戶擁有市場帳戶、備份服務仍會繼續執行、但您會轉到PAYGO授權模式。您需要支付備份所使用的容量。</block>
   <block id="5b517e301694c9f9491db430482b4297" category="list-text">如果您使用的帳戶沒有市場帳戶、備份服務會繼續執行、但您仍會看到警告。</block>
   <block id="d279d008f3f2141ce1fc250d370bf6a9" category="paragraph">移轉至 PAYGO 授權的系統會自動傳回 BYOL 授權。而在未取得授權的情況下執行的系統將停止顯示警告。</block>
   <block id="bd1bf42f3eb311ef9f00c80352b4b141" category="paragraph">選取您要在其中建立 Google Cloud Storage 儲存庫以進行備份的 Google Cloud Project 。</block>
@@ -435,7 +434,6 @@
   <block id="8d8630ce63e489500c1a1b11f72bee42" category="list-text">在AWS中、<block ref="d5a3b912b6075cc4f090f53976a7cdd5" category="inline-link-rx"></block> 和<block ref="b9cad212d942ecacb38ec39aea6c65ac" category="inline-link-rx"></block> 資源部署在新的S3儲存區。</block>
   <block id="9fece9ac1c7d50fbf1a1498b93cbeb15" category="inline-link">Google Cloud BigQuery服務</block>
   <block id="fedaab8c05c476a14c09d3ad41bf9a22" category="list-text">在Google中、部署了新的儲存庫、以及<block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block> 在帳戶/專案層級上進行資源配置。</block>
-  <block id="cedae03e22c7bb2c103685dfa74cddab" category="paragraph">BYOL是以期為基準（12、24或36個月）_和_容量為基準、以1 TiB為增量。您向NetApp支付一段時間使用服務費用、例如1年、如果容量上限為10 TiB。</block>
   <block id="ae6016db517c46f80c9830bcf60fa2be" category="inline-link-macro">深入瞭解AWS歸檔儲存設備</block>
   <block id="5e41d01bc84ffc96921f291fffdab16b" category="inline-link-macro">深入瞭解Azure歸檔儲存設備</block>
   <block id="c811e121a426ef27a318d7ddd351730d" category="list-text">在本產品中、備份會與_Standard_儲存類別相關聯。StorageGRID</block>
@@ -761,7 +759,6 @@
   <block id="b97f160a229c063bdce958beafa0f695" category="cell">Azure內部部署的系統中的資料：：azure[] ifdef：：Cloud Volumes ONTAP ONTAP GCP[]</block>
   <block id="a9f8eef7fdd18a9397fd96b661adbbf3" category="cell">在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[]</block>
   <block id="7f4e982bcc5753d9d97c31f1f4d46a2b" category="paragraph">有三種方式可以支付備份服務的費用。第一個選項是向雲端供應商訂閱、讓您每月付費。第二種選擇是取得年度合約。第三種選擇是直接向NetApp購買授權。閱讀 <block ref="b839456cc57645a9392f4db60a4f044a" category="inline-xref-macro-rx"></block> 章節以取得詳細資料。</block>
-  <block id="5f5358182364ef304e26de4fc2395537" category="list-text">如果您備份的資料超過BYOL授權所允許的數量、則資料備份會透過隨用隨付訂閱繼續進行。例如、如果您有10個TiB BYOL授權、則10 TiB以外的所有容量都會透過PAYGO訂閱付費。</block>
   <block id="20e92bedd41f67c18b032dfcce8e6443" category="list-text">「Cloud Backup Cloud Volumes ONTAP 」套件可讓您備份內部部署ONTAP 的各種資料。</block>
   <block id="cb59b87e00d11222bfd9159d0d23836f" category="section-title">快速入門</block>
   <block id="b3080cdc3d4f3f5baa6015e73aeff8f4" category="paragraph">此API會傳回如下回應。您可以剖析* occm.[0].[agent].[agentId]*的輸出來擷取代理程式ID。</block>
@@ -831,7 +828,6 @@
   <block id="38692e39e588de5b1294ee4cca656080" category="list-text">* BYOL*：向NetApp購買的授權、可與任何雲端供應商搭配使用。</block>
   <block id="9757bd87f9a5ff6758600430092b3955" category="paragraph">請注意、當您初次訂閱PAYGO時、即可享有30天的免費試用期。</block>
   <block id="421539f25601331f9f5f1e59cdb43e21" category="section-title">年度合約</block>
-  <block id="49a09607b95f46b9056878d3c4fdbc41" category="paragraph">使用AWS時、每年有兩份合約可供12、24或36個月使用：</block>
   <block id="cf6d8dee9b177c1138ae0ee4e07dc2f3" category="inline-link-macro">瞭解如何設定年度合約</block>
   <block id="cc0eb7dbb8893977120a22b09b8c4ca0" category="paragraph"><block ref="f5d5ae39791d9eaf9e8591b7cfcc3b96" category="inline-link-macro-rx"></block>。</block>
   <block id="d461a54e93e8dcbd189b38f0ff2865bc" category="list-text">可讀寫的磁碟區FlexVol</block>
@@ -840,7 +836,6 @@
   <block id="de76148f38881d048b0371c5472a1c65" category="list-text">每年備份的開始時間是一年中的第一天午夜之後。</block>
   <block id="c04e9a5a6565b2a7f08b4191d93602f6" category="inline-link">深入瞭解這些容量型授權套件</block>
   <block id="66145e361f72b54aa011f59d543dfb08" category="section-title">使用年度合約</block>
-  <block id="2ad823c02fc1acdb11ec531ccd53e0f5" category="paragraph">使用AWS時、可從取得兩份年度合約<block ref="7e9391e5068ba3345180f0de3723960c" category="inline-link-rx"></block> 適用於Cloud Volumes ONTAP 內部和內部部署ONTAP 的不全系統。提供1年、2年或3年期限：</block>
   <block id="376da794bc45a0b27e3c757018f00f1c" category="paragraph">下圖顯示*公用連線*方法、以及元件之間需要準備的連線。您可以使用內部部署安裝的Connector、或是部署在AWS VPC中的Connector。</block>
   <block id="ea7f03756f7c008946dd9175a5fb9557" category="paragraph">下圖顯示*私有連線*方法、以及元件之間需要準備的連線。您可以使用內部部署安裝的Connector、或是部署在AWS VPC中的Connector。</block>
   <block id="2e379f93711508ab69eec06837dd271c" category="inline-link">請參閱端點清單</block>
@@ -1400,9 +1395,7 @@
   <block id="228129642e2d421577991251a19c55f5" category="list-text">變更是否在未來磁碟區的初始基礎備份檔案中包含歷史Snapshot複本</block>
   <block id="057d6c600d485e4ee55de2a7a7001dc5" category="paragraph">選取*受限*選項按鈕、然後輸入可使用的最大頻寬、或選取*無限*表示沒有限制。</block>
   <block id="8ceedd80ab3ad72f595a01a7d5ea8d33" category="inline-link">如需價格詳細資料、請前往BlueXP Marketplace產品</block>
-  <block id="e43ad9b040def21d45a51d9708f62291" category="list-text">AWS ：<block ref="51e50f75a76548a6f8d655afc8a2e3ab" category="inline-link-rx"></block>。</block>
   <block id="0b781a3ed3b0bf571ebc9b36f9d4056e" category="list-text">Azure ：<block ref="477b4f8f0e4ff2940c9440f2ccae1310" category="inline-link-rx"></block>。</block>
-  <block id="c5239741c1af7be2743703f3c8355874" category="list-text">GCP ：<block ref="f4b12042f5e9960850cb7df978f53391" category="inline-link-rx"></block>。</block>
   <block id="4322c3f27520935653ca079f29ce7835" category="inline-link">BlueXP Marketplace備份產品</block>
   <block id="687ea0908739e5e54201ce20b273affd" category="paragraph">您可以 <block ref="547d123be3159c364b1c9ac7f7ffe3ae" category="inline-link-macro-rx"></block>。您也可以 <block ref="091cc4395662354f7a5868ee2318ef97" category="inline-link-macro-rx"></block> 在GCP的相同或不同Kubernetes叢集（位於同一個區域）上做為新磁碟區。</block>
   <block id="e0f4a3fe1d4244e87316e2896879d0bb" category="paragraph">在瀏覽與還原中、連接器可安裝在下列位置：</block>
@@ -2445,7 +2438,6 @@
   <block id="37e76b4487b7832f9128b16818135e42" category="paragraph">BlueXP 備份與還原以隨用隨付模式提供消費型授權。透過雲端供應商的市場訂閱之後、您只需支付每GiB的備份資料費用、無需預付任何款項。您的雲端供應商會透過每月帳單向您收費。</block>
   <block id="4fea63f3003bca68c0d871a18bd18f49" category="paragraph"><block ref="da925d164976c4809988045a567b800b" category="inline-link-macro-rx"></block>。</block>
   <block id="e9318a32b2a89c8bc9343f1169144931" category="list-text">「 CVO 專業人員」計畫、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原作業結合在一起。這包括Cloud Volumes ONTAP 不受限制地備份此授權所收取的所有數量（備份容量不計入授權）。</block>
-  <block id="2b1667b4af67db4fa2bb15919e8aa0c9" category="list-text">使用 Azure 時、您可以向 NetApp 申請私有方案、然後在 BlueXP 備份與恢復啟動期間從 Azure Marketplace 訂閱方案時、選擇該方案。</block>
   <block id="1f4752c64c2bf1f4ec37455cfd1541c6" category="list-text">使用 GCP 時、您可以向 NetApp 申請私人優惠、然後在 BlueXP 備份與恢復啟動期間從 Google Cloud Marketplace 訂閱時、選擇方案。</block>
   <block id="33022c637d4dd3f13525c167e5f29568" category="section-title">BlueXP 備份與還原的運作方式</block>
   <block id="831cb37bc0e6807bf3de1b27cba3fa9a" category="inline-image-macro">顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地物件儲存區進行通訊的圖表。</block>
@@ -2524,15 +2516,11 @@
   <block id="e0465a59592d7ef09030b010cdc13806" category="list-text">BlueXP 備份與還原自帶授權（ BYOL ）是浮動授權、您可以在與 BlueXP 帳戶相關的所有系統上使用。因此、如果現有BYOL授權提供足夠的備份容量、您就不需要再購買其他BYOL授權。</block>
   <block id="96678658f63f300507ecf10ca356941c" category="inline-link-macro">深入瞭解使用 BlueXP 備份與還原的相關成本。</block>
   <block id="bdb22ceb7e956464d69db51ce1582f49" category="paragraph"><block ref="bdb22ceb7e956464d69db51ce1582f49" category="inline-link-macro-rx"></block></block>
-  <block id="55a386f7e817e1b8f08941af1c697e0e" category="paragraph">BlueXP 備份與恢復 30 天免費試用版可從雲端供應商市場的隨用隨付訂閱中取得。免費試用版會在您訂閱市場上市時開始。請注意、如果您在部署 Cloud Volumes ONTAP 系統時支付市場訂閱費用、然後在 10 天之後開始 BlueXP 備份與恢復免費試用、您將有 20 天的時間可以免費試用。</block>
   <block id="aca2e72b026ee1e0a7582484746f43ed" category="inline-link-macro">從工作環境中取消註冊 BlueXP 備份與還原</block>
   <block id="e54090ec02cffc5025d030f0a386c9e2" category="paragraph">免費試用結束時、您將自動切換至 PAYGO 訂閱、不會中斷。如果您決定不繼續使用 BlueXP 備份與還原、只要 <block ref="c2935260c294740f9f8b38e657590234" category="inline-link-macro-rx"></block> 在試用結束之前、您將不會被收取任何費用。</block>
   <block id="094ba72a3fdb39776632245f235f26be" category="section-title">使用 BlueXP 備份與還原 PAYGO 訂閱</block>
   <block id="c04968186bb3df4bd0331429c63f8641" category="paragraph">BlueXP 備份與還原有幾個 PAYGO 計畫：</block>
   <block id="c02893129433d085ea6dfbc155a79562" category="paragraph">請使用以下連結、向您的雲端供應商市場訂閱 BlueXP 備份與還原：</block>
-  <block id="cdf5556d637c931d7fb6a645af6fc805" category="paragraph">購買年度合約、每年支付 BlueXP 備份與恢復費用。</block>
-  <block id="3d573f2479f035108ed1f84b5258233d" category="paragraph">使用Azure時、請聯絡您的NetApp銷售代表以購買年度合約。該合約可在Azure Marketplace以私人優惠形式提供。NetApp 與您分享私人優惠後、您可以在 BlueXP 備份與恢復啟動期間、從 Azure Marketplace 訂閱年度方案。</block>
-  <block id="908abf4dd9a1ea00edbe55bea91d6964" category="paragraph">使用GCP時、請聯絡您的NetApp銷售代表以購買年度合約。合約可在Google Cloud Marketplace以私人優惠形式提供。NetApp 與您分享私人優惠後、您可以在 BlueXP 備份與恢復啟動期間、從 Google Cloud Marketplace 訂閱年度方案。</block>
   <block id="1ef27d8ce33d6626bd77a4ae3f7b5f47" category="section-title">使用 BlueXP 備份與還原 BYOL 授權</block>
   <block id="5cf4ead1ec9d21f6de70fb6080bd7481" category="paragraph">BYOL BlueXP 備份與還原授權是浮動授權、可讓您在與 BlueXP 帳戶相關的所有系統上共用總容量。對於整個系統、您可以執行CLI命令、粗略估計所需的容量ONTAP<block ref="2a47fed7b3c4b7d59e03f10c018cf5cc" prefix=" " category="inline-code"></block> 針對您計畫備份的磁碟區。</block>
   <block id="78eb4db020e2c993d3997277acf3700c" category="section-title">取得 BlueXP 備份與還原授權檔案</block>
@@ -4766,4 +4754,22 @@ SS3 ONTAP</block>
   <block id="f1f644db5655e70aeceadaa6b299010c" category="list-text">當 BlueXP 在還原磁碟區資料時掃描備份檔案以取得勒索軟體時、您將需要向雲端供應商支付額外的出口成本、才能存取備份檔案的內容。</block>
   <block id="705d7d5204c001ada8d7869c065a6a70" category="list-text">如果您計畫從已移至歸檔物件儲存區的備份檔案還原 Volume 資料、則雲端供應商會收取額外的每 GiB 擷取費用和每項要求費用。</block>
   <block id="832fd1c3441239683a98428c909ca909" category="list-text">如果您計畫在還原磁碟區資料的過程中掃描備份檔案以取得勒索軟體（如果您已為雲端備份啟用 DataLock 和勒索軟體保護功能）、那麼您也會從雲端供應商處獲得額外的出口成本。</block>
+  <block id="aff1f6e6b4bed13be2c27f1b42f5b97f" category="paragraph">如果您在雲端供應商的市場中註冊「隨用隨付」訂閱、則可免費試用 BlueXP 備份與恢復 30 天。免費試用版會在您訂閱市場上市時開始。請注意、如果您在部署 Cloud Volumes ONTAP 系統時支付市場訂閱費用、然後在 10 天之後開始 BlueXP 備份與恢復免費試用版、您將有 20 天的時間可以使用免費試用版。</block>
+  <block id="09734c1f0feb893a640f1a5c4dad5854" category="list-text">如果您備份的資料量超過 BYOL 授權允許的數量、則資料備份與還原作業會透過隨用隨付訂閱繼續進行。例如、如果您有10個TiB BYOL授權、則10 TiB以外的所有容量都會透過PAYGO訂閱付費。</block>
+  <block id="a2c77009268b32dd5ee44eefd572a848" category="list-text">AWS ：<block ref="4eba767fa6da020c510fbb6b63a04b03" category="inline-link-rx"></block>。</block>
+  <block id="c42a35e18b9a672d50dd1af0d6eaf448" category="list-text">Google Cloud：<block ref="f4b12042f5e9960850cb7df978f53391" category="inline-link-rx"></block>。</block>
+  <block id="cdd7e27784d77ec2073f18280c473cb5" category="paragraph">購買年度合約、每年支付 BlueXP 備份與恢復費用。提供 1 年、 2 年或 3 年的條款。</block>
+  <block id="dcaf9868abba1a1ccf50c6343a3d5818" category="paragraph">使用AWS時、可從取得兩份年度合約<block ref="85c21eb306ec4bcbda7252ca6117fc5c" category="inline-link-rx"></block> 對於 Cloud Volumes ONTAP 和內部部署 ONTAP 系統：</block>
+  <block id="bd0202b4a5e368ede75c41822527f8dd" category="inline-link">Azure Marketplace 頁面</block>
+  <block id="94a1eabef6a9a1dbf89023a74aae6ed4" category="paragraph">使用 Azure 時、有兩份年度合約可從取得<block ref="d5a65c1c4876b0fa6968c9e08ffea7e8" category="inline-link-rx"></block> 對於 Cloud Volumes ONTAP 和內部部署 ONTAP 系統：</block>
+  <block id="f201c550f444b5128aeb063bf930d1e2" category="inline-link">將訂閱與 Azure 認證建立關聯</block>
+  <block id="f6dfd502be982b0f0b182273d94e2cf7" category="paragraph">如果您要使用此選項、請從「市場」頁面設定您的訂閱、然後再進行設定<block ref="81924c3896adc46721210987cc1f149c" category="inline-link-rx"></block>。請注意、您也需要使用這項年度合約訂閱來支付 Cloud Volumes ONTAP 系統的費用、因為您只能在 BlueXP 中指派一個有效訂閱給 Azure 認證。</block>
+  <block id="b7cee6af996f21267fdad2eebd5f4c54" category="paragraph">如果您想要使用此選項、可以在建立 Cloud Volumes ONTAP 工作環境時設定年度合約、而 BlueXP 會提示您訂閱 Azure Marketplace 。</block>
+  <block id="ab788bf4fa445771d4446e36e923ffe4" category="paragraph">使用GCP時、請聯絡您的NetApp銷售代表以購買年度合約。合約可在Google Cloud Marketplace以私人優惠形式提供。</block>
+  <block id="c71d991dee047ce8fa870270654b44c0" category="paragraph">NetApp 與您分享私人優惠後、您可以在 BlueXP 備份與恢復啟動期間、從 Google Cloud Marketplace 訂閱年度方案。</block>
+  <block id="17ffabdffcf9cad7bd6ae2054c4f6e24" category="list-text">如果您使用的帳戶有 PAYGO 市場帳戶、則備份服務會繼續執行、但您會改用 PAYGO 授權模式。您需要支付備份所使用的容量。</block>
+  <block id="727c837c47e40b96ddd39f15636181fe" category="list-text">管理複寫原則</block>
+  <block id="61f06895b4fcad7d6460158ccfc33c17" category="paragraph">BYOL 以 1 TiB 為單位、以條款為基礎（ 1 、 2 或 3 年） _ 和 _ 容量為基礎。您向NetApp支付一段時間使用服務費用、例如1年、如果容量上限為10 TiB。</block>
+  <block id="bc74d224d8eebb9d1f7a6a0cca3c6a3d" category="paragraph">使用 AWS 時、每年有兩份合約可供 1 、 2 或 3 年期使用：</block>
+  <block id="a31db27d8aef7db23d51910ceb960041" category="paragraph">使用 Azure 時、我們提供兩份年度合約、期限為 1 、 2 或 3 年：</block>
 </blocks>

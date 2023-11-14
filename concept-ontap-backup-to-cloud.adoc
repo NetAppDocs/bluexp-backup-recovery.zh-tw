@@ -51,6 +51,7 @@ BlueXP 備份與還原利用 NetApp 的 SnapMirror 資料複寫技術、建立 S
 +
 ** 一次將多個 FlexVol 磁碟區複寫到次要系統。
 ** 使用 UI 將複寫的磁碟區還原至來源系統或其他系統。
+** 管理複寫原則
 
 
 
@@ -261,7 +262,7 @@ BlueXP 備份與還原功能適用於下列使用模式：
 
 === 請自帶授權
 
-BYOL是以期為基準（12、24或36個月）_和_容量為基準、以1 TiB為增量。您向NetApp支付一段時間使用服務費用、例如1年、如果容量上限為10 TiB。
+BYOL 以 1 TiB 為單位、以條款為基礎（ 1 、 2 或 3 年） _ 和 _ 容量為基礎。您向NetApp支付一段時間使用服務費用、例如1年、如果容量上限為10 TiB。
 
 您會在 BlueXP 數位錢包頁面中輸入序號、以啟用服務。達到任一限制時、您都需要續約授權。備份BYOL授權適用於與相關聯的所有來源系統 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html["BlueXP帳戶"^]。
 
@@ -283,7 +284,7 @@ link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-paygo-sub
 
 ifdef::aws[]
 
-使用AWS時、每年有兩份合約可供12、24或36個月使用：
+使用 AWS 時、每年有兩份合約可供 1 、 2 或 3 年期使用：
 
 * 「雲端備份」計畫、可讓您備份Cloud Volumes ONTAP 內部部署ONTAP 的支援資料。
 * 「 CVO 專業人員」計畫、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原作業結合在一起。這包括Cloud Volumes ONTAP 不受限制地備份此授權所收取的所有數量（備份容量不計入授權）。
@@ -293,7 +294,11 @@ endif::aws[]
 
 ifdef::azure[]
 
-使用 Azure 時、您可以向 NetApp 申請私有方案、然後在 BlueXP 備份與恢復啟動期間從 Azure Marketplace 訂閱方案時、選擇該方案。
+使用 Azure 時、我們提供兩份年度合約、期限為 1 、 2 或 3 年：
+
+* 「雲端備份」計畫、可讓您備份Cloud Volumes ONTAP 內部部署ONTAP 的支援資料。
+* 「 CVO 專業人員」計畫、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原作業結合在一起。這包括Cloud Volumes ONTAP 不受限制地備份此授權所收取的所有數量（備份容量不計入授權）。
+
 
 endif::azure[]
 
