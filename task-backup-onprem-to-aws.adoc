@@ -362,12 +362,7 @@ NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Re
             "Resource": "arn:aws:s3:::netapp-backup-*",
             "Effect": "Allow",
             "Sid": "backupPolicy"
-        }
-    ]
-}
-{
-    "Version": "2012-10-17",
-    "Statement": [
+        },
         {
             "Action": [
                 "s3:ListBucket",
