@@ -269,6 +269,15 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
 * 內部部署ONTAP 的內部資源集區的權限、讓IT能夠讀取資料並將資料寫入S3儲存區。
 
 
+[NOTE]
+====
+如果您是在 AWS GovCloud 或 AWS China 地區建立備份、您必須在以下兩組權限的「 ALL _Resource_ 」區段中、變更 AWS 資源名稱「 arn 」：
+
+* 例如、對於 AWS GovCloud 地區、您需要將「 AWS 」變更為「 AWS-us-gov 」 `arn:aws-us-gov:s3:::netapp-backup-*`。
+* 例如、對於 AWS 中國地區、您需要將「 AWS 」變更為「 AWS-CN 」 `arn:aws-cn:s3:::netapp-backup-*`。
+
+
+====
 .步驟
 . 確認下列S3權限（從最新版本開始） https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["BlueXP原則"^]）是IAM角色的一部分、可為Connector提供權限。如果沒有、請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS文件：編輯IAM原則"]。
 +
@@ -333,10 +342,6 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
       }
 ----
 ====
-+
-
-NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如 `arn:aws-cn:s3:::netapp-backup-*`。
-
 . 當您啟動服務時、備份精靈會提示您輸入存取金鑰和秘密金鑰。這些認證資料會傳遞ONTAP 給整個叢集、ONTAP 以便讓支援中心能夠將資料備份並還原至S3儲存區。因此、您必須建立具有下列權限的 IAM 使用者。
 +
 請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS 文件：建立角色、將權限委派給 IAM 使用者"^]。
@@ -398,36 +403,49 @@ NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Re
 
 === 建立您自己的儲存庫
 
-依預設、服務會為您建立儲存區。或者、如果您想要使用自己的貯體、您可以在啟動備份啟動精靈之前建立它們、然後在精靈中選取這些貯體。
+依預設、服務會為您建立儲存區。如果您想要使用自己的儲存區、可以在啟動備份啟動精靈之前建立儲存區、然後在精靈中選取這些儲存區。
 
 link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["深入瞭解如何建立自己的貯體"^]。
 
-如果您建立自己的儲存區、則應使用儲存區名稱「 NetApp-backup 」。如果您需要使用自訂名稱、請編輯 `ontapcloud-instance-policy-netapp-backup` 現有 CVO 的 IAMRole 、並將下列清單新增至 S3 權限。您必須納入 `“Resource”: “arn:aws:s3:::*”` 並指派所有需要與儲存庫相關聯的必要權限。
+如果您建立自己的儲存區、則應使用儲存區名稱「 NetApp-backup 」。如果您需要使用自訂名稱、請編輯 `ontapcloud-instance-policy-netapp-backup` 現有 CVO 的 IAMRole 、並將下列清單新增至 S3 權限。
 
 [%collapsible]
 ====
-" 行動 " ： [
-    "S3 ： ListBucket "
-    "S3 ： GetBucketLocation"
-]
-「資源」：「 arn:AWS ： S3 ：： * 」、
-「效果」：「允許」
-} 、
-｛
-    " 行動 " ： [
-        "S3:GetObject" 、
-        "S3 ： PutObject" 、
-        "S3 ：刪除物件 " 、
-        "S3 ： ListAllMyb鏟 斗 " 、
-        "S3 ：推桿標籤 " 、
-        "S3 ： GetObjectTagging" 、
-        "S3 ： RestoreObject" 、
-        "S3 ： GetBucketObjectLockConfiguration 、
-        "S3 ： GetObjectRetention " 、
-        "S3 ： PuttBucketObjectLockConfiguration 、
-        "S3 ： PutObjectRetention "
-        ]
-    「資源」：「 arn:AWS ： S3 ：： * 」、
+[source, json]
+----
+{
+    "Action": [
+        "S3:ListBucket"
+        "S3:GetBucketLocation"
+    ]
+    "Resource": "arn:aws:s3:::*",
+    "Effect": "Allow"
+},
+{
+    "Action": [
+        "S3:GetObject",
+        "S3:PutObject",
+        "S3:DeleteObject",
+        "S3:ListAllMyBuckets",
+        "S3:PutObjectTagging",
+        "S3:GetObjectTagging",
+        "S3:RestoreObject",
+        "S3:GetBucketObjectLockConfiguration",
+        "S3:GetObjectRetention",
+        "S3:PutBucketObjectLockConfiguration",
+        "S3:PutObjectRetention"
+    ]
+    "Resource": "arn:aws:s3:::*",
+}
+----
+====
+[NOTE]
+====
+如果您的自訂貯體位於 AWS GovCloud 或 AWS China 地區、您需要在權限的所有 _Resource_ 區段下變更 AWS 資源名稱「 arn 」：
+
+* 例如、對於 AWS GovCloud 地區、您需要將「 AWS 」變更為「 AWS-us-gov 」 `arn:aws-us-gov:s3:::*`。
+* 例如、對於 AWS 中國地區、您需要將「 AWS 」變更為「 AWS-CN 」 `arn:aws-cn:s3:::-*`。
+
 
 ====
 
@@ -442,9 +460,9 @@ link:concept-protection-journey.html#do-you-want-to-create-your-own-object-stora
 
 === 使用VPC端點介面設定系統的私有連線
 
-如果您要使用標準的公用網際網路連線、則所有權限都是由Connector設定、您無需執行其他任何操作。這種連線類型顯示於 link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["第一個圖表"]。
+如果您要使用標準的公用網際網路連線、則所有權限都是由Connector設定、您無需執行其他任何操作。這種連線類型顯示於 link:task-backup-onprem-to-aws.html#identify-the-connection-method["第一個圖表"]。
 
-如果您想要透過網際網路從內部資料中心連線至VPC、可以在備份啟動精靈中選取AWS Private Link連線。如果您打算使用VPN或AWS Direct Connect、透過使用私有IP位址的VPC端點介面來連接內部部署系統、就必須使用此功能。這種連線類型顯示於 link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["第二個圖表"]。
+如果您想要透過網際網路從內部資料中心連線至VPC、可以在備份啟動精靈中選取AWS Private Link連線。如果您打算使用VPN或AWS Direct Connect、透過使用私有IP位址的VPC端點介面來連接內部部署系統、就必須使用此功能。這種連線類型顯示於 link:task-backup-onprem-to-aws.html#identify-the-connection-method["第二個圖表"]。
 
 .步驟
 . 使用Amazon VPC主控台或命令列建立介面端點組態。 https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["請參閱 Amazon S3 使用 AWS Private Link 的詳細資料"^]。

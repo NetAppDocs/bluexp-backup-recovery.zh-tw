@@ -182,9 +182,15 @@ VPC閘道端點必須已存在於VPC中。 https://docs.aws.amazon.com/vpc/lates
         },
 ----
 ====
+[NOTE]
+====
+如果您是在 AWS GovCloud 或 AWS China 地區建立備份、您需要在上述權限集和以下的所有 _Resource_ 區段中、變更 AWS 資源名稱「 arn 」：
 
-NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如 `arn:aws-cn:s3:::netapp-backup-*`。
+* 例如、對於 AWS GovCloud 地區、您需要將「 AWS 」變更為「 AWS-us-gov 」 `arn:aws-us-gov:s3:::netapp-backup-*`。
+* 例如、對於 AWS 中國地區、您需要將「 AWS 」變更為「 AWS-CN 」 `arn:aws-cn:s3:::netapp-backup-*`。
 
+
+====
 必要的AWS Cloud Volumes ONTAP 功能:: 當您的 Cloud Volumes ONTAP 系統執行 ONTAP 9.12.1 或更新版本的軟體時、提供具有權限的工作環境的 IAM 角色必須包含一組新的 S3 權限、專門用於最新的 BlueXP 備份與還原 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-set-up-iam-roles.html["政策Cloud Volumes ONTAP"^]。
 +
 --

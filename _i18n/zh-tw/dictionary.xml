@@ -721,9 +721,7 @@
   <block id="72828ef5ab3d5aa027bfcdd1a9224f67" category="paragraph">如果您想要使用預設的Amazon S3加密金鑰來加密在內部叢集和S3儲存區之間傳輸的資料、那麼您就會被設定、因為預設安裝會使用該類型的加密。</block>
   <block id="486567bdd60f21beefa59174661f6d52" category="section-title">使用VPC端點介面設定系統的私有連線</block>
   <block id="d37ada70a820c5c84f992a48e05045cf" category="inline-link-macro">第一個圖表</block>
-  <block id="55082684c888abf218793c0bd2f3b5e4" category="paragraph">如果您要使用標準的公用網際網路連線、則所有權限都是由Connector設定、您無需執行其他任何操作。這種連線類型顯示於 <block ref="b1224f75874af139b1e7a51a1da970e9" category="inline-link-macro-rx"></block>。</block>
   <block id="7cb65d7424b08922f4902800ae6b79d0" category="inline-link-macro">第二個圖表</block>
-  <block id="ca301c03d4c5ce91946df8b15f3dbe5f" category="paragraph">如果您想要透過網際網路從內部資料中心連線至VPC、可以在備份啟動精靈中選取AWS Private Link連線。如果您打算使用VPN或AWS Direct Connect、透過使用私有IP位址的VPC端點介面來連接內部部署系統、就必須使用此功能。這種連線類型顯示於 <block ref="0f7afb920fb200721cfd6111e33f99d4" category="inline-link-macro-rx"></block>。</block>
   <block id="db46ba2f888d41e44da25c2d8c1f406d" category="summary">您可以檢視資料存放區和虛擬機器、並編輯SnapCenter VMware vSphere執行個體的VMware vCenter外掛程式。</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*關於此工作*</block>
   <block id="b4aa547260f4fe266f03ec3a845576a5" category="section-title">編輯SnapCenter VMware vSphere執行個體的VMware vCenter外掛程式</block>
@@ -2794,7 +2792,6 @@
   <block id="9af84f05d8931a3676e35cb449e96606" category="list-text">您必須確認專案中已啟用 Google 「 Cloud Key Management Service （ KMS ）」 API 。請參閱<block ref="5b19b983398533c382bb79968f58dbf1" category="inline-link-rx"></block> 以取得詳細資料。</block>
   <block id="db058563d6eb243b453d48635769d049" category="list-text">同時支援 HSM （硬體支援）和軟體產生的金鑰。</block>
   <block id="90a4c64194204c56808168a2ae360226" category="summary">您可以向雲端供應商購買隨用隨付或年度市場訂閱、或是向 NetApp 購買自帶授權、以取得 BlueXP 備份與恢復的授權。您需要有效的授權、才能在工作環境中啟動 BlueXP 備份與還原、建立正式作業資料的備份、以及將備份資料還原至正式作業系統。</block>
-  <block id="6b238043e3f0cbcb294416f3238efea2" category="admonition">在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
   <block id="72c7fe989ff4840809134384de3dd80c" category="admonition">如果您已將 ONTAP 系統升級至 9.13.x 、但在「工作監控」中沒有看到持續排程的備份作業、則需要重新啟動 BlueXP 備份與還原服務。 <block ref="bdf197dfe0363b0f0f92ecc4a997870a" category="inline-link-macro-rx"></block>。</block>
   <block id="53775c897cfb7fba4b875a6f0ce56341" category="admonition">如果您打算刪除具有備份的工作環境或叢集、則必須在*刪除系統之前刪除備份。刪除系統時、 BlueXP 備份與還原不會自動刪除備份、而且在刪除系統之後、 UI 目前不支援刪除備份。您將繼續支付剩餘備份的物件儲存成本。</block>
   <block id="7063b7db80bf8574d1141e84ae0a1c85" category="list-text">FlexGroup Volume 備份無法移至歸檔儲存設備。</block>
@@ -3828,28 +3825,6 @@ ifdef：：AWS []</block>
   <block id="12486a40437a6b66be9b1d2eaf68dacb" category="list-text">（選用）使用 VPC 端點介面將您的系統設定為私有連線。</block>
   <block id="27481ab02cd2907ee58a87a01de37de2" category="list-text">當您啟動服務時、備份精靈會提示您輸入存取金鑰和秘密金鑰。這些認證資料會傳遞ONTAP 給整個叢集、ONTAP 以便讓支援中心能夠將資料備份並還原至S3儲存區。因此、您必須建立具有下列權限的 IAM 使用者。</block>
   <block id="b4bc25d0b351437deb290fa50a36f062" category="paragraph">請參閱<block ref="eb8d2636cc0b0f2875b50c1561ec0060" category="inline-link-rx"></block>。</block>
-  <block id="50b086f5a622de5e2ad8e86ada10bc12" category="paragraph">" 行動 " ： [
-    "S3 ： ListBucket "
-    "S3 ： GetBucketLocation"
-]
-「資源」：「 arn:AWS ： S3 ：： * 」、
-「效果」：「允許」
-} 、
-｛
-    " 行動 " ： [
-        "S3:GetObject" 、
-        "S3 ： PutObject" 、
-        "S3 ：刪除物件 " 、
-        "S3 ： ListAllMyb鏟 斗 " 、
-        "S3 ：推桿標籤 " 、
-        "S3 ： GetObjectTagging" 、
-        "S3 ： RestoreObject" 、
-        "S3 ： GetBucketObjectLockConfiguration 、
-        "S3 ： GetObjectRetention " 、
-        "S3 ： PuttBucketObjectLockConfiguration 、
-        "S3 ： PutObjectRetention "
-        ]
-    「資源」：「 arn:AWS ： S3 ：： * 」、</block>
   <block id="e2eb08f750d15308f8411635e75fc5e7" category="inline-link">請參閱如何使用您自己的金鑰</block>
   <block id="de4ef5a5f97836ab944189954e7907e4" category="paragraph">如果您想要使用自己的客戶託管金鑰進行資料加密、而不是使用預設金鑰、則必須先設定加密託管金鑰、才能啟動 BlueXP 備份與還原精靈。<block ref="4f334d1f128fd0a003f5f48bc9fc4cbc" category="inline-link-rx"></block>。</block>
   <block id="b08fc812a1a1619370d32b6eda413475" category="inline-link">請參閱 Amazon S3 使用 AWS Private Link 的詳細資料</block>
@@ -4078,7 +4053,6 @@ ifdef：：AWS []</block>
   <block id="594ef985d417f60832e167b7a55944ba" category="paragraph"><block ref="90242aed4d9e662a807d0696ac4bc7d5" category="inline-link-macro-rx"></block>。</block>
   <block id="11a8a2e103fceba512eb133362ab467a" category="inline-link-macro">深入瞭解如何建立自己的儲存帳戶</block>
   <block id="b1864ef3e1c982ea79e143744ce2e778" category="paragraph"><block ref="5168b6a061fd7575c70ed688cdecff09" category="inline-link-macro-rx"></block>。</block>
-  <block id="24c3f29f7b3c09228614448507eb27eb" category="paragraph">如果您建立自己的儲存區、則應使用儲存區名稱「 NetApp-backup 」。如果您需要使用自訂名稱、請編輯<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block> 現有 CVO 的 IAMRole 、並將下列清單新增至 S3 權限。您必須納入<block ref="a99022ed92fce54cbefc53cc3a7bb0a9" prefix=" " category="inline-code"></block> 並指派所有需要與儲存庫相關聯的必要權限。</block>
   <block id="28543445b2c93df38084996ffc019a63" category="section-title">是否要建立自己的物件儲存容器</block>
   <block id="44f63148cdcdb30b0f9a4cc99944e0cb" category="paragraph">當您在工作環境的物件儲存區中建立備份檔案時、根據預設、備份與還原服務會為您設定的物件儲存帳戶中的備份檔案建立容器（儲存區或儲存帳戶）。AWS 或 GCP 貯體預設為「 &lt;uuid&gt; 」。Azure Blob 儲存帳戶的名稱為「 netappback.過 &lt;uuid&gt; 」。</block>
   <block id="f108f3b7f4cf5d3e79e581222e60586a" category="paragraph">如果您想要使用某個字首或指派特殊屬性、可以在物件提供者帳戶中自行建立容器。如果您想要建立自己的容器、則必須先建立容器、然後再啟動啟動精靈。容器必須專門用於儲存 ONTAP Volume 備份檔案、無法用於任何其他用途。備份啟動精靈會自動探索所選帳戶和認證的已佈建容器、以便您選取要使用的容器。</block>
@@ -4775,4 +4749,14 @@ SS3 ONTAP</block>
   <block id="aa4c67fd3731395f4450c9686b20f799" category="section-title">支援「工作監控」中的排程工作</block>
   <block id="314b40130d46a229c3a19dc5e2e23aa4" category="paragraph">BlueXP 備份與還原工作監控先前監控的排程磁碟區對物件儲存區備份與還原工作、但不是透過 UI 或 API 排程的本機 Snapshot 、複寫、備份與還原工作。</block>
   <block id="04c6b318fe9c7f19ae925a90e52c6569" category="paragraph">BlueXP 備份與還原工作監視器現在包含排程工作、可用於本機快照、複製及備份至物件儲存設備。</block>
+  <block id="10c83d8d6aa254ef1949380a4435a4d4" category="paragraph">如果您是在 AWS GovCloud 或 AWS China 地區建立備份、您必須在以下兩組權限的「 ALL _Resource_ 」區段中、變更 AWS 資源名稱「 arn 」：</block>
+  <block id="4c8fab8f36cba8fb1f202396d9a9ebcd" category="list-text">例如、對於 AWS GovCloud 地區、您需要將「 AWS 」變更為「 AWS-us-gov 」<block ref="5437327155aa3716e710fd4319a91b7e" prefix=" " category="inline-code"></block>。</block>
+  <block id="d55b464ea46a7e055a6cefee97d57046" category="list-text">例如、對於 AWS 中國地區、您需要將「 AWS 」變更為「 AWS-CN 」<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
+  <block id="c791030455c6b061d69eaa3110693967" category="paragraph">如果您建立自己的儲存區、則應使用儲存區名稱「 NetApp-backup 」。如果您需要使用自訂名稱、請編輯<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block> 現有 CVO 的 IAMRole 、並將下列清單新增至 S3 權限。</block>
+  <block id="a2cea9ad2302bf1c011966b2b76de8a1" category="paragraph">如果您的自訂貯體位於 AWS GovCloud 或 AWS China 地區、您需要在權限的所有 _Resource_ 區段下變更 AWS 資源名稱「 arn 」：</block>
+  <block id="a306027de621391e07a3f37323f0a7a1" category="list-text">例如、對於 AWS GovCloud 地區、您需要將「 AWS 」變更為「 AWS-us-gov 」<block ref="d3c2ab280b3f8c407baa043db6f71305" prefix=" " category="inline-code"></block>。</block>
+  <block id="fdd52d5d7016bf165e6a4cb2d6cab2d3" category="list-text">例如、對於 AWS 中國地區、您需要將「 AWS 」變更為「 AWS-CN 」<block ref="bb55156256f7fc6b96c6be713812db69" prefix=" " category="inline-code"></block>。</block>
+  <block id="4ec233ea13ab88b2246fbb211a91665c" category="paragraph">如果您要使用標準的公用網際網路連線、則所有權限都是由Connector設定、您無需執行其他任何操作。這種連線類型顯示於 <block ref="38757d2cfcaca456ef39c830b3fbfbb6" category="inline-link-macro-rx"></block>。</block>
+  <block id="4d9403aeb0d455887fedd3ace41764e0" category="paragraph">如果您想要透過網際網路從內部資料中心連線至VPC、可以在備份啟動精靈中選取AWS Private Link連線。如果您打算使用VPN或AWS Direct Connect、透過使用私有IP位址的VPC端點介面來連接內部部署系統、就必須使用此功能。這種連線類型顯示於 <block ref="95f59ac3cbae4d92bede28fe387b5a78" category="inline-link-macro-rx"></block>。</block>
+  <block id="d32f70c539312af4cedd6200342bc293" category="paragraph">如果您是在 AWS GovCloud 或 AWS China 地區建立備份、您需要在上述權限集和以下的所有 _Resource_ 區段中、變更 AWS 資源名稱「 arn 」：</block>
 </blocks>
