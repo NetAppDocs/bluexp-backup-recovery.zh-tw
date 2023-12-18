@@ -472,9 +472,6 @@
   <block id="a6e42fec71384a3a5d77eba684fba2c9" category="inline-link">AWS文件：編輯IAM原則</block>
   <block id="b539613501183cf10b8570ed60939fea" category="inline-link">AWS 文件：建立角色、將權限委派給 IAM 使用者</block>
   <block id="a08b285fd78cf03936887841fbc87805" category="inline-link">如需使用AWS Private Link for Amazon S3的詳細資訊、請參閱</block>
-  <block id="4adab5b6b391c43cf0cfd73c09d5bdf8" category="inline-xref">從備份原則新增S3權限</block>
-  <block id="54979ba354582c6f2824abc12558cf5a" category="inline-image-macro">與Connector相關聯的AWS安全性群組快照。</block>
-  <block id="9fffc2ed11f6ca99ac2677ff1c97fd9a" category="paragraph"><block ref="9fffc2ed11f6ca99ac2677ff1c97fd9a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="39bab378d876d4ae9f917360ff7b633a" category="list-text">從AWS主控台取得端點的DNS名稱。</block>
   <block id="51cca00855dd27ddbb729c64d6988680" category="inline-image-macro">AWS主控台VPC端點的DNS名稱快照。</block>
   <block id="63c7ff1056127bdaee465b05c7c83d3c" category="paragraph"><block ref="63c7ff1056127bdaee465b05c7c83d3c" category="inline-image-macro-rx" type="image"></block></block>
@@ -561,7 +558,6 @@
   <block id="0077a889ccca275b521d8fa2e99bc482" category="paragraph"><block ref="0077a889ccca275b521d8fa2e99bc482" category="inline-image-macro-rx" type="image"></block></block>
   <block id="991410d2fec4312c8b648907a268be28" category="list-text">在_選取來源_頁面中、瀏覽至您要還原之磁碟區的備份檔案。選取*工作環境*、*磁碟區*和*備份*檔案、其中含有您要還原的日期/時間戳記。</block>
   <block id="d472a94c2cf1de02a17725a3b7fa898d" category="inline-image-macro">選取您要還原的工作環境、Volume和Volume備份檔案的快照。</block>
-  <block id="7460c264ec9185e5da4ecd95b8cabe8d" category="paragraph"><block ref="7460c264ec9185e5da4ecd95b8cabe8d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="23fa18b5a99eb2f784751356513f7961" category="list-text">在「選取目的地」頁面中、選取您要還原磁碟區的*工作環境*。</block>
   <block id="aaf0dd17390ced43eaa354f3660fd328" category="inline-image-macro">為您要還原的磁碟區選取目的地工作環境的快照。</block>
   <block id="dbbed6352fa8a25df439a79f12dff6ff" category="paragraph"><block ref="dbbed6352fa8a25df439a79f12dff6ff" category="inline-image-macro-rx" type="image"></block></block>
@@ -672,7 +668,6 @@
   <block id="0eaadb4fcb48a0a0ed7bc9868be9fbaa" category="list-text">警告</block>
   <block id="d7c8c85bf79bbe1b7188497c32c3b0ca" category="list-text">失敗</block>
   <block id="fdb4a732f867f813a90fc7fb3a9bd9ea" category="inline-image-macro">在「工作監控」儀表板中顯示備份與還原工作的快照。</block>
-  <block id="6a0946e9e6df1feca77ae10577f6057c" category="paragraph"><block ref="6a0946e9e6df1feca77ae10577f6057c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">版本資訊</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
   <block id="e907b41f5f3d7332bee5a43fbbf78a08" category="sidebar">設定授權</block>
@@ -1268,7 +1263,6 @@
   <block id="379dea20c8734742bd3f9c78de134135" category="paragraph">當您看到這些警告時、請使用BlueXP介面右下角的聊天圖示來續約授權。</block>
   <block id="2568e9dfbf799a7f4514c6421cdd6535" category="paragraph">BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份及還原ONTAP 您的不必要資料。</block>
   <block id="a7c7bd193740210990d86811ef377b56" category="inline-link">BlueXP原則</block>
-  <block id="f59bbb6de7b8eafb6ccb2f617135ff84" category="list-text">修改與BlueXP Connector相關的安全性群組組態。您必須將原則變更為「Custom（自訂）」（從「Full Access（完整存取）」）、而且您必須如此 <block ref="52cd24ecfd99d5b16a10d03c54f9d16b" category="inline-xref-macro-rx"></block> 如前所示。</block>
   <block id="667b744af05e085368d150edc4b8a344" category="inline-link">登入裝載BlueXP Connector的VM</block>
   <block id="0bd54f980c8a7dce1758331f8faad8aa" category="list-text">在BlueXP UI中、按一下* Protection *&gt;* Backup and recovery *&gt;* Applications*。</block>
   <block id="29e89229775aefede67526b03124356e" category="paragraph">請注意、如果您想讓BlueXP在Cloud Volumes ONTAP 不同的帳戶/地區管理您的不一致系統、則需要設定vnet對等關係。儲存帳戶連線不需要vnet對等。</block>
@@ -2960,7 +2954,6 @@
   <block id="71610d9ba03d16f64930e18ad93ed1ff" category="paragraph">備份的資料有兩種類型：</block>
   <block id="3f90954724de2ab33270c2e29ef44d4c" category="list-text">BlueXP 備份與還原資料庫：包含所有磁碟區、備份檔案、備份原則及組態資訊的清單。</block>
   <block id="ae429398e7a8cba2d2c57d308c8ed88a" category="list-text">索引型錄檔案 - 包含用於搜尋與還原功能的詳細索引、可讓您在尋找要還原的 Volume 資料時、快速又有效率地進行搜尋。</block>
-  <block id="c9cfba3160309eb4416746c049e4b9da" category="paragraph">此資料每天午夜備份一次、每個檔案最多保留 7 份複本。如果 Connector 正在管理多個內部部署 ONTAP 工作環境、則 BlueXP 備份與還原檔案將位於最先啟動的工作環境中的工作環境中。</block>
   <block id="33cc4fba89a0e27990f9826b52a31440" category="admonition">BlueXP 備份與還原資料庫或索引型錄檔案中從未包含任何 Volume 資料。</block>
   <block id="d59db7846bd10b6d60d21543df9faa9e" category="paragraph-title">您需要的產品</block>
   <block id="e53202674690c06ddcfdb1f7eb32a51c" category="list-text">BlueXP 備份與還原 MySQL 資料庫檔案</block>
@@ -2971,7 +2964,6 @@
   <block id="56dd14a7bf28acd20f0a0435a86d17e0" category="list-text">將 Indexed Catalog 備份 zip 檔案（我們會使用範例檔案名稱「 Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip 」）從備份位置複製到「 /opt/application/NetApp/CBS 」資料夾中的新 Connector 主機。</block>
   <block id="39ba61f148a69dbb1215b6b10c98b11a" category="list-text">使用下列命令解壓縮「 Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip 」檔案：</block>
   <block id="3b3267745861675e9a5e88b689b4cda8" category="list-text">執行 *ls* 命令、確定已建立資料夾「 catalogdb1 」、其下方有子資料夾「變更」和「快照」。</block>
-  <block id="628b6da02e99f426a81f25cb6fc98d4a" category="summary">有了 BlueXP 備份與還原報告、您就能確保關鍵資料根據組織定義的原則受到保護、並有效支援法規遵循程序的稽核。備份庫存報告可讓您查看特定帳戶、工作環境或 SVM 庫存的所有備份。</block>
   <block id="864720dc2dde0915fefa08788be26fb4" category="paragraph">有了 BlueXP 備份與還原報告、您就能確保關鍵資料受到組織定義原則的保護、並針對法規遵循需求提供稽核。</block>
   <block id="3763c7668e8aeb422b9407d01d4e6481" category="paragraph">BlueXP 備份與還原報告可協助您完成下列工作：</block>
   <block id="1f9ab6f8211cd0f71cb927f72e9fb635" category="list-text">* 營運可見度 * ：監控您的服務層級協議、包括資料保護、備份成功率、以及符合業務需求的備份時段。</block>
@@ -2987,28 +2979,19 @@
   <block id="25d0ed1de7efcdaaece83057c2756e57" category="paragraph">備份庫存報告會顯示下列資訊及更多資訊：</block>
   <block id="f00e42ce9cfb8f79aa0acd52b34455ab" category="list-text">帳戶、工作環境和 SVM</block>
   <block id="6edfddc7ea34dfa23f5f2a25a3af154f" category="list-text">受保護和不受保護的磁碟區</block>
-  <block id="fe6088e55d445ff8c5e73198a4b10d33" category="list-text">備份目標</block>
-  <block id="44558cf0d95753fc793030cefd55087b" category="list-text">已套用的備份原則</block>
   <block id="5a3d5f2f9c8335ce82c10c7357125bb4" category="list-text">加密樣式（提供者管理的金鑰或使用者管理的金鑰）</block>
   <block id="4f19973809c9f50819d754c5d361feaf" category="list-text">DataLock 和勒索軟體保護狀態（監管、法規遵循或無）</block>
   <block id="edb1f7df1c92279bbf8db022953e164b" category="list-text">啟用歸檔狀態</block>
-  <block id="20e266a6449440b3d67b85ead1217fb1" category="list-text">備份複本數</block>
   <block id="dd8c5eff0fd4dd0b3760e41db59bfb3a" category="list-text">儲存類別</block>
   <block id="765c798c0aa1aec3ca7ca68ec68f7e28" category="list-text">Snapshot標籤</block>
   <block id="c3701c973b22b5daa3d8508d20412d6a" category="admonition">備份庫存報告不包含過期或失敗的備份資訊。</block>
   <block id="eee2652f7acf21a40330ddedb0daf852" category="paragraph">報告頂端會有圖表顯示下列資訊：</block>
-  <block id="ccf68adbbbaa71c4ed09254c95dc35ed" category="list-text">範圍內至少有一個備份的磁碟區數</block>
   <block id="9bfb08d9b221f2ab6e12df721efa4f2e" category="list-text">非作用中磁碟區和作用中磁碟區的總數</block>
-  <block id="4eb47739f755a1148ef510f3d10ca279" category="paragraph">備份庫存報告會顯示下列圖表：</block>
-  <block id="8aab504f5ceeb44f855ca81302865568" category="list-text">* Volume 備份狀態 * ：顯示所選範圍的受保護磁碟區與非受保護磁碟區的比較。</block>
-  <block id="c9ef4c767ef6317e3bedf50654e6f9db" category="list-text">* Volume by backup count* ：依此磁碟區的可用備份複本數量來將磁碟區分組。</block>
   <block id="b775ae7fb34855ffeede56666da9a15c" category="list-text">從頂端功能表中選取 * 報告 * 。</block>
   <block id="5c40c1df71ece7a94ad95386b4e61685" category="list-text">選取 * 備份清查 * 。</block>
   <block id="3b0a91a5ea7b77db2fb83f740b7d1303" category="list-text">選取 * 建立報告 * 。</block>
   <block id="d2483952bd8a4702aa9c22f305a82129" category="list-text">選取帳戶、工作環境和 SVM 。</block>
-  <block id="da8b2e21cf3fbf1deb6e54876d0bb30e" category="admonition">您可以選取多個工作環境和 SVM 。</block>
   <block id="e69ed523cba7630efc22d90d22be1746" category="list-text">選取時間範圍：過去 24 小時、週或月。</block>
-  <block id="7c6f87c6386a4b34232097d33f03a21f" category="list-text">（選用）依工作狀態篩選結果。</block>
   <block id="9c45376ca047b231750db710316d88f1" category="list-text">（選用）選取 * 下載 CSV* 、以 .CSV 格式匯出報告內容。</block>
   <block id="a28d17eeb154e6438fb5bb2ee152ad16" category="section-title">建立資料保護工作活動報告</block>
   <block id="d1a5e05b6fa32d7e732631d7be6bb196" category="paragraph">主動式監控可減少監控生態系統中所有資源所需的工作量。從 ONTAP 9.13.0 開始、「資料保護工作活動」報告提供快照、備份、複製和還原作業的相關資訊、可搭配 SLA 監控及追蹤備份與還原率使用。</block>
@@ -4226,7 +4209,6 @@ SS3 ONTAP</block>
   <block id="7413106917b419812ee4fa6eba953c99" category="paragraph">您可以在 * 工作監控 * 標籤中檢視所有 Snapshot 、複寫、備份到物件儲存、還原作業及其目前狀態的清單。這包括 Cloud Volumes ONTAP 、內部部署 ONTAP 、應用程式、虛擬機器和 Kubernetes 系統的作業。每個作業或工作都有唯一的ID和狀態。</block>
   <block id="402bab7d605cd8ea629df214c4351f69" category="paragraph">狀態可以是：</block>
   <block id="ac624cf312f41265d4598a7409f6c357" category="list-text">顯示其他欄（工作環境、 SVM 、使用者名稱、工作負載、原則名稱、 Snapshot Label ）、請選取 <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block>。</block>
-  <block id="743978dcd7046c82225d9b638969fd96" category="paragraph">您可以使用多個篩選器來篩選「工作監控」頁面上的作業、例如原則、 Snapshot 標籤、作業類型（保護、還原、保留或其他）、以及保護類型（本機 Snapshot 、複寫或備份到雲端）。</block>
   <block id="7f8ba7d41d11ab3b1061dbce2eeadb52" category="paragraph">根據預設、「工作監控」頁面會顯示過去 24 小時的保護和恢復工作。您可以使用時間範圍篩選器變更時間範圍。</block>
   <block id="abfa7a0ebf0068a9c8b2a22cab7ee2b3" category="list-text">如果您正在尋找特定工作、請選取 * 進階搜尋與篩選 * 區域以開啟「搜尋」面板。</block>
   <block id="1a33d15f5c704d215e492635449e9991" category="paragraph">此螢幕擷取畫面顯示如何在「上週」中搜尋名為「 Volume_1 」的所有「 Volume 」「 Backup 」工作。</block>
@@ -4667,9 +4649,7 @@ SS3 ONTAP</block>
   <block id="2ce2db49b07d0bd2d1dada807c65d175" category="paragraph">選擇您要保護的磁碟區。受保護的磁碟區具有下列一項或多項： Snapshot 原則、複寫原則、備份對物件原則。</block>
   <block id="91b1870e279924acdf3d4248405f1f98" category="list-text">選取第一個磁碟區之後、您就可以選取所有 FlexVol 磁碟區。（ FlexGroup 磁碟區一次只能選取一個）。 若要備份所有現有的 FlexVol Volume 、請先勾選一個 Volume 、然後勾選標題列中的方塊。（<block ref="2b1190f90c2c717d2aa70aabd2fc4c36" category="inline-image-macro-rx" type="image"></block>）。</block>
   <block id="6f016177210af1e863aa59b8f2e97752" category="list-text">* 備份原則 * ：選取現有的備份至物件儲存原則。</block>
-  <block id="f149f54356387e5794adb107c0cc0a7d" category="paragraph">從 BlueXP 備份與還原報告索引標籤、您可以建立備份庫存報告並篩選其內容。使用備份庫存報告、您可以查看特定帳戶、工作環境或 SVM 庫存的所有備份。</block>
   <block id="09d75137b3fb689dc33f1373da0ca50b" category="list-text">備份類型（排程備份或使用者啟動的臨機操作備份）</block>
-  <block id="bb556c03f0c66474f3d3666fd4354e8e" category="list-text">根據您的報告選擇、檢閱報告區段（ Snapshot 原則、複寫原則或備份原則）。</block>
   <block id="dae5b12aa472c177c1e2583718010f3e" category="paragraph">本報告適用於 Cloud Volumes ONTAP 、內部部署、應用程式及 Kubernetes 資料的 BlueXP 備份與還原作業。</block>
   <block id="661d052ba9e14a07c1387ef54569e445" category="summary">您可以監控本機快照、複製和備份的狀態、以將其備份至您所起始或排程的物件儲存工作、以及還原您所起始或排程的工作。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。</block>
   <block id="9ee483d0200a76af92f0e7ffaf360da9" category="paragraph">您可在「工作監控」標籤中找到從 BlueXP 備份和還原 UI 及 API 啟動的快照、複製、備份到物件儲存和還原作業。</block>
@@ -4752,11 +4732,47 @@ SS3 ONTAP</block>
   <block id="10c83d8d6aa254ef1949380a4435a4d4" category="paragraph">如果您是在 AWS GovCloud 或 AWS China 地區建立備份、您必須在以下兩組權限的「 ALL _Resource_ 」區段中、變更 AWS 資源名稱「 arn 」：</block>
   <block id="4c8fab8f36cba8fb1f202396d9a9ebcd" category="list-text">例如、對於 AWS GovCloud 地區、您需要將「 AWS 」變更為「 AWS-us-gov 」<block ref="5437327155aa3716e710fd4319a91b7e" prefix=" " category="inline-code"></block>。</block>
   <block id="d55b464ea46a7e055a6cefee97d57046" category="list-text">例如、對於 AWS 中國地區、您需要將「 AWS 」變更為「 AWS-CN 」<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
-  <block id="c791030455c6b061d69eaa3110693967" category="paragraph">如果您建立自己的儲存區、則應使用儲存區名稱「 NetApp-backup 」。如果您需要使用自訂名稱、請編輯<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block> 現有 CVO 的 IAMRole 、並將下列清單新增至 S3 權限。</block>
   <block id="a2cea9ad2302bf1c011966b2b76de8a1" category="paragraph">如果您的自訂貯體位於 AWS GovCloud 或 AWS China 地區、您需要在權限的所有 _Resource_ 區段下變更 AWS 資源名稱「 arn 」：</block>
   <block id="a306027de621391e07a3f37323f0a7a1" category="list-text">例如、對於 AWS GovCloud 地區、您需要將「 AWS 」變更為「 AWS-us-gov 」<block ref="d3c2ab280b3f8c407baa043db6f71305" prefix=" " category="inline-code"></block>。</block>
   <block id="fdd52d5d7016bf165e6a4cb2d6cab2d3" category="list-text">例如、對於 AWS 中國地區、您需要將「 AWS 」變更為「 AWS-CN 」<block ref="bb55156256f7fc6b96c6be713812db69" prefix=" " category="inline-code"></block>。</block>
   <block id="4ec233ea13ab88b2246fbb211a91665c" category="paragraph">如果您要使用標準的公用網際網路連線、則所有權限都是由Connector設定、您無需執行其他任何操作。這種連線類型顯示於 <block ref="38757d2cfcaca456ef39c830b3fbfbb6" category="inline-link-macro-rx"></block>。</block>
   <block id="4d9403aeb0d455887fedd3ace41764e0" category="paragraph">如果您想要透過網際網路從內部資料中心連線至VPC、可以在備份啟動精靈中選取AWS Private Link連線。如果您打算使用VPN或AWS Direct Connect、透過使用私有IP位址的VPC端點介面來連接內部部署系統、就必須使用此功能。這種連線類型顯示於 <block ref="95f59ac3cbae4d92bede28fe387b5a78" category="inline-link-macro-rx"></block>。</block>
   <block id="d32f70c539312af4cedd6200342bc293" category="paragraph">如果您是在 AWS GovCloud 或 AWS China 地區建立備份、您需要在上述權限集和以下的所有 _Resource_ 區段中、變更 AWS 資源名稱「 arn 」：</block>
+  <block id="8017dc46d55f13a6a86439ecb091248d" category="section-title">2023 年 12 月 15 日</block>
+  <block id="7ab0753b80059fbad40a2fd72c4592ce" category="section-title">適用於本機 Snapshot 和複寫 Snapshot 複本的報告</block>
+  <block id="9e6cfaae073aa85c2c955e17e29074a8" category="paragraph">以前、您只能在備份複本上產生報告。現在、您也可以在本機 Snapshot 複本和複寫 Snapshot 複本上建立報告。</block>
+  <block id="df4821b02d035c9862b3a2ae32691ed8" category="paragraph">使用這些報告、您可以執行下列動作：</block>
+  <block id="bb80777a047b566ac3b10e32c370ca6a" category="list-text">確保關鍵資料受到組織原則的保護。</block>
+  <block id="4af8855be3acb3531c504c5560e50187" category="list-text">確保一組磁碟區的備份作業順利進行。</block>
+  <block id="21c3f5d157e063b8c2a027ddc88be774" category="list-text">為您的正式作業資料提供保護證明。</block>
+  <block id="eb6103dddc4e26822e765e4e36dce6cb" category="paragraph">請參閱<block ref="76fbdf5883fabf4a66bc2a9d2bdc8b58" category="inline-link-rx"></block>。</block>
+  <block id="e24cbc73c28ff71b40798b880015fb21" category="section-title">可在磁碟區上使用自訂標記進行排序和篩選</block>
+  <block id="080dddcbfae67093013a7e013a7a9bff" category="paragraph">您現在可以將自訂標記新增至 ONTAP 9.13.1 中的磁碟區、以便在工作環境中和跨工作環境將磁碟區分組在一起。如此一來、您就能在 BlueXP 備份與還原 UI 頁面中排序磁碟區、並在報告中篩選。</block>
+  <block id="6bc380f29d7a62cc8a2bd6b0b4dc9ccd" category="section-title">目錄備份保留 30 天</block>
+  <block id="2a7d8d5d92a8e8110b2bc2ab71c0c002" category="paragraph">以前、 Catalog.zip 備份會保留 7 天。現在、他們會保留 30 天。</block>
+  <block id="16f6196e265bdbd3f9da022848c51d8a" category="inline-link">在黑暗的站台中還原 BlueXP 備份與還原資料</block>
+  <block id="89b2c6f6be45f8f05d713b7bae69cd15" category="paragraph">請參閱<block ref="5596168e45150b1d53148898addeba07" category="inline-link-rx"></block>。</block>
+  <block id="08953d12d492df51bc90f2f43cd41a5e" category="section-title">將內部部署 ONTAP 資料備份至 StorageGRID 儲存區的保留量增加</block>
+  <block id="c07f9ba29ac424f316877aae26aa07b0" category="paragraph">StorageGRID 現在可在單一儲存區中、保留最多 30 個來自 BlueXP 備份與還原的內部部署 ONTAP 資料備份。以前、儲存庫中最多可有 7 個備份。</block>
+  <block id="a4304a5e5ad0523cd1e2516efcbb04ea" category="inline-link">深入瞭解如何將內部部署ONTAP 的各項資料備份StorageGRID 到支援中心</block>
+  <block id="9fa7efa5e741bc1c7fa825541ca578ff" category="paragraph"><block ref="c5cc080595ac6d000b39fc62e24bb795" category="inline-link-rx"></block>。</block>
+  <block id="37cad79be3887e5af23a3b72ee504d6d" category="paragraph">或者、您也可以搜尋自訂標籤、僅列出具有特定標籤的磁碟區。</block>
+  <block id="7c3caa9c3fd1fb1fcc416313f95f520c" category="paragraph"><block ref="7c3caa9c3fd1fb1fcc416313f95f520c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="49feba59aa7ad0370913ee7881a2b607" category="paragraph">此資料每天午夜備份一次、每個檔案最多保留 30 份複本。如果 Connector 正在管理多個內部部署 ONTAP 工作環境、則 BlueXP 備份與還原檔案將位於最先啟動的工作環境中的工作環境中。</block>
+  <block id="e18a212580deea6e1168cf2df519b5f9" category="paragraph">如果您建立自己的儲存區、則應使用以「 NetApp-backup 」開頭的儲存區名稱。如果您需要使用自訂名稱、請編輯「設定 S3 權限」區段中使用的原則、以使用符合您自訂儲存區首碼的資源 ARN 。</block>
+  <block id="2dcb89b10f74019d9a3c831460feb047" category="summary">有了 BlueXP 備份與還原報告、您就能確保關鍵資料根據組織定義的原則受到保護、並有效支援法規遵循程序的稽核。使用備份庫存報告、您可以查看所有的本機 Snapshot 複本、複製和備份。</block>
+  <block id="264f9f7063a386a1c61f47d1330c657c" category="paragraph">從 BlueXP 備份與還原報告索引標籤、您可以建立備份庫存報告並篩選其內容。使用備份庫存報告、您可以查看所有本機 Snapshot 複本、複製到次要儲存設備、以及特定帳戶、工作環境或 SVM 庫存的備份。</block>
+  <block id="c41a31890959544c6523af684561abe5" category="list-text">目標</block>
+  <block id="ce3c72bb17e9e75c64f8ddb597b24de8" category="list-text">套用的原則</block>
+  <block id="7a17628d164aaaf3b67bbf67f3ace740" category="list-text">本機 Snapshot 複本、複製或備份複本的數量</block>
+  <block id="2efdb59bdb9318d558fc5d7af5b6404e" category="list-text">具有至少一個本機 Snapshot 、複寫或備份的磁碟區數（視所示索引標籤而定）</block>
+  <block id="355454effdd54e97bcd6f8c9ed946504" category="inline-image-macro">備份庫存報告範例</block>
+  <block id="d08879467c6493ef59052f6379e81e0f" category="paragraph"><block ref="d08879467c6493ef59052f6379e81e0f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ef16ddee8e5ddacc361e250bd6c8bdb4" category="list-text">選取帳戶層級或自訂的報告範圍。</block>
+  <block id="c4164f47b30d87e7888c12f3fdbe8af8" category="list-text">選取報告的篩選條件：</block>
+  <block id="c6f01c78bfe0a0a495cb5d3ed77824a9" category="list-text">磁碟區</block>
+  <block id="344ec8079925c0a9d42c79d780542bb4" category="list-text">保護：在報告中選取您要的保護類型（本機 Snapshot 複本、複寫或備份）。您可以選取這三個選項。此外、請選取是否要包含非保護的磁碟區。</block>
+  <block id="d022d12f96f41872be0c2dbe7f553aa5" category="list-text">根據您的報告選擇、檢閱報告索引標籤（本機快照、複寫或備份）。</block>
+  <block id="93f66acb069f7a06ab0ee856c98d2746" category="paragraph"><block ref="93f66acb069f7a06ab0ee856c98d2746" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f803143ce95b805b1f67a186b607f0a2" category="paragraph">您可以使用多個篩選器來篩選「工作監控」頁面上的作業、例如原則、 Snapshot 標籤、作業類型（保護、還原、保留或其他）、磁碟區上的自訂標記、以及保護類型（本機快照、複寫或備份至雲端）。</block>
 </blocks>

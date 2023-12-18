@@ -231,10 +231,13 @@ image:screenshot_restore_volume_selection.png["從「還原儀表板」選取「
 
 . 在_選取來源_頁面中、瀏覽至您要還原之磁碟區的備份檔案。選取*工作環境*、*磁碟區*和*備份*檔案、其中含有您要還原的日期/時間戳記。
 +
-「位置 * 」欄顯示備份檔案（ Snapshot ）是 * 本機 * （來源系統上的 Snapshot 複本）、 * 次要 * （次要 ONTAP 系統上的複寫磁碟區）、還是 * 物件儲存 * （物件儲存中的備份檔案）。選擇您要還原的檔案。
+或者、您也可以搜尋自訂標籤、僅列出具有特定標籤的磁碟區。
 
 +
-image:screenshot_restore_select_volume_snapshot.png["選取您要還原的工作環境、Volume和Volume備份檔案的快照。"]
+image:screenshot_restore_select_volume_snapshot2.png["選取您要還原的工作環境、Volume和Volume備份檔案的快照。"]
+
++
+「位置 * 」欄顯示備份檔案（ Snapshot ）是 * 本機 * （來源系統上的 Snapshot 複本）、 * 次要 * （次要 ONTAP 系統上的複寫磁碟區）、還是 * 物件儲存 * （物件儲存中的備份檔案）。選擇您要還原的檔案。
 
 . 單擊 * 下一步 * 。
 +

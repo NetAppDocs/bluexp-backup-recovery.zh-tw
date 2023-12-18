@@ -407,7 +407,7 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
 
 link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["深入瞭解如何建立自己的貯體"^]。
 
-如果您建立自己的儲存區、則應使用儲存區名稱「 NetApp-backup 」。如果您需要使用自訂名稱、請編輯 `ontapcloud-instance-policy-netapp-backup` 現有 CVO 的 IAMRole 、並將下列清單新增至 S3 權限。
+如果您建立自己的儲存區、則應使用以「 NetApp-backup 」開頭的儲存區名稱。如果您需要使用自訂名稱、請編輯「設定 S3 權限」區段中使用的原則、以使用符合您自訂儲存區首碼的資源 ARN 。
 
 [%collapsible]
 ====
