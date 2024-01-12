@@ -43,7 +43,6 @@
   <block id="14526abd8bda5af347775025cd5342cf" category="inline-link">社群</block>
   <block id="410fdb9caa9c64da2ff3f88f4836960d" category="list-text"><block ref="410fdb9caa9c64da2ff3f88f4836960d" category="inline-link-rx"></block></block>
   <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">文件</block>
-  <block id="80b1b0d2b1ebf2b3cba2d25759801afd" category="list-text">mailto：ng-cloudmanager-feedback@netapp.com [意見反應電子郵件]</block>
   <block id="18a6c204240510c87aba39d6d8b5d26b" category="doc">保護內部部署的應用程式資料</block>
   <block id="c3ce6809be6bdc67ae978395484d0585" category="list-text">部分9.8或更新版本ONTAP</block>
   <block id="f3753469514d2cda99cee390aa2bf172" category="list-text">每個應用程式至少應有一個備份可供SnapCenter 使用於此伺服器</block>
@@ -815,7 +814,6 @@
   <block id="360446e3fb6e2087ba1eda4d6e9eafde" category="list-text">節點的叢集間LIF可存取物件存放區（當連接器安裝在「暗」站台時、則不需要）。</block>
   <block id="f6428d68ab8312cad4e05d9222dbabc5" category="inline-link">在無法存取網際網路的Linux主機上安裝Connector</block>
   <block id="f4cec0313eb4678996dc68cfe81c6f4f" category="inline-link">升級Connector軟體</block>
-  <block id="9fe942ae01924dd657ce7f1996246cc6" category="section-title">支援無網際網路連線的站台</block>
   <block id="664bf8c6e31ba8a710f5213d1874cd18" category="list-text">如果您有備份授權檔案（安裝在暗處時需要）、請選取*上傳授權檔案*選項、然後依照提示附加檔案。</block>
   <block id="6f44a1bf2246f054fd573ae9473909b6" category="inline-link">瞭解如何在離線站台中安裝Connector</block>
   <block id="38692e39e588de5b1294ee4cca656080" category="list-text">* BYOL*：向NetApp購買的授權、可與任何雲端供應商搭配使用。</block>
@@ -1284,7 +1282,6 @@
   <block id="9a3db1abe5491d0eb9bb5d125981356c" category="paragraph">請搜尋BlueXP知識庫、找出有助於疑難排解問題的文章。</block>
   <block id="00c5fef3bb9d593ae96bf5d2ee60354a" category="paragraph">歡迎加入BlueXP社群、以追蹤後續討論或建立新討論。</block>
   <block id="a4a6c2ea0078252eac2d74ef3e6c917c" category="paragraph">您目前正在檢視的BlueXP文件。</block>
-  <block id="6702efec14563f45f1ee2f8c613b8ad8" category="paragraph">我們非常重視您的意見。提交意見反應、協助我們改善藍圖。</block>
   <block id="d63bf50426f4c712554faec55b30c548" category="list-text">*服務*：選取問題相關的服務。例如、特定於服務工作流程或功能的技術支援問題的BlueXP。</block>
   <block id="aa996e20900197b0ea41485ada083d8c" category="paragraph">工作環境清單位於您在服務的最上層橫幅中所選的BlueXP帳戶、工作區和Connector範圍內。</block>
   <block id="d4f4c5ccc817cf84f5825246d829cabe" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。</block>
@@ -3893,24 +3890,17 @@ ifdef：：AWS []</block>
   <block id="60983b9ebaa7c40f57184dcb60af2fc0" category="inline-link">從 BlueXP 建立 Google Cloud Storage 貯體</block>
   <block id="5e91843f25a40c882d43652a02c8f50e" category="list-text"><block ref="5e91843f25a40c882d43652a02c8f50e" category="inline-link-rx"></block></block>
   <block id="bd83bdfad11f4eb2160cecbaafa5771f" category="section-title">您使用哪種 BlueXP Connector 部署模式</block>
-  <block id="4b758548b6a16028d0d7c1e443c285bd" category="paragraph">如果您已經使用 BlueXP 來管理儲存設備、則 BlueXP Connector 已經安裝完成。如果您打算將同一個 Connector 搭配 BlueXP 備份與還原使用、那麼您就可以全部設定好。如果您需要使用不同的 Connector 、則必須先安裝它、才能開始備份與還原實作。</block>
   <block id="40f7e0f171ae7f38e670d73e8a4c284b" category="paragraph">BlueXP 提供多種部署模式、可讓您以符合業務與安全需求的方式使用 BlueXP 。_Standard modity_ 利用 BlueXP SaaS 層提供完整功能、而 _restricted modity_ 和 _private modity_ 則適用於有連線限制的組織。</block>
   <block id="fb67e88bd0479a55df78c8a83275d5e7" category="inline-link">觀看這段關於 BlueXP 部署模式的影片</block>
   <block id="72e192cdf7601017af8b339164635167" category="paragraph"><block ref="2f5063518a76fb11ac58b566cf1a20ab" category="inline-link-rx"></block>。
 <block ref="86b5ac5922ab7c62d6a8a3ff686cf32a" category="inline-link-rx"></block>。</block>
-  <block id="b41bae1862cc28338655904ad32e407e" category="section-title">支援具備完整網際網路連線能力的網站</block>
   <block id="0f8751300c4a6857f8a492b7f39fba12" category="inline-link-macro">請參閱支援的備份目的地完整清單</block>
-  <block id="df28403f823a8cccd6d3aa652ebe7892" category="paragraph">當 BlueXP 備份與還原用於具有完整網際網路連線能力的站台（也稱為「標準模式」或「 SaaS 模式」）時、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、 您也可以在任何支援的雲端供應商的物件儲存設備上建立備份檔案。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
-  <block id="cd6458cee7347b844e32d364eccbaa5c" category="paragraph">請參閱雲端供應商的備份主題、您打算在其中建立有效 Connector 位置清單的備份檔案。在某些限制下、 Connector 必須手動安裝在 Linux 機器上、或部署在特定雲端供應商中。</block>
   <block id="2e87d4ef1e0516d893da73de140af706" category="inline-link-macro">將 Cloud Volumes ONTAP 資料備份至 Azure Blob</block>
   <block id="32f34f4c2eca6b21bfa54bfe2cf7ad10" category="inline-link-macro">將內部部署的 ONTAP 資料備份至 Azure Blob</block>
   <block id="a6102a3b147e0d099222dfd5f8fa1b0b" category="inline-link-macro">將 Cloud Volumes ONTAP 資料備份至 Google Cloud</block>
   <block id="ee45da3db51b4bd67f3174dd7bdd4bc3" category="inline-link-macro">將內部部署的 ONTAP 資料備份至 Google Cloud</block>
-  <block id="2714d7e7e24c727c2c54bb6ba96c4617" category="section-title">支援網際網路連線能力有限的網站</block>
-  <block id="e5f27584b8554a76c0aba2da480263ad" category="paragraph">BlueXP 備份與還原可在網際網路連線能力有限（也稱為「受限模式」）的站台中使用、以備份 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。</block>
   <block id="8f573a29259b458aa4c98898b8a3c1ab" category="list-text">您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。瞭解如何操作 <block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>。</block>
   <block id="322dc3fe4f51cc3ad6da0648bfc1aaf0" category="list-text">您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。瞭解如何操作 <block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>。</block>
-  <block id="ef96453aea07412d08268c286055e516" category="paragraph">BlueXP 備份與還原可在沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）中使用、以備份大量資料。在這種情況下、您需要在同一個站台的 Linux 主機上部署 BlueXP Connector 。</block>
   <block id="b9f0ffe30c24fa412122cf8fe6926b64" category="summary">您可以從建立備份的位置、 Snapshot 複本、複寫磁碟區和 / 或儲存在物件儲存區的備份中、來備份 ONTAP 磁碟區資料。您可以從這些備份位置的任何一個特定時間點還原資料。您可以從備份檔案還原整個 ONTAP 磁碟區、或者如果只需要還原幾個檔案、您可以還原資料夾或個別檔案。</block>
   <block id="bb03c52ec2a68c9eed4513c8ecf6c24d" category="doc">從備份檔案還原 ONTAP 資料</block>
   <block id="d3d3d7f1f9c466e1fcd09795d11d7fda" category="paragraph">您可以從建立備份的位置備份 ONTAP Volume 資料：快照複本、複寫磁碟區、以及儲存在物件儲存區的備份。您可以從這些備份位置的任何一個特定時間點還原資料。您可以從備份檔案還原整個 ONTAP 磁碟區、或者如果只需要還原幾個檔案、您可以還原資料夾或個別檔案。</block>
@@ -4775,4 +4765,13 @@ SS3 ONTAP</block>
   <block id="d022d12f96f41872be0c2dbe7f553aa5" category="list-text">根據您的報告選擇、檢閱報告索引標籤（本機快照、複寫或備份）。</block>
   <block id="93f66acb069f7a06ab0ee856c98d2746" category="paragraph"><block ref="93f66acb069f7a06ab0ee856c98d2746" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f803143ce95b805b1f67a186b607f0a2" category="paragraph">您可以使用多個篩選器來篩選「工作監控」頁面上的作業、例如原則、 Snapshot 標籤、作業類型（保護、還原、保留或其他）、磁碟區上的自訂標記、以及保護類型（本機快照、複寫或備份至雲端）。</block>
+  <block id="ed1a67a206c44665ed4e8af600e8efb0" category="admonition">快照必須具有唯一名稱、否則還原作業將無法正常運作。</block>
+  <block id="1dc07a81431924d105e577843fab46a1" category="paragraph">如果您已經使用 BlueXP 來管理儲存設備、則 BlueXP Connector 已經安裝完成。如果您打算將同一個 Connector 搭配 BlueXP 備份與還原使用、那麼您就可以全部設定好。如果您需要使用不同的 Connector 、則必須在開始備份與還原實作之前先進行部署。</block>
+  <block id="a291b3163a4794d9131365f0a3dcc467" category="section-title">使用標準模式時提供支援</block>
+  <block id="df8cd79f58be84231ee05f3d91442113" category="paragraph">BlueXP 備份與還原在標準模式下完全受支援：網站具備完整的網際網路連線能力。在這種情況下、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、也可以在任何支援的雲端供應商的物件儲存區上建立備份檔案。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
+  <block id="655545eef6e8f8de57e231bcae036156" category="paragraph">請參閱雲端供應商的備份主題、您打算在其中建立有效 Connector 位置清單的備份檔案。在特定雲端供應商中部署 Connector 或在 Linux 機器上手動安裝 Connector 時、可能會有一些限制。</block>
+  <block id="ef4fa6e95e8fb4a58af199a2ba2b425e" category="section-title">使用受限模式時提供支援</block>
+  <block id="1667d929b1ab016a8cfa3414df6283ee" category="paragraph">BlueXP 備份與還原支援受限模式：網際網路連線能力有限的網站。在這種情況下、您只能建立一組有限的雲端供應商的備份檔案。您需要在受限區域部署 BlueXP Connector 。</block>
+  <block id="43c11931374ad33282cc54a70addc852" category="section-title">使用私有模式時提供支援</block>
+  <block id="db8e2db8da88a405c16b644f4e2e7271" category="paragraph">BlueXP 備份與還原支援私有模式：沒有網際網路連線的站台。在這種情況下、您只能建立一組有限的物件儲存供應商的備份檔案。您需要在同一內部部署站台的 Linux 主機上部署 BlueXP Connector 。</block>
 </blocks>
