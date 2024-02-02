@@ -46,9 +46,6 @@ BlueXP 備份與還原服務可讓您建立最多三個來源磁碟區複本、�
 |===
 快照是所有備份方法的基礎、必須使用備份與還原服務。Snapshot複本是磁碟區的唯讀時間點映像。映像會佔用最少的儲存空間、而且會產生可忽略的效能負荷、因為它只會記錄自上次Snapshot複本以來對檔案所做的變更。在您的磁碟區上建立的 Snapshot 複本、可用於將複寫的磁碟區和備份檔案與對來源磁碟區所做的變更保持同步、如圖所示。
 
-
-NOTE: 快照必須具有唯一名稱、否則還原作業將無法正常運作。
-
 image:diagram-321-overview.png["顯示備份檔案在來源系統上如何作為 Snapshot 複本、在次要儲存系統上作為複寫磁碟區、以及在物件儲存中作為備份檔案存在的圖表。"]
 
 您可以選擇在另一個 ONTAP 儲存系統上建立複寫的磁碟區、以及在雲端中建立備份檔案。或者、您也可以選擇僅建立複寫的磁碟區或備份檔案、這是您的選擇。
@@ -239,7 +236,7 @@ Snapshot 原則一律位於主要儲存系統上。
 
 == 您使用哪種 BlueXP Connector 部署模式
 
-如果您已經使用 BlueXP 來管理儲存設備、則 BlueXP Connector 已經安裝完成。如果您打算將同一個 Connector 搭配 BlueXP 備份與還原使用、那麼您就可以全部設定好。如果您需要使用不同的 Connector 、則必須在開始備份與還原實作之前先進行部署。
+如果您已經使用 BlueXP 來管理儲存設備、則 BlueXP Connector 已經安裝完成。如果您打算將同一個 Connector 搭配 BlueXP 備份與還原使用、那麼您就可以全部設定好。如果您需要使用不同的 Connector 、則必須先安裝它、才能開始備份與還原實作。
 
 BlueXP 提供多種部署模式、可讓您以符合業務與安全需求的方式使用 BlueXP 。_Standard modity_ 利用 BlueXP SaaS 層提供完整功能、而 _restricted modity_ 和 _private modity_ 則適用於有連線限制的組織。
 
@@ -248,11 +245,11 @@ https://www.netapp.tv/details/30567["觀看這段關於 BlueXP 部署模式的�
 
 
 
-=== 使用標準模式時提供支援
+=== 支援具備完整網際網路連線能力的網站
 
-BlueXP 備份與還原在標準模式下完全受支援：網站具備完整的網際網路連線能力。在這種情況下、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、也可以在任何支援的雲端供應商的物件儲存區上建立備份檔案。 link:concept-ontap-backup-to-cloud.html#supported-backup-destinations["請參閱支援的備份目的地完整清單"]。
+當 BlueXP 備份與還原用於具有完整網際網路連線能力的站台（也稱為「標準模式」或「 SaaS 模式」）時、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、 您也可以在任何支援的雲端供應商的物件儲存設備上建立備份檔案。 link:concept-ontap-backup-to-cloud.html#supported-backup-destinations["請參閱支援的備份目的地完整清單"]。
 
-請參閱雲端供應商的備份主題、您打算在其中建立有效 Connector 位置清單的備份檔案。在特定雲端供應商中部署 Connector 或在 Linux 機器上手動安裝 Connector 時、可能會有一些限制。
+請參閱雲端供應商的備份主題、您打算在其中建立有效 Connector 位置清單的備份檔案。在某些限制下、 Connector 必須手動安裝在 Linux 機器上、或部署在特定雲端供應商中。
 
 ifdef::aws[]
 
@@ -284,9 +281,9 @@ endif::gcp[]
 
 
 
-=== 使用受限模式時提供支援
+=== 支援網際網路連線能力有限的網站
 
-BlueXP 備份與還原支援受限模式：網際網路連線能力有限的網站。在這種情況下、您只能建立一組有限的雲端供應商的備份檔案。您需要在受限區域部署 BlueXP Connector 。
+BlueXP 備份與還原可在網際網路連線能力有限（也稱為「受限模式」）的站台中使用、以備份 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。
 
 ifdef::aws[]
 
@@ -304,9 +301,9 @@ endif::azure[]
 
 
 
-=== 使用私有模式時提供支援
+=== 支援無網際網路連線的站台
 
-BlueXP 備份與還原支援私有模式：沒有網際網路連線的站台。在這種情況下、您只能建立一組有限的物件儲存供應商的備份檔案。您需要在同一內部部署站台的 Linux 主機上部署 BlueXP Connector 。
+BlueXP 備份與還原可在沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）中使用、以備份大量資料。在這種情況下、您需要在同一個站台的 Linux 主機上部署 BlueXP Connector 。
 
 * 您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。瞭解如何操作 link:task-backup-onprem-private-cloud.html["將內部部署的 ONTAP 資料備份至 StorageGRID"] 以取得詳細資料。
 * 您可以將資料從本機內部部署 ONTAP 系統備份到本機內部部署 ONTAP 系統、或是設定為 S3 物件儲存的 Cloud Volumes ONTAP 系統。瞭解如何操作 link:task-backup-onprem-to-ontap-s3.html["將內部部署的 ONTAP 資料備份到 ONTAP S3"] 以取得詳細資料。

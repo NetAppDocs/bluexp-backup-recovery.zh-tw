@@ -660,7 +660,6 @@
   <block id="75ccf6489a928d9483390a3aff8508e4" category="paragraph">S3儲存區會自動建立在Cloud Volumes ONTAP 與該系統相同的AWS帳戶和區域中、並儲存備份檔案。</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">註冊以取得支援</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">「說明」功能表的快照、其中「支援」是第一個列出的選項</block>
-  <block id="19d089db572ee6a1e154a0c9c9e57bfd" category="paragraph">NetApp使用Microsoft Azure Active Directory做為身分識別供應商、提供專為支援與授權所設計的驗證服務。</block>
   <block id="465ec6d5eafa3524c948c99d8bfcd306" category="list-text">在登入頁面上、提供您的NetApp支援網站註冊電子郵件地址和密碼、以執行驗證程序。</block>
   <block id="c9413dd7682a45da9ecc9efa8cea47d7" category="list-text">進行中</block>
   <block id="7b2f31b90fe1c2cc33a52233c1925df3" category="list-text">已佇列</block>
@@ -692,15 +691,8 @@
   <block id="0253148ca606e51aa3fdb4d9f8b84f32" category="sidebar">支援的AWS歸檔儲存層</block>
   <block id="9f442565cfeffa804173efd111c4d74c" category="sidebar">支援的Azure歸檔存取層</block>
   <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">知識與支援</block>
-  <block id="c1d2d81968b4f89d4185d4baf66ba468" category="sidebar">將ONTAP 資料還原至雲端</block>
-  <block id="4001622cdabc59603efa5eed8e44df9e" category="sidebar">將Kubernetes資料備份到雲端</block>
-  <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">管理ONTAP 還原備份檔案</block>
-  <block id="9ad6a8ad1e5cd26c5022383b87ca0567" category="sidebar">變更指派給現有磁碟區的原則</block>
-  <block id="0dcde7b293f3d0e01f5ffaf43f982c8d" category="sidebar">建立手動Volume備份</block>
   <block id="9803985aa2d019cb1230ddfd51b0a626" category="sidebar">檢視每個磁碟區的備份清單</block>
   <block id="de00c1e27be1485dd099e4cd2aaa554d" category="sidebar">刪除備份</block>
-  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">部落格社群</block>
-  <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp社群</block>
   <block id="34654042ecfc4226d89a0eec5901d43e" category="inline-link">瞭解如何使用ONTAP CLI刪除Snapshot</block>
   <block id="03a5b9815bb473e6f4be8d24abee633a" category="list-text">瀏覽與還原一次最多可還原100個個別檔案。</block>
   <block id="83e93965854a9ee03d55a2d15f2e8dc7" category="list-text">搜尋與還原一次可還原1個檔案。</block>
@@ -727,7 +719,6 @@
   <block id="ceb4a235a226f19c172c9cf7c46d00dc" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 與您要還原的資料存放區相對應、然後按一下「*檢視詳細資料*」。</block>
   <block id="a03a09176193c264d8dcbdcb8f2f9043" category="list-text">按一下您要還原的備份對應的*還原*。</block>
   <block id="0291e73f7c30c841795ff165a80bdc0e" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 與您要還原的虛擬機器相對應、然後按一下*還原*。</block>
-  <block id="42387e1cb260fd1fb8624acde3767841" category="paragraph">VM會還原至備份所在的相同位置。</block>
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">按一下「*登錄SnapCenter VMware vSpher*的更新外掛程式」。</block>
   <block id="1d419e3005bf4974f6070bbb53e5816f" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 與您要備份的資料存放區相對應、然後按一下「*啟動備份*」。</block>
   <block id="925e322b8ed2bad21cf3391e5e93df0a" category="list-text">按一下與SVM對應的*新增工作環境*。</block>
@@ -1707,8 +1698,6 @@
   <block id="9bc04b83e994e96133d24116c5a25bf5" category="list-text">@用於分隔資料與其資料庫名稱、並將值與其金鑰區隔。範例：data@rg2_scspr2417819002_07-20-2021_12.16.48.9267_0| LOG@RG2_scspr2417819002_07-20-2021_12.16.48.9267</block>
   <block id="08d3131fcf6d963372785be681e343e9" category="list-text">|用於分隔SC_backup_name參數兩個不同實體之間的資料。範例：DATA@RG2_scspr2417819002_07-20-2021_12.16.48.9267 0| LOG@RG2_scspr2417819002_07-20-2021_12.16.48.9267</block>
   <block id="1dc2b43d41c36670d82fe3076115def6" category="list-text">用於分隔同一機碼的變數集。範例：data@rg2_scspr2417819002_07-2021_12.16.48.9267_0| log@rg2_scspr2417819002_07-2021_12.16.48.9267_1、rg2_scspr2417819002_07-21 - 2021_12.16.48.9267_1_48.922_19002_20267-20267-20267-20267-202_18.202_18.202_18.202_12.267-2022_18.202_18.202_18.202_18.202_24</block>
-  <block id="5183d16b45269aeda8f220ef35e5327c" category="list-text">選取您要從備份還原的虛擬機器。</block>
-  <block id="0b204b102ed08f6af904a33d81026023" category="list-text">選取*歸檔還原優先順序*、然後按一下*下一步*。</block>
   <block id="071df86763e0e93af80e50596aa0710c" category="list-text">選取您要用來還原虛擬機器的備份。</block>
   <block id="d4f871b7d459c4ece286a475f033ca49" category="summary">建立SAP HANA資料庫的排程或隨需備份。</block>
   <block id="613bbcbbbc87937c088f5ca502714159" category="section-title">新增SAP HANA資料庫主機</block>
@@ -2087,10 +2076,6 @@
   <block id="b9f7c26581cad3cbd789c6d293692814" category="admonition">您無法還原跨資料存放區的虛擬機器。</block>
   <block id="76edd5381919de6c1c9b123a884984f8" category="list-text">在 BlueXP UI 中、按一下 * 保護 * &gt; * 備份與還原 * &gt; * 虛擬機器 * &gt; * SnapCenter Plug-in for VMware vSphere * 、然後選取適用於 VMware vSphere 主機的 SnapCenter 外掛程式。</block>
   <block id="873069930fc1357e9cd4216822243f14" category="admonition">如果來源虛擬機器移至其他位置（ VMotion ）、且使用者觸發從 BlueXP 還原該虛擬機器、則虛擬機器會還原至備份來源位置。</block>
-  <block id="5d920b501536441ea32ecc24679c72a2" category="cell">如果您想要...</block>
-  <block id="df2d87dc916178a7076837c06010ded0" category="paragraph">從資料存放區還原</block>
-  <block id="4569e5f9f0309302f499c21fc4cb8ee6" category="paragraph">只有在虛擬機器使用設定歸檔設定的原則受到保護時、才能使用此選項。Amazon Web Services支援的歸檔還原優先順序高、標準且低、Microsoft Azure支援的歸檔還原優先順序高且標準。</block>
-  <block id="2a8a756e65415cefaa2a8f2d963e01be" category="paragraph">從虛擬機器還原</block>
   <block id="5d0ad01dbdb8717fbebf1cb44a3c10cd" category="list-text">您應該為每個雲端供應商設定歸檔存取層。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">關於這項工作</block>
   <block id="ca69b8ee34e44ac66b7f0dfd3b786e9c" category="paragraph">BlueXP 提供下列預先定義的原則：</block>
@@ -2412,7 +2397,6 @@
   <block id="20d112bbc5f1942b3e0e448e4e89747a" category="list-text">針對功能性HA、只會使用其中一個網路介面IP Cloud Volumes ONTAP 。如果 IP 連線中斷、或無法存取 IP 、資料保護作業就會失敗。</block>
   <block id="7c47521b95a312ac4eb933479f7a14a8" category="list-text">Amazon FSX for NetApp ONTAP 或 Cloud Volumes ONTAP 的網路介面 IP 位址在 BlueXP 帳戶和區域中必須是唯一的。</block>
   <block id="a46033978f070978d19c56a083f9252f" category="sidebar">備份及還原內部部署應用程式資料</block>
-  <block id="691b857c2ea9a46d47730b371ae5ac4d" category="sidebar">將應用程式資料備份到雲端</block>
   <block id="5019db204cdfcff4225102866ab1c6bb" category="paragraph">確保您已滿足所有需求 <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> 將資料存放區備份到雲端之前。</block>
   <block id="23b39cc9d92424089210492c9ae6a9dd" category="paragraph">確保您已滿足所有需求 <block ref="c22fa2c0fe9f65f9b0ae3d1833efe89e" category="inline-link-macro-rx"></block> 從雲端還原虛擬機器之前。</block>
   <block id="05325f804117a5761ceaa9843ca9dcbd" category="paragraph">其餘的 API 可用於保護應用程式至雲端、網址為：<block ref="3b69a934f25b6e0b95aa2e5dfdea3a71" category="inline-link-rx"></block>。</block>
@@ -2650,14 +2634,7 @@
   <block id="9630a54f038cd0c834e3dfc055ceeb96" category="list-text">DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。BlueXP 備份與還原啟動後、您無法啟用此功能。</block>
   <block id="683fc015ec20f6233b25343bf3daea19" category="paragraph">如果您的內部叢集使用 ONTAP 9.12.1 或更新版本、您可以選擇在特定天數後、將舊備份分層儲存至 BlueXP 備份與還原 UI 中的 _Archive_ 儲存設備、以進一步最佳化成本。 <block ref="60cdd04e7131e97598ce1c583d8c9a5e" category="inline-link-macro-rx"></block>。</block>
   <block id="01492017a2321f7b3f8484fd1f8aa8d7" category="sidebar">BlueXP 備份與還原文件</block>
-  <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">BlueXP 備份與還原部落格</block>
-  <block id="960dd4200d015a0a12dfd299c1348c9c" category="sidebar">BlueXP 備份與還原使用案例</block>
-  <block id="a1c18d7af73fa7e0ef0013130f15b257" category="sidebar">從雲端還原資料</block>
-  <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">還原 ONTAP Volume 資料</block>
-  <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">還原內部部署的 Oracle 應用程式資料</block>
-  <block id="6002846df6663ea571e55d74bd085335" category="sidebar">還原內部部署的 SQL Server 應用程式資料</block>
   <block id="18de97333e5776e0c135dd87c10b965c" category="sidebar">還原虛擬機器資料</block>
-  <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">還原 Kubernetes Volume 資料</block>
   <block id="70dfad9357f3b3b710b73d8eb3666851" category="paragraph">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續磁碟區、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
   <block id="9a3f2e7eb30992bb084418711e5093f2" category="doc">管理資料存放區和虛擬機器資料的保護</block>
   <block id="2131f85f2f51908e5c573c231b274f4c" category="paragraph">您應確保在內部部署的 SnapCenter Plug-in for VMware vSphere 主機（在預設 8144 連接埠上執行）和 BlueXP Connector 執行個體（可在任何雲端供應商（ Amazon Web Services 、 Microsoft Azure 、 Google Cloud Platform ）或內部部署中執行）之間、能夠進行通訊。</block>
@@ -2666,13 +2643,10 @@
   <block id="38fb3153d6139974d24ba11e28a0718d" category="list-text">若要將備份從物件存放區移至歸檔儲存區、您應該執行 ONTAP 9.10.1 或更新版本、 Amazon Web Services 或 Microsoft Azure 應該是雲端供應商。</block>
   <block id="44dae527927c9be3aabaf37ba09b9068" category="admonition">您無法編輯或刪除與資料存放區相關聯的原則。</block>
   <block id="ffa1e37a2c6478ff157a0a7d25a607e9" category="doc">從雲端還原虛擬機器資料</block>
-  <block id="95513dac8a621e64dcee2a0f311b0e66" category="paragraph">您可以將虛擬機器資料從雲端還原回內部部署 vCenter 。備份會還原至執行備份的完全相同位置。如果虛擬機器是使用歸檔原則備份、則您可以設定歸檔還原優先順序。</block>
-  <block id="6c0dd80335ed3d649017aa79a23eddae" category="list-text">您可以從資料存放區或虛擬機器還原：</block>
   <block id="54a98d3cca3d552c2562869bfcebf735" category="section-title">保護Oracle資料庫</block>
   <block id="b45eb079efd4b3748b1efc669c02c01c" category="section-title">保護SAP HANA資料庫</block>
   <block id="3eb97a71011fe0dae37080fd785e4db5" category="sidebar">備份及還原虛擬機器資料</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
-  <block id="7048662b75c8f210e59f898d992521cc" category="sidebar">將資料存放區備份到雲端</block>
   <block id="3daba77ab92b57915950a36f17f965c3" category="summary">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
   <block id="6192be65cd3fbb101c0f789fab9eae08" category="inline-link">BlueXP 邊緣快取</block>
   <block id="0a190b7a7b571c1c4ae19e069137c2ac" category="paragraph">您可以使用 BlueXP 數位錢包來管理 BYOL 授權。您可以新增授權、更新現有授權、以及從 BlueXP 數位錢包檢視授權狀態。</block>
@@ -2730,11 +2704,6 @@
   <block id="889ec023b70caa5a07a4a3f56bf968d0" category="paragraph">如果所有主機都已安裝並執行 SnapCenter Plug-in for SAP HANA 服務、而且所有主機都可從新的 Connector 存取、連接器詳細資料將會成功更新。</block>
   <block id="640d0fce8cb27172173cedbb3781302e" category="list-text">登入外掛主機、然後執行下列步驟：</block>
   <block id="64d3d37e27efd6f22e6fa648ce465b2e" category="sidebar">重新啟動 BlueXP 備份與還原</block>
-  <block id="b7814feabc73eee3174693c2ffa692c8" category="sidebar">備份雲端原生 Oracle 資料庫</block>
-  <block id="5da2654bf0788a90ff3e2ff74e45e114" category="sidebar">備份雲端原生 SAP HANA 資料庫</block>
-  <block id="2f1042d0e59ea2a8ebfd0fb9bb5c169f" category="sidebar">還原雲端原生 Oracle 應用程式資料</block>
-  <block id="54d6597fa185df5cd22caa81d7e9d4d9" category="sidebar">還原雲端原生 SAP HANA 應用程式資料</block>
-  <block id="f93e4e0ba0745745e36a3b67b14a8a5b" category="sidebar">BlueXP 網路研討會</block>
   <block id="a3e9bcad86b818f7875704d49bbe6240" category="list-text">對於預先定義的原則、 SnapCenter Plug-in for VMware vSphere 和雲端中的資料存放區排程層應相同。</block>
   <block id="eb7084fa002dda093f8d4e3d744ec8c3" category="paragraph">BlueXP 應用程式架構的備份與還原包括下列元件。</block>
   <block id="94e1a3fbef097baefd6187935d2712fd" category="list-text">BlueXP 備份與還原是一組由 NetApp 代管的 SaaS 服務、以 BlueXP SaaS 平台為基礎。</block>
@@ -3060,7 +3029,6 @@
   <block id="0231cb971bb3375c29d3f87768ec4489" category="inline-image-macro">向下箭號按鈕</block>
   <block id="ba85eaabcb89510a63df45c18680ba9a" category="list-text">在「編輯原則」頁面中、按一下 <block ref="68009ec8a10651d6de3d648624efb837" category="inline-image-macro-rx" type="image"></block> 若要展開「_標籤與保留_」區段以變更排程及/或備份保留、請按一下「*儲存*」。</block>
   <block id="aafc4372a2c5748961cfe050c997ca42" category="list-text">在「新增原則」頁面中、按一下 <block ref="68009ec8a10651d6de3d648624efb837" category="inline-image-macro-rx" type="image"></block> 若要展開「_標籤與保留_」區段以定義排程與備份保留、然後按一下「*儲存*」。</block>
-  <block id="27b14a69b7d1dfde3096980cc202af91" category="sidebar">建立資料保護涵蓋範圍的報告</block>
   <block id="1785898b30a72a71efa58cd74c5bd968" category="list-text">RHEL 7.6 或更新版本</block>
   <block id="b1045ab9180f3558b52a06f17084e8aa" category="list-text">適用於 SAP-HANA SPS07 的 RHEL 8.1 或更新版本</block>
   <block id="0a3eb24ad165a9e7ad6ffd25324a35d4" category="list-text">SAP HANA 多租戶資料庫容器（ MDC ） 2.0SPS5 、 2.0SPS6 、 2.0SPS7 、單租戶或多租戶</block>
@@ -3961,8 +3929,6 @@ ifdef：：AWS []</block>
   <block id="6ad80584a8fba3d1fc876fd412e2b184" category="paragraph">然後您可以使用舊版軟體來管理舊叢集。</block>
   <block id="ea600ff03360da539b9cf2f109798fac" category="paragraph">目前不支援將備份檔案建立至 StorageGRID 系統時使用此功能。</block>
   <block id="f717a77f4fa4c437e114a568e845c80e" category="sidebar">管理叢集層級的物件備份設定</block>
-  <block id="a7b1a9069e674c0aac2afe848aefc5a0" category="sidebar">在其他磁碟區上啟用磁碟區備份</block>
-  <block id="90f7372e4d5f7acc9a7ad384567a8fb1" category="sidebar">管理複寫關係</block>
   <block id="4e94aca278bbfbf09c063f578946bd47" category="paragraph">如果您的內部部署已部署 Connector 、那麼您就可以設定好所有的連接器。如果沒有、則需要建立 BlueXP Connector 、將 ONTAP 資料備份到 StorageGRID 。您也需要自訂 Connector 的網路設定、以便連接至 StorageGRID 。</block>
   <block id="54c50d39294a1455c6b25fe6e2d434fb" category="paragraph">或者、您也可以連線到位於同一個內部部署位置的次要 ONTAP 系統、以複寫磁碟區。</block>
   <block id="cde30b836a89432bbe569f5477e106cb" category="paragraph">BlueXP 的新版本備份與還原、除了可將備份建立至物件儲存設備之外、還能排程及建立 Snapshot 複本與複寫磁碟區、因此您必須使用 BlueXP Connector 3.9.31 版或更新版本。因此建議您取得此最新版本來管理所有備份。</block>
@@ -4246,7 +4212,6 @@ SS3 ONTAP</block>
   <block id="04afa98530b9fa98eb8d1adf9da08f7f" category="paragraph">「備份生命週期」類型篩選器已重新命名為「保留」。使用此篩選器可追蹤備份生命週期、並識別所有備份複本的到期日。「保留」工作類型會擷取在受 BlueXP 備份與還原保護的磁碟區上所起始的所有 Snapshot 刪除工作。</block>
   <block id="751f8afbc94898745cc6e2ea8a5ccd4c" category="inline-link">深入瞭解更新的工作監控器</block>
   <block id="bf6c8f020a512a9accf77240c1333a16" category="paragraph"><block ref="f412c2e0203811d72b16f88cf9eb5d19" category="inline-link-rx"></block>。</block>
-  <block id="d09fe30f62c514ce3f7fb2767974cf23" category="sidebar">BlueXP 備份與還原影片</block>
   <block id="b2263890e0533b772d021294e4d3aa41" category="paragraph">您可以從BlueXP頂端選取「*帳戶*」下拉式清單、然後按一下帳戶旁的「*管理帳戶*」、即可找到您的BlueXP帳戶ID。您的帳戶ID位於「總覽」索引標籤。若為無法存取網際網路的私人模式網站、請使用 *account-DARKSITE1* 。</block>
   <block id="35abe2d136b4990eddee4a79d5635e4e" category="paragraph">如果您的Google Cloud Platform VPC中已部署Connector、您就能輕鬆完成所有設定。如果沒有、您需要建立 BlueXP Connector 、將 ONTAP 資料備份到 Google Cloud 儲存設備。您也必須自訂 Connector 的網路設定、才能連線至 Google Cloud 。</block>
   <block id="3b27991b1aa229f52835df236ba4b917" category="paragraph">通知中心會顯示許多 Snapshot 、複寫、備份至雲端和還原事件、但只有某些事件會觸發電子郵件警示：</block>
@@ -4355,10 +4320,6 @@ SS3 ONTAP</block>
   <block id="6b28ac02ff2a9de6b423b9f57d6a4d09" category="sidebar">管理 ONTAP 磁碟區的原則</block>
   <block id="49f768fa096c849abfc2310e4f864f5e" category="section-title">能夠在具有有限輸出連線能力的站台中、從 Cloud Volumes ONTAP 系統備份資料</block>
   <block id="39539808000ad0a6d6ca39474e4fb77b" category="paragraph">現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要您在商業地區的 Linux 主機上以「受限模式」安裝 Connector 、並在該處部署 Cloud Volumes ONTAP 系統。請參閱<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> 和<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
-  <block id="998e825e50e0075b888cb10290b5aad3" category="sidebar">將內部部署 ONTAP 備份至 ONTAP S3</block>
-  <block id="a856f192005c2a27d642572c6eabcaf3" category="sidebar">將 Kubernetes 叢集備份至 Amazon S3</block>
-  <block id="d8aa0af6f24f3e5cbb56b502233a7241" category="sidebar">將 Kubernetes 叢集備份至 Azure Blob</block>
-  <block id="f91d920c6ff7bb789d8210aebe92e10e" category="sidebar">將 Kubernetes 叢集備份至 Google Cloud</block>
   <block id="ece19bab46695021f109a5e50f08bebe" category="paragraph">需要註冊支援、才能獲得 BlueXP 及其儲存解決方案與服務專屬的技術支援。也需要註冊支援、才能啟用 Cloud Volumes ONTAP 系統的重要工作流程。</block>
   <block id="8a3d807608e632d188a288fc5f4aa7eb" category="paragraph">註冊支援並不會啟用雲端供應商檔案服務的 NetApp 支援。如需雲端供應商檔案服務、其基礎架構或任何使用服務的解決方案的相關技術支援、請參閱該產品的 BlueXP 文件中的「取得說明」。</block>
   <block id="522cbb900314aeb84eb5a961c5f94672" category="section-title">取得雲端供應商檔案服務的支援</block>
@@ -4587,8 +4548,6 @@ SS3 ONTAP</block>
   <block id="c9451ea35f35ed30a32348021953a59c" category="sidebar">新增主機並安裝適用於 SQL Server 的 SnapCenter 外掛程式</block>
   <block id="54bab37592758bedbe84c23554e20c3a" category="sidebar">備份SQL Server資料庫</block>
   <block id="f055d7dc297e937dbedf854f4e8d5f28" category="sidebar">還原雲端原生 SQL Server 資料庫</block>
-  <block id="eacd1d0a9374cb22a99c806b2924cf90" category="sidebar">備份雲端原生 SQL Server 資料庫</block>
-  <block id="6240606371654cf871393e757b75ae12" category="sidebar">還原雲端原生 SQL Server 資料</block>
   <block id="b91f5702154a342b0f24808369863324" category="list-text">* 本機 Snapshot * ：選擇現有的 Snapshot 原則或建立新的 Snapshot 原則。</block>
   <block id="1a9240d843443385061b2272dcfbfff0" category="admonition">如果您想要在啟動 Snapshot 之前建立自訂原則、可以使用系統管理員或 ONTAP CLI<block ref="21daf815c4decbf3cba733c88297587b" prefix=" " category="inline-code"></block> 命令。請參閱<block ref="ec3ed4692ea8e2ea03ef1cb28143229e" category="inline-link-rx"></block>。</block>
   <block id="e26dd0d96691532707185229fc0a17cb" category="admonition">若要在啟動 Snapshot 之前使用此服務建立自訂原則、請參閱 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>。</block>
@@ -4719,15 +4678,6 @@ SS3 ONTAP</block>
   <block id="aa4c67fd3731395f4450c9686b20f799" category="section-title">支援「工作監控」中的排程工作</block>
   <block id="314b40130d46a229c3a19dc5e2e23aa4" category="paragraph">BlueXP 備份與還原工作監控先前監控的排程磁碟區對物件儲存區備份與還原工作、但不是透過 UI 或 API 排程的本機 Snapshot 、複寫、備份與還原工作。</block>
   <block id="04c6b318fe9c7f19ae925a90e52c6569" category="paragraph">BlueXP 備份與還原工作監視器現在包含排程工作、可用於本機快照、複製及備份至物件儲存設備。</block>
-  <block id="10c83d8d6aa254ef1949380a4435a4d4" category="paragraph">如果您是在 AWS GovCloud 或 AWS China 地區建立備份、您必須在以下兩組權限的「 ALL _Resource_ 」區段中、變更 AWS 資源名稱「 arn 」：</block>
-  <block id="4c8fab8f36cba8fb1f202396d9a9ebcd" category="list-text">例如、對於 AWS GovCloud 地區、您需要將「 AWS 」變更為「 AWS-us-gov 」<block ref="5437327155aa3716e710fd4319a91b7e" prefix=" " category="inline-code"></block>。</block>
-  <block id="d55b464ea46a7e055a6cefee97d57046" category="list-text">例如、對於 AWS 中國地區、您需要將「 AWS 」變更為「 AWS-CN 」<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
-  <block id="a2cea9ad2302bf1c011966b2b76de8a1" category="paragraph">如果您的自訂貯體位於 AWS GovCloud 或 AWS China 地區、您需要在權限的所有 _Resource_ 區段下變更 AWS 資源名稱「 arn 」：</block>
-  <block id="a306027de621391e07a3f37323f0a7a1" category="list-text">例如、對於 AWS GovCloud 地區、您需要將「 AWS 」變更為「 AWS-us-gov 」<block ref="d3c2ab280b3f8c407baa043db6f71305" prefix=" " category="inline-code"></block>。</block>
-  <block id="fdd52d5d7016bf165e6a4cb2d6cab2d3" category="list-text">例如、對於 AWS 中國地區、您需要將「 AWS 」變更為「 AWS-CN 」<block ref="bb55156256f7fc6b96c6be713812db69" prefix=" " category="inline-code"></block>。</block>
-  <block id="4ec233ea13ab88b2246fbb211a91665c" category="paragraph">如果您要使用標準的公用網際網路連線、則所有權限都是由Connector設定、您無需執行其他任何操作。這種連線類型顯示於 <block ref="38757d2cfcaca456ef39c830b3fbfbb6" category="inline-link-macro-rx"></block>。</block>
-  <block id="4d9403aeb0d455887fedd3ace41764e0" category="paragraph">如果您想要透過網際網路從內部資料中心連線至VPC、可以在備份啟動精靈中選取AWS Private Link連線。如果您打算使用VPN或AWS Direct Connect、透過使用私有IP位址的VPC端點介面來連接內部部署系統、就必須使用此功能。這種連線類型顯示於 <block ref="95f59ac3cbae4d92bede28fe387b5a78" category="inline-link-macro-rx"></block>。</block>
-  <block id="d32f70c539312af4cedd6200342bc293" category="paragraph">如果您是在 AWS GovCloud 或 AWS China 地區建立備份、您需要在上述權限集和以下的所有 _Resource_ 區段中、變更 AWS 資源名稱「 arn 」：</block>
   <block id="8017dc46d55f13a6a86439ecb091248d" category="section-title">2023 年 12 月 15 日</block>
   <block id="7ab0753b80059fbad40a2fd72c4592ce" category="section-title">適用於本機 Snapshot 和複寫 Snapshot 複本的報告</block>
   <block id="9e6cfaae073aa85c2c955e17e29074a8" category="paragraph">以前、您只能在備份複本上產生報告。現在、您也可以在本機 Snapshot 複本和複寫 Snapshot 複本上建立報告。</block>
@@ -4742,36 +4692,83 @@ SS3 ONTAP</block>
   <block id="2a7d8d5d92a8e8110b2bc2ab71c0c002" category="paragraph">以前、 Catalog.zip 備份會保留 7 天。現在、他們會保留 30 天。</block>
   <block id="16f6196e265bdbd3f9da022848c51d8a" category="inline-link">在黑暗的站台中還原 BlueXP 備份與還原資料</block>
   <block id="89b2c6f6be45f8f05d713b7bae69cd15" category="paragraph">請參閱<block ref="5596168e45150b1d53148898addeba07" category="inline-link-rx"></block>。</block>
-  <block id="08953d12d492df51bc90f2f43cd41a5e" category="section-title">將內部部署 ONTAP 資料備份至 StorageGRID 儲存區的保留量增加</block>
-  <block id="c07f9ba29ac424f316877aae26aa07b0" category="paragraph">StorageGRID 現在可在單一儲存區中、保留最多 30 個來自 BlueXP 備份與還原的內部部署 ONTAP 資料備份。以前、儲存庫中最多可有 7 個備份。</block>
-  <block id="a4304a5e5ad0523cd1e2516efcbb04ea" category="inline-link">深入瞭解如何將內部部署ONTAP 的各項資料備份StorageGRID 到支援中心</block>
-  <block id="9fa7efa5e741bc1c7fa825541ca578ff" category="paragraph"><block ref="c5cc080595ac6d000b39fc62e24bb795" category="inline-link-rx"></block>。</block>
-  <block id="37cad79be3887e5af23a3b72ee504d6d" category="paragraph">或者、您也可以搜尋自訂標籤、僅列出具有特定標籤的磁碟區。</block>
-  <block id="7c3caa9c3fd1fb1fcc416313f95f520c" category="paragraph"><block ref="7c3caa9c3fd1fb1fcc416313f95f520c" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="49feba59aa7ad0370913ee7881a2b607" category="paragraph">此資料每天午夜備份一次、每個檔案最多保留 30 份複本。如果 Connector 正在管理多個內部部署 ONTAP 工作環境、則 BlueXP 備份與還原檔案將位於最先啟動的工作環境中的工作環境中。</block>
-  <block id="e18a212580deea6e1168cf2df519b5f9" category="paragraph">如果您建立自己的儲存區、則應使用以「 NetApp-backup 」開頭的儲存區名稱。如果您需要使用自訂名稱、請編輯「設定 S3 權限」區段中使用的原則、以使用符合您自訂儲存區首碼的資源 ARN 。</block>
-  <block id="2dcb89b10f74019d9a3c831460feb047" category="summary">有了 BlueXP 備份與還原報告、您就能確保關鍵資料根據組織定義的原則受到保護、並有效支援法規遵循程序的稽核。使用備份庫存報告、您可以查看所有的本機 Snapshot 複本、複製和備份。</block>
-  <block id="264f9f7063a386a1c61f47d1330c657c" category="paragraph">從 BlueXP 備份與還原報告索引標籤、您可以建立備份庫存報告並篩選其內容。使用備份庫存報告、您可以查看所有本機 Snapshot 複本、複製到次要儲存設備、以及特定帳戶、工作環境或 SVM 庫存的備份。</block>
-  <block id="c41a31890959544c6523af684561abe5" category="list-text">目標</block>
-  <block id="ce3c72bb17e9e75c64f8ddb597b24de8" category="list-text">套用的原則</block>
-  <block id="7a17628d164aaaf3b67bbf67f3ace740" category="list-text">本機 Snapshot 複本、複製或備份複本的數量</block>
-  <block id="2efdb59bdb9318d558fc5d7af5b6404e" category="list-text">具有至少一個本機 Snapshot 、複寫或備份的磁碟區數（視所示索引標籤而定）</block>
-  <block id="355454effdd54e97bcd6f8c9ed946504" category="inline-image-macro">備份庫存報告範例</block>
-  <block id="d08879467c6493ef59052f6379e81e0f" category="paragraph"><block ref="d08879467c6493ef59052f6379e81e0f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ef16ddee8e5ddacc361e250bd6c8bdb4" category="list-text">選取帳戶層級或自訂的報告範圍。</block>
-  <block id="c4164f47b30d87e7888c12f3fdbe8af8" category="list-text">選取報告的篩選條件：</block>
-  <block id="c6f01c78bfe0a0a495cb5d3ed77824a9" category="list-text">磁碟區</block>
-  <block id="344ec8079925c0a9d42c79d780542bb4" category="list-text">保護：在報告中選取您要的保護類型（本機 Snapshot 複本、複寫或備份）。您可以選取這三個選項。此外、請選取是否要包含非保護的磁碟區。</block>
-  <block id="d022d12f96f41872be0c2dbe7f553aa5" category="list-text">根據您的報告選擇、檢閱報告索引標籤（本機快照、複寫或備份）。</block>
-  <block id="93f66acb069f7a06ab0ee856c98d2746" category="paragraph"><block ref="93f66acb069f7a06ab0ee856c98d2746" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f803143ce95b805b1f67a186b607f0a2" category="paragraph">您可以使用多個篩選器來篩選「工作監控」頁面上的作業、例如原則、 Snapshot 標籤、作業類型（保護、還原、保留或其他）、磁碟區上的自訂標記、以及保護類型（本機快照、複寫或備份至雲端）。</block>
-  <block id="ed1a67a206c44665ed4e8af600e8efb0" category="admonition">快照必須具有唯一名稱、否則還原作業將無法正常運作。</block>
-  <block id="1dc07a81431924d105e577843fab46a1" category="paragraph">如果您已經使用 BlueXP 來管理儲存設備、則 BlueXP Connector 已經安裝完成。如果您打算將同一個 Connector 搭配 BlueXP 備份與還原使用、那麼您就可以全部設定好。如果您需要使用不同的 Connector 、則必須在開始備份與還原實作之前先進行部署。</block>
-  <block id="a291b3163a4794d9131365f0a3dcc467" category="section-title">使用標準模式時提供支援</block>
-  <block id="df8cd79f58be84231ee05f3d91442113" category="paragraph">BlueXP 備份與還原在標準模式下完全受支援：網站具備完整的網際網路連線能力。在這種情況下、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、也可以在任何支援的雲端供應商的物件儲存區上建立備份檔案。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
-  <block id="655545eef6e8f8de57e231bcae036156" category="paragraph">請參閱雲端供應商的備份主題、您打算在其中建立有效 Connector 位置清單的備份檔案。在特定雲端供應商中部署 Connector 或在 Linux 機器上手動安裝 Connector 時、可能會有一些限制。</block>
-  <block id="ef4fa6e95e8fb4a58af199a2ba2b425e" category="section-title">使用受限模式時提供支援</block>
-  <block id="1667d929b1ab016a8cfa3414df6283ee" category="paragraph">BlueXP 備份與還原支援受限模式：網際網路連線能力有限的網站。在這種情況下、您只能建立一組有限的雲端供應商的備份檔案。您需要在受限區域部署 BlueXP Connector 。</block>
-  <block id="43c11931374ad33282cc54a70addc852" category="section-title">使用私有模式時提供支援</block>
-  <block id="db8e2db8da88a405c16b644f4e2e7271" category="paragraph">BlueXP 備份與還原支援私有模式：沒有網際網路連線的站台。在這種情況下、您只能建立一組有限的物件儲存供應商的備份檔案。您需要在同一內部部署站台的 Linux 主機上部署 BlueXP Connector 。</block>
+  <block id="d59e0b46782e48a01966e5c7ccc38d17" category="paragraph">NetApp 使用 Microsoft Entra ID 做為身分識別提供者、提供專為支援與授權所設計的驗證服務。</block>
+  <block id="7460c264ec9185e5da4ecd95b8cabe8d" category="paragraph"><block ref="7460c264ec9185e5da4ecd95b8cabe8d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6b238043e3f0cbcb294416f3238efea2" category="admonition">在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
+  <block id="4b758548b6a16028d0d7c1e443c285bd" category="paragraph">如果您已經使用 BlueXP 來管理儲存設備、則 BlueXP Connector 已經安裝完成。如果您打算將同一個 Connector 搭配 BlueXP 備份與還原使用、那麼您就可以全部設定好。如果您需要使用不同的 Connector 、則必須先安裝它、才能開始備份與還原實作。</block>
+  <block id="b41bae1862cc28338655904ad32e407e" category="section-title">支援具備完整網際網路連線能力的網站</block>
+  <block id="df28403f823a8cccd6d3aa652ebe7892" category="paragraph">當 BlueXP 備份與還原用於具有完整網際網路連線能力的站台（也稱為「標準模式」或「 SaaS 模式」）時、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、 您也可以在任何支援的雲端供應商的物件儲存設備上建立備份檔案。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
+  <block id="cd6458cee7347b844e32d364eccbaa5c" category="paragraph">請參閱雲端供應商的備份主題、您打算在其中建立有效 Connector 位置清單的備份檔案。在某些限制下、 Connector 必須手動安裝在 Linux 機器上、或部署在特定雲端供應商中。</block>
+  <block id="2714d7e7e24c727c2c54bb6ba96c4617" category="section-title">支援網際網路連線能力有限的網站</block>
+  <block id="e5f27584b8554a76c0aba2da480263ad" category="paragraph">BlueXP 備份與還原可在網際網路連線能力有限（也稱為「受限模式」）的站台中使用、以備份 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。</block>
+  <block id="9fe942ae01924dd657ce7f1996246cc6" category="section-title">支援無網際網路連線的站台</block>
+  <block id="ef96453aea07412d08268c286055e516" category="paragraph">BlueXP 備份與還原可在沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）中使用、以備份大量資料。在這種情況下、您需要在同一個站台的 Linux 主機上部署 BlueXP Connector 。</block>
+  <block id="628b6da02e99f426a81f25cb6fc98d4a" category="summary">有了 BlueXP 備份與還原報告、您就能確保關鍵資料根據組織定義的原則受到保護、並有效支援法規遵循程序的稽核。備份庫存報告可讓您查看特定帳戶、工作環境或 SVM 庫存的所有備份。</block>
+  <block id="f149f54356387e5794adb107c0cc0a7d" category="paragraph">從 BlueXP 備份與還原報告索引標籤、您可以建立備份庫存報告並篩選其內容。使用備份庫存報告、您可以查看特定帳戶、工作環境或 SVM 庫存的所有備份。</block>
+  <block id="fe6088e55d445ff8c5e73198a4b10d33" category="list-text">備份目標</block>
+  <block id="44558cf0d95753fc793030cefd55087b" category="list-text">已套用的備份原則</block>
+  <block id="20e266a6449440b3d67b85ead1217fb1" category="list-text">備份複本數</block>
+  <block id="ccf68adbbbaa71c4ed09254c95dc35ed" category="list-text">範圍內至少有一個備份的磁碟區數</block>
+  <block id="4eb47739f755a1148ef510f3d10ca279" category="paragraph">備份庫存報告會顯示下列圖表：</block>
+  <block id="8aab504f5ceeb44f855ca81302865568" category="list-text">* Volume 備份狀態 * ：顯示所選範圍的受保護磁碟區與非受保護磁碟區的比較。</block>
+  <block id="c9ef4c767ef6317e3bedf50654e6f9db" category="list-text">* Volume by backup count* ：依此磁碟區的可用備份複本數量來將磁碟區分組。</block>
+  <block id="da8b2e21cf3fbf1deb6e54876d0bb30e" category="admonition">您可以選取多個工作環境和 SVM 。</block>
+  <block id="bb556c03f0c66474f3d3666fd4354e8e" category="list-text">根據您的報告選擇、檢閱報告區段（ Snapshot 原則、複寫原則或備份原則）。</block>
+  <block id="7c6f87c6386a4b34232097d33f03a21f" category="list-text">（選用）依工作狀態篩選結果。</block>
+  <block id="24c3f29f7b3c09228614448507eb27eb" category="paragraph">如果您建立自己的儲存區、則應使用儲存區名稱「 NetApp-backup 」。如果您需要使用自訂名稱、請編輯<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block> 現有 CVO 的 IAMRole 、並將下列清單新增至 S3 權限。您必須納入<block ref="a99022ed92fce54cbefc53cc3a7bb0a9" prefix=" " category="inline-code"></block> 並指派所有需要與儲存庫相關聯的必要權限。</block>
+  <block id="50b086f5a622de5e2ad8e86ada10bc12" category="paragraph">" 行動 " ： [
+    "S3 ： ListBucket "
+    "S3 ： GetBucketLocation"
+]
+「資源」：「 arn:AWS ： S3 ：： * 」、
+「效果」：「允許」
+} 、
+｛
+    " 行動 " ： [
+        "S3:GetObject" 、
+        "S3 ： PutObject" 、
+        "S3 ：刪除物件 " 、
+        "S3 ： ListAllMyb鏟 斗 " 、
+        "S3 ：推桿標籤 " 、
+        "S3 ： GetObjectTagging" 、
+        "S3 ： RestoreObject" 、
+        "S3 ： GetBucketObjectLockConfiguration 、
+        "S3 ： GetObjectRetention " 、
+        "S3 ： PuttBucketObjectLockConfiguration 、
+        "S3 ： PutObjectRetention "
+        ]
+    「資源」：「 arn:AWS ： S3 ：： * 」、</block>
+  <block id="55082684c888abf218793c0bd2f3b5e4" category="paragraph">如果您要使用標準的公用網際網路連線、則所有權限都是由Connector設定、您無需執行其他任何操作。這種連線類型顯示於 <block ref="b1224f75874af139b1e7a51a1da970e9" category="inline-link-macro-rx"></block>。</block>
+  <block id="ca301c03d4c5ce91946df8b15f3dbe5f" category="paragraph">如果您想要透過網際網路從內部資料中心連線至VPC、可以在備份啟動精靈中選取AWS Private Link連線。如果您打算使用VPN或AWS Direct Connect、透過使用私有IP位址的VPC端點介面來連接內部部署系統、就必須使用此功能。這種連線類型顯示於 <block ref="0f7afb920fb200721cfd6111e33f99d4" category="inline-link-macro-rx"></block>。</block>
+  <block id="4adab5b6b391c43cf0cfd73c09d5bdf8" category="inline-xref">從備份原則新增S3權限</block>
+  <block id="f59bbb6de7b8eafb6ccb2f617135ff84" category="list-text">修改與BlueXP Connector相關的安全性群組組態。您必須將原則變更為「Custom（自訂）」（從「Full Access（完整存取）」）、而且您必須如此 <block ref="52cd24ecfd99d5b16a10d03c54f9d16b" category="inline-xref-macro-rx"></block> 如前所示。</block>
+  <block id="54979ba354582c6f2824abc12558cf5a" category="inline-image-macro">與Connector相關聯的AWS安全性群組快照。</block>
+  <block id="9fffc2ed11f6ca99ac2677ff1c97fd9a" category="paragraph"><block ref="9fffc2ed11f6ca99ac2677ff1c97fd9a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c9cfba3160309eb4416746c049e4b9da" category="paragraph">此資料每天午夜備份一次、每個檔案最多保留 7 份複本。如果 Connector 正在管理多個內部部署 ONTAP 工作環境、則 BlueXP 備份與還原檔案將位於最先啟動的工作環境中的工作環境中。</block>
+  <block id="6a0946e9e6df1feca77ae10577f6057c" category="paragraph"><block ref="6a0946e9e6df1feca77ae10577f6057c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="743978dcd7046c82225d9b638969fd96" category="paragraph">您可以使用多個篩選器來篩選「工作監控」頁面上的作業、例如原則、 Snapshot 標籤、作業類型（保護、還原、保留或其他）、以及保護類型（本機 Snapshot 、複寫或備份到雲端）。</block>
+  <block id="b1314bfff132a050766ce5d32ac976de" category="section-title">取消保護資料存放區</block>
+  <block id="24e973d26bb253c7b5fb8a764db6860a" category="paragraph">您可以取消保護先前已受到保護的資料存放區。您可以在想要刪除雲端備份或不想再將資料存放區備份到雲端時、取消保護資料存放區。資料存放區可在取消保護成功後再次受到保護。</block>
+  <block id="2c86bcd8467882ddafa5699064a113a9" category="list-text">按一下 <block ref="1d94ccc08c31bc8efbc06bfabc6854b6" category="inline-image-macro-rx" type="image"></block> 對應至您要取消保護的資料存放區、然後按一下 * 取消保護 * 。</block>
+  <block id="331f8541bc1d88d7b3a99d070122fc1c" category="paragraph">您可以將虛擬機器資料從雲端還原回內部部署 vCenter 。您可以將虛擬機器還原至備份所在的完全相同位置、或是還原至其他位置。如果虛擬機器是使用歸檔原則備份、則您可以設定歸檔還原優先順序。</block>
+  <block id="1c79f8653ccf267be1bce47f8ccf3d2f" category="list-text">如果您要還原至其他位置：</block>
+  <block id="0bd63162a36deb15bb735dfc68ec0b84" category="list-text">確保來源和目的地 vCenter 處於連結模式。</block>
+  <block id="b9d3026a416c9548a1ce214ae1cac290" category="list-text">請確定來源和目的地叢集詳細資料已新增至 BlueXP Canvas 、並在兩個 SnapCenter Plug-in for VMware vSphere 主機的連結模式 vCenter 中。</block>
+  <block id="e1a91a510a1e1994581033bf34c8a34e" category="list-text">確保已新增工作環境（我們）、以對應至 BlueXP Canvas 中的替代位置。</block>
+  <block id="d180a4da8965c4cd5488cd05903774f0" category="list-text">您可以將虛擬機器還原至原始位置、或從資料存放區或虛擬機器還原至其他位置：</block>
+  <block id="db5366d69994d30376d1a970dcebb9ce" category="cell">如果您要還原虛擬機器 ...</block>
+  <block id="ccc5c5f6926c7affe9ddb8b5fd8e78d0" category="paragraph">移至資料存放區的原始位置</block>
+  <block id="0ff9c86e6cb7e9150a24770fd6ae4e8d" category="list-text">選取您要從備份還原的虛擬機器、然後按一下「*下一步*」。</block>
+  <block id="4e732f3a4af9bd149e3901ae89613eca" category="list-text">確保選中 * 原始 * ，然後單擊 * 繼續 * 。</block>
+  <block id="05aff9b89c6c077ab1119387a7d6852b" category="list-text">如果虛擬機器是使用設定歸檔設定的原則來保護、請選取 * 歸檔還原優先順序 * 、然後按一下 * 下一步 * 。</block>
+  <block id="4064eae8789a1dea97cfc09ac17d017a" category="paragraph">Amazon Web Services支援的歸檔還原優先順序高、標準且低、Microsoft Azure支援的歸檔還原優先順序高且標準。</block>
+  <block id="c0df5d97adcf3825af806d990e658e67" category="paragraph">移至資料存放區的替代位置</block>
+  <block id="2f663ab73d99f410b05e9f748fdb9f69" category="list-text">選取 * 替代 * 。</block>
+  <block id="1825907f18d398bff7d7bf89210651db" category="list-text">選取替代的 vCenter Server 、 ESXi 主機、資料存放區和網路。</block>
+  <block id="5f13633d652590518e2dc9e07d7f16b0" category="list-text">在還原後提供虛擬機器名稱、然後按一下 * 繼續 * 。</block>
+  <block id="0236f808af929087f6a9616d379b96a4" category="paragraph">從虛擬機器移至原始位置</block>
+  <block id="ccb90cb50d99e7cb9712a836810d4fae" category="paragraph">移至虛擬機器的替代位置</block>
+  <block id="4e1f7d458412b18adef0e5ff0db2eee8" category="section-title">2024 年 2 月 1 日</block>
+  <block id="a409179aac0b12213b3fa77e0a22bd61" category="list-text">支援將虛擬機器還原至其他位置</block>
+  <block id="9c75b0f26dddf07ed827e32aaf28bee9" category="list-text">支援不保護資料存放區</block>
 </blocks>

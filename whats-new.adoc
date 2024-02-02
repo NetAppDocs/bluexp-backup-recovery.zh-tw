@@ -18,6 +18,18 @@ summary: 瞭解 BlueXP 備份與還原的新功能。
 
 
 
+== 2024 年 2 月 1 日
+
+
+
+=== 虛擬機器的 BlueXP 備份與還原增強功能
+
+* 支援將虛擬機器還原至其他位置
+* 支援不保護資料存放區
+
+
+
+
 == 2023 年 12 月 15 日
 
 
@@ -70,14 +82,6 @@ BlueXP 備份與還原現在提供從雲端儲存設備快速還原磁碟區至 
 Cloud Volumes ONTAP 目的地系統必須執行 ONTAP 9.13.0 版或更新版本。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["深入瞭解還原資料"]。
 
 BlueXP 備份與還原工作監視器也會顯示快速還原工作進度的相關資訊。
-
-
-
-=== 將內部部署 ONTAP 資料備份至 StorageGRID 儲存區的保留量增加
-
-StorageGRID 現在可在單一儲存區中、保留最多 30 個來自 BlueXP 備份與還原的內部部署 ONTAP 資料備份。以前、儲存庫中最多可有 7 個備份。
-
-https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-private-cloud.html["深入瞭解如何將內部部署ONTAP 的各項資料備份StorageGRID 到支援中心"]。
 
 
 
