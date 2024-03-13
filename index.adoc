@@ -2,8 +2,8 @@
 layout: landing-page 
 sidebar: sidebar 
 permalink: index.html 
-lead: 'The BlueXP backup and recovery service (Cloud Backup) provides efficient, secure, and cost-effective data protection for NetApp ONTAP data, Kubernetes persistent volumes, databases, and virtual machines, both on premises and in the cloud.' 
-summary: BlueXP 備份與還原服務（雲端備份）可為內部部署和雲端環境中的 NetApp ONTAP 資料、 Kubernetes 持續容量、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。 
+lead: The BlueXP backup and recovery service provides efficient, secure, and cost-effective data protection for NetApp ONTAP data, Kubernetes persistent volumes, databases, and virtual machines, both on premises and in the cloud. 
+summary: BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續容量、資料庫和虛擬機器（ VM ）提供高效率、安全且具成本效益的資料保護。 
 ---
 = BlueXP 備份與還原文件
 :hardbreaks:

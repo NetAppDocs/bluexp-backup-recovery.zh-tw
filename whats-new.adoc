@@ -18,6 +18,30 @@ summary: 瞭解 BlueXP 備份與還原的新功能。
 
 
 
+== 2024 年 3 月 12 日
+
+
+
+=== 能夠從雲端備份到內部部署 ONTAP 磁碟區進行「快速還原」
+
+現在、您可以從雲端儲存區執行磁碟區的 _ 快速還原 _ 至內部部署的 ONTAP 目的地 Volume 。以前您只能對 Cloud Volumes ONTAP 系統執行快速還原。如果您需要儘快提供對磁碟區的存取、快速還原是災難恢復的理想選擇。快速還原比完整磁碟區還原快得多；它會將中繼資料從雲端快照還原至 ONTAP 目的地磁碟區。來源可能來自 AWS S3 、 Azure Blob 、 Google Cloud Services 或 NetApp StorageGRID 。
+
+內部部署 ONTAP 目的地系統必須執行 ONTAP 9.14.1 版或更新版本。
+
+您可以使用「瀏覽與還原」程序、而非「搜尋與還原」程序來執行此作業。
+
+如需詳細資訊、請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["從備份檔案還原 ONTAP 資料"]。
+
+
+
+=== 能夠從 Snapshot 和 Replication 複本還原檔案和資料夾
+
+以前、您只能從 AWS 、 Azure 和 Google Cloud Services 的備份複本還原檔案和資料夾。現在、您可以從本機 Snapshot 複本和複寫複本還原檔案和資料夾。
+
+您可以使用「搜尋與還原」程序來執行此功能、而非使用「瀏覽與還原」程序。
+
+
+
 == 2024 年 2 月 1 日
 
 
