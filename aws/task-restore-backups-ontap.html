@@ -1,0 +1,3274 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head class="at-element-marker">
+  <title>從備份檔案還原 ONTAP 資料 | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="從備份檔案還原 ONTAP 資料 | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+	<meta property="og:description" content="您可以從建立備份的位置、 Snapshot 複本、複寫磁碟區和 / 或儲存在物件儲存區的備份中、來備份 ONTAP 磁碟區資料。您可以從這些備份位置的任何一個特定時間點還原資料。您可以從備份檔案還原整個 ONTAP 磁碟區、或者如果只需要還原幾個檔案、您可以還原資料夾或個別檔案。" />
+  <meta property="og:image" content="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="您可以從建立備份的位置、 Snapshot 複本、複寫磁碟區和 / 或儲存在物件儲存區的備份中、來備份 ONTAP 磁碟區資料。您可以從這些備份位置的任何一個特定時間點還原資料。您可以從備份檔案還原整個 ONTAP 磁碟區、或者如果只需要還原幾個檔案、您可以還原資料夾或個別檔案。">
+  <meta name="keywords" content=" restoring, restore, restore volumes, restore files, restore folders, cloud backup, file restore, single file restore, folder restore, volume restore, browse and restore, search and restore, restore snapshot, restore replication, restore backup, ONTAP"><!-- Icons -->
+  <link rel="icon" href="/zh-tw/bluexp-backup-recovery/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/zh-tw/bluexp-backup-recovery/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/zh-tw/bluexp-backup-recovery/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/zh-tw/bluexp-backup-recovery/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/zh-tw/bluexp-backup-recovery/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-backups-ontap.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/zh-tw/bluexp-backup-recovery/js/na-search.js'></script><script src='/zh-tw/bluexp-backup-recovery/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/zh-tw/bluexp-backup-recovery/js/custom-dropdown.js'></script>
+  <script src='/zh-tw/bluexp-backup-recovery/js/FileSaver.min.js'></script>
+  <script src='/zh-tw/bluexp-backup-recovery/js/jszip-utils.min.js'></script>
+  <script src='/zh-tw/bluexp-backup-recovery/js/jszip.min.js'></script><script src='/zh-tw/bluexp-backup-recovery/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="aws">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/zh-tw/bluexp-backup-recovery/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/tw">
+                <image id="ie-header-logo" src="/zh-tw/bluexp-backup-recovery/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/support-and-training/documentation/">文件</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/zh-tw/bluexp-backup-recovery/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">繁體中文</span>
+                    <img src="/zh-tw/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/zh-tw/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-backups-ontap.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/task-restore-backups-ontap.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/task-restore-backups-ontap.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/task-restore-backups-ontap.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/bluexp-backup-recovery/task-restore-backups-ontap.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/bluexp-backup-recovery/task-restore-backups-ontap.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/task-restore-backups-ontap.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-backups-ontap.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/zh-tw/bluexp-backup-recovery/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">所有 NetApp</span>
+                    <img src="/zh-tw/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/zh-tw/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">支援</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">知識庫</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">訓練</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/zh-tw/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/zh-tw/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">所有文件</a>
+    </li>
+    
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/cloud/">雲端文件</a>
+    </li>
+    
+
+    
+    <li class="">
+      <a href="https://docs.netapp.com/zh-tw/bluexp-family/">
+        BlueXP
+      </a>
+    </li>
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/zh-tw/bluexp-backup-recovery/">-->
+      BlueXP backup and recovery
+    <!--</a>-->
+  </div>
+</div>
+
+            
+<div id="ie-selectors">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/zh-tw/bluexp-backup-recovery/task-restore-backups-ontap.html">
+  
+  
+  <div class="custom-dropdown-select selected" title="AWS">
+    <label>雲端供應商</label>
+    <div>AWS</div>  
+    <img src="/zh-tw/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown flavor invisible" />
+    <img src="/zh-tw/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup flavor" />
+    <!--<img src="/zh-tw/bluexp-backup-recovery/images/dismiss.svg" class="custom-icon selected" id="remove-flavor" alt="" />-->
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/zh-tw/bluexp-backup-recovery/aws/task-restore-backups-ontap.html">Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/zh-tw/bluexp-backup-recovery/gcp/task-restore-backups-ontap.html">Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/zh-tw/bluexp-backup-recovery/azure/task-restore-backups-ontap.html">Microsoft Azure
+    </li>
+    
+    
+    <li data-url="/zh-tw/bluexp-backup-recovery/task-restore-backups-ontap.html">所有雲端供應商</li>
+  </ul>
+</div>
+</div>
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/zh-tw/bluexp-backup-recovery/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/zh-tw/bluexp-backup-recovery/aws/search.html" 
+        data-type="widget"
+        data-placeholder="搜尋說明文件"
+        data-no-results-found="找不到 {query} 的結果"
+        data-did-you-mean="搜尋 {suggestion}。"
+        data-no-results-found-did-you-mean="找不到 {query} 的結果。您的意思是 {suggestion} 嗎？"
+        data-results-found="找到 {hitCount} 個結果"
+        data-error-message="發生錯誤。請再試一次。"
+        data-error-reset="重設搜尋"
+        data-sk-es-pf-indexes="" 
+        data-flavor="aws">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="BlueXP 備份與還原文件"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-tw/bluexp-backup-recovery/aws/index.html">
+        BlueXP 備份與還原文件
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="版本資訊"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 版本資訊</div>-->
+         版本資訊
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新增功能"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/whats-new.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/whats-new.html">
+        新增功能
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="已知限制"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/reference-limitations.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/reference-limitations.html">
+        已知限制
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="開始使用"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 開始使用</div>-->
+         開始使用
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="瞭解 BlueXP 備份與還原"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/concept-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/concept-backup-to-cloud.html">
+        瞭解 BlueXP 備份與還原
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定授權"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-licensing-cloud-backup.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-licensing-cloud-backup.html">
+        設定授權
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="監控資料保護"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 監控資料保護</div>-->
+         監控資料保護
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="報告資料保護涵蓋範圍"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-report-inventory.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-report-inventory.html">
+        報告資料保護涵蓋範圍
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="監控備份與還原工作的狀態"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-monitor-backup-jobs.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-monitor-backup-jobs.html">
+        監控備份與還原工作的狀態
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="備份及還原ONTAP 資料"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 備份及還原ONTAP 資料</div>-->
+         備份及還原ONTAP 資料
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保護您的 ONTAP Volume 資料"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/concept-ontap-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/concept-ontap-backup-to-cloud.html">
+        保護您的 ONTAP Volume 資料
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="規劃您的保護旅程"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/concept-protection-journey.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/concept-protection-journey.html">
+        規劃您的保護旅程
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理 ONTAP 磁碟區的原則"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-create-policies-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-create-policies-ontap.html">
+        管理 ONTAP 磁碟區的原則
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="備份Cloud Volumes ONTAP 到Amazon S3"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-backup-to-s3.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-backup-to-s3.html">
+        備份Cloud Volumes ONTAP 到Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將內部部署ONTAP 的不支援資料備份至Amazon S3"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-backup-onprem-to-aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-backup-onprem-to-aws.html">
+        將內部部署ONTAP 的不支援資料備份至Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將內部部署 ONTAP 備份至 ONTAP S3"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-backup-onprem-to-ontap-s3.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-backup-onprem-to-ontap-s3.html">
+        將內部部署 ONTAP 備份至 ONTAP S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將內部部署ONTAP 的內部部署資料備份至StorageGRID"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-backup-onprem-private-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-backup-onprem-private-cloud.html">
+        將內部部署ONTAP 的內部部署資料備份至StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理ONTAP 還原備份"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-manage-backups-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-manage-backups-ontap.html">
+        管理ONTAP 還原備份
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="從ONTAP 還原備份還原"
+      data-li-level="2#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-restore-backups-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-restore-backups-ontap.html">
+        從ONTAP 還原備份還原
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理叢集層級的物件備份設定"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-manage-backup-settings-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-manage-backup-settings-ontap.html">
+        管理叢集層級的物件備份設定
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="備份及還原內部部署應用程式資料"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 備份及還原內部部署應用程式資料</div>-->
+         備份及還原內部部署應用程式資料
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保護內部部署的應用程式資料"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/concept-protect-app-data-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/concept-protect-app-data-to-cloud.html">
+        保護內部部署的應用程式資料
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="註冊SnapCenter 伺服器"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-register-snapcenter-server.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-register-snapcenter-server.html">
+        註冊SnapCenter 伺服器
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="建立備份應用程式的原則"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-create-policies-apps.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-create-policies-apps.html">
+        建立備份應用程式的原則
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將內部部署應用程式資料備份至Amazon Web Services"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-backup-app-data-to-aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-backup-app-data-to-aws.html">
+        將內部部署應用程式資料備份至Amazon Web Services
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-backup-app-data-to-storagegrid.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-backup-app-data-to-storagegrid.html">
+        將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理應用程式保護"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-manage-app-backups.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-manage-app-backups.html">
+        管理應用程式保護
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="還原內部部署應用程式資料"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 還原內部部署應用程式資料</div>-->
+         還原內部部署應用程式資料
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="還原Oracle資料庫"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-restore-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-restore-oracle-data.html">
+        還原Oracle資料庫
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="還原SQL Server資料庫"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-restore-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-restore-sql-data.html">
+        還原SQL Server資料庫
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="還原 SAP HANA 資料庫"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-restore-hana-backup.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-restore-hana-backup.html">
+        還原 SAP HANA 資料庫
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="還原 MongoDB 、 MySQL 和 PostgreSQL 資料庫"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-restore-customplugin-backup.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-restore-customplugin-backup.html">
+        還原 MongoDB 、 MySQL 和 PostgreSQL 資料庫
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="備份及還原雲端原生應用程式資料"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 備份及還原雲端原生應用程式資料</div>-->
+         備份及還原雲端原生應用程式資料
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保護您的雲端原生應用程式資料"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/concept-protect-cloud-app-data-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/concept-protect-cloud-app-data-to-cloud.html">
+        保護您的雲端原生應用程式資料
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="備份雲端原生 Oracle 資料庫"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 備份雲端原生 Oracle 資料庫</div>-->
+         備份雲端原生 Oracle 資料庫
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="快速入門"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-quick-start-oracle.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-quick-start-oracle.html">
+        快速入門
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定FSX ONTAP 以供使用"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/reference-configure-fsx-for-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/reference-configure-fsx-for-ontap.html">
+        設定FSX ONTAP 以供使用
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定Cloud Volumes ONTAP 功能"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/reference-configure-cloud-volumes-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/reference-configure-cloud-volumes-ontap.html">
+        設定Cloud Volumes ONTAP 功能
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安裝適用於 Oracle 的 SnapCenter 外掛程式、並新增資料庫主機"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-add-host-discover-oracle-databases.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-add-host-discover-oracle-databases.html">
+        安裝適用於 Oracle 的 SnapCenter 外掛程式、並新增資料庫主機
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="備份Oracle資料庫"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-backup-cloud-native-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-backup-cloud-native-oracle-data.html">
+        備份Oracle資料庫
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用 REST API 備份雲端原生 SQL Server 資料庫"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 使用 REST API 備份雲端原生 SQL Server 資料庫</div>-->
+         使用 REST API 備份雲端原生 SQL Server 資料庫
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="快速入門"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-quick-start-sql.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-quick-start-sql.html">
+        快速入門
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="設定FSX ONTAP 以供使用"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/reference-configure-fsx-for-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/reference-configure-fsx-for-ontap.html">
+        設定FSX ONTAP 以供使用
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新增主機並安裝適用於 SQL Server 的 SnapCenter 外掛程式"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-add-sqlhost-install-plugin-sql.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-add-sqlhost-install-plugin-sql.html">
+        新增主機並安裝適用於 SQL Server 的 SnapCenter 外掛程式
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="備份SQL Server資料庫"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-backup-cloud-native-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-backup-cloud-native-sql-data.html">
+        備份SQL Server資料庫
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="還原雲端原生 Oracle 資料庫"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 還原雲端原生 Oracle 資料庫</div>-->
+         還原雲端原生 Oracle 資料庫
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="還原至原始位置"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-restore-cloud-native-oracle-data-to-original-location.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-restore-cloud-native-oracle-data-to-original-location.html">
+        還原至原始位置
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="還原至替代位置"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-restore-cloud-native-oracle-data-to-alternate-location.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-restore-cloud-native-oracle-data-to-alternate-location.html">
+        還原至替代位置
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="還原雲端原生 SQL Server 資料庫"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-restore-cloud-native-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-restore-cloud-native-sql-data.html">
+        還原雲端原生 SQL Server 資料庫
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="複製雲端原生 Oracle 資料庫"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 複製雲端原生 Oracle 資料庫</div>-->
+         複製雲端原生 Oracle 資料庫
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="複製概念與需求"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/concept-clone-cloud-native-oracle-concepts.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/concept-clone-cloud-native-oracle-concepts.html">
+        複製概念與需求
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="複製雲端原生 Oracle 資料庫"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-clone-cloud-native-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-tw/bluexp-backup-recovery/aws/task-clone-cloud-native-oracle-data.html">
+        複製雲端原生 Oracle 資料庫
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理雲端原生應用程式資料的保護"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-manage-cloud-native-app-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-manage-cloud-native-app-data.html">
+        管理雲端原生應用程式資料的保護
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="備份及還原虛擬機器資料"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 備份及還原虛擬機器資料</div>-->
+         備份及還原虛擬機器資料
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保護您的虛擬機器資料"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/concept-protect-vm-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/concept-protect-vm-data.html">
+        保護您的虛擬機器資料
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="註冊 VMware vSphere 主機的 SnapCenter 外掛程式"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-register-snapCenter-plug-in-for-vmware-vsphere.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-register-snapCenter-plug-in-for-vmware-vsphere.html">
+        註冊 VMware vSphere 主機的 SnapCenter 外掛程式
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="建立備份資料存放區的原則"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-create-policies-vms.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-create-policies-vms.html">
+        建立備份資料存放區的原則
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將資料存放區備份至Amazon Web Services"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-backup-vm-data-to-aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-backup-vm-data-to-aws.html">
+        將資料存放區備份至Amazon Web Services
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="將資料存放區備份StorageGRID 至"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-backup-vm-data-to-storagegrid.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-backup-vm-data-to-storagegrid.html">
+        將資料存放區備份StorageGRID 至
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理資料存放區和虛擬機器資料的保護"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-manage-vm-data-in-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-manage-vm-data-in-cloud.html">
+        管理資料存放區和虛擬機器資料的保護
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="還原虛擬機器資料"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-restore-vm-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-restore-vm-data.html">
+        還原虛擬機器資料
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="備份及還原Kubernetes資料"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 備份及還原Kubernetes資料</div>-->
+         備份及還原Kubernetes資料
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保護您的Kubernetes資料"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/concept-kubernetes-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/concept-kubernetes-backup-to-cloud.html">
+        保護您的Kubernetes資料
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="備份至 Amazon S3"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-backup-kubernetes-to-s3.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-backup-kubernetes-to-s3.html">
+        備份至 Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理Kubernetes備份"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-manage-backups-kubernetes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-manage-backups-kubernetes.html">
+        管理Kubernetes備份
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="從Kubernetes備份還原"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-restore-backups-kubernetes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-restore-backups-kubernetes.html">
+        從Kubernetes備份還原
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用REST API進行自動化"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/api-backup-restore.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-tw/bluexp-backup-recovery/aws/api-backup-restore.html">
+        使用REST API進行自動化
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="參考資料"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 參考資料</div>-->
+         參考資料
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="備份原則設定"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/concept-cloud-backup-policies.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/concept-cloud-backup-policies.html">
+        備份原則設定
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="支援的AWS歸檔儲存層"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/reference-aws-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/reference-aws-backup-tiers.html">
+        支援的AWS歸檔儲存層
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="支援的Azure歸檔存取層"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/reference-azure-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/reference-azure-backup-tiers.html">
+        支援的Azure歸檔存取層
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="支援的Google歸檔儲存層"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/reference-google-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/reference-google-backup-tiers.html">
+        支援的Google歸檔儲存層
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="在黑暗的站台中還原 BlueXP 備份與還原資料庫"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/reference-backup-cbs-db-in-dark-site.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/reference-backup-cbs-db-in-dark-site.html">
+        在黑暗的站台中還原 BlueXP 備份與還原資料庫
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="重新啟動 BlueXP 備份與還原"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/reference-restart-backup.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/reference-restart-backup.html">
+        重新啟動 BlueXP 備份與還原
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="知識與支援"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-tw/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-tw/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 知識與支援</div>-->
+         知識與支援
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="註冊以取得支援"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-support-registration.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-support-registration.html">
+        註冊以取得支援
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="取得協助"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/task-get-help.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-tw/bluexp-backup-recovery/aws/task-get-help.html">
+        取得協助
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="法律聲明"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-restore-backups-ontap.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-tw/bluexp-backup-recovery/aws/legal-notices.html">
+        法律聲明
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/zh-tw/bluexp-backup-recovery"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/zh-tw/bluexp-backup-recovery"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/zh-tw/bluexp-backup-recovery/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> 本繁體中文版使用機器翻譯，譯文僅供參考，若與英文版本牴觸，應以英文版本為準。 </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">從備份檔案還原 ONTAP 資料</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2024-03-13 14:17:14 +0000">03/13/2024</time>
+        
+    
+    
+        <span>貢獻者
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/zh-tw/bluexp-backup-recovery/images/discuss-sm.svg" alt="" class="github-icon" />建議變更</span>
+        <img src="/zh-tw/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/zh-tw/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery.zh-tw/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-backups-ontap.html&page-title=從備份檔案還原 ONTAP 資料" class="page-nav-contribute-link" role="button">請求文件變更</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery/blob/main/task-restore-backups-ontap.adoc" class="page-nav-contribute-link" role="button">編輯本頁</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >瞭解如何貢獻</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/zh-tw/bluexp-backup-recovery/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/zh-tw/bluexp-backup-recovery/pdfs/aws/fullsite-sidebar/BlueXP_備份與還原文件.pdf" >
+                    <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>此文件 PDF 的網站</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/版本資訊.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            版本資訊
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/開始使用.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            開始使用
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/監控資料保護.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            監控資料保護
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/備份及還原ONTAP_資料.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            備份及還原ONTAP 資料
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/備份及還原內部部署應用程式資料.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            備份及還原內部部署應用程式資料
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/還原內部部署應用程式資料.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            還原內部部署應用程式資料
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/備份及還原雲端原生應用程式資料.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            備份及還原雲端原生應用程式資料
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/備份雲端原生_Oracle_資料庫.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            備份雲端原生 Oracle 資料庫
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/備份雲端原生_SAP_HANA_資料庫.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            備份雲端原生 SAP HANA 資料庫
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/使用_REST_API_備份雲端原生_SQL_Server_資料庫.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            使用 REST API 備份雲端原生 SQL Server 資料庫
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/還原雲端原生_Oracle_資料庫.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            還原雲端原生 Oracle 資料庫
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/複製雲端原生_Oracle_資料庫.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            複製雲端原生 Oracle 資料庫
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/備份及還原虛擬機器資料.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            備份及還原虛擬機器資料
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/備份及還原Kubernetes資料.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            備份及還原Kubernetes資料
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/參考資料.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            參考資料
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-tw/bluexp-backup-recovery/pdfs/aws/sidebar/知識與支援.pdf" 
+            
+          >
+            <img src="/zh-tw/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            知識與支援
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/zh-tw/bluexp-backup-recovery/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>個別的 PDF 文件集合<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>您可以從建立備份的位置備份 ONTAP Volume 資料：快照複本、複寫磁碟區、以及儲存在物件儲存區的備份。您可以從這些備份位置的任何一個特定時間點還原資料。您可以從備份檔案還原整個 ONTAP 磁碟區、或者如果只需要還原幾個檔案、您可以還原資料夾或個別檔案。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>您可以將* Volume *（新磁碟區）還原至原始工作環境、使用相同雲端帳戶的不同工作環境、或內部部署ONTAP 的內部系統。</p>
+</li>
+<li>
+<p>您可以將*資料夾*還原至原始工作環境中的磁碟區、使用相同雲端帳戶的不同工作環境中的磁碟區、或還原至內部部署ONTAP 的S還原 系統上的磁碟區。</p>
+</li>
+<li>
+<p>您可以將*檔案*還原至原始工作環境中的磁碟區、使用相同雲端帳戶的不同工作環境中的磁碟區、或還原至內部部署ONTAP 的S還原 系統上的磁碟區。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>需要有效的 BlueXP 備份與還原授權、才能將資料從備份檔案還原至正式作業系統。</p>
+</div>
+<div class="paragraph">
+<p>總結來說、這些是您可以用來將 Volume 資料還原至 ONTAP 工作環境的有效流程：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>備份檔案 &#8594; 還原的磁碟區</p>
+</li>
+<li>
+<p>複寫 Volume &#8594; 還原的 Volume</p>
+</li>
+<li>
+<p>Snapshot copy &#8594; RESTORED Volume</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="還原儀表板">還原儀表板</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以使用還原儀表板來執行磁碟區、資料夾和檔案還原作業。若要存取「還原儀表板」、請按一下BlueXP功能表中的*備份與還原*、然後按一下*還原*索引標籤。您也可以按一下 <span class="image"><img src="./media/screenshot_gallery_options.gif" alt="更多按鈕"></span> &gt;*從「服務」面板的「備份與還原」服務中檢視「還原儀表板」*。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="註">
+</td>
+<td class="content">
+至少必須為一個工作環境啟動 BlueXP 備份與還原、而且必須存在初始備份檔案。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_dashboard.png" alt="「還原儀表板」顯示使用瀏覽"></span></p>
+</div>
+<div class="paragraph">
+<p>如您所見、「還原儀表板」提供兩種不同的方法來還原備份檔案中的資料：<strong>瀏覽與還原*和*搜尋與還原</strong>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="比較瀏覽與還原以及搜尋與還原">比較瀏覽與還原、以及搜尋與還原</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>廣義而言、當您需要從上週或上月還原特定的磁碟區、資料夾或檔案時、_Browse &amp; Restore通常會更好、而且您知道檔案的名稱和位置、以及檔案的最後保存日期。當您需要還原磁碟區、資料夾或檔案、但不記得確切的名稱、磁碟區所在的磁碟區、或是上次的狀態良好的日期時、_Search &amp; Restore通常會更好。</p>
+</div>
+<div class="paragraph">
+<p>此表提供兩種方法的功能比較。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">瀏覽與還原</th>
+<th class="tableblock halign-left valign-top">搜尋與還原</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">瀏覽資料夾樣式的結構、在單一備份檔案中尋找磁碟區、資料夾或檔案。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">依部分或完整的磁碟區名稱、部分或完整的資料夾 / 檔案名稱、大小範圍及其他搜尋篩選器、在 * 所有備份檔案 * 之間搜尋磁碟區、資料夾或檔案。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">如果檔案已刪除或重新命名、而且使用者不知道原始檔案名稱、則不會處理檔案還原</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">處理新建立/刪除/重新命名的目錄、以及新建立/刪除/重新命名的檔案</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">無需額外的雲端供應商資源</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">當您從雲端還原時、每個帳戶都需要額外的儲存庫和公有雲供應商資源。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">無需額外的雲端供應商成本</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">當您從雲端還原時、掃描備份和磁碟區以取得搜尋結果時、需要額外成本。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">支援快速還原。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">不支援快速還原。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>此表根據備份檔案所在的位置、提供有效還原作業的清單。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">備份類型</th>
+<th class="tableblock halign-left valign-top" colspan="3">瀏覽與還原</th>
+<th class="tableblock halign-left valign-top" colspan="3">搜尋與還原</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 還原 Volume *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 還原檔案 *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 還原資料夾 *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 還原 Volume *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 還原檔案 *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 還原資料夾 *</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Snapshot複本</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">複寫磁碟區</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">否</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">備份檔案</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">是的</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>在使用任一還原方法之前、請先確定您的環境已針對獨特的資源需求進行設定。這些要求將在下節中說明。</p>
+</div>
+<div class="paragraph">
+<p>請參閱您要使用的還原作業類型的需求與還原步驟：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Restoring volumes using Browse &amp; Restore">使用瀏覽安培還原磁碟區；還原</a></p>
+</li>
+<li>
+<p><a href="#Restoring folders and files using Browse &amp; Restore">使用瀏覽安培還原資料夾與檔案</a></p>
+</li>
+<li>
+<p>&lt;&lt;Restoring ONTAP data using Search &amp; Restore,使用Search  Restore還原磁碟區、資料夾和檔案</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用瀏覽與還原還原-ontap-資料">使用「瀏覽與還原」還原 ONTAP 資料</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>開始還原磁碟區、資料夾或檔案之前、您應該知道要還原的磁碟區名稱、磁碟區所在工作環境和SVM的名稱、以及要還原的備份檔案的大約日期。您可以從 Snapshot 複本、複寫的磁碟區或儲存在物件儲存區的備份還原 ONTAP 資料。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>附註： * 如果包含您要還原之資料的備份檔案位於歸檔雲端儲存設備（從 ONTAP 9.10.1 開始）、還原作業將需要較長的時間、而且會產生成本。此外、目的地叢集也必須執行 ONTAP 9.10.1 或更新版本才能進行磁碟區還原、 9.11.1 用於檔案還原、 9.12.1 用於 Google Archive 和 StorageGRID 、 9.13.1 用於資料夾還原。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="reference-aws-backup-tiers.html">"深入瞭解如何從AWS歸檔儲存設備還原"</a>。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="註">
+</td>
+<td class="content">
+將資料從Azure歸檔儲存設備還原StorageGRID 至支援的系統不支援高優先順序。
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="瀏覽及還原支援的工作環境和物件儲存供應商">瀏覽及還原支援的工作環境和物件儲存供應商</h3>
+<div class="paragraph">
+<p>您可以將 ONTAP 資料從位於次要工作環境（複寫磁碟區）或物件儲存（備份檔案）中的備份檔案還原至下列工作環境。Snapshot 複本位於來源工作環境中、只能還原至相同的系統。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>注意： * 您可以從任何類型的備份檔案還原磁碟區、但目前只能從物件儲存區的備份檔案還原資料夾或個別檔案。</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 從物件存放區（備份） *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 來自主要（ Snapshot ） *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 來自次要系統（複寫） *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">目標工作環境<br>
+<br>
+ifdef：：AWS []</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon S3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS 中的 Cloud Volumes ONTAP<br>
+內部部署 ONTAP 的作業系統</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS 中的 Cloud Volumes ONTAP<br>
+內部部署 ONTAP 的作業系統<br>
+<br>
+endif::AWS []<br>
+<br>
+<br>
+<br>
+ifdef：：azure[]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure Blob</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure 中的 Cloud Volumes ONTAP<br>
+內部部署 ONTAP 的作業系統</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure 中的 Cloud Volumes ONTAP<br>
+內部部署 ONTAP 的作業系統<br>
+<br>
+<br>
+<br>
+<br>
+ifdef ：： GCP[]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Cloud Storage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">在 Google 中使用 Cloud Volumes ONTAP<br>
+內部部署 ONTAP 的作業系統</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp StorageGRID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">內部部署 ONTAP 的作業系統</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">內部部署 ONTAP 的作業系統<br>
+Cloud Volumes ONTAP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">至內部部署 ONTAP 系統</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SS3 ONTAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">內部部署 ONTAP 的作業系統</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">內部部署 ONTAP 的作業系統<br>
+Cloud Volumes ONTAP</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>在瀏覽與還原中、連接器可安裝在下列位置：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>對於Amazon S3、連接器可部署在AWS或內部部署環境中</p>
+</li>
+<li>
+<p>若為僅供部分使用、連接器必須部署在內部部署、無論是否可存取網際網路StorageGRID</p>
+</li>
+<li>
+<p>對於 ONTAP S3 、 Connector 可部署在內部部署（可存取或不存取網際網路）或雲端供應商環境中</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="註">
+</td>
+<td class="content">
+如果系統上的 ONTAP 版本低於 9.13.1 、則如果備份檔案已設定 DataLock 和勒索軟體、則無法還原資料夾或檔案。在這種情況下、您可以從備份檔案還原整個磁碟區、然後存取所需的檔案。
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="使用瀏覽安培還原磁碟區還原">使用瀏覽安培還原磁碟區；還原</h3>
+<div class="paragraph">
+<p>當您從備份檔案還原磁碟區時、 BlueXP 備份與還原會使用備份的資料建立 <em>new</em> 磁碟區。使用物件儲存設備的備份時、您可以將資料還原至原始工作環境中的磁碟區、還原至與來源工作環境位於相同雲端帳戶的不同工作環境、或是內部部署 ONTAP 系統。</p>
+</div>
+<div class="paragraph">
+<p>使用 ONTAP 9.13.0 或更新版本將雲端備份還原至 Cloud Volumes ONTAP 系統、或還原至執行 ONTAP 9.14.1 的內部部署 ONTAP 系統時、您可以選擇執行 <em>quick restoration</em> 作業。如果您需要儘快提供對磁碟區的存取、快速還原是災難恢復的理想選擇。快速還原可將中繼資料從備份檔案還原至磁碟區、而非還原整個備份檔案。不建議對效能或延遲敏感的應用程式進行快速還原、而且歸檔儲存設備中的備份不支援快速還原。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="註">
+</td>
+<td class="content">
+只有在建立雲端備份的來源系統執行 ONTAP 9.12.1 或更新版本時、 FlexGroup 磁碟區才支援快速還原。而且只有在來源系統執行 ONTAP 9.11.0 或更新版本時、 SnapLock Volume 才支援此功能。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>從複寫的磁碟區還原時、您可以將磁碟區還原至原始工作環境、或還原至 Cloud Volumes ONTAP 或內部部署 ONTAP 系統。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_browse_restore_volume.png" alt="顯示使用瀏覽"></span></p>
+</div>
+<div class="paragraph">
+<p>如您所見、您必須知道來源工作環境名稱、儲存 VM 、 Volume 名稱和備份檔案日期、才能執行 Volume 還原。</p>
+</div>
+<div class="paragraph">
+<p>下列影片顯示還原磁碟區的快速步驟：</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="848" height="480" src="https://www.youtube.com/embed/9Og5agUWyRk?rel=0&amp;end=164" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">步驟</div>
+<ol class="arabic">
+<li>
+<p>從BlueXP功能表中、選取* Protection &gt; Backup and recovery *。</p>
+</li>
+<li>
+<p>按一下「<strong>還原</strong>」索引標籤、即會顯示「還原儀表板」。</p>
+</li>
+<li>
+<p>在_瀏覽與還原_區段中、按一下*還原磁碟區*。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_volume_selection.png" alt="從「還原儀表板」選取「還原磁碟區」按鈕的快照。"></span></p>
+</div>
+</li>
+<li>
+<p>在_選取來源_頁面中、瀏覽至您要還原之磁碟區的備份檔案。選取*工作環境*、*磁碟區*和*備份*檔案、其中含有您要還原的日期/時間戳記。</p>
+<div class="paragraph">
+<p>「位置 * 」欄顯示備份檔案（ Snapshot ）是 * 本機 * （來源系統上的 Snapshot 複本）、 * 次要 * （次要 ONTAP 系統上的複寫磁碟區）、還是 * 物件儲存 * （物件儲存中的備份檔案）。選擇您要還原的檔案。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_select_volume_snapshot.png" alt="選取您要還原的工作環境、Volume和Volume備份檔案的快照。"></span></p>
+</div>
+</li>
+<li>
+<p>單擊 * 下一步 * 。</p>
+<div class="paragraph">
+<p>請注意、如果您在物件儲存區中選取備份檔案、且該備份的勒索軟體保護為作用中（如果您在備份原則中啟用 DataLock 和勒索軟體保護）、則系統會提示您在還原資料之前、對備份檔案執行額外的勒索軟體掃描。我們建議您掃描備份檔案以尋找勒索軟體。（您將需要向雲端供應商支付額外的出口成本、才能存取備份檔案的內容。）</p>
+</div>
+</li>
+<li>
+<p>在「選取目的地」頁面中、選取您要還原磁碟區的*工作環境*。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_select_work_env_volume.png" alt="為您要還原的磁碟區選取目的地工作環境的快照。"></span></p>
+</div>
+</li>
+<li>
+<p>從物件儲存設備還原備份檔案時、如果您選取內部部署 ONTAP 系統、但尚未設定叢集連線至物件儲存設備、系統會提示您提供其他資訊：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>從Amazon S3還原時、請在ONTAP 目標Volume所在的叢集中選取IPspace、輸入您所建立之使用者的存取金鑰和秘密金鑰、以便ONTAP 讓該叢集能夠存取S3儲存區、 此外、您也可以選擇私有VPC端點來進行安全的資料傳輸。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>從StorageGRID 物件還原時、請輸入StorageGRID 用來ONTAP 與StorageGRID 物件進行HTTPS通訊的支援伺服器FQDN和連接埠、選擇存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 位於目的地Volume所在之資料中心內的IPspace。</p>
+</li>
+<li>
+<p>從 ONTAP S3 還原時、請輸入 ONTAP S3 伺服器的 FQDN 和 ONTAP 與 ONTAP S3 進行 HTTPS 通訊時應使用的連接埠、選取存取物件儲存設備所需的存取金鑰和秘密金鑰、 以及目的地磁碟區所在的 ONTAP 叢集中的 IPspace 。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>輸入您要用於還原磁碟區的名稱、然後選取磁碟區所在的Storage VM和Aggregate。還原 FlexGroup Volume 時、您需要選取多個集合體。根據預設、*&lt;SOUR_volume名稱&gt;_restore *會用作磁碟區名稱。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_new_vol_name.png" alt="輸入您要還原之新磁碟區名稱的快照。"></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>使用 ONTAP 9.13.0 或更新版本將備份從物件儲存還原至 Cloud Volumes ONTAP 系統、或還原至執行 ONTAP 9.14.1 的內部部署 ONTAP 系統時、您可以選擇執行 <em>quick restoration</em> 作業。</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>如果您要從位於歸檔儲存層的備份檔案還原磁碟區（從ONTAP 版本號9.10.1開始提供）、則可以選取還原優先順序。</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="reference-aws-backup-tiers.html#restoring-data-from-archival-storage">"深入瞭解如何從AWS歸檔儲存設備還原"</a>。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>按一下 * 下一步 * 來選擇您要執行正常還原還是快速還原程序：</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_browse_quick_restore.png" alt="顯示正常和快速還原程序的螢幕擷取畫面。"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* 正常還原 * ：在需要高效能的磁碟區上使用正常還原。在還原程序完成之前、磁碟區將無法使用。</p>
+</li>
+<li>
+<p>* 快速還原 * ：還原的磁碟區和資料將立即可用。請勿在需要高效能的磁碟區上使用此功能、因為在快速還原程序期間、資料存取速度可能比平常慢。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>按一下「<strong>還原</strong>」、您就會回到「還原儀表板」、以便檢閱還原作業的進度。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">結果</div>
+<p>BlueXP 備份與還原會根據您選取的備份建立新的磁碟區。</p>
+</div>
+<div class="paragraph">
+<p>請注意、根據歸檔層和還原優先順序、從歸檔儲存設備中的備份檔案還原磁碟區可能需要許多分鐘或數小時的時間。您可以按一下「<strong>工作監控</strong>」標籤來查看還原進度。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="使用瀏覽安培還原資料夾與檔案">使用瀏覽安培還原資料夾與檔案</h3>
+<div class="paragraph">
+<p>如果您只需要從ONTAP 一個還原磁碟區備份中還原幾個檔案、您可以選擇還原資料夾或個別檔案、而非還原整個磁碟區。您可以將資料夾和檔案還原至原始工作環境中的現有磁碟區、或還原至使用相同雲端帳戶的不同工作環境。您也可以將資料夾和檔案還原至內部部署ONTAP 的作業系統上的磁碟區。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="註">
+</td>
+<td class="content">
+您目前只能從物件儲存區中的備份檔案還原資料夾或個別檔案。目前不支援從本機 Snapshot 複本或位於次要工作環境（複寫磁碟區）的備份檔案還原檔案和資料夾。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>如果您選取多個檔案、所有檔案都會還原至您選擇的相同目的地Volume。因此、如果您想要將檔案還原至不同的磁碟區、就必須執行多次還原程序。</p>
+</div>
+<div class="paragraph">
+<p>使用ONTAP 支援更新版本的支援功能時、您可以還原資料夾及其中的所有檔案和子資料夾。使用ONTAP 9.13.0之前的版本時、只會還原該資料夾中的檔案、子資料夾中的任何子資料夾或檔案都不會還原。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="註">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>如果備份檔案已設定 DataLock 和勒索軟體保護、則只有 ONTAP 版本為 9.13.1 或更新版本時、才支援資料夾層級還原。如果您使用的是舊版 ONTAP 、您可以從備份檔案還原整個磁碟區、然後存取所需的資料夾和檔案。</p>
+</li>
+<li>
+<p>如果備份檔案位於歸檔儲存設備中、則只有 ONTAP 版本為 9.13.1 或更新版本時、才支援資料夾層級還原。如果您使用的是舊版 ONTAP 、您可以從尚未歸檔的較新備份檔案還原資料夾、也可以從歸檔備份還原整個磁碟區、然後存取所需的資料夾和檔案。</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="先決條件">先決條件</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>執行_file_還原作業的版本必須為9.6或更新版本。ONTAP</p>
+</li>
+<li>
+<p>執行_foldle_還原作業時、此版本必須為9.11.1或更新版本。ONTAP如果資料位於歸檔儲存區、或是備份檔案使用 DataLock 和勒索軟體保護、則需要 ONTAP 9.13.1 版。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="資料夾與檔案還原程序">資料夾與檔案還原程序</h4>
+<div class="paragraph">
+<p>流程如下：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>若要從磁碟區備份還原資料夾或一或多個檔案、請按一下「<strong>還原</strong>」索引標籤、然後按一下「<em>瀏覽與還原</em>」下的「<strong>還原檔案或資料夾</strong>」。</p>
+</li>
+<li>
+<p>選取資料夾或檔案所在的來源工作環境、磁碟區和備份檔案。</p>
+</li>
+<li>
+<p>BlueXP 備份與還原會顯示所選備份檔案中存在的資料夾與檔案。</p>
+</li>
+<li>
+<p>選取您要從該備份還原的資料夾或檔案。</p>
+</li>
+<li>
+<p>選取您要還原資料夾或檔案的目的地位置（工作環境、磁碟區和資料夾）、然後按一下*還原*。</p>
+</li>
+<li>
+<p>檔案即會還原。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_browse_restore_file.png" alt="顯示使用瀏覽"></span></p>
+</div>
+<div class="paragraph">
+<p>如您所見、執行資料夾或檔案還原時、您必須知道工作環境名稱、磁碟區名稱、備份檔案日期及資料夾/檔案名稱。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="還原資料夾和檔案">還原資料夾和檔案</h4>
+<div class="paragraph">
+<p>請依照下列步驟、從ONTAP 一份支援的恢復磁碟區備份、將資料夾或檔案還原至磁碟區。您應該知道磁碟區的名稱、以及要用來還原資料夾或檔案的備份檔案日期。此功能使用「即時瀏覽」功能、可讓您檢視每個備份檔案中的目錄和檔案清單。</p>
+</div>
+<div class="paragraph">
+<p>下列影片顯示快速逐步解說還原單一檔案：</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="848" height="480" src="https://www.youtube.com/embed/9Og5agUWyRk?rel=0&amp;start=165" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">步驟</div>
+<ol class="arabic">
+<li>
+<p>從BlueXP功能表中、選取* Protection &gt; Backup and recovery *。</p>
+</li>
+<li>
+<p>按一下「<strong>還原</strong>」索引標籤、即會顯示「還原儀表板」。</p>
+</li>
+<li>
+<p>在_瀏覽與還原_區段中、按一下*還原檔案或資料夾*。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_files_selection.png" alt="從「還原儀表板」選取「還原檔案或資料夾」按鈕的快照。"></span></p>
+</div>
+</li>
+<li>
+<p>在_選取來源_頁面中、瀏覽至包含您要還原之資料夾或檔案的磁碟區備份檔案。選取*工作環境*、<strong>磁碟區*和*備份</strong>、其中含有您要還原檔案的日期/時間戳記。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_select_source.png" alt="選取要還原項目的磁碟區和備份的快照。"></span></p>
+</div>
+</li>
+<li>
+<p>單擊* Next*（下一步），將顯示Volume備份中的文件夾和文件列表。</p>
+<div class="paragraph">
+<p>如果您要從位於歸檔儲存層的備份檔案還原資料夾或檔案、則可以選取還原優先順序。</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="reference-aws-backup-tiers.html#restoring-data-from-archival-storage">"深入瞭解如何從AWS歸檔儲存設備還原"</a>。</p>
+</div>
+<div class="paragraph">
+<p>+<br>
+如果備份檔案的勒索軟體保護為作用中（如果您在備份原則中啟用 DataLock 和勒索軟體保護）、則系統會提示您在還原資料之前、對備份檔案執行額外的勒索軟體掃描。我們建議您掃描備份檔案以尋找勒索軟體。（您將需要向雲端供應商支付額外的出口成本、才能存取備份檔案的內容。）</p>
+</div>
+<div class="paragraph">
+<p>+<span class="image"><img src="./media/screenshot_restore_select_files.png" alt="「選取項目」頁面的快照、可讓您瀏覽至要還原的項目。"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>在_選取項目_頁面中、選取您要還原的資料夾或檔案、然後按一下*繼續*。若要協助您尋找項目：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>如果看到資料夾或檔案名稱、您可以按一下該資料夾或檔案名稱。</p>
+</li>
+<li>
+<p>您可以按一下搜尋圖示、然後輸入資料夾或檔案的名稱、以直接瀏覽至該項目。</p>
+</li>
+<li>
+<p>您可以使用向下瀏覽資料夾的層級 <span class="image"><img src="./media/button_subfolder.png" alt=""></span> 此列結尾的按鈕可尋找特定檔案。</p>
+<div class="paragraph">
+<p>當您選取檔案時、檔案會新增至頁面左側、以便您查看已選擇的檔案。如果需要、您可以按一下檔案名稱旁的 * x* 、從清單中移除檔案。</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>在「選取目的地」頁面中、選取您要還原項目的*工作環境*。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_select_work_env.png" alt="選取您要還原之項目的目的地工作環境的快照。"></span></p>
+</div>
+<div class="paragraph">
+<p>如果您選取內部部署叢集、但尚未設定與物件儲存設備的叢集連線、系統會提示您提供其他資訊：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>從Amazon S3還原時、請在ONTAP 目的地Volume所在的叢集中輸入IPspace、以及存取物件儲存所需的AWS存取金鑰和秘密金鑰。您也可以選取私有連結組態來連線至叢集。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>從StorageGRID 物件還原時、請輸入StorageGRID 支援ONTAP 以HTTPS通訊的支援對象伺服器的FQDN和連接埠StorageGRID 、輸入存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 目的地Volume所在的物件叢集中的IPspace。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>然後選擇* Volume <strong>和*資料夾</strong>、您可以在其中還原資料夾或檔案。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_select_dest.png" alt="選取您要還原之檔案的磁碟區和資料夾的快照。"></span></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>還原資料夾和檔案時、您有幾個位置選項可供選擇。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>當您選擇 * 選取目標資料夾 * 時、如上所示：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>您可以選取任何資料夾。</p>
+</li>
+<li>
+<p>您可以將游標暫留在資料夾上、然後按一下 <span class="image"><img src="./media/button_subfolder.png" alt=""></span> 在列末端向下切入子資料夾、然後選取資料夾。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>如果您選取的目的地工作環境與磁碟區與來源資料夾/檔案所在的位置相同、您可以選取*維護來源資料夾路徑*、將資料夾或檔案還原至來源結構中的相同資料夾。所有相同的資料夾和子資料夾都必須已經存在、而且不會建立資料夾。將檔案還原至其原始位置時、您可以選擇覆寫來源檔案或建立新檔案。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>按一下「<strong>還原</strong>」、您就會回到「還原儀表板」、以便檢閱還原作業的進度。您也可以按一下「<strong>工作監控</strong>」標籤來查看還原進度。</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="使用搜尋與還原還原ontap-資料">使用「搜尋與還原」還原ONTAP 資料</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以ONTAP 使用「搜尋與還原」、從還原的還原檔還原磁碟區、資料夾或檔案。搜尋與還原可讓您從所有備份中搜尋特定的磁碟區、資料夾或檔案、然後執行還原。您不需要知道確切的工作環境名稱、磁碟區名稱或檔案名稱、搜尋會查看所有的磁碟區備份檔案。</p>
+</div>
+<div class="paragraph">
+<p>搜尋作業會查看 ONTAP 磁碟區的所有本機 Snapshot 複本、次要儲存系統上的所有複寫磁碟區、以及物件儲存區中存在的所有備份檔案。由於從本機 Snapshot 複本或複寫磁碟區還原資料的速度比從物件儲存區的備份檔案還原更快、成本更低、因此您可能想要從這些其他位置還原資料。</p>
+</div>
+<div class="paragraph">
+<p>當您從備份檔案還原 <em>full Volume 時、 BlueXP 備份與還原會使用備份的資料來建立 _new</em> Volume 。您可以將資料還原為原始工作環境中的磁碟區、還原至與來源工作環境位於相同雲端帳戶的不同工作環境、或還原至內部部署 ONTAP 系統。</p>
+</div>
+<div class="paragraph">
+<p>您可以將 <em>folders 或 filers</em> 還原至原始磁碟區位置、還原至相同工作環境中的不同磁碟區、還原至使用相同雲端帳戶的不同工作環境、或還原至內部部署 ONTAP 系統上的磁碟區。</p>
+</div>
+<div class="paragraph">
+<p>使用ONTAP 支援更新版本的支援功能時、您可以還原資料夾及其中的所有檔案和子資料夾。使用ONTAP 9.13.0之前的版本時、只會還原該資料夾中的檔案、子資料夾中的任何子資料夾或檔案都不會還原。</p>
+</div>
+<div class="paragraph">
+<p>如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行 ONTAP 9.10.1 或更新版本才能進行磁碟區還原、 9.11.1 則用於檔案還原、 9.12.1 則用於 Google Archive 和 StorageGRID 、 9.13.1 則用於資料夾還原。</p>
+</div>
+<div class="paragraph">
+<p><a href="reference-aws-backup-tiers.html">"深入瞭解如何從AWS歸檔儲存設備還原"</a>。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="註">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>如果物件儲存設備中的備份檔案已設定為 DataLock 和勒索軟體保護、則只有在 ONTAP 版本為 9.13.1 或更新版本時、才支援資料夾層級還原。如果您使用的是舊版 ONTAP 、您可以從備份檔案還原整個磁碟區、然後存取所需的資料夾和檔案。</p>
+</li>
+<li>
+<p>如果物件儲存設備中的備份檔案位於歸檔儲存設備中、則只有在 ONTAP 版本為 9.13.1 或更新版本時、才支援資料夾層級還原。如果您使用的是舊版 ONTAP 、您可以從尚未歸檔的較新備份檔案還原資料夾、也可以從歸檔備份還原整個磁碟區、然後存取所需的資料夾和檔案。</p>
+</li>
+<li>
+<p>將資料從 Azure 歸檔儲存設備還原至 StorageGRID 系統時、不支援「高」還原優先順序。</p>
+</li>
+<li>
+<p>ONTAP S3 物件儲存區中的磁碟區目前不支援還原資料夾。</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>在開始之前、您應該先瞭解要還原的磁碟區或檔案名稱或位置。</p>
+</div>
+<div class="paragraph">
+<p>下列影片顯示快速逐步解說還原單一檔案：</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="848" height="480" src="https://www.youtube.com/embed/RZktLe32hhQ?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="sect2">
+<h3 id="搜尋與還原支援的工作環境與物件儲存供應商">搜尋與還原支援的工作環境與物件儲存供應商</h3>
+<div class="paragraph">
+<p>您可以將 ONTAP 資料從位於次要工作環境（複寫磁碟區）或物件儲存（備份檔案）中的備份檔案還原至下列工作環境。Snapshot 複本位於來源工作環境中、只能還原至相同的系統。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>注意： * 您可以從任何類型的備份檔案還原磁碟區和檔案、但目前只能從物件儲存區中的備份檔案還原資料夾。</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top" colspan="2">備份檔案位置</th>
+<th class="tableblock halign-left valign-top">目的地工作環境</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 物件存放區（備份） *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* 次系統（複寫） *</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ifdef::aws[]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon S3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS 中的 Cloud Volumes ONTAP<br>
+內部部署 ONTAP 的作業系統</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS內部部署的不全系統endif::AWS [] ifdef:azure[] Cloud Volumes ONTAP ONTAP</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure Blob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure 中的 Cloud Volumes ONTAP<br>
+內部部署 ONTAP 的作業系統</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure內部部署的系統中的資料：：azure[] ifdef：：Cloud Volumes ONTAP ONTAP GCP[]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Google Cloud Storage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">在 Google 中使用 Cloud Volumes ONTAP<br>
+內部部署 ONTAP 的作業系統</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">在Google內部部署中的系統資訊：Cloud Volumes ONTAP ONTAP GCP[]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp StorageGRID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">內部部署 ONTAP 的作業系統<br>
+Cloud Volumes ONTAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">內部部署 ONTAP 的作業系統</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SS3 ONTAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">內部部署 ONTAP 的作業系統<br>
+Cloud Volumes ONTAP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">內部部署 ONTAP 的作業系統</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>對於搜尋與還原、連接器可安裝在下列位置：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>對於Amazon S3、連接器可部署在AWS或內部部署環境中</p>
+</li>
+<li>
+<p>若為僅供部分使用、連接器必須部署在內部部署、無論是否可存取網際網路StorageGRID</p>
+</li>
+<li>
+<p>對於 ONTAP S3 、 Connector 可部署在內部部署（可存取或不存取網際網路）或雲端供應商環境中</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>請注意、「內部部署ONTAP 的功能系統」的參考資料包括FAS 了功能性的功能、包括了功能性的功能、包括了功能性的功能、AFF 功能性的功能、以及ONTAP Select 功能</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="先決條件-2">先決條件</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>叢集需求：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>此版本必須為9.8或更新版本。ONTAP</p>
+</li>
+<li>
+<p>磁碟區所在的儲存VM（SVM）必須具有已設定的資料LIF。</p>
+</li>
+<li>
+<p>必須在磁碟區上啟用NFS（支援NFS和SMB/CIFS磁碟區）。</p>
+</li>
+<li>
+<p>SnapDiff RPC伺服器必須在SVM上啟動。在工作環境中啟用索引時、BlueXP會自動執行此動作。（ SnapDiff 技術可快速識別 Snapshot 複本之間的檔案和目錄差異。）</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>AWS要求：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>必須將特定的Amazon Athena、AWS黏著及AWS S3權限新增至提供BlueXP權限的使用者角色。 <a href="task-backup-onprem-to-aws.html#set-up-s3-permissions">"請確定所有權限均已正確設定"</a>。</p>
+<div class="paragraph">
+<p>請注意、如果您已使用過去設定的 Connector 進行 BlueXP 備份與還原、則現在您必須將 Athena 和 glue 權限新增至 BlueXP 使用者角色。搜尋與還原需要它們。</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>StorageGRID 和 ONTAP S3 要求：</p>
+<div class="paragraph">
+<p>根據您的組態、有兩種方法可以實作搜尋與還原：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>如果您的帳戶中沒有雲端供應商認證資料、則索引目錄資訊會儲存在Connector上。</p>
+</li>
+<li>
+<p>如果您在私有（暗）站台中使用 Connector 、則 Indexed Catalog 資訊會儲存在 Connector （需要 Connector 3.9.25 版或更新版本）上。</p>
+</li>
+<li>
+<p>如果您有 <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-aws.html" target="_blank" rel="noopener">"AWS認證資料"</a> 或 <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-azure.html" target="_blank" rel="noopener">"Azure認證"</a> 在帳戶中、索引目錄會儲存在雲端供應商、就像部署在雲端的Connector一樣。（如果您同時擁有這兩項認證、則AWS預設為選取狀態。）</p>
+<div class="paragraph">
+<p>即使您使用的是內部部署Connector、也必須同時滿足Connector權限和雲端供應商資源的雲端供應商需求。使用此實作時、請參閱上述AWS和Azure需求。</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="搜尋與還原程序">搜尋與還原程序</h3>
+<div class="paragraph">
+<p>流程如下：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>在使用搜尋與還原之前、您必須在每個要從中還原Volume資料的來源工作環境上啟用「索引」。這可讓索引目錄追蹤每個磁碟區的備份檔案。</p>
+</li>
+<li>
+<p>若要從磁碟區備份還原磁碟區或檔案、請按一下「搜尋與還原」下的「<strong>搜尋與還原</strong>」。</p>
+</li>
+<li>
+<p>依部分或完整磁碟區名稱、部分或完整檔案名稱、備份位置、大小範圍、建立日期範圍、其他搜尋篩選條件、輸入磁碟區、資料夾或檔案的搜尋條件。 然後按一下 * 搜尋 * 。</p>
+<div class="paragraph">
+<p>「搜尋結果」頁面會顯示檔案或磁碟區符合搜尋條件的所有位置。</p>
+</div>
+</li>
+<li>
+<p>按一下「<strong>檢視所有備份</strong>」以取得您要用來還原磁碟區或檔案的位置、然後在您要使用的實際備份檔案上按一下「<strong>還原</strong>」。</p>
+</li>
+<li>
+<p>選取要還原磁碟區、資料夾或檔案的位置、然後按一下*還原*。</p>
+</li>
+<li>
+<p>磁碟區、資料夾或檔案將會還原。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_search_restore_vol_file.png" alt="顯示使用Search  Restore執行Volume、資料夾或檔案還原作業的流程圖。"></span></p>
+</div>
+<div class="paragraph">
+<p>如您所見、您真的只需要知道部分名稱、以及 BlueXP 備份與還原會搜尋符合您搜尋條件的所有備份檔案。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="為每個工作環境啟用索引型錄">為每個工作環境啟用「索引型錄」</h3>
+<div class="paragraph">
+<p>在使用搜尋與還原之前、您必須在每個要從中還原磁碟區或檔案的來源工作環境中啟用「索引」。這可讓索引目錄追蹤每個磁碟區和每個備份檔案、讓您的搜尋變得非常快速且有效率。</p>
+</div>
+<div class="paragraph">
+<p>啟用此功能時、 BlueXP 備份與還原可在 SVM 上為您的磁碟區啟用 SnapDiff v3 、並執行下列動作：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>對於儲存在AWS中的備份、它會配置新的S3儲存區和 <a href="https://aws.amazon.com/athena/faqs/" target="_blank" rel="noopener">"Amazon Athena互動查詢服務"</a> 和 <a href="https://aws.amazon.com/glue/faqs/" target="_blank" rel="noopener">"AWS黏著伺服器無資料整合服務"</a>。</p>
+</li>
+<li>
+<p>對於儲存在 StorageGRID 或 ONTAP S3 中的備份、它會在 Connector 或雲端供應商環境中配置空間。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>如果您的工作環境已啟用索引、請前往下一節還原資料。</p>
+</div>
+<div class="paragraph">
+<p>若要啟用工作環境的索引：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>如果沒有索引工作環境、請在「還原儀表板」的「搜尋與還原」下、按一下「<strong>啟用工作環境的索引」</strong>、然後針對工作環境按一下「*啟用索引」。</p>
+</li>
+<li>
+<p>如果至少有一個工作環境已建立索引、請在「還原儀表板」的「搜尋與還原」下、按一下「<strong>索引設定</strong>」、然後針對工作環境按一下「<strong>啟用索引</strong>」。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>在所有服務均已配置且索引目錄已啟動之後、工作環境會顯示為「作用中」。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_enable_indexing.png" alt="顯示已啟動索引目錄的工作環境的快照。"></span></p>
+</div>
+<div class="paragraph">
+<p>根據工作環境中磁碟區的大小、以及所有 3 個備份位置中的備份檔案數量、初始索引程序可能需要一小時的時間。之後、每小時都會以遞增變更的方式進行透明更新、以維持最新狀態。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="使用search-restore還原磁碟區資料夾和檔案">使用Search &amp; Restore還原磁碟區、資料夾和檔案</h3>
+<div class="paragraph">
+<p>您就可以了 <a href="#Enabling the Indexed Catalog for each working environment">為您的工作環境啟用索引</a>、您可以使用「搜尋與還原」來還原磁碟區、資料夾和檔案。這可讓您使用各種篩選器、找出想要從所有備份檔案還原的確切檔案或磁碟區。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步驟</div>
+<ol class="arabic">
+<li>
+<p>從BlueXP功能表中、選取* Protection &gt; Backup and recovery *。</p>
+</li>
+<li>
+<p>按一下「<strong>還原</strong>」索引標籤、即會顯示「還原儀表板」。</p>
+</li>
+<li>
+<p>在「搜尋與還原」區段中、按一下「<strong>搜尋與還原</strong>」。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_start_search_restore.png" alt="從「還原儀表板」選取「搜尋"></span></p>
+</div>
+</li>
+<li>
+<p>從「搜尋至還原」頁面：</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>在_搜尋列_中、輸入完整或部分的磁碟區名稱、資料夾名稱或檔案名稱。</p>
+</li>
+<li>
+<p>選擇資源類型：* Volumes <strong>、</strong> Files <strong>、</strong> Filers*或* All *。</p>
+</li>
+<li>
+<p>在_篩選條件_區域中、選取篩選條件。例如、您可以選取資料所在的工作環境和檔案類型、例如.JPEG檔案。或者、如果您只想在物件儲存區的可用 Snapshot 複本或備份檔案中搜尋結果、則可以選取備份位置的類型。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>按一下「<strong>搜尋</strong>」、「搜尋結果」區域會顯示檔案、資料夾或磁碟區符合搜尋條件的所有資源。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_step1_search_restore.png" alt="在「搜尋"></span></p>
+</div>
+</li>
+<li>
+<p>找到含有您要還原之資料的資源、然後按一下 * 檢視所有備份 * 以顯示包含相符磁碟區、資料夾或檔案的所有備份檔案。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_step2_search_restore.png" alt="顯示如何檢視符合搜尋條件的所有備份的快照。"></span></p>
+</div>
+</li>
+<li>
+<p>找到您要用來還原資料的備份檔案、然後按一下 * 還原 * 。</p>
+<div class="paragraph">
+<p>請注意、結果會識別本機 Volume Snapshot 複本、以及搜尋中包含該檔案的遠端複寫磁碟區。您可以選擇從雲端備份檔案、 Snapshot 複本或複寫的 Volume 進行還原。</p>
+</div>
+</li>
+<li>
+<p>選取要還原磁碟區、資料夾或檔案的目的地位置、然後按一下*還原*。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>對於Volume、您可以選取原始目的地工作環境、也可以選取替代的工作環境。還原 FlexGroup Volume 時、您需要選擇多個集合體。</p>
+</li>
+<li>
+<p>對於資料夾、您可以還原至原始位置、也可以選擇替代位置、包括工作環境、磁碟區和資料夾。</p>
+</li>
+<li>
+<p>對於檔案、您可以還原至原始位置、也可以選擇替代位置、包括工作環境、磁碟區和資料夾。選取原始位置時、您可以選擇覆寫來源檔案或建立新檔案。</p>
+<div class="paragraph">
+<p>如果您選擇內部部署ONTAP 的一套系統、但尚未設定叢集連線至物件儲存設備、系統會提示您提供其他資訊：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>從Amazon S3還原時、請在ONTAP 目標Volume所在的叢集中選取IPspace、輸入您所建立之使用者的存取金鑰和秘密金鑰、以便ONTAP 讓該叢集能夠存取S3儲存區、 此外、您也可以選擇私有VPC端點來進行安全的資料傳輸。 <a href="task-backup-onprem-to-aws.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage">"請參閱這些需求的詳細資料"</a>。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>從StorageGRID 物件還原時、請輸入StorageGRID 支援ONTAP 以HTTPS通訊的支援對象伺服器的FQDN和連接埠StorageGRID 、輸入存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 目的地Volume所在的物件叢集中的IPspace。 <a href="task-backup-onprem-private-cloud.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage">"請參閱這些需求的詳細資料"</a>。</p>
+</li>
+<li>
+<p>從 ONTAP S3 還原時、請輸入 ONTAP S3 伺服器的 FQDN 和 ONTAP 與 ONTAP S3 進行 HTTPS 通訊時應使用的連接埠、選取存取物件儲存設備所需的存取金鑰和秘密金鑰、 以及目的地磁碟區所在的 ONTAP 叢集中的 IPspace 。 <a href="task-backup-onprem-to-ontap-s3.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage">"請參閱這些需求的詳細資料"</a>。</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">結果</div>
+<p>磁碟區、資料夾或檔案將會還原、並返回「還原儀表板」、以便您檢閱還原作業的進度。您也可以按一下「<strong>工作監控</strong>」標籤來查看還原進度。</p>
+</div>
+<div class="paragraph">
+<p>對於還原的磁碟區、您可以 <a href="task-manage-backups-ontap.html">"管理此新Volume的備份設定"</a> 視需要而定。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/zh-tw/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/zh-tw/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">在本頁</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">使用條款</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">隱私權政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie 政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie 設定</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">傳送有關本網頁的意見反應</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/zh-tw/bluexp-backup-recovery/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/zh-tw/bluexp-backup-recovery/js/prism.js'></script>
+      <script type="text/javascript" src='/zh-tw/bluexp-backup-recovery/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/zh-tw/bluexp-backup-recovery/js/ie-tabbed-blocks.js'></script>
+    <script src='/zh-tw/bluexp-backup-recovery/js/ie-sidebar.js'></script>
+  </body>
+
+</html>

@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/api-backup-restore.html</loc>
+        
+      
+      <lastmod>2023-08-10T14:31:52+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/concept-backup-to-cloud.html</loc>
+        
+      
+      <lastmod>2023-10-23T15:25:50+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/concept-clone-cloud-native-oracle-concepts.html</loc>
+        
+      
+      <lastmod>2023-07-04T19:32:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/concept-cloud-backup-policies.html</loc>
+        
+      
+      <lastmod>2024-03-13T14:17:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/concept-kubernetes-backup-to-cloud.html</loc>
+        
+      
+      <lastmod>2023-05-31T14:20:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html</loc>
+        
+      
+      <lastmod>2024-03-13T14:17:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/concept-protect-app-data-to-cloud.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/concept-protect-cloud-app-data-to-cloud.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/concept-protect-vm-data.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/concept-protection-journey.html</loc>
+        
+      
+      <lastmod>2024-02-02T07:54:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/</loc>
+        
+      
+      <lastmod>2024-03-13T14:17:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/legal-notices.html</loc>
+        
+      
+      <lastmod>2023-08-10T14:31:52+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/reference-aws-backup-tiers.html</loc>
+        
+      
+      <lastmod>2023-07-06T13:08:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/reference-azure-backup-tiers.html</loc>
+        
+      
+      <lastmod>2023-05-23T18:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html</loc>
+        
+      
+      <lastmod>2024-02-02T07:54:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/reference-backup-multi-account-azure.html</loc>
+        
+      
+      <lastmod>2023-06-06T14:39:40+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/reference-configure-azure-netapp-files.html</loc>
+        
+      
+      <lastmod>2023-05-31T14:20:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/reference-configure-cloud-volumes-ontap.html</loc>
+        
+      
+      <lastmod>2023-05-31T14:20:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/reference-configure-fsx-for-ontap.html</loc>
+        
+      
+      <lastmod>2023-05-31T14:20:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/reference-google-backup-tiers.html</loc>
+        
+      
+      <lastmod>2023-05-23T18:31:03+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/reference-limitations.html</loc>
+        
+      
+      <lastmod>2023-10-23T22:24:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/reference-restart-backup.html</loc>
+        
+      
+      <lastmod>2023-05-31T14:20:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery//search.html</loc>
+        
+      
+      <lastmod>2024-03-13T14:17:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-add-host-discover-oracle-databases.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-add-sqlhost-install-plugin-sql.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-app-data-to-aws.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-app-data-to-azure.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-app-data-to-gcp.html</loc>
+        
+      
+      <lastmod>2023-07-04T19:32:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-app-data-to-storagegrid.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-cloud-native-oracle-data.html</loc>
+        
+      
+      <lastmod>2023-07-04T19:32:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-cloud-native-sap-hana-data.html</loc>
+        
+      
+      <lastmod>2023-04-21T12:00:48+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-cloud-native-sql-data.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-kubernetes-to-azure.html</loc>
+        
+      
+      <lastmod>2023-05-31T14:20:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-kubernetes-to-gcp.html</loc>
+        
+      
+      <lastmod>2023-05-31T14:20:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-kubernetes-to-s3.html</loc>
+        
+      
+      <lastmod>2023-05-31T14:20:37+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-onprem-private-cloud.html</loc>
+        
+      
+      <lastmod>2023-10-23T22:24:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-onprem-to-aws.html</loc>
+        
+      
+      <lastmod>2024-02-02T07:54:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-onprem-to-azure.html</loc>
+        
+      
+      <lastmod>2023-12-05T19:32:05+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-onprem-to-gcp.html</loc>
+        
+      
+      <lastmod>2023-10-23T22:24:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-onprem-to-ontap-s3.html</loc>
+        
+      
+      <lastmod>2023-10-23T22:24:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-to-azure.html</loc>
+        
+      
+      <lastmod>2023-12-05T19:32:05+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-to-gcp.html</loc>
+        
+      
+      <lastmod>2023-10-23T22:24:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-to-s3.html</loc>
+        
+      
+      <lastmod>2024-02-02T07:54:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-vm-data-to-aws.html</loc>
+        
+      
+      <lastmod>2023-04-26T14:38:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-vm-data-to-azure.html</loc>
+        
+      
+      <lastmod>2023-04-26T14:38:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-vm-data-to-gcp.html</loc>
+        
+      
+      <lastmod>2023-04-26T14:38:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-vm-data-to-storagegrid.html</loc>
+        
+      
+      <lastmod>2023-04-26T14:38:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-clone-cloud-native-oracle-data.html</loc>
+        
+      
+      <lastmod>2023-07-04T19:32:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-create-policies-apps.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-create-policies-ontap.html</loc>
+        
+      
+      <lastmod>2023-10-23T22:24:43+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-create-policies-vms.html</loc>
+        
+      
+      <lastmod>2023-04-20T10:11:06+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-deploy-snapcenter-plugin-for-sap-hana.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-get-help.html</loc>
+        
+      
+      <lastmod>2024-01-12T20:16:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-licensing-cloud-backup.html</loc>
+        
+      
+      <lastmod>2023-11-14T22:48:42+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-manage-app-backups.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-manage-backup-settings-ontap.html</loc>
+        
+      
+      <lastmod>2023-07-06T13:08:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-manage-backups-kubernetes.html</loc>
+        
+      
+      <lastmod>2023-04-18T13:34:33+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-manage-backups-ontap.html</loc>
+        
+      
+      <lastmod>2023-07-06T13:08:39+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-manage-cloud-native-app-data.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-manage-vm-data-in-cloud.html</loc>
+        
+      
+      <lastmod>2024-02-02T07:54:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-monitor-backup-jobs.html</loc>
+        
+      
+      <lastmod>2024-02-02T07:54:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-quick-start-hana.html</loc>
+        
+      
+      <lastmod>2023-07-04T19:32:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-quick-start-oracle.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-quick-start-sql.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-refresh-sap-hana-target-system.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-register-snapCenter-plug-in-for-vmware-vsphere.html</loc>
+        
+      
+      <lastmod>2023-06-01T10:27:52+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-register-snapcenter-server.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-report-inventory.html</loc>
+        
+      
+      <lastmod>2024-02-02T07:54:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-backups-kubernetes.html</loc>
+        
+      
+      <lastmod>2022-12-06T17:28:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-backups-ontap.html</loc>
+        
+      
+      <lastmod>2024-03-13T14:17:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-alternate-location.html</loc>
+        
+      
+      <lastmod>2023-07-04T19:32:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html</loc>
+        
+      
+      <lastmod>2023-07-04T19:32:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-cloud-native-sap-hana-data.html</loc>
+        
+      
+      <lastmod>2023-07-04T19:32:44+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-cloud-native-sql-data.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-customplugin-backup.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-hana-backup.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-oracle-data.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-sql-data.html</loc>
+        
+      
+      <lastmod>2023-10-13T12:16:26+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-vm-data.html</loc>
+        
+      
+      <lastmod>2024-02-02T07:54:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-support-registration.html</loc>
+        
+      
+      <lastmod>2024-02-02T07:54:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/zh-tw/bluexp-backup-recovery/whats-new.html</loc>
+        
+      
+      <lastmod>2024-03-13T14:17:14+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>
