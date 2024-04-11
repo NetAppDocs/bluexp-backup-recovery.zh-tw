@@ -1,0 +1,132 @@
+---
+indexpage:
+  title: BlueXP 備份與還原文件
+  summary: BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續容量、資料庫和虛擬機器（ VM
+    ）提供高效率、安全且具成本效益的資料保護。
+  keywords: bluexp, bluexp backup recovery, ontap, kubernetes, virtual machines, vm,
+    on-premises, data protection
+  lead: BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續磁碟區、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 瞭解 BlueXP 備份與還原
+      url: concept-backup-to-cloud.html
+    - title: 新增功能
+      url: whats-new.html
+    - title: 設定授權
+      url: task-licensing-cloud-backup.html
+    - title: 監控備份與還原工作的狀態
+      url: task-monitor-backup-jobs.html
+    - title: 建立資料保護涵蓋範圍的報告
+      url: task-report-inventory.html
+  - title: 將ONTAP 資料還原至雲端
+    links:
+    - title: 備份Cloud Volumes ONTAP 到Amazon S3
+      url: task-backup-to-s3.html
+      flavor: aws
+    - title: 備份Cloud Volumes ONTAP 到Azure Blob
+      url: task-backup-to-azure.html
+      flavor: azure
+    - title: 備份Cloud Volumes ONTAP 到Google Cloud
+      url: task-backup-to-gcp.html
+      flavor: gcp
+    - title: 將內部部署ONTAP 的不支援資料備份至Amazon S3
+      url: task-backup-onprem-to-aws.html
+      flavor: aws
+    - title: 將內部部署ONTAP 的資料備份到Azure Blob
+      url: task-backup-onprem-to-azure.html
+      flavor: azure
+    - title: 將內部部署ONTAP 的不全資料備份到Google Cloud
+      url: task-backup-onprem-to-gcp.html
+      flavor: gcp
+    - title: 將內部部署 ONTAP 備份至 ONTAP S3
+      url: task-backup-onprem-to-ontap-s3.html
+    - title: 將內部部署ONTAP 的內部部署資料備份至StorageGRID
+      url: task-backup-onprem-private-cloud.html
+  - title: 管理ONTAP 還原備份檔案
+    links:
+    - title: 管理 ONTAP 系統的備份
+      url: task-manage-backups-ontap.html
+    - title: 管理 ONTAP 磁碟區的原則
+      url: task-create-policies-ontap.html
+    - title: 備份至物件原則選項（ DataLock 與勒索軟體保護）
+      url: concept-cloud-backup-policies.html
+    - title: 在「進階設定」中管理備份至物件選項
+      url: task-manage-backup-settings-ontap.html
+    - title: 管理複寫關係
+      url: task-manage-backups-ontap.html#manage-the-replication-relationship-with-the-source-volume
+  - title: 將應用程式資料備份到雲端
+    links:
+    - title: 將內部部署應用程式資料備份至Amazon Web Services
+      flavor: aws
+      url: task-backup-app-data-to-aws.html
+    - title: 將內部部署應用程式資料備份到Microsoft Azure
+      flavor: azure
+      url: task-backup-app-data-to-azure.html
+    - title: 將內部部署應用程式資料備份到Google Cloud
+      flavor: gcp
+      url: task-backup-app-data-to-gcp.html
+    - title: 將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方
+      url: task-backup-app-data-to-storagegrid.html
+    - title: 備份雲端原生 Oracle 資料庫
+      url: task-backup-cloud-native-oracle-data.html
+    - title: 備份雲端原生 SAP HANA 資料庫
+      flavor: azure
+      url: task-backup-cloud-native-sap-hana-data.html
+    - title: 備份雲端原生 SQL Server 資料庫
+      url: task-backup-cloud-native-sql-data.html
+  - title: 將資料存放區備份到雲端
+    links:
+    - title: 將資料存放區備份至Amazon Web Services
+      flavor: aws
+      url: task-backup-vm-data-to-aws.html
+    - title: 將資料存放區備份至Microsoft Azure
+      flavor: azure
+      url: task-backup-vm-data-to-azure.html
+    - title: 將資料存放區備份到Google Cloud Platform
+      flavor: gcp
+      url: task-backup-vm-data-to-gcp.html
+    - title: 將資料存放區備份StorageGRID 至
+      url: task-backup-vm-data-to-storagegrid.html
+  - title: 從雲端還原資料
+    links:
+    - title: 還原 ONTAP Volume 資料
+      url: task-restore-backups-ontap.html
+    - title: 還原內部部署的 Oracle 應用程式資料
+      url: task-restore-oracle-data.html
+    - title: 還原內部部署的 SQL Server 應用程式資料
+      url: task-restore-sql-data.html
+    - title: 還原雲端原生 Oracle 應用程式資料
+      url: task-restore-cloud-native-oracle-data.html
+    - title: 還原雲端原生 SAP HANA 應用程式資料
+      flavor: azure
+      url: task-restore-cloud-native-sap-hana-data.html
+    - title: 還原雲端原生 SQL Server 資料
+      url: task-restore-cloud-native-sql-data.html
+    - title: 還原虛擬機器資料
+      url: task-restore-vm-data.html
+    - title: 還原 Kubernetes Volume 資料
+      url: task-restore-backups-kubernetes.html
+  - title: 將Kubernetes資料備份到雲端
+    links:
+    - title: 將 Kubernetes 叢集備份至 Amazon S3
+      url: task-backup-kubernetes-to-s3.html
+      flavor: aws
+    - title: 將 Kubernetes 叢集備份至 Azure Blob
+      url: task-backup-kubernetes-to-azure.html
+      flavor: azure
+    - title: 將 Kubernetes 叢集備份至 Google Cloud
+      url: task-backup-kubernetes-to-gcp.html
+      flavor: gcp
+  - title: 部落格與社群
+    links:
+    - title: NetApp社群
+      url: https://community.netapp.com/t5/Public-Cloud-Services/ct-p/CDS
+    - title: BlueXP 備份與還原部落格
+      url: https://bluexp.netapp.com/blog/topic/cloud-backup
+    - title: BlueXP 備份與還原使用案例
+      url: https://bluexp.netapp.com/cloud-backup
+    - title: BlueXP 備份與還原影片
+      url: https://youtube.com/playlist?list=PLdXI3bZJEw7modoLQEVUHoQ8DJyVk_1wU
+    - title: BlueXP 網路研討會
+      url: https://bluexp.netapp.com/events

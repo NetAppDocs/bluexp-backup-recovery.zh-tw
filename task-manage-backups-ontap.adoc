@@ -261,7 +261,7 @@ https://docs.netapp.com/us-en/ontap-sm-classic/volume-disaster-recovery/index.ht
 
 
 
-== 編輯現有的雲端備份原則
+== 編輯現有的備份至雲端原則
 
 您可以變更目前套用至工作環境中磁碟區的備份原則屬性。變更備份原則會影響使用原則的所有現有磁碟區。
 

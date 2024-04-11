@@ -20,7 +20,7 @@ summary: 您可以使用 NetApp 提供的預設備份原則來建立備份、也
 
 若要瞭解所提供的預設備份原則、請參閱 link:concept-protection-journey.html["規劃您的保護旅程"]。
 
-BlueXP 備份與還原提供三種類型的 ONTAP 資料備份：快照、複製及備份至物件儲存設備。由於您使用的架構和備份類型、其原則位於不同的位置：
+BlueXP 備份與還原提供三種類型的 ONTAP 資料備份：快照、複製及備份至物件儲存設備。他們的原則會根據您使用的架構和備份類型、位於不同的位置：
 
 [cols="25,25,25,25"]
 |===
@@ -62,7 +62,18 @@ image:screenshot_policies_management.png["原則管理頁面"]
 
 
 
-== 在初始化 Snapshot 之前建立 Snapshot 原則
+== 建立原則
+
+您可以建立原則來管理 Snapshot 複本、複製和備份到物件儲存：
+
+* <<在初始化 Snapshot 之前建立 Snapshot 原則>>
+* <<在開始複寫之前建立複寫原則>>
+* <<在開始備份之前建立備份對物件儲存原則>>
+
+
+
+
+=== 在初始化 Snapshot 之前建立 Snapshot 原則
 
 3-2-1 策略的一部分是在 * 主要 * 儲存系統上建立磁碟區的 Snapshot 複本。
 
@@ -88,9 +99,7 @@ image:screenshot_policies_management.png["原則管理頁面"]
 . 選擇* Create *（建立*）。
 
 
-
-
-=== 使用串聯架構的 Snapshot 原則範例
+* 使用串聯架構的 Snapshot 原則範例 *
 
 此範例建立具有兩個叢集的 Snapshot 原則：
 
@@ -112,7 +121,7 @@ image:screenshot_policies_management.png["原則管理頁面"]
 
 
 
-== 在開始複寫之前建立複寫原則
+=== 在開始複寫之前建立複寫原則
 
 您的 3-2-1 策略可能包括在不同的儲存系統上複寫磁碟區。複寫原則位於 * 次要 * 儲存系統上。
 
@@ -126,7 +135,7 @@ image:screenshot_policies_management.png["原則管理頁面"]
 
 
 
-== 在開始備份之前建立備份對物件儲存原則
+=== 在開始備份之前建立備份對物件儲存原則
 
 您的 3-2-1 策略可能包括將磁碟區備份至物件儲存。
 

@@ -52,6 +52,10 @@ sidebar:
       url: "/concept-protection-journey.html"
     - title: 管理 ONTAP 磁碟區的原則
       url: "/task-create-policies-ontap.html"
+    - title: 備份至物件原則選項
+      url: "/concept-cloud-backup-policies.html"
+    - title: 在「進階設定」中管理備份至物件選項
+      url: "/task-manage-backup-settings-ontap.html"
     - title: 備份Cloud Volumes ONTAP 到Amazon S3
       flavor: aws
       url: "/task-backup-to-s3.html"
@@ -78,8 +82,6 @@ sidebar:
       url: "/task-manage-backups-ontap.html"
     - title: 從ONTAP 還原備份還原
       url: "/task-restore-backups-ontap.html"
-    - title: 管理叢集層級的物件備份設定
-      url: "/task-manage-backup-settings-ontap.html"
   - title: 備份及還原內部部署應用程式資料
     entries:
     - title: 保護內部部署的應用程式資料
@@ -220,8 +222,6 @@ sidebar:
     url: "/api-backup-restore.html"
   - title: 參考資料
     entries:
-    - title: 備份原則設定
-      url: "/concept-cloud-backup-policies.html"
     - title: 支援的AWS歸檔儲存層
       url: "/reference-aws-backup-tiers.html"
     - title: 支援的Azure歸檔存取層

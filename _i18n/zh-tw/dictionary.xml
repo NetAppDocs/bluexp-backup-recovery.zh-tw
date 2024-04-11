@@ -888,19 +888,15 @@
   <block id="c3453b6163eafb5ced9753c1ce3419e7" category="list-text">如果您已在叢集上使用ONTAP 支援系統管理程式或ONTAP CLI建立自訂備份保護原則、則可以選取其中一個原則。</block>
   <block id="61b862400cd7156cb725e12fe1947d88" category="list-text">「*保留*」值會定義每個標籤（時間範圍）保留的備份檔案數量。一旦類別或時間間隔達到最大備份數、就會移除較舊的備份、讓您永遠擁有最新的備份。這也能節省儲存成本、因為過時的備份不會繼續佔用雲端空間。</block>
   <block id="292f9f5eb65ebf40fd71fda6e8b093e7" category="list-text">每週和每月都會為磁碟區建立備份檔案</block>
-  <block id="23433a4a1c369f850662f43bac40d8ae" category="section-title">DataLock和勒索軟體保護</block>
-  <block id="9f6fa998ef483bd08f4d11dca07b347a" category="list-text">資料鎖定和勒索軟體保護功能一旦設定完成、就無法針對叢集停用。請勿在叢集上啟用此功能以試用。</block>
   <block id="921b747c1abfd997d26a273c0b62011b" category="section-title">什麼是DataLock</block>
   <block id="f6494bde8c5d58e1a40bf174c8083f96" category="paragraph">讓我們來看看幾個例子、瞭解這項功能的運作方式：</block>
   <block id="4f326e1a4453cc79600c1df4374d2c22" category="list-text">如果您建立的備份原則每天建立30個、每週7個、每月12個備份、則會有三個鎖定的保留期間。「30天」備份將保留44天（30天加上14天緩衝）、「7週」備份保留9週（7週加上14天）、「12個月」備份則保留12個月（加上14天）。</block>
   <block id="57f10edfffe2adcbce7ee7a76dc7702f" category="section-title">什麼是勒索軟體保護</block>
   <block id="6178bb3c1b6a8af3ec3a7000d38df00e" category="paragraph">勒索軟體掃描會在備份與還原程序的3點執行：</block>
-  <block id="74fdca54d2260fb26943ee68a4de7888" category="list-text">建立備份檔案時</block>
   <block id="f656e9389b65beefa5f22506a262c68a" category="list-text">當您嘗試從備份檔案還原資料時</block>
   <block id="d71c7fafb5eead8d41c2869b8c551f6a" category="paragraph">您可以選擇在從備份檔案還原資料之前執行掃描、或跳過此掃描。</block>
   <block id="826c19d01b527f2701cc3460b9c889de" category="list-text">手動</block>
   <block id="7b574572d2ae18c60d429c285a8984b9" category="paragraph">您可以隨時執行隨需勒索軟體保護掃描、以驗證特定備份檔案的健全狀況。如果您在特定磁碟區上發生勒索軟體問題、而且想要驗證該磁碟區的備份是否不受影響、這項功能就很實用。</block>
-  <block id="a69e1d2ca1fe7554b8e9cdd1437253dd" category="section-title">DataLock和勒索軟體保護設定</block>
   <block id="58fa00d803b45e7110c889dedfeefaef" category="paragraph">每個備份原則都會提供一個區段、說明您可以套用至備份檔案的_DataLock和勒索軟體Protection。</block>
   <block id="c0b303da7160e59ef9b5719d33c8f30e" category="paragraph">您可以針對每個備份原則從下列設定中選擇：</block>
   <block id="3614cebacf558dc6e489ad626a434323" category="paragraph">DataLock保護和勒索軟體保護已停用。</block>
@@ -942,7 +938,6 @@
   <block id="47c63e2d9d67be358326c1eff2c87d12" category="section-title">可自訂的備份排程和保留設定</block>
   <block id="01ec9d3adb6b85775aeeda0d6d533e54" category="section-title">備份檔案保護設定</block>
   <block id="668420eb25c0657fa1ed103061b132a1" category="admonition">如果您要將備份分層至歸檔儲存設備、則無法啟用DataLock。</block>
-  <block id="e4d473c7eaa0d5a17a8380f5a1f05a7e" category="paragraph">請參閱 <block ref="6fd60dcfbd658d3c6de952e2d3164749" category="inline-link-macro-rx"></block> 如需DataLock和勒索軟體保護功能運作方式的詳細資訊、請參閱。</block>
   <block id="648e07eb3f255382cd68dd1ee61b6561" category="section-title">舊備份檔案的歸檔儲存設備</block>
   <block id="dd717dd6a5197fd72bf9aae1e454dd3e" category="list-text">備份資料保護（DP）磁碟區時：</block>
   <block id="c73aeadbe74d06b3eebf4d0a5f283344" category="list-text">與SnapMirror標籤「app_nistent」和「all_source_snapshot」的關係將不會備份到雲端。</block>
@@ -1320,8 +1315,6 @@
   <block id="230cb0e580e943163f3909777583f34f" category="paragraph">備份保留期間與備份排程保留期間相同、加上14天。例如、使用_5_份複本的每週備份會鎖定每個備份檔案5週。_每月_備份加上_6_份複本、將會鎖定每個備份檔案6個月。</block>
   <block id="fb03128f43a982e985025c970d7947c6" category="paragraph">如果您想要使用不同的AWS帳戶進行備份、則必須在BlueXP中新增目的地AWS帳戶認證、並將「S3：PuttBucketPolicy」和「S3：PuttketOwnershipControl」權限新增至IAM角色、以便為BlueXP提供權限。</block>
   <block id="30d334a4a47bf8bcc0a713cea94b6d98" category="list-text">您也可以 <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> 至Cloud Volumes ONTAP Google的某個系統、或內部部署ONTAP 的某個系統。</block>
-  <block id="c039a60af8309de6dc61d8d90e85b514" category="paragraph">叢集層級的備份設定可在「_Advanced Settings_」（進階設定_）頁面中使用。</block>
-  <block id="050358666f00c476c28e5e5c1c88967f" category="paragraph">您可以變更的完整備份設定包括：</block>
   <block id="90262b49b516aea0770d54c5389860ab" category="list-text">變更是否從來源系統移除「每年」快照</block>
   <block id="0b1dbe1ca2e686301ad63250cc03207d" category="section-title">檢視叢集層級的備份設定</block>
   <block id="ed0a9603eb52469e5089b682941c8579" category="paragraph">您可以檢視每個工作環境的叢集層級備份設定。</block>
@@ -1332,17 +1325,13 @@
   <block id="a76f3cf1a4bba2dd44088d756031caf5" category="paragraph"><block ref="a76f3cf1a4bba2dd44088d756031caf5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c2b76e17bcdb0d263b4a2cab8c198a86" category="paragraph">「進階設定」頁面會顯示該工作環境的目前設定。</block>
   <block id="e31def795faecfdb1b205597c8007f7e" category="inline-image-macro">顯示特定工作環境之備份進階設定值的快照。</block>
-  <block id="1a92f2413148efe0c7988c55e7547fcf" category="paragraph"><block ref="1a92f2413148efe0c7988c55e7547fcf" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="749f1184d6a885f33548713c533dc7e2" category="paragraph">如果您需要進行任何變更、只要展開選項並進行變更即可。變更後的所有備份作業都會使用新值。</block>
   <block id="5fb03dafd6274ec459f4ae7b73182f44" category="section-title">變更可上傳備份至物件儲存設備的網路頻寬</block>
   <block id="1f93761cc5827e33d0eab0b81e59533a" category="inline-image-macro">「進階設定」頁面中的「傳輸率上限」項目快照。</block>
   <block id="b6b92ac68c60c85a484c906db8777124" category="paragraph"><block ref="b6b92ac68c60c85a484c906db8777124" category="inline-image-macro-rx" type="image"></block></block>
   <block id="260734931fc90337787f8eab9f95f6af" category="section-title">變更是否將歷史Snapshot複本匯出為備份檔案</block>
   <block id="e1260315a439b823ca53a44a12cdbed4" category="inline-image-macro">「進階設定」頁面中的「匯出現有的Snapshot複本」項目快照。</block>
   <block id="4c55333e1e917a54978d32ab7a324b08" category="paragraph"><block ref="4c55333e1e917a54978d32ab7a324b08" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="51a3a396e404f898f2e45dad30b6b1da" category="paragraph">只要選取是否要匯出現有的Snapshot複本、然後按一下*套用*即可。</block>
   <block id="cef9bbe98866aa24765a5c6e51e5daa5" category="section-title">變更是否從來源系統移除「每年」快照</block>
-  <block id="2dec521441a7be60c295856f7526c87a" category="paragraph">如果您要在來源系統上保留年度快照、請選取*已停用*、然後按一下*套用*。</block>
   <block id="733947b9c31fd162b40f0854f88a98f0" category="section-title">2022年11月2日</block>
   <block id="4e1bedfa5acb9fc8467640ea1dcaece3" category="section-title">能夠將較舊的Snapshot複本匯出至基礎備份檔案</block>
   <block id="ae268c326c8c4dacd9c1078313ddd2ba" category="paragraph">如果您工作環境中有任何符合備份排程標籤的Volume本機Snapshot複本（例如每日、每週等）、您可以將這些歷史快照匯出至物件儲存設備作為備份檔案。這可讓您將舊的Snapshot複本移至基礎備份複本、以初始化雲端中的備份。</block>
@@ -1366,10 +1355,8 @@
   <block id="bcce731a4ced178ba1457a0965f1a878" category="list-text">「工作詳細資料」頁面會顯示正在執行以完成主要工作的所有子工作。</block>
   <block id="95bdcffb51de388c8d204ebc69a73e61" category="section-title">AWS跨帳戶備份增強功能</block>
   <block id="ae3795f53c6086a9639e4652dbff318b" category="paragraph">如果您想要使用不同於Cloud Volumes ONTAP 來源磁碟區的AWS帳戶進行還原備份、則必須在BluetXP中新增目的地AWS帳戶認證、而且必須將「S3：PuttBucketPolicy」和「S3：PuttetOwnershipControl」權限新增至IAM角色、以便為BlueXP提供權限。過去、您需要在AWS主控台設定許多設定、您不再需要這麼做了。</block>
-  <block id="ef88ffe6f484bdfc25f97445be29df28" category="sidebar">管理叢集層級的備份設定</block>
   <block id="30dae49f6de63e85b78b96b2080bb0bb" category="paragraph">您不一定需要刪除來源Volume。您可以刪除磁碟區的備份關係、並保留來源磁碟區。在此情況下、您可以稍後在磁碟區上「啟動」備份。在這種情況下、會繼續使用原始的基礎備份複本：不會建立新的基礎備份複本、也不會將其匯出至雲端。請注意、如果您確實重新啟動備份關係、磁碟區會被指派預設的備份原則。</block>
   <block id="495f64bce7d9d754a435527baf769353" category="paragraph">此功能僅在系統執行ONTAP 的是更新版本的更新版本時才可使用。</block>
-  <block id="228129642e2d421577991251a19c55f5" category="list-text">變更是否在未來磁碟區的初始基礎備份檔案中包含歷史Snapshot複本</block>
   <block id="057d6c600d485e4ee55de2a7a7001dc5" category="paragraph">選取*受限*選項按鈕、然後輸入可使用的最大頻寬、或選取*無限*表示沒有限制。</block>
   <block id="8ceedd80ab3ad72f595a01a7d5ea8d33" category="inline-link">如需價格詳細資料、請前往BlueXP Marketplace產品</block>
   <block id="0b781a3ed3b0bf571ebc9b36f9d4056e" category="list-text">Azure ：<block ref="477b4f8f0e4ff2940c9440f2ccae1310" category="inline-link-rx"></block>。</block>
@@ -1870,13 +1857,11 @@
   <block id="74e96d8b9d4abdf183199553dd665e53" category="list-text">使用租戶/外部/資源API擷取工作環境ID和X-agent-ID。</block>
   <block id="69473e9fe37da40f59b6a4abb9d0b124" category="paragraph">此API會傳回如下回應。「資源識別碼」下的值代表_WorkingEnvironment ID_、而「agentId」下的值則代表_x-agent-id_。</block>
   <block id="98c648bc34880f7f4d457836f8d482d7" category="paragraph">請確定先前啟用「索引」目錄的工作環境仍保持啟用狀態。</block>
-  <block id="29296806c9458e6f9b360ca27eab0dac" category="list-text">資料會在區塊層級上還原、將資料直接放在您指定的位置、同時保留原始ACL。</block>
   <block id="98c5dd0d4e4b94048525760a7e30fd9f" category="inline-link-macro">深入瞭解StorageGRID 如何從還原歸檔備份檔案</block>
   <block id="3faa891caeff03d695c501cc0759c886" category="list-text">使用客戶管理的加密金鑰（CMEK）所需的資訊</block>
   <block id="170d42742a62bce031fc4ab2cfd0c056" category="inline-link">已探索並可在BlueXP畫版中使用</block>
   <block id="68aa7e5e44b2aff449b0543b49e563bd" category="inline-link-macro">深入瞭解AWS歸檔層</block>
   <block id="e3f77a85430d8ff3b4a253ea611bd9ee" category="inline-link">深入瞭解StorageGRID 《ILM原則與規則》</block>
-  <block id="43e902efcea42d88512963cd9451ec29" category="list-text">如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以設定_DataLock和勒索軟體Protection來保護備份、避免遭到刪除和勒索軟體攻擊。_DataLock_可保護您的備份檔案、避免遭到修改或刪除、而_勒索 軟體保護_會掃描您的備份檔案、尋找備份檔案中勒索軟體攻擊的證據。 <block ref="a1590ca0a57c2e20ed40ac0f3384a5af" category="inline-link-macro-rx"></block>。</block>
   <block id="b1e78dfdd8adc3005cff56ffd24b2af1" category="inline-xref">瞭解如何針對此功能設定您的系統</block>
   <block id="275b9b785d71f45bb8f134005ece056a" category="paragraph">*附註：*停止備份磁碟區時、除非您同意、否則您將繼續由雲端供應商支付備份所使用容量的物件儲存成本 <block ref="e2e48247dd6dcee2daca407937463dc9" category="inline-xref-macro-rx"></block>。</block>
   <block id="46fb0ddeabbcb2b9784add28928cfe7a" category="paragraph">請注意、您要套用至磁碟區的原則必須已經存在。</block>
@@ -1925,7 +1910,6 @@
   <block id="63a6a88c066880c5ac42394a22803ca6" category="inline-image-macro">重新整理</block>
   <block id="801ab24683a4a8c433c6eb40c48bcd9d" category="inline-image-macro">下載</block>
   <block id="fb1b06f0a66663d0b3bfa0401405a807" category="list-text">製作不可變的備份檔案、以便在保留期間鎖定及保護這些檔案。</block>
-  <block id="90004223d681b1085ee8ff58039b08bb" category="list-text">可瀏覽且可搜尋的檔案目錄、可輕鬆選取個別資料夾和檔案、以進行單一檔案還原。</block>
   <block id="4df1a85d32abc942958400f1bc79add0" category="paragraph">當您的備份目的地是Amazon S3、Azure Blob或NetApp StorageGRID 時、目前可提供支援。其他儲存供應商目的地將會新增至未來版本。</block>
   <block id="3ab813cb58ced99c324082878fbc9261" category="paragraph">如果您的內部叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您的支援系統使用的是11.4或更新版本、您可以在特定天數後、將舊版備份檔案歸檔至公有雲歸檔儲存設備。目前支援AWS S3 Glacier / S3 Glacier Deep歸檔或Azure歸檔儲存層。 <block ref="363267dd6106568fded10aaeda2ee302" category="inline-link-macro-rx"></block>。</block>
   <block id="27e92fcddc23071f7a376e1c06fa20d6" category="list-text">支援MetroCluster ：</block>
@@ -2548,8 +2532,6 @@
   <block id="7ef4f9c84de50739290a8a747d41cb8d" category="paragraph"><block ref="7ef4f9c84de50739290a8a747d41cb8d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c73a012d76ee166592a25a8ebd3e01ef" category="summary">BlueXP 備份與還原可讓您在 Azure 帳戶中建立不同於來源 Cloud Volumes ONTAP 磁碟區所在位置、與 BlueXP Connector 所在帳戶不同的備份檔案。</block>
   <block id="4bd946b57d99bd5b3f564041e093db5c" category="list-text">請在 Cloud Volumes ONTAP 系統上重試啟用 BlueXP 備份與還原、這次應該會成功。</block>
-  <block id="771af8d455877d836933c4cd418d328e" category="summary">您可以變更許多叢集層級的備份設定、這些設定是在為每個 ONTAP 系統啟動 BlueXP 備份與還原時所設定的。您也可以修改某些套用為「預設」備份設定的設定。這包括變更儲存金鑰、將備份傳輸至物件儲存設備的速度、是否將歷史Snapshot複本匯出為備份檔案等。</block>
-  <block id="bc9c577416d12a6ca412691275080bbc" category="paragraph">當您為工作環境啟動 BlueXP 備份與還原時、根據預設、 ONTAP 可以使用無限量的頻寬、將備份資料從工作環境中的磁碟區傳輸至物件儲存區。如果您注意到備份流量會影響一般使用者工作負載、您可以限制傳輸期間所使用的網路頻寬量。您可以選擇1到1、000 Mbps之間的值作為最大傳輸率。</block>
   <block id="20eb5016fbcfaf2283e9ddb8b1028b60" category="summary">BlueXP 備份與還原支援一個 Azure 歸檔存取層和大部分地區。</block>
   <block id="f714412b5bd41c3d4daeaaefe95b9062" category="section-title">支援的 Azure Blob 存取層、適用於 BlueXP 備份與還原</block>
   <block id="caf604f4a0dfbf1c3594c2a85bd12f8d" category="paragraph">請注意、當您使用此類型的生命週期規則來設定 BlueXP 備份與還原時、在 Azure 帳戶中設定容器時、不得設定任何生命週期規則。</block>
@@ -2622,13 +2604,10 @@
   <block id="dc79d96009c6f59868049e029c8bb68e" category="list-text">使用與工作環境相關的 StorageGRID 系統詳細資料、更新 BlueXP 備份與還原資料庫。請務必輸入StorageGRID 完整的網域名稱、以及存取金鑰和儲存金鑰、如下所示：</block>
   <block id="119ce87fb0068eaf943265dcfa7867a2" category="section-title">驗證 BlueXP 備份與還原設定</block>
   <block id="703a23cc0f04926bc0f88cc7699dbb25" category="summary">BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes ONTAP 系統建立各種組態設定的備份原則。</block>
-  <block id="a7f3a8a116f57057caa3603805e5cc6b" category="doc">BlueXP 備份與還原原則組態設定</block>
   <block id="9eea85cb75720c2962892ce404724c85" category="paragraph">BlueXP 備份與還原可讓您針對每個工作環境（叢集）建立多個備份原則、並設定獨特的排程。您可以將不同的備份原則指派給具有不同還原點目標（RPO）的磁碟區。</block>
   <block id="2565631610247b4b3c1e22a4efb7394f" category="paragraph">BlueXP 備份與還原可為您的磁碟區備份提供 DataLock 和勒索軟體保護支援。這些功能可讓您鎖定備份檔案、並進行掃描、以偵測備份檔案上可能的勒索軟體。這是可選的設定、您可以在備份原則中定義、以便為叢集的磁碟區備份提供額外保護。</block>
-  <block id="731e175a1dd928553e8b385c536f18e6" category="list-text">如果您計畫使用 DataLock 和勒索軟體保護、則必須在建立第一個備份原則、並啟用該叢集的 BlueXP 備份與還原時啟用。</block>
   <block id="c88e14329d462b276ba5448f60ca13e0" category="paragraph">您可以在最後一次看到、如果每個備份檔案被鎖定44天、您將會有更多的備份檔案、而不是通常以每小時24小時保留原則來保留。通常、當 BlueXP 備份與還原建立第 25 個備份檔案時、它會刪除最舊的備份、以將最大保留保持在 24 （根據原則）。在這種情況下、DataLock保留設定會覆寫備份原則的原則保留設定。這可能會影響您的儲存成本、因為備份檔案將會儲存在物件存放區中一段較長的時間。</block>
   <block id="fabcd9ebb5b6eb0b33f162417010c768" category="list-text">啟動 BlueXP 備份與還原時所選取的 DataLock 選項必須用於該叢集的所有備份原則。</block>
-  <block id="9630a54f038cd0c834e3dfc055ceeb96" category="list-text">DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。BlueXP 備份與還原啟動後、您無法啟用此功能。</block>
   <block id="683fc015ec20f6233b25343bf3daea19" category="paragraph">如果您的內部叢集使用 ONTAP 9.12.1 或更新版本、您可以選擇在特定天數後、將舊備份分層儲存至 BlueXP 備份與還原 UI 中的 _Archive_ 儲存設備、以進一步最佳化成本。 <block ref="60cdd04e7131e97598ce1c583d8c9a5e" category="inline-link-macro-rx"></block>。</block>
   <block id="01492017a2321f7b3f8484fd1f8aa8d7" category="sidebar">BlueXP 備份與還原文件</block>
   <block id="18de97333e5776e0c135dd87c10b965c" category="sidebar">還原虛擬機器資料</block>
@@ -2768,7 +2747,6 @@
   <block id="cbb08f72335795850ccfc691c171d12b" category="paragraph">如果您要從位於歸檔儲存層的備份檔案還原資料夾或檔案、則可以選取還原優先順序。</block>
   <block id="20f2d0bb5e696b331efc736ffadbb3f3" category="paragraph">如果您要還原的磁碟區備份檔案位於歸檔儲存設備（ONTAP 從版本號9.10.1開始提供）、還原作業將需要較長的時間、並會產生額外成本。請注意、目的地叢集也必須執行 ONTAP 9.10.1 或更新版本才能進行磁碟區還原、 9.11.1 則用於檔案還原、 9.12.1 則用於 Google Archive 和 StorageGRID 、 9.13.1 則用於資料夾還原。</block>
   <block id="3ddfa13cbce20cc68cd19aca6f181eb0" category="list-text">將資料從 Azure 歸檔儲存設備還原至 StorageGRID 系統時、不支援「高」還原優先順序。</block>
-  <block id="ffe805c4c11acb4a1a49af6779cd50aa" category="sidebar">備份原則設定</block>
   <block id="3e538c61c4cc98a57d724177580fb8f2" category="inline-link">Google Marketplace 提供的 NetApp BlueXP 產品</block>
   <block id="21b58e8c34c8a77c9e8eb04d515a7066" category="list-text">如需 BlueXP 備份與還原 PAYGO 授權、您需要訂閱<block ref="2f77b898579aea53ee2a78f06369878a" category="inline-link-rx"></block>。BlueXP 備份與還原的帳單是透過此訂閱完成。</block>
   <block id="5afb323d4a36e6ab79cd9d765c5934f7" category="inline-link">深入瞭解如何設定您自己的客戶管理加密金鑰</block>
@@ -3341,8 +3319,6 @@ _ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / �
   <block id="cec96b4a08840a5e3978081ce7ca32c6" category="cell">刪除關係</block>
   <block id="92d8395661fc73838db0cbf4aba93fe5" category="cell">刪除來源與目的地磁碟區之間的資料保護關係、這表示磁碟區之間不再發生資料複寫。此動作不會啟動資料存取的目的地磁碟區、也就是說、它不會讓它讀寫。如果系統之間沒有其他資料保護關係、此動作也會刪除叢集對等關係和儲存VM（SVM）對等關係。</block>
   <block id="616bc3352ef3eb19ce7189272555ea24" category="paragraph">選取動作之後、 BlueXP 會更新關係。</block>
-  <block id="267402aa10bc52cf0a611ba4ecf61af7" category="section-title">編輯現有的雲端備份原則</block>
-  <block id="0e6cc4d7919b2b2d492339f28271666a" category="section-title">新增備份至雲端原則</block>
   <block id="0ce8d63d4994f1d55a979cecaac4fc58" category="section-title">刪除工作環境的所有備份檔案</block>
   <block id="6b8f63c8ef98440d33861174ffb90cc2" category="paragraph">刪除工作環境的物件儲存設備上的所有備份、並不會停用此工作環境中未來的磁碟區備份。如果您想要停止在工作環境中建立所有磁碟區的備份、可以停用備份 <block ref="d1964673468c58ea1746cfa9741b745a" category="inline-xref-macro-rx"></block>。</block>
   <block id="b7726bf807f669806d064d7e428c02fc" category="paragraph">請注意、此動作不會影響 Snapshot 複本或複寫的磁碟區、這些類型的備份檔案不會被刪除。</block>
@@ -3580,7 +3556,6 @@ _ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / �
   <block id="66e7c889f1d203b98d4330686da2e2cd" category="list-text">一次將多個 FlexVol 磁碟區複寫到次要系統。</block>
   <block id="5cb11ed35306a1eb272c0463127877ee" category="list-text">使用 UI 將複寫的磁碟區還原至來源系統或其他系統。</block>
   <block id="2eb3c16f8718eea213343bfcb6e0d47c" category="inline-xref">複寫限制</block>
-  <block id="da1c5c4591d63a85c5ceaf08f009708d" category="paragraph">* 備份至物件功能： *</block>
   <block id="2ef86679dc81862bbea0ea37e255ca59" category="paragraph">* 還原功能： *</block>
   <block id="ba8be4a78d73005d396b001c480790d5" category="list-text">從本機 Snapshot 複本、複製的磁碟區或物件儲存中的備份磁碟區、從特定時間點還原資料。</block>
   <block id="d534535e4c4475054dbf0db3811fb673" category="section-title">支援的備份與還原作業工作環境</block>
@@ -3629,7 +3604,6 @@ Cloud Volumes ONTAP</block>
   <block id="2e15d79bbec0c847d20d0f428a238b39" category="paragraph">您可以選擇每小時、每日、每週、每月及每年備份所有磁碟區的組合。若要備份至物件、您也可以選擇系統定義的其中一項原則、提供 3 個月、 1 年及 7 年的備份與保留。您在叢集上使用ONTAP 「支援系統管理程式」或ONTAP 「支援服務」CLI建立的備份保護原則也會顯示為選項。這包括使用自訂SnapMirror標籤建立的原則。</block>
   <block id="3ded04ab14e3868e7d9393ed137519a9" category="admonition">套用至磁碟區的 Snapshot 原則必須有您在複寫原則和備份至物件原則中使用的其中一個標籤。如果找不到相符的標籤、則不會建立備份檔案。例如、如果您想要建立「每週」複寫的磁碟區和備份檔案、則必須使用「 Snapshot 」原則來建立「每週」 Snapshot 複本。</block>
   <block id="48571775d8de6aed87d8f8d075e1eb4a" category="paragraph">一旦您達到某個類別或間隔的備份數量上限、舊備份就會移除、因此您永遠都能擁有最新的備份（因此過時的備份不會繼續佔用空間）。</block>
-  <block id="aade39e687ab9fab1294ac7a9d4e92be" category="paragraph">如果您的叢集使用的是 ONTAP 9.11.1 或更新版本、您可以保護物件儲存設備中的備份、避免遭到刪除和勒索軟體攻擊。每個備份原則都提供_DataLock和勒索軟體Protection的區段、可在特定時間段（_保留期間_）內套用至備份檔案。_DataLock_可保護您的備份檔案、避免遭到修改或刪除。_勒索 軟體保護_會掃描您的備份檔案、尋找建立備份檔案時、以及從備份檔案還原資料時、勒索軟體攻擊的證據。</block>
   <block id="862c33469bbdb829da4d537ae8e3703f" category="paragraph">當您要備份的磁碟區位於 FabricPool Aggregate 上、且該磁碟區具有指派的分層原則（而非）時、您需要注意某些事項<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block>：</block>
   <block id="9ca2dd7028a589f084da9ccd2e31f8ba" category="paragraph">FlexVol Volume 沒有限制、您可以選取工作環境中的所有 FlexVol Volume 、並指派相同的備份原則。</block>
   <block id="d259f3905ce3425b99746d8c67d3a49b" category="list-text">中支援下列功能<block ref="364ecdc9d3d10126b8b1871a04c6e08f" category="inline-link-rx"></block>，但在使用 BlueXP 備份和恢復的複製功能時不需要：</block>
@@ -3639,10 +3613,6 @@ Cloud Volumes ONTAP</block>
   <block id="21d64258a41a5b12606a567cacffa6cc" category="list-text">從內部部署 ONTAP 系統建立複製時、如果目標 Cloud Volumes ONTAP 系統上的 ONTAP 版本為 9.8 、 9.9 或 9.11 、則只允許鏡射資料保險箱原則。</block>
   <block id="70fd0d5da8464033c7ff5b8ef964dc64" category="section-title">備份至物件限制</block>
   <block id="2ad2934a6b663d3e1150684467ab796f" category="list-text">目前不支援從複製和 / 或本機快照還原目錄 / 資料夾。</block>
-  <block id="75f851cd7e509565d0c22e528957c77d" category="paragraph">您可以變更許多叢集層級的備份設定、這些設定是在為每個 ONTAP 系統啟動 BlueXP 備份與還原時所設定的。您也可以修改某些套用為「預設」備份設定的設定。這包括將備份傳輸率變更為物件儲存、是否將歷史 Snapshot 複本匯出為備份檔案等。</block>
-  <block id="8a371bbd086a7fdf730dd245d8250152" category="admonition">這些設定僅適用於備份至物件儲存設備。這些設定都不會影響您的 Snapshot 或複寫設定。未來將會新增快照和複製的類似叢集層級複製設定。</block>
-  <block id="564125bde9cc9ba85a51e32e1149ba5e" category="list-text">變更分配給上傳備份到物件儲存設備的網路頻寬
-ifdef：：AWS []</block>
   <block id="7766a2f89be98923b575fe6eb519d31e" category="paragraph">此設定不會影響分配給任何其他複寫關係的頻寬、而這些複寫關係可能是針對工作環境中的磁碟區所設定。</block>
   <block id="861cb48bf82afb2d1addc6ef6c8ff905" category="doc">將內部部署的 ONTAP 資料備份至 StorageGRID</block>
   <block id="1c217460a8591d40515e5ac52003a8a3" category="paragraph">請完成幾個步驟、開始將內部部署主要 ONTAP 系統的 Volume 資料備份到次要儲存系統、以及 NetApp StorageGRID 系統中的物件儲存設備。</block>
@@ -3779,7 +3749,6 @@ ifdef：：AWS []</block>
   <block id="1d5d6d68bd6a1b7ab86202983d8f09ec" category="list-text">* 加密金鑰 * ：如果您建立了新的 S3 儲存區、請輸入供應商提供給您的加密金鑰資訊。選擇您要使用預設的 Amazon S3 加密金鑰、還是從 AWS 帳戶選擇自己的客戶管理金鑰來管理資料加密。</block>
   <block id="639b6c8b0a4b4e6743387986d9aba196" category="paragraph">BlueXP 備份與還原會開始為您的磁碟區進行初始備份。複寫磁碟區和備份檔案的基礎傳輸包含主要儲存系統資料的完整複本。後續傳輸會包含 Snapshot 複本所含主要資料的差異複本。</block>
   <block id="fab7b62aef677a7dfc0c2e880e574c3e" category="paragraph">S3 儲存區是以您輸入的 S3 存取金鑰和秘密金鑰所指示的服務帳戶建立、備份檔案則儲存在該處。Volume Backup Dashboard隨即顯示、以便您監控備份狀態。</block>
-  <block id="ed551a4fb3427a3e9827d73589a57272" category="admonition">這些原則設定僅適用於備份至物件儲存設備。這些設定都不會影響您的 Snapshot 或複寫原則。未來將會新增快照和複製的類似原則設定。</block>
   <block id="9c4425b75076fc68c1827b9effcc5a6b" category="summary">BlueXP 備份與還原服務可讓您建立最多三個來源磁碟區複本、以保護您的資料。在磁碟區上啟用此服務時、您可以選擇許多選項、因此您應該檢閱您的選擇、以便做好準備。</block>
   <block id="abb8243f73c63e089a9cc6cdf95785b2" category="paragraph">我們將介紹下列選項：</block>
   <block id="9aa0d02835133517fefa42429e73ace5" category="list-text">您將使用哪些保護功能：快照複本、複寫磁碟區和 / 或備份至雲端</block>
@@ -3800,7 +3769,6 @@ ifdef：：AWS []</block>
   <block id="f46d552561904382654668028ef332b7" category="list-text">來源 Volume -&gt; Snapshot copy -&gt; replated volume -&gt; Backup file</block>
   <block id="6e0f3f7af71dbdcd66969d229d562636" category="list-text">來源 Volume -&gt; Snapshot copy -&gt; Backup 檔案</block>
   <block id="416d6dba97115e0823c4346a7315efbf" category="list-text">來源 Volume -&gt; Snapshot copy -&gt; replated Volume</block>
-  <block id="82cb98664bb5dbaf2f4b1f186155317d" category="section-title">不同備份方法的比較</block>
   <block id="8d4622541c56b47641b741cdbe4f8ddf" category="paragraph">下表顯示三種備份方法的一般比較。雖然物件儲存空間通常比內部部署磁碟儲存空間便宜、但如果您認為可能會經常從雲端還原資料、則雲端供應商的出口費用可減少部分成本。您需要確定從雲端的備份檔案還原資料的頻率。</block>
   <block id="e2a9bf899dffb889ffbede3dd4e5cc0e" category="inline-link-macro">歸檔儲存設定</block>
   <block id="d55eb6c501a441c7d0dea092acee6757" category="paragraph">除了這項準則之外、如果您使用 DataLock 和勒索軟體保護功能、雲端儲存設備還會提供額外的安全選項、並透過為舊版備份檔案選擇歸檔儲存類別來節省額外成本。 <block ref="492dec6eb028f140c092b28cfb259760" category="inline-link-macro-rx"></block> 和 <block ref="a57ecb59892033dcb01091d0db7f437d" category="inline-link-macro-rx"></block>。</block>
@@ -3824,7 +3792,6 @@ ifdef：：AWS []</block>
   <block id="fca2f290b176dda18963912f7b942907" category="inline-image-macro">顯示如何使用磁碟區的 Snapshot 複本來建立及更新複寫的磁碟區和備份檔案的圖表。</block>
   <block id="ffd891a8050a93a047c73180f9384213" category="paragraph"><block ref="ffd891a8050a93a047c73180f9384213" category="inline-image-macro-rx" type="image"></block></block>
   <block id="47439f17d6378e02c6cc8d869a82c912" category="paragraph"><block ref="47439f17d6378e02c6cc8d869a82c912" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="500ecf85d81873182f0cadf3300f909e" category="section-title">不同架構選擇的比較</block>
   <block id="688c41a4a08a3e0f4011a51649a5a459" category="paragraph">此表提供了扇出和串聯架構的比較。</block>
   <block id="3bd4e18208001e378e54469a0b8e5993" category="cell">扇出</block>
   <block id="2dc2b15e8b0ee7ed3fdd4cf53ad0a8c3" category="cell">串聯</block>
@@ -3861,8 +3828,6 @@ ifdef：：AWS []</block>
   <block id="32f34f4c2eca6b21bfa54bfe2cf7ad10" category="inline-link-macro">將內部部署的 ONTAP 資料備份至 Azure Blob</block>
   <block id="a6102a3b147e0d099222dfd5f8fa1b0b" category="inline-link-macro">將 Cloud Volumes ONTAP 資料備份至 Google Cloud</block>
   <block id="ee45da3db51b4bd67f3174dd7bdd4bc3" category="inline-link-macro">將內部部署的 ONTAP 資料備份至 Google Cloud</block>
-  <block id="8f573a29259b458aa4c98898b8a3c1ab" category="list-text">您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。瞭解如何操作 <block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>。</block>
-  <block id="322dc3fe4f51cc3ad6da0648bfc1aaf0" category="list-text">您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。瞭解如何操作 <block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>。</block>
   <block id="b9f0ffe30c24fa412122cf8fe6926b64" category="summary">您可以從建立備份的位置、 Snapshot 複本、複寫磁碟區和 / 或儲存在物件儲存區的備份中、來備份 ONTAP 磁碟區資料。您可以從這些備份位置的任何一個特定時間點還原資料。您可以從備份檔案還原整個 ONTAP 磁碟區、或者如果只需要還原幾個檔案、您可以還原資料夾或個別檔案。</block>
   <block id="bb03c52ec2a68c9eed4513c8ecf6c24d" category="doc">從備份檔案還原 ONTAP 資料</block>
   <block id="d3d3d7f1f9c466e1fcd09795d11d7fda" category="paragraph">您可以從建立備份的位置備份 ONTAP Volume 資料：快照複本、複寫磁碟區、以及儲存在物件儲存區的備份。您可以從這些備份位置的任何一個特定時間點還原資料。您可以從備份檔案還原整個 ONTAP 磁碟區、或者如果只需要還原幾個檔案、您可以還原資料夾或個別檔案。</block>
@@ -3919,7 +3884,6 @@ ifdef：：AWS []</block>
   <block id="cbce457a0f1d693a7ec8fdef080284e8" category="list-text">從 _ 備份設定 _ 頁面、按一下 * 顯示先前 BlueXP 備份與還原版本 * 的選項按鈕。</block>
   <block id="6ad80584a8fba3d1fc876fd412e2b184" category="paragraph">然後您可以使用舊版軟體來管理舊叢集。</block>
   <block id="ea600ff03360da539b9cf2f109798fac" category="paragraph">目前不支援將備份檔案建立至 StorageGRID 系統時使用此功能。</block>
-  <block id="f717a77f4fa4c437e114a568e845c80e" category="sidebar">管理叢集層級的物件備份設定</block>
   <block id="4e94aca278bbfbf09c063f578946bd47" category="paragraph">如果您的內部部署已部署 Connector 、那麼您就可以設定好所有的連接器。如果沒有、則需要建立 BlueXP Connector 、將 ONTAP 資料備份到 StorageGRID 。您也需要自訂 Connector 的網路設定、以便連接至 StorageGRID 。</block>
   <block id="54c50d39294a1455c6b25fe6e2d434fb" category="paragraph">或者、您也可以連線到位於同一個內部部署位置的次要 ONTAP 系統、以複寫磁碟區。</block>
   <block id="cde30b836a89432bbe569f5477e106cb" category="paragraph">BlueXP 的新版本備份與還原、除了可將備份建立至物件儲存設備之外、還能排程及建立 Snapshot 複本與複寫磁碟區、因此您必須使用 BlueXP Connector 3.9.31 版或更新版本。因此建議您取得此最新版本來管理所有備份。</block>
@@ -3961,7 +3925,6 @@ ifdef：：AWS []</block>
   <block id="9c58074fed28efa853a138fdba79e26e" category="paragraph">備份原則位於不同位置、視您打算使用的備份架構而定：扇出或階層式。複寫原則和備份原則的設計方式並不相同、因為複寫配對兩個 ONTAP 儲存系統和備份至物件會使用儲存提供者做為目的地。</block>
   <block id="7a1f25bd1db088139566bfc0df899cb7" category="paragraph">Snapshot 原則一律位於主要儲存系統上。</block>
   <block id="631c0944218c78537d6a82498f43a669" category="paragraph">複寫原則一律位於次要儲存系統上。</block>
-  <block id="fc33e7c5f1bd8227aeae99689d9aafed" category="paragraph">備份至物件原則是在來源磁碟區所在的系統上建立、這是用於扇出組態的主要叢集、也是用於串聯組態的次要叢集。</block>
   <block id="724e50bbeb42e94a045cb1c6c16bd50e" category="paragraph">這些差異如表所示。</block>
   <block id="4c0abf2d4c54820b8d33061abaf30759" category="cell">Snapshot原則</block>
   <block id="afce532bad172bcef50d75935d2ed43b" category="cell">複寫原則</block>
@@ -3987,8 +3950,6 @@ ifdef：：AWS []</block>
   <block id="44f63148cdcdb30b0f9a4cc99944e0cb" category="paragraph">當您在工作環境的物件儲存區中建立備份檔案時、根據預設、備份與還原服務會為您設定的物件儲存帳戶中的備份檔案建立容器（儲存區或儲存帳戶）。AWS 或 GCP 貯體預設為「 &lt;uuid&gt; 」。Azure Blob 儲存帳戶的名稱為「 netappback.過 &lt;uuid&gt; 」。</block>
   <block id="f108f3b7f4cf5d3e79e581222e60586a" category="paragraph">如果您想要使用某個字首或指派特殊屬性、可以在物件提供者帳戶中自行建立容器。如果您想要建立自己的容器、則必須先建立容器、然後再啟動啟動精靈。容器必須專門用於儲存 ONTAP Volume 備份檔案、無法用於任何其他用途。備份啟動精靈會自動探索所選帳戶和認證的已佈建容器、以便您選取要使用的容器。</block>
   <block id="e7be09e6760b058dbc55a8f59678d720" category="paragraph">您可以從 BlueXP 或雲端供應商建立儲存庫。</block>
-  <block id="2c76e45b50bb40cc15881a2f246e3c52" category="paragraph">如果您計畫使用與「 NetApp-backup-xxxxxx 」不同的儲存區首碼、則需要修改 Connector IAM 角色的 S3 權限。如需詳細資訊、請參閱建立備份至 AWS S3 的主題。</block>
-  <block id="85786e7ce9ad7b76a9107e6fc8914215" category="section-title">進階貯體設定</block>
   <block id="0cacb53d99c416f2596b0157ce4f280d" category="paragraph">如果您打算將舊的備份檔案移至歸檔儲存區、或是打算啟用 DataLock 和勒索軟體保護來鎖定備份檔案、並掃描其是否有可能的勒索軟體、則需要使用特定組態設定來建立容器：</block>
   <block id="82ca9ca8a32b3a5b525d7ba630040a08" category="list-text">在叢集上使用 ONTAP 9.10.1 或更新版本的軟體時、 AWS S3 儲存設備目前支援您自己儲存區上的歸檔儲存設備。根據預設、備份會從 S3 _Standard_ 儲存類別開始。確保您使用適當的生命週期規則來建立貯體：</block>
   <block id="3d7057c39307e6a609e1b9cdaa358d36" category="list-text">30 天後、將貯體整個範圍內的物件移至 S3 _Standard-IA_ 。</block>
@@ -4085,9 +4046,6 @@ Cloud Volumes ONTAP 系統需要 ONTAP 9.9.1 及更新版本。</block>
   <block id="1ae6339958d856a24702bf25c6a3d382" category="paragraph">* 注意： * 目前您無法在 StorageGRID 系統或 ONTAP S3 中建立備份時使用自己的 S3 儲存區。</block>
   <block id="26170b18548ee3b6f0b39b9db8ffed13" category="inline-link-macro">將內部部署 ONTAP 備份至 ONTAP S3</block>
   <block id="2a6174ce3d27995b8923b0872f99c9dd" category="list-text"><block ref="2a6174ce3d27995b8923b0872f99c9dd" category="inline-link-macro-rx"></block></block>
-  <block id="5aaf7cdbb020e8e504b7be6fac6ad19b" category="list-text">您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。瞭解如何操作 <block ref="80288d2da91f9794088785363d31b6b5" category="inline-link-macro-rx"></block> 以取得詳細資料。</block>
-  <block id="66d66525e3042eb76508c798726d8853" category="list-text">您可以將資料從本機內部部署 ONTAP 系統備份到本機內部部署 ONTAP 系統、或是設定為 S3 物件儲存的 Cloud Volumes ONTAP 系統。瞭解如何操作 <block ref="033f1a63473843a2d0a7ec99f2bb4e1c" category="inline-link-macro-rx"></block> 以取得詳細資料。
-ifdef：：AWS []</block>
   <block id="f3cd3d23d33dfe26418bbc5243171a69" category="inline-link">私有模式</block>
   <block id="e3286b69a705d4ed944e904722ab7c8f" category="paragraph">開始之前、您必須先取得下列資訊：</block>
   <block id="343317df2f561bc3e097210aa7130d31" category="list-text">BlueXP 備份與還原序號</block>
@@ -4230,7 +4188,6 @@ SS3 ONTAP</block>
   <block id="defb6c38e16057d80b8b116a92ab8665" category="doc">管理 ONTAP 磁碟區的備份原則</block>
   <block id="7ee9b8ccc530c51b1215b5f1266eee5e" category="paragraph">您可以使用 NetApp 提供的預設備份原則來建立備份、也可以建立自訂原則。原則會控制備份頻率、備份時間、以及保留的備份檔案數量。</block>
   <block id="c5e61d7841bf9a1c1ef625157d503535" category="paragraph">若要瞭解所提供的預設備份原則、請參閱 <block ref="26e6d65b3efbcdaf9fdb0f41b6ffe1ab" category="inline-link-macro-rx"></block>。</block>
-  <block id="bea7279384d85082d745d10903672658" category="paragraph">BlueXP 備份與還原提供三種類型的 ONTAP 資料備份：快照、複製及備份至物件儲存設備。由於您使用的架構和備份類型、其原則位於不同的位置：</block>
   <block id="9c2cf3d903ec11e031aac200337d550f" category="cell">Snapshot 原則儲存位置</block>
   <block id="03cef7774b631377e1518e05ea03e5f0" category="cell">複寫原則儲存位置</block>
   <block id="47678324688906f6896f307bc4023541" category="cell">備份至物件原則儲存位置</block>
@@ -4257,7 +4214,6 @@ SS3 ONTAP</block>
   <block id="0779f4f56c0897ff7ffb03c6b275ee51" category="list-text">輸入拍攝 Snapshot 的時間和頻率。</block>
   <block id="f5ed7a849165313457c0aac7b3379f97" category="list-text">保留：輸入要保留的快照數。</block>
   <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">選擇* Create *（建立*）。</block>
-  <block id="8bddac47f7f2312dbc2c31cf92766f2b" category="section-title">使用串聯架構的 Snapshot 原則範例</block>
   <block id="ab3e57896123f7580b91c4f58922e7db" category="paragraph">此範例建立具有兩個叢集的 Snapshot 原則：</block>
   <block id="dc30a10b7f3dac3bcce7b54e12502e89" category="list-text">叢集1：</block>
   <block id="021a6f1742e889f9d4e45828420cb0cf" category="list-text">選取原則頁面上的叢集 1 。</block>
@@ -4603,11 +4559,9 @@ SS3 ONTAP</block>
   <block id="4bfcf52b215e00901db793339d1f5b9e" category="paragraph">如果您在內部部署站台上執行 BlueXP 備份與還原、但該站台無法存取網際網路、則表示您已在中部署 BlueXP Connector<block ref="6426a8a427a5eadce24d979d317c10cc" category="inline-link-rx"></block>、您必須從連線網際網路的系統取得授權檔案。使用序號和 NetApp 支援網站 帳戶啟動使用許可無法用於私有模式安裝。</block>
   <block id="ac2c17b7d9121a38bd0676675759e2d0" category="list-text">您是使用預設的備份原則、還是需要建立自訂原則</block>
   <block id="379c9cb0dad843f8d57008637a4d83e7" category="admonition">初始建立複寫的磁碟區或備份檔案時、會包含完整的來源資料複本、這稱為 _ 基準傳輸 _ 。後續傳輸僅包含來源資料的差異複本（ Snapshot ）。</block>
-  <block id="46a85142d5afdcb478818dd355fabecd" category="section-title">您是否會使用 Snapshot 複本、複製和備份的預設備份原則</block>
   <block id="8ebfc273389c1b045abce8c48c051970" category="paragraph">您可以使用 NetApp 提供的預設原則來建立備份、也可以建立自訂原則。當您使用啟動精靈為磁碟區啟用備份與還原服務時、可以從工作環境（ Cloud Volumes ONTAP 或內部部署 ONTAP 系統）中選取預設原則和任何其他原則。如果您想要使用不同於現有原則的原則、可以在啟動或使用啟動精靈之前建立原則。</block>
   <block id="4299e803df046f181c6d05e5bcc4a853" category="list-text">預設的 Snapshot 原則會建立每小時、每天和每週的 Snapshot 複本、保留每小時 6 次、每天 2 次和每週 2 次 Snapshot 複本。</block>
   <block id="d15db32d5d9df007a971f75a2640c71c" category="paragraph">如果您建立複寫或備份的自訂原則、則原則標籤（例如「每日」或「每週」）必須符合 Snapshot 原則中存在的標籤、否則將不會建立複寫的磁碟區和備份檔案。</block>
-  <block id="748a8c28fe1e967321c785cb4c772c2c" category="paragraph">您可以使用 BlueXP 備份還原、系統管理員或 ONTAP 命令列介面（ CLI ）來建立自訂原則。</block>
   <block id="82f49efcbf889d6eb769da07e9bfa832" category="paragraph"><block ref="1d5508fcd8027e26b48962bd984558d5" category="inline-link-rx"></block>
 <block ref="25d9216966497b44f1274c2fdc3f62ee" category="inline-link-rx"></block>
 <block ref="6a671fae687ae09ed6ec2eb759a70329" category="inline-link-rx"></block>
@@ -4683,12 +4637,8 @@ SS3 ONTAP</block>
   <block id="6b238043e3f0cbcb294416f3238efea2" category="admonition">在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>。</block>
   <block id="4b758548b6a16028d0d7c1e443c285bd" category="paragraph">如果您已經使用 BlueXP 來管理儲存設備、則 BlueXP Connector 已經安裝完成。如果您打算將同一個 Connector 搭配 BlueXP 備份與還原使用、那麼您就可以全部設定好。如果您需要使用不同的 Connector 、則必須先安裝它、才能開始備份與還原實作。</block>
   <block id="b41bae1862cc28338655904ad32e407e" category="section-title">支援具備完整網際網路連線能力的網站</block>
-  <block id="df28403f823a8cccd6d3aa652ebe7892" category="paragraph">當 BlueXP 備份與還原用於具有完整網際網路連線能力的站台（也稱為「標準模式」或「 SaaS 模式」）時、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、 您也可以在任何支援的雲端供應商的物件儲存設備上建立備份檔案。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
-  <block id="cd6458cee7347b844e32d364eccbaa5c" category="paragraph">請參閱雲端供應商的備份主題、您打算在其中建立有效 Connector 位置清單的備份檔案。在某些限制下、 Connector 必須手動安裝在 Linux 機器上、或部署在特定雲端供應商中。</block>
   <block id="2714d7e7e24c727c2c54bb6ba96c4617" category="section-title">支援網際網路連線能力有限的網站</block>
-  <block id="e5f27584b8554a76c0aba2da480263ad" category="paragraph">BlueXP 備份與還原可在網際網路連線能力有限（也稱為「受限模式」）的站台中使用、以備份 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。</block>
   <block id="9fe942ae01924dd657ce7f1996246cc6" category="section-title">支援無網際網路連線的站台</block>
-  <block id="ef96453aea07412d08268c286055e516" category="paragraph">BlueXP 備份與還原可在沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）中使用、以備份大量資料。在這種情況下、您需要在同一個站台的 Linux 主機上部署 BlueXP Connector 。</block>
   <block id="628b6da02e99f426a81f25cb6fc98d4a" category="summary">有了 BlueXP 備份與還原報告、您就能確保關鍵資料根據組織定義的原則受到保護、並有效支援法規遵循程序的稽核。備份庫存報告可讓您查看特定帳戶、工作環境或 SVM 庫存的所有備份。</block>
   <block id="f149f54356387e5794adb107c0cc0a7d" category="paragraph">從 BlueXP 備份與還原報告索引標籤、您可以建立備份庫存報告並篩選其內容。使用備份庫存報告、您可以查看特定帳戶、工作環境或 SVM 庫存的所有備份。</block>
   <block id="fe6088e55d445ff8c5e73198a4b10d33" category="list-text">備份目標</block>
@@ -4757,7 +4707,6 @@ SS3 ONTAP</block>
   <block id="4e1f7d458412b18adef0e5ff0db2eee8" category="section-title">2024 年 2 月 1 日</block>
   <block id="a409179aac0b12213b3fa77e0a22bd61" category="list-text">支援將虛擬機器還原至其他位置</block>
   <block id="9c75b0f26dddf07ed827e32aaf28bee9" category="list-text">支援不保護資料存放區</block>
-  <block id="1e4355acc1dfc611f2f5aa191e3468f4" category="list-text">能夠從雲端儲存設備快速還原磁碟區至 Cloud Volumes ONTAP 系統或內部部署系統、非常適合需要盡快存取磁碟區的災難恢復情況。</block>
   <block id="196996ba80340493c0f9064d3dd14aa5" category="summary">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續容量、資料庫和虛擬機器（ VM ）提供高效率、安全且具成本效益的資料保護。</block>
   <block id="2d67cd05b64a3416bc8bae12b4ef5685" category="section-title">2024 年 3 月 12 日</block>
   <block id="e713d6072685bf32f36150e9f76ce0c1" category="section-title">能夠從雲端備份到內部部署 ONTAP 磁碟區進行「快速還原」</block>
@@ -4810,4 +4759,132 @@ ifdef ：： GCP[]</block>
   <block id="d1fe7d408368bfebc413888300892008" category="list-text">如果您已在備份原則中設定歸檔儲存設備、則無法使用 DataLock 和勒索軟體保護功能。</block>
   <block id="7bdfdec65541ae8037e909dd7d0643dd" category="paragraph">使用 AWS 、 Azure 或 Google 雲端儲存設備時、您可以在一定天數後、將較舊的備份檔案移至較便宜的歸檔儲存類別或存取層。您也可以選擇立即將備份檔案傳送至歸檔儲存設備、而無需寫入標準雲端儲存設備。只要輸入 *0* 作為「歸檔日」、即可將備份檔案直接傳送至歸檔儲存設備。這對很少需要從雲端備份存取資料的使用者或是更換備份至磁帶解決方案的使用者而言特別有幫助。</block>
   <block id="8e867c14e8b5b20149da48500624662f" category="list-text">即使您選取「 0 」將所有資料區塊傳送至歸檔雲端儲存設備、中繼資料區塊也會一律寫入標準雲端儲存設備。</block>
+  <block id="dfa24d2a7ec224c6ca4d5fb5034e6e03" category="paragraph">BlueXP 備份與還原提供三種類型的 ONTAP 資料備份：快照、複製及備份至物件儲存設備。他們的原則會根據您使用的架構和備份類型、位於不同的位置：</block>
+  <block id="663b8460da445a8bdcdacd5586794a5a" category="section-title">建立原則</block>
+  <block id="e0a5bfe15611c3049d982f1a869b0eae" category="paragraph">您可以建立原則來管理 Snapshot 複本、複製和備份到物件儲存：</block>
+  <block id="36bfdda824414a31fa7f030bca02d874" category="list-text"><block ref="454c7316be068de8bb896eafa84dcddd" category="inline-xref-macro-rx"></block></block>
+  <block id="8c93ad30ee0d14353ceadd8305690a2f" category="list-text"><block ref="0116f7fb14fa9b1ea4004469c89c7378" category="inline-xref-macro-rx"></block></block>
+  <block id="4d1e42c53c197b9eec9ce78b1832dc8c" category="list-text"><block ref="4b4395fe768c3ae3b25642d7a52ea888" category="inline-xref-macro-rx"></block></block>
+  <block id="260672b864602b3edd84b9c19a672c4a" category="paragraph">* 使用串聯架構的 Snapshot 原則範例 *</block>
+  <block id="17c54e9ba828968f120b82b8cd07abfa" category="inline-link-macro">備份至物件原則設定</block>
+  <block id="0bc441f660cc6026f623b6cab169011c" category="list-text">針對備份至物件原則、請設定 DataLock 和勒索軟體保護設定。如需 DataLock 和勒索軟體保護的詳細資訊、請參閱 <block ref="d72e0969f8971a4b91ad44a04438bfb9" category="inline-link-macro-rx"></block>。</block>
+  <block id="c017d92a691d34eeedab98c2b0d24a2a" category="summary">您可以變更許多叢集層級的備份至物件設定、這些設定是在為每個 ONTAP 系統啟動 BlueXP 備份與還原時所設定的。您也可以修改某些套用為「預設」備份設定的設定。這包括變更儲存金鑰、將備份傳輸至物件儲存設備的速度、是否將歷史Snapshot複本匯出為備份檔案等。您也可以針對工作環境啟用或停用勒索軟體掃描。</block>
+  <block id="ea44ae5b51bb08fddcc53530d06a69a1" category="doc">在「進階設定」頁面中管理備份至物件儲存選項</block>
+  <block id="159ee8173f8b50df9cb7f0cf8799eaa1" category="paragraph">您可以使用「進階設定」頁面、變更您在啟動每個 ONTAP 系統的 BlueXP 備份與還原時所設定的叢集層級備份至物件儲存設定。您也可以修改某些套用為「預設」備份設定的設定。這包括將備份傳輸率變更為物件儲存設備、將歷史 Snapshot 複本匯出為備份檔案、以及啟用或停用工作環境的排程勒索軟體掃描。</block>
+  <block id="ced47daa04f0ab245996945ce084fb6a" category="admonition">這些設定僅適用於備份至物件儲存設備。這些設定都不會影響您的 Snapshot 或複寫設定。未來將會新增快照和複製的類似叢集層級複製設定。</block>
+  <block id="c7097337eab210464618620268aa80bc" category="paragraph">您可以在「進階設定」頁面中變更下列選項：</block>
+  <block id="6d1da260b80b103438f3aedda67c1b8e" category="list-text">使用「最大傳輸率」選項、變更分配給上傳備份至物件儲存設備的網路頻寬
+ifdef：：AWS []</block>
+  <block id="0b1a1078de1b2e72b07bf2ffac16d26d" category="list-text">變更是否將歷史 Snapshot 複本匯出為備份檔案、並納入未來磁碟區的初始基準備份檔案中</block>
+  <block id="0e7cf97271121769dd6347152854403e" category="list-text">啟用或停用工作環境的排程勒索軟體掃描</block>
+  <block id="71e91659ec0ee2ee609aac693d028a44" category="paragraph"><block ref="71e91659ec0ee2ee609aac693d028a44" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4620c3bb0f2d2d6609a91b73aef2a36b" category="list-text">展開選項並進行變更。</block>
+  <block id="c4f1313315ea53ba0324c17262762c44" category="paragraph">變更後的所有備份作業都會使用新值。</block>
+  <block id="183865427b8f30f4f0a946b083745d98" category="paragraph">當您為工作環境啟動 BlueXP 備份與還原時、根據預設、 ONTAP 可以使用無限量的頻寬、將備份資料從工作環境中的磁碟區傳輸至物件儲存區。如果您注意到備份流量會影響一般使用者工作負載、您可以使用「進階設定」頁面中的「最大傳輸率」選項、來節流傳輸期間使用的網路頻寬量。</block>
+  <block id="91732be5dbec4e6cd5795e6c9726f75b" category="list-text">在「進階設定」頁面中、展開「 * 最大傳輸率 * 」區段。</block>
+  <block id="797f6c485c33bd5145b7c94cc5a5d119" category="list-text">選擇 1 到 1 、 000 Mbps 之間的值作為最大傳輸速率。</block>
+  <block id="24347b3ddf5a25cc9c27e54ae285ade1" category="list-text">選擇*應用*。</block>
+  <block id="d76835a7e29bfba07068479c7f8fe1c9" category="list-text">在「進階設定」頁面中、展開「 * 匯出現有的 Snapshot Copies * 」區段。</block>
+  <block id="5ded7f0f282abee3856eb702a71c490f" category="list-text">選擇是否要匯出現有的 Snapshot 複本。</block>
+  <block id="69ef3b07789885abe39838d3bdd565ae" category="list-text">在「進階設定」頁面中、展開 * 每年一次的 Snapshot 刪除 * 區段。</block>
+  <block id="906f0c83e11579cff84ef8bb2602e8ee" category="list-text">選取 * 停用 * 可在來源系統上保留每年的快照。</block>
+  <block id="a35e1d682218d5331728dfa6433e12e4" category="section-title">啟用或停用排程的勒索軟體掃描</block>
+  <block id="c9ed69b1e59bfa06ced7b41b059872b8" category="paragraph">預設會啟用排程的勒索軟體保護掃描。掃描頻率的預設設定為 7 天。只有最新的 Snapshot 複本才會執行掃描。您可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用排程的勒索軟體掃描。如果啟用、預設會每 7 天執行一次掃描。您可以將排程變更為天或週、或停用、節省成本。</block>
+  <block id="c000460328529e6cc52a2a89e3a697dc" category="admonition">視雲端供應商而定、啟用勒索軟體掃描會產生額外費用。</block>
+  <block id="2e6f82dd9de52a1127366dd526b46fcb" category="paragraph">排程的勒索軟體掃描只會在最新的 Snapshot 複本上執行。</block>
+  <block id="753626f8e1f5bd64d141de3a2128da9a" category="paragraph">如果停用排程的勒索軟體掃描、您仍可執行隨需掃描、還原作業期間仍會進行掃描。</block>
+  <block id="e7326f303b8abf78625da7d8f22fa0b4" category="inline-link-macro">管理原則</block>
+  <block id="9affd87393890e222340cf63ac15f352" category="paragraph">請參閱 <block ref="b738b6164a67e2444cd3ca878631bad7" category="inline-link-macro-rx"></block> 如需管理實作勒索軟體偵測的原則的詳細資訊、請參閱。</block>
+  <block id="0a9f76c05550ca3603727850b14e66c0" category="list-text">在「進階設定」頁面中、展開 * 勒索軟體掃描 * 區段。</block>
+  <block id="e80157cb62f595a86effb45e1dfb4df2" category="list-text">選取 * 排程勒索軟體掃描 * 。</block>
+  <block id="1491d983e19f493f0131d8289237002e" category="list-text">或者、將每週預設掃描變更為天或週。</block>
+  <block id="67c431ab59134db0cd95c9d00af66831" category="list-text">設定掃描應在數天或數週內執行的頻率。</block>
+  <block id="72d6d7225fde1dafbc05317df9f5b442" category="paragraph">* 不同備份方法的比較 *</block>
+  <block id="38a76ea4648b1e59685f3787ddf9021d" category="paragraph">* 不同架構選擇的比較 *</block>
+  <block id="b43293e16a05ee6f71964249a1f080c9" category="section-title">您是否會使用 Snapshot 複本、複製和備份的預設原則</block>
+  <block id="399fc8e29bb86d019b981ef4d8610aa1" category="paragraph">除了使用 BlueXP 備份還原來建立自訂原則之外、您還可以使用系統管理員或 ONTAP 命令列介面（ CLI ）。</block>
+  <block id="461a4b7bdf54706b24604798ad342c56" category="list-text">備份對物件原則是在來源磁碟區所在的系統上建立、這是用於扇出組態的主要叢集、也是用於串聯組態的次要叢集。</block>
+  <block id="3c19b33d0fc21e605844e33509d57f4f" category="paragraph">如果您計畫使用與「 NetApp-backup-xxxxxx 」不同的儲存區首碼、則需要修改 Connector IAM 角色的 S3 權限。如需詳細資訊、請參閱如何建立備份至 AWS S3 。</block>
+  <block id="fc2e47deb6b2e0b0b69b4d23d0c52dc0" category="paragraph">* 進階貯體設定 *</block>
+  <block id="48aa998a6b6a592f5d7a4dccd6c981e5" category="paragraph">當 BlueXP 備份與還原用於具有完整網際網路連線能力的站台（也稱為標準模式 _ 或 SaaS 模式 _ ）時、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、 您也可以在任何支援的雲端供應商的物件儲存設備上建立備份檔案。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
+  <block id="353c8b9b4f3b8d79cf3de34b62dedb85" category="paragraph">如需有效 Connector 位置的清單、請參閱下列雲端供應商備份程序之一、您打算在其中建立備份檔案。在某些限制下、 Connector 必須手動安裝在 Linux 機器上、或部署在特定雲端供應商中。</block>
+  <block id="cd7822bfaba52280932b79873329daf7" category="paragraph">BlueXP 備份與還原可在網際網路連線能力有限（也稱為限制模式 _ ）的站台中使用、以備份 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。</block>
+  <block id="1b2ae8fd4fbb8aea97c2363d0b2cc03f" category="list-text">您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。 <block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>。</block>
+  <block id="5ffa64fdc5f25941da3f4d7d719fc76d" category="list-text">您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。  <block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>。</block>
+  <block id="a93164b5de348a4fb06ecfebdb6861a8" category="paragraph">BlueXP 備份與還原可用於沒有網際網路連線的站台（也稱為 _Private modity_ 或 _dark 站台）、以備份 Volume 資料。在這種情況下、您需要在同一個站台的 Linux 主機上部署 BlueXP Connector 。</block>
+  <block id="2a7f31b421ebd440283eff6d94322a3b" category="list-text">您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。  <block ref="80288d2da91f9794088785363d31b6b5" category="inline-link-macro-rx"></block>。</block>
+  <block id="12df54ded49a677ce2708bf5c0651425" category="list-text">您可以將資料從本機內部部署 ONTAP 系統備份到本機內部部署 ONTAP 系統、或是設定為 S3 物件儲存的 Cloud Volumes ONTAP 系統。 <block ref="033f1a63473843a2d0a7ec99f2bb4e1c" category="inline-link-macro-rx"></block>。
+ifdef：：AWS []</block>
+  <block id="22c5942eb497ecdc45ab31895da620cb" category="section-title">2024 年 4 月 4 日</block>
+  <block id="58ca11ae6c2b33188443fbfd95e6b93d" category="section-title">能夠啟用或停用勒索軟體掃描</block>
+  <block id="6dc490eff019755a2978212c0ff0515d" category="paragraph">以前、當您在備份原則中啟用勒索軟體偵測時、會在建立第一個備份時、以及還原備份時自動進行掃描。以前、服務會掃描所有 Snapshot 複本、您無法停用掃描。</block>
+  <block id="8301e95a921a348c199a21b7a1f506bd" category="paragraph">使用此版本、您現在可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用勒索軟體掃描。如果啟用、預設會每週執行掃描。您可以將排程變更為天或週、或停用、節省成本。</block>
+  <block id="d7e0995e5e0ecfb32470e10070175d63" category="paragraph">如需詳細資訊、請參閱下列資訊：</block>
+  <block id="cb79697c10a273ae05f814fdc378a3b6" category="inline-link-macro">管理備份設定</block>
+  <block id="bf113fd695756eaa98fbf5f9a9c7ea62" category="list-text"><block ref="bf113fd695756eaa98fbf5f9a9c7ea62" category="inline-link-macro-rx"></block></block>
+  <block id="6a7b2032a55f63227ad9378851cbcf6f" category="list-text"><block ref="6a7b2032a55f63227ad9378851cbcf6f" category="inline-link-macro-rx"></block></block>
+  <block id="d72e0969f8971a4b91ad44a04438bfb9" category="list-text"><block ref="d72e0969f8971a4b91ad44a04438bfb9" category="inline-link-macro-rx"></block></block>
+  <block id="8b590f1e30dffdb9f9bfcd672f78e4cc" category="paragraph">* 備份至物件功能： *</block>
+  <block id="4c83a0fb55b796cfb06bd7c5684420d7" category="list-text">執行從雲端儲存設備到 Cloud Volumes ONTAP 系統或內部部署系統的磁碟區快速還原、非常適合需要盡快存取磁碟區的災難恢復情況。</block>
+  <block id="e9cb242f4caca49284730085b7ce225e" category="list-text">還原區塊層級的資料、將資料直接放置在您指定的位置、同時保留原始 ACL 。</block>
+  <block id="840e1b5937d998542557db1bd7559485" category="list-text">瀏覽及搜尋檔案目錄、輕鬆選擇個別資料夾和檔案、以進行單一檔案還原。</block>
+  <block id="84a5e2f266b193f6638a8ba2e9333a1b" category="paragraph">如果您的叢集使用的是 ONTAP 9.11.1 或更新版本、您可以保護物件儲存設備中的備份、避免遭到刪除和勒索軟體攻擊。每個備份原則都提供_DataLock和勒索軟體Protection的區段、可在特定時間段（_保留期間_）內套用至備份檔案。</block>
+  <block id="8756c7c925830c8c39d9804961d7d40b" category="list-text">_DataLock_可保護您的備份檔案、避免遭到修改或刪除。</block>
+  <block id="c73b2d161daabc3a9a53d6dd0c4df263" category="list-text">_勒索 軟體保護_會掃描您的備份檔案、尋找建立備份檔案時、以及從備份檔案還原資料時、勒索軟體攻擊的證據。</block>
+  <block id="e3414eaea3759c338f18072fbecaa19f" category="paragraph">預設會啟用排程的勒索軟體保護掃描。掃描頻率的預設設定為 7 天。只有最新的 Snapshot 複本才會執行掃描。您可以停用排程掃描、以降低成本。您可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用排程的勒索軟體掃描。如果啟用、預設會每週執行掃描。您可以將排程變更為天或週、或停用、節省成本。</block>
+  <block id="0518809725b483d8fb74affb68a52a55" category="paragraph">如需詳細資訊、請參閱以下資訊：</block>
+  <block id="56a32d1b7ebb6e4b6fd9b4fdf452a545" category="inline-link-macro">DataLock 和勒索軟體保護的運作方式</block>
+  <block id="62ca9cbc3f8aec602122840db4b03221" category="list-text"><block ref="59f4f37319067dbfb884709419e3ff51" category="inline-link-macro-rx"></block>。</block>
+  <block id="76b58aa0d11cd1d400e558a828802ece" category="inline-link-macro">如何在「進階設定」頁面中更新勒索軟體保護選項</block>
+  <block id="54561f4f95cd53f018b8034daddb9371" category="list-text"><block ref="2afb661236a3c9beb84de46fcd5481e6" category="inline-link-macro-rx"></block>。</block>
+  <block id="45167bc71bd7fe459b6a35c45730024a" category="doc">備份至物件原則選項</block>
+  <block id="bb4705a61e0f0eca2849677cf42a43e5" category="paragraph">BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes ONTAP 系統建立各種設定的備份原則。</block>
+  <block id="216ef706f9f25f4eb179f940b530a4d5" category="admonition">這些原則設定僅適用於備份至物件儲存。這些設定都不會影響您的 Snapshot 或複寫原則。未來將會新增快照和複製的類似原則設定。</block>
+  <block id="a2e6f50bd5494a56ee0794883aeee5e5" category="section-title">備份排程選項</block>
+  <block id="051658be4ba182ab30138c3d0fa07f2b" category="section-title">DataLock 和勒索軟體保護選項</block>
+  <block id="5eab2e069820454037ee67f5a8712f35" category="list-text">如果您計畫使用 DataLock 和勒索軟體保護、您可以在建立第一個備份原則、並為該叢集啟動 BlueXP 備份和還原時啟用。您稍後可以使用 BlueXP 備份與還原進階設定來啟用。</block>
+  <block id="8bf75ab26f222aaa987f761ede723ee0" category="list-text">將叢集設定為節省成本之後、即可停用其 DataLock 和勒索軟體保護功能。</block>
+  <block id="943aed8f26021fcc91ef6a9745099eea" category="list-text">建立備份檔案時。</block>
+  <block id="cdca7e3ebed033fb6629f5da9e9320ad" category="paragraph">您可以選擇啟用或停用排程的勒索軟體掃描。</block>
+  <block id="645f12199dae2b82a1985743cbc3e647" category="section-title">DataLock 和勒索軟體保護選項</block>
+  <block id="637724eb17b7ab6645d22693fe456ad6" category="paragraph">請參閱 <block ref="2afb661236a3c9beb84de46fcd5481e6" category="inline-link-macro-rx"></block>。</block>
+  <block id="28393e8d0c5d4d42b764689c3d805dd0" category="example-title">AWS S3 權限</block>
+  <block id="1ddec8739d8c1b2f7db7d9f2fe4b6069" category="example-title">StorageGRID S3 權限</block>
+  <block id="5f77078b118458f75a8520575b6a518e" category="list-text">DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。您可以稍後使用「進階設定」選項來啟用或停用此功能。</block>
+  <block id="2ed85c9d8759c48194524d439a552ff0" category="section-title">歸檔儲存選項</block>
+  <block id="e5c31b44cc452f945aec38b328ab97da" category="section-title">編輯現有的備份至雲端原則</block>
+  <block id="d3b3f333837b21ed08dfd04c10e48346" category="section-title">新增備份至雲端原則</block>
+  <block id="6c08aad63d31acac8bc5248c2bfd34f2" category="paragraph">如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以設定_DataLock和勒索軟體Protection來保護備份、避免遭到刪除和勒索軟體攻擊。_DataLock_ 可保護您的備份檔案、避免遭到修改或刪除、而 _勒索 軟體保護 _ 則會掃描您的備份檔案、以尋找備份檔案中勒索軟體攻擊的證據。</block>
+  <block id="427911e9853111f28c07f559c3b84c6a" category="paragraph">在無法存取網際網路的站台中使用 BlueXP 備份與還原時、稱為 _private 模式 _ 、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 或 ONTAP S3 儲存區。如果您未來的 BlueXP Connector 主機系統發生問題、您可以部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。</block>
+  <block id="32c221fc8d86ea3baab547e849f9a06f" category="sidebar">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續磁碟區、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。</block>
+  <block id="27b14a69b7d1dfde3096980cc202af91" category="sidebar">建立資料保護涵蓋範圍的報告</block>
+  <block id="c1d2d81968b4f89d4185d4baf66ba468" category="sidebar">將ONTAP 資料還原至雲端</block>
+  <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">管理ONTAP 還原備份檔案</block>
+  <block id="77d48ab8a67b2be7777e5b8a79ce02c7" category="sidebar">管理 ONTAP 系統的備份</block>
+  <block id="514135cb807cb64edb1cc17de6ea36f6" category="sidebar">備份至物件原則選項（ DataLock 與勒索軟體保護）</block>
+  <block id="102be0d4172d3040912ba176f5d10c39" category="sidebar">在「進階設定」中管理備份至物件選項</block>
+  <block id="90f7372e4d5f7acc9a7ad384567a8fb1" category="sidebar">管理複寫關係</block>
+  <block id="691b857c2ea9a46d47730b371ae5ac4d" category="sidebar">將應用程式資料備份到雲端</block>
+  <block id="b7814feabc73eee3174693c2ffa692c8" category="sidebar">備份雲端原生 Oracle 資料庫</block>
+  <block id="5da2654bf0788a90ff3e2ff74e45e114" category="sidebar">備份雲端原生 SAP HANA 資料庫</block>
+  <block id="eacd1d0a9374cb22a99c806b2924cf90" category="sidebar">備份雲端原生 SQL Server 資料庫</block>
+  <block id="7048662b75c8f210e59f898d992521cc" category="sidebar">將資料存放區備份到雲端</block>
+  <block id="a1c18d7af73fa7e0ef0013130f15b257" category="sidebar">從雲端還原資料</block>
+  <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">還原 ONTAP Volume 資料</block>
+  <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">還原內部部署的 Oracle 應用程式資料</block>
+  <block id="6002846df6663ea571e55d74bd085335" category="sidebar">還原內部部署的 SQL Server 應用程式資料</block>
+  <block id="2f1042d0e59ea2a8ebfd0fb9bb5c169f" category="sidebar">還原雲端原生 Oracle 應用程式資料</block>
+  <block id="54d6597fa185df5cd22caa81d7e9d4d9" category="sidebar">還原雲端原生 SAP HANA 應用程式資料</block>
+  <block id="6240606371654cf871393e757b75ae12" category="sidebar">還原雲端原生 SQL Server 資料</block>
+  <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">還原 Kubernetes Volume 資料</block>
+  <block id="4001622cdabc59603efa5eed8e44df9e" category="sidebar">將Kubernetes資料備份到雲端</block>
+  <block id="a856f192005c2a27d642572c6eabcaf3" category="sidebar">將 Kubernetes 叢集備份至 Amazon S3</block>
+  <block id="d8aa0af6f24f3e5cbb56b502233a7241" category="sidebar">將 Kubernetes 叢集備份至 Azure Blob</block>
+  <block id="f91d920c6ff7bb789d8210aebe92e10e" category="sidebar">將 Kubernetes 叢集備份至 Google Cloud</block>
+  <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">部落格與社群</block>
+  <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp社群</block>
+  <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">BlueXP 備份與還原部落格</block>
+  <block id="960dd4200d015a0a12dfd299c1348c9c" category="sidebar">BlueXP 備份與還原使用案例</block>
+  <block id="d09fe30f62c514ce3f7fb2767974cf23" category="sidebar">BlueXP 備份與還原影片</block>
+  <block id="f93e4e0ba0745745e36a3b67b14a8a5b" category="sidebar">BlueXP 網路研討會</block>
 </blocks>

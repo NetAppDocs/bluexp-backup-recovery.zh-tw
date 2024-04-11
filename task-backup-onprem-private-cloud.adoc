@@ -470,23 +470,32 @@ TIP: 若要在啟動備份之前建立自訂原則、請參閱 link:task-create-
 +
 *** 輸入原則名稱。
 *** 最多可選取 5 個排程、通常是不同的頻率。
-*** 選擇* Create *（建立*）。
+*** 針對備份至物件原則、請設定 DataLock 和勒索軟體保護設定。如需 DataLock 和勒索軟體保護的詳細資訊、請參閱 link:concept-cloud-backup-policies.html["備份至物件原則設定"]。
 +
-如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以設定_DataLock和勒索軟體Protection來保護備份、避免遭到刪除和勒索軟體攻擊。_DataLock_可保護您的備份檔案、避免遭到修改或刪除、而_勒索 軟體保護_會掃描您的備份檔案、尋找備份檔案中勒索軟體攻擊的證據。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["深入瞭解可用的DataLock設定"^]。
+如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以設定_DataLock和勒索軟體Protection來保護備份、避免遭到刪除和勒索軟體攻擊。_DataLock_ 可保護您的備份檔案、避免遭到修改或刪除、而 _勒索 軟體保護 _ 則會掃描您的備份檔案、以尋找備份檔案中勒索軟體攻擊的證據。
 
+
+
+
+
+
+
+* 選擇* Create *（建立*）。
 +
 如果您的叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您的系統使用的是11.4版或更新版本、您可以選擇在一定天數後、將舊版備份分層至公有雲歸檔層。目前支援AWS S3 Glacier / S3 Glacier Deep歸檔或Azure歸檔儲存層。 <<Preparing to archive older backup files to public cloud storage,瞭解如何針對此功能設定您的系統>>。
 
-
-
++
 ** * 分層備份至公有雲 * ：選取您要分層備份的雲端供應商、然後輸入供應商詳細資料。
 +
 選取或建立新的 StorageGRID 叢集。如需建立 StorageGRID 叢集以便 BlueXP 能夠探索叢集的詳細資訊、請參閱 https://docs.netapp.com/us-en/storagegrid-117/["本文檔StorageGRID"^]。
 
 ** * 將現有的 Snapshot 複本匯出至物件儲存區做為備份複本 * ：如果此工作環境中有任何本機 Snapshot 複本符合您剛為此工作環境選取的備份排程標籤（例如每日、每週等）、則會顯示此額外提示。核取此方塊、將所有歷史快照複製到物件儲存區做為備份檔案、以確保磁碟區獲得最完整的保護。
++
+... 選擇*下一步*。
 
 
-. 選擇*下一步*。
+
+
 
 
 

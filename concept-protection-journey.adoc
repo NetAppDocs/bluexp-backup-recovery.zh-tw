@@ -60,9 +60,7 @@ image:diagram-321-overview.png["顯示備份檔案在來源系統上如何作為
 
 NOTE: 初始建立複寫的磁碟區或備份檔案時、會包含完整的來源資料複本、這稱為 _ 基準傳輸 _ 。後續傳輸僅包含來源資料的差異複本（ Snapshot ）。
 
-
-
-=== 不同備份方法的比較
+* 不同備份方法的比較 *
 
 下表顯示三種備份方法的一般比較。雖然物件儲存空間通常比內部部署磁碟儲存空間便宜、但如果您認為可能會經常從雲端還原資料、則雲端供應商的出口費用可減少部分成本。您需要確定從雲端的備份檔案還原資料的頻率。
 
@@ -95,9 +93,7 @@ image:diagram-321-fanout-detailed.png["顯示如何使用磁碟區的 Snapshot �
 
 image:diagram-321-cascade-detailed.png["顯示如何使用磁碟區的 Snapshot 複本來建立及更新複寫的磁碟區和備份檔案的圖表。"]
 
-
-
-=== 不同架構選擇的比較
+* 不同架構選擇的比較 *
 
 此表提供了扇出和串聯架構的比較。
 
@@ -113,7 +109,7 @@ image:diagram-321-cascade-detailed.png["顯示如何使用磁碟區的 Snapshot 
 |===
 
 
-== 您是否會使用 Snapshot 複本、複製和備份的預設備份原則
+== 您是否會使用 Snapshot 複本、複製和備份的預設原則
 
 您可以使用 NetApp 提供的預設原則來建立備份、也可以建立自訂原則。當您使用啟動精靈為磁碟區啟用備份與還原服務時、可以從工作環境（ Cloud Volumes ONTAP 或內部部署 ONTAP 系統）中選取預設原則和任何其他原則。如果您想要使用不同於現有原則的原則、可以在啟動或使用啟動精靈之前建立原則。
 
@@ -124,7 +120,9 @@ image:diagram-321-cascade-detailed.png["顯示如何使用磁碟區的 Snapshot 
 
 如果您建立複寫或備份的自訂原則、則原則標籤（例如「每日」或「每週」）必須符合 Snapshot 原則中存在的標籤、否則將不會建立複寫的磁碟區和備份檔案。
 
-您可以使用 BlueXP 備份還原、系統管理員或 ONTAP 命令列介面（ CLI ）來建立自訂原則。
+您可以在 BlueXP 備份與還原 UI 中建立 Snapshot 、複寫及備份至物件儲存原則。請參閱的一節 link:task-manage-backups-ontap.html#add-a-new-backup-policy["新增備份原則"] 以取得詳細資料。
+
+除了使用 BlueXP 備份還原來建立自訂原則之外、您還可以使用系統管理員或 ONTAP 命令列介面（ CLI ）。
 
 https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["使用 System Manager 建立 Snapshot 原則"^]
 https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["使用 ONTAP CLI 建立 Snapshot 原則"^]
@@ -134,8 +132,6 @@ https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custo
 https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["使用 ONTAP CLI 建立備份原則"^]
 
 * 備註： * 使用 System Manager 時、請選取 * Asynynbling* 作為複寫原則的原則類型、然後選取 * AsynynAsynAs* 和 * 備份至雲端 * 以備份至物件原則。
-
-您可以在 BlueXP 備份與還原 UI 中建立 Snapshot 、複寫及備份至物件儲存原則。請參閱的一節 link:task-manage-backups-ontap.html#add-a-new-backup-policy["新增備份原則"] 以取得詳細資料。
 
 以下是幾個 ONTAP CLI 命令範例、如果您要建立自訂原則、這些命令可能會很有幫助。請注意、您必須使用 _admin_ vserver （儲存 VM ）做為 `<vserver_name>` 在這些命令中。
 
@@ -167,15 +163,14 @@ NOTE: 只有資料保險箱原則可用於備份至雲端關係。
 
 
 
-=== 我的原則位於何處？
+== 我的原則位於何處？
 
 備份原則位於不同位置、視您打算使用的備份架構而定：扇出或階層式。複寫原則和備份原則的設計方式並不相同、因為複寫配對兩個 ONTAP 儲存系統和備份至物件會使用儲存提供者做為目的地。
 
-Snapshot 原則一律位於主要儲存系統上。
+* Snapshot 原則一律位於主要儲存系統上。
+* 複寫原則一律位於次要儲存系統上。
+* 備份對物件原則是在來源磁碟區所在的系統上建立、這是用於扇出組態的主要叢集、也是用於串聯組態的次要叢集。
 
-複寫原則一律位於次要儲存系統上。
-
-備份至物件原則是在來源磁碟區所在的系統上建立、這是用於扇出組態的主要叢集、也是用於串聯組態的次要叢集。
 
 這些差異如表所示。
 
@@ -210,11 +205,9 @@ Snapshot 原則一律位於主要儲存系統上。
 
 * 注意： * 目前您無法在 StorageGRID 系統或 ONTAP S3 中建立備份時使用自己的 S3 儲存區。
 
-如果您計畫使用與「 NetApp-backup-xxxxxx 」不同的儲存區首碼、則需要修改 Connector IAM 角色的 S3 權限。如需詳細資訊、請參閱建立備份至 AWS S3 的主題。
+如果您計畫使用與「 NetApp-backup-xxxxxx 」不同的儲存區首碼、則需要修改 Connector IAM 角色的 S3 權限。如需詳細資訊、請參閱如何建立備份至 AWS S3 。
 
-
-
-=== 進階貯體設定
+* 進階貯體設定 *
 
 如果您打算將舊的備份檔案移至歸檔儲存區、或是打算啟用 DataLock 和勒索軟體保護來鎖定備份檔案、並掃描其是否有可能的勒索軟體、則需要使用特定組態設定來建立容器：
 
@@ -247,9 +240,9 @@ https://www.netapp.tv/details/30567["觀看這段關於 BlueXP 部署模式的�
 
 === 支援具備完整網際網路連線能力的網站
 
-當 BlueXP 備份與還原用於具有完整網際網路連線能力的站台（也稱為「標準模式」或「 SaaS 模式」）時、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、 您也可以在任何支援的雲端供應商的物件儲存設備上建立備份檔案。 link:concept-ontap-backup-to-cloud.html#supported-backup-destinations["請參閱支援的備份目的地完整清單"]。
+當 BlueXP 備份與還原用於具有完整網際網路連線能力的站台（也稱為標準模式 _ 或 SaaS 模式 _ ）時、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、 您也可以在任何支援的雲端供應商的物件儲存設備上建立備份檔案。 link:concept-ontap-backup-to-cloud.html#supported-backup-destinations["請參閱支援的備份目的地完整清單"]。
 
-請參閱雲端供應商的備份主題、您打算在其中建立有效 Connector 位置清單的備份檔案。在某些限制下、 Connector 必須手動安裝在 Linux 機器上、或部署在特定雲端供應商中。
+如需有效 Connector 位置的清單、請參閱下列雲端供應商備份程序之一、您打算在其中建立備份檔案。在某些限制下、 Connector 必須手動安裝在 Linux 機器上、或部署在特定雲端供應商中。
 
 ifdef::aws[]
 
@@ -283,18 +276,18 @@ endif::gcp[]
 
 === 支援網際網路連線能力有限的網站
 
-BlueXP 備份與還原可在網際網路連線能力有限（也稱為「受限模式」）的站台中使用、以備份 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。
+BlueXP 備份與還原可在網際網路連線能力有限（也稱為限制模式 _ ）的站台中使用、以備份 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。
 
 ifdef::aws[]
 
-* 您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。瞭解如何操作 link:task-backup-to-s3.html["將 Cloud Volumes ONTAP 資料備份至 Amazon S3"]。
+* 您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。 link:task-backup-to-s3.html["將 Cloud Volumes ONTAP 資料備份至 Amazon S3"]。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* 您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。瞭解如何操作 link:task-backup-to-azure.html["將 Cloud Volumes ONTAP 資料備份至 Azure Blob"]。
+* 您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。  link:task-backup-to-azure.html["將 Cloud Volumes ONTAP 資料備份至 Azure Blob"]。
 
 
 endif::azure[]
@@ -303,10 +296,10 @@ endif::azure[]
 
 === 支援無網際網路連線的站台
 
-BlueXP 備份與還原可在沒有網際網路連線的站台（也稱為「私有模式」或「暗」站台）中使用、以備份大量資料。在這種情況下、您需要在同一個站台的 Linux 主機上部署 BlueXP Connector 。
+BlueXP 備份與還原可用於沒有網際網路連線的站台（也稱為 _Private modity_ 或 _dark 站台）、以備份 Volume 資料。在這種情況下、您需要在同一個站台的 Linux 主機上部署 BlueXP Connector 。
 
-* 您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。瞭解如何操作 link:task-backup-onprem-private-cloud.html["將內部部署的 ONTAP 資料備份至 StorageGRID"] 以取得詳細資料。
-* 您可以將資料從本機內部部署 ONTAP 系統備份到本機內部部署 ONTAP 系統、或是設定為 S3 物件儲存的 Cloud Volumes ONTAP 系統。瞭解如何操作 link:task-backup-onprem-to-ontap-s3.html["將內部部署的 ONTAP 資料備份到 ONTAP S3"] 以取得詳細資料。
+* 您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。  link:task-backup-onprem-private-cloud.html["將內部部署的 ONTAP 資料備份至 StorageGRID"]。
+* 您可以將資料從本機內部部署 ONTAP 系統備份到本機內部部署 ONTAP 系統、或是設定為 S3 物件儲存的 Cloud Volumes ONTAP 系統。 link:task-backup-onprem-to-ontap-s3.html["將內部部署的 ONTAP 資料備份到 ONTAP S3"]。
 ifdef：：AWS []
 
 

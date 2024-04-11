@@ -4,7 +4,7 @@ permalink: concept-cloud-backup-policies.html
 keywords: backing up, back up, backup, back up volumes, cloud backup, backup policies, policies, schedules 
 summary: BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes ONTAP 系統建立各種組態設定的備份原則。 
 ---
-= BlueXP 備份與還原原則組態設定
+= 備份至物件原則選項
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes 
 
 
 [role="lead"]
-BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes ONTAP 系統建立各種組態設定的備份原則。
+BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes ONTAP 系統建立各種設定的備份原則。
 
 
-NOTE: 這些原則設定僅適用於備份至物件儲存設備。這些設定都不會影響您的 Snapshot 或複寫原則。未來將會新增快照和複製的類似原則設定。
+NOTE: 這些原則設定僅適用於備份至物件儲存。這些設定都不會影響您的 Snapshot 或複寫原則。未來將會新增快照和複製的類似原則設定。
 
 
 
-== 備份排程
+== 備份排程選項
 
 BlueXP 備份與還原可讓您針對每個工作環境（叢集）建立多個備份原則、並設定獨特的排程。您可以將不同的備份原則指派給具有不同還原點目標（RPO）的磁碟區。
 
@@ -52,7 +52,7 @@ image:screenshot_backup_schedule_settings.png["建立備份原則時的備份排
 
 
 
-== DataLock和勒索軟體保護
+== DataLock 和勒索軟體保護選項
 
 BlueXP 備份與還原可為您的磁碟區備份提供 DataLock 和勒索軟體保護支援。這些功能可讓您鎖定備份檔案、並進行掃描、以偵測備份檔案上可能的勒索軟體。這是可選的設定、您可以在備份原則中定義、以便為叢集的磁碟區備份提供額外保護。
 
@@ -64,8 +64,8 @@ https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-
 
 [CAUTION]
 ====
-* 如果您計畫使用 DataLock 和勒索軟體保護、則必須在建立第一個備份原則、並啟用該叢集的 BlueXP 備份與還原時啟用。
-* 資料鎖定和勒索軟體保護功能一旦設定完成、就無法針對叢集停用。請勿在叢集上啟用此功能以試用。
+* 如果您計畫使用 DataLock 和勒索軟體保護、您可以在建立第一個備份原則、並為該叢集啟動 BlueXP 備份和還原時啟用。您稍後可以使用 BlueXP 備份與還原進階設定來啟用。
+* 將叢集設定為節省成本之後、即可停用其 DataLock 和勒索軟體保護功能。
 * 當 BlueXP 在還原磁碟區資料時掃描備份檔案以取得勒索軟體時、您將需要向雲端供應商支付額外的出口成本、才能存取備份檔案的內容。
 
 
@@ -96,7 +96,10 @@ DataLock 可保護您的備份檔案、避免在一段時間內遭到修改或�
 
 勒索軟體掃描會在備份與還原程序的3點執行：
 
-* 建立備份檔案時
+* 建立備份檔案時。
++
+您可以選擇啟用或停用排程的勒索軟體掃描。
+
 +
 第一次寫入雲端儲存設備時、並不會對備份檔案執行掃描、但會在寫入*下一次*備份檔案時執行掃描。例如、如果您已設定星期二的每週備份排程、則會在星期二14建立備份。然後在星期二建立另一個備份。此時勒索軟體掃描會在備份檔案上執行、從14開始執行。
 
@@ -112,11 +115,15 @@ DataLock 可保護您的備份檔案、避免在一段時間內遭到修改或�
 
 
 
-=== DataLock和勒索軟體保護設定
+=== DataLock 和勒索軟體保護選項
 
 每個備份原則都會提供一個區段、說明您可以套用至備份檔案的_DataLock和勒索軟體Protection。
 
 image:screenshot_datalock_ransomware_settings.png["建立備份原則時、AWS、Azure和StorageGRID VMware的DataLock和勒索軟體保護設定的快照。"]
+
+預設會啟用排程的勒索軟體保護掃描。掃描頻率的預設設定為 7 天。只有最新的 Snapshot 複本才會執行掃描。您可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用排程的勒索軟體掃描。如果啟用、預設會每 7 天執行一次掃描。您可以將排程變更為天或週、或停用、節省成本。
+
+請參閱 link:manage-backup-settings-ontap.html["如何在「進階設定」頁面中更新勒索軟體保護選項"]。
 
 您可以針對每個備份原則從下列設定中選擇：
 
@@ -209,6 +216,9 @@ ifdef::aws[]
 ** 連接器可部署在雲端或內部部署
 ** 下列S3權限必須是為Connector提供權限的IAM角色的一部分。它們位於資源「arn:AWS:S3：：：：NetApp備份-*」的「backupS3Policy」區段：
 +
+.AWS S3 權限
+[%collapsible]
+====
 *** S3：GetObjectVersion標記
 *** S3：GetBucketObjectLockConfiguration
 *** S3：GetObjectVerionAcl
@@ -235,10 +245,11 @@ ifdef::aws[]
 *** S3：PuttObjectRetention
 *** S3：GetBucketLocation
 *** S3：GetObjectVersion
+
+
+====
 +
 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["檢視原則的完整Json格式、您可以在其中複製及貼上所需的權限"^]。
-
-
 
 
 
@@ -265,6 +276,9 @@ endif::azure[]
 ** 連接器必須部署在內部部署環境中（可安裝在有或沒有網際網路存取的站台中）
 ** 下列S3權限必須是為Connector提供權限的IAM角色的一部分：
 +
+.StorageGRID S3 權限
+[%collapsible]
+====
 *** S3：GetObjectVersion標記
 *** S3：GetBucketObjectLockConfiguration
 *** S3：GetObjectVerionAcl
@@ -292,6 +306,7 @@ endif::azure[]
 *** S3：GetObjectVersion
 
 
+====
 
 
 
@@ -304,13 +319,13 @@ endif::azure[]
 * 啟動 BlueXP 備份與還原時所選取的 DataLock 選項必須用於該叢集的所有備份原則。
 * 您無法在單一叢集上使用多個 DataLock 模式。
 * 如果啟用DataLock、所有Volume備份都會鎖定。您無法混合使用單一叢集的鎖定和非鎖定磁碟區備份。
-* DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。BlueXP 備份與還原啟動後、您無法啟用此功能。
+* DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。您可以稍後使用「進階設定」選項來啟用或停用此功能。
 * FlexGroup Volume 只有在使用 ONTAP 9.13.1 或更新版本時、才能使用 DataLock 和勒索軟體保護。
 
 
 
 
-== 歸檔儲存設定
+== 歸檔儲存選項
 
 使用 AWS 、 Azure 或 Google 雲端儲存設備時、您可以在一定天數後、將較舊的備份檔案移至較便宜的歸檔儲存類別或存取層。您也可以選擇立即將備份檔案傳送至歸檔儲存設備、而無需寫入標準雲端儲存設備。只要輸入 *0* 作為「歸檔日」、即可將備份檔案直接傳送至歸檔儲存設備。這對很少需要從雲端備份存取資料的使用者或是更換備份至磁帶解決方案的使用者而言特別有幫助。
 

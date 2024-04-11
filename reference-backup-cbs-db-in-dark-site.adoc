@@ -14,7 +14,7 @@ summary: 在無法存取網際網路的站台（稱為「私有模式」）中�
 
 
 [role="lead"]
-在無法存取網際網路的站台（稱為「私有模式」）中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 或 ONTAP S3 儲存區。如果您未來的 BlueXP Connector 主機系統發生問題、您可以部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。
+在無法存取網際網路的站台中使用 BlueXP 備份與還原時、稱為 _private 模式 _ 、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 或 ONTAP S3 儲存區。如果您未來的 BlueXP Connector 主機系統發生問題、您可以部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。
 
 請注意、當您在雲端供應商部署 BlueXP Connector 的 SaaS 環境中使用 BlueXP 備份與還原、或是在擁有網際網路存取權的主機系統上使用時、所有重要的 BlueXP 備份與還原組態資料都會在雲端中備份與保護。如果您對 Connector 有任何問題、只要建立新的 Connector 並新增工作環境、備份詳細資料就會自動還原。
 
