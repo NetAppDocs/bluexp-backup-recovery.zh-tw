@@ -258,7 +258,6 @@
   <block id="37695f2c0158d2d30558c2d20892077d" category="list-text">在「備份設定」頁面中、按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 針對您要取消註冊備份服務的工作環境、選取*取消註冊*。</block>
   <block id="4757c134887b4b01e3ff6492a880fb07" category="doc">AWS S3歸檔儲存類別並還原擷取時間</block>
   <block id="c3da09e0a65b048cdbca120f1e6b23c9" category="paragraph">一開始建立備份檔案時、會將其儲存在S3 _Standard_儲存設備中。此階層已最佳化、可儲存不常存取的資料、但也可讓您立即存取。30天之後、備份會轉換至S3 _Standard-in頻繁 存取_儲存類別、以節省成本。</block>
-  <block id="dbc24544905468f967349804d5397471" category="paragraph">如果您的來源叢集執行ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在特定天數（通常超過30天）之後、將備份分層至_S3 Glacier Deep Archive_或_S3儲存設備、以進一步最佳化成本。這些階層中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您需要考量從這些歸檔備份檔案還原資料的頻率。請參閱相關章節 <block ref="a877e7ca3014076607c0c931133681b8" category="inline-xref-macro-rx"></block>。</block>
   <block id="c84f9bdf2de63c378b4a57466b3e08bc" category="inline-link">瞭解 S3 儲存課程</block>
   <block id="da714780eb0a2a3ce15dd3c59d515474" category="paragraph"><block ref="fa9857a8e7d680b812395a24af3527ff" category="inline-link-rx"></block>。</block>
   <block id="6ff825aba191f5952e0a944d29e5b588" category="paragraph">雖然在歸檔儲存設備中儲存較舊的備份檔案比標準或標準IA儲存設備便宜得多、但從歸檔儲存設備中的備份檔案存取資料以進行還原作業需要較長的時間、而且成本較高。</block>
@@ -4887,4 +4886,6 @@ ifdef：：AWS []</block>
   <block id="960dd4200d015a0a12dfd299c1348c9c" category="sidebar">BlueXP 備份與還原使用案例</block>
   <block id="d09fe30f62c514ce3f7fb2767974cf23" category="sidebar">BlueXP 備份與還原影片</block>
   <block id="f93e4e0ba0745745e36a3b67b14a8a5b" category="sidebar">BlueXP 網路研討會</block>
+  <block id="ed775139b29f7dce72403b2625d88609" category="paragraph">如果您的來源叢集執行ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在特定天數（通常超過30天）之後、將備份分層至_S3 Glacier Deep Archive_或_S3儲存設備、以進一步最佳化成本。您可以將此設定為「 0 」或 1-999 天。如果您將其設定為「 0 」天、則無法在稍後的 1-999 天內變更。</block>
+  <block id="8d9d296798f83841991dd908e86cc79b" category="paragraph">這些階層中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您需要考量從這些歸檔備份檔案還原資料的頻率。請參閱相關章節 <block ref="a877e7ca3014076607c0c931133681b8" category="inline-xref-macro-rx"></block>。</block>
 </blocks>
