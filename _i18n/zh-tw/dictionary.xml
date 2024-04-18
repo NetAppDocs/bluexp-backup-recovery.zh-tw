@@ -4769,13 +4769,11 @@ ifdef ：： GCP[]</block>
   <block id="0bc441f660cc6026f623b6cab169011c" category="list-text">針對備份至物件原則、請設定 DataLock 和勒索軟體保護設定。如需 DataLock 和勒索軟體保護的詳細資訊、請參閱 <block ref="d72e0969f8971a4b91ad44a04438bfb9" category="inline-link-macro-rx"></block>。</block>
   <block id="c017d92a691d34eeedab98c2b0d24a2a" category="summary">您可以變更許多叢集層級的備份至物件設定、這些設定是在為每個 ONTAP 系統啟動 BlueXP 備份與還原時所設定的。您也可以修改某些套用為「預設」備份設定的設定。這包括變更儲存金鑰、將備份傳輸至物件儲存設備的速度、是否將歷史Snapshot複本匯出為備份檔案等。您也可以針對工作環境啟用或停用勒索軟體掃描。</block>
   <block id="ea44ae5b51bb08fddcc53530d06a69a1" category="doc">在「進階設定」頁面中管理備份至物件儲存選項</block>
-  <block id="159ee8173f8b50df9cb7f0cf8799eaa1" category="paragraph">您可以使用「進階設定」頁面、變更您在啟動每個 ONTAP 系統的 BlueXP 備份與還原時所設定的叢集層級備份至物件儲存設定。您也可以修改某些套用為「預設」備份設定的設定。這包括將備份傳輸率變更為物件儲存設備、將歷史 Snapshot 複本匯出為備份檔案、以及啟用或停用工作環境的排程勒索軟體掃描。</block>
   <block id="ced47daa04f0ab245996945ce084fb6a" category="admonition">這些設定僅適用於備份至物件儲存設備。這些設定都不會影響您的 Snapshot 或複寫設定。未來將會新增快照和複製的類似叢集層級複製設定。</block>
   <block id="c7097337eab210464618620268aa80bc" category="paragraph">您可以在「進階設定」頁面中變更下列選項：</block>
   <block id="6d1da260b80b103438f3aedda67c1b8e" category="list-text">使用「最大傳輸率」選項、變更分配給上傳備份至物件儲存設備的網路頻寬
 ifdef：：AWS []</block>
   <block id="0b1a1078de1b2e72b07bf2ffac16d26d" category="list-text">變更是否將歷史 Snapshot 複本匯出為備份檔案、並納入未來磁碟區的初始基準備份檔案中</block>
-  <block id="0e7cf97271121769dd6347152854403e" category="list-text">啟用或停用工作環境的排程勒索軟體掃描</block>
   <block id="71e91659ec0ee2ee609aac693d028a44" category="paragraph"><block ref="71e91659ec0ee2ee609aac693d028a44" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4620c3bb0f2d2d6609a91b73aef2a36b" category="list-text">展開選項並進行變更。</block>
   <block id="c4f1313315ea53ba0324c17262762c44" category="paragraph">變更後的所有備份作業都會使用新值。</block>
@@ -4787,17 +4785,10 @@ ifdef：：AWS []</block>
   <block id="5ded7f0f282abee3856eb702a71c490f" category="list-text">選擇是否要匯出現有的 Snapshot 複本。</block>
   <block id="69ef3b07789885abe39838d3bdd565ae" category="list-text">在「進階設定」頁面中、展開 * 每年一次的 Snapshot 刪除 * 區段。</block>
   <block id="906f0c83e11579cff84ef8bb2602e8ee" category="list-text">選取 * 停用 * 可在來源系統上保留每年的快照。</block>
-  <block id="a35e1d682218d5331728dfa6433e12e4" category="section-title">啟用或停用排程的勒索軟體掃描</block>
-  <block id="c9ed69b1e59bfa06ced7b41b059872b8" category="paragraph">預設會啟用排程的勒索軟體保護掃描。掃描頻率的預設設定為 7 天。只有最新的 Snapshot 複本才會執行掃描。您可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用排程的勒索軟體掃描。如果啟用、預設會每 7 天執行一次掃描。您可以將排程變更為天或週、或停用、節省成本。</block>
   <block id="c000460328529e6cc52a2a89e3a697dc" category="admonition">視雲端供應商而定、啟用勒索軟體掃描會產生額外費用。</block>
-  <block id="2e6f82dd9de52a1127366dd526b46fcb" category="paragraph">排程的勒索軟體掃描只會在最新的 Snapshot 複本上執行。</block>
-  <block id="753626f8e1f5bd64d141de3a2128da9a" category="paragraph">如果停用排程的勒索軟體掃描、您仍可執行隨需掃描、還原作業期間仍會進行掃描。</block>
   <block id="e7326f303b8abf78625da7d8f22fa0b4" category="inline-link-macro">管理原則</block>
   <block id="9affd87393890e222340cf63ac15f352" category="paragraph">請參閱 <block ref="b738b6164a67e2444cd3ca878631bad7" category="inline-link-macro-rx"></block> 如需管理實作勒索軟體偵測的原則的詳細資訊、請參閱。</block>
   <block id="0a9f76c05550ca3603727850b14e66c0" category="list-text">在「進階設定」頁面中、展開 * 勒索軟體掃描 * 區段。</block>
-  <block id="e80157cb62f595a86effb45e1dfb4df2" category="list-text">選取 * 排程勒索軟體掃描 * 。</block>
-  <block id="1491d983e19f493f0131d8289237002e" category="list-text">或者、將每週預設掃描變更為天或週。</block>
-  <block id="67c431ab59134db0cd95c9d00af66831" category="list-text">設定掃描應在數天或數週內執行的頻率。</block>
   <block id="72d6d7225fde1dafbc05317df9f5b442" category="paragraph">* 不同備份方法的比較 *</block>
   <block id="38a76ea4648b1e59685f3787ddf9021d" category="paragraph">* 不同架構選擇的比較 *</block>
   <block id="b43293e16a05ee6f71964249a1f080c9" category="section-title">您是否會使用 Snapshot 複本、複製和備份的預設原則</block>
@@ -4817,12 +4808,8 @@ ifdef：：AWS []</block>
   <block id="22c5942eb497ecdc45ab31895da620cb" category="section-title">2024 年 4 月 4 日</block>
   <block id="58ca11ae6c2b33188443fbfd95e6b93d" category="section-title">能夠啟用或停用勒索軟體掃描</block>
   <block id="6dc490eff019755a2978212c0ff0515d" category="paragraph">以前、當您在備份原則中啟用勒索軟體偵測時、會在建立第一個備份時、以及還原備份時自動進行掃描。以前、服務會掃描所有 Snapshot 複本、您無法停用掃描。</block>
-  <block id="8301e95a921a348c199a21b7a1f506bd" category="paragraph">使用此版本、您現在可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用勒索軟體掃描。如果啟用、預設會每週執行掃描。您可以將排程變更為天或週、或停用、節省成本。</block>
   <block id="d7e0995e5e0ecfb32470e10070175d63" category="paragraph">如需詳細資訊、請參閱下列資訊：</block>
   <block id="cb79697c10a273ae05f814fdc378a3b6" category="inline-link-macro">管理備份設定</block>
-  <block id="bf113fd695756eaa98fbf5f9a9c7ea62" category="list-text"><block ref="bf113fd695756eaa98fbf5f9a9c7ea62" category="inline-link-macro-rx"></block></block>
-  <block id="6a7b2032a55f63227ad9378851cbcf6f" category="list-text"><block ref="6a7b2032a55f63227ad9378851cbcf6f" category="inline-link-macro-rx"></block></block>
-  <block id="d72e0969f8971a4b91ad44a04438bfb9" category="list-text"><block ref="d72e0969f8971a4b91ad44a04438bfb9" category="inline-link-macro-rx"></block></block>
   <block id="8b590f1e30dffdb9f9bfcd672f78e4cc" category="paragraph">* 備份至物件功能： *</block>
   <block id="4c83a0fb55b796cfb06bd7c5684420d7" category="list-text">執行從雲端儲存設備到 Cloud Volumes ONTAP 系統或內部部署系統的磁碟區快速還原、非常適合需要盡快存取磁碟區的災難恢復情況。</block>
   <block id="e9cb242f4caca49284730085b7ce225e" category="list-text">還原區塊層級的資料、將資料直接放置在您指定的位置、同時保留原始 ACL 。</block>
@@ -4844,7 +4831,6 @@ ifdef：：AWS []</block>
   <block id="5eab2e069820454037ee67f5a8712f35" category="list-text">如果您計畫使用 DataLock 和勒索軟體保護、您可以在建立第一個備份原則、並為該叢集啟動 BlueXP 備份和還原時啟用。您稍後可以使用 BlueXP 備份與還原進階設定來啟用。</block>
   <block id="8bf75ab26f222aaa987f761ede723ee0" category="list-text">將叢集設定為節省成本之後、即可停用其 DataLock 和勒索軟體保護功能。</block>
   <block id="943aed8f26021fcc91ef6a9745099eea" category="list-text">建立備份檔案時。</block>
-  <block id="cdca7e3ebed033fb6629f5da9e9320ad" category="paragraph">您可以選擇啟用或停用排程的勒索軟體掃描。</block>
   <block id="645f12199dae2b82a1985743cbc3e647" category="section-title">DataLock 和勒索軟體保護選項</block>
   <block id="637724eb17b7ab6645d22693fe456ad6" category="paragraph">請參閱 <block ref="2afb661236a3c9beb84de46fcd5481e6" category="inline-link-macro-rx"></block>。</block>
   <block id="28393e8d0c5d4d42b764689c3d805dd0" category="example-title">AWS S3 權限</block>
@@ -4888,4 +4874,14 @@ ifdef：：AWS []</block>
   <block id="f93e4e0ba0745745e36a3b67b14a8a5b" category="sidebar">BlueXP 網路研討會</block>
   <block id="ed775139b29f7dce72403b2625d88609" category="paragraph">如果您的來源叢集執行ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在特定天數（通常超過30天）之後、將備份分層至_S3 Glacier Deep Archive_或_S3儲存設備、以進一步最佳化成本。您可以將此設定為「 0 」或 1-999 天。如果您將其設定為「 0 」天、則無法在稍後的 1-999 天內變更。</block>
   <block id="8d9d296798f83841991dd908e86cc79b" category="paragraph">這些階層中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您需要考量從這些歸檔備份檔案還原資料的頻率。請參閱相關章節 <block ref="a877e7ca3014076607c0c931133681b8" category="inline-xref-macro-rx"></block>。</block>
+  <block id="d48498af5a5419c6130b506ce86226aa" category="paragraph">使用此版本、您現在可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用勒索軟體掃描。如果啟用、預設會每週執行掃描。</block>
+  <block id="b9efb0b81ee5dede04d703accaa3ac50" category="list-text"><block ref="b9efb0b81ee5dede04d703accaa3ac50" category="inline-link-rx"></block></block>
+  <block id="4987d2d58127a881e304bbe4ce3b5f7b" category="list-text"><block ref="4987d2d58127a881e304bbe4ce3b5f7b" category="inline-link-rx"></block></block>
+  <block id="9e59a4332ff7e195837a4721f8adaf92" category="list-text"><block ref="9e59a4332ff7e195837a4721f8adaf92" category="inline-link-rx"></block></block>
+  <block id="b33f77825564d0f55040ed5d93e2c980" category="paragraph">您可以選擇啟用或停用勒索軟體掃描。</block>
+  <block id="3d2cb9cb8024f89584734e08517bb28b" category="paragraph">依預設會啟用勒索軟體保護掃描。掃描頻率的預設設定為 7 天。只有最新的 Snapshot 複本才會執行掃描。您可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用勒索軟體掃描。如果啟用、預設會每 7 天執行一次掃描。</block>
+  <block id="957d64bd15bd14f95e14523883ec693d" category="paragraph">您可以使用「進階設定」頁面、變更您在啟動每個 ONTAP 系統的 BlueXP 備份與還原時所設定的叢集層級備份至物件儲存設定。您也可以修改某些套用為「預設」備份設定的設定。這包括將備份傳輸率變更為物件儲存設備、將歷史 Snapshot 複本匯出為備份檔案、以及啟用或停用工作環境的勒索軟體掃描。</block>
+  <block id="1de2d42f8d4e8f2645cb745b40a766d0" category="list-text">啟用或停用工作環境的勒索軟體掃描</block>
+  <block id="32a5c26baa0363b9a3a4a05896b16fd9" category="section-title">啟用或停用勒索軟體掃描</block>
+  <block id="141cfd8e9a336cee5d12da1ba56da9be" category="list-text">啟用或停用 * 勒索軟體掃描 * 。</block>
 </blocks>
