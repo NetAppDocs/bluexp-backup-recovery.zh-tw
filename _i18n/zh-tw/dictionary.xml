@@ -891,7 +891,6 @@
   <block id="f6494bde8c5d58e1a40bf174c8083f96" category="paragraph">讓我們來看看幾個例子、瞭解這項功能的運作方式：</block>
   <block id="4f326e1a4453cc79600c1df4374d2c22" category="list-text">如果您建立的備份原則每天建立30個、每週7個、每月12個備份、則會有三個鎖定的保留期間。「30天」備份將保留44天（30天加上14天緩衝）、「7週」備份保留9週（7週加上14天）、「12個月」備份則保留12個月（加上14天）。</block>
   <block id="57f10edfffe2adcbce7ee7a76dc7702f" category="section-title">什麼是勒索軟體保護</block>
-  <block id="6178bb3c1b6a8af3ec3a7000d38df00e" category="paragraph">勒索軟體掃描會在備份與還原程序的3點執行：</block>
   <block id="f656e9389b65beefa5f22506a262c68a" category="list-text">當您嘗試從備份檔案還原資料時</block>
   <block id="d71c7fafb5eead8d41c2869b8c551f6a" category="paragraph">您可以選擇在從備份檔案還原資料之前執行掃描、或跳過此掃描。</block>
   <block id="826c19d01b527f2701cc3460b9c889de" category="list-text">手動</block>
@@ -4832,7 +4831,6 @@ ifdef：：AWS []</block>
   <block id="8bf75ab26f222aaa987f761ede723ee0" category="list-text">將叢集設定為節省成本之後、即可停用其 DataLock 和勒索軟體保護功能。</block>
   <block id="943aed8f26021fcc91ef6a9745099eea" category="list-text">建立備份檔案時。</block>
   <block id="645f12199dae2b82a1985743cbc3e647" category="section-title">DataLock 和勒索軟體保護選項</block>
-  <block id="637724eb17b7ab6645d22693fe456ad6" category="paragraph">請參閱 <block ref="2afb661236a3c9beb84de46fcd5481e6" category="inline-link-macro-rx"></block>。</block>
   <block id="28393e8d0c5d4d42b764689c3d805dd0" category="example-title">AWS S3 權限</block>
   <block id="1ddec8739d8c1b2f7db7d9f2fe4b6069" category="example-title">StorageGRID S3 權限</block>
   <block id="5f77078b118458f75a8520575b6a518e" category="list-text">DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。您可以稍後使用「進階設定」選項來啟用或停用此功能。</block>
@@ -4881,7 +4879,19 @@ ifdef：：AWS []</block>
   <block id="b33f77825564d0f55040ed5d93e2c980" category="paragraph">您可以選擇啟用或停用勒索軟體掃描。</block>
   <block id="3d2cb9cb8024f89584734e08517bb28b" category="paragraph">依預設會啟用勒索軟體保護掃描。掃描頻率的預設設定為 7 天。只有最新的 Snapshot 複本才會執行掃描。您可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用勒索軟體掃描。如果啟用、預設會每 7 天執行一次掃描。</block>
   <block id="957d64bd15bd14f95e14523883ec693d" category="paragraph">您可以使用「進階設定」頁面、變更您在啟動每個 ONTAP 系統的 BlueXP 備份與還原時所設定的叢集層級備份至物件儲存設定。您也可以修改某些套用為「預設」備份設定的設定。這包括將備份傳輸率變更為物件儲存設備、將歷史 Snapshot 複本匯出為備份檔案、以及啟用或停用工作環境的勒索軟體掃描。</block>
-  <block id="1de2d42f8d4e8f2645cb745b40a766d0" category="list-text">啟用或停用工作環境的勒索軟體掃描</block>
   <block id="32a5c26baa0363b9a3a4a05896b16fd9" category="section-title">啟用或停用勒索軟體掃描</block>
   <block id="141cfd8e9a336cee5d12da1ba56da9be" category="list-text">啟用或停用 * 勒索軟體掃描 * 。</block>
+  <block id="036182c87f807859656a494ecad4b91a" category="paragraph">勒索軟體掃描會在備份與還原程序的下列時間點進行：</block>
+  <block id="823af9cc6541e49164fb4b1c88f90a63" category="paragraph">您可以將排程變更為天或週、或停用、節省成本。</block>
+  <block id="55649d2d8f62541abb30107f9893fa87" category="paragraph">請參閱 <block ref="f39da789221971f7f372bd122012c224" category="inline-link-macro-rx"></block>。</block>
+  <block id="b7f7a148311340334982dc88e5a67d85" category="list-text">啟用或停用工作環境的勒索軟體掃描、包括排程掃描</block>
+  <block id="2e6f82dd9de52a1127366dd526b46fcb" category="paragraph">排程的勒索軟體掃描只會在最新的 Snapshot 複本上執行。</block>
+  <block id="753626f8e1f5bd64d141de3a2128da9a" category="paragraph">如果停用排程的勒索軟體掃描、您仍可執行隨需掃描、還原作業期間仍會進行掃描。</block>
+  <block id="e80157cb62f595a86effb45e1dfb4df2" category="list-text">選取 * 排程勒索軟體掃描 * 。</block>
+  <block id="1491d983e19f493f0131d8289237002e" category="list-text">或者、將每週預設掃描變更為天或週。</block>
+  <block id="67c431ab59134db0cd95c9d00af66831" category="list-text">設定掃描應在數天或數週內執行的頻率。</block>
+  <block id="701c188698e8adc8e0dffa2a107bf9f4" category="section-title">2024 年 4 月 30 日</block>
+  <block id="24c8d17b3d2e5d56e90675c0755252e0" category="section-title">能夠啟用或停用排程的勒索軟體掃描</block>
+  <block id="1d5d9f598ed0ef9d579321fc5f2dea76" category="paragraph">以前、您可以啟用或停用勒索軟體掃描、但無法在排程掃描中執行此動作。</block>
+  <block id="c05a6e1c401ef496decb0a82c8e569e3" category="paragraph">使用此版本、您現在可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用排程的勒索軟體掃描。如果啟用、預設會每週執行掃描。您可以將排程變更為天或週、或停用、節省成本。</block>
 </blocks>
