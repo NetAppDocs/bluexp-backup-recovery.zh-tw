@@ -152,14 +152,14 @@ image:screenshot_policies_management.png["原則管理頁面"]
 . 指定設定、包括傳輸排程和備份歸檔時間。
 . （可選）要在一定天數後將較舊的備份文件移至較低成本的存儲類或訪問層，請選擇 *Archive* 選項並指明在歸檔數據之前應經過的天數。輸入 *0* 作為「日後歸檔」、將備份檔案直接傳送至歸檔儲存設備。
 +
-link:concept-cloud-backup-policies.html#archival-storage-settings["深入瞭解歸檔儲存設定"]。
+link:concept-cloud-backup-policies.html#archival-storage-options["深入瞭解歸檔儲存設定"]。
 
 . （選用）若要保護您的備份不受修改或刪除、請選取 * DataLock & 勒索軟體保護 * 選項。
 +
 如果您的叢集使用的是 ONTAP 9.11.1 或更新版本、您可以選擇設定 _DataLock_ 和 _勒索 軟體保護 _ 、以保護備份免遭刪除。
 
 +
-link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["深入瞭解可用的DataLock設定"^]。
+link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["深入瞭解可用的DataLock設定"^]。
 
 . 選擇* Create *（建立*）。
 

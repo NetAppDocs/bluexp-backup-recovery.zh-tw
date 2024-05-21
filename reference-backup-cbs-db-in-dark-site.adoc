@@ -73,17 +73,27 @@ TIP: BlueXP 備份與還原資料庫或索引型錄檔案中從未包含任何 V
 === 還原 BlueXP 備份與還原資料庫
 
 . 將 MySQL 備份從備份位置複製到新的 Connector 主機。我們將使用下方的範例檔案名稱「 CBS_DB_Backup_23_05_2023.SQL 」。
-. 使用下列命令、將備份複製到MySQL Docker容器中：
+. 根據您使用的是 Docker 或 Podman 容器、使用下列其中一個命令將備份複製到 MySQL 泊塢視窗容器：
 +
 [source, cli]
 ----
 docker cp CBS_DB_Backup_23_05_2023.sql ds_mysql_1:/.
 ----
-. 使用下列命令輸入MySQL Container Shell：
++
+[source, cli]
+----
+podman cp CBS_DB_Backup_23_05_2023.sql ds_mysql_1:/.
+----
+. 根據您使用的是 Docker 或 Podman 容器、使用下列其中一個命令進入 MySQL Container Shell ：
 +
 [source, cli]
 ----
 docker exec -it ds_mysql_1 sh
+----
++
+[source, cli]
+----
+podman exec -it ds_mysql_1 sh
 ----
 . 在Container Shell中、部署「env」。
 . 您需要MySQL資料庫密碼、因此請複製「MySQL_root_password」金鑰的值。

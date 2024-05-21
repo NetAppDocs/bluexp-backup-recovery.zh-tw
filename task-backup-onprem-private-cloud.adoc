@@ -480,7 +480,7 @@ TIP: 若要在啟動備份之前建立自訂原則、請參閱 link:task-create-
 
 
 +
-如果您的叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您的系統使用的是11.4版或更新版本、您可以選擇在一定天數後、將舊版備份分層至公有雲歸檔層。目前支援AWS S3 Glacier / S3 Glacier Deep歸檔或Azure歸檔儲存層。 <<Preparing to archive older backup files to public cloud storage,瞭解如何針對此功能設定您的系統>>。
+如果您的叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您的系統使用的是11.4版或更新版本、您可以選擇在一定天數後、將舊版備份分層至公有雲歸檔層。目前支援AWS S3 Glacier / S3 Glacier Deep歸檔或Azure歸檔儲存層。 <<準備將舊的備份檔案歸檔到公有雲儲存設備,瞭解如何針對此功能設定您的系統>>。
 
 +
 ** * 分層備份至公有雲 * ：選取您要分層備份的雲端供應商、然後輸入供應商詳細資料。

@@ -64,7 +64,7 @@ NOTE: 初始建立複寫的磁碟區或備份檔案時、會包含完整的來�
 
 下表顯示三種備份方法的一般比較。雖然物件儲存空間通常比內部部署磁碟儲存空間便宜、但如果您認為可能會經常從雲端還原資料、則雲端供應商的出口費用可減少部分成本。您需要確定從雲端的備份檔案還原資料的頻率。
 
-除了這項準則之外、如果您使用 DataLock 和勒索軟體保護功能、雲端儲存設備還會提供額外的安全選項、並透過為舊版備份檔案選擇歸檔儲存類別來節省額外成本。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["深入瞭解DataLock和勒索軟體保護"] 和 link:concept-cloud-backup-policies.html#archival-storage-settings["歸檔儲存設定"]。
+除了這項準則之外、如果您使用 DataLock 和勒索軟體保護功能、雲端儲存設備還會提供額外的安全選項、並透過為舊版備份檔案選擇歸檔儲存類別來節省額外成本。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["深入瞭解DataLock和勒索軟體保護"] 和 link:concept-cloud-backup-policies.html#archival-storage-options["歸檔儲存設定"]。
 
 [cols="18,18,22,18,22"]
 |===
@@ -120,7 +120,7 @@ image:diagram-321-cascade-detailed.png["顯示如何使用磁碟區的 Snapshot 
 
 如果您建立複寫或備份的自訂原則、則原則標籤（例如「每日」或「每週」）必須符合 Snapshot 原則中存在的標籤、否則將不會建立複寫的磁碟區和備份檔案。
 
-您可以在 BlueXP 備份與還原 UI 中建立 Snapshot 、複寫及備份至物件儲存原則。請參閱的一節 link:task-manage-backups-ontap.html#add-a-new-backup-policy["新增備份原則"] 以取得詳細資料。
+您可以在 BlueXP 備份與還原 UI 中建立 Snapshot 、複寫及備份至物件儲存原則。請參閱的一節 link:task-manage-backups-ontap.html#add-a-new-backup-to-cloud-policy["新增備份原則"] 以取得詳細資料。
 
 除了使用 BlueXP 備份還原來建立自訂原則之外、您還可以使用系統管理員或 ONTAP 命令列介面（ CLI ）。
 

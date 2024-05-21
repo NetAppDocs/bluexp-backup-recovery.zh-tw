@@ -363,7 +363,7 @@ endif::gcp[]
 +
 ** 在 ONTAP S3 中、 BlueXP 使用現有的使用者帳戶來處理 S3 儲存區。
 
-如果您想要在未來變更叢集的目的地物件存放區、則必須進行變更 link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["取消註冊工作環境的 BlueXP 備份與還原"^]然後使用新的雲端供應商資訊來啟用 BlueXP 備份與還原。
+如果您想要在未來變更叢集的目的地物件存放區、則必須進行變更 link:task-manage-backups-ontap.html#unregister-bluexp-backup-and-recovery-for-a-working-environment["取消註冊工作環境的 BlueXP 備份與還原"^]然後使用新的雲端供應商資訊來啟用 BlueXP 備份與還原。
 
 
 
@@ -378,9 +378,9 @@ NOTE: 套用至磁碟區的 Snapshot 原則必須有您在複寫原則和備份�
 
 一旦您達到某個類別或間隔的備份數量上限、舊備份就會移除、因此您永遠都能擁有最新的備份（因此過時的備份不會繼續佔用空間）。
 
-請參閱 link:concept-cloud-backup-policies.html#backup-schedules["備份排程"^] 如需可用排程選項的詳細資訊、請參閱。
+請參閱 link:concept-cloud-backup-policies.html["備份排程"^] 如需可用排程選項的詳細資訊、請參閱。
 
-請注意、您可以 link:task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time["建立磁碟區的隨需備份"] 除了從排程備份所建立的備份檔案之外、您也可以隨時從備份儀表板取得這些檔案。
+請注意、您可以 link:task-manage-backups-ontap.html#create-a-manual-volume-backup-at-any-time["建立磁碟區的隨需備份"] 除了從排程備份所建立的備份檔案之外、您也可以隨時從備份儀表板取得這些檔案。
 
 
 TIP: 資料保護磁碟區備份的保留期間與來源SnapMirror關係中所定義的相同。如果需要、您可以使用 API 進行變更。
@@ -403,8 +403,8 @@ TIP: 資料保護磁碟區備份的保留期間與來源SnapMirror關係中所�
 
 如需詳細資訊、請參閱以下資訊：
 
-* link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["DataLock 和勒索軟體保護的運作方式"]。
-* link:manage-backup-settings-ontap.html["如何在「進階設定」頁面中更新勒索軟體保護選項"]。
+* link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["DataLock 和勒索軟體保護的運作方式"]。
+* link:task-manage-backup-settings-ontap.html["如何在「進階設定」頁面中更新勒索軟體保護選項"]。
 
 
 
@@ -448,11 +448,11 @@ endif::gcp[]
 
 * 在本產品中、備份會與_Standard_儲存類別相關聯。StorageGRID
 +
-如果您的內部叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您的支援系統使用的是11.4或更新版本、您可以在特定天數後、將舊版備份檔案歸檔至公有雲歸檔儲存設備。目前支援AWS S3 Glacier / S3 Glacier Deep歸檔或Azure歸檔儲存層。 link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["深入瞭解StorageGRID 如何從還原歸檔備份檔案"^]。
+如果您的內部叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您的支援系統使用的是11.4或更新版本、您可以在特定天數後、將舊版備份檔案歸檔至公有雲歸檔儲存設備。目前支援AWS S3 Glacier / S3 Glacier Deep歸檔或Azure歸檔儲存層。 link:task-backup-onprem-private-cloud.html#prepare-to-archive-older-backup-files-to-public-cloud-storage["深入瞭解StorageGRID 如何從還原歸檔備份檔案"^]。
 
 
 
-請參閱 link:concept-cloud-backup-policies.html#archival-storage-settings["歸檔儲存設定"] 如需更多有關歸檔較舊備份檔案的詳細資訊、
+請參閱 link:concept-cloud-backup-policies.html#archival-storage-options["歸檔儲存設定"] 如需更多有關歸檔較舊備份檔案的詳細資訊、
 
 
 

@@ -92,9 +92,9 @@ image:screenshot_restore_dashboard.png["「還原儀表板」顯示使用瀏覽"
 
 請參閱您要使用的還原作業類型的需求與還原步驟：
 
-* <<Restoring volumes using Browse & Restore,使用瀏覽安培還原磁碟區；還原>>
-* <<Restoring folders and files using Browse & Restore,使用瀏覽安培還原資料夾與檔案>>
-* <<Restoring ONTAP data using Search & Restore,使用Search  Restore還原磁碟區、資料夾和檔案
+* <<使用瀏覽安培還原磁碟區；還原,使用瀏覽安培還原磁碟區；還原>>
+* <<使用瀏覽安培還原資料夾與檔案,使用瀏覽安培還原資料夾與檔案>>
+* <<restore-ontap-data-using-search-restore,使用Search  Restore還原磁碟區、資料夾和檔案
 
 
 
@@ -303,19 +303,19 @@ ifdef::aws[]
 
 
 
-link:reference-aws-backup-tiers.html#restoring-data-from-archival-storage["深入瞭解如何從AWS歸檔儲存設備還原"]。
+link:reference-aws-backup-tiers.html#restore-data-from-archival-storage["深入瞭解如何從AWS歸檔儲存設備還原"]。
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:reference-azure-backup-tiers.html#restoring-data-from-archival-storage["深入瞭解如何從Azure歸檔儲存設備還原"]。
+link:reference-azure-backup-tiers.html#restore-data-from-archival-storage["深入瞭解如何從Azure歸檔儲存設備還原"]。
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:reference-google-backup-tiers.html#restoring-data-from-archival-storage["深入瞭解如何從Google歸檔儲存設備還原"]。Google歸檔儲存層中的備份檔案幾乎會立即還原、而且不需要還原優先順序。
+link:reference-google-backup-tiers.html#restore-data-from-archival-storage["深入瞭解如何從Google歸檔儲存設備還原"]。Google歸檔儲存層中的備份檔案幾乎會立即還原、而且不需要還原優先順序。
 
 endif::gcp[]
 
@@ -411,19 +411,19 @@ ifdef::aws[]
 
 
 
-link:reference-aws-backup-tiers.html#restoring-data-from-archival-storage["深入瞭解如何從AWS歸檔儲存設備還原"]。
+link:reference-aws-backup-tiers.html#restore-data-from-archival-storage["深入瞭解如何從AWS歸檔儲存設備還原"]。
 
 endif::aws[]
 
 ifdef::azure[]
 
-link:reference-azure-backup-tiers.html#restoring-data-from-archival-storage["深入瞭解如何從Azure歸檔儲存設備還原"]。
+link:reference-azure-backup-tiers.html#restore-data-from-archival-storage["深入瞭解如何從Azure歸檔儲存設備還原"]。
 
 endif::azure[]
 
 ifdef::gcp[]
 
-link:reference-google-backup-tiers.html#restoring-data-from-archival-storage["深入瞭解如何從Google歸檔儲存設備還原"]。Google歸檔儲存層中的備份檔案幾乎會立即還原、而且不需要還原優先順序。
+link:reference-google-backup-tiers.html#restore-data-from-archival-storage["深入瞭解如何從Google歸檔儲存設備還原"]。Google歸檔儲存層中的備份檔案幾乎會立即還原、而且不需要還原優先順序。
 
 endif::gcp[]
 
@@ -500,7 +500,7 @@ image:screenshot_restore_select_dest.png["選取您要還原之檔案的磁碟�
 
 
 
-== 使用「搜尋與還原」還原ONTAP 資料
+== 使用「搜尋與還原」還原 ONTAP 資料
 
 您可以ONTAP 使用「搜尋與還原」、從還原的還原檔還原磁碟區、資料夾或檔案。搜尋與還原可讓您從所有備份中搜尋特定的磁碟區、資料夾或檔案、然後執行還原。您不需要知道確切的工作環境名稱、磁碟區名稱或檔案名稱、搜尋會查看所有的磁碟區備份檔案。
 
@@ -754,7 +754,7 @@ image:screenshot_restore_enable_indexing.png["顯示已啟動索引目錄的工�
 
 === 使用Search & Restore還原磁碟區、資料夾和檔案
 
-您就可以了 <<Enabling the Indexed Catalog for each working environment,為您的工作環境啟用索引>>、您可以使用「搜尋與還原」來還原磁碟區、資料夾和檔案。這可讓您使用各種篩選器、找出想要從所有備份檔案還原的確切檔案或磁碟區。
+您就可以了 <<enable-the-indexed-catalog-for-each-working-environment,為您的工作環境啟用索引>>、您可以使用「搜尋與還原」來還原磁碟區、資料夾和檔案。這可讓您使用各種篩選器、找出想要從所有備份檔案還原的確切檔案或磁碟區。
 
 .步驟
 . 從BlueXP功能表中、選取* Protection > Backup and recovery *。

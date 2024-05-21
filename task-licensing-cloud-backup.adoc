@@ -32,7 +32,7 @@ link:concept-ontap-backup-to-cloud.html#cost["深入瞭解使用 BlueXP 備份�
 
 如果您在雲端供應商的市場中註冊「隨用隨付」訂閱、則可免費試用 BlueXP 備份與恢復 30 天。免費試用版會在您訂閱市場上市時開始。請注意、如果您在部署 Cloud Volumes ONTAP 系統時支付市場訂閱費用、然後在 10 天之後開始 BlueXP 備份與恢復免費試用版、您將有 20 天的時間可以使用免費試用版。
 
-免費試用結束時、您將自動切換至 PAYGO 訂閱、不會中斷。如果您決定不繼續使用 BlueXP 備份與還原、只要 link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["從工作環境中取消註冊 BlueXP 備份與還原"] 在試用結束之前、您將不會被收取任何費用。
+免費試用結束時、您將自動切換至 PAYGO 訂閱、不會中斷。如果您決定不繼續使用 BlueXP 備份與還原、只要 link:task-manage-backups-ontap.html#unregister-bluexp-backup-and-recovery-for-a-working-environment["從工作環境中取消註冊 BlueXP 備份與還原"] 在試用結束之前、您將不會被收取任何費用。
 
 
 
@@ -213,7 +213,7 @@ BlueXP 新增授權、使 BlueXP 備份與還原成為作用中狀態。
 
 === 更新 BlueXP 備份與還原 BYOL 授權
 
-如果授權期限即將到期、或授權容量已達到上限、您將會在備份UI中收到通知。此狀態也會出現在 BlueXP 數位電子錢包頁面和中 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center["通知"]。
+如果授權期限即將到期、或授權容量已達到上限、您將會在備份UI中收到通知。此狀態也會出現在 BlueXP 數位電子錢包頁面和中 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitor-operations-status-using-the-notification-center["通知"]。
 
 image:screenshot_services_license_expire.png["BlueXP 數位錢包頁面中顯示過期授權的螢幕擷取畫面。"]
 

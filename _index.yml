@@ -97,7 +97,7 @@ indexpage:
     - title: 還原內部部署的 SQL Server 應用程式資料
       url: task-restore-sql-data.html
     - title: 還原雲端原生 Oracle 應用程式資料
-      url: task-restore-cloud-native-oracle-data.html
+      url: task-restore-cloud-native-oracle-data-to-original-location.html
     - title: 還原雲端原生 SAP HANA 應用程式資料
       flavor: azure
       url: task-restore-cloud-native-sap-hana-data.html

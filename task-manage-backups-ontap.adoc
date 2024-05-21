@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-manage-backups-ontap.html 
-keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup 
+keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup, bluexp 
 summary: 您可以Cloud Volumes ONTAP 變更備份排程、建立新的備份原則、啟用/停用磁碟區備份、暫停備份、刪除備份等、來管理您的支援功能和內部部署ONTAP 的支援系統備份。這包括所有類型的備份、包括 Snapshot 複本、複寫磁碟區、以及物件儲存中的備份檔案。 
 ---
 = 管理 ONTAP 系統的備份
@@ -136,7 +136,7 @@ image:screenshot_manage_backup_settings.png["螢幕擷取畫面會顯示「管�
 
 備份名稱包含時間戳記、因此您可以從其他排程備份中識別隨需備份。
 
-如果您在啟用此叢集的 BlueXP 備份與還原時啟用 _DataLock 與勒索軟體保護、則隨需備份也會使用 DataLock 進行設定、保留期將為 30 天。對點對點備份不支援勒索軟體掃描。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["深入瞭解DataLock和勒索軟體保護"^]。
+如果您在啟用此叢集的 BlueXP 備份與還原時啟用 _DataLock 與勒索軟體保護、則隨需備份也會使用 DataLock 進行設定、保留期將為 30 天。對點對點備份不支援勒索軟體掃描。 link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["深入瞭解DataLock和勒索軟體保護"^]。
 
 請注意、建立ad -ad hocent備份時、會在來源磁碟區上建立Snapshot。由於此Snapshot並非正常Snapshot排程的一部分、因此不會關閉。備份完成後、您可能想要從來源Volume手動刪除此Snapshot。如此一來、就能釋出與此Snapshot相關的區塊。Snapshot的名稱將以「CBS快照-adhoc-」開頭。 https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["瞭解如何使用ONTAP CLI刪除Snapshot"^]。
 
@@ -323,7 +323,7 @@ endif::gcp[]
 
 當您為工作環境啟用 BlueXP 備份與還原時、您最初選取的所有磁碟區都會使用您定義的預設備份原則進行備份。如果您想要將不同的備份原則指派給具有不同恢復點目標（RPO）的特定磁碟區、您可以為該叢集建立其他原則、並將這些原則指派給其他磁碟區。
 
-如果您想要將新的備份原則套用至工作環境中的特定磁碟區、首先必須將備份原則新增至工作環境。您可以 <<Changing the policy assigned to existing volumes,將原則套用至該工作環境中的磁碟區>>。
+如果您想要將新的備份原則套用至工作環境中的特定磁碟區、首先必須將備份原則新增至工作環境。您可以 <<變更指派給現有磁碟區的備份設定,將原則套用至該工作環境中的磁碟區>>。
 
 [NOTE]
 ====
@@ -390,7 +390,7 @@ CAUTION: 如果您打算刪除具有備份的工作環境或叢集、則必須�
 
 === 刪除工作環境的所有備份檔案
 
-刪除工作環境的物件儲存設備上的所有備份、並不會停用此工作環境中未來的磁碟區備份。如果您想要停止在工作環境中建立所有磁碟區的備份、可以停用備份 <<Deactivating BlueXP backup and recovery for a working environment,如此處所述>>。
+刪除工作環境的物件儲存設備上的所有備份、並不會停用此工作環境中未來的磁碟區備份。如果您想要停止在工作環境中建立所有磁碟區的備份、可以停用備份 <<停用工作環境的 BlueXP 備份與還原,如此處所述>>。
 
 請注意、此動作不會影響 Snapshot 複本或複寫的磁碟區、這些類型的備份檔案不會被刪除。
 
@@ -449,7 +449,7 @@ image:screenshot_delete_one_backup.png["顯示如何刪除單一備份檔案的�
 您無法從 BlueXP 備份與還原使用者介面刪除來源磁碟區。不過、您可以在畫版上開啟「Volume Details」（Volume詳細資料）頁面、以及 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["從該處刪除磁碟區"]。
 
 
-NOTE: 一旦關係被刪除、您就無法刪除個別的Volume備份檔案。不過、您可以 link:task-manage-backups-ontap.html#deleting-all-backup-files-for-a-volume["刪除磁碟區的所有備份"] 如果您要移除所有備份檔案。
+NOTE: 一旦關係被刪除、您就無法刪除個別的Volume備份檔案。不過、您可以刪除磁碟區的所有備份。
 
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、按一下 image:screenshot_horizontal_more_button.gif["更多圖示"] 對於來源 Volume 、請選取 * 備份 * > * 刪除關係 * 。
@@ -464,7 +464,7 @@ image:screenshot_delete_relationship_single.png["顯示如何刪除單一磁碟�
 
 停用工作環境的 BlueXP 備份與還原會停用系統上每個磁碟區的備份、也會停用還原磁碟區的功能。不會刪除任何現有的備份。這並不會從這個工作環境中取消註冊備份服務、基本上可讓您暫停一段時間內的所有備份與還原活動。
 
-請注意、除非您同意、否則雲端供應商會繼續向您收取備份所使用容量的物件儲存成本 <<刪除工作環境的所有備份檔案,刪除備份>>。
+請注意、除非您同意、否則雲端供應商會繼續向您收取備份所使用容量的物件儲存成本 <<刪除備份,刪除備份>>。
 
 .步驟
 . 從* Volumes（磁碟區）*索引標籤、選取* Backup Settings*（備份設定）。

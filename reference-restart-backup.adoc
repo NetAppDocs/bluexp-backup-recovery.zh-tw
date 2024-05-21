@@ -33,17 +33,17 @@ BlueXP 備份與還原功能內建於 BlueXP Connector 中。您必須依照不�
 |===
 . 輸入命令以重新啟動服務。
 +
-[cols="45,45"]
+[cols="40,30,30"]
 |===
-| 連接器位置 | 命令 
+| 連接器位置 | Docker 命令 | Podman 命令 
 
 
-| 雲端部署 | `docker restart cloudmanager_cbs` 
+| 雲端部署 | `docker restart cloudmanager_cbs` | `podman restart cloudmanager cbs`` 
 
 
-| 可存取網際網路的手動安裝 | `docker restart cloudmanager_cbs` 
+| 可存取網際網路的手動安裝 | `docker restart cloudmanager_cbs` | `podman restart cloudmanager cbs`` 
 
 
-| 無需網際網路存取的手動安裝 | `docker restart ds_cloudmanager_cbs_1` 
+| 無需網際網路存取的手動安裝 | `docker restart ds_cloudmanager_cbs_1` | `podman restart ds_cloudmanager_cbs_1`` 
 |===
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: whats-new.html 
-keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, backup, restore' 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, backup, restore, bluexp, bluexp backup and recovery' 
 summary: 瞭解 BlueXP 備份與還原的新功能。 
 ---
 = BlueXP 備份與還原的新功能
@@ -15,6 +15,24 @@ summary: 瞭解 BlueXP 備份與還原的新功能。
 
 [role="lead"]
 瞭解 BlueXP 備份與還原的新功能。
+
+
+
+== 2024 年 5 月 17 日
+
+
+
+=== 在內部部署 Connector 上使用 RHEL 8 和 RHEL 9 時的限制
+
+BlueXP Connector 3.9.40 版支援某些版本的 Red Hat Enterprise Linux 第 8 版和第 9 版、可在 RHEL 8 或 9 主機上手動安裝 Connector 軟體、無論中提及的作業系統以外的位置為何 https://docs.netapp.com/us-en/bluexp-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["主機需求"^]。這些較新的 RHEL 版本需要使用 Podman 引擎、而非 Docker 引擎。目前、 BlueXP 備份與還原在使用 Podman 引擎時有兩項限制。
+
+請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/reference-limitations.html["備份與還原限制"] 以取得詳細資料。
+
+下列程序包含新的 Podcast 說明：
+
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/reference-restart-backup.html["重新啟動 BlueXP 備份與還原"]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html["在黑暗的站台中還原 BlueXP 備份與還原資料"]
+
 
 
 

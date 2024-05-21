@@ -58,7 +58,7 @@ NOTE: 「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統�
 設定 Connector 的權限、以建立和管理 Google Cloud 儲存庫。您也需要設定內部部署 ONTAP 叢集的權限、才能讀取資料並將資料寫入 Google Cloud 儲存庫。
 
 [role="quick-margin-para"]
-或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。 <<Prepare Google Cloud as your backup target,瞭解如何讓您的 Google Cloud 環境準備好接收 ONTAP 備份。>>
+或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。 <<Prepare Google Cloud storage as your backup target,瞭解如何讓您的 Google Cloud 環境準備好接收 ONTAP 備份。>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 啟動 ONTAP 磁碟區上的備份
 [role="quick-margin-para"]
