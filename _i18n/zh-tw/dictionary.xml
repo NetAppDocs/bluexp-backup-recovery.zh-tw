@@ -2766,7 +2766,6 @@
   <block id="c0b041ab0557d62205d9f7c2fbff6598" category="paragraph"><block ref="1dea076a83901241f0583b1eba278b63" category="inline-link-rx"></block>。</block>
   <block id="b8c4390ff667478ec0b60750dee2c4c7" category="list-text"><block ref="b8c4390ff667478ec0b60750dee2c4c7" category="inline-link-rx"></block></block>
   <block id="c89f481c3b46af99ed7620462173a07c" category="list-text"><block ref="c89f481c3b46af99ed7620462173a07c" category="inline-link-rx"></block></block>
-  <block id="2aeeba0020a7848f7902186fbd8cb9e8" category="list-text"><block ref="2aeeba0020a7848f7902186fbd8cb9e8" category="inline-link-rx"></block></block>
   <block id="f2952cd66b2c1d62b092c2ae5559eabf" category="list-text">您的需求必須是StorageGRID<block ref="27661aa20e8b873c50bd0587758b98a1" category="inline-link-rx"></block>。</block>
   <block id="c2e1ae9092ad1a2b4bccebec9b7fbd42" category="list-text">如果您有<block ref="a7e016fe79f350912ccb5dfe261d7ecb" category="inline-link-rx"></block> 或<block ref="d3d508974cb975126e687a6961f332c5" category="inline-link-rx"></block> 在帳戶中、索引目錄會儲存在雲端供應商、就像部署在雲端的Connector一樣。（如果您同時擁有這兩項認證、則AWS預設為選取狀態。）</block>
   <block id="fea98b7ef5d8a09fc1a41665820ca44e" category="paragraph">您應該為託管資料庫的 ONTAP 工作環境建立 FSX 。如需相關資訊、請參閱 <block ref="99bdda3a8ebb4e92b4deac45aac1de8f" category="inline-link-macro-rx"></block> 和 <block ref="221c300fec5ef905fe42ac89652a6952" category="inline-link-macro-rx"></block>。</block>
@@ -2780,7 +2779,6 @@
   <block id="c6d0aba5a4df18df97543934ad4a1185" category="list-text"><block ref="c6d0aba5a4df18df97543934ad4a1185" category="inline-link-rx"></block></block>
   <block id="548e6841e3441d35da2414e7a61ba449" category="paragraph">請參閱<block ref="d6cf51858c4dc41eb58119fabea29b51" category="inline-link-rx"></block> 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。</block>
   <block id="187e15fe582f53b6ed739ea360c9f408" category="list-text">請完成精靈中的頁面、依照中所述部署系統<block ref="d6cf51858c4dc41eb58119fabea29b51" category="inline-link-rx"></block>。</block>
-  <block id="19876dc921287243c303e7c43a14df3f" category="cell">請依照的指示進行<block ref="814636d53832f91c925bc44c968204b3" category="inline-link-rx"></block> 視您使用的雲端供應商而定。</block>
   <block id="190883b84e441e0bd227971c892ce575" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。<block ref="7327129ba68875466d1d1f22b67d23f4" category="inline-link-rx"></block>。</block>
   <block id="3c1c17ea503d5e9470f8439096f625f6" category="paragraph">只有在您需要時、才需要執行這些步驟<block ref="677834f72462157379b8c91854842dcc" category="inline-link-rx"></block>。</block>
   <block id="327e32511f0c97676e41ea866aac0721" category="list-text">透過連接埠 443 連接到 BlueXP 備份與恢復服務、以及 Google Cloud 儲存設備的 HTTPS 連線 <block ref="e228b87eff1d3a92b4544cd5652fc5ad" category="inline-link-rx"></block>）</block>
@@ -2817,7 +2815,6 @@
   <block id="c490eac8fe2144e59b599caa7ff364f2" category="list-text">透過連接埠 443 連接到 BlueXP 備份與還原服務、以及 S3 物件儲存設備的 HTTPS 連線 <block ref="63b337bf4559a585c3373707ecfcc413" category="inline-link-rx"></block>）</block>
   <block id="aa91817c0e1d6a16a1f290ad2357d467" category="list-text">AWS和AWS GovCloud部署需要額外的傳入和傳出安全群組規則。請參閱<block ref="ed3ada480c52b8e0c09a903c9cf52508" category="inline-link-rx"></block> 以取得詳細資料。</block>
   <block id="94bf6d31d85a9e7f628b488ba9a25200" category="list-text">確認下列S3權限（從最新版本開始）<block ref="d97dc29944250663fe9dd52fa43d79d7" category="inline-link-rx"></block>）是IAM角色的一部分、可為Connector提供權限。如果沒有、請參閱<block ref="484fb6182b52563a51349e6fb7cb2cb6" category="inline-link-rx"></block>。</block>
-  <block id="a6b673d310713aa4bdd09f8fd19acf66" category="list-text">從VPC S3端點取得憑證。您的做法是<block ref="bee792b855389ef4e6c81f6aa6136d00" category="inline-link-rx"></block> 並執行下列命令。輸入端點的DNS名稱時、請在開頭加入「pucket」、取代「*」：</block>
   <block id="b46213c291fe93c05313fa11bc5d273c" category="paragraph">備份複本與相關聯<block ref="94ce6f448900468e79b10f5ddbf648fe" category="inline-link-rx"></block> BlueXP Connector 所在的位置。</block>
   <block id="2bda192204fc86d57a53bf80ec29ad65" category="list-text">透過連接埠 443 連接到 BlueXP 備份與恢復服務、以及到 Blob 物件儲存設備的 HTTPS 連線 <block ref="73abec29c95edc01ed78226396cb9d9e" category="inline-link-rx"></block>）</block>
   <block id="586fb4ce14563af75d1816e73c9d868a" category="list-text">Azure和Azure政府部署需要額外的傳入安全性群組規則。請參閱<block ref="179e195cc8e81b19d72f9ddb7460e81f" category="inline-link-rx"></block> 以取得詳細資料。</block>
@@ -2827,7 +2824,6 @@
   <block id="cb6a777dd3c6e43b0dc441d38519d219" category="paragraph"><block ref="cb6a777dd3c6e43b0dc441d38519d219" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e65065c4fd326b9f3a1eeb9453c30d73" category="paragraph"><block ref="e65065c4fd326b9f3a1eeb9453c30d73" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2ea260929e27ffcb623c8aa35689bd18" category="paragraph"><block ref="2ea260929e27ffcb623c8aa35689bd18" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0736ad21b3bf8224269719357e7aadda" category="paragraph">安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。對 BlueXP 備份與還原資料庫結構進行定期變更、可能會使較新的軟體版本與原始資料庫備份不相容。您可以<block ref="d1d5d87c9450fbe53d901c1b5aa0b756" category="inline-link-rx"></block>。</block>
   <block id="6c962f0e820a4789f1eba2c1a38f944d" category="list-text"><block ref="6c962f0e820a4789f1eba2c1a38f944d" category="inline-link-rx"></block></block>
   <block id="9859429ce021a771d55011bbad61663d" category="list-text"><block ref="95020d92addc538671ad8a553222768a" category="inline-link-rx"></block>。</block>
   <block id="dd356e8ea63119f95e3666d6db68f47e" category="paragraph">在StorageGRID 原始Connector設定中使用設定時、新增與ONTAP 您的不支援功能環境相關的詳細資訊<block ref="84b7c1fcfbca071b9004578261b65308" category="inline-link-rx"></block>。</block>
@@ -3596,7 +3592,6 @@ Cloud Volumes ONTAP</block>
   <block id="c34e06cffb92365ae6ffa2950eebec86" category="paragraph">當連接器和內部部署 ONTAP 系統安裝在內部部署位置、且無法存取網際網路（「暗點」）時、 StorageGRID 系統必須位於同一個內部部署資料中心。在Dark站台組態中、不支援將舊版備份檔案歸檔至公有雲。</block>
   <block id="090245d8e86ce328b1076df6d6efa387" category="paragraph">當您將資料備份到 StorageGRID 時、您的內部環境必須有 BlueXP Connector 。您可能需要安裝新的 Connector 、或確定目前選取的 Connector 位於內部部署。連接器可安裝在有或沒有網際網路存取的站台上。</block>
   <block id="dd61dca07c56e04220c21764b917992f" category="section-title">準備 Connector 網路連線需求</block>
-  <block id="420f74958ffaef4d8f08ce850e97c52e" category="list-text">BlueXP 備份與還原功能內建於 BlueXP Connector 中。以私有模式安裝時、您必須定期更新 Connector 軟體、才能存取新功能。請檢查 <block ref="f2b1fe06debcbb7b96badbcb85471310" category="inline-link-macro-rx"></block> 查看每個 BlueXP 備份與還原版本的新功能。若要使用新功能、請依照步驟執行<block ref="164e4794420610da956934de57a9da8a" category="inline-link-rx"></block>。</block>
   <block id="2c4e4b23bf49a867077416ba2dd23a7d" category="list-text">當您在 SaaS 環境中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到雲端。當您在無法存取網際網路的站台中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 儲存區。如果您的私有模式站台發生 Connector 故障、您可以 <block ref="21b30d1009822b1f508f80c6007a3164" category="inline-link-macro-rx"></block>。</block>
   <block id="113b5e7186c305ad07d9c9c046e30198" category="list-text">如果您使用的 IPspace 與預設的不同、則可能需要建立靜態路由、才能存取物件儲存區。</block>
   <block id="08cdeb7ce64fda06111111c8fea66510" category="section-title">準備 StorageGRID 做為備份目標</block>
@@ -4916,4 +4911,9 @@ ifdef：：AWS []</block>
   <block id="b48f6c0f91c12dc372d780831385f2f3" category="paragraph"><block ref="9cd661f11a3d57e0743695d693a10908" category="inline-link-macro-rx"></block>。Google歸檔儲存層中的備份檔案幾乎會立即還原、而且不需要還原優先順序。</block>
   <block id="8ba7d24c75d9a4c060c33cf7a127b666" category="section-title">使用「搜尋與還原」還原 ONTAP 資料</block>
   <block id="c3bc11d3bdd05e4f1cbcfd5dcc1639fe" category="paragraph">您就可以了 <block ref="e49782369984109313e45bc161ecdd2d" category="inline-xref-macro-rx"></block>、您可以使用「搜尋與還原」來還原磁碟區、資料夾和檔案。這可讓您使用各種篩選器、找出想要從所有備份檔案還原的確切檔案或磁碟區。</block>
+  <block id="c6f5c592a27c54c4a47031416aebf062" category="cell">請依照的指示進行<block ref="571ca7d044081e209bcef30efa5d6ace" category="inline-link-rx"></block> 視您使用的雲端供應商而定。</block>
+  <block id="a454364b080d416ad203233987bc1148" category="paragraph">安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。對 BlueXP 備份與還原資料庫結構進行定期變更、可能會使較新的軟體版本與原始資料庫備份不相容。您可以<block ref="2e0a24ee8438c92516f1c39f0bf156f8" category="inline-link-rx"></block>。</block>
+  <block id="df0ff0042be8059301b11ae842882f69" category="list-text"><block ref="df0ff0042be8059301b11ae842882f69" category="inline-link-rx"></block></block>
+  <block id="26a96558efb5aff5b97e24187bdedaaa" category="list-text">BlueXP 備份與還原功能內建於 BlueXP Connector 中。以私有模式安裝時、您必須定期更新 Connector 軟體、才能存取新功能。請檢查 <block ref="f2b1fe06debcbb7b96badbcb85471310" category="inline-link-macro-rx"></block> 查看每個 BlueXP 備份與還原版本的新功能。若要使用新功能、請依照步驟執行<block ref="2d7f0c488acd05ac12707e13e58fd7d1" category="inline-link-rx"></block>。</block>
+  <block id="8adbc3c324aa6698c29b0a7962b11b00" category="list-text">從VPC S3端點取得憑證。您的做法是<block ref="b93c91598d8e86da04085f6831b06e68" category="inline-link-rx"></block> 並執行下列命令。輸入端點的DNS名稱時、請在開頭加入「pucket」、取代「*」：</block>
 </blocks>

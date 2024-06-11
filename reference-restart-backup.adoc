@@ -26,7 +26,7 @@ BlueXP 備份與還原功能內建於 BlueXP Connector 中。您必須依照不�
 | 連接器位置 | 程序 
 
 
-| 雲端部署 | 請依照的指示進行 https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["連線至 Connector Linux 虛擬機器"^] 視您使用的雲端供應商而定。 
+| 雲端部署 | 請依照的指示進行 https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["連線至 Connector Linux 虛擬機器"^] 視您使用的雲端供應商而定。 
 
 
 | 手動安裝 | 登入 Linux 系統。 

@@ -62,7 +62,7 @@ TIP: BlueXP 備份與還原資料庫或索引型錄檔案中從未包含任何 V
 
 === 在新的內部部署Linux主機上安裝新的Connector
 
-安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。對 BlueXP 備份與還原資料庫結構進行定期變更、可能會使較新的軟體版本與原始資料庫備份不相容。您可以 https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["還原備份資料庫後、將Connector軟體升級至最新版本"^]。
+安裝新的BlueXP Connector時、請確定您下載的軟體版本與安裝在原始Connector上的軟體版本相同。對 BlueXP 備份與還原資料庫結構進行定期變更、可能會使較新的軟體版本與原始資料庫備份不相容。您可以 https://docs.netapp.com/us-en/bluexp-setup-admin/task-upgrade-connector.html["還原備份資料庫後、將Connector軟體升級至最新版本"^]。
 
 . https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["在新的內部部署Linux主機上安裝BlueXP Connector"^]
 . 使用您剛建立的管理員使用者認證登入BlueXP。

@@ -100,7 +100,7 @@ BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份�
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#how-to-create-a-connector["在雲端環境中安裝 Connector"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["在可存取網際網路的Linux主機上安裝Connector"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["在無法存取網際網路的Linux主機上安裝Connector"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html["在連接器之間切換"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["在連接器之間切換"^]
 
 
 
@@ -118,7 +118,7 @@ BlueXP Connector是用於BlueXP功能的主要軟體。需要連接器來備份�
 
 ==== 私有模式（暗網站）考量
 
-BlueXP 備份與還原功能內建於 BlueXP Connector 中。以私有模式安裝時、您必須定期更新 Connector 軟體、才能存取新功能。請檢查 link:whats-new.html["BlueXP 備份與還原新功能"] 查看每個 BlueXP 備份與還原版本的新功能。若要使用新功能、請依照步驟執行 https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["升級Connector軟體"^]。
+BlueXP 備份與還原功能內建於 BlueXP Connector 中。以私有模式安裝時、您必須定期更新 Connector 軟體、才能存取新功能。請檢查 link:whats-new.html["BlueXP 備份與還原新功能"] 查看每個 BlueXP 備份與還原版本的新功能。若要使用新功能、請依照步驟執行 https://docs.netapp.com/us-en/bluexp-setup-admin/task-upgrade-connector.html["升級Connector軟體"^]。
 
 當您在標準 SaaS 環境中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到雲端。當您在無法存取網際網路的站台中使用 BlueXP 備份與還原時、 BlueXP 備份與還原組態資料會備份到儲存備份的 ONTAP S3 儲存區。如果您的私有模式站台發生 Connector 故障、您可以 link:reference-backup-cbs-db-in-dark-site.html["將 BlueXP 備份與還原資料還原至新的 Connector"^]。
 
