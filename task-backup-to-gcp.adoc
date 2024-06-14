@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-to-gcp.html 
-keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, gcp, google cloud, back up volumes, cloud backup 
+keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, gcp, google cloud, back up volumes, cloud backup, bluexp, bluexp backup and recovery 
 summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Google Cloud 儲存設備。 
 ---
 = 將 Cloud Volumes ONTAP 資料備份至 Google Cloud Storage
@@ -203,7 +203,7 @@ link:concept-protection-journey.html#do-you-want-to-create-your-own-object-stora
 
 == 在 Cloud Volumes ONTAP 上啟用 BlueXP 備份與還原
 
-輕鬆啟用 BluXP 備份與還原。這些步驟會因您現有的 Cloud Volumes ONTAP 系統或新系統而稍有不同。
+啟用 BlueXP 備份與還原非常簡單。這些步驟會因您現有的 Cloud Volumes ONTAP 系統或新系統而稍有不同。
 
 * 在新系統上啟用 BlueXP 備份與還原 *
 

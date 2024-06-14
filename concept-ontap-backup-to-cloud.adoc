@@ -91,6 +91,14 @@ BlueXP 備份與還原支援 ONTAP 工作環境、以及公有雲與私有雲供
 
 
 
+=== 支援的地區
+
+在許多 Amazon Web Services 、 Microsoft Azure 和 Google Cloud 地區、 Cloud Volumes ONTAP 都支援 BlueXP 備份與還原。
+
+https://bluexp.netapp.com/cloud-volumes-global-regions?__hstc=177456119.0da05194dc19e7d38fcb4a4d94f105bc.1583956311718.1592507347473.1592829225079.52&__hssc=177456119.1.1592838591096&__hsfp=76784061&hsCtaTracking=c082a886-e2e2-4ef0-8ef2-89061b2b1955%7Cd07def13-e88c-40a0-b2a1-23b3b4e7a6e7#cvo["使用全球區域地圖深入瞭解"^]
+
+
+
 === 支援的備份目的地
 
 BlueXP 備份與還原可讓您將 ONTAP 磁碟區從下列來源工作環境備份到下列公有雲和私有雲供應商的次要工作環境和物件儲存。Snapshot 複本位於來源工作環境中。

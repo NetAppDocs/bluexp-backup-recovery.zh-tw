@@ -3337,7 +3337,6 @@ _ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / �
   <block id="d7bb556723e915c43fe4fd9b0f90d545" category="inline-link">請參閱ONTAP 《知識庫》文件中的叢集對等條件</block>
   <block id="c08b01fe5c09939cdbabcb370734dad8" category="list-text">若要在 Cloud Volumes ONTAP 不同子網路中的兩個子網路之間複寫資料、必須將子網路路由在一起（這是預設設定）。</block>
   <block id="a8597301498b7ba277bd04c5d9cec26a" category="section-title">在 Cloud Volumes ONTAP 上啟用 BlueXP 備份與還原</block>
-  <block id="3a3585e7353e26db7ebd817873594905" category="paragraph">輕鬆啟用 BluXP 備份與還原。這些步驟會因您現有的 Cloud Volumes ONTAP 系統或新系統而稍有不同。</block>
   <block id="8a8476fd6836ec12c30dec20bc5004af" category="paragraph">* 在新系統上啟用 BlueXP 備份與還原 *</block>
   <block id="901ae31ede407d1b2f9642db905682f2" category="list-text">從 BlueXP Canvas 中選取 * 新增工作環境 * 、選擇雲端供應商、然後選取 * 新增 * 。選取 * 建立 Cloud Volumes ONTAP * 。</block>
   <block id="2804562bc1e662a5b5b8ecf3b0be67c6" category="admonition">若要修改備份設定或新增複寫、請參閱 <block ref="5cd1a7d7fa9fd41e0b8e095748eb7b5f" category="inline-link-macro-rx"></block>。</block>
@@ -4916,4 +4915,8 @@ ifdef：：AWS []</block>
   <block id="df0ff0042be8059301b11ae842882f69" category="list-text"><block ref="df0ff0042be8059301b11ae842882f69" category="inline-link-rx"></block></block>
   <block id="26a96558efb5aff5b97e24187bdedaaa" category="list-text">BlueXP 備份與還原功能內建於 BlueXP Connector 中。以私有模式安裝時、您必須定期更新 Connector 軟體、才能存取新功能。請檢查 <block ref="f2b1fe06debcbb7b96badbcb85471310" category="inline-link-macro-rx"></block> 查看每個 BlueXP 備份與還原版本的新功能。若要使用新功能、請依照步驟執行<block ref="2d7f0c488acd05ac12707e13e58fd7d1" category="inline-link-rx"></block>。</block>
   <block id="8adbc3c324aa6698c29b0a7962b11b00" category="list-text">從VPC S3端點取得憑證。您的做法是<block ref="b93c91598d8e86da04085f6831b06e68" category="inline-link-rx"></block> 並執行下列命令。輸入端點的DNS名稱時、請在開頭加入「pucket」、取代「*」：</block>
+  <block id="8c4b25218155a1fdb972f4169855d04f" category="section-title">支援的地區</block>
+  <block id="90463a14d4c78ea524911daef7d9cf71" category="paragraph">在許多 Amazon Web Services 、 Microsoft Azure 和 Google Cloud 地區、 Cloud Volumes ONTAP 都支援 BlueXP 備份與還原。</block>
+  <block id="6c6a0225cb0a619d8872981b7be0ac95" category="inline-link">使用全球區域地圖深入瞭解</block>
+  <block id="dac27b02289e52ad3bf6be2e625f4031" category="paragraph"><block ref="70c5fe87a2dc0f089282cb7307d783bf" category="inline-link-rx"></block></block>
 </blocks>
