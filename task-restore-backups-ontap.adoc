@@ -31,6 +31,9 @@ summary: 您可以從建立備份的位置、 Snapshot 複本、複寫磁碟區�
 
 
 
+NOTE: 如需還原 ONTAP 資料的相關限制，請參閱 link:reference-limitations.html["ONTAP 磁碟區的備份與還原限制"]。
+
+
 
 == 還原儀表板
 

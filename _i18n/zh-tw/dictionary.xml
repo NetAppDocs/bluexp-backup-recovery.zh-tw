@@ -3783,8 +3783,6 @@ Cloud Volumes ONTAP</block>
   <block id="bd83bdfad11f4eb2160cecbaafa5771f" category="section-title">您使用哪種 BlueXP Connector 部署模式</block>
   <block id="40f7e0f171ae7f38e670d73e8a4c284b" category="paragraph">BlueXP 提供多種部署模式、可讓您以符合業務與安全需求的方式使用 BlueXP 。_Standard modity_ 利用 BlueXP SaaS 層提供完整功能、而 _restricted modity_ 和 _private modity_ 則適用於有連線限制的組織。</block>
   <block id="fb67e88bd0479a55df78c8a83275d5e7" category="inline-link">觀看這段關於 BlueXP 部署模式的影片</block>
-  <block id="72e192cdf7601017af8b339164635167" category="paragraph"><block ref="2f5063518a76fb11ac58b566cf1a20ab" category="inline-link-rx"></block>。
-<block ref="86b5ac5922ab7c62d6a8a3ff686cf32a" category="inline-link-rx"></block>。</block>
   <block id="0f8751300c4a6857f8a492b7f39fba12" category="inline-link-macro">請參閱支援的備份目的地完整清單</block>
   <block id="2e87d4ef1e0516d893da73de140af706" category="inline-link-macro">將 Cloud Volumes ONTAP 資料備份至 Azure Blob</block>
   <block id="32f34f4c2eca6b21bfa54bfe2cf7ad10" category="inline-link-macro">將內部部署的 ONTAP 資料備份至 Azure Blob</block>
@@ -4858,7 +4856,6 @@ ifdef：：AWS []</block>
   <block id="2dc37cecffdd7077ba99c0ba111ad347" category="section-title">備份至物件限制</block>
   <block id="215d6f1bc8d7005b7bb981d9a3dc7b78" category="section-title">搭配 Podcast 使用 RHEL 8 以上的限制</block>
   <block id="38c44a50a75c15410df928f63928acf8" category="section-title">不支援單一檔案還原</block>
-  <block id="8d98ce1c70029af5a2d95ea5cd356016" category="paragraph">使用 Podman 時、不支援單一檔案還原和目錄還原的瀏覽與還原功能。使用 Podman 時支援所有其他類型的還原作業、因此您可以使用下列其他方法還原資料、直到問題解決為止：</block>
   <block id="dbeaadfb952b8aa57d00264751776087" category="list-text">如果複寫磁碟區存在、請從複寫的磁碟區還原檔案或資料夾。</block>
   <block id="e647cb9e3bb11f1dcf4383ae4ae00f0f" category="list-text">使用「搜尋與還原」功能、從雲端備份還原檔案或資料夾。</block>
   <block id="b760ac1d9088cf17812b95299a0f4c97" category="list-text">使用「瀏覽與還原」從雲端備份還原磁碟區、然後存取所需的檔案或資料夾。</block>
@@ -4919,4 +4916,8 @@ ifdef：：AWS []</block>
   <block id="90463a14d4c78ea524911daef7d9cf71" category="paragraph">在許多 Amazon Web Services 、 Microsoft Azure 和 Google Cloud 地區、 Cloud Volumes ONTAP 都支援 BlueXP 備份與還原。</block>
   <block id="6c6a0225cb0a619d8872981b7be0ac95" category="inline-link">使用全球區域地圖深入瞭解</block>
   <block id="dac27b02289e52ad3bf6be2e625f4031" category="paragraph"><block ref="70c5fe87a2dc0f089282cb7307d783bf" category="inline-link-rx"></block></block>
+  <block id="a0833f9e76bfd36f87ee1d758fbe0cf4" category="paragraph"><block ref="2f5063518a76fb11ac58b566cf1a20ab" category="inline-link-rx"></block>。<block ref="1335d5eb0bcdbaf6050d71dc83f5893f" category="inline-link-rx"></block>。</block>
+  <block id="baa1235434f9122bbcf4cd93c72c3ed3" category="list-text">如果您備份 DP 磁碟區、然後決定中斷與該磁碟區的 SnapMirror 關係、則除非您同時刪除 SnapMirror 關係或反轉 SnapMirror 方向、否則無法將檔案還原至該磁碟區。</block>
+  <block id="97a40c9bbf6946a2928acd09286296b8" category="paragraph">使用在 Podman 中執行的 BlueXP Connector （在 RHEL 8 或 9 上執行時手動建立 BlueXP Connector ）時、不支援單一檔案還原和目錄還原的瀏覽與還原功能。使用 Podman 時支援所有其他類型的還原作業、因此您可以使用下列其他方法還原資料、直到問題解決為止：</block>
+  <block id="210a764f3461866061c80320620c0eec" category="admonition">如需還原 ONTAP 資料的相關限制，請參閱 <block ref="15bd83aed33bf3bd63f2e9166e3e91ba" category="inline-link-macro-rx"></block>。</block>
 </blocks>

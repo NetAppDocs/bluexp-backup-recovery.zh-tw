@@ -233,8 +233,7 @@ NOTE: 只有資料保險箱原則可用於備份至雲端關係。
 
 BlueXP 提供多種部署模式、可讓您以符合業務與安全需求的方式使用 BlueXP 。_Standard modity_ 利用 BlueXP SaaS 層提供完整功能、而 _restricted modity_ 和 _private modity_ 則適用於有連線限制的組織。
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["深入瞭解 BlueXP 部署模式"^]。
-https://www.netapp.tv/details/30567["觀看這段關於 BlueXP 部署模式的影片"]。
+https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["深入瞭解 BlueXP 部署模式"^]。https://media.netapp.com/video-detail/078912eb-f081-5bd3-8342-bdd2d5c85d44/netapp-bluexp-backup-and-recovery-deployment-modes["觀看這段關於 BlueXP 部署模式的影片"^]。
 
 
 
