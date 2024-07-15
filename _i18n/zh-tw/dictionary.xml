@@ -62,7 +62,6 @@
   <block id="da4fb5c6e93e74d3df8527599fa62642" category="paragraph">120</block>
   <block id="834584c768066ae32da6d93ce603642d" category="doc">Azure歸檔層與還原擷取時間</block>
   <block id="8fb345995433b95f0008d77ee6840097" category="paragraph">一開始建立備份檔案時、檔案會儲存在_cool存取層。此階層已最佳化、可儲存不常存取的資料、但需要時、可立即存取。</block>
-  <block id="677bc0580cb25ec1cc210c28e0ca26a7" category="inline-xref">從歸檔儲存設備還原資料</block>
   <block id="07e61ccfcb604b4d08fc03603677751d" category="inline-link">瞭解Azure Blob存取層級</block>
   <block id="e298f51ca48eff0d92cee75ca43aaa3a" category="paragraph"><block ref="ac0a406faf148be2b386c73b962697e7" category="inline-link-rx"></block>。</block>
   <block id="3ae75226b076757df064bb407b8fb4ff" category="paragraph">雖然在歸檔儲存設備中儲存較舊的備份檔案比儲存設備便宜得多、但從Azure歸檔中的備份檔案存取資料以進行還原作業需要較長的時間、而且成本較高。</block>
@@ -3305,7 +3304,6 @@ _ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / �
   <block id="eee6483ebca29b603119b832ad33fa66" category="paragraph"><block ref="eb1f9e92049de9d40aa33c3c567550dc" category="inline-xref-macro-rx"></block></block>
   <block id="9d1cab52874c58bc5e9f7daf9d7e6663" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 驗證授權需求</block>
   <block id="de10f64287fc6b9bf60177f070c9f5f0" category="paragraph">您必須檢查 Azure 和 BlueXP 的授權要求。</block>
-  <block id="924d8d8267f7eb18476c2b6d9d3b9452" category="paragraph"><block ref="bd2c1a11f0e63723009063ed65c3e87f" category="inline-xref-macro-rx"></block>。</block>
   <block id="9664e082ac80bbdc73fccdbbbc5615b9" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> 驗證複寫磁碟區的 ONTAP 網路需求</block>
   <block id="1bf8b46ae208ff07eda2feab04911c53" category="paragraph">確保來源和目的地系統符合 ONTAP 版本和網路需求。</block>
   <block id="bb8a661d9491c97851e7313626aa79cc" category="paragraph"><block ref="198284848eacc407630247ca30b310c6" category="inline-xref-macro-rx"></block>。</block>
@@ -3863,7 +3861,6 @@ Cloud Volumes ONTAP</block>
   <block id="a7ab7e41ab0b37b5c56042c5e14df4ff" category="paragraph">系統上已啟用 BlueXP 備份與還原。在這些 Cloud Volumes ONTAP 系統上建立磁碟區之後、請啟動 BlueXP 備份與還原、以及 <block ref="70d7256195ed88e78bc7994f2215f899" category="inline-link-macro-rx"></block>。</block>
   <block id="b7d972f6553934b1eea5e57436b58de2" category="paragraph">您可以選擇是透過公用網際網路將內部部署的 ONTAP 叢集直接連線至 Google 雲端儲存設備、還是使用 VPN 或 Google 雲端互連、並透過使用私有 IP 位址的私有 Google Access 介面路由流量。</block>
   <block id="061189bcae2d45b758f44b801f0cafa0" category="paragraph">設定 Connector 的權限、以建立和管理 Google Cloud 儲存庫。您也需要設定內部部署 ONTAP 叢集的權限、才能讀取資料並將資料寫入 Google Cloud 儲存庫。</block>
-  <block id="965fc2d93c14a05bf6aa6d11dccdf7f3" category="inline-xref">瞭解如何讓您的 Google Cloud 環境準備好接收 ONTAP 備份。</block>
   <block id="9ad048774cfb757660014ae8b3a5e963" category="paragraph">啟用 BlueXP 備份與還原非常簡單。這些步驟會因您現有的 Cloud Volumes ONTAP 系統或新系統而稍有不同。</block>
   <block id="50ecfa827055391d1f79881e9faaa9d5" category="paragraph">在現有系統上隨時直接從工作環境中啟用 BlueXP 備份與還原。</block>
   <block id="4dd14adc068a21e0671c3acde608dda6" category="paragraph"><block ref="4dd14adc068a21e0671c3acde608dda6" category="inline-image-macro-rx" type="image"></block></block>
@@ -4846,11 +4843,9 @@ ifdef：：AWS []</block>
   <block id="24c8d17b3d2e5d56e90675c0755252e0" category="section-title">能夠啟用或停用排程的勒索軟體掃描</block>
   <block id="1d5d9f598ed0ef9d579321fc5f2dea76" category="paragraph">以前、您可以啟用或停用勒索軟體掃描、但無法在排程掃描中執行此動作。</block>
   <block id="c05a6e1c401ef496decb0a82c8e569e3" category="paragraph">使用此版本、您現在可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用排程的勒索軟體掃描。如果啟用、預設會每週執行掃描。您可以將排程變更為天或週、或停用、節省成本。</block>
-  <block id="8e0e573826fedf587c60fd10640e17c8" category="paragraph">如果您的來源叢集執行ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在特定天數（通常超過30天）之後、將備份從_coo__分層至_Azure Archive_儲存設備、以進一步最佳化成本。此層級中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您必須考慮從這些歸檔備份檔案還原資料的頻率。請參閱下一節關於 <block ref="7b911fb03c2e33c305d56e0261aa7b5a" category="inline-xref-macro-rx"></block>。</block>
   <block id="bab29573e33c31960ca3e23e51a0db21" category="section-title">從歸檔儲存設備還原資料</block>
   <block id="7fe9efb1a5fafb19fa9b6e7fc992c504" category="paragraph"><block ref="e235420362596a5fcbb7fdd4a3380e91" category="inline-link-macro-rx"></block>。</block>
   <block id="3c466b40e15796ebb4120cf801b8cb93" category="paragraph"><block ref="072e0f84c1263277af127585d1cb18c3" category="inline-link-macro-rx"></block>。</block>
-  <block id="a9dc8bb5efaac75ae86c6a34933da8e4" category="paragraph">這些階層中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您需要考量從這些歸檔備份檔案還原資料的頻率。請參閱相關章節 <block ref="7b911fb03c2e33c305d56e0261aa7b5a" category="inline-xref-macro-rx"></block>。</block>
   <block id="bdb79327f3712ed9f0d2910964ca17d6" category="paragraph">+
 <block ref="6a96d9b5ed55776b5555946cb02fa548" category="inline-link-macro-rx"></block>。</block>
   <block id="2dc37cecffdd7077ba99c0ba111ad347" category="section-title">備份至物件限制</block>
@@ -4883,8 +4878,6 @@ ifdef：：AWS []</block>
   <block id="e0488eb5e46e8b3559f678fb3375fe83" category="list-text"><block ref="f39da789221971f7f372bd122012c224" category="inline-link-macro-rx"></block>。</block>
   <block id="82b1ab2145f9360167878fb0aab9d78e" category="paragraph">如果您的內部叢集使用ONTAP 的是更新版本的版本號、StorageGRID 而您的支援系統使用的是11.4或更新版本、您可以在特定天數後、將舊版備份檔案歸檔至公有雲歸檔儲存設備。目前支援AWS S3 Glacier / S3 Glacier Deep歸檔或Azure歸檔儲存層。 <block ref="6a96d9b5ed55776b5555946cb02fa548" category="inline-link-macro-rx"></block>。</block>
   <block id="28af018ba458f766dcff23f60abd6827" category="paragraph">請參閱 <block ref="25e09e861cb627cbcd0c16e5c08ee6d8" category="inline-link-macro-rx"></block> 如需更多有關歸檔較舊備份檔案的詳細資訊、</block>
-  <block id="5a1f79c0f67abb568ef997350bce7081" category="paragraph">如果您的內部叢集使用 ONTAP 9.12.1 或更新版本、您可以選擇在特定天數（通常超過 30 天）之後、將舊備份分層儲存至 BlueXP 備份和恢復 UI 中的 _Archive_ 儲存設備、以進一步最佳化成本。此層級中的資料需要較高的擷取成本、因此您需要考量從這些歸檔備份檔案還原資料的頻率。請參閱相關章節 <block ref="7b911fb03c2e33c305d56e0261aa7b5a" category="inline-xref-macro-rx"></block>。</block>
-  <block id="12d9e3e6bca9c44523088ebe2b508205" category="paragraph">或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。 <block ref="679b21076509c1a4c895226f7171e8ce" category="inline-xref-macro-rx"></block></block>
   <block id="9274d8b34594d54c9ded6bce60335530" category="paragraph">免費試用結束時、您將自動切換至 PAYGO 訂閱、不會中斷。如果您決定不繼續使用 BlueXP 備份與還原、只要 <block ref="45d31e67fc33e9fa27a1cf49eda4f564" category="inline-link-macro-rx"></block> 在試用結束之前、您將不會被收取任何費用。</block>
   <block id="9513e83b962e2a3ffa6edc4b46feac25" category="paragraph">如果授權期限即將到期、或授權容量已達到上限、您將會在備份UI中收到通知。此狀態也會出現在 BlueXP 數位電子錢包頁面和中<block ref="62b97dd999de3571d07e2528cb6b6363" category="inline-link-rx"></block>。</block>
   <block id="323d3770e08ff241402a0c3bcc2b9fed" category="summary">您可以檢視備份詳細資料、監控所有工作的狀態、刪除複本、稽核資料、更新連接器詳細資料、設定 CA 憑證、 並管理主機。</block>
@@ -4920,4 +4913,8 @@ ifdef：：AWS []</block>
   <block id="baa1235434f9122bbcf4cd93c72c3ed3" category="list-text">如果您備份 DP 磁碟區、然後決定中斷與該磁碟區的 SnapMirror 關係、則除非您同時刪除 SnapMirror 關係或反轉 SnapMirror 方向、否則無法將檔案還原至該磁碟區。</block>
   <block id="97a40c9bbf6946a2928acd09286296b8" category="paragraph">使用在 Podman 中執行的 BlueXP Connector （在 RHEL 8 或 9 上執行時手動建立 BlueXP Connector ）時、不支援單一檔案還原和目錄還原的瀏覽與還原功能。使用 Podman 時支援所有其他類型的還原作業、因此您可以使用下列其他方法還原資料、直到問題解決為止：</block>
   <block id="210a764f3461866061c80320620c0eec" category="admonition">如需還原 ONTAP 資料的相關限制，請參閱 <block ref="15bd83aed33bf3bd63f2e9166e3e91ba" category="inline-link-macro-rx"></block>。</block>
+  <block id="6002f3d623233bc3d9235d8c5956cd60" category="paragraph">這些階層中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您需要考量從這些歸檔備份檔案還原資料的頻率。請參閱本頁的一節、瞭解如何從歸檔儲存設備還原資料。</block>
+  <block id="6fbe1cea473e2020956491cc962bda52" category="paragraph">如果您的來源叢集執行ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在特定天數（通常超過30天）之後、將備份從_coo__分層至_Azure Archive_儲存設備、以進一步最佳化成本。此層級中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您必須考慮從這些歸檔備份檔案還原資料的頻率。請參閱本頁的一節、瞭解如何從歸檔儲存設備還原資料。</block>
+  <block id="1cc47ef834e284795bab8becbe58ccfb" category="paragraph">如果您的內部叢集使用 ONTAP 9.12.1 或更新版本、您可以選擇在特定天數（通常超過 30 天）之後、將舊備份分層儲存至 BlueXP 備份和恢復 UI 中的 _Archive_ 儲存設備、以進一步最佳化成本。此層級中的資料需要較高的擷取成本、因此您需要考量從這些歸檔備份檔案還原資料的頻率。請參閱本頁的一節、瞭解如何從歸檔儲存設備還原資料。</block>
+  <block id="d8e36d6c03fc165135350c7550f92b0a" category="paragraph">或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。</block>
 </blocks>

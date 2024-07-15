@@ -34,36 +34,21 @@ summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量�
 [role="quick-margin-para"]
 如果您已在 GCP 區域部署 Connector 、那麼您就可以設定好所有的連接器。如果沒有、則您需要在 GCP 中安裝 BlueXP Connector 、以便將 Cloud Volumes ONTAP 資料備份到 Google 雲端儲存設備。Connector 可安裝在具有完整網際網路存取（「標準模式」）的站台、或是有限的網際網路連線（「受限模式」）。
 
-[role="quick-margin-para"]
-<<準備您的BlueXP Connector>>
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 驗證授權需求
 [role="quick-margin-para"]
 您必須檢查 Google Cloud 和 BlueXP 的授權要求。
-
-[role="quick-margin-para"]
-<<驗證授權需求>>。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 驗證複寫磁碟區的 ONTAP 網路需求
 [role="quick-margin-para"]
 確保來源和目的地系統符合 ONTAP 版本和網路需求。
 
-[role="quick-margin-para"]
-<<驗證複寫磁碟區的 ONTAP 網路需求>>。
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 啟用 BlueXP 備份與還原
 [role="quick-margin-para"]
 選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」>「備份磁碟區」*。
 
-[role="quick-margin-para"]
-<<在 Cloud Volumes ONTAP 上啟用 BlueXP 備份與還原>>。
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 啟動 ONTAP 磁碟區上的備份
 [role="quick-margin-para"]
 按照安裝精靈的指示、選取您要使用的複寫和備份原則、以及您要備份的磁碟區。
-
-[role="quick-margin-para"]
-<<啟動 ONTAP 磁碟區上的備份>>。
 
 
 

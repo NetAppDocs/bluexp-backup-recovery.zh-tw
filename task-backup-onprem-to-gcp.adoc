@@ -29,43 +29,28 @@ NOTE: 「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統�
 [role="quick-margin-para"]
 您可以選擇是透過公用網際網路將內部部署的 ONTAP 叢集直接連線至 Google 雲端儲存設備、還是使用 VPN 或 Google 雲端互連、並透過使用私有 IP 位址的私有 Google Access 介面路由流量。
 
-[role="quick-margin-para"]
-<<識別連線方法>>。
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"] 準備您的BlueXP Connector
 [role="quick-margin-para"]
 如果您的Google Cloud Platform VPC中已部署Connector、您就能輕鬆完成所有設定。如果沒有、您需要建立 BlueXP Connector 、將 ONTAP 資料備份到 Google Cloud 儲存設備。您也必須自訂 Connector 的網路設定、才能連線至 Google Cloud 。
-
-[role="quick-margin-para"]
-<<準備您的BlueXP Connector,瞭解如何建立 Connector 、以及如何定義必要的網路設定。>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 驗證授權需求
 [role="quick-margin-para"]
 您必須檢查 Google Cloud 和 BlueXP 的授權要求。
 
-[role="quick-margin-para"]
-請參閱 <<驗證授權需求>>。
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 準備 ONTAP 叢集
 [role="quick-margin-para"]
 探索 BlueXP 中的 ONTAP 叢集、確認叢集符合最低需求、並自訂網路設定、讓叢集能夠連線至 Google Cloud 。
-
-[role="quick-margin-para"]
-<<準備 ONTAP 叢集,瞭解如何準備好 ONTAP 叢集。>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 準備 Google Cloud 做為備份目標
 [role="quick-margin-para"]
 設定 Connector 的權限、以建立和管理 Google Cloud 儲存庫。您也需要設定內部部署 ONTAP 叢集的權限、才能讀取資料並將資料寫入 Google Cloud 儲存庫。
 
 [role="quick-margin-para"]
-或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。 <<Prepare Google Cloud storage as your backup target,瞭解如何讓您的 Google Cloud 環境準備好接收 ONTAP 備份。>>
+或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 啟動 ONTAP 磁碟區上的備份
 [role="quick-margin-para"]
 選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」>「備份磁碟區」*。然後按照安裝精靈的指示、選取您要使用的複寫和備份原則、以及您要備份的磁碟區。
-
-[role="quick-margin-para"]
-<<啟動 ONTAP 磁碟區上的備份>>。
 
 
 
