@@ -33,22 +33,25 @@ NOTE: 「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統�
 [role="quick-margin-para"]
 如果您的Google Cloud Platform VPC中已部署Connector、您就能輕鬆完成所有設定。如果沒有、您需要建立 BlueXP Connector 、將 ONTAP 資料備份到 Google Cloud 儲存設備。您也必須自訂 Connector 的網路設定、才能連線至 Google Cloud 。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 驗證授權需求
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"] 為 Connector 準備網路
+[role="quick-margin-para"]
+確認連接器具備所需的網路連線。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 驗證授權要求
 [role="quick-margin-para"]
 您必須檢查 Google Cloud 和 BlueXP 的授權要求。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"] 準備 ONTAP 叢集
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 準備 ONTAP 叢集
 [role="quick-margin-para"]
 探索 BlueXP 中的 ONTAP 叢集、確認叢集符合最低需求、並自訂網路設定、讓叢集能夠連線至 Google Cloud 。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"] 準備 Google Cloud 做為備份目標
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 準備 Google Cloud 做為備份目標
 [role="quick-margin-para"]
 設定 Connector 的權限、以建立和管理 Google Cloud 儲存庫。您也需要設定內部部署 ONTAP 叢集的權限、才能讀取資料並將資料寫入 Google Cloud 儲存庫。
 
-[role="quick-margin-para"]
 或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 啟動 ONTAP 磁碟區上的備份
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"] 啟動 ONTAP 磁碟區上的備份
 [role="quick-margin-para"]
 選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」>「備份磁碟區」*。然後按照安裝精靈的指示、選取您要使用的複寫和備份原則、以及您要備份的磁碟區。
 
@@ -268,7 +271,7 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 === 設定權限
 
-設定備份時、您必須為具有特定權限的服務帳戶提供儲存存取金鑰。服務帳戶可讓 BlueXP 備份與還原驗證及存取用於儲存備份的 Cloud Storage 貯體。這些金鑰是必要的、以便 Google Cloud Storage 知道誰在提出要求。
+您需要為使用自訂角色具有特定權限的服務帳戶提供儲存存取金鑰。服務帳戶可讓 BlueXP 備份與還原驗證及存取用於儲存備份的 Cloud Storage 貯體。這些金鑰是必要的、以便 Google Cloud Storage 知道誰在提出要求。
 
 .步驟
 . 在中 https://console.cloud.google.com["Google Cloud Console"^]請移至*角色*頁面。

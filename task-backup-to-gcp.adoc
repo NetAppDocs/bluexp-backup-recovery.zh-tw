@@ -26,7 +26,11 @@ summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量�
 [role="quick-margin-list"]
 * 您正在 GCP 中執行 Cloud Volumes ONTAP 9.8 或更新版本（建議使用 ONTAP 9.8P13 及更新版本）。
 * 您擁有有效的 GCP 訂閱、可用於存放備份的儲存空間。
-* 您的Google Cloud Project中有一個服務帳戶、該帳戶具有預先定義的儲存管理角色。
+* 您的 Google Cloud Project 中有一個服務帳戶、其角色為自訂角色、權限較少。
++
+
+NOTE: 啟用 BlueXP 備份與還原的服務帳戶不再需要 Storage Admin 角色、即可存取 Google Cloud Storage 貯體。
+
 * 您已訂閱 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved["BlueXP Marketplace備份產品"^]或您已購買 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["並啟動"^] NetApp 的 BlueXP 備份與恢復 BYOL 授權。
 
 
@@ -46,7 +50,14 @@ summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量�
 [role="quick-margin-para"]
 選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」>「備份磁碟區」*。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 啟動 ONTAP 磁碟區上的備份
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"] 準備 Google Cloud 做為備份目標
+[role="quick-margin-para"]
+設定 Connector 的權限、以建立和管理 Google Cloud 儲存庫。
+
+[role="quick-margin-para"]
+或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。 <<準備 Google Cloud Storage 做為備份目標,瞭解如何讓您的 Google Cloud 環境準備好接收 ONTAP 備份。>>
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"] 啟動 ONTAP 磁碟區上的備份
 [role="quick-margin-para"]
 按照安裝精靈的指示、選取您要使用的複寫和備份原則、以及您要備份的磁碟區。
 
@@ -64,8 +75,11 @@ image:diagram_cloud_backup_cvo_google.png["顯示 BlueXP 備份與還原如何�
 
 支援 ONTAP 的支援版本:: 最低 ONTAP 9.8 ；建議使用 ONTAP 9.8P13 及更新版本。
 支援的 GCP 區域:: 所有 GCP 區域均支援 BlueXP 備份與還原 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]。
-GCP 服務帳戶:: 您必須在Google Cloud Project中擁有預先定義儲存管理角色的服務帳戶。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-creating-gcp-service-account.html["瞭解如何建立服務帳戶"^]。
+GCP 服務帳戶:: 您必須在 Google Cloud Project 中擁有具有自訂角色的服務帳戶。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-creating-gcp-service-account.html["瞭解如何建立服務帳戶"^]
 
+
+
+NOTE: 啟用 BlueXP 備份與還原的服務帳戶不再需要 Storage Admin 角色、即可存取 Google Cloud Storage 貯體。
 
 
 
@@ -224,7 +238,7 @@ image:screenshot_backup_to_gcp.png["顯示工作環境精靈中的 BlueXP 備份
 
 
 
-TIP: 若要修改備份設定或新增複寫、請參閱 link:../task-manage-backups-ontap.html["管理ONTAP 還原備份"]。
+TIP: 若要修改備份設定或新增複寫、請參閱 link:task-manage-backups-ontap.html["管理ONTAP 還原備份"]。
 
 .結果
 系統上已啟用 BlueXP 備份與還原。在這些 Cloud Volumes ONTAP 系統上建立磁碟區之後、請啟動 BlueXP 備份與還原、以及 link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["在您要保護的每個磁碟區上啟動備份"]。
@@ -244,7 +258,105 @@ image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示 BlueXP 備份�
 
 
 
-TIP: 若要修改備份設定或新增複寫、請參閱 link:../task-manage-backups-ontap.html["管理ONTAP 還原備份"]。
+TIP: 若要修改備份設定或新增複寫、請參閱 link:task-manage-backups-ontap.html["管理ONTAP 還原備份"]。
+
+
+
+== 準備 Google Cloud Storage 做為備份目標
+
+將 Google Cloud Storage 準備為備份目標需要執行下列步驟：
+
+* 設定權限。
+* （選用）自行建立貯體。（如果需要、服務會為您建立貯體。）
+* （選用）設定客戶管理的資料加密金鑰
+
+
+
+
+=== 設定權限
+
+您需要為使用自訂角色具有特定權限的服務帳戶提供儲存存取金鑰。服務帳戶可讓 BlueXP 備份與還原驗證及存取用於儲存備份的 Cloud Storage 貯體。這些金鑰是必要的、以便 Google Cloud Storage 知道誰在提出要求。
+
+.步驟
+. 在中 https://console.cloud.google.com["Google Cloud Console"^]請移至*角色*頁面。
+. https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role["建立新角色"^] 具備下列權限：
++
+[source, json]
+----
+storage.buckets.create
+storage.buckets.delete
+storage.buckets.get
+storage.buckets.list
+storage.buckets.update
+storage.buckets.getIamPolicy
+storage.multipartUploads.create
+storage.objects.create
+storage.objects.delete
+storage.objects.get
+storage.objects.list
+storage.objects.update
+----
+. 在Google Cloud主控台中、 https://console.cloud.google.com/iam-admin/serviceaccounts["前往「服務帳戶」頁面"^]。
+. 選擇您的雲端專案。
+. 選取 * 建立服務帳戶 * 並提供必要資訊：
++
+.. *服務帳戶詳細資料*：輸入名稱和說明。
+.. *授予此服務帳戶專案存取權*：選取您剛建立的自訂角色。
+.. 選擇*完成*。
+
+
+. 前往 https://console.cloud.google.com/storage/settings["GCP 儲存設定"^] 並建立服務帳戶的存取金鑰：
++
+.. 選取專案、然後選取 * 互通性 * 。如果您尚未啟用互通性存取 * 、請選取 * 啟用互通性存取 * 。
+.. 在 * 服務帳戶存取金鑰 * 下、選取 * 建立服務帳戶的金鑰 * 、選取您剛建立的服務帳戶、然後按一下 * 建立金鑰 * 。
++
+稍後當您設定備份服務時、您需要在 BlueXP 備份與還原中輸入金鑰。
+
+
+
+
+
+
+
+=== 建立您自己的儲存庫
+
+依預設、服務會為您建立儲存區。或者、如果您想要使用自己的貯體、您可以在啟動備份啟動精靈之前建立它們、然後在精靈中選取這些貯體。
+
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["深入瞭解如何建立自己的貯體"^]。
+
+
+
+=== 設定客戶管理的加密金鑰（ CMEK ）以進行資料加密
+
+您可以使用自己的客戶管理金鑰進行資料加密、而非使用預設的Google管理加密金鑰。跨區域和跨專案金鑰都受到支援、因此您可以為與 CMEK 金鑰專案不同的貯體選擇專案。
+
+如果您打算使用自己的客戶管理金鑰：
+
+* 您必須擁有金鑰環和金鑰名稱、才能在啟動精靈中新增此資訊。 https://cloud.google.com/kms/docs/cmek["深入瞭解客戶管理的加密金鑰"^]。
+* 您需要確認 Connector 的角色中是否包含這些必要權限：
++
+[source, json]
+----
+cloudkms.cryptoKeys.get
+cloudkms.cryptoKeys.getIamPolicy
+cloudkms.cryptoKeys.list
+cloudkms.cryptoKeys.setIamPolicy
+cloudkms.keyRings.get
+cloudkms.keyRings.getIamPolicy
+cloudkms.keyRings.list
+cloudkms.keyRings.setIamPolicy
+----
+* 您必須確認專案中已啟用 Google 「 Cloud Key Management Service （ KMS ）」 API 。請參閱 https://cloud.google.com/apis/docs/getting-started#enabling_apis["Google Cloud 文件：啟用 API"] 以取得詳細資料。
+
+
+* CMEK注意事項：*
+
+* 同時支援 HSM （硬體支援）和軟體產生的金鑰。
+* 同時支援新建立或匯入的雲端KMS金鑰。
+* 僅支援區域金鑰、不支援全域金鑰。
+* 目前僅支援「對稱加密/解密」用途。
+* 與儲存帳戶相關聯的服務代理程式會透過 BlueXP 備份與還原指派「 CryptoKey Encrypter/Decypter （角色 / 雲端 kms.cryptoKeyEncrypterDecypter ）」 IAM 角色。
+
 
 
 

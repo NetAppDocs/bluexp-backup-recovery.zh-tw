@@ -1036,7 +1036,6 @@
   <block id="abbf2484b45da9fd7be677fe96c511eb" category="inline-xref">使用瀏覽安培還原資料夾與檔案</block>
   <block id="8996e9eaff78ab540aab279a66de20ac" category="inline-xref">使用Search &amp;amp; Restore還原磁碟區、資料夾和檔案</block>
   <block id="860f07d2ed109437af4b64fd8713b385" category="paragraph">請注意、根據歸檔層和還原優先順序、從歸檔儲存設備中的備份檔案還原磁碟區可能需要許多分鐘或數小時的時間。您可以按一下「*工作監控*」標籤來查看還原進度。</block>
-  <block id="27816218998e04ffd3077d0806e7798b" category="paragraph">如果您只需要從ONTAP 一個還原磁碟區備份中還原幾個檔案、您可以選擇還原資料夾或個別檔案、而非還原整個磁碟區。您可以將資料夾和檔案還原至原始工作環境中的現有磁碟區、或還原至使用相同雲端帳戶的不同工作環境。您也可以將資料夾和檔案還原至內部部署ONTAP 的作業系統上的磁碟區。</block>
   <block id="502b9bcf8737b06b486f332278870bbf" category="list-text">執行_file_還原作業的版本必須為9.6或更新版本。ONTAP</block>
   <block id="cee5f78cfda5fc2f3b24ce19bdf5119a" category="section-title">資料夾與檔案還原程序</block>
   <block id="f3c6f7e9aebf0c7de403d55832a37318" category="list-text">若要從磁碟區備份還原資料夾或一或多個檔案、請按一下「*還原*」索引標籤、然後按一下「_瀏覽與還原_」下的「*還原檔案或資料夾*」。</block>
@@ -2163,8 +2162,6 @@
   <block id="b3bc75275539de4c7c9d62e8364e4698" category="paragraph">您應該在每個 Oracle 資料庫主機上安裝 SnapCenter Plug-in for Oracle 、新增資料庫主機、並探索主機上的資料庫、以指派原則並建立備份。</block>
   <block id="30436b64a4369e46b473bc1b1401fd34" category="list-text">如果資料庫主機已啟用 SSH 、您可以使用下列其中一種方法來安裝外掛程式：</block>
   <block id="19818bd6e255e679bcd2b558dcd8be72" category="list-text">安裝外掛程式、並使用 SSH 選項從 UI 新增主機。 <block ref="eef94e573988b9bcf7576ada9279c21d" category="inline-xref-macro-rx"></block>。</block>
-  <block id="f5a95c52f600ae7a2606dd65afc76a31" category="list-text">使用指令碼安裝外掛程式、並使用手動選項從 UI 新增主機。 <block ref="2d45e41162034e715ba3307387fe903d" category="inline-xref-macro-rx"></block>。</block>
-  <block id="18410e518914ad15f77ada9d10f41c85" category="list-text">如果停用 SSH 、請手動安裝外掛程式、並使用手動選項從 UI 新增主機。 <block ref="ca0ca6018928b52917635161072180d8" category="inline-xref-macro-rx"></block>。</block>
   <block id="16bc078ea4ad4b47daa61cfa55cec4cc" category="inline-link-macro">無法驗證從 BlueXP Connector 主機到應用程式資料庫主機的連線能力</block>
   <block id="bb3d3d1149be85da9f3488d99e38818a" category="paragraph">如需如何解決連線問題的資訊、請參閱 <block ref="dc781d2e4005ea48d6ecaf05b5c8bdc7" category="inline-link-macro-rx"></block>。</block>
   <block id="f9b1747cec7918dca1e5047effaf3259" category="inline-link-macro">更新連接器詳細資料</block>
@@ -2388,7 +2385,6 @@
   <block id="584eab89c38498b5c5274ae652e93c92" category="paragraph">當您設定 BlueXP 備份與還原時、系統會提示您輸入要使用的 IPspace 。您應該選擇每個 LIF 所關聯的 IPspace 。這可能是您建立的「預設」 IPspace 或自訂 IPspace 。</block>
   <block id="83d4153ed0b73bf98f157af1a9cede5d" category="list-text">如有必要、請更新防火牆規則、以允許 BlueXP 透過連接埠 443 從 ONTAP 備份與還原連線到物件儲存區、以及透過連接埠 53 （ TCP/UDP ）從儲存 VM 到 DNS 伺服器的名稱解析流量。</block>
   <block id="2ac4b31a1e8119be12fc66295f51743e" category="paragraph">若要使用 BlueXP 備份與還原「搜尋與還原」功能、您必須擁有 Connector 角色的特定權限、才能存取 Google Cloud BigQuery 服務。請參閱下列權限、如果您需要修改原則、請遵循這些步驟。</block>
-  <block id="490d27127d1be5dafeff633874e98723" category="paragraph">設定備份時、您必須為具有特定權限的服務帳戶提供儲存存取金鑰。服務帳戶可讓 BlueXP 備份與還原驗證及存取用於儲存備份的 Cloud Storage 貯體。這些金鑰是必要的、以便 Google Cloud Storage 知道誰在提出要求。</block>
   <block id="f20f604abbd5f4c6fa3dce28e510083d" category="paragraph">稍後當您設定備份服務時、您需要在 BlueXP 備份與還原中輸入金鑰。</block>
   <block id="aa7686a1bb9a5c6e028ddc3bb91488c6" category="list-text">與儲存帳戶相關聯的服務代理程式會透過 BlueXP 備份與還原指派「 CryptoKey Encrypter/Decypter （角色 / 雲端 kms.cryptoKeyEncrypterDecypter ）」 IAM 角色。</block>
   <block id="f978572d4b7f3863b262587adb3dab80" category="list-text">您必須先從 Google 訂閱隨用隨付（ PAYGO ） BlueXP Marketplace 產品、或購買並啟動 NetApp 的 BlueXP 備份與恢復 BYOL 授權、才能啟動叢集的 BlueXP 備份與還原。這些授權適用於您的帳戶、可在多個系統上使用。</block>
@@ -3337,7 +3333,6 @@ _ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / �
   <block id="a8597301498b7ba277bd04c5d9cec26a" category="section-title">在 Cloud Volumes ONTAP 上啟用 BlueXP 備份與還原</block>
   <block id="8a8476fd6836ec12c30dec20bc5004af" category="paragraph">* 在新系統上啟用 BlueXP 備份與還原 *</block>
   <block id="901ae31ede407d1b2f9642db905682f2" category="list-text">從 BlueXP Canvas 中選取 * 新增工作環境 * 、選擇雲端供應商、然後選取 * 新增 * 。選取 * 建立 Cloud Volumes ONTAP * 。</block>
-  <block id="2804562bc1e662a5b5b8ecf3b0be67c6" category="admonition">若要修改備份設定或新增複寫、請參閱 <block ref="5cd1a7d7fa9fd41e0b8e095748eb7b5f" category="inline-link-macro-rx"></block>。</block>
   <block id="fc90b8f1413f3c199581e8299d3f470a" category="paragraph">* 在現有系統上啟用 BlueXP 備份與還原 *</block>
   <block id="f44b20d5d9a676a009838194fcecc749" category="list-text">在 BlueXP Canvas 中、選取工作環境、然後在右側面板的備份與還原服務旁選取 * 啟用 * 。</block>
   <block id="4ade5af203d6e65a0d4f2dfba9bb43b8" category="section-title">啟動 ONTAP 磁碟區上的備份</block>
@@ -3416,7 +3411,6 @@ _ / 訂閱 / ｛ subscription_id ｝ / 資源群組 / ｛ resource_group ｝ / �
   <block id="4fe600ffd12f47bf3dd1572a88dd9c01" category="paragraph">探索 BlueXP 中的 ONTAP 叢集、確認叢集符合最低需求、並自訂網路設定、讓叢集能夠連線至 Google Cloud 。</block>
   <block id="ebd76416ef870c00fade106068d5e4a7" category="inline-xref">瞭解如何準備好 ONTAP 叢集。</block>
   <block id="8db80556c0aafbdfdf9a31fd06ad9f66" category="paragraph"><block ref="63ac2cb8ed6b5e1a480ae04ed133cee6" category="inline-xref-macro-rx"></block></block>
-  <block id="52f2d33185b5d0760fde801c7c14e04f" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 準備 Google Cloud 做為備份目標</block>
   <block id="4f678d696dc9c7564f67b0e43a8f509a" category="paragraph">設定 Connector 建立及管理 Azure Bucket 的權限。您也需要設定內部部署 ONTAP 叢集的權限、才能讀取資料並將資料寫入 Azure 儲存區。</block>
   <block id="140993c9957beab179c4418f6efee0e0" category="inline-xref">瞭解如何讓 Azure 環境準備好接收 ONTAP 備份。</block>
   <block id="8384c2af974a15d97a9b9f3794602ca9" category="paragraph">您也可以自行設定資料加密的自訂管理金鑰、而非使用預設的 Azure 加密金鑰。 <block ref="e52cf46a280a91ebefdd71696394d452" category="inline-xref-macro-rx"></block></block>
@@ -4783,7 +4777,6 @@ ifdef：：AWS []</block>
   <block id="645f12199dae2b82a1985743cbc3e647" category="section-title">DataLock 和勒索軟體保護選項</block>
   <block id="28393e8d0c5d4d42b764689c3d805dd0" category="example-title">AWS S3 權限</block>
   <block id="1ddec8739d8c1b2f7db7d9f2fe4b6069" category="example-title">StorageGRID S3 權限</block>
-  <block id="5f77078b118458f75a8520575b6a518e" category="list-text">DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。您可以稍後使用「進階設定」選項來啟用或停用此功能。</block>
   <block id="2ed85c9d8759c48194524d439a552ff0" category="section-title">歸檔儲存選項</block>
   <block id="e5c31b44cc452f945aec38b328ab97da" category="section-title">編輯現有的備份至雲端原則</block>
   <block id="d3b3f333837b21ed08dfd04c10e48346" category="section-title">新增備份至雲端原則</block>
@@ -4917,4 +4910,54 @@ ifdef：：AWS []</block>
   <block id="6fbe1cea473e2020956491cc962bda52" category="paragraph">如果您的來源叢集執行ONTAP 的是Estrs9.10.1或更新版本、您可以選擇在特定天數（通常超過30天）之後、將備份從_coo__分層至_Azure Archive_儲存設備、以進一步最佳化成本。此層級中的資料無法在需要時立即存取、而且需要較高的擷取成本、因此您必須考慮從這些歸檔備份檔案還原資料的頻率。請參閱本頁的一節、瞭解如何從歸檔儲存設備還原資料。</block>
   <block id="1cc47ef834e284795bab8becbe58ccfb" category="paragraph">如果您的內部叢集使用 ONTAP 9.12.1 或更新版本、您可以選擇在特定天數（通常超過 30 天）之後、將舊備份分層儲存至 BlueXP 備份和恢復 UI 中的 _Archive_ 儲存設備、以進一步最佳化成本。此層級中的資料需要較高的擷取成本、因此您需要考量從這些歸檔備份檔案還原資料的頻率。請參閱本頁的一節、瞭解如何從歸檔儲存設備還原資料。</block>
   <block id="d8e36d6c03fc165135350c7550f92b0a" category="paragraph">或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。</block>
+  <block id="0b9052c66b4ef4c91263dcf2c8581f33" category="list-text">DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。您可以稍後使用「進階設定」選項來啟用或停用這些功能。</block>
+  <block id="ccbf8c45039ba817be81bbf5fa2a7521" category="section-title">如何降低 DataLock 成本的秘訣</block>
+  <block id="fe678e2fcc09672ea124b748f97633cc" category="paragraph">您可以啟用或停用勒索軟體掃描功能、同時保持啟用 DataLock 功能。為了避免額外費用、您可以停用排程的勒索軟體掃描。這可讓您自訂安全性設定、並避免雲端供應商帶來成本。</block>
+  <block id="ad67d474e8005ade444d72671d5b14f2" category="paragraph">即使停用排程的勒索軟體掃描、仍可視需要執行隨需掃描。</block>
+  <block id="d3ee7c87ac2ae18b1e773ebabea0ee2e" category="paragraph">您可以選擇不同的保護層級：</block>
+  <block id="af7638f7a1ad25e7f7541cb09e590ba7" category="list-text">* DataLock _ 不含勒索軟體掃描 * ：保護目的地儲存設備中的備份資料、該儲存設備可處於監管模式或法規遵循模式。</block>
+  <block id="55edcf1a7d70eb272dbcec4fb91942d6" category="list-text">* 監管模式 * ：讓系統管理員能夠靈活地覆寫或刪除受保護的資料。</block>
+  <block id="fcf9f3f8233ccccdace8c9f5e7a9ea42" category="list-text">* 法規遵循模式 * ：在保留期限到期之前提供完整的不確定性。這有助於滿足高度管制環境中最嚴苛的資料安全需求。資料在生命週期內無法覆寫或修改、為您的備份複本提供最強大的保護層級。</block>
+  <block id="615fc78dc97f95f4ed9be1fd5668d1c4" category="admonition">Microsoft Azure 改用「鎖定與解除鎖定」模式。</block>
+  <block id="42b2f7bad0fae50cc138173e28666296" category="list-text">* DataLock _ 搭配 _ 勒索軟體掃描 * ：為您的資料提供額外的安全層級。此功能有助於偵測任何變更備份複本的嘗試。如果有任何嘗試、則會謹慎建立新版本的資料。掃描頻率可變更為 1 、 2 、 3 、 4 、 5 、 6 天或 7 天。如果掃描設為每 7 天、成本就會大幅降低。</block>
+  <block id="cb48f77184f9795e5ccef662bca48410" category="paragraph">如需降低 DataLock 成本的更多秘訣、請參閱 <block ref="6bf14a4871219441054a20f511413643" category="inline-link-rx"></block></block>
+  <block id="6a401c7d1c81a127fcd1224768c6edaf" category="inline-link">BlueXP 備份與恢復總體擁有成本（ TCO ）計算機</block>
+  <block id="e62bcce3f6b56efa6b52ab5d87b9850f" category="paragraph">此外、您也可以造訪、取得與 DataLock 相關的成本預估值<block ref="53f0527bd2dbcfab03738578b80110f5" category="inline-link-rx"></block>。</block>
+  <block id="ec0522344cdf94ed9ff238d26e67e7d4" category="list-text">使用指令碼安裝外掛程式、並使用手動選項從 UI 新增主機。<block ref="cd0002a5ce0991e4ff737bdcb461a17b" category="inline-xref-macro-rx"></block>。</block>
+  <block id="3fcdf51146a0f2de312a4a1a6ba1f507" category="list-text">如果停用 SSH 、請手動安裝外掛程式、並使用手動選項從 UI 新增主機。<block ref="df2b89845fbeb0321ae65da8f07b18ce" category="inline-xref-macro-rx"></block>。</block>
+  <block id="a331fd828c6eb830ffdf677817c5f035" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 為 Connector 準備網路</block>
+  <block id="2d04634b3cbe9bddda24c70e3fe058c1" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> 驗證授權要求</block>
+  <block id="c5b3c5fbdaa1657e6943a110d8413405" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 準備 ONTAP 叢集</block>
+  <block id="0bec69ffb331a84c17da2695bd9890f4" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block> 準備 Google Cloud 做為備份目標</block>
+  <block id="12e67aac3e7f9227cc35f8f047d7dc74" category="inline-image-macro">七</block>
+  <block id="0e41efd085d01e393e196b57625ec5fb" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block> 啟動 ONTAP 磁碟區上的備份</block>
+  <block id="ed63cc305ac61371afe05971b5fa71c3" category="paragraph">您需要為使用自訂角色具有特定權限的服務帳戶提供儲存存取金鑰。服務帳戶可讓 BlueXP 備份與還原驗證及存取用於儲存備份的 Cloud Storage 貯體。這些金鑰是必要的、以便 Google Cloud Storage 知道誰在提出要求。</block>
+  <block id="c3440827f50a036dae81cd2e84081afc" category="list-text">您的 Google Cloud Project 中有一個服務帳戶、其角色為自訂角色、權限較少。</block>
+  <block id="110c0a25d695ec4a8714d64d458cdc24" category="admonition">啟用 BlueXP 備份與還原的服務帳戶不再需要 Storage Admin 角色、即可存取 Google Cloud Storage 貯體。</block>
+  <block id="3959d8bcb4c6224d3d44d552e82f0df6" category="paragraph">設定 Connector 的權限、以建立和管理 Google Cloud 儲存庫。</block>
+  <block id="965fc2d93c14a05bf6aa6d11dccdf7f3" category="inline-xref">瞭解如何讓您的 Google Cloud 環境準備好接收 ONTAP 備份。</block>
+  <block id="ea64f83c7a3c2712595bc9229113d35b" category="paragraph">或者、您也可以設定自己的自訂管理金鑰來進行資料加密、而非使用預設的 Google Cloud 加密金鑰。 <block ref="4513dc5134abe27f5500c4191aea3d5e" category="inline-xref-macro-rx"></block></block>
+  <block id="e2220c538d5ed850f5ecb8375389dad3" category="list-text">您必須在 Google Cloud Project 中擁有具有自訂角色的服務帳戶。<block ref="bb9056f672c7da9a9c8e1e60191fd39c" category="inline-link-rx"></block></block>
+  <block id="f6b23a9e657d0c84ca0f004a895e6b12" category="admonition">若要修改備份設定或新增複寫、請參閱 <block ref="437ca1df9d07fa739678476083489c0d" category="inline-link-macro-rx"></block>。</block>
+  <block id="031305d7be8e01cb27587340a16572f8" category="paragraph">如果您只需要從 ONTAP Volume 備份還原幾個檔案、您可以選擇還原資料夾或個別檔案、而非還原整個磁碟區。您可以將資料夾和檔案還原至原始工作環境中的現有磁碟區、或還原至使用相同雲端帳戶的不同工作環境。您也可以將資料夾和檔案還原至內部部署ONTAP 的作業系統上的磁碟區。</block>
+  <block id="87eb849ca11537b79f083ee5fbad6738" category="list-text">使用 ONTAP 9.15.1 P2 、您可以使用「瀏覽與還原」選項來還原 FlexGroup 資料夾。</block>
+  <block id="57bb710d517f010c4fce20687ec1c6ff" category="list-text">ONTAP 版本必須為 9.15.1 P2 或以上、才能使用「瀏覽與還原」選項還原 FlexGroup 目錄。</block>
+  <block id="ba874eb3ffbdba518b95ce26bc81a861" category="section-title">2024 年 7 月 22 日</block>
+  <block id="9d5f0e2f1682000ac365243e21301823" category="section-title">還原小於 1 GB 的磁碟區</block>
+  <block id="a429eb8c690c0a48131f4ae1267eafd1" category="paragraph">使用此版本、您現在可以還原在 ONTAP 中建立的小於 1 GB 的磁碟區。您可以使用 ONTAP 建立的最小磁碟區大小為 20 MB 。</block>
+  <block id="f959c5a51fb8f2a9e9c0063bbb8adb63" category="paragraph">DataLock 功能可保護您的備份檔案、避免在指定的時間內遭到修改或刪除。這有助於保護您的檔案免受勒索軟體攻擊。</block>
+  <block id="4822bd9fd85c6d5438ecd9963b5c6897" category="paragraph">如需有關 DataLock 的詳細資訊及如何降低相關成本的秘訣，請 <block ref="d72e0969f8971a4b91ad44a04438bfb9" category="inline-link-macro-rx"></block>參閱。</block>
+  <block id="79cfacda817c1e599649823ffa32c8d7" category="section-title">AWS IAM 角色隨處整合</block>
+  <block id="bebfb016f9defe9a78fff65f418f213b" category="paragraph">Amazon Web Services （ AWS ） Identity and Access Management （ IAM ） Roles Anywhere 服務可讓您為工作負載（ AWS 外部）使用 IAM 角色和短期認證、以安全的方式存取 AWS API 、就像您在工作負載上使用 IAM 角色一樣。當您在任何位置使用 IAM 角色的私密金鑰基礎架構和 AWS Token 時、您不需要長期 AWS 存取金鑰和秘密金鑰。這可讓您更頻繁地輪換認證、進而提升安全性。</block>
+  <block id="24c6cf6b2747b390a5d9eb672e1d54d4" category="paragraph">在此版本中、 AWS IAM 角色 Anywhere 服務的支援是技術預覽。</block>
+  <block id="75a3bff844d1c7ffb01e7ef22ab82b4d" category="inline-link-macro">將 Cloud Volumes ONTAP 備份至 AWS</block>
+  <block id="4e6ae608536b374d1b71a28785ef9a8b" category="inline-link-macro">將內部部署的 ONTAP 資料備份至 AWS</block>
+  <block id="ff4c4976afafd2cd191e5316fe16ee05" category="paragraph">這適用於備份 <block ref="36745b46d10b0daef886af9c3561dc82" category="inline-link-macro-rx"></block> 和 <block ref="28610eddc6cc2d865303aa5fe254d6ff" category="inline-link-macro-rx"></block>。</block>
+  <block id="ddc7fe4301c8a4aa6a14e1843c25f30b" category="inline-link">BlueXP 備份與還原 2024 年 7 月版本部落格</block>
+  <block id="f1db3a8ee789ee9607754f5f8a9871b1" category="paragraph">請參閱<block ref="7de2d0863d92330816fac8b7768edb68" category="inline-link-rx"></block>。</block>
+  <block id="5ab4d79a28b46b39467c24096b99316f" category="section-title">FlexGroup 資料夾或目錄還原功能現已可供使用</block>
+  <block id="a821e6c079044462f6ffc9a01ed28fc9" category="paragraph">以前、 FlexVol 磁碟區可以還原、但您無法還原 FlexGroup 資料夾或目錄。使用 ONTAP 9.15.1 P2 、您可以使用「瀏覽與還原」選項來還原 FlexGroup 資料夾。</block>
+  <block id="cd4619af82dfe7627dc934e29e85a6e9" category="paragraph">在此版本中、支援 FlexGroup 資料夾還原是技術預覽。</block>
+  <block id="9b7af6cb2e410e55ce793003b7110047" category="paragraph">如需詳細資訊、請 <block ref="07023d18b01371174abc5a157da41b99" category="inline-link-macro-rx"></block>參閱。</block>
+  <block id="707304f314bfa71975e8ffb352535092" category="paragraph">如需手動啟用的詳細資料、請<block ref="7de2d0863d92330816fac8b7768edb68" category="inline-link-rx"></block>參閱。</block>
 </blocks>

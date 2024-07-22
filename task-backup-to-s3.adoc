@@ -275,7 +275,7 @@ image:screenshot_backup_cvo_enable.png["螢幕擷取畫面顯示「啟用備份�
 
 
 
-TIP: 若要修改備份設定或新增複寫、請參閱 link:../task-manage-backups-ontap.html["管理ONTAP 還原備份"]。
+TIP: 若要修改備份設定或新增複寫、請參閱 link:task-manage-backups-ontap.html["管理ONTAP 還原備份"]。
 
 
 

@@ -321,9 +321,36 @@ endif::azure[]
 * 啟動 BlueXP 備份與還原時所選取的 DataLock 選項必須用於該叢集的所有備份原則。
 * 您無法在單一叢集上使用多個 DataLock 模式。
 * 如果啟用DataLock、所有Volume備份都會鎖定。您無法混合使用單一叢集的鎖定和非鎖定磁碟區備份。
-* DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。您可以稍後使用「進階設定」選項來啟用或停用此功能。
+* DataLock和勒索軟體保護功能適用於使用備份原則（啟用DataLock和勒索軟體保護）的新Volume備份。您可以稍後使用「進階設定」選項來啟用或停用這些功能。
 * FlexGroup Volume 只有在使用 ONTAP 9.13.1 或更新版本時、才能使用 DataLock 和勒索軟體保護。
 
+
+
+
+=== 如何降低 DataLock 成本的秘訣
+
+您可以啟用或停用勒索軟體掃描功能、同時保持啟用 DataLock 功能。為了避免額外費用、您可以停用排程的勒索軟體掃描。這可讓您自訂安全性設定、並避免雲端供應商帶來成本。
+
+即使停用排程的勒索軟體掃描、仍可視需要執行隨需掃描。
+
+您可以選擇不同的保護層級：
+
+* * DataLock _ 不含勒索軟體掃描 * ：保護目的地儲存設備中的備份資料、該儲存設備可處於監管模式或法規遵循模式。
++
+** * 監管模式 * ：讓系統管理員能夠靈活地覆寫或刪除受保護的資料。
+** * 法規遵循模式 * ：在保留期限到期之前提供完整的不確定性。這有助於滿足高度管制環境中最嚴苛的資料安全需求。資料在生命週期內無法覆寫或修改、為您的備份複本提供最強大的保護層級。
++
+
+NOTE: Microsoft Azure 改用「鎖定與解除鎖定」模式。
+
+
+
+* * DataLock _ 搭配 _ 勒索軟體掃描 * ：為您的資料提供額外的安全層級。此功能有助於偵測任何變更備份複本的嘗試。如果有任何嘗試、則會謹慎建立新版本的資料。掃描頻率可變更為 1 、 2 、 3 、 4 、 5 、 6 天或 7 天。如果掃描設為每 7 天、成本就會大幅降低。
+
+
+如需降低 DataLock 成本的更多秘訣、請參閱 https://community.netapp.com/t5/Tech-ONTAP-Blogs/Understanding-BlueXP-Backup-and-Recovery-DataLock-and-Ransomware-Feature-TCO/ba-p/453475[]
+
+此外、您也可以造訪、取得與 DataLock 相關的成本預估值 https://bluexp.netapp.com/cloud-backup-service-tco-calculator["BlueXP 備份與恢復總體擁有成本（ TCO ）計算機"]。
 
 
 

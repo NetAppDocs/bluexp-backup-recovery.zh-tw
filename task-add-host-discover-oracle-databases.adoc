@@ -19,10 +19,10 @@ summary: 在每個 Oracle 資料庫主機上安裝 SnapCenter Plug-in for Oracle
 * 如果資料庫主機已啟用 SSH 、您可以使用下列其中一種方法來安裝外掛程式：
 +
 ** 安裝外掛程式、並使用 SSH 選項從 UI 新增主機。 <<使用 SSH 選項從 UI 新增主機,深入瞭解>>。
-** 使用指令碼安裝外掛程式、並使用手動選項從 UI 新增主機。 <<Install the plug-in using script and add host from UI using manual option,深入瞭解>>。
+** 使用指令碼安裝外掛程式、並使用手動選項從 UI 新增主機。<<使用手動選項從 UI 新增主機、並使用指令碼安裝外掛程式,深入瞭解>>。
 
 
-* 如果停用 SSH 、請手動安裝外掛程式、並使用手動選項從 UI 新增主機。 <<Install the plug-in manually and add host from UI using manual option,深入瞭解>>。
+* 如果停用 SSH 、請手動安裝外掛程式、並使用手動選項從 UI 新增主機。<<使用手動選項從 UI 新增主機、然後手動安裝外掛程式,深入瞭解>>。
 
 
 
