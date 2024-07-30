@@ -4115,7 +4115,6 @@ SS3 ONTAP</block>
   <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">活動</block>
   <block id="94798620994cb827b675957027c80437" category="paragraph">由於 Connector 具備重要的安全性增強功能、因此現在需要透過外部網際網路存取額外的端點、才能在公有雲環境中管理備份與還原資源。如果此端點尚未新增至防火牆的「允許」清單、您會在 UI 中看到「服務無法使用」或「無法判斷服務狀態」的錯誤：</block>
   <block id="300f031c227ed1b4448a8bb51abec2bb" category="paragraph">\https://netapp-cloud-account.auth0.com</block>
-  <block id="809c75c03a253c08bfaa32177821bc49" category="list-text">您選取的磁碟區必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。（採用 SnapLock Compliance 模式的 Volume 需要 ONTAP 9.14 或更新版本。）</block>
   <block id="437f900a689b3effaba13525bf426e50" category="inline-link-macro">建立原則</block>
   <block id="63ded913a4470920f93edd534ec90156" category="section-title">2023 年 9 月 11 日</block>
   <block id="101143ec501ddd03e76bf93ad136c2de" category="section-title">ONTAP 資料的新原則管理</block>
@@ -4131,7 +4130,6 @@ SS3 ONTAP</block>
   <block id="115e674b1dc0942f53bc91e279bbd7eb" category="inline-link">深入瞭解如何保護 ONTAP 資料</block>
   <block id="5ea7c922bf64f9c4520ccdf833e34e39" category="paragraph"><block ref="287ce1c3ffcd9fd04ac3fb9608fef690" category="inline-link-rx"></block>。</block>
   <block id="7b666c0edc9876b87778d0969629cfbf" category="list-text">在備份和恢復欄中選擇 * Volumes （卷） * 。從 Volumes （卷）選項卡中，選擇 *Actions* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示並選取 * 啟動單一磁碟區的備份 * （尚未啟用複寫或備份至物件儲存設備的磁碟區）。</block>
-  <block id="718dfdf9ba4cd59f98163d4d75844472" category="list-text">SnapLock Compliance Volume （需要 ONTAP 9.14 或更新版本）</block>
   <block id="ef8c31bba1fe5a62e7a6cfedbb9d29da" category="summary">您可以使用 NetApp 提供的預設備份原則來建立備份、也可以建立自訂原則。原則會規範備份類型、備份架構、儲存系統和備份頻率。</block>
   <block id="defb6c38e16057d80b8b116a92ab8665" category="doc">管理 ONTAP 磁碟區的備份原則</block>
   <block id="7ee9b8ccc530c51b1215b5f1266eee5e" category="paragraph">您可以使用 NetApp 提供的預設備份原則來建立備份、也可以建立自訂原則。原則會控制備份頻率、備份時間、以及保留的備份檔案數量。</block>
@@ -4210,7 +4208,6 @@ SS3 ONTAP</block>
   <block id="fd3268ccfb501d98109da6d282e89db0" category="list-text">在備份和恢復欄中選擇 * Volumes （卷） * 。從 Volumes （卷）選項卡中，選擇 *Actions* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示選項、並針對單一磁碟區選取 * 啟動備份 * （尚未啟用複寫或備份至物件儲存區的磁碟區）。</block>
   <block id="78720f30e58d9a141f5d550176409702" category="admonition">若要建立自訂原則、請參閱 <block ref="63a3f471efcfd7e4daa79f468df674ce" category="inline-link-macro-rx"></block>...</block>
   <block id="311000e4ce9d283fb43e8211781ee9e3" category="list-text">在備份和恢復欄中選擇 * Volumes （卷） * 。從 Volumes （卷）選項卡中，選擇 *Actions* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示並選取 * 啟動單一磁碟區的備份 * （尚未啟用複寫或備份至物件儲存設備的磁碟區）。</block>
-  <block id="e89b128dbf2037e11616e345055bbd03" category="list-text">您選取的磁碟區必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。（目前不支援採用 SnapLock Compliance 模式的 Volume 、需要 ONTAP 9.14 或更新版本。）</block>
   <block id="6b28ac02ff2a9de6b423b9f57d6a4d09" category="sidebar">管理 ONTAP 磁碟區的原則</block>
   <block id="49f768fa096c849abfc2310e4f864f5e" category="section-title">能夠在具有有限輸出連線能力的站台中、從 Cloud Volumes ONTAP 系統備份資料</block>
   <block id="39539808000ad0a6d6ca39474e4fb77b" category="paragraph">現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要您在商業地區的 Linux 主機上以「受限模式」安裝 Connector 、並在該處部署 Cloud Volumes ONTAP 系統。請參閱<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> 和<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
@@ -4959,4 +4956,5 @@ ifdef：：AWS []</block>
   <block id="9b7af6cb2e410e55ce793003b7110047" category="paragraph">如需詳細資訊、請 <block ref="07023d18b01371174abc5a157da41b99" category="inline-link-macro-rx"></block>參閱。</block>
   <block id="707304f314bfa71975e8ffb352535092" category="paragraph">如需手動啟用的詳細資料、請<block ref="7de2d0863d92330816fac8b7768edb68" category="inline-link-rx"></block>參閱。</block>
   <block id="0459722050fe78ea88f3bdcad4866ce0" category="paragraph"><block ref="2f5063518a76fb11ac58b566cf1a20ab" category="inline-link-rx"></block>。</block>
+  <block id="8678ec2b63284b1fce3f9da35c37df05" category="list-text">您選取的磁碟區必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。</block>
 </blocks>

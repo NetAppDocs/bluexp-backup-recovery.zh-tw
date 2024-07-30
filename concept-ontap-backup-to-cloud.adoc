@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-ontap-backup-to-cloud.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem, bluexp, bluexp backup and recovery 
 summary: BlueXP 備份與還原服務可提供備份與還原功能、以保護 ONTAP Volume 資料、並提供長期歸檔。您可以實作 3-2-1 策略、在兩個不同的儲存系統上有 3 個來源資料複本、並在雲端中有 1 個複本。 
 ---
 = 使用 BlueXP 備份與還原來保護您的 ONTAP Volume 資料
@@ -191,7 +191,6 @@ BlueXP 備份與還原支援下列類型的磁碟區：
 * 可讀寫的磁碟區FlexVol
 * 不含更新版本的ONTAP FlexGroup
 * 《企業版》（需使用更新版本的版本）SnapLock ONTAP
-* SnapLock Compliance Volume （需要 ONTAP 9.14 或更新版本）
 * SnapMirror資料保護（DP）目的地磁碟區
 
 

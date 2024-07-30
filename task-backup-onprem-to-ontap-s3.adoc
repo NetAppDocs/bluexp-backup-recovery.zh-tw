@@ -313,7 +313,7 @@ S3 認證:: 您必須建立 S3 使用者、才能控制對 ONTAP S3 儲存設備
 [NOTE]
 ====
 * 您一次只能在單一 FlexGroup 磁碟區上啟動備份。
-* 您選取的磁碟區必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。（採用 SnapLock Compliance 模式的 Volume 需要 ONTAP 9.14 或更新版本。）
+* 您選取的磁碟區必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。
 
 
 ====
