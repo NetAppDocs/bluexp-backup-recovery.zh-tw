@@ -53,7 +53,6 @@ BlueXP 備份與還原有幾個 PAYGO 計畫：
 +
 請注意、此選項也需要備份與恢復 PAYGO 訂閱、但符合資格的 Cloud Volumes ONTAP 系統將不會產生任何費用。
 
-* 「 CVO Edge Cache 」套件的功能與「 CVO Professional 」套件相同、但也支援 https://docs.netapp.com/us-en/bluexp-edge-caching/concept-gfc.html["BlueXP 邊緣快取"^] 服務：您有權在 Cloud Volumes ONTAP 系統上為每 3 TiB 的已配置容量部署一個 BlueXP 邊緣快取邊緣系統。此選項可透過 Azure 和 Google Marketplaces 取得、但無法讓您備份內部部署的 ONTAP 資料。
 
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["深入瞭解這些容量型授權套件"]。

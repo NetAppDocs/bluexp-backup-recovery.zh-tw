@@ -40,4 +40,4 @@ summary: 您可以將 SAP HANA 資料庫從雲端還原至內部部署的 SnapCe
 
 此作業只會匯出指定主機上所選備份的儲存區。您應該手動掛載檔案系統並開啟資料庫。使用磁碟區之後、儲存管理員可以從 ONTAP 叢集刪除磁碟區。
 
-如需如何啟動SAP HANA資料庫的詳細資訊、請參閱： https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html["TR-4667 ：使用 SnapCenter 的 SAP 系統複製工作流程總覽"^] 和 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html["TR-4667 ：使用 SnapCenter 的 SAP 系統複製工作流程總覽"^]。
+如需有關如何啟動 SAP HANA 資料庫的資訊、請參閱 https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：利用SnapCenter 下列功能自動化SAP HANA系統複製與複製作業"^]。

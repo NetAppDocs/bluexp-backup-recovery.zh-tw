@@ -21,7 +21,7 @@ BlueXP 支援資料鎖定和勒索軟體保護。如果 ONTAP 叢集是在 ONTAP
 .開始之前
 將資料備份StorageGRID 到不支援的地方時、內部環境中必須有連接器。您可能需要安裝新的Connector、或確定目前選取的Connector位於內部部署。連接器可安裝在有或沒有網際網路存取的站台上。
 
-如需相關資訊、請參閱 link:task-backup-onprem-private-cloud.html#creating-or-switching-connectors["建立連接器StorageGRID 以利實現效能"]。
+如需相關資訊，請參閱 link:task-backup-onprem-private-cloud.html#create-or-switch-connectors["建立連接器StorageGRID 以利實現效能"]。
 
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。
