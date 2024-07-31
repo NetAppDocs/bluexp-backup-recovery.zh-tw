@@ -3953,7 +3953,6 @@ ifdef：：AWS []</block>
   <block id="e2220c538d5ed850f5ecb8375389dad3" category="list-text">您必須在 Google Cloud Project 中擁有具有自訂角色的服務帳戶。<block ref="bb9056f672c7da9a9c8e1e60191fd39c" category="inline-link-rx"></block></block>
   <block id="f6b23a9e657d0c84ca0f004a895e6b12" category="admonition">若要修改備份設定或新增複寫、請參閱 <block ref="437ca1df9d07fa739678476083489c0d" category="inline-link-macro-rx"></block>。</block>
   <block id="031305d7be8e01cb27587340a16572f8" category="paragraph">如果您只需要從 ONTAP Volume 備份還原幾個檔案、您可以選擇還原資料夾或個別檔案、而非還原整個磁碟區。您可以將資料夾和檔案還原至原始工作環境中的現有磁碟區、或還原至使用相同雲端帳戶的不同工作環境。您也可以將資料夾和檔案還原至內部部署ONTAP 的作業系統上的磁碟區。</block>
-  <block id="87eb849ca11537b79f083ee5fbad6738" category="list-text">使用 ONTAP 9.15.1 P2 、您可以使用「瀏覽與還原」選項來還原 FlexGroup 資料夾。</block>
   <block id="57bb710d517f010c4fce20687ec1c6ff" category="list-text">ONTAP 版本必須為 9.15.1 P2 或以上、才能使用「瀏覽與還原」選項還原 FlexGroup 目錄。</block>
   <block id="ba874eb3ffbdba518b95ce26bc81a861" category="section-title">2024 年 7 月 22 日</block>
   <block id="9d5f0e2f1682000ac365243e21301823" category="section-title">還原小於 1 GB 的磁碟區</block>
@@ -3980,4 +3979,7 @@ ifdef：：AWS []</block>
   <block id="a53c24ea75123fb92d916ca3c6592e08" category="paragraph">如需有關如何啟動 SAP HANA 資料庫的資訊、請參閱<block ref="d89e94a6aaf703375bdbc4104c3e8227" category="inline-link-rx"></block>。</block>
   <block id="a9e237979cbdc38b90d3a128b7a087d1" category="inline-link">將內部部署 ONTAP 資料備份至 Amazon S3</block>
   <block id="5ab37a7c23f6f643a1684bd78480a163" category="paragraph">請注意、指派給 BlueXP Connector 的 IAM 原則需要將所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如「 arn:AWS-CN:S3 ：：：： NetApp-backup-* 」。如需詳細資訊、請參閱<block ref="6bde8133d7092193dd76584d1547b993" category="inline-link-rx"></block> 和<block ref="54f3812958e7ffc22b3859734114af6b" category="inline-link-rx"></block> 。</block>
+  <block id="15f09261e873aa1d63f5dcc04347b79b" category="list-text">使用 ONTAP 9.15.1 、您可以使用「瀏覽與還原」選項來還原 FlexGroup 資料夾。此功能處於「技術預覽」模式。</block>
+  <block id="db0f3d3c6912a5ee817314070056f087" category="inline-link">BlueXP 備份與還原 2024 年 7 月版本部落格</block>
+  <block id="ec53b6836352750173251f0c57f2ed93" category="paragraph">您可以使用中所述的特殊旗標來測試它<block ref="33c6d5d03ae6e02d266d11d3de66dc86" category="inline-link-rx"></block>。</block>
 </blocks>
