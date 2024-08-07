@@ -136,23 +136,6 @@ sidebar:
       url: "/task-manage-vm-data-in-cloud.html"
     - title: 還原虛擬機器資料
       url: "/task-restore-vm-data.html"
-  - title: 備份及還原Kubernetes資料
-    entries:
-    - title: 保護您的Kubernetes資料
-      url: "/concept-kubernetes-backup-to-cloud.html"
-    - title: 備份至 Amazon S3
-      flavor: aws
-      url: "/task-backup-kubernetes-to-s3.html"
-    - title: 備份至Azure Blob
-      flavor: azure
-      url: "/task-backup-kubernetes-to-azure.html"
-    - title: 備份至Google Cloud
-      flavor: gcp
-      url: "/task-backup-kubernetes-to-gcp.html"
-    - title: 管理Kubernetes備份
-      url: "/task-manage-backups-kubernetes.html"
-    - title: 從Kubernetes備份還原
-      url: "/task-restore-backups-kubernetes.html"
   - title: 使用REST API進行自動化
     url: "/api-backup-restore.html"
   - title: 參考資料

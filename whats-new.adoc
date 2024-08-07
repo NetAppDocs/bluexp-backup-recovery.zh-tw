@@ -560,7 +560,7 @@ API 的新功能可讓您使用 BlueXP 備份與還原、將磁碟區快照備�
 
 === 工作監控器的多項增強功能
 
-* 「工作監控」頁面新增進階篩選功能、讓您可以依時間、工作負載（磁碟區、應用程式、虛擬機器或Kubernetes）、 工作類型、狀態、工作環境和儲存VM。您也可以輸入任意文字來搜尋任何資源、例如「application_3」。  https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["瞭解如何使用進階篩選器"]。
+* 「工作監控」頁面已新增進階篩選功能、可讓您依時間、工作負載（磁碟區、應用程式或虛擬機器）、工作類型、 狀態、工作環境和儲存 VM 。您也可以輸入任意文字來搜尋任何資源、例如「application_3」。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["瞭解如何使用進階篩選器"]。
 * 從 BlueXP 備份與還原 UI 和 API 啟動的使用者初始化備份與還原作業、以及系統起始的工作（例如持續的備份作業）、現在都可在執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統的 * 工作監控 * 標籤中取得。早期版本Cloud Volumes ONTAP 的不一致系統和內部部署ONTAP 的不一致系統、目前只會顯示使用者啟動的工作。
 
 
@@ -789,7 +789,7 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/task-manage-backup-settings
 
 已對進行下列更新 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["「工作監控」頁面"]：
 
-* 「工作負載」欄可供使用、以便您篩選頁面以檢視下列備份服務的工作：Volume、應用程式、虛擬機器和Kubernetes。
+* 「工作負載」欄位可供您篩選頁面、以檢視下列備份服務的工作： Volume 、 Applications 和 Virtual Machines 。
 * 若要檢視特定備份工作的這些詳細資料、您可以新增「使用者名稱」和「工作類型」欄。
 * 「工作詳細資料」頁面會顯示正在執行以完成主要工作的所有子工作。
 * 此頁面每15分鐘自動重新整理一次、讓您隨時都能看到最新的工作狀態結果。您也可以按一下「*重新整理*」按鈕、立即更新頁面。

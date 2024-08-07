@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-report-inventory.html 
-keywords: cloud backup, backup and recovery service, backup and recovery, backup, restore, report, inventory 
+keywords: cloud backup, backup and recovery service, backup and recovery, backup, restore, report, inventory, bluexp 
 summary: 有了 BlueXP 備份與還原報告、您就能確保關鍵資料根據組織定義的原則受到保護、並有效支援法規遵循程序的稽核。備份庫存報告可讓您查看特定帳戶、工作環境或 SVM 庫存的所有備份。 
 ---
 = 報告資料保護涵蓋範圍
@@ -32,7 +32,7 @@ NOTE: 「工作監控」記錄中會監控報告活動、以便您稽核所有�
 BlueXP 備份與還原報告提供下列各方面的資訊：
 
 * * 連接器位置 * ：內部部署或雲端
-* * 來源 * ： Cloud Volumes ONTAP Volume 、內部部署 ONTAP Volume 、應用程式或 Kubernetes 持續磁碟區
+* * 來源 * ： Cloud Volumes ONTAP Volume 、內部部署 ONTAP Volume 或應用程式
 * * 目的地 * ：任何雲端供應商、 NetApp StorageGRID 或 ONTAP S3
 * * ONTAP 版本 * ： 9.13.0
 
@@ -94,7 +94,7 @@ TIP: 您可以選取多個工作環境和 SVM 。
 
 主動式監控可減少監控生態系統中所有資源所需的工作量。從 ONTAP 9.13.0 開始、「資料保護工作活動」報告提供快照、備份、複製和還原作業的相關資訊、可搭配 SLA 監控及追蹤備份與還原率使用。
 
-本報告適用於 Cloud Volumes ONTAP 、內部部署、應用程式及 Kubernetes 資料的 BlueXP 備份與還原作業。
+此報告適用於 Cloud Volumes ONTAP 、內部部署及應用程式資料的 BlueXP  備份與還原作業。
 
 資料保護工作活動報告顯示下列資訊及其他資訊：
 
@@ -114,7 +114,6 @@ TIP: 您可以選取多個工作環境和 SVM 。
 ** ONTAP 磁碟區備份與還原工作數
 ** 應用程式備份與還原工作數
 ** 虛擬機器備份與還原工作數
-** Kubernetes 備份與還原工作數
 
 
 * 日常工作活動

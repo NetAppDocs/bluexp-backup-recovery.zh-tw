@@ -1,11 +1,10 @@
 ---
 indexpage:
   title: BlueXP 備份與還原文件
-  summary: BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續容量、資料庫和虛擬機器（ VM
-    ）提供高效率、安全且具成本效益的資料保護。
-  keywords: bluexp, bluexp backup recovery, ontap, kubernetes, virtual machines, vm,
-    on-premises, data protection
-  lead: BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續磁碟區、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。
+  summary: BlueXP  備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器（ VM ）提供高效率、安全且具成本效益的資料保護。
+  keywords: bluexp, bluexp backup recovery, ontap, virtual machine, vm, on-premises,
+    data protection
+  lead: BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。
   tiles:
   - title: 開始使用
     links:
@@ -91,19 +90,6 @@ indexpage:
       url: task-restore-sql-data.html
     - title: 還原虛擬機器資料
       url: task-restore-vm-data.html
-    - title: 還原 Kubernetes Volume 資料
-      url: task-restore-backups-kubernetes.html
-  - title: 將Kubernetes資料備份到雲端
-    links:
-    - title: 將 Kubernetes 叢集備份至 Amazon S3
-      url: task-backup-kubernetes-to-s3.html
-      flavor: aws
-    - title: 將 Kubernetes 叢集備份至 Azure Blob
-      url: task-backup-kubernetes-to-azure.html
-      flavor: azure
-    - title: 將 Kubernetes 叢集備份至 Google Cloud
-      url: task-backup-kubernetes-to-gcp.html
-      flavor: gcp
   - title: 部落格與社群
     links:
     - title: NetApp社群

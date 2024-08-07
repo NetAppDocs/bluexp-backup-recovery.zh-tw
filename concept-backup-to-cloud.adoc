@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-backup-to-cloud.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, kubernetes, applications, virtual machines, backup and recovery 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。 
 ---
 = 瞭解 BlueXP 備份與還原
@@ -14,7 +14,7 @@ summary: BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP
 
 
 [role="lead"]
-BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續磁碟區、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。
+BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。
 
 此服務執行區塊層級的遞增永久複寫、並保留所有儲存效率、大幅減少複寫和儲存的資料量。此外、您只需支付受保護的費用、並使用可用的最低成本儲存層、使 BlueXP 備份與還原非常具成本效益。
 
@@ -25,7 +25,6 @@ https://bluexp.netapp.com/cloud-backup["深入瞭解 BlueXP 備份與還原"^]�
 備份與還原可用於：
 
 * 備份並還原ONTAP 來自於不受資料保護的功能、以及內部部署的功能ONTAP Cloud Volumes ONTAP 。 link:concept-ontap-backup-to-cloud.html["請參閱此處的詳細功能"]。
-* 備份及還原Kubernetes持續磁碟區。 link:concept-kubernetes-backup-to-cloud.html["請參閱此處的詳細功能"]。
 * 使用 BlueXP 備份與應用程式還原、從內部部署的 ONTAP 系統備份應用程式一致的快照。 link:concept-protect-app-data-to-cloud.html["請參閱此處的詳細功能"]。
 * 使用 BlueXP 備份和還原 VMware 、將資料存放區備份到雲端、並將虛擬機器還原回內部部署 vCenter 。 link:concept-protect-vm-data.html["請參閱此處的詳細功能"]。
 
@@ -33,7 +32,7 @@ https://bluexp.netapp.com/cloud-backup["深入瞭解 BlueXP 備份與還原"^]�
 https://www.youtube.com/watch?v=DF0knrH2a80["觀看快速示範"^]
 
 
-TIP: 當 BlueXP Connector 部署在雲端的政府區域、或是在沒有網際網路存取（黑暗網站）的網站中時、 BlueXP 備份與還原僅支援 ONTAP 系統的備份與還原作業。使用這些類型的部署方法時、 BlueXP 備份與還原不支援 Kubernetes 叢集、應用程式或虛擬機器的備份與還原作業。
+TIP: 當 BlueXP Connector 部署在雲端的政府區域、或是在沒有網際網路存取（黑暗網站）的網站中時、 BlueXP 備份與還原僅支援 ONTAP 系統的備份與還原作業。使用這些類型的部署方法時、 BlueXP  備份與還原不支援應用程式或虛擬機器的備份與還原作業。
 
 
 

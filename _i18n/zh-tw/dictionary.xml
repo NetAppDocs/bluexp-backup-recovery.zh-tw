@@ -3,7 +3,6 @@
   <block id="06ad314b340900d226b1196e1fe289e9" category="section-title">快速入門</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
   <block id="e44764e5848db6ece6d5d4bce23a85b7" category="inline-link-macro">並啟動</block>
-  <block id="b3b50b4bf9a41f22a738c1d815497548" category="paragraph">預設原則會每天備份磁碟區、並保留每個磁碟區最近 30 個備份複本。變更為每小時、每日、每週或每月備份、或選取其中一個系統定義的原則來提供更多選項。您也可以變更要保留的備份複本數量。</block>
   <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="section-title">需求</block>
   <block id="b020365bc471630c977d9fcc2c5ea1d1" category="inline-link">瞭解如何探索叢集</block>
   <block id="be2a4307ac15130326b39aa20133d5ed" category="list-text">SnapMirror授權（包含在優質產品組合或資料保護產品組合中）。</block>
@@ -29,14 +28,10 @@
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步驟</block>
   <block id="aadbd6cd1f8b4e9deafea8f1d6c8333c" category="list-text">確保安裝 Connector 的網路啟用下列連線：</block>
   <block id="699a71169310a3553bddb7e36ecb8a5c" category="list-text">透過連接埠443連線至ONTAP 您的SURF叢 集管理LIF的HTTPS連線</block>
-  <block id="7527dcedb498a9e111f7eb26b4f075a6" category="section-title">授權需求</block>
   <block id="ac311923d7cae9a2261e1a28ccabceeb" category="inline-link-macro">瞭解如何管理BYOL授權</block>
   <block id="60a2dc1fd82db84a092db92c95942712" category="admonition">將檔案備份StorageGRID 到還原時、不支援PAYGO授權。</block>
   <block id="62fdc5376a050379803b51f794be9618" category="list-text">您要備份的磁碟區所在的叢集中的 IPspace ONTAP 。此IPspace的叢集間生命體必須具有傳出網際網路存取。</block>
-  <block id="d87a3e208e2210f8107f397021993b8d" category="list-text">若要備份所有磁碟區、請勾選標題列中的方塊（<block ref="2b1190f90c2c717d2aa70aabd2fc4c36" category="inline-image-macro-rx" type="image"></block>）。</block>
   <block id="e52334be5aa9b5bef107fc863692b32f" category="list-text">若要備份個別磁碟區、請勾選每個磁碟區的方塊（<block ref="f3b0afa317fb06ade03449dd632d08e0" category="inline-image-macro-rx" type="image"></block>）。</block>
-  <block id="0ad648b845988c92aa984e9622fbd14b" category="inline-link-macro">開始和停止磁碟區備份、或變更備份排程</block>
-  <block id="c1517582a429538e0dd5adc774e4d5a5" category="inline-link-macro">從備份檔案還原整個磁碟區</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">取得協助</block>
   <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">這些選項可供免費使用、一天24小時、一週7天：</block>
   <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">知識庫</block>
@@ -77,37 +72,15 @@
   <block id="9c0683836e21c75a90fa25adbbbd8b6c" category="list-text">*標準*：&lt; 15小時</block>
   <block id="3a55623bb404bb02afb579f8019213e8" category="list-text">*還原時間*：從冷卻儲存設備中的備份檔案還原資料的時間。這一次與一般直接從冷卻儲存設備進行還原作業（不使用歸檔層時）並無不同。</block>
   <block id="88912c71cafd61e4eff373e99ff882b2" category="inline-link">本Azure常見問題集</block>
-  <block id="1a006728799e11c8bf2ea45db7259826" category="summary">您可以變更備份排程、啟用/停用磁碟區備份、刪除備份等、來管理Kubernetes系統的備份。</block>
-  <block id="d9d975cbc0da4e37b5b7d60e338ad9df" category="doc">管理Kubernetes系統的備份</block>
-  <block id="ac90263e404aa8dd4e258ec3b2975718" category="admonition">請勿直接從雲端供應商環境管理或變更備份檔案。這可能會毀損檔案、並導致不受支援的組態。</block>
-  <block id="c727171c72af7df4510010076d3f4a4d" category="section-title">檢視要備份的磁碟區</block>
-  <block id="f0ab8f9188e480be35faa3f7a2514a8b" category="list-text">按一下* Kubernetes*索引標籤、即可檢視Kubernetes系統的持續磁碟區清單。</block>
   <block id="8c678f695075da58431fc9f2ac402b3c" category="inline-image-macro">顯示所有工作環境和具有備份檔案的磁碟區的快照。</block>
-  <block id="9ca89f775b6f7d88132d44fae69c705c" category="section-title">啟用及停用磁碟區備份</block>
-  <block id="8da82d73bd7d63ccd8ed491932ec4f8f" category="paragraph">如果您不需要該磁碟區的備份複本、而且不想支付儲存備份的成本、則可以停止備份磁碟區。如果目前尚未備份、您也可以將新的磁碟區新增至備份清單。</block>
-  <block id="c0623fe63fcf79277cd81628e75c5bd7" category="list-text">從* Kubernetes*索引標籤、選取*備份設定*。</block>
   <block id="39f75ab0749a8e899ecdac553021f7a3" category="inline-image-macro">螢幕擷取畫面會顯示「備份設定」按鈕、您可以在選取工作環境之後使用該按鈕。</block>
-  <block id="18b34ebf5042da0c5320c1b1148cd8d4" category="paragraph"><block ref="18b34ebf5042da0c5320c1b1148cd8d4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8f0a75d2d5a82f31f2cf069c3b0ee684" category="inline-image-macro">更多圖示</block>
-  <block id="b1f8a1f93af0a13c4859f88d0991cd9d" category="list-text">在「備份設定」頁面中、按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 針對Kubernetes叢集、選取*管理持續磁碟區*。</block>
-  <block id="c916a97a0b13c55b8ea0dd494ec85b92" category="inline-image-macro">顯示「備份設定」頁面中「管理持續磁碟區」按鈕的快照。</block>
-  <block id="41f9aa314eb0473aa273dfc35c1c8d0f" category="paragraph"><block ref="41f9aa314eb0473aa273dfc35c1c8d0f" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f3f9bf3f7291a5ed0552bbb7de61f88d" category="list-text">選取您要變更的磁碟區核取方塊、然後根據您要開始或停止磁碟區的備份、按一下「*啟動*」或「*停用*」。</block>
-  <block id="8e074e924c73e9c00480607c80481d60" category="inline-image-macro">「管理磁碟區」頁面、您可在其中選取或取消選取磁碟區。</block>
-  <block id="497968cf7f565b72a034d69215ab9754" category="paragraph"><block ref="497968cf7f565b72a034d69215ab9754" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c7a220fc58ccea879a68f706ca98ac0c" category="list-text">按一下「*儲存*」以提交變更。</block>
   <block id="8764d766d622ae40812776b15d742a79" category="inline-xref">刪除備份</block>
-  <block id="370b82ce2e3ba80cd6ec552891697236" category="section-title">編輯現有的備份原則</block>
   <block id="666a7dbcb8fbb40415b3646ab93b9692" category="paragraph">您可以變更目前套用至工作環境中磁碟區的備份原則屬性。變更備份原則會影響使用原則的所有現有磁碟區。</block>
   <block id="0be2c78c9d9743f1e0ca96b2de59d98b" category="inline-image-macro">「Volumes（磁碟區）」索引標籤上顯示「Backup Settings（備份設定）」按鈕的快照</block>
-  <block id="c1c11398c43b17a4b4b5aec0ebc127fd" category="paragraph"><block ref="c1c11398c43b17a4b4b5aec0ebc127fd" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="262877b0306497525d0e366df4d2474e" category="list-text">在「備份設定」頁面中、按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 針對您要變更設定的工作環境、選取*管理原則*。</block>
   <block id="a1dabff13348d54a94f2f009533f84c0" category="inline-image-macro">顯示「備份設定」頁面中「管理原則」選項的快照。</block>
-  <block id="3ad00689ff442496b4f3e808374bf8f1" category="paragraph"><block ref="3ad00689ff442496b4f3e808374bf8f1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="efeb40b26ff74b3c83e036fb275a2f83" category="list-text">在「管理原則」頁面中、按一下「*編輯原則*」、即可在該工作環境中變更備份原則。</block>
   <block id="14ec4423a0bc4a521432737808ed6355" category="inline-image-macro">顯示「管理原則」頁面中「編輯原則」按鈕的快照。</block>
   <block id="6b225e3bac3911a0f8ea09b5674f0db7" category="paragraph"><block ref="6b225e3bac3911a0f8ea09b5674f0db7" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3e61b62f0171bcabe03877de4863391d" category="list-text">在「編輯原則」頁面中、變更排程和備份保留、然後按一下「*儲存*」。</block>
   <block id="a263d8b0fdf0ae477c1485bbc3a8c3ea" category="inline-image-macro">螢幕擷取畫面會顯示備份原則設定、您可以在其中修改備份排程和備份保留設定。</block>
   <block id="0fa100496915d2a1169b13ec8d09b7fd" category="paragraph"><block ref="0fa100496915d2a1169b13ec8d09b7fd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="35ca84c9ac716ce66e06cc6b1cf45a92" category="inline-xref">將原則套用至該工作環境中的磁碟區</block>
@@ -117,50 +90,19 @@
   <block id="6bbf88b0315e00c49811f4000bb83563" category="paragraph"><block ref="6bbf88b0315e00c49811f4000bb83563" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a079ee8f78a153ec016a997b2904f2bb" category="inline-image-macro">顯示備份原則設定的快照、您可以在其中新增備份排程和備份保留設定。</block>
   <block id="dfb577039d019da5c38a09fb1366befe" category="paragraph"><block ref="dfb577039d019da5c38a09fb1366befe" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ba8ccbfb49367bf7bb51cf013e8b6c51" category="section-title">設定要指派給新磁碟區的備份原則</block>
-  <block id="dea20afb5b2be9f8aa54b7e45d98e7f9" category="paragraph">您也可以停用此設定、使新建立的磁碟區不會自動備份。在這種情況下、您必須手動啟用任何特定磁碟區的備份、以便日後備份。</block>
-  <block id="0df9e5badb79d5d28ed3c82762cc6d09" category="inline-image-macro">從「備份設定」頁面選取「自動備份新磁碟區」選項的快照。</block>
-  <block id="27351098af334d7abafb46d4967b074d" category="section-title">檢視每個磁碟區的備份清單</block>
   <block id="38bf6532d289335e780251f9c177e17b" category="paragraph">您可以檢視每個磁碟區的所有備份檔案清單。此頁面會顯示來源磁碟區、目的地位置及備份詳細資料的詳細資料、例如上次備份、目前的備份原則、備份檔案大小等。</block>
-  <block id="1fdfb3383ed1d7c609308bb6c6a7f806" category="paragraph">此頁面也可讓您執行下列工作：</block>
-  <block id="fc356b64c0d53ea5b432b24f76ca4a9c" category="list-text">刪除該磁碟區的所有備份檔案</block>
-  <block id="4d45abbfe708caa773c2c4b48e3d20f4" category="list-text">刪除磁碟區的個別備份檔案</block>
-  <block id="d61c8b520e74a4f2dd852f8b3808597f" category="list-text">下載Volume的備份報告</block>
-  <block id="a31e819f81a93a6405d44fed462a2751" category="list-text">在* Kubernetes*索引標籤中、按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 針對來源Volume、選取*詳細資料與備份清單*。</block>
-  <block id="f5eb3eb2a1b4f33d237d1c47fab57b63" category="inline-image-macro">顯示詳細資料&amp;amp;備份清單按鈕的快照、可用於單一磁碟區。</block>
-  <block id="84eac2d3d50278311efb3d6bb37f4984" category="paragraph">所有備份檔案的清單都會顯示、以及來源磁碟區、目的地位置和備份詳細資料的詳細資料。</block>
   <block id="7b24c20f8aa79cc0a7317ae222251ce2" category="inline-image-macro">顯示單一磁碟區所有備份檔案清單的快照。</block>
-  <block id="27966c807d6bf6667ade7b1d6b710a1d" category="section-title">刪除備份</block>
-  <block id="d0ad55175c44685f6aa4cd374ac1bff7" category="section-title">刪除工作環境的所有備份檔案</block>
   <block id="990222def8053839fd07dd4a3c81e9dc" category="inline-xref">如此處所述</block>
-  <block id="5359ff75b6995e199397935a4e5bb69f" category="list-text">按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 對於要刪除所有備份的Kubernetes叢集、請選取*刪除所有備份*。</block>
   <block id="066864af8bad32531c3d7b7013f2654a" category="inline-image-macro">選取「刪除所有備份」按鈕以刪除工作環境的所有備份的快照。</block>
-  <block id="749877571899cdb524c800a67b079f94" category="paragraph"><block ref="749877571899cdb524c800a67b079f94" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fec2067245a90d673d237d82c7195ed4" category="list-text">在確認對話方塊中、輸入工作環境的名稱、然後按一下*刪除*。</block>
-  <block id="3fadeb8e4179314dfc4b298dbce33425" category="section-title">刪除磁碟區的所有備份檔案</block>
-  <block id="a8ba6304562632a6eb4762aebfe0d175" category="paragraph">刪除某個磁碟區的所有備份也會停用該磁碟區的未來備份。</block>
-  <block id="56f92efb533e616de6001a66d8aeb084" category="inline-xref">重新開始備份磁碟區</block>
-  <block id="d2ad1da6ad2f6901b037159165028912" category="paragraph">您可以 <block ref="14977a695b05dfa7b0cad6887e2a74bd" category="inline-xref-macro-rx"></block> 隨時從「管理備份」頁面。</block>
-  <block id="782b223a2a5766a12495d35a0f0fc4a1" category="paragraph">此時會顯示所有備份檔案的清單。</block>
-  <block id="38d78b4223b3120827e7a57816380ce8" category="list-text">按一下「*動作*&gt;*刪除所有備份*」。</block>
-  <block id="e815c39be987e9a4b5a9a0c186d3fc56" category="inline-image-macro">顯示如何刪除某個Volume的所有備份檔案的快照。</block>
-  <block id="59eec54d4e906684cedbb6b2ace16fad" category="paragraph"><block ref="59eec54d4e906684cedbb6b2ace16fad" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="a40a15299d34998d96861a0913b53dd3" category="list-text">在確認對話方塊中、輸入磁碟區名稱、然後按一下*刪除*。</block>
-  <block id="ddea11cff6fa01bc8e628f8e9f2d9a06" category="section-title">刪除磁碟區的單一備份檔案</block>
-  <block id="bc8811beeb7d95772df193fb41703264" category="paragraph">您可以刪除單一備份檔案。此功能只有在磁碟區備份是從ONTAP 含有NetApp 9.8或更新版本的系統建立時才可使用。</block>
-  <block id="dc07ffce14bb56b632ef6edf19e63c6a" category="list-text">按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 針對您要刪除的Volume備份檔案、按一下*刪除*。</block>
   <block id="763bbe3415a53ebc6a8f96e6b5cd625d" category="inline-image-macro">顯示如何刪除單一備份檔案的快照。</block>
   <block id="e97eee500e7a12fe4a375b9dfb719ada" category="paragraph"><block ref="e97eee500e7a12fe4a375b9dfb719ada" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e1899e67aa8aec45bef5dc600fc2ae14" category="list-text">在確認對話方塊中、按一下 * 刪除 * 。</block>
-  <block id="6b835d6089538592ebe659b782576e6b" category="paragraph">請注意、除非您同意、否則雲端供應商會繼續向您收取備份所使用容量的物件儲存成本 <block ref="d6fb12a3c9af7e6cc6f4c849e2a2aac6" category="inline-xref-macro-rx"></block>。</block>
-  <block id="003cdf45d813a5ff455583d4774780c6" category="list-text">在「備份設定」頁面中、按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 對於工作環境或Kubernetes叢集、您要停用備份、然後選取*停用備份*。</block>
   <block id="d7f98311e57aa2a4ccfddddac24288ac" category="inline-image-macro">工作環境的「停用備份」按鈕快照。</block>
-  <block id="28b1e5b15add5c8ab1001a76115ac105" category="paragraph"><block ref="28b1e5b15add5c8ab1001a76115ac105" category="inline-image-macro-rx" type="image"></block></block>
   <block id="660c0d7e8d09e7b02561111fad36eba2" category="list-text">在確認對話方塊中、按一下 * 停用 * 。</block>
   <block id="c695db5a8ccbe4078bcf008b73fbe9c6" category="admonition">停用備份時、會針對該工作環境顯示*啟動備份*按鈕。若要重新啟用該工作環境的備份功能、請按一下此按鈕。</block>
   <block id="b33e2923e501732c750884f2e5b33dbb" category="list-text">刪除該工作環境的所有備份</block>
   <block id="f7ae31ad4a6513f59e6103af4d0c2230" category="paragraph">取消登錄選項在這兩個動作完成之前無法使用。</block>
-  <block id="d7ef8273ae288cb0855a1cb9a0487d3e" category="list-text">在「備份設定」頁面中、按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 對於要取消註冊備份服務的Kubernetes叢集、請選取*取消註冊*。</block>
   <block id="39f91bde3bf148c0b27accc0c3b738c0" category="inline-image-macro">工作環境的「取消註冊備份」按鈕快照。</block>
   <block id="6b8f75608c780411342a488cc1ed6a77" category="paragraph"><block ref="6b8f75608c780411342a488cc1ed6a77" category="inline-image-macro-rx" type="image"></block></block>
   <block id="16d050cc0c345f23a8c1f9d1557ac107" category="list-text">在確認對話方塊中、按一下*取消登錄*。</block>
@@ -184,58 +126,25 @@
   <block id="e029f5798c244f87b310df92d9b4527f" category="list-text">每月備份只在每月第一天午夜之後開始。</block>
   <block id="fab27e4b9f13b45f921fe1c7f42ffac1" category="section-title">備份複本會與您的NetApp帳戶建立關聯</block>
   <block id="ac252743de820aac9183d9f76d4bed67" category="inline-link">NetApp帳戶</block>
-  <block id="6e7fd38454983cfd290f28fb74c54476" category="paragraph">必要時、您可以將整個_volume從備份還原至相同或不同的工作環境。</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">功能</block>
-  <block id="6433f8932ae76610af96dec0c0c9c0f2" category="paragraph">備份功能：</block>
-  <block id="ecfaadba4e7588b9cdb2345e8670ce6b" category="list-text">將持續磁碟區的獨立複本備份到低成本物件儲存設備。</block>
   <block id="978691ecd52f4541232e2bc2d3a0519b" category="list-text">將單一備份原則套用至叢集中的所有磁碟區、或將不同的備份原則指派給具有獨特還原點目標的磁碟區。</block>
   <block id="2e266f5c456f5f6206428071c74410a6" category="list-text">備份資料會以 AES-256 位元加密的閒置和 TLS 1.2 HTTPS 傳輸連線加以保護。</block>
   <block id="31225c51d46e8620e15eeda9d9aede1c" category="list-text">單一磁碟區最多可支援4、000個備份。</block>
-  <block id="3c77ad4a7d2217a191b34d3699314f25" category="paragraph">還原功能：</block>
-  <block id="9a6874c177c74fe5275869dd8581e827" category="list-text">從特定時間點還原資料。</block>
-  <block id="6760340bfc2e15a2c7f1f5c3634edefd" category="list-text">將磁碟區還原至來源系統或其他系統。</block>
-  <block id="54abac4b0e4ba613b4a723ce5bc4fb9c" category="list-text">還原區塊層級的資料、將資料直接放在您指定的位置、同時保留原始ACL。</block>
-  <block id="496f4c7caaf6394b68357411d30ae9d4" category="section-title">支援的Kubernetes工作環境和物件儲存供應商</block>
   <block id="da3ad9d6a0eca9d57ad9063ff8690ab6" category="cell">來源工作環境</block>
-  <block id="a8ce277cc149cf4efa0020015556d48a" category="cell">AWS中的Kubernetes叢集</block>
   <block id="270fcb785810d0206945029bb05f4e97" category="cell">Amazon S3</block>
-  <block id="feaf86685447a9b29164a18d87a69812" category="cell">Azure中的Kubernetes叢集</block>
   <block id="52745271323ee9ea30e3a37d0338d118" category="cell">Azure Blob</block>
-  <block id="7f6251364178ee7f1986855ac72962ca" category="cell">Google的Kubernetes叢集</block>
   <block id="833c2c211a541e50ad94433664e4b5c1" category="cell">Google Cloud Storage</block>
-  <block id="235e72da2b8c2c7946c5e4d97f57203a" category="paragraph">您可以將磁碟區從Kubernetes備份檔案還原至下列工作環境：</block>
   <block id="85970a97aacb509bbf4ce9364724b494" category="cell">備份檔案位置</block>
   <block id="20b4f77bd00b4f63a49ec8e08f3bf6a6" category="section-title">成本</block>
   <block id="d14d70754e8322b819c6bc86af6beefd" category="paragraph">* 資源費用 *</block>
   <block id="e1b4a0ddcd3124f71fd5c65649282433" category="paragraph">* 服務費用 *</block>
-  <block id="359c0dbc971ac04d59ada27f4a5d4363" category="paragraph">服務費用會支付給NetApp、並從這些備份中同時支付_建立_備份和_還原_磁碟區的成本。您只需支付所保護資料的費用、此資料是根據ONTAP 備份至物件儲存設備之磁碟區的來源邏輯已用容量（_fore_效率）計算而得。此容量也稱為前端TB（FTB）。</block>
   <block id="0b9c6eef4e3d3a222eb04e910d252339" category="inline-xref">授權</block>
-  <block id="f2aa0b1f27920178d6eb63e002305119" category="paragraph">有兩種方式可以支付備份服務的費用。第一個選項是向雲端供應商訂閱、讓您每月付費。第二種選擇是直接向 NetApp 購買授權。閱讀 <block ref="b839456cc57645a9392f4db60a4f044a" category="inline-xref-macro-rx"></block> 章節以取得詳細資料。</block>
-  <block id="a4db2be5fc9fed95c3b899dc47229d5d" category="section-title">免費試用</block>
-  <block id="150d0b73810898f0438b1126fa9d43d2" category="paragraph">使用30天免費試用版時、系統會通知您剩餘的免費試用天數。在免費試用結束時、將停止建立備份。您必須訂閱服務或購買授權、才能繼續使用服務。</block>
-  <block id="853139cb08e7b4134237475a52139c44" category="paragraph">停用服務時、不會刪除備份檔案。除非您刪除備份、否則雲端供應商會繼續向您收取備份所使用容量的物件儲存成本。</block>
   <block id="d1517db071086971f3453ded8278c7a1" category="section-title">隨用隨付訂閱</block>
-  <block id="a287e316989c25a2ee988a3e9950bf89" category="paragraph">即使您有免費試用版或自帶授權（ BYOL ）、您仍應訂閱：</block>
-  <block id="54a99e6398e2bfa4f64af1dd12d262b1" category="list-text">訂閱可確保在免費試用結束後、服務不會中斷。</block>
-  <block id="b3f388e1a16fd3e59bedb612f48c8ad3" category="paragraph">試用結束時、您將根據備份的資料量、每小時收取一次費用。</block>
-  <block id="b594600c67397c7ded920bf1b801d79a" category="list-text">如果您備份的資料超過BYOL授權所允許的數量、則資料備份會透過隨用隨付訂閱繼續進行。</block>
-  <block id="17403bdd002bcdd45adff108b0e9e235" category="paragraph">例如、如果您擁有10 TB BYOL授權、超過10 TB的所有容量都會透過PAYGO訂購付費。</block>
-  <block id="0f00cbe3f53cc394d366dd2245df4f68" category="paragraph">在免費試用期間或未超過BYOL授權時、您將不會從隨用隨付訂閱中收取費用。</block>
   <block id="09c7ee4be0db4e9240de27e931212553" category="inline-link-macro">瞭解如何設定隨用隨付訂閱</block>
   <block id="fce5aebaf837d23e27b8a9d6a54a6467" category="section-title">請自帶授權</block>
-  <block id="dc44bc957ba607de4720d510c011e96f" category="paragraph">BYOL以1 TB為單位、以期限為基準（12、24或36個月）_和_容量為基準。您向NetApp支付一段時間使用服務的費用、例如1年、如果容量上限為10 TB。</block>
-  <block id="ca40824cdffa55341f62ec1a50b529d3" category="admonition">直接從雲端供應商環境中採取的任何管理或變更備份檔案的動作、都可能會毀損檔案、並導致不支援的組態。</block>
-  <block id="bff292a0ddf8b8d46b8403039c6c25e1" category="section-title">支援的儲存類別或存取層</block>
   <block id="835c5a1c186b36b36520e07b3f4c2655" category="list-text">在AWS中、備份是從_Standard_儲存類別開始、30天後轉換至_Standard-in頻繁 存取_儲存類別。</block>
   <block id="e67ee777fcc3a50a658558b590d76549" category="list-text">在Azure中、備份會與_cool存取層建立關聯。</block>
-  <block id="c17dd0fb046b57a7b501825f3f2579a4" category="list-text">在GCP中、預設會將備份與_Standard_儲存類別相關聯。</block>
-  <block id="0f1ea22cd0984db20cd17e018271788e" category="section-title">每個叢集可自訂的備份排程和保留設定</block>
-  <block id="43de18506d5bc12f553b69d0b83da7da" category="paragraph">您可以選擇每小時、每日、每週及每月備份所有磁碟區的組合。</block>
-  <block id="5a86b6d60f717e520ba76b93bf1a3243" category="paragraph">一旦您達到某個類別或時間間隔的最大備份數、舊備份就會移除、因此您永遠擁有最新的備份。</block>
   <block id="8c9b6b8729507556572552d0d8f472e3" category="section-title">支援的磁碟區</block>
-  <block id="e646e16bee8b32e6ea29e30d01970a6c" category="section-title">限制</block>
-  <block id="b2c42e88cb6710c9293d1ce23cdc3cd1" category="list-text">建立或編輯備份原則時、若未將任何磁碟區指派給原則、則保留備份的數量最多可達1018個。因應措施是減少建立原則所需的備份數量。然後您可以編輯原則、在指派磁碟區至原則之後、建立最多4000個備份。</block>
-  <block id="c1ee18400a70ff161d19420ead84a6ff" category="list-text">Kubernetes磁碟區不支援使用*立即備份*按鈕進行臨機操作磁碟區備份。</block>
   <block id="fb74ece6972051de48e476af9e1e3b61" category="list-text">從* Volumes（磁碟區）*索引標籤、選取* Backup Settings*（備份設定）。</block>
   <block id="ac5b968dc1da129cef2402b01e65b50a" category="paragraph"><block ref="ac5b968dc1da129cef2402b01e65b50a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c6f1cab361201442f616f857bc68919e" category="paragraph"><block ref="c6f1cab361201442f616f857bc68919e" category="inline-image-macro-rx" type="image"></block></block>
@@ -285,39 +194,13 @@
   <block id="a83fa9e87ded192467ab6bf1bbdfef69" category="list-text">*還原時間*：從標準儲存設備中的備份檔案還原資料的時間。這一次與一般直接從標準儲存設備進行還原作業（不使用歸檔層時）並無不同。</block>
   <block id="61d2487e95a87f4488738d2a68c3f065" category="inline-link">關於這些儲存類別的Amazon常見問題集</block>
   <block id="e65bc43817a0ccba6c96b51583aeb5d2" category="paragraph">如需Amazon S3 Glacier和S3 Glacier Deep Archive擷取選項的詳細資訊、請參閱<block ref="b0992f5e2227a70d04a7c3b83b2ca245" category="inline-link-rx"></block>。</block>
-  <block id="6bf80475cfcaeeaa5036e79e644302f5" category="summary">請完成幾個步驟、開始將GKE Kubernetes叢集上持續磁碟區的資料備份到Google Cloud儲存設備。</block>
-  <block id="9cb5c4f70a9ab55a2786587a76bd9009" category="doc">將Kubernetes持續的Volume資料備份到Google Cloud儲存設備</block>
   <block id="2433628c53fed80ea9d352a1bcd9ce45" category="paragraph">請依照下列步驟快速入門、或向下捲動至其餘部分以取得完整詳細資料。</block>
-  <block id="4dc2b6ffe2a8551a28338aad583b68af" category="list-text">叢集上必須安裝Trident、Trident版本必須為21.1或更新版本。</block>
-  <block id="02543ab70b7092fcd0b9252d0337c79a" category="list-text">所有用於建立要備份之持續磁碟區的PVCS、都必須將「snapshotPolicy」設為「Default」（預設）。</block>
-  <block id="f97ff4c8e3feb5c1c023b5056582794b" category="list-text">叢集Cloud Volumes ONTAP 的後端儲存設備必須使用以GBTon GCP為基礎的功能。</block>
-  <block id="19591c0673cc7e18e4bade20109403dd" category="list-text">該系統必須執行更新版本的1.7P5。Cloud Volumes ONTAP ONTAP</block>
   <block id="1bb2c0187913772397ee94ba85aff22c" category="list-text">您擁有有效的 GCP 訂閱、可用於存放備份的儲存空間。</block>
-  <block id="721df1cfc096c8fe936071e3747d828d" category="list-text">您的Google Cloud Project中有一個服務帳戶、該帳戶具有預先定義的儲存管理角色。</block>
-  <block id="916de09e13f9b94e688ab4e6175f2885" category="paragraph">在「 Select Volumes （選取磁碟區）」頁面中、找出您要備份的磁碟區。備份檔案儲存在Google Cloud Storage儲存庫中、使用與Cloud Volumes ONTAP 本系統相同的GCP訂閱和地區。</block>
-  <block id="ef15478cabaf21c4a3c8477e93312cee" category="paragraph">請先閱讀下列要求、確認您擁有支援的組態、再開始將Kubernetes持續磁碟區備份到Google Cloud儲存設備。</block>
-  <block id="efe4ad90c097b3e944ddb0e73553dce4" category="paragraph">請注意、私有端點是選用的。</block>
-  <block id="722cdb9316b3fa8ce17714d9c3e2710c" category="list-text">Kubernetes 叢集需求</block>
-  <block id="39a875b1e9ef9f5447dff029a4e31641" category="inline-link">瞭解如何探索Kubernetes叢集</block>
-  <block id="f39cf0371a8569a37618b2abf7fb11bd" category="inline-link">如何安裝Trident</block>
-  <block id="68fe2e383aebea35afdffc7be08dfbdd" category="inline-link">如何升級Trident版本</block>
-  <block id="7e750612c420301512a8e94f7491def1" category="paragraph">請注意、不支援內部部署位置中的Kubernetes叢集。僅Cloud Volumes ONTAP 支援使用支援的雲端部署中的Kubernetes叢集。</block>
-  <block id="17fc7550015fcf3581b1f6f07cc675a6" category="list-text">所有用於建立要備份之持續磁碟區的持續磁碟區宣告物件、必須將「snapshotPolicy」設為「預設」。</block>
-  <block id="4f5e2f4b7c2b9f766c6a0e6a47209826" category="paragraph">您可以在註釋下新增「快照原則」、為個別的PVCS執行此動作：</block>
-  <block id="1dc4571cc4066dc7fc593e3ebc1c0596" category="paragraph">您可以在「backend.json」檔案的預設值下新增「快照原則」欄位、以針對與特定後端儲存設備相關的所有PVCS執行此動作：</block>
   <block id="2faa0205939423bf83f1e331a7844f83" category="list-text">支援的 GCP 區域</block>
-  <block id="12a896df7cf6cd5b5e5dcf4a46c0cebc" category="inline-link">GCP 市場</block>
   <block id="b5c9fa9bce15f0de1507e8a190b390e9" category="inline-link">您可以從工作環境精靈的詳細資料 &amp;amp; 認證頁面訂閱</block>
   <block id="f8064badfe5eb591467c838191401d7c" category="paragraph">而且您需要 Google 訂閱備份所在的儲存空間。</block>
   <block id="4ce60442c0b2156c43c785528827a3ab" category="list-text">GCP 服務帳戶</block>
   <block id="68cc6348671b24995e53975d0fd5d303" category="inline-link">瞭解如何建立服務帳戶</block>
-  <block id="506e60ff86ebf80d50e436f97c87f732" category="list-text">輸入備份原則詳細資料、然後按一下*下一步*。</block>
-  <block id="cb339a7e65724e22a8247ef1adb0fdd0" category="paragraph">您可以定義備份排程、並選擇要保留的備份數量。</block>
-  <block id="306de5feec419d9490fc107fb34f6a00" category="list-text">選取您要備份的持續磁碟區。</block>
-  <block id="a1eb634b81be113bee0e21e6a20c118c" category="inline-image-macro">選取要備份之持續磁碟區的快照。</block>
-  <block id="e89d53cec577b746e47f09500583b69a" category="paragraph"><block ref="e89d53cec577b746e47f09500583b69a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="672d5169919efa7cbd903c5d4f8738a2" category="paragraph">備份檔案儲存在Google Cloud Storage儲存庫中、使用與Cloud Volumes ONTAP 本系統相同的GCP訂閱和地區。</block>
-  <block id="64473bedc40f6c977064e8725195f361" category="paragraph">此時會顯示Kubernetes儀表板、以便您監控備份狀態。</block>
   <block id="aa7d3e24c9aefdb463576ad781882e4a" category="section-title">註冊SnapCenter 伺服器</block>
   <block id="4839d2f25cc35b249d5db15efa1afd75" category="paragraph">*步驟*</block>
   <block id="3aae671182c94c64ed27f9b2256eb996" category="list-text">從*設定*下拉式清單中、按一下* SnapCenter 《伺服器*》。</block>
@@ -442,12 +325,6 @@
   <block id="ed09c1b67736709db40a3664c46e855a" category="list-text">備份僅支援ONTAP 來自於不支援的支援。</block>
   <block id="3dd0180637528cde8671a0c957cf90da" category="list-text">不支援SM至BC組態。</block>
   <block id="5f5966e9da5716290dfc2b88ceeb2217" category="list-text">要還原的檔案必須使用與目的地Volume上語言相同的語言。如果語言不同、您將會收到錯誤訊息。</block>
-  <block id="b56d3b8789da77177b36c40271c2f56a" category="summary">請完成幾個步驟、開始將資料從您的持續磁碟區備份至Azure Blob儲存設備。</block>
-  <block id="0ac13b02a6ba476a62c040dff30366e9" category="doc">將Kubernetes持續Volume資料備份至Azure Blob儲存設備</block>
-  <block id="161bfedea918a2206e107c928981572c" category="list-text">叢集必須在Cloud Volumes ONTAP Azure上使用以做為其後端儲存設備。</block>
-  <block id="fc1884cf63980b9b5ae00209f05a3be3" category="paragraph">在「 Select Volumes （選取磁碟區）」頁面中、找出您要備份的磁碟區。備份檔案儲存在Blob容器中、使用與Cloud Volumes ONTAP 該系統相同的Azure訂閱和Region。</block>
-  <block id="065e936a81a03d8084991529f2ecb28e" category="paragraph">請先閱讀下列需求、確定您擁有支援的組態、再開始將Kubernetes持續磁碟區備份到Blob儲存設備。</block>
-  <block id="5cf322cefc810d29bf6edaec8079e4f8" category="paragraph">備份檔案儲存在Blob容器中、使用與Cloud Volumes ONTAP 該系統相同的Azure訂閱和Region。</block>
   <block id="5c37edf1ec718afd1ab9a5a51043e0ce" category="paragraph">請依照下列步驟快速入門。每個步驟的詳細資料請參閱本主題的下列各節。</block>
   <block id="db41e7a8de9567fec002e93320c428ad" category="inline-xref">瞭解如何設定VPC端點介面。</block>
   <block id="66aa360897a3e9eeca6d5cd1ad876df5" category="list-text">叢集需要連接器與叢集管理LIF之間的傳入HTTPS連線。</block>
@@ -501,7 +378,6 @@
   <block id="f540dcb6244343752d809a32f46fe48c" category="paragraph">請先閱讀下列需求、確認您擁有支援的組態、再開始將磁碟區備份至 S3 。</block>
   <block id="c1ac36db4499486bba9e11cc3d2c6790" category="paragraph">而且您需要有AWS帳戶來存放備份所在的儲存空間。</block>
   <block id="af7680d24e7ce67fad6006c6fc467b53" category="list-text">支援的 AWS 區域</block>
-  <block id="1b132f8325705f3dc0afb743012c7e89" category="list-text">需要AWS備份權限</block>
   <block id="02c17660d0f6b51d0aeadd6bfd390921" category="paragraph">以下是原則的特定權限：</block>
   <block id="6602afb860a6cca23c3b75bf601365eb" category="inline-link">在 Cloud Volumes ONTAP AWS 中啟動</block>
   <block id="b44abc3e5e8508124c9a497fba2888b2" category="list-text">填寫「詳細資料與認證」頁面。</block>
@@ -606,23 +482,7 @@
   <block id="e09cd23a3f64c40b39bba1a2fb22c7fd" category="inline-image-macro">顯示如何檢視符合搜尋條件的所有備份的快照。</block>
   <block id="f13515ea414632814764890822fe8887" category="paragraph"><block ref="f13515ea414632814764890822fe8887" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d14bf8992a1c345a8a09efff78f3763f" category="paragraph">對於還原的磁碟區、您可以 <block ref="62168a5d0f839a246ab4456ea89ba04c" category="inline-link-macro-rx"></block> 視需要而定。</block>
-  <block id="c8b8b4fdeb24aa620ef9c52c25526cea" category="summary">備份會儲存在雲端帳戶的物件存放區中、以便從特定時間點還原資料。您可以從儲存的備份檔案還原整個Kubernetes持續磁碟區。</block>
-  <block id="904598583b73c753a7e66bd948fa91d8" category="doc">從備份檔案還原Kubernetes資料</block>
-  <block id="407693ec35be41d206dfff6d6302ca57" category="paragraph">您可以將持續磁碟區（作為新磁碟區）還原至相同的工作環境、或還原至使用相同雲端帳戶的不同工作環境。</block>
   <block id="cccec4f4cea6e207f49880c166ea0fae" category="section-title">支援的工作環境與物件儲存供應商</block>
-  <block id="eb44d853b15fc4a7d1e4ecb8635a4318" category="section-title">從Kubernetes備份檔案還原磁碟區</block>
-  <block id="9e51c0639d22c4c11b03e788221b4ec7" category="paragraph">在開始之前、您應該知道要還原的磁碟區名稱、以及要用來建立新還原磁碟區的備份檔案日期。</block>
-  <block id="f7c8f83692a4eab213a0cf7d3c7c9133" category="list-text">按一下* Kubernetes*索引標籤、就會顯示Kubernetes儀表板。</block>
-  <block id="b7af34a4e3b220774dbc0e1ab60525ba" category="inline-image-macro">Kubernetes儀表板的快照、其中包含正在備份的所有Kubernetes叢集和磁碟區清單。</block>
-  <block id="f27dc7aa48ba95864dcbd7f9f3031d81" category="paragraph"><block ref="f27dc7aa48ba95864dcbd7f9f3031d81" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="530c317db5924ab0beef599328be3a8f" category="paragraph">該磁碟區的所有備份檔案清單、以及來源磁碟區、目的地位置和備份詳細資料的詳細資料。</block>
-  <block id="94c0f1a02bc8bbc1ffc72208379e9cbb" category="inline-image-macro">單一來源磁碟區所有可用備份的快照。</block>
-  <block id="d19a6624c6d3013d9c1c387c1cca7812" category="paragraph"><block ref="d19a6624c6d3013d9c1c387c1cca7812" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="41ed1c773e4734a04537ac15afe456ba" category="list-text">根據日期/時間戳記找出您要還原的特定備份檔案、然後按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block>，然後*還原*。</block>
-  <block id="d2c7593817a9530481299a2331058867" category="list-text">在「選取目的地」頁面中、選取要還原磁碟區的_Kubernetes叢集_、_Namespaces_、_Storage Class_和新的_Persistent Volume name_。</block>
-  <block id="b60080c20a146d7e430f622fdf96d88e" category="inline-image-macro">將還原持續磁碟區之目的地資訊的快照。</block>
-  <block id="b0a429e0b4e29ba8c4663344e7f975b7" category="paragraph"><block ref="b0a429e0b4e29ba8c4663344e7f975b7" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="deebe20d8ec4d92056f6c34b725c7b9e" category="list-text">按一下「*還原*」、系統會將您返回Kubernetes儀表板、以便您檢閱還原作業的進度。</block>
   <block id="1acc14b78e8cae9a53f9e9322c795a80" category="summary">您可以將Oracle資料庫從雲端還原至內部部署SnapCenter 的支援服務器。</block>
   <block id="3d20155cd1c7d94c87e13305eebbe0a3" category="doc">還原Oracle資料庫</block>
   <block id="093c813823c463b6495f1ab6601f3c1a" category="paragraph">僅支援具有控制檔還原的完整資料庫。如果檔案記錄未出現在檔案管理系統中、您應該指定包含還原所需的歸檔記錄的位置。</block>
@@ -635,15 +495,6 @@
   <block id="f9e5e4d6cf47098ebd8fa6bc6e909e1d" category="paragraph">您必須指定資料庫主機時區的日期和時間。</block>
   <block id="5b5efc09105794c60a1df368de3f2626" category="list-text">如果您要在恢復後開啟資料庫、請選取此核取方塊。</block>
   <block id="f6926e5d6abfa62c5d6ac4b2502f34a0" category="paragraph">在RAC設定中、只有用於還原的RAC執行個體會在還原後開啟。</block>
-  <block id="a9719b40ac1cc40ef3fda03d4222bfe1" category="summary">請完成幾個步驟、開始將EKS Kubernetes叢集上持續磁碟區的資料備份到Amazon S3儲存設備。</block>
-  <block id="3b6e95e672031eae644a9bc637b96e34" category="doc">將Kubernetes持續磁碟區資料備份至Amazon S3</block>
-  <block id="e3cbbf46a38a7810b06b73af7fc91cf1" category="list-text">叢集必須在Cloud Volumes ONTAP AWS上使用以做為其後端儲存設備。</block>
-  <block id="6da925233b9932574b8fe9e01984bc5b" category="paragraph">在「 Select Volumes （選取磁碟區）」頁面中、找出您要備份的磁碟區。S3儲存區會自動建立在Cloud Volumes ONTAP 與該系統相同的AWS帳戶和區域中、並儲存備份檔案。</block>
-  <block id="afcc40ad784e1e6906127f77c09356b1" category="paragraph">請先閱讀下列需求、確定您擁有支援的組態、再開始將Kubernetes持續磁碟區備份至S3。</block>
-  <block id="d160dbae93e3bd1b19adc45c1a288b6a" category="paragraph">請注意、VPC端點是選用的。</block>
-  <block id="bf882df1c9cc332899e615e1a7a670e7" category="paragraph">以下是原則中的特定S3權限：</block>
-  <block id="1febcfde465ce9cfbf21c08aa17b6a2b" category="paragraph">如果您備份的Amazon S3目的地是在Canvas上的工作環境、您可以將Kubernetes叢集拖曳至Amazon S3工作環境、以啟動設定精靈。</block>
-  <block id="75ccf6489a928d9483390a3aff8508e4" category="paragraph">S3儲存區會自動建立在Cloud Volumes ONTAP 與該系統相同的AWS帳戶和區域中、並儲存備份檔案。</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">註冊以取得支援</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">「說明」功能表的快照、其中「支援」是第一個列出的選項</block>
   <block id="465ec6d5eafa3524c948c99d8bfcd306" category="list-text">在登入頁面上、提供您的NetApp支援網站註冊電子郵件地址和密碼、以執行驗證程序。</block>
@@ -666,13 +517,6 @@
   <block id="6a2941303bd6f981e2724af76bf3da2e" category="sidebar">將內部部署ONTAP 的內部部署資料備份至StorageGRID</block>
   <block id="5ee1bd11e1cae9e48854c491affa72a6" category="sidebar">管理ONTAP 還原備份</block>
   <block id="0f18ca4c27c34246c6bc09d2bbf775c6" category="sidebar">從ONTAP 還原備份還原</block>
-  <block id="702d7e374825b419a7f093f9bbc1462f" category="sidebar">備份及還原Kubernetes資料</block>
-  <block id="03cd7edbcf35d1e551d967affc4db763" category="sidebar">保護您的Kubernetes資料</block>
-  <block id="99a23b0161b640f1b97ea3af13d03c00" category="sidebar">備份至 Amazon S3</block>
-  <block id="bbfae0fee0edb262f9192397663e2daf" category="sidebar">備份至Azure Blob</block>
-  <block id="adaaf019398836f6a1361e1e363a6562" category="sidebar">備份至Google Cloud</block>
-  <block id="0db08849969b0dfb5d043b27de16d4d9" category="sidebar">管理Kubernetes備份</block>
-  <block id="17e5b396f3c069ca62608e4b9e3c1767" category="sidebar">從Kubernetes備份還原</block>
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">參考資料</block>
   <block id="0253148ca606e51aa3fdb4d9f8b84f32" category="sidebar">支援的AWS歸檔儲存層</block>
   <block id="9f442565cfeffa804173efd111c4d74c" category="sidebar">支援的Azure歸檔存取層</block>
@@ -740,22 +584,6 @@
   <block id="0d021f94d8bd70d2a5185935d6efa23e" category="list-text">連接器建立及管理S3儲存區的權限。</block>
   <block id="41e9463232a3a509ddf5815706788caa" category="paragraph">如果您使用連接埠443（HTTPS）來與私有端點通訊、則必須從VPC S3端點複製憑證、並將其新增ONTAP 至您的故障叢集、如接下來的4個步驟所示。</block>
   <block id="94dd9372ab529c315f08bd0bae6ae331" category="paragraph">如果用於備份的Amazon S3目的地是在Canvas上的工作環境、您可以將叢集拖曳至Amazon S3工作環境、以啟動設定精靈。</block>
-  <block id="1c161354c6da9cce8d6d66c83e6117e3" category="inline-image-macro">螢幕擷取畫面顯示選取Kubernetes叢集後可用的「備份設定」按鈕。</block>
-  <block id="81362333b4667057105418e2c797fb4d" category="paragraph"><block ref="81362333b4667057105418e2c797fb4d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d611fbcee8116241337f06ec4995ff9c" category="list-text">在「備份設定」頁面中、按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> 針對存在磁碟區的Kubernetes叢集、選取*自動備份新磁碟區*。</block>
-  <block id="949b473773535ea19f7817cd4c272bc1" category="paragraph"><block ref="949b473773535ea19f7817cd4c272bc1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f3e4b6c3b2f014829f853146224b7663" category="list-text">選取「自動備份未來的持續磁碟區...」核取方塊、選擇您要套用至新磁碟區的備份原則、然後按一下*「儲存*」。</block>
-  <block id="014386141b63dc0c43377cb37936b250" category="inline-image-macro">快照顯示如何選取要指派給Kubernetes叢集上所有未來磁碟區的備份原則。</block>
-  <block id="891b6416962c7710069b6bd6d9d86a07" category="paragraph"><block ref="891b6416962c7710069b6bd6d9d86a07" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="3877a9846e783c8af0a4e454f688cc19" category="paragraph">現在、此備份原則將套用至此Kubernetes叢集中所建立的任何新磁碟區。</block>
-  <block id="ac51f0beea0b94bb3165f831f8ba7138" category="cell">目的地工作環境ifdef：：AWS []</block>
-  <block id="0e356152192db3a04cabbf69108987ee" category="cell">AWS endif:AWS中的Kubernetes叢集：AWS [] ifdef：：azure[]</block>
-  <block id="d2a3f8d6a8141baac1e6e97dced3c44b" category="cell">Azure endif:azure[] ifdef中的Kubernetes叢集：GCP[]</block>
-  <block id="9d8c053ff2930ede65f48ab99ec40a69" category="cell">Google endif:GCP[]中的Kubernetes叢集</block>
-  <block id="4839487d9ef803363d306e16866e5123" category="list-text">找到您要還原的磁碟區、然後按一下 <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block>，然後按一下*詳細資料與備份清單*。</block>
-  <block id="3bc0e9b1baf3af2c3c4d977a88c7633d" category="list-text">該系統必須與Kubernetes叢集位於同一個Azure區域、且必須執行更新版本的版本號為《S時 局》（建議使用更新版本的版本號為《時局》）Cloud Volumes ONTAP ONTAP ONTAP 。</block>
-  <block id="3fb6883a0a5a320f9907b96ada5ed98d" category="list-text">如果您希望所有目前和未來的Volume都啟用備份、只要勾選「自動備份未來的Volume…」核取方塊即可。如果停用此設定、您將需要手動啟用未來磁碟區的備份。</block>
-  <block id="cb064ad5855a7d173c8bf2a8df10527c" category="list-text">此支援系統必須與Kubernetes叢集位於相同的AWS區域、且必須執行更新版本的版本號為《支援更新版本》（建議使用更新版本的版本號為《支援更新版本》）Cloud Volumes ONTAP ONTAP ONTAP 。</block>
   <block id="f487cfb88239842615093e7eb26153a0" category="cell">無需額外的雲端供應商成本</block>
   <block id="1b1bae9a1c274fd71b57fe957acf95e0" category="paragraph"><block ref="40cf1b022c7194f1fda41ab0b0dcc94c" category="inline-link-macro-rx"></block>。</block>
   <block id="7af0d0a640485c14ebea27a93041e711" category="list-text">從StorageGRID 物件還原時、請輸入StorageGRID 用來ONTAP 與StorageGRID 物件進行HTTPS通訊的支援伺服器FQDN和連接埠、選擇存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 位於目的地Volume所在之資料中心內的IPspace。</block>
@@ -764,7 +592,6 @@
   <block id="0d19370f4d82f4437295b4a20f7af2b6" category="list-text">從StorageGRID 物件還原時、請輸入StorageGRID 支援ONTAP 以HTTPS通訊的支援對象伺服器的FQDN和連接埠StorageGRID 、輸入存取物件儲存所需的存取金鑰和秘密金鑰、以及ONTAP 目的地Volume所在的物件叢集中的IPspace。</block>
   <block id="b3cf2a0723236b8965edb17a6adc8bf5" category="list-text">對於儲存在Google Cloud中的備份、IT會配置新的儲存庫、以及<block ref="7c8e47e4f5e61b3b1d7f7769baa8100f" category="inline-link-rx"></block> 在帳戶/專案層級上進行資源配置。</block>
   <block id="ad13cab5dd920f50df05b097ac6ce5f3" category="paragraph">如果您的工作環境已啟用索引、請前往下一節還原資料。</block>
-  <block id="c3793afe37c8ef86193b630f9ff4e7b9" category="list-text">此系統必須與Kubernetes叢集位於相同的GCP區域、且必須執行更新版本的《S時 局》（建議使用更新版本的《時局》）Cloud Volumes ONTAP ONTAP ONTAP 。</block>
   <block id="11424b9a70e420c1dd25a5c8dd143872" category="paragraph">如果您的叢集執行ONTAP 的是版本不支援的版本號、您也可以選擇在特定天數後啟用或停用將備份分層至歸檔儲存設備。</block>
   <block id="dd4f36f3b57f7d639e7ae704839404ab" category="paragraph"><block ref="b55a4bc37138995257f41826650c3872" category="inline-link-macro-rx"></block>。</block>
   <block id="8602e5067e45157858fdce13f2d722c5" category="paragraph"><block ref="00d667b43393b5baa7f260d36e9ea7c9" category="inline-link-macro-rx"></block>。</block>
@@ -781,10 +608,6 @@
   <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
   <block id="b010c7530103ef9947582474d65ff9a3" category="paragraph">ifdef::azure[]</block>
   <block id="879701946bb2bc7241d0f85fd843455a" category="paragraph">endif::azure[]</block>
-  <block id="3aae0000d94bd57f0c950ff30a179de4" category="paragraph"><block ref="3aae0000d94bd57f0c950ff30a179de4" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f53acd42cafa9ffd85119f579f947919" category="paragraph">如果您要在特定叢集中尋找特定的磁碟區、您可以依叢集和磁碟區精簡清單、也可以使用搜尋篩選器。</block>
-  <block id="9c3d211479947fe5a4243acecfe00203" category="paragraph"><block ref="de207573efa181ef2924818974bfa495" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="e25a9f6fb169550c2eb662453971516f" category="paragraph"><block ref="e25a9f6fb169550c2eb662453971516f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="360446e3fb6e2087ba1eda4d6e9eafde" category="list-text">節點的叢集間LIF可存取物件存放區（當連接器安裝在「暗」站台時、則不需要）。</block>
   <block id="f6428d68ab8312cad4e05d9222dbabc5" category="inline-link">在無法存取網際網路的Linux主機上安裝Connector</block>
   <block id="f4cec0313eb4678996dc68cfe81c6f4f" category="inline-link">升級Connector軟體</block>
@@ -848,10 +671,6 @@
   <block id="1a57137c00ac13558ef22f60c946d8b3" category="list-text">對於儲存在Azure中的備份、它會配置Azure Synapse工作區和Data Lake檔案系統做為儲存工作區資料的容器。</block>
   <block id="9ca61d0605df8b23ed36445fbf3f2f6a" category="inline-link">深入瞭解如何使用DataLock和勒索軟體保護來保護備份</block>
   <block id="5434b58cc632a508fca184ec8cb34294" category="inline-link-macro">深入瞭解可用的DataLock設定</block>
-  <block id="569b2af8f1329fa7cf54d0aebd92e0ff" category="paragraph"><block ref="569b2af8f1329fa7cf54d0aebd92e0ff" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="0c9dff3add1f9fae4f849681d81cd5f4" category="paragraph"><block ref="0c9dff3add1f9fae4f849681d81cd5f4" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="671a8ec3b0e0be16a18e3cabd94db9f4" category="paragraph"><block ref="671a8ec3b0e0be16a18e3cabd94db9f4" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="26e2f9552c31cf93eeea870fca67be87" category="paragraph"><block ref="26e2f9552c31cf93eeea870fca67be87" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c6d0403561ba931925faedb251300c4d" category="list-text">識別指派給Connector虛擬機器的角色：</block>
   <block id="05f6eb25137f31106ee565f876bc1881" category="list-text">在Azure入口網站中、開啟虛擬機器服務。</block>
   <block id="6391d178a2b7f97a4c5c12d28e3ee3e3" category="list-text">選取 Connector 虛擬機器。</block>
@@ -1166,7 +985,6 @@
   <block id="a4a6c2ea0078252eac2d74ef3e6c917c" category="paragraph">您目前正在檢視的BlueXP文件。</block>
   <block id="d63bf50426f4c712554faec55b30c548" category="list-text">*服務*：選取問題相關的服務。例如、特定於服務工作流程或功能的技術支援問題的BlueXP。</block>
   <block id="aa996e20900197b0ea41485ada083d8c" category="paragraph">工作環境清單位於您在服務的最上層橫幅中所選的BlueXP帳戶、工作區和Connector範圍內。</block>
-  <block id="d4f4c5ccc817cf84f5825246d829cabe" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。</block>
   <block id="7dbea888521fb9c4360764add4f59e05" category="list-text">必須將特定的Amazon Athena、AWS黏著及AWS S3權限新增至提供BlueXP權限的使用者角色。 <block ref="172464504974bed7b77dd155db5fb92b" category="inline-link-macro-rx"></block>。</block>
   <block id="97b5e4c408de2e312a0b1fc4e2535f1f" category="list-text">特定Azure Synapse Workspace與Data Lake Storage帳戶權限必須新增至提供BlueXP權限的使用者角色。 <block ref="3f613adb79f1db61c1db3e20329cd95a" category="inline-link-macro-rx"></block>。</block>
   <block id="a6e5e96ba9eebf564c1d0ef4d770658f" category="list-text">必須將特定的Google BigQuery權限新增至提供BlueXP權限的使用者角色。 <block ref="1401fe87dc595535076f05f545f8275e" category="inline-link-macro-rx"></block>。</block>
@@ -1175,10 +993,7 @@
   <block id="8fc5a6acddf8678dc2c340b6dfae42a9" category="list-text">按一下*備份與還原*&gt;*虛擬機器*。</block>
   <block id="2b36d2f46a4c7d47c05352e78b2ebe53" category="doc">將內部部署應用程式資料備份到Google Cloud Platform</block>
   <block id="b4866a33463f80d02c65e0910ff4b146" category="paragraph">您可以建立原則、或使用下列其中一項可在BlueXP中使用的預先定義原則。</block>
-  <block id="0d547969bfaddaa4d8899f36a0bf6cfb" category="paragraph">當您從備份檔案還原持續磁碟區時、BlueXP會使用備份中的資料來建立_new磁碟區。您可以將資料還原至同一個Kubernetes叢集中的磁碟區、或還原至與來源Kubernetes叢集位於相同雲端帳戶的不同Kubernetes叢集。</block>
-  <block id="7d91e132484d9507cb6d69fd88250e33" category="paragraph">BlueXP會根據您選取的備份、在Kubernetes叢集中建立新的磁碟區。您可以 <block ref="81f106b2aba35048d2bf0e6225895d07" category="inline-link-macro-rx"></block> 視需要而定。</block>
   <block id="317b69f3380634b0bc0612de54205fbc" category="list-text">按一下*編輯專案*、如果您要使用的專案與預設專案（連接器所在的專案）不同、請選取新專案。</block>
-  <block id="ddb2145ba96507afdc3bec7ae412c714" category="list-text">提供BlueXP權限的IAM角色必須包含最新版本的S3權限<block ref="ff3f0e305ab9e473aa2748fcb96c0189" category="inline-link-rx"></block>。</block>
   <block id="ef63a877f0594c057f824f4327169a39" category="list-text">支援Google Cloud Platform（GCP）和StorageGRID 支援以備份應用程式一致的快照</block>
   <block id="c95623cd0395d5a6bb6105b9d32f197b" category="inline-link">藍圖XP注意事項</block>
   <block id="6403a6932203bef88f20e870a621ac4b" category="inline-link-macro">「工作監控」面板</block>
@@ -1192,7 +1007,6 @@
   <block id="505a83f220c02df2f85c3810cd9ceb38" category="list-text">成功</block>
   <block id="1ddf333c6654f7f89c739dddfb4cc429" category="list-text">應用程式</block>
   <block id="76b0fa668c1cd016096eb9bc1bfde44a" category="list-text">虛擬機器</block>
-  <block id="30136395f01879792198317c11831ea4" category="list-text">Kubernetes</block>
   <block id="40da6f1400e45d080a97992a6a539894" category="inline-image-macro">通知鈴聲</block>
   <block id="44d4deb8868ac8159ee85f4a8e68725c" category="inline-link">深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作</block>
   <block id="d8698535e5619e206315977dae4277c7" category="list-text">您可以 <block ref="2d6fb8366ec0a8e97437a3dd29f42093" category="inline-link-macro-rx"></block>。這包括變更可上傳備份至物件儲存設備的網路頻寬、變更未來磁碟區的自動備份設定等。</block>
@@ -1245,7 +1059,6 @@
   <block id="7b95d23b6b30b69ed07a2e15017d99e3" category="inline-link">深入瞭解如何管理叢集層級的備份設定</block>
   <block id="f4f4c174196d45dbc07ae62740f92b92" category="section-title">「工作監控」頁面已更新</block>
   <block id="213f79d27d3a76a68080f2d948105d7e" category="inline-link">「工作監控」頁面</block>
-  <block id="5b839de8a8e7b5f30407c5dc2cfdabd2" category="list-text">「工作負載」欄可供使用、以便您篩選頁面以檢視下列備份服務的工作：Volume、應用程式、虛擬機器和Kubernetes。</block>
   <block id="a2ed310c63a1aba1225315fe5f7f60ee" category="list-text">若要檢視特定備份工作的這些詳細資料、您可以新增「使用者名稱」和「工作類型」欄。</block>
   <block id="bcce731a4ced178ba1457a0965f1a878" category="list-text">「工作詳細資料」頁面會顯示正在執行以完成主要工作的所有子工作。</block>
   <block id="95bdcffb51de388c8d204ebc69a73e61" category="section-title">AWS跨帳戶備份增強功能</block>
@@ -1256,7 +1069,6 @@
   <block id="8ceedd80ab3ad72f595a01a7d5ea8d33" category="inline-link">如需價格詳細資料、請前往BlueXP Marketplace產品</block>
   <block id="0b781a3ed3b0bf571ebc9b36f9d4056e" category="list-text">Azure ：<block ref="477b4f8f0e4ff2940c9440f2ccae1310" category="inline-link-rx"></block>。</block>
   <block id="4322c3f27520935653ca079f29ce7835" category="inline-link">BlueXP Marketplace備份產品</block>
-  <block id="687ea0908739e5e54201ce20b273affd" category="paragraph">您可以 <block ref="547d123be3159c364b1c9ac7f7ffe3ae" category="inline-link-macro-rx"></block>。您也可以 <block ref="091cc4395662354f7a5868ee2318ef97" category="inline-link-macro-rx"></block> 在GCP的相同或不同Kubernetes叢集（位於同一個區域）上做為新磁碟區。</block>
   <block id="e0f4a3fe1d4244e87316e2896879d0bb" category="paragraph">在瀏覽與還原中、連接器可安裝在下列位置：</block>
   <block id="e191225ef89ae4b4097edff77c5ad2a5" category="list-text">對於Amazon S3、連接器可部署在AWS或內部部署環境中</block>
   <block id="2bdfeeb4dec8a7b723d287568533182e" category="list-text">對於Azure Blob、連接器可部署於Azure或內部部署</block>
@@ -1267,16 +1079,12 @@
   <block id="d1bf7f840fa5b89e3ec98ec94dcf9f3c" category="list-text">如果您的帳戶中沒有雲端供應商認證資料、則索引目錄資訊會儲存在Connector上。</block>
   <block id="2c4eed705dd3e0adf6e7194858d8dff7" category="inline-link">AWS認證資料</block>
   <block id="71cf9cd60037f691ceec3200a6f0acf1" category="inline-link">Azure認證</block>
-  <block id="89ce585822673d5d7686dea8a0c5e90d" category="paragraph">您可以 <block ref="547d123be3159c364b1c9ac7f7ffe3ae" category="inline-link-macro-rx"></block>。您也可以 <block ref="091cc4395662354f7a5868ee2318ef97" category="inline-link-macro-rx"></block> 做為Azure中相同或不同Kubernetes叢集的新Volume（位於同一個區域）。</block>
   <block id="4202d66422e7e0486d0b7e129ef4a74c" category="inline-link">訂閱此BlueXP訂閱</block>
   <block id="6bf39a60f8a045efaafd2bcde95bf33e" category="inline-link">變更儲存區的預設儲存類別</block>
-  <block id="314873f7f9cbbfc51c38cb71e24aeb24" category="paragraph">您可以 <block ref="547d123be3159c364b1c9ac7f7ffe3ae" category="inline-link-macro-rx"></block>。您也可以 <block ref="091cc4395662354f7a5868ee2318ef97" category="inline-link-macro-rx"></block> 在AWS（位於同一個區域）的相同或不同Kubernetes叢集上做為新磁碟區。</block>
   <block id="d977c6f6b61d0f35299ae86a391a8a57" category="section-title">新增支援功能、可在電子郵件和通知中心接收Cloud Backup警示</block>
   <block id="49b6fd5ed6bda6ec09a46ece6a679207" category="section-title">現在您可以使用內部部署Connector時、使用「搜尋與還原」來還原備份檔案</block>
   <block id="18cddedef625cde24d34d1b2bb64fb96" category="paragraph">此時、使用搜尋與還原從Google Cloud Storage還原備份時、必須在Google Cloud Platform中部署Connector。</block>
   <block id="fa9aedfbd090cc455f29e39672cf1f08" category="inline-image-macro">螢幕擷取畫面顯示「啟用備份與還原」按鈕、可在您選取工作環境之後使用。</block>
-  <block id="15290d6f131f18fd0426a19c82dc1328" category="paragraph">選取工作環境、然後按一下右窗格中「備份與還原」服務旁的*「啟用」*、再依照設定精靈的指示操作。</block>
-  <block id="49912178a2257abdcbca7d537c5669ea" category="list-text">選取工作環境、然後按一下右窗格中備份與還原服務旁的*啟用*。</block>
   <block id="3097e59a53ffca14aab4fe9ebf8be1ed" category="paragraph">您可以使用還原儀表板來執行磁碟區、資料夾和檔案還原作業。若要存取「還原儀表板」、請按一下BlueXP功能表中的*備份與還原*、然後按一下*還原*索引標籤。您也可以按一下 <block ref="c01b692574fda287c7455bfbcec2709c" category="inline-image-macro-rx" type="image"></block> &gt;*從「服務」面板的「備份與還原」服務中檢視「還原儀表板」*。</block>
   <block id="b2cb452ce46a05694081545067d5ddb6" category="paragraph">即使您使用的是內部部署Connector、也必須同時滿足Connector權限和雲端供應商資源的雲端供應商需求。使用此實作時、請參閱上述AWS和Azure需求。</block>
   <block id="b8ec7451d278a232ac753f3d02c39cb2" category="paragraph"><block ref="b8ec7451d278a232ac753f3d02c39cb2" category="inline-image-macro-rx" type="image"></block></block>
@@ -1329,9 +1137,6 @@
   <block id="697b9d2300ad9e2f011376f9c9a30392" category="inline-link">私有服務連線</block>
   <block id="7747fb16d3b3ebca41d53c73111f029f" category="list-text">在您打算部署Connector的子網路上啟用私有Google Access（或Private Service Connect）。<block ref="befc9e6419c4dc26dd25bf8222d3c172" category="inline-link-rx"></block> 或<block ref="d4dc822b3b70edddfbd179916941cf96" category="inline-link-rx"></block> 如果ONTAP 您從某個叢集直接連線至VPC、而且想要連接器與Google Cloud Storage之間的通訊保持在虛擬私有網路（*私有*連線）中、就需要使用此功能。</block>
   <block id="e6fbc0b9673f8c86726688d7607fc8f5" category="inline-image-macro">六</block>
-  <block id="a2d56436fc6737079209e6c74380c5fb" category="list-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 檢閱先決條件</block>
-  <block id="e9aed7f72ad99049c1fe7cb8f8c14d97" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 定義備份原則</block>
-  <block id="e101ae46f3bbeba331227038200d11a5" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> 選取您要備份的磁碟區</block>
   <block id="f59fca00224a89098e0fdb00d310452d" category="paragraph">請注意、根據ONTAP 來源叢集上的版本、以及備份所在的雲端供應商目的地、有些選項無法使用。</block>
   <block id="e486e66993d53788be809532aaa39de8" category="paragraph">如果磁碟區的任何本機Snapshot複本符合您在此工作環境中使用的備份排程標籤（例如每日、每週等）、您可以將這些歷史快照匯出至物件儲存設備作為備份檔案。這可讓您將舊的Snapshot複本移至基礎備份複本、以初始化雲端中的備份。</block>
   <block id="65fd1c000589ff36a794229f1987490d" category="paragraph">請注意、此選項僅適用於新讀寫磁碟區的新備份檔案、不支援資料保護（DP）磁碟區。</block>
@@ -1462,8 +1267,6 @@
   <block id="68aa7e5e44b2aff449b0543b49e563bd" category="inline-link-macro">深入瞭解AWS歸檔層</block>
   <block id="e3f77a85430d8ff3b4a253ea611bd9ee" category="inline-link">深入瞭解StorageGRID 《ILM原則與規則》</block>
   <block id="b1e78dfdd8adc3005cff56ffd24b2af1" category="inline-xref">瞭解如何針對此功能設定您的系統</block>
-  <block id="275b9b785d71f45bb8f134005ece056a" category="paragraph">*附註：*停止備份磁碟區時、除非您同意、否則您將繼續由雲端供應商支付備份所使用容量的物件儲存成本 <block ref="e2e48247dd6dcee2daca407937463dc9" category="inline-xref-macro-rx"></block>。</block>
-  <block id="46fb0ddeabbcb2b9784add28928cfe7a" category="paragraph">請注意、您要套用至磁碟區的原則必須已經存在。</block>
   <block id="3c6238f54517e5cf7923ae4c33a5eff9" category="list-text">若為僅供部分使用、連接器必須部署在內部部署、無論是否可存取網際網路StorageGRID</block>
   <block id="e083799711dc9b588bbb440525564506" category="section-title">我們新增支援、在沒有網際網路存取的站台中使用「搜尋與還原」來還原資料</block>
   <block id="c9ec78264dce9938676b736265201e28" category="inline-link">瞭解如何ONTAP 使用Search &amp;amp; Restore還原資料</block>
@@ -1578,7 +1381,6 @@
   <block id="1afe8a81cfddc9fa9559e272bb6b9496" category="list-text">成功登入後、NetApp會儲存NSS.使用者名稱。</block>
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">使用此選項會提示您重新登入。請注意、這些帳戶的權杖會在90天後過期。系統會張貼通知、提醒您注意此點。</block>
   <block id="aa581d4a856d4e4b679f430d75b6675b" category="list-text">備份並還原ONTAP 來自於不受資料保護的功能、以及內部部署的功能ONTAP Cloud Volumes ONTAP 。 <block ref="3033f928f79d30b4398dcd6d1b71f659" category="inline-link-macro-rx"></block>。</block>
-  <block id="0ddf34ad5270eddf503a40460693fa5f" category="list-text">備份及還原Kubernetes持續磁碟區。 <block ref="03139d1d874301f535e307718cfea817" category="inline-link-macro-rx"></block>。</block>
   <block id="01e76ab0dacc58799dc14adbdc705ac7" category="section-title">2023年3月9日</block>
   <block id="35203f05692d5cc102a5525bf4de9733" category="section-title">資料夾層級的還原作業現在包括所有子資料夾和檔案</block>
   <block id="5463242c7cc34f92b5dbbf1ab6d87188" category="paragraph">過去當您還原資料夾時、只會還原該資料夾中的檔案、子資料夾中的任何子資料夾或檔案都不會還原。現在、如果您使用ONTAP 的是更新版本的版本、則會還原所選資料夾中的所有子資料夾和檔案。如果您在頂層資料夾中有多個巢狀資料夾、這可節省大量時間與金錢。</block>
@@ -1761,19 +1563,6 @@
   <block id="aa7686a1bb9a5c6e028ddc3bb91488c6" category="list-text">與儲存帳戶相關聯的服務代理程式會透過 BlueXP 備份與還原指派「 CryptoKey Encrypter/Decypter （角色 / 雲端 kms.cryptoKeyEncrypterDecypter ）」 IAM 角色。</block>
   <block id="f978572d4b7f3863b262587adb3dab80" category="list-text">您必須先從 Google 訂閱隨用隨付（ PAYGO ） BlueXP Marketplace 產品、或購買並啟動 NetApp 的 BlueXP 備份與恢復 BYOL 授權、才能啟動叢集的 BlueXP 備份與還原。這些授權適用於您的帳戶、可在多個系統上使用。</block>
   <block id="ae255c932e32a6c376f50fc830a4ce81" category="list-text">對於 BlueXP 備份與恢復 BYOL 授權、您需要 NetApp 的序號、以便在授權期間和容量內使用服務。 <block ref="685a1f13858a68e0a232160884c81603" category="inline-link-macro-rx"></block>。</block>
-  <block id="6915f674cf40aa424300174329d7645b" category="section-title">啟用 BlueXP 備份與還原</block>
-  <block id="b24b5a98983ccdcc666e25e669bfe788" category="inline-image-macro">顯示 BlueXP 備份與還原設定的螢幕擷取畫面、可供您選擇備份排程與保留期間。</block>
-  <block id="9a74da9a403d14281a0f36eb46d4a5f1" category="summary">BlueXP 備份與還原提供備份與還原功能、可保護 Kubernetes 叢集資料、並長期歸檔資料。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
-  <block id="e2f1efe5640ea5b571a12b8487b6eb13" category="doc">使用 BlueXP 備份與還原來保護您的 Kubernetes 叢集資料</block>
-  <block id="c90dfb5e576578f01331da30a158e073" category="paragraph">BlueXP 備份與還原可讓您將 Kubernetes 磁碟區從下列工作環境備份到下列公有雲和私有雲供應商的物件儲存：</block>
-  <block id="c20bf6179aa59c858f9381e945ee4e06" category="paragraph">使用 BlueXP 備份與恢復的相關成本有兩種類型：資源費用和服務費用。</block>
-  <block id="94255d2f4b988fede96dd0295f2cd384" category="paragraph">資源費用會支付給雲端供應商、以取得雲端的物件儲存容量。由於 BlueXP 備份與還原可保留來源 Volume 的儲存效率、因此您必須支付雲端供應商的物件儲存成本、以獲得資料後的 ONTAP 效率（在套用重複資料刪除與壓縮之後、資料量會減少）。</block>
-  <block id="ebb426971dcd3cbd35e4aca31be3aa04" category="paragraph">BlueXP 備份與還原有兩種授權選項：隨用隨付（ PAYGO ）、以及自帶授權（ BYOL ）。如果您沒有授權、則可免費試用 30 天。</block>
-  <block id="dce00f14733365140afddf22db7649f1" category="paragraph">BlueXP 備份與還原以隨用隨付模式提供消費型授權。透過雲端供應商的市場訂閱之後、您需要支付每GB的備份資料費用、而無需預付任何款項。您的雲端供應商會透過每月帳單向您收費。</block>
-  <block id="0d6f5383e996791018e1939beb66c2af" category="paragraph">當您在 Kubernetes 系統上啟用 BlueXP 備份與還原時、服務會執行資料的完整備份。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。</block>
-  <block id="d5b72a6b741bef977ea5c4ebce9653f0" category="paragraph"><block ref="d5b72a6b741bef977ea5c4ebce9653f0" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="811898b692403a66473297c6489ec820" category="paragraph">當您為工作環境啟用 BlueXP 備份與還原時、您最初選取的所有磁碟區都會使用您定義的預設備份原則進行備份。如果您想要將不同的備份原則指派給具有不同恢復點目標（RPO）的特定磁碟區、您可以為該叢集建立其他原則、並將這些原則指派給其他磁碟區。</block>
-  <block id="4de720d4ad95ece2e413602c7afc9f5a" category="paragraph">BlueXP 備份與還原支援持續磁碟區（ PV ）。</block>
   <block id="c619882ff92eb37657e3e7d37b3884f5" category="inline-image-macro">顯示 BlueXP 備份與還原如何透過公共連線與叢集上的磁碟區和備份檔案所在的 Azure Blob 儲存設備進行通訊的圖表。</block>
   <block id="4f39e2eac03b5fb49e1715e2a0132cad" category="paragraph"><block ref="4f39e2eac03b5fb49e1715e2a0132cad" category="inline-image-macro-rx" type="image"></block></block>
   <block id="da3266a1abb7bef16e42de5b1715f137" category="inline-image-macro">顯示 BlueXP 備份與還原如何透過私有連線與叢集上的磁碟區和備份檔案所在的 Azure Blob 儲存設備進行通訊的圖表。</block>
@@ -1783,7 +1572,6 @@
   <block id="94ca0ea412cad9f041e0df7a8d667032" category="list-text">為了讓 BlueXP 備份與還原搜尋與還原功能正常運作、連接埠 1433 必須開啟、才能在 Connector 與 Azure Synapse SQL 服務之間進行通訊。</block>
   <block id="d7dfe92566ef01cc606946052bc069db" category="paragraph">若要使用 BlueXP 備份與還原搜尋與還原功能、您必須擁有 Connector 角色的特定權限、才能存取 Azure Synapse Workspace 和 Data Lake Storage 帳戶。請參閱下列權限、如果您需要修改原則、請遵循這些步驟。</block>
   <block id="833e066c6a0d7a5bb4b5347a5a0cd500" category="list-text">您必須先向 Azure 訂購隨用隨付（ PAYGO ） BlueXP Marketplace 產品、或是向 NetApp 購買並啟動 BlueXP 備份與恢復 BYOL 授權、才能啟動叢集的 BlueXP 備份與還原。這些授權適用於您的帳戶、可在多個系統上使用。</block>
-  <block id="bdcfb39d9698b9bf1953d5efe44d1d43" category="inline-image-macro">顯示 BlueXP 備份與還原設定的螢幕擷取畫面、可供您選擇排程與備份保留。</block>
   <block id="c756b6b1ba6b752239a8d49eda5ad2a4" category="doc">BlueXP 備份與還原文件</block>
   <block id="e05760612323774d0a96da4881e8172b" category="inline-image-macro">顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。</block>
   <block id="fc8c6e0dfcbb1416189bd2560f9ad8ee" category="paragraph"><block ref="fc8c6e0dfcbb1416189bd2560f9ad8ee" category="inline-image-macro-rx" type="image"></block></block>
@@ -1795,14 +1583,12 @@
   <block id="64ed7192272577317871df08d9d54ae4" category="paragraph">您必須先購買並啟動 NetApp 的 BlueXP 備份與還原 BYOL 授權、才能啟動叢集的 BlueXP 備份與還原。此授權僅供帳戶使用、可在多個系統之間使用。</block>
   <block id="0abc92d264f8d3612b6bbb8507a4cbfd" category="paragraph">您將需要NetApp的序號、以便在授權期間和容量內使用服務。 <block ref="685a1f13858a68e0a232160884c81603" category="inline-link-macro-rx"></block>。</block>
   <block id="86e40e213794d95b205eaa9c71d0bed9" category="paragraph">選擇正確的 IPspace 可確保 BlueXP 備份與還原能夠設定從 ONTAP 到 StorageGRID 物件儲存設備的連線。</block>
-  <block id="0331809832826b1a244aca026a9b2d64" category="list-text">按一下 * 啟動備份 * 、然後 BlueXP 備份與還原會開始為每個選取的磁碟區進行初始備份。</block>
   <block id="ba48140a3394818b661e6fd497e203a7" category="doc">瞭解 BlueXP 備份與還原</block>
   <block id="af4d8d7b56820e969dfbdcfe2654b5b3" category="paragraph">此服務執行區塊層級的遞增永久複寫、並保留所有儲存效率、大幅減少複寫和儲存的資料量。此外、您只需支付受保護的費用、並使用可用的最低成本儲存層、使 BlueXP 備份與還原非常具成本效益。</block>
   <block id="723a81a7ee0b42134a46c1aaa0d99371" category="inline-link">深入瞭解 BlueXP 備份與還原</block>
   <block id="9eb420abad7616344371178eb6cfb9a7" category="paragraph"><block ref="63f4276e2fdf1ca315cba1b1fcff7250" category="inline-link-rx"></block>。</block>
   <block id="45c2b60e32092bd4af125e86d14c3a15" category="list-text">使用 BlueXP 備份與應用程式還原、從內部部署的 ONTAP 系統備份應用程式一致的快照。 <block ref="0cae341dd31c4bfca67f66dd24fe06e1" category="inline-link-macro-rx"></block>。</block>
   <block id="9a35f280a97314e38ce32e5edca1e284" category="list-text">使用 BlueXP 備份和還原 VMware 、將資料存放區備份到雲端、並將虛擬機器還原回內部部署 vCenter 。 <block ref="7d3aa28b08d11afec4b666dd6503d425" category="inline-link-macro-rx"></block>。</block>
-  <block id="1e14638586b04b893f971a1bfe703c2c" category="admonition">當 BlueXP Connector 部署在雲端的政府區域、或是在沒有網際網路存取（黑暗網站）的網站中時、 BlueXP 備份與還原僅支援 ONTAP 系統的備份與還原作業。使用這些類型的部署方法時、 BlueXP 備份與還原不支援 Kubernetes 叢集、應用程式或虛擬機器的備份與還原作業。</block>
   <block id="2c01915166cf9b144d2e31c6d6a7a336" category="paragraph">當您在 Cloud Volumes ONTAP 或內部部署 ONTAP 系統上啟用 BlueXP 備份與還原時、服務會執行資料的完整備份。備份映像不包含 Volume 快照。在初始備份之後、所有其他備份都是遞增的、這表示只會備份變更的區塊和新的區塊。如此可將網路流量維持在最低。</block>
   <block id="cf2b06c49bc5d08b1963bae2a675297b" category="paragraph">您可以在修改後、將「工作監控」主頁的內容下載為報告。BlueXP 備份與還原會產生並下載 .CSV 檔案、您可以視需要檢閱並傳送給其他群組。CSV檔案最多包含10、000列資料。</block>
   <block id="4061ec52da23891b0496adb9ffaad83d" category="summary">BlueXP 備份與還原支援兩個 S3 歸檔儲存類別、以及大部分地區。</block>
@@ -1843,9 +1629,7 @@
   <block id="0e0be9ba931ce338721ad79ef94ce582" category="list-text">如果您在啟動此叢集的 BlueXP 備份與還原時、在初始原則中啟用 _DataLock 與勒索軟體保護、則您建立的任何其他原則都必須使用相同的 DataLock 設定（ Governance 或 Compliance ）進行設定。如果您在啟動 BlueXP 備份與還原時未啟用 _DataLock 與勒索軟體保護、就無法建立使用 DataLock 的新原則。</block>
   <block id="fad93ca72d69f3c96e90c9dd91575804" category="list-text">在 AWS 上建立備份時、如果您在啟動 BlueXP 備份與還原時、在第一個備份原則中選擇了 _S3 Glacier 或 _S3 Glacier Deep Archive_ 、則該層將是該叢集未來備份原則可用的唯一歸檔層。如果您在第一次備份原則中選取「無歸檔層」、那麼_S3 Glacier將是您未來政策的唯一歸檔選項。</block>
   <block id="d99dbec9e129fae3d2af16de204bf685" category="paragraph">BlueXP 備份與還原可讓您刪除單一備份檔案、刪除磁碟區的所有備份、或刪除工作環境中所有磁碟區的所有備份。如果您不再需要備份、或是刪除來源磁碟區並想要移除所有備份、您可能會想要刪除所有備份。</block>
-  <block id="d59a13b57c5e2706923c61e62bee2e46" category="admonition">如果您打算刪除具有備份的工作環境或叢集、則必須在*刪除系統之前刪除備份。BlueXP 備份與還原不會在您刪除系統時自動刪除備份、而且在刪除系統之後、 UI 目前不支援刪除備份。您將繼續支付剩餘備份的物件儲存成本。</block>
   <block id="b5412d7989235296fcffa07cbdc14f4a" category="paragraph">停用工作環境的 BlueXP 備份與還原會停用系統上每個磁碟區的備份、也會停用還原磁碟區的功能。不會刪除任何現有的備份。這並不會從這個工作環境中取消註冊備份服務、基本上可讓您暫停一段時間內的所有備份與還原活動。</block>
-  <block id="85bb57d16d278aef3a547cf5cc9bfeb0" category="section-title">取消註冊工作環境的 BlueXP 備份與還原</block>
   <block id="64eac08f79d37d2419da437b3453934e" category="paragraph">如果您不想再使用備份功能、而且想要停止在該工作環境中進行備份、您可以取消註冊工作環境的 BlueXP 備份與還原。一般而言、當您打算刪除工作環境、但想要取消備份服務時、就會使用此功能。</block>
   <block id="bc9e5a26ee3c24075290b1e490961583" category="paragraph">如果您想要變更儲存叢集備份的目的地物件存放區、也可以使用此功能。在您取消註冊工作環境的 BlueXP 備份與還原之後、您可以使用新的雲端供應商資訊、為該叢集啟用 BlueXP 備份與還原。</block>
   <block id="d10962194e77a5f5d255398e2a0fb8c0" category="paragraph">您必須依照下列順序執行下列步驟、才能取消註冊 BlueXP 備份與還原：</block>
@@ -1861,17 +1645,10 @@
   <block id="3909c405c5c3e8aaab7d2079c933cb0f" category="paragraph">如您所見、您真的只需要知道部分名稱、以及 BlueXP 備份與還原會搜尋符合您搜尋條件的所有備份檔案。</block>
   <block id="cde27c2ee36cb857ffdbfe24fb0f0fef" category="paragraph">啟用此功能時、 BlueXP 備份與還原可在 SVM 上為您的磁碟區啟用 SnapDiff v3 、並執行下列動作：</block>
   <block id="091c3b75fcc63b578a3277a3c06221b8" category="list-text">您已訂閱<block ref="b82eb11d49725bb5c7ee9cfd96e7991d" category="inline-link-rx"></block>或您已購買 <block ref="a7c7886675f758752089ea0caddfb19c" category="inline-link-macro-rx"></block> NetApp 的 BlueXP 備份與恢復 BYOL 授權。</block>
-  <block id="5f067c743468abbb0d1c132bc57f2dd4" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 在現有的 Kubernetes 叢集上啟用 BlueXP 備份與還原</block>
   <block id="afa3805a28538274aaae2473f6106629" category="inline-image-macro">螢幕擷取畫面顯示 BlueXP 備份與還原啟用按鈕、可在您選取工作環境之後使用。</block>
   <block id="a2271679a96260c288cd66073902da0e" category="paragraph"><block ref="a2271679a96260c288cd66073902da0e" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="fca3c4957d64cf60890e21812fc96491" category="paragraph"><block ref="fca3c4957d64cf60890e21812fc96491" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2e296c588565e76c03b76150123be87b" category="paragraph"><block ref="2e296c588565e76c03b76150123be87b" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c5c6fa9af350eaec4534adb8d69aca21" category="paragraph">對於 BlueXP 備份與恢復 BYOL 授權、您需要 NetApp 的序號、以便在授權期間和容量內使用該服務。 <block ref="685a1f13858a68e0a232160884c81603" category="inline-link-macro-rx"></block>。</block>
-  <block id="8cb55f46ef474f5ba921cfab3f13a0f9" category="list-text">所有 Azure 區域均支援 BlueXP 備份與還原<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>。</block>
-  <block id="a87e646eef7b4c62c6f10238632178fc" category="paragraph">隨時直接從 Kubernetes 工作環境啟用 BlueXP 備份與還原。</block>
   <block id="073407dc3f58c3bba3a8ef6161f3718c" category="inline-image-macro">螢幕擷取畫面顯示 BlueXP 備份與還原設定按鈕、可在您選取工作環境之後使用。</block>
   <block id="8c77f5d3d64f827c40ceefa4640053e2" category="paragraph"><block ref="8c77f5d3d64f827c40ceefa4640053e2" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7ef4f9c84de50739290a8a747d41cb8d" category="paragraph"><block ref="7ef4f9c84de50739290a8a747d41cb8d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c73a012d76ee166592a25a8ebd3e01ef" category="summary">BlueXP 備份與還原可讓您在 Azure 帳戶中建立不同於來源 Cloud Volumes ONTAP 磁碟區所在位置、與 BlueXP Connector 所在帳戶不同的備份檔案。</block>
   <block id="4bd946b57d99bd5b3f564041e093db5c" category="list-text">請在 Cloud Volumes ONTAP 系統上重試啟用 BlueXP 備份與還原、這次應該會成功。</block>
   <block id="20eb5016fbcfaf2283e9ddb8b1028b60" category="summary">BlueXP 備份與還原支援一個 Azure 歸檔存取層和大部分地區。</block>
@@ -1888,14 +1665,6 @@
   <block id="3677061f67b20fd09e3bcdba7eea445c" category="paragraph"><block ref="3677061f67b20fd09e3bcdba7eea445c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fb716178bcea2a0ecb334f3165906234" category="paragraph">您可以隨時直接從工作環境啟用 BlueXP 備份與還原。</block>
   <block id="04ca2ad9f852ecfebfab4bc41605f1b4" category="paragraph">根據預設、備份會與_Standard_儲存類別相關聯。您可以使用成本較低的_Nearlin__、_Coldlin__或_Archive_儲存類別。不過、您可以透過 Google 來設定儲存類別、而不是透過 BlueXP 備份與還原 UI 來設定。請參閱Google主題<block ref="d037ca255a8eefed8e879939d65bfbbd" category="inline-link-rx"></block> 以取得詳細資料。</block>
-  <block id="32af6cda127186cbeba5ef50a94b558f" category="paragraph">您可以檢視 BlueXP 備份與還原目前正在備份的所有磁碟區清單。</block>
-  <block id="5ad8317affe241712710257a19515f6a" category="paragraph">如果您在第一次在 Kubernetes 叢集上啟動 BlueXP 備份與還原時、並未選擇自動將備份原則指派給新建立的磁碟區的選項、您可以稍後在 _ 備份設定 _ 頁面中選擇此選項。將備份原則指派給新建立的磁碟區、可確保所有資料都受到保護。</block>
-  <block id="9c79e4332bcfe48e0f080b72ba41edda" category="paragraph">BlueXP 備份與還原可讓您刪除單一備份檔案、刪除磁碟區的所有備份、或刪除 Kubernetes 叢集中所有磁碟區的所有備份。如果您不再需要備份、或是刪除來源磁碟區並想要移除所有備份、您可能會想要刪除所有備份。</block>
-  <block id="9deb468544543a3419cb99ce41c296f1" category="paragraph">刪除工作環境的所有備份、並不會停用此工作環境中未來的磁碟區備份。如果您想要停止在工作環境中建立所有磁碟區的備份、可以停用備份 <block ref="ce1fd88f94c2377048d288b01d10506e" category="inline-xref-macro-rx"></block>。</block>
-  <block id="51b8fa30afd3cba0c43cc578588792fd" category="section-title">停用工作環境的 BlueXP 備份與還原</block>
-  <block id="268d802389e270ab5e24c75f3d0e2c74" category="paragraph">停用工作環境的 BlueXP 備份與還原會停用系統上每個磁碟區的備份、也會停用還原磁碟區的功能。不會刪除任何現有的備份。這並不會從這個工作環境中取消註冊備份服務、基本上可讓您暫停一段時間內的所有備份與還原活動。</block>
-  <block id="da8d73509c0c2153651e6a7ca8760c5b" category="paragraph">如果您不想再使用備份功能、而且想要停止在該工作環境中進行備份、您可以取消註冊工作環境的 BlueXP 備份與還原。通常、當您打算刪除Kubernetes叢集、但想要取消備份服務時、就會使用此功能。</block>
-  <block id="e7abaddb0f4517d0be715be9b3734101" category="paragraph"><block ref="e7abaddb0f4517d0be715be9b3734101" category="inline-image-macro-rx" type="image"></block></block>
   <block id="167ad7df13dea30d4df6fa06947396fe" category="summary">BlueXP 備份與還原支援單一 Google 歸檔儲存類別和大多數地區。</block>
   <block id="0718118055dc2edc791fa29a90a786fe" category="section-title">支援用於 BlueXP 備份與還原的 Google 歸檔儲存類別</block>
   <block id="c2e5d30cd0abf0804ca8396b9b1f8c56" category="paragraph">請注意、當您使用此類型的生命週期規則來設定 BlueXP 備份與還原時、在 Google 帳戶中設定儲存庫時、不得設定任何生命週期規則。</block>
@@ -1908,12 +1677,7 @@
   <block id="fc310628dedc46ee8ac6f1897c186fda" category="paragraph">備份檔案最初是在Google Standard儲存類別中建立。現在您可以使用 BlueXP 備份與還原、將舊備份分層化至 Google Archive 儲存設備、以進一步最佳化成本。上一版僅支援內部ONTAP 使用的功能、目前Cloud Volumes ONTAP 支援部署在Google Cloud上的各種系統。</block>
   <block id="e68d1e3d6921b76241efb524321aa6e4" category="paragraph">將ONTAP 資料從您的支援系統備份到Google Cloud Storage時、現在您可以在啟動精靈中選擇自己的客戶管理金鑰來進行資料加密、而不使用預設的Google管理加密金鑰。只要先在 Google 中設定客戶管理的加密金鑰、然後在啟動 BlueXP 備份與還原時輸入詳細資料即可。</block>
   <block id="84de382f6f987d08aa5bf0c0a261f58d" category="list-text">您已訂閱<block ref="0f3e5f4110c169fa97f2cec0c13d22d7" category="inline-link-rx"></block>、<block ref="564c46d47e4fef703ab2a0ee02042ed6" category="inline-link-rx"></block>或您已購買 <block ref="d2b7b18749598619ee5eafb271b407ec" category="inline-link-macro-rx"></block> NetApp 的 BlueXP 備份與恢復 BYOL 授權。</block>
-  <block id="810ff1f59b608a3fc8af53aa3c03422d" category="paragraph"><block ref="810ff1f59b608a3fc8af53aa3c03422d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7411cd39afe6df9a82e44e18423ac4fe" category="paragraph"><block ref="7411cd39afe6df9a82e44e18423ac4fe" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7c36992346a7985f1357ea11d9bee4ed" category="list-text">對於 BlueXP 備份與還原 PAYGO 授權、 AWS Marketplace 提供訂閱服務、可部署 Cloud Volumes ONTAP 和 BlueXP 備份與還原。您需要<block ref="9296c8c8fbdfd99d4e3518357794ba73" category="inline-link-rx"></block> 在您啟用 BlueXP 備份與還原之前。BlueXP 備份與還原的帳單是透過此訂閱完成。</block>
   <block id="ed001b9aa030f4df5dc01cf65e036f51" category="paragraph">若要取得一年一度的合約、讓您能夠搭售 Cloud Volumes ONTAP 和 BlueXP 備份與還原、則必須在建立 Cloud Volumes ONTAP 工作環境時設定年度合約。此選項無法讓您備份內部資料。</block>
-  <block id="48dbfaa34a943b8e7eec563cecc421fa" category="list-text">所有 AWS 區域均支援 BlueXP 備份與還原<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>。</block>
-  <block id="b0596f424c9b8f319e89883a3a7d2158" category="paragraph"><block ref="b0596f424c9b8f319e89883a3a7d2158" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b8cc9261de49179da667ae55f7d16d20" category="paragraph"><block ref="b8cc9261de49179da667ae55f7d16d20" category="inline-image-macro-rx" type="image"></block></block>
   <block id="79f04e1dda3ae8199a87101dd28cbd95" category="paragraph">對於 BlueXP 備份與恢復 BYOL 授權、您需要 NetApp 的序號、以便在授權期間和容量內使用該服務。 <block ref="685a1f13858a68e0a232160884c81603" category="inline-link-macro-rx"></block>。當 Connector 和 Cloud Volumes ONTAP 系統部署在黑暗的站台時、您必須使用 BYOL 授權。</block>
   <block id="a54679f8abf71edeb14ceece70928820" category="list-text">所有 Azure 區域均支援 BlueXP 備份與還原<block ref="6bd619c4d649497ad0b6da421785c6ae" category="inline-link-rx"></block>（包括Azure政府區域）。</block>
@@ -1951,7 +1715,6 @@
   <block id="683fc015ec20f6233b25343bf3daea19" category="paragraph">如果您的內部叢集使用 ONTAP 9.12.1 或更新版本、您可以選擇在特定天數後、將舊備份分層儲存至 BlueXP 備份與還原 UI 中的 _Archive_ 儲存設備、以進一步最佳化成本。 <block ref="60cdd04e7131e97598ce1c583d8c9a5e" category="inline-link-macro-rx"></block>。</block>
   <block id="01492017a2321f7b3f8484fd1f8aa8d7" category="sidebar">BlueXP 備份與還原文件</block>
   <block id="18de97333e5776e0c135dd87c10b965c" category="sidebar">還原虛擬機器資料</block>
-  <block id="70dfad9357f3b3b710b73d8eb3666851" category="paragraph">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續磁碟區、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
   <block id="9a3f2e7eb30992bb084418711e5093f2" category="doc">管理資料存放區和虛擬機器資料的保護</block>
   <block id="2131f85f2f51908e5c573c231b274f4c" category="paragraph">您應確保在內部部署的 SnapCenter Plug-in for VMware vSphere 主機（在預設 8144 連接埠上執行）和 BlueXP Connector 執行個體（可在任何雲端供應商（ Amazon Web Services 、 Microsoft Azure 、 Google Cloud Platform ）或內部部署中執行）之間、能夠進行通訊。</block>
   <block id="2a18af02b6c0b7e92a17df9509574f26" category="list-text">您應該使用 SnapCenter Plug-in for VMware vSphere 4.7P1 或更新版本、從內部部署的次要儲存設備備份資料存放區。</block>
@@ -2084,22 +1847,15 @@
   <block id="c89f481c3b46af99ed7620462173a07c" category="list-text"><block ref="c89f481c3b46af99ed7620462173a07c" category="inline-link-rx"></block></block>
   <block id="f2952cd66b2c1d62b092c2ae5559eabf" category="list-text">您的需求必須是StorageGRID<block ref="27661aa20e8b873c50bd0587758b98a1" category="inline-link-rx"></block>。</block>
   <block id="c2e1ae9092ad1a2b4bccebec9b7fbd42" category="list-text">如果您有<block ref="a7e016fe79f350912ccb5dfe261d7ecb" category="inline-link-rx"></block> 或<block ref="d3d508974cb975126e687a6961f332c5" category="inline-link-rx"></block> 在帳戶中、索引目錄會儲存在雲端供應商、就像部署在雲端的Connector一樣。（如果您同時擁有這兩項認證、則AWS預設為選取狀態。）</block>
-  <block id="4959ab34e6f20ad5ca2abb7f8cd1121a" category="list-text">提供具有權限的BlueXP Connector的IAM角色包括來自最新版本的S3權限<block ref="d97dc29944250663fe9dd52fa43d79d7" category="inline-link-rx"></block>。</block>
-  <block id="4ea687180e3b5ed4365ac5795d915faf" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。<block ref="7a47df0de69aaae590cb7a4afe438e24" category="inline-link-rx"></block>。</block>
-  <block id="dac5248f5cebf44974062c72a96f3814" category="list-text">叢集上必須安裝Trident、Trident版本必須至少21.1。請參閱<block ref="c1b63d6997bc4d668191e151cb9b8092" category="inline-link-rx"></block> 或<block ref="23a633d2f31911781b4c35e0d8f7c8b9" category="inline-link-rx"></block>。</block>
-  <block id="bd416abf433c7b177026beb68bf7befe" category="paragraph">如需一年一度的合約、而該合約可讓您同時備份Cloud Volumes ONTAP 支援不必要資料和內部部署ONTAP 的不必要資料、您必須從訂閱<block ref="7e9391e5068ba3345180f0de3723960c" category="inline-link-rx"></block> 然後<block ref="630dd2aae912349621adf70336b8d324" category="inline-link-rx"></block>。</block>
   <block id="2de9d70ab4a441dd019daa1623e4e1aa" category="list-text">如需 BlueXP 備份與還原 PAYGO 授權、您可以在 Google Marketplace 中訂閱 BlueXP 、以便部署 Cloud Volumes ONTAP 與 BlueXP 備份與還原。您需要<block ref="1a9048fea9c114882abdde44d164e6a2" category="inline-link-rx"></block> 在您啟用 BlueXP 備份與還原之前。BlueXP 備份與還原的帳單是透過此訂閱完成。<block ref="3b07d088d7c07da8d439b897764a7334" category="inline-link-rx"></block>。</block>
-  <block id="1cd233a36e1f7dc77f3653908663d446" category="list-text">您必須在Google Cloud Project中擁有預先定義儲存管理角色的服務帳戶。<block ref="bb9056f672c7da9a9c8e1e60191fd39c" category="inline-link-rx"></block>。</block>
   <block id="c6d0aba5a4df18df97543934ad4a1185" category="list-text"><block ref="c6d0aba5a4df18df97543934ad4a1185" category="inline-link-rx"></block></block>
   <block id="548e6841e3441d35da2414e7a61ba449" category="paragraph">請參閱<block ref="d6cf51858c4dc41eb58119fabea29b51" category="inline-link-rx"></block> 以瞭解建立 Cloud Volumes ONTAP 您的整個系統的需求與詳細資料。</block>
   <block id="187e15fe582f53b6ed739ea360c9f408" category="list-text">請完成精靈中的頁面、依照中所述部署系統<block ref="d6cf51858c4dc41eb58119fabea29b51" category="inline-link-rx"></block>。</block>
-  <block id="190883b84e441e0bd227971c892ce575" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。<block ref="7327129ba68875466d1d1f22b67d23f4" category="inline-link-rx"></block>。</block>
   <block id="3c1c17ea503d5e9470f8439096f625f6" category="paragraph">只有在您需要時、才需要執行這些步驟<block ref="677834f72462157379b8c91854842dcc" category="inline-link-rx"></block>。</block>
   <block id="327e32511f0c97676e41ea866aac0721" category="list-text">透過連接埠 443 連接到 BlueXP 備份與恢復服務、以及 Google Cloud 儲存設備的 HTTPS 連線 <block ref="e228b87eff1d3a92b4544cd5652fc5ad" category="inline-link-rx"></block>）</block>
   <block id="c55a4ed0f55f8209574960c04bd36597" category="paragraph">現在您可以選擇與客戶管理的加密金鑰（ CMEK ）專案不同的儲存庫。<block ref="2425c9129a22c7135ee8a04ae0dae970" category="inline-link-rx"></block>。</block>
   <block id="3f95b7ff004c9ea7ba2c076aa81ddbd8" category="list-text">除了能夠下載 CSV 檔案來報告所有工作之外、現在您可以下載 JSON 檔案來處理單一工作、並查看其詳細資料。<block ref="c5e8ac86e60de65889ee067b8ca8ac22" category="inline-link-rx"></block>。</block>
   <block id="aca6a48e798dafa8a873544468b60e06" category="list-text">新增兩個備份工作警示：「排程工作失敗」和「還原工作完成但有警告」。<block ref="a4848a9ae757d04f84e693376feb04c0" category="inline-link-rx"></block>。</block>
-  <block id="7397c46a6bf6fde87c1217e8c8bbab15" category="list-text">「工作監控」頁面新增進階篩選功能、讓您可以依時間、工作負載（磁碟區、應用程式、虛擬機器或Kubernetes）、 工作類型、狀態、工作環境和儲存VM。您也可以輸入任意文字來搜尋任何資源、例如「application_3」。 <block ref="3ed9d480474f89776ff0bf3cbda69d30" category="inline-link-rx"></block>。</block>
   <block id="72577c9cc3c11c1b1c16727589471767" category="paragraph">如果內部叢集使用ONTAP 的是更新版本的版本、StorageGRID 而您的系統使用的是11.4或更新版本、則可使用此功能。<block ref="a928050165abd52aa438367540434489" category="inline-link-rx"></block>。</block>
   <block id="3171c3474d761b0543c2bd83d1d3f702" category="paragraph">Azure Blob儲存的備份檔案現在支援DataLock和勒索軟體保護。如果Cloud Volumes ONTAP 您的支援對象ONTAP 為執行ONTAP 支援的支援對象、那麼您現在可以鎖定備份檔案、然後掃描檔案、以偵測可能的勒索軟體。<block ref="2045a684ba4b47f5626fcfb6a06714da" category="inline-link-rx"></block>。</block>
   <block id="3c718c5f17f9fcfc63a7338e836856c8" category="paragraph">如果內部叢集使用ONTAP 的是更新版本的版本、StorageGRID 而您的系統使用的是11.3或更新版本、則可使用此功能。<block ref="b82e63d60c4d06f5682d15a56c05b007" category="inline-link-rx"></block>。</block>
@@ -2116,9 +1872,6 @@
   <block id="ff977b3bda8bd49c8895b8e27c7ac01a" category="paragraph">已對進行下列更新<block ref="34f4049f89ba8890765cc171e2590532" category="inline-link-rx"></block>：</block>
   <block id="17f47b7c1b637ccdb258e9324672295c" category="paragraph">上一版針對儲存在Amazon S3儲存區的備份推出_DataLock和勒索軟體Protection。此版本可擴充對StorageGRID 儲存在還原系統中的備份檔案的支援。如果您的叢集使用ONTAP 的是更新版本的版本、StorageGRID 而您的系統執行的是11.6.0.3或更新版本、則可使用此新的備份原則選項。<block ref="6e0b9608f1ba1040184a3e955da31f87" category="inline-link-rx"></block>。</block>
   <block id="72e4241b97e5dcf5222db5c1346cd6e5" category="paragraph">如果是<block ref="0675f343561e34593b3974118982449f" category="inline-link-rx"></block> 備份的目的地在畫版上會以工作環境的形式存在、您可以將內部ONTAP 作業環境拖曳到目的地、以啟動Cloud Backup設定精靈。</block>
-  <block id="a4208eced8af02553d8e5579f39b9b33" category="list-text">您已將Kubernetes叢集探索為藍圖XP工作環境。<block ref="44c761dee3b53dae29ddd56ac5dddd4f" category="inline-link-rx"></block>。</block>
-  <block id="15535e291980746e2353acd6a4780f1c" category="list-text">如需 BlueXP 備份與還原 PAYGO 授權、請透過訂閱<block ref="92655de6fae7d07ed3897ce19d51b88d" category="inline-link-rx"></block> 是啟用 BlueXP 備份與還原之前的必要項目。BlueXP 備份與還原的帳單是透過此訂閱完成。<block ref="3b07d088d7c07da8d439b897764a7334" category="inline-link-rx"></block>。</block>
-  <block id="90b83ba6de990dc4b3237c3a114e7b68" category="paragraph">每個 BlueXP 備份與還原 API 的文件均可從取得<block ref="09e8c3aae0da31a3bb4ba59e7440e87c" category="inline-link-rx"></block>。</block>
   <block id="c490eac8fe2144e59b599caa7ff364f2" category="list-text">透過連接埠 443 連接到 BlueXP 備份與還原服務、以及 S3 物件儲存設備的 HTTPS 連線 <block ref="63b337bf4559a585c3373707ecfcc413" category="inline-link-rx"></block>）</block>
   <block id="aa91817c0e1d6a16a1f290ad2357d467" category="list-text">AWS和AWS GovCloud部署需要額外的傳入和傳出安全群組規則。請參閱<block ref="ed3ada480c52b8e0c09a903c9cf52508" category="inline-link-rx"></block> 以取得詳細資料。</block>
   <block id="94bf6d31d85a9e7f628b488ba9a25200" category="list-text">確認下列S3權限（從最新版本開始）<block ref="d97dc29944250663fe9dd52fa43d79d7" category="inline-link-rx"></block>）是IAM角色的一部分、可為Connector提供權限。如果沒有、請參閱<block ref="484fb6182b52563a51349e6fb7cb2cb6" category="inline-link-rx"></block>。</block>
@@ -2221,7 +1974,6 @@
   <block id="51592292613d18b00665bf8dafc7b3fc" category="list-text">ONTAP 磁碟區備份與還原工作數</block>
   <block id="d83a881b3706cd9ae49054eabbc7dce2" category="list-text">應用程式備份與還原工作數</block>
   <block id="3add170b591596e1f5c3e21fe9e57baa" category="list-text">虛擬機器備份與還原工作數</block>
-  <block id="92a452f673c02a374b7cc5cf0a868c6a" category="list-text">Kubernetes 備份與還原工作數</block>
   <block id="07536cd20b01777dd415a36c226a1f4a" category="list-text">日常工作活動</block>
   <block id="a0a7952e2e9dc6eba09660f59b4d73a2" category="list-text">選取 * 資料保護工作活動 * 。</block>
   <block id="c8b12aebf67be0b5d9913d39f23e9c8a" category="list-text">（選用）依工作狀態、工作類型（備份或還原）和資源篩選結果。</block>
@@ -2273,7 +2025,6 @@
   <block id="e5d5b752cdb14505ba3ec9b2bd2be013" category="section-title">不相符原則標籤的額外通知警示</block>
   <block id="92c58fc811dad1461929803e5f5d9205" category="paragraph">新增了備份警示：「 Snapshot 原則標籤不相符、因此未建立備份檔案」。如果備份原則中定義的 _label_ 在 Snapshot 原則中沒有相符的 _label_ 、則不會建立備份檔案。您需要使用系統管理員或 ONTAP CLI 、將遺失的標籤新增至 Volume Snapshot 原則。</block>
   <block id="809c5429fbc9708f2c659ca056b2c098" category="paragraph"><block ref="1fa18ad5aa31d9e300f41aa2d9a59bdd" category="inline-link-rx"></block>。</block>
-  <block id="4dfad254c5822c7c53407757d42fec0e" category="list-text">* 來源 * ： Cloud Volumes ONTAP Volume 、內部部署 ONTAP Volume 、應用程式或 Kubernetes 持續磁碟區</block>
   <block id="0231cb971bb3375c29d3f87768ec4489" category="inline-image-macro">向下箭號按鈕</block>
   <block id="ba85eaabcb89510a63df45c18680ba9a" category="list-text">在「編輯原則」頁面中、按一下 <block ref="68009ec8a10651d6de3d648624efb837" category="inline-image-macro-rx" type="image"></block> 若要展開「_標籤與保留_」區段以變更排程及/或備份保留、請按一下「*儲存*」。</block>
   <block id="aafc4372a2c5748961cfe050c997ca42" category="list-text">在「新增原則」頁面中、按一下 <block ref="68009ec8a10651d6de3d648624efb837" category="inline-image-macro-rx" type="image"></block> 若要展開「_標籤與保留_」區段以定義排程與備份保留、然後按一下「*儲存*」。</block>
@@ -3271,7 +3022,6 @@ SS3 ONTAP</block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="1ca3bd8f6dc961579b0cb3fd37bec744" category="paragraph">您可以監控本機快照、複製和備份的狀態、以及您所起始的物件儲存工作、以及還原您所起始的工作。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。</block>
   <block id="06bf7dd6f0ab94d87f59e43fc93b6d3c" category="section-title">在工作監控器上檢視工作狀態</block>
-  <block id="7413106917b419812ee4fa6eba953c99" category="paragraph">您可以在 * 工作監控 * 標籤中檢視所有 Snapshot 、複寫、備份到物件儲存、還原作業及其目前狀態的清單。這包括 Cloud Volumes ONTAP 、內部部署 ONTAP 、應用程式、虛擬機器和 Kubernetes 系統的作業。每個作業或工作都有唯一的ID和狀態。</block>
   <block id="402bab7d605cd8ea629df214c4351f69" category="paragraph">狀態可以是：</block>
   <block id="ac624cf312f41265d4598a7409f6c357" category="list-text">顯示其他欄（工作環境、 SVM 、使用者名稱、工作負載、原則名稱、 Snapshot Label ）、請選取 <block ref="67e31c53d0f38fc4da85c525a5be7511" category="inline-image-macro-rx" type="image"></block>。</block>
   <block id="7f8ba7d41d11ab3b1061dbce2eeadb52" category="paragraph">根據預設、「工作監控」頁面會顯示過去 24 小時的保護和恢復工作。您可以使用時間範圍篩選器變更時間範圍。</block>
@@ -3513,7 +3263,6 @@ SS3 ONTAP</block>
   <block id="91b1870e279924acdf3d4248405f1f98" category="list-text">選取第一個磁碟區之後、您就可以選取所有 FlexVol 磁碟區。（ FlexGroup 磁碟區一次只能選取一個）。 若要備份所有現有的 FlexVol Volume 、請先勾選一個 Volume 、然後勾選標題列中的方塊。（<block ref="2b1190f90c2c717d2aa70aabd2fc4c36" category="inline-image-macro-rx" type="image"></block>）。</block>
   <block id="6f016177210af1e863aa59b8f2e97752" category="list-text">* 備份原則 * ：選取現有的備份至物件儲存原則。</block>
   <block id="09d75137b3fb689dc33f1373da0ca50b" category="list-text">備份類型（排程備份或使用者啟動的臨機操作備份）</block>
-  <block id="dae5b12aa472c177c1e2583718010f3e" category="paragraph">本報告適用於 Cloud Volumes ONTAP 、內部部署、應用程式及 Kubernetes 資料的 BlueXP 備份與還原作業。</block>
   <block id="661d052ba9e14a07c1387ef54569e445" category="summary">您可以監控本機快照、複製和備份的狀態、以將其備份至您所起始或排程的物件儲存工作、以及還原您所起始或排程的工作。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。</block>
   <block id="9ee483d0200a76af92f0e7ffaf360da9" category="paragraph">您可在「工作監控」標籤中找到從 BlueXP 備份和還原 UI 及 API 啟動的快照、複製、備份到物件儲存和還原作業。</block>
   <block id="97ed68d89be18084aed5cb3445ac40c1" category="paragraph">監控保留（或 _ 備份生命週期 _ ）流程有助於您確保稽核完整性、責任歸屬及備份安全。為了協助您追蹤備份生命週期、您可能想要識別所有備份複本的到期日。</block>
@@ -3674,7 +3423,6 @@ SS3 ONTAP</block>
   <block id="4e1f7d458412b18adef0e5ff0db2eee8" category="section-title">2024 年 2 月 1 日</block>
   <block id="a409179aac0b12213b3fa77e0a22bd61" category="list-text">支援將虛擬機器還原至其他位置</block>
   <block id="9c75b0f26dddf07ed827e32aaf28bee9" category="list-text">支援不保護資料存放區</block>
-  <block id="196996ba80340493c0f9064d3dd14aa5" category="summary">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續容量、資料庫和虛擬機器（ VM ）提供高效率、安全且具成本效益的資料保護。</block>
   <block id="2d67cd05b64a3416bc8bae12b4ef5685" category="section-title">2024 年 3 月 12 日</block>
   <block id="e713d6072685bf32f36150e9f76ce0c1" category="section-title">能夠從雲端備份到內部部署 ONTAP 磁碟區進行「快速還原」</block>
   <block id="5a9ee632cba573d0f7355f7d12d908ca" category="paragraph">現在、您可以從雲端儲存區執行磁碟區的 _ 快速還原 _ 至內部部署的 ONTAP 目的地 Volume 。以前您只能對 Cloud Volumes ONTAP 系統執行快速還原。如果您需要儘快提供對磁碟區的存取、快速還原是災難恢復的理想選擇。快速還原比完整磁碟區還原快得多；它會將中繼資料從雲端快照還原至 ONTAP 目的地磁碟區。來源可能來自 AWS S3 、 Azure Blob 、 Google Cloud Services 或 NetApp StorageGRID 。</block>
@@ -3805,7 +3553,6 @@ ifdef：：AWS []</block>
   <block id="d3b3f333837b21ed08dfd04c10e48346" category="section-title">新增備份至雲端原則</block>
   <block id="6c08aad63d31acac8bc5248c2bfd34f2" category="paragraph">如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以設定_DataLock和勒索軟體Protection來保護備份、避免遭到刪除和勒索軟體攻擊。_DataLock_ 可保護您的備份檔案、避免遭到修改或刪除、而 _勒索 軟體保護 _ 則會掃描您的備份檔案、以尋找備份檔案中勒索軟體攻擊的證據。</block>
   <block id="427911e9853111f28c07f559c3b84c6a" category="paragraph">在無法存取網際網路的站台中使用 BlueXP 備份與還原時、稱為 _private 模式 _ 、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 或 ONTAP S3 儲存區。如果您未來的 BlueXP Connector 主機系統發生問題、您可以部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。</block>
-  <block id="32c221fc8d86ea3baab547e849f9a06f" category="sidebar">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、 Kubernetes 持續磁碟區、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。</block>
   <block id="27b14a69b7d1dfde3096980cc202af91" category="sidebar">建立資料保護涵蓋範圍的報告</block>
   <block id="c1d2d81968b4f89d4185d4baf66ba468" category="sidebar">將ONTAP 資料還原至雲端</block>
   <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">管理ONTAP 還原備份檔案</block>
@@ -3819,11 +3566,6 @@ ifdef：：AWS []</block>
   <block id="6edd76ff9d03a833a8a254cc8af745d0" category="sidebar">還原 ONTAP Volume 資料</block>
   <block id="10b8a325c32b95729e9b37864d6a110a" category="sidebar">還原內部部署的 Oracle 應用程式資料</block>
   <block id="6002846df6663ea571e55d74bd085335" category="sidebar">還原內部部署的 SQL Server 應用程式資料</block>
-  <block id="16cc11572a7582fe5007212d56145dc8" category="sidebar">還原 Kubernetes Volume 資料</block>
-  <block id="4001622cdabc59603efa5eed8e44df9e" category="sidebar">將Kubernetes資料備份到雲端</block>
-  <block id="a856f192005c2a27d642572c6eabcaf3" category="sidebar">將 Kubernetes 叢集備份至 Amazon S3</block>
-  <block id="d8aa0af6f24f3e5cbb56b502233a7241" category="sidebar">將 Kubernetes 叢集備份至 Azure Blob</block>
-  <block id="f91d920c6ff7bb789d8210aebe92e10e" category="sidebar">將 Kubernetes 叢集備份至 Google Cloud</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">部落格與社群</block>
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp社群</block>
   <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">BlueXP 備份與還原部落格</block>
@@ -3982,4 +3724,15 @@ ifdef：：AWS []</block>
   <block id="15f09261e873aa1d63f5dcc04347b79b" category="list-text">使用 ONTAP 9.15.1 、您可以使用「瀏覽與還原」選項來還原 FlexGroup 資料夾。此功能處於「技術預覽」模式。</block>
   <block id="db0f3d3c6912a5ee817314070056f087" category="inline-link">BlueXP 備份與還原 2024 年 7 月版本部落格</block>
   <block id="ec53b6836352750173251f0c57f2ed93" category="paragraph">您可以使用中所述的特殊旗標來測試它<block ref="33c6d5d03ae6e02d266d11d3de66dc86" category="inline-link-rx"></block>。</block>
+  <block id="c3c6e4a6aae93a5f74481ebf97978ef0" category="inline-link">BlueXP  自動化</block>
+  <block id="0f8c9f6fbf382807cf7621969080da27" category="paragraph">每個 BlueXP  備份和恢復 API 的文檔均可從<block ref="6243299927dfb47f398f3c9ace0f2622" category="inline-link-rx"></block>獲得。</block>
+  <block id="f28e0fdb1b1025e0f373378d9cfd8c2a" category="paragraph">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
+  <block id="b90ca35879f08d6916f74d266e8cd33f" category="admonition">當 BlueXP Connector 部署在雲端的政府區域、或是在沒有網際網路存取（黑暗網站）的網站中時、 BlueXP 備份與還原僅支援 ONTAP 系統的備份與還原作業。使用這些類型的部署方法時、 BlueXP  備份與還原不支援應用程式或虛擬機器的備份與還原作業。</block>
+  <block id="63f5170239a1886a3e80e83f7774d118" category="paragraph">您可以在 * 工作監控 * 標籤中檢視所有 Snapshot 、複寫、備份到物件儲存、還原作業及其目前狀態的清單。這包括 Cloud Volumes ONTAP 、內部部署 ONTAP 、應用程式和虛擬機器的作業。每個作業或工作都有唯一的ID和狀態。</block>
+  <block id="cc13b22821f0cc453a0483d3a7d31b37" category="list-text">* 來源 * ： Cloud Volumes ONTAP Volume 、內部部署 ONTAP Volume 或應用程式</block>
+  <block id="63806504828a9ba74d3191cf67a6cd96" category="paragraph">此報告適用於 Cloud Volumes ONTAP 、內部部署及應用程式資料的 BlueXP  備份與還原作業。</block>
+  <block id="5720ea78e3ba68d0ee3ae1dcad5cffd1" category="list-text">「工作監控」頁面已新增進階篩選功能、可讓您依時間、工作負載（磁碟區、應用程式或虛擬機器）、工作類型、 狀態、工作環境和儲存 VM 。您也可以輸入任意文字來搜尋任何資源、例如「application_3」。<block ref="3ed9d480474f89776ff0bf3cbda69d30" category="inline-link-rx"></block>。</block>
+  <block id="0d80ea71f9929ca6943ff4f16a27de3e" category="list-text">「工作負載」欄位可供您篩選頁面、以檢視下列備份服務的工作： Volume 、 Applications 和 Virtual Machines 。</block>
+  <block id="756733f39050e99f4221fe80d10ea604" category="sidebar">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。</block>
+  <block id="e117f11185531a360eff8bfed09af453" category="sidebar">BlueXP  備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器（ VM ）提供高效率、安全且具成本效益的資料保護。</block>
 </blocks>

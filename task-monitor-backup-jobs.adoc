@@ -20,7 +20,7 @@ summary: 您可以監控本機快照、複製和備份的狀態、以將其備�
 
 == 在工作監控器上檢視工作狀態
 
-您可以在 * 工作監控 * 標籤中檢視所有 Snapshot 、複寫、備份到物件儲存、還原作業及其目前狀態的清單。這包括 Cloud Volumes ONTAP 、內部部署 ONTAP 、應用程式、虛擬機器和 Kubernetes 系統的作業。每個作業或工作都有唯一的ID和狀態。
+您可以在 * 工作監控 * 標籤中檢視所有 Snapshot 、複寫、備份到物件儲存、還原作業及其目前狀態的清單。這包括 Cloud Volumes ONTAP 、內部部署 ONTAP 、應用程式和虛擬機器的作業。每個作業或工作都有唯一的ID和狀態。
 
 狀態可以是：
 
@@ -76,7 +76,6 @@ image:screenshot_backup_job_monitor_filters.png["設定篩選條件以僅檢視�
 ** Volume （ Cloud Volumes ONTAP 和內部部署 ONTAP Volume ）
 ** 應用程式
 ** 虛擬機器
-** Kubernetes
 
 
 +
