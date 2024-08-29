@@ -3043,7 +3043,6 @@ SS3 ONTAP</block>
   <block id="3b2352f9f987ea3f850c59d97818e5b2" category="cell">BlueXP 備份與還原臨機操作 Snapshot 建立工作失敗</block>
   <block id="7dfd6144b0880ea61dc9ca44cde23608" category="cell">BlueXP 備份與還原臨機操作複寫工作失敗</block>
   <block id="44fb2635a11260b2cc484928766b933c" category="cell">BlueXP 備份與還原複寫會暫停工作失敗</block>
-  <block id="ebc078a09fc4b31b91b35b54aa44f5c4" category="cell">BlueXP 備份與還原複寫會導致工作失敗</block>
   <block id="c55e60943b328ba5333135136a72eed3" category="cell">BlueXP 備份與還原複寫重新同步工作失敗</block>
   <block id="5e67cebd99d17acfd6723171138a26c0" category="cell">BlueXP 備份與還原複寫會停止工作失敗</block>
   <block id="148858fe75d91455e16176a0e57a23a4" category="cell">BlueXP 備份與還原複寫回復重新同步工作失敗</block>
@@ -3735,4 +3734,5 @@ ifdef：：AWS []</block>
   <block id="0d80ea71f9929ca6943ff4f16a27de3e" category="list-text">「工作負載」欄位可供您篩選頁面、以檢視下列備份服務的工作： Volume 、 Applications 和 Virtual Machines 。</block>
   <block id="756733f39050e99f4221fe80d10ea604" category="sidebar">BlueXP 備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器提供高效率、安全且具成本效益的資料保護。</block>
   <block id="e117f11185531a360eff8bfed09af453" category="sidebar">BlueXP  備份與還原服務可為內部部署和雲端的 NetApp ONTAP 資料、資料庫和虛擬機器（ VM ）提供高效率、安全且具成本效益的資料保護。</block>
+  <block id="0760245e68680af16b611d238a130354" category="cell">BlueXP  備份與還原複寫會中斷工作失敗</block>
 </blocks>
