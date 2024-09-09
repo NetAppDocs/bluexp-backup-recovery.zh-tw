@@ -191,7 +191,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.htm
 
 您可以在啟動精靈中使用自己的客戶管理金鑰進行資料加密、而非使用預設的Microsoft管理加密金鑰。在這種情況下、您必須擁有 Azure Subscription 、 Key Vault 名稱和 Key 。 https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["瞭解如何使用您自己的金鑰"^]。
 
-BlueXP 備份與還原支援 _Azure 存取原則 _ 做為權限模式。目前不支援 _Azure 角色型存取控制 _ （ Azure RBAC ）權限模式。
+BlueXP  備份與還原支援 _Azure 存取原則 _ 、 _Azure 角色型存取控制 _ （ Azure RBAC ）權限模型、以及 _Managed Hardware Security Model_ （ HSM ）（請參閱 https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview["什麼是 Azure Key Vault Managed HSM ？"]）。
 
 
 
