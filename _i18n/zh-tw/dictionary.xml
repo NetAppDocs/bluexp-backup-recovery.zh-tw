@@ -692,7 +692,6 @@
   <block id="292f9f5eb65ebf40fd71fda6e8b093e7" category="list-text">每週和每月都會為磁碟區建立備份檔案</block>
   <block id="921b747c1abfd997d26a273c0b62011b" category="section-title">什麼是DataLock</block>
   <block id="f6494bde8c5d58e1a40bf174c8083f96" category="paragraph">讓我們來看看幾個例子、瞭解這項功能的運作方式：</block>
-  <block id="4f326e1a4453cc79600c1df4374d2c22" category="list-text">如果您建立的備份原則每天建立30個、每週7個、每月12個備份、則會有三個鎖定的保留期間。「30天」備份將保留44天（30天加上14天緩衝）、「7週」備份保留9週（7週加上14天）、「12個月」備份則保留12個月（加上14天）。</block>
   <block id="57f10edfffe2adcbce7ee7a76dc7702f" category="section-title">什麼是勒索軟體保護</block>
   <block id="f656e9389b65beefa5f22506a262c68a" category="list-text">當您嘗試從備份檔案還原資料時</block>
   <block id="d71c7fafb5eead8d41c2869b8c551f6a" category="paragraph">您可以選擇在從備份檔案還原資料之前執行掃描、或跳過此掃描。</block>
@@ -944,8 +943,6 @@
   <block id="cc52989062051281d16ab44b8c24cbef" category="list-text">在第8週、第一週備份會移除、並新增第8週的每週備份（每週最多保留7次備份）。</block>
   <block id="1d7733f94633408426a8b5de97f97f13" category="list-text">在第13個月、第一個每月備份就會移除、並新增第13個月的每月備份（最多保留12個月備份）。</block>
   <block id="105cf1dd74d7a9079245d031f91df8b0" category="paragraph">此功能無法為來源磁碟區提供保護、只能用於這些來源磁碟區的備份。使用NetApp<block ref="2e57621b97dadc1cef3dd80d75e83676" category="inline-link-rx"></block>或部分<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block> 保護來源磁碟區。</block>
-  <block id="f88d31c8fba76a471a02f0b65a9ac963" category="list-text">如果您建立的每月備份排程有12個保留項目、則每個備份都會在刪除之前鎖定12個月（加上14天）。</block>
-  <block id="bf7c437191fdcde55e7d7e2fc049c230" category="list-text">如果您建立24個保留項目的每小時備份排程、您可能會認為備份會鎖定24小時。不過、由於這低於30天的最少時間、因此每個備份都會被鎖定並保留44天（30天加上14天的緩衝）。</block>
   <block id="c545a26c4ed6190e3a8c71826161a528" category="paragraph">第一次寫入雲端儲存設備時、並不會對備份檔案執行掃描、但會在寫入*下一次*備份檔案時執行掃描。例如、如果您已設定星期二的每週備份排程、則會在星期二14建立備份。然後在星期二建立另一個備份。此時勒索軟體掃描會在備份檔案上執行、從14開始執行。</block>
   <block id="83933361b1e2abf7e7f406666cc9c104" category="list-text">對於AWS：</block>
   <block id="328a2c1e7778e9edaf79d90c51409ac4" category="list-text">如果您有客戶層級的帳戶、可以新增一或多個NSS帳戶。</block>
@@ -1021,7 +1018,6 @@
   <block id="913602150aeb49c0e5c994a9ee6fbba1" category="list-text">建立備份原則、以套用至叢集中未來建立的所有磁碟區。</block>
   <block id="0dba7856897347ca5b431db6b55637a4" category="list-text">刪除備份關係、以便在保留磁碟區備份的同時、歸檔不需要的來源磁碟區。</block>
   <block id="4755986530a007b5ad8c149510339cdd" category="inline-link">NetApp SnapMirror雲端技術</block>
-  <block id="230cb0e580e943163f3909777583f34f" category="paragraph">備份保留期間與備份排程保留期間相同、加上14天。例如、使用_5_份複本的每週備份會鎖定每個備份檔案5週。_每月_備份加上_6_份複本、將會鎖定每個備份檔案6個月。</block>
   <block id="fb03128f43a982e985025c970d7947c6" category="paragraph">如果您想要使用不同的AWS帳戶進行備份、則必須在BlueXP中新增目的地AWS帳戶認證、並將「S3：PuttBucketPolicy」和「S3：PuttketOwnershipControl」權限新增至IAM角色、以便為BlueXP提供權限。</block>
   <block id="30d334a4a47bf8bcc0a713cea94b6d98" category="list-text">您也可以 <block ref="691b942cd3d613931fde06fad7da9248" category="inline-link-macro-rx"></block> 至Cloud Volumes ONTAP Google的某個系統、或內部部署ONTAP 的某個系統。</block>
   <block id="90262b49b516aea0770d54c5389860ab" category="list-text">變更是否從來源系統移除「每年」快照</block>
@@ -1539,7 +1535,6 @@
   <block id="37e76b4487b7832f9128b16818135e42" category="paragraph">BlueXP 備份與還原以隨用隨付模式提供消費型授權。透過雲端供應商的市場訂閱之後、您只需支付每GiB的備份資料費用、無需預付任何款項。您的雲端供應商會透過每月帳單向您收費。</block>
   <block id="4fea63f3003bca68c0d871a18bd18f49" category="paragraph"><block ref="da925d164976c4809988045a567b800b" category="inline-link-macro-rx"></block>。</block>
   <block id="e9318a32b2a89c8bc9343f1169144931" category="list-text">「 CVO 專業人員」計畫、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原作業結合在一起。這包括Cloud Volumes ONTAP 不受限制地備份此授權所收取的所有數量（備份容量不計入授權）。</block>
-  <block id="1f4752c64c2bf1f4ec37455cfd1541c6" category="list-text">使用 GCP 時、您可以向 NetApp 申請私人優惠、然後在 BlueXP 備份與恢復啟動期間從 Google Cloud Marketplace 訂閱時、選擇方案。</block>
   <block id="33022c637d4dd3f13525c167e5f29568" category="section-title">BlueXP 備份與還原的運作方式</block>
   <block id="831cb37bc0e6807bf3de1b27cba3fa9a" category="inline-image-macro">顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地物件儲存區進行通訊的圖表。</block>
   <block id="93ad9cd182842eb85c4af00f0080a13b" category="paragraph"><block ref="93ad9cd182842eb85c4af00f0080a13b" category="inline-image-macro-rx" type="image"></block></block>
@@ -1710,7 +1705,6 @@
   <block id="703a23cc0f04926bc0f88cc7699dbb25" category="summary">BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes ONTAP 系統建立各種組態設定的備份原則。</block>
   <block id="9eea85cb75720c2962892ce404724c85" category="paragraph">BlueXP 備份與還原可讓您針對每個工作環境（叢集）建立多個備份原則、並設定獨特的排程。您可以將不同的備份原則指派給具有不同還原點目標（RPO）的磁碟區。</block>
   <block id="2565631610247b4b3c1e22a4efb7394f" category="paragraph">BlueXP 備份與還原可為您的磁碟區備份提供 DataLock 和勒索軟體保護支援。這些功能可讓您鎖定備份檔案、並進行掃描、以偵測備份檔案上可能的勒索軟體。這是可選的設定、您可以在備份原則中定義、以便為叢集的磁碟區備份提供額外保護。</block>
-  <block id="c88e14329d462b276ba5448f60ca13e0" category="paragraph">您可以在最後一次看到、如果每個備份檔案被鎖定44天、您將會有更多的備份檔案、而不是通常以每小時24小時保留原則來保留。通常、當 BlueXP 備份與還原建立第 25 個備份檔案時、它會刪除最舊的備份、以將最大保留保持在 24 （根據原則）。在這種情況下、DataLock保留設定會覆寫備份原則的原則保留設定。這可能會影響您的儲存成本、因為備份檔案將會儲存在物件存放區中一段較長的時間。</block>
   <block id="fabcd9ebb5b6eb0b33f162417010c768" category="list-text">啟動 BlueXP 備份與還原時所選取的 DataLock 選項必須用於該叢集的所有備份原則。</block>
   <block id="683fc015ec20f6233b25343bf3daea19" category="paragraph">如果您的內部叢集使用 ONTAP 9.12.1 或更新版本、您可以選擇在特定天數後、將舊備份分層儲存至 BlueXP 備份與還原 UI 中的 _Archive_ 儲存設備、以進一步最佳化成本。 <block ref="60cdd04e7131e97598ce1c583d8c9a5e" category="inline-link-macro-rx"></block>。</block>
   <block id="01492017a2321f7b3f8484fd1f8aa8d7" category="sidebar">BlueXP 備份與還原文件</block>
@@ -3086,7 +3080,6 @@ SS3 ONTAP</block>
   <block id="38da59f967f6f913365cf5cefb459344" category="inline-link">深入瞭解還原資料</block>
   <block id="7b3040066d7e59383891bdcb2977076f" category="paragraph"><block ref="bfc7bc1f2f7fff3212c093c1fc6b6317" category="inline-link-rx"></block>。</block>
   <block id="52cc7bb26d5185a2c3b92b71a3d6e319" category="section-title">額外支援備份與還原 SnapLock Volume</block>
-  <block id="4cb4cd292be9258bfc850d1aa644d9f6" category="paragraph">備份與還原現在可以備份使用 SnapLock Compliance 或 SnapLock Enterprise 保護模式設定的 FlexVol 和 FlexGroup 磁碟區。您的叢集必須執行 ONTAP 9.14 或更新版本、才能獲得此支援。自 ONTAP 9.11.1 版起、就支援使用 SnapLock 企業模式備份 FlexVol Volume 。較早的 ONTAP 版本不支援備份 SnapLock 保護磁碟區。</block>
   <block id="115e674b1dc0942f53bc91e279bbd7eb" category="inline-link">深入瞭解如何保護 ONTAP 資料</block>
   <block id="5ea7c922bf64f9c4520ccdf833e34e39" category="paragraph"><block ref="287ce1c3ffcd9fd04ac3fb9608fef690" category="inline-link-rx"></block>。</block>
   <block id="7b666c0edc9876b87778d0969629cfbf" category="list-text">在備份和恢復欄中選擇 * Volumes （卷） * 。從 Volumes （卷）選項卡中，選擇 *Actions* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示並選取 * 啟動單一磁碟區的備份 * （尚未啟用複寫或備份至物件儲存設備的磁碟區）。</block>
@@ -3329,8 +3322,6 @@ SS3 ONTAP</block>
   <block id="17ffabdffcf9cad7bd6ae2054c4f6e24" category="list-text">如果您使用的帳戶有 PAYGO 市場帳戶、則備份服務會繼續執行、但您會改用 PAYGO 授權模式。您需要支付備份所使用的容量。</block>
   <block id="727c837c47e40b96ddd39f15636181fe" category="list-text">管理複寫原則</block>
   <block id="61f06895b4fcad7d6460158ccfc33c17" category="paragraph">BYOL 以 1 TiB 為單位、以條款為基礎（ 1 、 2 或 3 年） _ 和 _ 容量為基礎。您向NetApp支付一段時間使用服務費用、例如1年、如果容量上限為10 TiB。</block>
-  <block id="bc74d224d8eebb9d1f7a6a0cca3c6a3d" category="paragraph">使用 AWS 時、每年有兩份合約可供 1 、 2 或 3 年期使用：</block>
-  <block id="a31db27d8aef7db23d51910ceb960041" category="paragraph">使用 Azure 時、我們提供兩份年度合約、期限為 1 、 2 或 3 年：</block>
   <block id="aa4c67fd3731395f4450c9686b20f799" category="section-title">支援「工作監控」中的排程工作</block>
   <block id="314b40130d46a229c3a19dc5e2e23aa4" category="paragraph">BlueXP 備份與還原工作監控先前監控的排程磁碟區對物件儲存區備份與還原工作、但不是透過 UI 或 API 排程的本機 Snapshot 、複寫、備份與還原工作。</block>
   <block id="04c6b318fe9c7f19ae925a90e52c6569" category="paragraph">BlueXP 備份與還原工作監視器現在包含排程工作、可用於本機快照、複製及備份至物件儲存設備。</block>
@@ -3468,7 +3459,6 @@ ifdef ：： GCP[]</block>
   <block id="64063115b259542737cce343064e3233" category="list-text">* 快速還原 * ：還原的磁碟區和資料將立即可用。請勿在需要高效能的磁碟區上使用此功能、因為在快速還原程序期間、資料存取速度可能比平常慢。</block>
   <block id="406385bac6b7601aab1eff5d8a317cc3" category="paragraph">請注意、結果會識別本機 Volume Snapshot 複本、以及搜尋中包含該檔案的遠端複寫磁碟區。您可以選擇從雲端備份檔案、 Snapshot 複本或複寫的 Volume 進行還原。</block>
   <block id="6b1625dd335c098ed2ca98e2429bd8b5" category="paragraph">這兩項功能都能保護您的備份檔案、讓您隨時都能擁有有效的備份檔案、以便在發生勒索軟體攻擊時、從備份中恢復資料。此外、也有助於滿足某些法規要求、在某些情況下、備份必須鎖定並保留一段時間。啟用 DataLock 和勒索軟體保護選項時、配置為 BlueXP 備份和恢復啟動一部分的雲端儲存區將會啟用物件鎖定和物件版本控制。</block>
-  <block id="b03c01f8cf077f9dee5804db15487474" category="paragraph">DataLock 可保護您的備份檔案、避免在一段時間內遭到修改或刪除、也稱為 _immutable storage 。此功能使用物件儲存供應商的技術來「物件鎖定」。 備份檔案被鎖定（並保留）的期間稱為 DataLock 保留期間。這是根據您定義的備份原則排程和保留設定、加上 14 天的緩衝區。任何少於30天的DataLock保留原則、最短四捨五入至30天。</block>
   <block id="d1fe7d408368bfebc413888300892008" category="list-text">如果您已在備份原則中設定歸檔儲存設備、則無法使用 DataLock 和勒索軟體保護功能。</block>
   <block id="7bdfdec65541ae8037e909dd7d0643dd" category="paragraph">使用 AWS 、 Azure 或 Google 雲端儲存設備時、您可以在一定天數後、將較舊的備份檔案移至較便宜的歸檔儲存類別或存取層。您也可以選擇立即將備份檔案傳送至歸檔儲存設備、而無需寫入標準雲端儲存設備。只要輸入 *0* 作為「歸檔日」、即可將備份檔案直接傳送至歸檔儲存設備。這對很少需要從雲端備份存取資料的使用者或是更換備份至磁帶解決方案的使用者而言特別有幫助。</block>
   <block id="8e867c14e8b5b20149da48500624662f" category="list-text">即使您選取「 0 」將所有資料區塊傳送至歸檔雲端儲存設備、中繼資料區塊也會一律寫入標準雲端儲存設備。</block>
@@ -3736,4 +3726,14 @@ ifdef：：AWS []</block>
   <block id="0760245e68680af16b611d238a130354" category="cell">BlueXP  備份與還原複寫會中斷工作失敗</block>
   <block id="3da2387f3963d6425b4b1d6b322f70c3" category="inline-link">什麼是 Azure Key Vault Managed HSM ？</block>
   <block id="d02466e22d28fb26badb969e9549aef1" category="paragraph">BlueXP  備份與還原支援 _Azure 存取原則 _ 、 _Azure 角色型存取控制 _ （ Azure RBAC ）權限模型、以及 _Managed Hardware Security Model_ （ HSM ）（請參閱<block ref="c4dbe37ac52a9ba2f5defa0c652294d5" category="inline-link-rx"></block>）。</block>
+  <block id="fe796f1ffea18cd2a88640b34b7f0cb3" category="paragraph">DataLock 可保護您的備份檔案、避免在一段時間內遭到修改或刪除、也稱為 _immutable storage 。此功能使用物件儲存供應商的技術來「物件鎖定」。備份檔案被鎖定（並保留）的期間稱為DataLock保留期間。這是根據您定義的備份原則排程和保留設定、加上最多 31 天的緩衝區。任何少於31天的DataLock保留原則、最短四捨五入至31天。</block>
+  <block id="43885e8086b7b4ee79571e89e8dbf796" category="list-text">如果您建立每月備份排程、並保留 12 個保留、則每個備份在刪除前會鎖定 12 個月（加上最多 31 天的緩衝區）。</block>
+  <block id="69bdcf216a01f07d336a8529971a218c" category="list-text">如果您建立的備份原則每天建立30個、每週7個、每月12個備份、則會有三個鎖定的保留期間。「每日 30 次」備份將保留 44 天（ 30 天加上最多 31 天的緩衝區）、「每週 7 次」備份將保留 9 週（ 7 週加上最多 31 天的緩衝區）、「每月 12 次」備份將保留 12 個月（加上最多 31 天的緩衝區）。</block>
+  <block id="c395960914e1c3b46d1af972702771a1" category="list-text">如果您建立24個保留項目的每小時備份排程、您可能會認為備份會鎖定24小時。不過、由於這少於 30 天、因此每個備份都會被鎖定並保留 44 天（ 30 天加上最多 31 天的緩衝區）。</block>
+  <block id="6a3efe56245054dfcaa2b2515d7d3ea7" category="paragraph">您可以在最後一個案例中看到、如果每個備份檔案都鎖定 30 天（加上最多 31 天的緩衝區）、您將會得到比一般保留的每小時 /24 保留原則更多的備份檔案。通常、當 BlueXP 備份與還原建立第 25 個備份檔案時、它會刪除最舊的備份、以將最大保留保持在 24 （根據原則）。在這種情況下、DataLock保留設定會覆寫備份原則的原則保留設定。這可能會影響您的儲存成本、因為備份檔案將會儲存在物件存放區中一段較長的時間。</block>
+  <block id="92e4e78220fae3f6988f7215aa66d0a3" category="paragraph">當您使用 AWS 時、每年有兩份合約可供選擇、期限為 1 、 2 或 3 年：</block>
+  <block id="ed20f9f9ce04512430634d23ddd27d79" category="paragraph">當您使用 Azure 時、我們提供兩份年度合約、期限為 1 年、 2 年或 3 年：</block>
+  <block id="f88ca0c86817c46ef8ec699cdf83665c" category="paragraph">使用 GCP 時、您可以向 NetApp 申請私有優惠、然後在 BlueXP  備份與恢復啟動期間、從 Google 雲端服務商場訂閱方案時、選擇該方案。</block>
+  <block id="78505512ebd89d20931322ac265d9153" category="paragraph">備份保留期間與備份排程保留期間相同、加上最多 31 天的緩衝區。例如、使用_5_份複本的每週備份會鎖定每個備份檔案5週。_每月_備份加上_6_份複本、將會鎖定每個備份檔案6個月。</block>
+  <block id="741aaba68ff71f579469a40cd8f92b4f" category="paragraph">備份與還原現在可以備份使用 SnapLock Enterprise 保護模式設定的 FlexVol 和 FlexGroup 磁碟區。您的叢集必須執行 ONTAP 9.14 或更新版本、才能獲得此支援。自 ONTAP 9.11.1 版起、就支援使用 SnapLock 企業模式備份 FlexVol Volume 。較早的 ONTAP 版本不支援備份 SnapLock 保護磁碟區。</block>
 </blocks>

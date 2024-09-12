@@ -291,7 +291,7 @@ link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-paygo-sub
 
 ifdef::aws[]
 
-使用 AWS 時、每年有兩份合約可供 1 、 2 或 3 年期使用：
+當您使用 AWS 時、每年有兩份合約可供選擇、期限為 1 、 2 或 3 年：
 
 * 「雲端備份」計畫、可讓您備份Cloud Volumes ONTAP 內部部署ONTAP 的支援資料。
 * 「 CVO 專業人員」計畫、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原作業結合在一起。這包括Cloud Volumes ONTAP 不受限制地備份此授權所收取的所有數量（備份容量不計入授權）。
@@ -301,7 +301,7 @@ endif::aws[]
 
 ifdef::azure[]
 
-使用 Azure 時、我們提供兩份年度合約、期限為 1 、 2 或 3 年：
+當您使用 Azure 時、我們提供兩份年度合約、期限為 1 年、 2 年或 3 年：
 
 * 「雲端備份」計畫、可讓您備份Cloud Volumes ONTAP 內部部署ONTAP 的支援資料。
 * 「 CVO 專業人員」計畫、可讓您將 Cloud Volumes ONTAP 和 BlueXP 備份與還原作業結合在一起。這包括Cloud Volumes ONTAP 不受限制地備份此授權所收取的所有數量（備份容量不計入授權）。
@@ -311,7 +311,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-使用 GCP 時、您可以向 NetApp 申請私人優惠、然後在 BlueXP 備份與恢復啟動期間從 Google Cloud Marketplace 訂閱時、選擇方案。
+使用 GCP 時、您可以向 NetApp 申請私有優惠、然後在 BlueXP  備份與恢復啟動期間、從 Google 雲端服務商場訂閱方案時、選擇該方案。
 
 endif::gcp[]
 
@@ -404,7 +404,7 @@ TIP: 資料保護磁碟區備份的保留期間與來源SnapMirror關係中所�
 
 預設會啟用排程的勒索軟體保護掃描。掃描頻率的預設設定為 7 天。只有最新的 Snapshot 複本才會執行掃描。您可以停用排程掃描、以降低成本。您可以使用「進階設定」頁面上的選項、在最新的 Snapshot 複本上啟用或停用排程的勒索軟體掃描。如果啟用、預設會每週執行掃描。您可以將排程變更為天或週、或停用、節省成本。
 
-備份保留期間與備份排程保留期間相同、加上14天。例如、使用_5_份複本的每週備份會鎖定每個備份檔案5週。_每月_備份加上_6_份複本、將會鎖定每個備份檔案6個月。
+備份保留期間與備份排程保留期間相同、加上最多 31 天的緩衝區。例如、使用_5_份複本的每週備份會鎖定每個備份檔案5週。_每月_備份加上_6_份複本、將會鎖定每個備份檔案6個月。
 
 當您的備份目的地是Amazon S3、Azure Blob或NetApp StorageGRID 時、目前可提供支援。其他儲存供應商目的地將會新增至未來版本。
 
