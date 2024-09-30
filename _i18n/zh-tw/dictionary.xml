@@ -3590,7 +3590,6 @@ ifdef：：AWS []</block>
 <block ref="6a96d9b5ed55776b5555946cb02fa548" category="inline-link-macro-rx"></block>。</block>
   <block id="2dc37cecffdd7077ba99c0ba111ad347" category="section-title">備份至物件限制</block>
   <block id="215d6f1bc8d7005b7bb981d9a3dc7b78" category="section-title">搭配 Podcast 使用 RHEL 8 以上的限制</block>
-  <block id="38c44a50a75c15410df928f63928acf8" category="section-title">不支援單一檔案還原</block>
   <block id="dbeaadfb952b8aa57d00264751776087" category="list-text">如果複寫磁碟區存在、請從複寫的磁碟區還原檔案或資料夾。</block>
   <block id="e647cb9e3bb11f1dcf4383ae4ae00f0f" category="list-text">使用「搜尋與還原」功能、從雲端備份還原檔案或資料夾。</block>
   <block id="b760ac1d9088cf17812b95299a0f4c97" category="list-text">使用「瀏覽與還原」從雲端備份還原磁碟區、然後存取所需的檔案或資料夾。</block>
@@ -3736,4 +3735,14 @@ ifdef：：AWS []</block>
   <block id="f88ca0c86817c46ef8ec699cdf83665c" category="paragraph">使用 GCP 時、您可以向 NetApp 申請私有優惠、然後在 BlueXP  備份與恢復啟動期間、從 Google 雲端服務商場訂閱方案時、選擇該方案。</block>
   <block id="78505512ebd89d20931322ac265d9153" category="paragraph">備份保留期間與備份排程保留期間相同、加上最多 31 天的緩衝區。例如、使用_5_份複本的每週備份會鎖定每個備份檔案5週。_每月_備份加上_6_份複本、將會鎖定每個備份檔案6個月。</block>
   <block id="741aaba68ff71f579469a40cd8f92b4f" category="paragraph">備份與還原現在可以備份使用 SnapLock Enterprise 保護模式設定的 FlexVol 和 FlexGroup 磁碟區。您的叢集必須執行 ONTAP 9.14 或更新版本、才能獲得此支援。自 ONTAP 9.11.1 版起、就支援使用 SnapLock 企業模式備份 FlexVol Volume 。較早的 ONTAP 版本不支援備份 SnapLock 保護磁碟區。</block>
+  <block id="edaf1dd0d1554f666d48a9fcd0c9ed77" category="section-title">單一檔案還原支援</block>
+  <block id="13d2a4e10589dd80e0c51d5473113c2a" category="admonition">截至 2024 年 9 月 30 日、此限制已移除。</block>
+  <block id="5fcc5d3ffc4bbbcf6d018ab4a9639205" category="section-title">2024 年 9 月 27 日</block>
+  <block id="aa6a53998d98bae73a6913ff1c2eecbc" category="section-title">透過瀏覽與還原、在 RHEL 8 或 9 上支援 Podman</block>
+  <block id="c6bad3b272d5eeec569990b050d88123" category="paragraph">BlueXP  備份與還原現在支援在使用 Podman 引擎的 Red Hat Enterprise Linux （ RHEL ）第 8 版和第 9 版上進行檔案與資料夾還原。這適用於 BlueXP  備份與還原瀏覽與還原方法。</block>
+  <block id="f5d370ee9e029c4d62db915f308e04c0" category="paragraph">BlueXP  Connector 3.9.40 版支援某些版本的 Red Hat Enterprise Linux 第 8 版和第 9 版、可在 RHEL 8 或 9 主機上手動安裝 Connector 軟體、而不受中所述作業系統以外的位置<block ref="9b2a96babeed2ab711a4327ec7f34b5c" category="inline-link-rx"></block>限制。這些較新的 RHEL 版本需要使用 Podman 引擎、而非 Docker 引擎。以前、 BlueXP  備份與還原在使用 Podman 引擎時有兩項限制。這些限制已移除。</block>
+  <block id="6111aa812639d5e432842ceca200ea78" category="inline-link">深入瞭解如何從備份檔案還原 ONTAP 資料</block>
+  <block id="007a407431de4321913728dae6423904" category="paragraph"><block ref="056f97dce802386385ce3734740613e1" category="inline-link-rx"></block>。</block>
+  <block id="3abe4a789c1c33e285d9452cca8c493b" category="section-title">目錄索引速度更快、可改善搜尋與還原</block>
+  <block id="9353e94049314c6236b51712848f2572" category="paragraph">此版本包含改良的目錄索引、可更快完成基準索引。快速索引可讓您更快速地使用「搜尋與還原」功能。</block>
 </blocks>

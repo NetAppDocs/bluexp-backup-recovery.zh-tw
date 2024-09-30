@@ -111,7 +111,10 @@ FlexVol Volume 沒有限制、您可以選取工作環境中的所有 FlexVol Vo
 
 
 
-==== 不支援單一檔案還原
+==== 單一檔案還原支援
+
+
+IMPORTANT: 截至 2024 年 9 月 30 日、此限制已移除。
 
 使用在 Podman 中執行的 BlueXP Connector （在 RHEL 8 或 9 上執行時手動建立 BlueXP Connector ）時、不支援單一檔案還原和目錄還原的瀏覽與還原功能。使用 Podman 時支援所有其他類型的還原作業、因此您可以使用下列其他方法還原資料、直到問題解決為止：
 
