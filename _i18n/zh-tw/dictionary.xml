@@ -3506,8 +3506,6 @@ ifdef：：AWS []</block>
   <block id="216ef706f9f25f4eb179f940b530a4d5" category="admonition">這些原則設定僅適用於備份至物件儲存。這些設定都不會影響您的 Snapshot 或複寫原則。未來將會新增快照和複製的類似原則設定。</block>
   <block id="a2e6f50bd5494a56ee0794883aeee5e5" category="section-title">備份排程選項</block>
   <block id="051658be4ba182ab30138c3d0fa07f2b" category="section-title">DataLock 和勒索軟體保護選項</block>
-  <block id="5eab2e069820454037ee67f5a8712f35" category="list-text">如果您計畫使用 DataLock 和勒索軟體保護、您可以在建立第一個備份原則、並為該叢集啟動 BlueXP 備份和還原時啟用。您稍後可以使用 BlueXP 備份與還原進階設定來啟用。</block>
-  <block id="8bf75ab26f222aaa987f761ede723ee0" category="list-text">將叢集設定為節省成本之後、即可停用其 DataLock 和勒索軟體保護功能。</block>
   <block id="943aed8f26021fcc91ef6a9745099eea" category="list-text">建立備份檔案時。</block>
   <block id="645f12199dae2b82a1985743cbc3e647" category="section-title">DataLock 和勒索軟體保護選項</block>
   <block id="28393e8d0c5d4d42b764689c3d805dd0" category="example-title">AWS S3 權限</block>
@@ -3757,4 +3755,5 @@ ifdef：：AWS []</block>
   <block id="8d9ab45267715f2ac0f3956dcc48c029" category="paragraph">請參閱。<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block></block>
   <block id="78d043c8f38ceca4388c8f7251b8d0a4" category="paragraph">在舊版中、服務帳戶需要「儲存管理員」角色、才能讓 BlueXP 備份與還原存取 Google Cloud Storage 貯體。現在您可以建立自訂角色、並減少指派給服務帳戶的權限集。</block>
   <block id="c3fc4078f4f9169223583aa65515bc3a" category="paragraph"><block ref="dc783245fae5a9dea930533d2d02d38a" category="inline-link-rx"></block>。</block>
+  <block id="5b932b14c237e03588a415b41b9a0b43" category="list-text">如果您計畫使用 DataLock 和勒索軟體保護、您可以在建立第一個備份原則、並為該叢集啟動 BlueXP 備份和還原時啟用。您可以稍後使用 BlueXP  備份與還原進階設定來啟用或停用勒索軟體掃描。</block>
 </blocks>
