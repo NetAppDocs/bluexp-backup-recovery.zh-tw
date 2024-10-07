@@ -950,7 +950,6 @@
   <block id="4dee49a9c46b2664e49d7142dc11104d" category="list-text">在Azure中、BlueXP會使用新的或現有的資源群組、以及Blob容器的儲存帳戶。藍圖<block ref="a7068b8d2b60241ce77a1051f3a66ed5" category="inline-link-rx"></block> 依預設。</block>
   <block id="59cbb06daac31886728833270d8bf9a2" category="list-text">在GCP中、BlueXP使用新的或現有的專案、其中含有Google Cloud Storage儲存庫的儲存帳戶。</block>
   <block id="800de79585a9dadbf8cf5d2e105d09bb" category="list-text">在本報告中、BlueXP會使用現有的儲存帳戶來儲存物件儲存庫。StorageGRID</block>
-  <block id="065c13346a6a1b4ec88ebda80e48a910" category="inline-link">BlueXP帳戶</block>
   <block id="ea8bcfb1baf19f84e4a5e1f8a744b022" category="list-text">從BlueXP功能表中、選取* Protection &gt; Backup and recovery *。</block>
   <block id="d24c531f67e59e16184a6f74c9a59f91" category="paragraph">如果您想要使用此選項、可以在建立Cloud Volumes ONTAP 一套運作環境時、設定年度合約、而BlueXP會提示您訂閱AWS Marketplace。</block>
   <block id="f68bf28051d836364652b5a91d1bcd3a" category="list-text">輸入您的BlueXP帳戶ID（在支援網站上稱為「租戶ID」）、然後按一下*提交*下載授權檔案。</block>
@@ -969,7 +968,6 @@
   <block id="5f6926750c6dd8a22b3997020614fae5" category="paragraph">您可以在BlueXP UI中檢視雲端上的備份。</block>
   <block id="f52be7ce52e18a98dacf4e0ce5a03e37" category="list-text">按一下*備份與恢復*&gt;*工作監控*。</block>
   <block id="243263104c829e77835d632f591230d5" category="summary">在您透過NetApp技術支援開啟支援案例之前、您必須先在NetApp 支援網站 BlueXP中新增一個支援帳戶、然後註冊以取得支援。</block>
-  <block id="2322ca552c2b0ebe090c8485519246a8" category="list-text">註冊您的BlueXP帳戶ID支援訂閱（您的20位數960xxxxxxx序號位於BlueXP的「Support Resources（支援資源）」頁面）。</block>
   <block id="23fdcbefa6d9cd877be7ceb7a18bb936" category="paragraph">這是您在BlueXP內任何服務的單一支援訂閱ID。每個BlueXP帳戶層級的支援訂閱都必須註冊。</block>
   <block id="67dbdeb11e22ea7def810bade59ce818" category="paragraph">這些序號通常稱為「_PAYGO」序號、並在Cloud Volumes ONTAP 部署時由BlueXP產生。</block>
   <block id="cbc6cc3bb022583403171b447b2a962c" category="paragraph">這些行動可讓BlueXP將您的nssa帳戶用於授權下載、軟體升級驗證、以及未來的支援註冊等項目。</block>
@@ -981,7 +979,6 @@
   <block id="00c5fef3bb9d593ae96bf5d2ee60354a" category="paragraph">歡迎加入BlueXP社群、以追蹤後續討論或建立新討論。</block>
   <block id="a4a6c2ea0078252eac2d74ef3e6c917c" category="paragraph">您目前正在檢視的BlueXP文件。</block>
   <block id="d63bf50426f4c712554faec55b30c548" category="list-text">*服務*：選取問題相關的服務。例如、特定於服務工作流程或功能的技術支援問題的BlueXP。</block>
-  <block id="aa996e20900197b0ea41485ada083d8c" category="paragraph">工作環境清單位於您在服務的最上層橫幅中所選的BlueXP帳戶、工作區和Connector範圍內。</block>
   <block id="7dbea888521fb9c4360764add4f59e05" category="list-text">必須將特定的Amazon Athena、AWS黏著及AWS S3權限新增至提供BlueXP權限的使用者角色。 <block ref="172464504974bed7b77dd155db5fb92b" category="inline-link-macro-rx"></block>。</block>
   <block id="97b5e4c408de2e312a0b1fc4e2535f1f" category="list-text">特定Azure Synapse Workspace與Data Lake Storage帳戶權限必須新增至提供BlueXP權限的使用者角色。 <block ref="3f613adb79f1db61c1db3e20329cd95a" category="inline-link-macro-rx"></block>。</block>
   <block id="a6e5e96ba9eebf564c1d0ef4d770658f" category="list-text">必須將特定的Google BigQuery權限新增至提供BlueXP權限的使用者角色。 <block ref="1401fe87dc595535076f05f545f8275e" category="inline-link-macro-rx"></block>。</block>
@@ -1090,7 +1087,6 @@
   <block id="e3cd99e4aa330ae6bdfb3754d83ae962" category="list-text">如果您有合作夥伴或經銷商帳戶、您可以新增一或多個NSS帳戶、但這些帳戶無法與客戶層級帳戶一起新增。</block>
   <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">從「Support Registration（支援註冊）」頁面找到您的帳戶ID序號。</block>
   <block id="50a1dc01b7312307c34a888071586955" category="list-text">複製上述步驟2的帳戶序號、完成安全性檢查、然後確認您已閱讀NetApp的全球資料隱私權政策。</block>
-  <block id="cc8b0535948da368f832027c19b7f853" category="list-text">請務必複製上述序號欄位使用的帳戶序號（960xxxx）。這將加速帳戶處理。</block>
   <block id="e57e5c06a7f562addb87315f013677ab" category="inline-link-macro">深入瞭解如何從Google歸檔儲存設備還原</block>
   <block id="9412087e43270b75b90fb61a57336ae4" category="paragraph"><block ref="3c746f2f3db6e0c7091d37b11706df4d" category="inline-link-macro-rx"></block>。</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
@@ -1592,7 +1588,6 @@
   <block id="2c3fd6b8f7bf4ec2f8750499b1319ea3" category="summary">您可以向雲端供應商購買隨用隨付（ PAYGO ）或年度市場訂閱、或是向 NetApp 購買自帶授權（ BYOL ）、以取得 BlueXP 備份與恢復的授權。您需要有效的授權、才能在工作環境中啟動 BlueXP 備份與還原、建立正式作業資料的備份、以及將備份資料還原至正式作業系統。</block>
   <block id="f4b04af639ebf32754e26b928989f33f" category="doc">設定 BlueXP 備份與還原的授權</block>
   <block id="b8d8c3ee1f806c295728b3e2e1419d0e" category="list-text">如果您已在雲端供應商的市場中訂閱付費隨用（ PAYGO ）訂閱 Cloud Volumes ONTAP 系統、則您也會自動訂閱 BlueXP 備份與還原。您不需要再次訂閱。</block>
-  <block id="e0465a59592d7ef09030b010cdc13806" category="list-text">BlueXP 備份與還原自帶授權（ BYOL ）是浮動授權、您可以在與 BlueXP 帳戶相關的所有系統上使用。因此、如果現有BYOL授權提供足夠的備份容量、您就不需要再購買其他BYOL授權。</block>
   <block id="96678658f63f300507ecf10ca356941c" category="inline-link-macro">深入瞭解使用 BlueXP 備份與還原的相關成本。</block>
   <block id="bdb22ceb7e956464d69db51ce1582f49" category="paragraph"><block ref="bdb22ceb7e956464d69db51ce1582f49" category="inline-link-macro-rx"></block></block>
   <block id="aca2e72b026ee1e0a7582484746f43ed" category="inline-link-macro">從工作環境中取消註冊 BlueXP 備份與還原</block>
@@ -1600,7 +1595,6 @@
   <block id="c04968186bb3df4bd0331429c63f8641" category="paragraph">BlueXP 備份與還原有幾個 PAYGO 計畫：</block>
   <block id="c02893129433d085ea6dfbc155a79562" category="paragraph">請使用以下連結、向您的雲端供應商市場訂閱 BlueXP 備份與還原：</block>
   <block id="1ef27d8ce33d6626bd77a4ae3f7b5f47" category="section-title">使用 BlueXP 備份與還原 BYOL 授權</block>
-  <block id="5cf4ead1ec9d21f6de70fb6080bd7481" category="paragraph">BYOL BlueXP 備份與還原授權是浮動授權、可讓您在與 BlueXP 帳戶相關的所有系統上共用總容量。對於整個系統、您可以執行CLI命令、粗略估計所需的容量ONTAP<block ref="2a47fed7b3c4b7d59e03f10c018cf5cc" prefix=" " category="inline-code"></block> 針對您計畫備份的磁碟區。</block>
   <block id="78eb4db020e2c993d3997277acf3700c" category="section-title">取得 BlueXP 備份與還原授權檔案</block>
   <block id="df1557a9b76e8e22566ae571ed66d8d5" category="list-text">輸入 BlueXP 備份與還原授權序號。</block>
   <block id="fda78c118f583aef58210df788084452" category="section-title">將 BlueXP 備份與恢復 BYOL 授權新增至您的帳戶</block>
@@ -1812,7 +1806,6 @@
   <block id="ad05f3c2a42e28f22c97d13c62c20e21" category="paragraph">請參閱<block ref="fe3dd1b4143f543014e8974529e1079b" category="inline-link-rx"></block> 以深入瞭解此授權選項。</block>
   <block id="4d6157a62532904beb4910b24be9f6fb" category="paragraph">或者、如果您沒有使用未指派的 Cloud Volumes ONTAP 節點型授權、您可以將其轉換為具有相同美元對等和相同到期日的 BlueXP 備份與還原授權。<block ref="f4c32a82791cf9fc58c736c0aed05092" category="inline-link-rx"></block>。</block>
   <block id="30fc689a9c3cd4222329fe3a4c818a33" category="paragraph">如果下拉式清單中沒有您的 NetApp 支援網站帳戶，<block ref="06a3bc9d474b5d4e44d1a2733cac785a" category="inline-link-rx"></block>。</block>
-  <block id="4235965736b9e1e3dd699fde8f6f73ac" category="paragraph">您會在 BlueXP 數位錢包頁面中輸入序號、以啟用服務。達到任一限制時、您都需要續約授權。備份BYOL授權適用於與相關聯的所有來源系統<block ref="804faa4f81a5cffbc00a90ef504a2fbd" category="inline-link-rx"></block>。</block>
   <block id="4f05ae706b300f473408b4c787786f71" category="list-text">提供具有權限的BlueXP Connector的IAM角色包括來自最新版本的S3權限<block ref="d9402e229f205a91caf82712b1637f11" category="inline-link-rx"></block>。</block>
   <block id="92490379d9b5dee2a5a37001cb55e664" category="paragraph">如需一年一度的合約、而該合約可讓您同時備份Cloud Volumes ONTAP 支援不必要資料和內部部署ONTAP 的不必要資料、您必須從訂閱<block ref="85c21eb306ec4bcbda7252ca6117fc5c" category="inline-link-rx"></block> 然後<block ref="630dd2aae912349621adf70336b8d324" category="inline-link-rx"></block>。</block>
   <block id="0f66f2296645800ca15c524b02cff8c4" category="list-text">您可以在啟動精靈中選擇自己的客戶管理資料加密金鑰、而非使用預設的Amazon S3加密金鑰。在此情況下、您必須先設定加密管理金鑰。<block ref="c9562b880df747e2a8aa25f072c81683" category="inline-link-rx"></block>。</block>
@@ -1847,13 +1840,11 @@
   <block id="187e15fe582f53b6ed739ea360c9f408" category="list-text">請完成精靈中的頁面、依照中所述部署系統<block ref="d6cf51858c4dc41eb58119fabea29b51" category="inline-link-rx"></block>。</block>
   <block id="3c1c17ea503d5e9470f8439096f625f6" category="paragraph">只有在您需要時、才需要執行這些步驟<block ref="677834f72462157379b8c91854842dcc" category="inline-link-rx"></block>。</block>
   <block id="327e32511f0c97676e41ea866aac0721" category="list-text">透過連接埠 443 連接到 BlueXP 備份與恢復服務、以及 Google Cloud 儲存設備的 HTTPS 連線 <block ref="e228b87eff1d3a92b4544cd5652fc5ad" category="inline-link-rx"></block>）</block>
-  <block id="c55a4ed0f55f8209574960c04bd36597" category="paragraph">現在您可以選擇與客戶管理的加密金鑰（ CMEK ）專案不同的儲存庫。<block ref="2425c9129a22c7135ee8a04ae0dae970" category="inline-link-rx"></block>。</block>
   <block id="3f95b7ff004c9ea7ba2c076aa81ddbd8" category="list-text">除了能夠下載 CSV 檔案來報告所有工作之外、現在您可以下載 JSON 檔案來處理單一工作、並查看其詳細資料。<block ref="c5e8ac86e60de65889ee067b8ca8ac22" category="inline-link-rx"></block>。</block>
   <block id="aca6a48e798dafa8a873544468b60e06" category="list-text">新增兩個備份工作警示：「排程工作失敗」和「還原工作完成但有警告」。<block ref="a4848a9ae757d04f84e693376feb04c0" category="inline-link-rx"></block>。</block>
   <block id="72577c9cc3c11c1b1c16727589471767" category="paragraph">如果內部叢集使用ONTAP 的是更新版本的版本、StorageGRID 而您的系統使用的是11.4或更新版本、則可使用此功能。<block ref="a928050165abd52aa438367540434489" category="inline-link-rx"></block>。</block>
   <block id="3171c3474d761b0543c2bd83d1d3f702" category="paragraph">Azure Blob儲存的備份檔案現在支援DataLock和勒索軟體保護。如果Cloud Volumes ONTAP 您的支援對象ONTAP 為執行ONTAP 支援的支援對象、那麼您現在可以鎖定備份檔案、然後掃描檔案、以偵測可能的勒索軟體。<block ref="2045a684ba4b47f5626fcfb6a06714da" category="inline-link-rx"></block>。</block>
   <block id="3c718c5f17f9fcfc63a7338e836856c8" category="paragraph">如果內部叢集使用ONTAP 的是更新版本的版本、StorageGRID 而您的系統使用的是11.3或更新版本、則可使用此功能。<block ref="b82e63d60c4d06f5682d15a56c05b007" category="inline-link-rx"></block>。</block>
-  <block id="85d6a3e13464f9ef61ac713c37b8f174" category="paragraph">在舊版中、服務帳戶需要「儲存管理員」角色、才能讓 BlueXP 備份與還原存取 Google Cloud Storage 貯體。現在您可以建立自訂角色、並減少指派給服務帳戶的權限集。<block ref="75740d83aea3391a75bdf8fb0dfe10a6" category="inline-link-rx"></block>。</block>
   <block id="c89564af11ef846a4ab221b1ae9b0943" category="paragraph"><block ref="4ab4188a7e1e15339fd18b35288f7c72" category="inline-link-rx"></block>。
 <block ref="7658b4baf69b55f9dc87e3a8319a4640" category="inline-link-rx"></block>。</block>
   <block id="cf31f6b1c4754291a84cda70013dfbd4" category="paragraph">篩選「工作監控」頁面以顯示您感興趣的工作和行動之後、您現在可以產生並下載該資料的.csvs檔案。然後您可以分析資訊、或將報告傳送給組織中的其他人員。<block ref="6613b38610e78b89213a7c8c3c136440" category="inline-link-rx"></block>。</block>
@@ -1907,7 +1898,6 @@
   <block id="c17e5b19576d968cb68cb76a1904afca" category="paragraph">您現在可以在「工作監控」頁面上檢閱 _backup 生命週期 _ 做為工作類型、協助您追蹤整個備份生命週期。您也可以在 BlueXP 時間軸上查看所有作業的詳細資料。請參閱<block ref="757859ff46183d1407cb40e64e39a313" category="inline-link-rx"></block>。</block>
   <block id="5a4b2cac486281ad2280371043da8170" category="section-title">自動備份黑暗網站中的關鍵 BlueXP 備份與還原檔案</block>
   <block id="7109418f2cd9c52748bb2a769336a1d0" category="paragraph">當您在無法存取網際網路的站台（稱為「私有模式」部署）中使用 BlueXP 備份與還原時、 BlueXP 備份與還原資訊只會儲存在本機 Connector 系統上。這項新功能會自動將重要的 BlueXP 備份與還原資料備份至連線 StorageGRID 系統上的儲存庫、以便在必要時將資料還原至新的 Connector 。<block ref="7987fffb3d9d5da865ce1f589e4bd463" category="inline-link-rx"></block></block>
-  <block id="813935edc5ac8e9f2c18c722e28dddf8" category="paragraph">現在您可以在「受限模式」下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。<block ref="0eb8533d49e65dbfdd979d6ceb88ebff" category="inline-link-rx"></block>。請參閱<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> 和<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
   <block id="f1a109ae8d953da8e05cf5534df6b22b" category="list-text">從 BlueXP 備份與還原 UI 和 API 啟動的使用者初始化備份與還原作業、以及系統起始的工作（例如持續的備份作業）、現在都可在執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統的 * 工作監控 * 標籤中取得。舊版 ONTAP 只會顯示使用者啟動的工作。</block>
   <block id="732b0ab66e04245a9430107793fd1d96" category="paragraph"><block ref="3422a8d7040fc7a0bf0d737d556a20c0" category="inline-link-rx"></block>。</block>
   <block id="5e8c098d325749413b23d5eba5837aad" category="doc">在黑暗的站台中還原 BlueXP 備份與還原資料</block>
@@ -1972,25 +1962,18 @@
   <block id="a0a7952e2e9dc6eba09660f59b4d73a2" category="list-text">選取 * 資料保護工作活動 * 。</block>
   <block id="c8b12aebf67be0b5d9913d39f23e9c8a" category="list-text">（選用）依工作狀態、工作類型（備份或還原）和資源篩選結果。</block>
   <block id="28164bf9e881ddc9e7ff74744bfce180" category="paragraph">註冊這兩種類型的序號、即可開啟支援服務單和自動建立個案。如下列所述、將 NetApp 支援網站 （ NSS ）帳戶新增至 BlueXP 即可完成登錄。</block>
-  <block id="5a19febf1dcb23c10e8dcfde64ba764c" category="section-title">註冊您的 BlueXP 帳戶以取得 NetApp 支援</block>
-  <block id="6bbc2ba432f59ab65ee3d8ac5a58336e" category="paragraph">若要註冊以取得支援並啟動支援授權、 BlueXP 帳戶中的一位使用者必須將 NetApp 支援網站 帳戶與其 BlueXP 登入建立關聯。您如何註冊NetApp支援取決於您是否已擁有NetApp 支援網站 一個NetApp（NSS）帳戶。</block>
   <block id="0c788a722f31f8f0cf36539ee04615cf" category="list-text">選取 * 新增 NSS 認證 * 、然後遵循 NetApp 支援網站 （ NSS ）驗證提示。</block>
-  <block id="8add4eb0d3f6ce61d374f3df3ee4eadf" category="paragraph">「 * 資源 * 」頁面應顯示您的帳戶已註冊以取得支援。</block>
   <block id="10c56875db7a47f791d653e5d5bff0e9" category="inline-image-macro">螢幕擷取畫面會顯示帳戶序號和綠色核取方塊、以及註冊支援的文字。</block>
   <block id="3d183819a15163ef2e2e7d9d764254a9" category="paragraph"><block ref="3d183819a15163ef2e2e7d9d764254a9" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d9a01bdcfab6f0a10fc126999b4d5988" category="paragraph">請注意、如果其他 BlueXP 使用者尚未將 NetApp 支援網站 帳戶與 BlueXP 登入建立關聯、則不會看到此相同的支援登錄狀態。不過、這並不表示您的 BlueXP 帳戶尚未註冊支援。只要帳戶中有一位使用者已遵循這些步驟、您的帳戶就已登錄。</block>
   <block id="bdd862f49d428a850400bcf2f53cdaf2" category="paragraph">如果您是現有的 NetApp 客戶、擁有現有的授權和序號、但沒有 NSS_ 帳戶、則需要建立一個 NSS 帳戶、並將其與您的 BlueXP 登入建立關聯。</block>
   <block id="0499bba105f8a891a2c671f1ba99dd34" category="list-text">完成下的步驟、將新的 NSS 帳戶與 BlueXP 登入建立關聯 <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>。</block>
   <block id="5cdee814e2d9ba3490a8f16d00c65759" category="paragraph">擁有 NetApp 支援網站 帳戶後、請完成下的步驟、將帳戶與 BlueXP 登入建立關聯 <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>。</block>
   <block id="3e616bae81890a6c8fae17c9b45af152" category="section-title">建立 NSS 認證的關聯、以取得 Cloud Volumes ONTAP 支援</block>
-  <block id="d8f0da67cbab6e43f6d266bdab68cdc8" category="paragraph">若要為 Cloud Volumes ONTAP 啟用下列關鍵工作流程、必須將 NetApp 支援網站 認證與 BlueXP 帳戶建立關聯：</block>
   <block id="a0518a10626dc11fd00e2d20265ad240" category="list-text">註冊隨用隨付 Cloud Volumes ONTAP 系統以取得支援</block>
   <block id="321aadf78ef73521712291b7aba6411f" category="paragraph">您必須提供您的NSS帳戶、才能啟動系統支援、並取得NetApp技術支援資源的存取權。</block>
   <block id="d51b2b497db445a16b1c9583c1abbb59" category="list-text">自帶授權（Cloud Volumes ONTAP BYOL）即可部署</block>
   <block id="2ebfeabed40c2270d9fa8325080a4b3e" category="paragraph">您必須提供您的NSS帳戶、才能讓BlueXP上傳授權金鑰、並啟用您所購買期間的訂閱。這包括定期續約的自動更新。</block>
   <block id="f5135b68b75a8404803a1eb438e40c5e" category="list-text">升級Cloud Volumes ONTAP 更新版的更新版</block>
-  <block id="39f382b97080640c75604b5890f3a5d3" category="paragraph">將 NSS 認證與 BlueXP 帳戶建立關聯、與 BlueXP 使用者登入相關的 NSS 帳戶不同。</block>
-  <block id="e3bc6d35311568d55f1c8ea11984b964" category="paragraph">這些 NSS 認證會與您的特定 BlueXP 帳戶 ID 相關聯。屬於BlueXP帳戶的使用者可以從*支援&gt; nss管理*存取這些認證資料。</block>
   <block id="f1d083b91d676646b3b9c05e92adeceb" category="sidebar">監控資料保護</block>
   <block id="7b3531405cf0ef11d1ff0b6e4af62659" category="sidebar">在黑暗的站台中還原 BlueXP 備份與還原資料庫</block>
   <block id="444a8054fb02fac3bf777cf53bfc46a2" category="paragraph">請注意、備份與還原支援 _Azure 存取原則 _ 做為權限模型。目前不支援 _Azure 角色型存取控制 _ （ Azure RBAC ）權限模式。</block>
@@ -2615,7 +2598,6 @@ Cloud Volumes ONTAP</block>
   <block id="fd8e00004c8fa188a1fbd959a0eb17ba" category="paragraph">Blob 儲存容器會建立在您輸入的資源群組中、備份檔案會儲存在該處。</block>
   <block id="a43bcfae03cdf5644c6276826ab45140" category="paragraph">除了在通知中心中檢視警示外、您還可以設定 BlueXP 以電子郵件方式傳送特定類型的通知作為警示、讓您即使未登入系統、也能得知重要的系統活動。<block ref="f55b5f666e66870081886e35a4868f02" category="inline-link-rx"></block>。</block>
   <block id="910e8697aa5e0e59e920af3a4cf26b12" category="admonition">從 ONTAP 9.13.0 開始、 Cloud Volumes ONTAP 和內部部署 ONTAP 系統的所有警示都會出現。對於具有 Cloud Volumes ONTAP 9.13.0 和內部部署 ONTAP 的系統、只會出現「還原工作已完成但有警告」的相關警示。</block>
-  <block id="309311e3de2537adb09a82ea24c863ec" category="paragraph">根據預設、 BlueXP 帳戶管理員會收到所有「重大」和「建議」警示的電子郵件。根據預設、所有其他使用者和收件者都不會收到任何通知電子郵件。電子郵件可傳送給任何屬於您NetApp雲端帳戶一部分的BlueXP使用者、或傳送給任何其他需要注意備份與還原活動的收件者。</block>
   <block id="62b4689602c4298e3a38df54594adea1" category="paragraph">若要接收 BlueXP 備份與還原電子郵件警示、您必須在「警示與通知設定」頁面中選取通知嚴重性類型「重大」、「警告」和「錯誤」。</block>
   <block id="ac92ec63bcc51fd7fbdc332411a1c313" category="inline-link">瞭解如何傳送備份與還原工作的警示電子郵件</block>
   <block id="509ce147a496150cbc409d48bbec4169" category="paragraph"><block ref="412e4d0e18d5b47417add76004c39272" category="inline-link-rx"></block>。</block>
@@ -2952,10 +2934,6 @@ Cloud Volumes ONTAP 系統需要 ONTAP 9.9.1 及更新版本。</block>
   <block id="26170b18548ee3b6f0b39b9db8ffed13" category="inline-link-macro">將內部部署 ONTAP 備份至 ONTAP S3</block>
   <block id="2a6174ce3d27995b8923b0872f99c9dd" category="list-text"><block ref="2a6174ce3d27995b8923b0872f99c9dd" category="inline-link-macro-rx"></block></block>
   <block id="f3cd3d23d33dfe26418bbc5243171a69" category="inline-link">私有模式</block>
-  <block id="e3286b69a705d4ed944e904722ab7c8f" category="paragraph">開始之前、您必須先取得下列資訊：</block>
-  <block id="343317df2f561bc3e097210aa7130d31" category="list-text">BlueXP 備份與還原序號</block>
-  <block id="079aeecf06b109e4316b0a68ea943f2b" category="paragraph">請從您的銷售訂單中找出此號碼、或聯絡客戶團隊以取得此資訊。</block>
-  <block id="bcbbd9a155e07caa8b31001adc835c79" category="list-text">BlueXP 帳戶 ID</block>
   <block id="6f3e72444230083b70d3de9ca100232f" category="list-text">* 將現有的 Snapshot 複本匯出至物件儲存區做為備份複本 * ：如果此工作環境中有任何本機 Snapshot 複本符合您剛為此工作環境選取的備份排程標籤（例如每日、每週等）、則會顯示此額外提示。核取此方塊、將所有歷史快照複製到物件儲存區做為備份檔案、以確保磁碟區獲得最完整的保護。</block>
   <block id="7fe6981833e8fe7fd89e0a99a55573da" category="list-text">在 BlueXP 中、選取 * 說明 &gt; 支援 * 。</block>
   <block id="6a1b74969231967ed071d465206b15c7" category="list-text">如果您想與電話上的某人通話、請選取 * 致電 * 。您將會被導向netapp.com上的頁面、其中列出您可以撥打的電話號碼。</block>
@@ -3063,7 +3041,6 @@ SS3 ONTAP</block>
   <block id="04afa98530b9fa98eb8d1adf9da08f7f" category="paragraph">「備份生命週期」類型篩選器已重新命名為「保留」。使用此篩選器可追蹤備份生命週期、並識別所有備份複本的到期日。「保留」工作類型會擷取在受 BlueXP 備份與還原保護的磁碟區上所起始的所有 Snapshot 刪除工作。</block>
   <block id="751f8afbc94898745cc6e2ea8a5ccd4c" category="inline-link">深入瞭解更新的工作監控器</block>
   <block id="bf6c8f020a512a9accf77240c1333a16" category="paragraph"><block ref="f412c2e0203811d72b16f88cf9eb5d19" category="inline-link-rx"></block>。</block>
-  <block id="b2263890e0533b772d021294e4d3aa41" category="paragraph">您可以從BlueXP頂端選取「*帳戶*」下拉式清單、然後按一下帳戶旁的「*管理帳戶*」、即可找到您的BlueXP帳戶ID。您的帳戶ID位於「總覽」索引標籤。若為無法存取網際網路的私人模式網站、請使用 *account-DARKSITE1* 。</block>
   <block id="35abe2d136b4990eddee4a79d5635e4e" category="paragraph">如果您的Google Cloud Platform VPC中已部署Connector、您就能輕鬆完成所有設定。如果沒有、您需要建立 BlueXP Connector 、將 ONTAP 資料備份到 Google Cloud 儲存設備。您也必須自訂 Connector 的網路設定、才能連線至 Google Cloud 。</block>
   <block id="3b27991b1aa229f52835df236ba4b917" category="paragraph">通知中心會顯示許多 Snapshot 、複寫、備份至雲端和還原事件、但只有某些事件會觸發電子郵件警示：</block>
   <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">活動</block>
@@ -3163,7 +3140,6 @@ SS3 ONTAP</block>
   <block id="311000e4ce9d283fb43e8211781ee9e3" category="list-text">在備份和恢復欄中選擇 * Volumes （卷） * 。從 Volumes （卷）選項卡中，選擇 *Actions* <block ref="29668165f4efcae1e525eece87489e44" category="inline-image-macro-rx" type="image"></block> 圖示並選取 * 啟動單一磁碟區的備份 * （尚未啟用複寫或備份至物件儲存設備的磁碟區）。</block>
   <block id="6b28ac02ff2a9de6b423b9f57d6a4d09" category="sidebar">管理 ONTAP 磁碟區的原則</block>
   <block id="49f768fa096c849abfc2310e4f864f5e" category="section-title">能夠在具有有限輸出連線能力的站台中、從 Cloud Volumes ONTAP 系統備份資料</block>
-  <block id="39539808000ad0a6d6ca39474e4fb77b" category="paragraph">現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要您在商業地區的 Linux 主機上以「受限模式」安裝 Connector 、並在該處部署 Cloud Volumes ONTAP 系統。請參閱<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block> 和<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
   <block id="ece19bab46695021f109a5e50f08bebe" category="paragraph">需要註冊支援、才能獲得 BlueXP 及其儲存解決方案與服務專屬的技術支援。也需要註冊支援、才能啟用 Cloud Volumes ONTAP 系統的重要工作流程。</block>
   <block id="8a3d807608e632d188a288fc5f4aa7eb" category="paragraph">註冊支援並不會啟用雲端供應商檔案服務的 NetApp 支援。如需雲端供應商檔案服務、其基礎架構或任何使用服務的解決方案的相關技術支援、請參閱該產品的 BlueXP 文件中的「取得說明」。</block>
   <block id="522cbb900314aeb84eb5a961c5f94672" category="section-title">取得雲端供應商檔案服務的支援</block>
@@ -3693,7 +3669,6 @@ ifdef：：AWS []</block>
   <block id="24c6cf6b2747b390a5d9eb672e1d54d4" category="paragraph">在此版本中、 AWS IAM 角色 Anywhere 服務的支援是技術預覽。</block>
   <block id="75a3bff844d1c7ffb01e7ef22ab82b4d" category="inline-link-macro">將 Cloud Volumes ONTAP 備份至 AWS</block>
   <block id="4e6ae608536b374d1b71a28785ef9a8b" category="inline-link-macro">將內部部署的 ONTAP 資料備份至 AWS</block>
-  <block id="ff4c4976afafd2cd191e5316fe16ee05" category="paragraph">這適用於備份 <block ref="36745b46d10b0daef886af9c3561dc82" category="inline-link-macro-rx"></block> 和 <block ref="28610eddc6cc2d865303aa5fe254d6ff" category="inline-link-macro-rx"></block>。</block>
   <block id="ddc7fe4301c8a4aa6a14e1843c25f30b" category="inline-link">BlueXP 備份與還原 2024 年 7 月版本部落格</block>
   <block id="f1db3a8ee789ee9607754f5f8a9871b1" category="paragraph">請參閱<block ref="7de2d0863d92330816fac8b7768edb68" category="inline-link-rx"></block>。</block>
   <block id="5ab4d79a28b46b39467c24096b99316f" category="section-title">FlexGroup 資料夾或目錄還原功能現已可供使用</block>
@@ -3707,7 +3682,6 @@ ifdef：：AWS []</block>
   <block id="7a3492bffc26e95ce3669b39a1f14422" category="inline-link">TR-4667：利用SnapCenter 下列功能自動化SAP HANA系統複製與複製作業</block>
   <block id="a53c24ea75123fb92d916ca3c6592e08" category="paragraph">如需有關如何啟動 SAP HANA 資料庫的資訊、請參閱<block ref="d89e94a6aaf703375bdbc4104c3e8227" category="inline-link-rx"></block>。</block>
   <block id="a9e237979cbdc38b90d3a128b7a087d1" category="inline-link">將內部部署 ONTAP 資料備份至 Amazon S3</block>
-  <block id="5ab37a7c23f6f643a1684bd78480a163" category="paragraph">請注意、指派給 BlueXP Connector 的 IAM 原則需要將所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如「 arn:AWS-CN:S3 ：：：： NetApp-backup-* 」。如需詳細資訊、請參閱<block ref="6bde8133d7092193dd76584d1547b993" category="inline-link-rx"></block> 和<block ref="54f3812958e7ffc22b3859734114af6b" category="inline-link-rx"></block> 。</block>
   <block id="15f09261e873aa1d63f5dcc04347b79b" category="list-text">使用 ONTAP 9.15.1 、您可以使用「瀏覽與還原」選項來還原 FlexGroup 資料夾。此功能處於「技術預覽」模式。</block>
   <block id="db0f3d3c6912a5ee817314070056f087" category="inline-link">BlueXP 備份與還原 2024 年 7 月版本部落格</block>
   <block id="ec53b6836352750173251f0c57f2ed93" category="paragraph">您可以使用中所述的特殊旗標來測試它<block ref="33c6d5d03ae6e02d266d11d3de66dc86" category="inline-link-rx"></block>。</block>
@@ -3745,4 +3719,42 @@ ifdef：：AWS []</block>
   <block id="007a407431de4321913728dae6423904" category="paragraph"><block ref="056f97dce802386385ce3734740613e1" category="inline-link-rx"></block>。</block>
   <block id="3abe4a789c1c33e285d9452cca8c493b" category="section-title">目錄索引速度更快、可改善搜尋與還原</block>
   <block id="9353e94049314c6236b51712848f2572" category="paragraph">此版本包含改良的目錄索引、可更快完成基準索引。快速索引可讓您更快速地使用「搜尋與還原」功能。</block>
+  <block id="c6c5d2f22b086f9552706ed983586fbe" category="paragraph">您會在 BlueXP 數位錢包頁面中輸入序號、以啟用服務。達到任一限制時、您都需要續約授權。備份 BYOL 授權適用於與您的 BlueXP  組織或帳戶相關的所有來源系統。</block>
+  <block id="98d90e398fc56688ddc647e5f49075ec" category="paragraph">工作環境清單位於您在服務頂端橫幅中選取的 BlueXP  組織（或帳戶）、專案（或工作區）和 Connector 範圍內。</block>
+  <block id="2d590dc5b59c3f75bf8c7f817f68b833" category="list-text">BlueXP  備份與還原自帶授權（ BYOL ）是浮動授權、您可以在與 BlueXP  組織或帳戶相關的所有系統上使用。因此、如果現有BYOL授權提供足夠的備份容量、您就不需要再購買其他BYOL授權。</block>
+  <block id="c626a56ce888d4e9324d2a1bcf746248" category="paragraph">BYOL BlueXP  備份與還原授權是浮動授權、可在與 BlueXP  組織或帳戶相關的所有系統之間共用總容量。對於 ONTAP 系統、您可以針對打算備份的磁碟區執行 CLI 命令、以粗略估計所需的容量<block ref="2a47fed7b3c4b7d59e03f10c018cf5cc" prefix=" " category="inline-code"></block>。</block>
+  <block id="70bf2d10b395e656c03e3bc74e6d0f0d" category="paragraph">您需要 BlueXP  備份與還原序號。請從您的銷售訂單中找出此號碼、或聯絡客戶團隊以取得此資訊。</block>
+  <block id="e53331a3231a958d20a4871d8efc35d8" category="list-text">尋找您的 BlueXP  帳戶 ID ：</block>
+  <block id="e0e8a7d90375792efecad34c0c923e32" category="inline-image-macro">設定圖示會顯示在 BlueXP  網路主控台的右上角。</block>
+  <block id="cd42e1c1af0a908f68d68ae6103b5c30" category="list-text">在 BlueXP  主控台右上角、選取 <block ref="32173ab85f1c68a28384d1a40cf387db" category="inline-image-macro-rx" type="image"></block> &gt; * 身分識別與存取管理 * 。</block>
+  <block id="3bcef3f6238058ae825d608e1557c538" category="list-text">在「組織」頁面上、尋找您的帳戶 ID 並加以複製。</block>
+  <block id="2bd8c9344d3768dd44b910db169ef1fa" category="paragraph">如果沒有列出帳戶 ID 、而且您只有組織 ID 、則需要複製組織 ID 的前八個字元、並將其附加至 _account__</block>
+  <block id="14da2ef10b9e4cc4d0981b05fff98072" category="paragraph">例如、假設這是您的組織 ID ：</block>
+  <block id="2740d3013330ec13ae7693ee76bc6509" category="paragraph">ea10e1c6-80cc-4219-8e99-3c3e6b161ba5</block>
+  <block id="6ffe1a2d88424dc37ba43bdf5999183e" category="paragraph">您的帳戶 ID 如下：</block>
+  <block id="c0b58edc6437b03c81d24f7ded6f3648" category="paragraph">account-ea10e1c6</block>
+  <block id="1e698178fbab1b271247235577e84a76" category="admonition">對於沒有網際網路存取的私人模式網站、請使用 * 帳戶 DARKSITE1* 。</block>
+  <block id="525660225b8a21f3d11a20a241b06acd" category="paragraph">根據預設、 BlueXP  組織和帳戶管理員會收到所有「重大」和「建議」警示的電子郵件。根據預設、所有其他使用者和收件者都不會收到任何通知電子郵件。電子郵件可傳送給任何屬於您NetApp雲端帳戶一部分的BlueXP使用者、或傳送給任何其他需要注意備份與還原活動的收件者。</block>
+  <block id="29360bfcdbc91d3f1514c372b4585965" category="list-text">註冊您的 BlueXP  帳戶序號（您的 20 位數 960xxxxxxxxx 序號位於 BlueXP  的「支援資源」頁面）。</block>
+  <block id="444b74bc81e823cc1c4c704219ad8ed3" category="section-title">註冊 BlueXP  以獲得 NetApp 支援</block>
+  <block id="b3bf31f8a918c712f26cdf493a908825" category="paragraph">若要註冊取得支援並啟動支援授權、您 BlueXP  組織（或帳戶）中的一位使用者必須將 NetApp 支援網站帳戶與其 BlueXP  登入建立關聯。您如何註冊NetApp支援取決於您是否已擁有NetApp 支援網站 一個NetApp（NSS）帳戶。</block>
+  <block id="2ba7f9eae7a02f9c3ac0fc07517d1c48" category="paragraph">「 * 資源 * 」頁面應顯示您的 BlueXP  組織已註冊取得支援。</block>
+  <block id="c05e530d1466e986d570cfe3f92656c3" category="paragraph">請注意、如果其他 BlueXP 使用者尚未將 NetApp 支援網站 帳戶與 BlueXP 登入建立關聯、則不會看到此相同的支援登錄狀態。不過、這並不表示您的 BlueXP  組織尚未註冊取得支援。只要組織中有一位使用者遵循這些步驟、您的組織就已註冊。</block>
+  <block id="a2454703f88e5bf5b433ae850a87151b" category="list-text">請務必複製上述序號欄位使用的帳戶序號（960xxxx）。這將加快處理速度。</block>
+  <block id="0ca08a23718c0a91743dd6c0146ca353" category="paragraph">若要為 Cloud Volumes ONTAP 啟用下列關鍵工作流程、必須將 NetApp 支援網站認證與您的 BlueXP  組織建立關聯：</block>
+  <block id="c81c8e01f5d906ae1ab0c5c606f06b05" category="paragraph">將 NSS 認證與您的 BlueXP  組織建立關聯、不同於與 BlueXP  使用者登入相關聯的 NSS 帳戶。</block>
+  <block id="8166996cb4a59c147200d89a061bb49c" category="paragraph">這些 NSS 認證會與您的特定 BlueXP  組織 ID 相關聯。屬於 BlueXP  組織的使用者可從 * 支援 &gt; NSS 管理 * 存取這些認證。</block>
+  <block id="447432dc1956c6ca8ef783da40afa0ba" category="paragraph">這適用於<block ref="36745b46d10b0daef886af9c3561dc82" category="inline-link-macro-rx"></block>。這適用於<block ref="28610eddc6cc2d865303aa5fe254d6ff" category="inline-link-macro-rx"></block>。</block>
+  <block id="c362dadfb9d1760750a7ae5f0d292eb8" category="paragraph">請參閱<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block>和<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block>。</block>
+  <block id="562c459140eec7ec934af0554f42baab" category="paragraph">現在您可以選擇與客戶管理的加密金鑰（ CMEK ）專案不同的儲存庫。</block>
+  <block id="5dd5c4917542d04ec4c63fc59760a26c" category="paragraph"><block ref="51cc92a91a92724810b133561b167425" category="inline-link-rx"></block>。</block>
+  <block id="911e236a6a32285c88354c02eabe3510" category="paragraph">請注意、指派給 BlueXP Connector 的 IAM 原則需要將所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如「 arn:AWS-CN:S3 ：：：： NetApp-backup-* 」。</block>
+  <block id="74a2190f3d88c8c121515894abe207a8" category="paragraph">如需詳細資訊、請參閱<block ref="6bde8133d7092193dd76584d1547b993" category="inline-link-rx"></block> 和<block ref="54f3812958e7ffc22b3859734114af6b" category="inline-link-rx"></block> 。</block>
+  <block id="9646f1c6f12af308db107bef8209e539" category="paragraph">現在您可以在「受限模式」下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。<block ref="0eb8533d49e65dbfdd979d6ceb88ebff" category="inline-link-rx"></block>。</block>
+  <block id="468629180418e2600ded2c523f1ab93c" category="paragraph">請參閱<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block></block>
+  <block id="598287a980d1edebe3ad885475f7f991" category="paragraph">請參閱。<block ref="e88a100423dadabfc9781439f925633d" category="inline-link-rx"></block></block>
+  <block id="7f72e6224b996cfbe3e89730ffd426a2" category="paragraph">現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要您在商業地區的 Linux 主機上以「受限模式」安裝 Connector 、並在該處部署 Cloud Volumes ONTAP 系統。</block>
+  <block id="8d9ab45267715f2ac0f3956dcc48c029" category="paragraph">請參閱。<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block></block>
+  <block id="78d043c8f38ceca4388c8f7251b8d0a4" category="paragraph">在舊版中、服務帳戶需要「儲存管理員」角色、才能讓 BlueXP 備份與還原存取 Google Cloud Storage 貯體。現在您可以建立自訂角色、並減少指派給服務帳戶的權限集。</block>
+  <block id="c3fc4078f4f9169223583aa65515bc3a" category="paragraph"><block ref="dc783245fae5a9dea930533d2d02d38a" category="inline-link-rx"></block>。</block>
 </blocks>

@@ -64,7 +64,11 @@ Amazon Web Services （ AWS ） Identity and Access Management （ IAM ） Roles
 
 在此版本中、 AWS IAM 角色 Anywhere 服務的支援是技術預覽。
 
-這適用於備份 link:task-backup-to-s3.html["將 Cloud Volumes ONTAP 備份至 AWS"] 和 link:task-backup-onprem-to-aws.html["將內部部署的 ONTAP 資料備份至 AWS"]。
+ifdef::aws[]
+
+這適用於link:task-backup-to-s3.html["將 Cloud Volumes ONTAP 備份至 AWS"]。這適用於link:task-backup-onprem-to-aws.html["將內部部署的 ONTAP 資料備份至 AWS"]。
+
+endif::aws[]
 
 請參閱 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["BlueXP 備份與還原 2024 年 7 月版本部落格"]。
 
@@ -135,6 +139,12 @@ BlueXP Connector 3.9.40 版支援某些版本的 Red Hat Enterprise Linux 第 8 
 * https://docs.netapp.com/us-en/bluexp-backup-recovery/task-create-policies-ontap.html["管理 ONTAP 磁碟區的原則"]
 * https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html["備份至物件原則設定"]
 
+
+ifdef::aws[]
+
+請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"]和 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
+
+endif::aws[]
 
 
 
@@ -329,7 +339,11 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-clo
 
 現在您可以使用已設定為簡易儲存服務（ S3 ）的 ONTAP 系統、將磁碟區備份至物件儲存。內部部署 ONTAP 系統和 Cloud Volumes ONTAP 系統皆支援此功能。此組態可在雲端部署和內部部署位置中支援、無需網際網路存取（「私有」模式部署）。
 
+ifdef::aws[]
+
 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-ontap-s3.html["深入瞭解"]。
+
+endif::aws[]
 
 
 
@@ -481,7 +495,13 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.ht
 
 === 將磁碟區備份至 Google Cloud 時、支援跨區域和跨專案客戶管理的金鑰
 
-現在您可以選擇與客戶管理的加密金鑰（ CMEK ）專案不同的儲存庫。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["深入瞭解如何設定您自己的客戶管理加密金鑰"]。
+現在您可以選擇與客戶管理的加密金鑰（ CMEK ）專案不同的儲存庫。
+
+ifdef::gcp[]
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["深入瞭解如何設定您自己的客戶管理加密金鑰"]。
+
+endif::gcp[]
 
 
 
@@ -489,7 +509,13 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.ht
 
 如果叢集執行的是 ONTAP 9.12.1 或更新版本、則 AWS 中國北京（ CN-north-1 ）和寧夏（ CN-n前來 -1 ）地區現在都支援做為備份檔案的目的地。
 
-請注意、指派給 BlueXP Connector 的 IAM 原則需要將所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如「 arn:AWS-CN:S3 ：：：： NetApp-backup-* 」。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["將 Cloud Volumes ONTAP 資料備份至 Amazon S3"] 和 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-aws.html["將內部部署 ONTAP 資料備份至 Amazon S3"] 。
+請注意、指派給 BlueXP Connector 的 IAM 原則需要將所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如「 arn:AWS-CN:S3 ：：：： NetApp-backup-* 」。
+
+ifdef::aws[]
+
+如需詳細資訊、請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["將 Cloud Volumes ONTAP 資料備份至 Amazon S3"] 和 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-aws.html["將內部部署 ONTAP 資料備份至 Amazon S3"] 。
+
+endif::aws[]
 
 
 
@@ -539,7 +565,19 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.ht
 
 === 能夠以「受限」模式、從 Cloud Volumes ONTAP 系統將資料備份到雲端
 
-現在您可以在「受限模式」下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["深入瞭解 BlueXP 部署模式"^]。請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
+現在您可以在「受限模式」下、從安裝在 AWS 、 Azure 和 GCP 商業區域的 Cloud Volumes ONTAP 系統備份資料。這需要您先在「受限」商業區域安裝 Connector 。 https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["深入瞭解 BlueXP 部署模式"^]。
+
+ifdef::aws[]
+
+請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"]
+
+endif::aws[]
+
+ifdef::azure[]
+
+請參閱。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]
+
+endif::azure[]
 
 
 
@@ -576,7 +614,19 @@ API 的新功能可讓您使用 BlueXP 備份與還原、將磁碟區快照備�
 
 === 能夠在具有有限輸出連線能力的站台中、從 Cloud Volumes ONTAP 系統備份資料
 
-現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要您在商業地區的 Linux 主機上以「受限模式」安裝 Connector 、並在該處部署 Cloud Volumes ONTAP 系統。請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"] 和 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]。
+現在、您可以將Cloud Volumes ONTAP 安裝在AWS和Azure商業區域的支援資料系統備份到Amazon S3或Azure Blob。這需要您在商業地區的 Linux 主機上以「受限模式」安裝 Connector 、並在該處部署 Cloud Volumes ONTAP 系統。
+
+ifdef::aws[]
+
+請參閱。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["將Cloud Volumes ONTAP 不支援的資料備份至Amazon S3"]
+
+endif::aws[]
+
+ifdef::azure[]
+
+請參閱。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["將Cloud Volumes ONTAP 無法取得的資料備份到Azure Blob"]
+
+endif::azure[]
 
 
 
@@ -654,7 +704,13 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-clo
 
 === 服務帳戶不再需要「儲存管理員」角色、即可在Google Cloud Storage中建立備份
 
-在舊版中、服務帳戶需要「儲存管理員」角色、才能讓 BlueXP 備份與還原存取 Google Cloud Storage 貯體。現在您可以建立自訂角色、並減少指派給服務帳戶的權限集。 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["瞭解如何準備Google Cloud Storage進行備份"]。
+在舊版中、服務帳戶需要「儲存管理員」角色、才能讓 BlueXP 備份與還原存取 Google Cloud Storage 貯體。現在您可以建立自訂角色、並減少指派給服務帳戶的權限集。
+
+ifdef::gcp[]
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["瞭解如何準備Google Cloud Storage進行備份"]。
+
+endif::gcp[]
 
 
 

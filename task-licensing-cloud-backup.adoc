@@ -19,7 +19,7 @@ summary: 您可以向雲端供應商購買隨用隨付或年度市場訂閱、�
 在閱讀更多內容之前、請先提供幾個附註：
 
 * 如果您已在雲端供應商的市場中訂閱付費隨用（ PAYGO ）訂閱 Cloud Volumes ONTAP 系統、則您也會自動訂閱 BlueXP 備份與還原。您不需要再次訂閱。
-* BlueXP 備份與還原自帶授權（ BYOL ）是浮動授權、您可以在與 BlueXP 帳戶相關的所有系統上使用。因此、如果現有BYOL授權提供足夠的備份容量、您就不需要再購買其他BYOL授權。
+* BlueXP  備份與還原自帶授權（ BYOL ）是浮動授權、您可以在與 BlueXP  組織或帳戶相關的所有系統上使用。因此、如果現有BYOL授權提供足夠的備份容量、您就不需要再購買其他BYOL授權。
 * 如果您使用BYOL授權、建議您也訂閱PAYGO訂閱。如果您備份的資料超過 BYOL 授權允許的數量、或是授權期限過期、則備份會繼續透過隨用隨付訂閱進行、不會中斷服務。
 * 將內部ONTAP 的支援資料備份StorageGRID 到支援區時、您需要BYOL授權、但雲端供應商的儲存空間不需付費。
 
@@ -140,7 +140,7 @@ endif::gcp[]
 
 NetApp自帶授權、提供1年、2年或3年期限。您只需支付所保護資料的費用、計算方式為ONTAP 正在備份的來源供應區的邏輯使用容量（_fore_任何效率）。此容量也稱為前端TB（FTB）。
 
-BYOL BlueXP 備份與還原授權是浮動授權、可讓您在與 BlueXP 帳戶相關的所有系統上共用總容量。對於整個系統、您可以執行CLI命令、粗略估計所需的容量ONTAP `volume show -fields logical-used-by-afs` 針對您計畫備份的磁碟區。
+BYOL BlueXP  備份與還原授權是浮動授權、可在與 BlueXP  組織或帳戶相關的所有系統之間共用總容量。對於 ONTAP 系統、您可以針對打算備份的磁碟區執行 CLI 命令、以粗略估計所需的容量 `volume show -fields logical-used-by-afs`。
 
 如果您沒有 BlueXP 備份與還原 BYOL 授權、請按一下 BlueXP 右下角的聊天圖示以購買。
 
@@ -157,19 +157,34 @@ BYOL BlueXP 備份與還原授權是浮動授權、可讓您在與 BlueXP 帳戶
 如果您在內部部署站台上執行 BlueXP 備份與還原、但該站台無法存取網際網路、則表示您已在中部署 BlueXP Connector https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode["私有模式"^]、您必須從連線網際網路的系統取得授權檔案。使用序號和 NetApp 支援網站 帳戶啟動使用許可無法用於私有模式安裝。
 
 .開始之前
-開始之前、您必須先取得下列資訊：
-
-* BlueXP 備份與還原序號
-+
-請從您的銷售訂單中找出此號碼、或聯絡客戶團隊以取得此資訊。
-
-* BlueXP 帳戶 ID
-+
-您可以從BlueXP頂端選取「*帳戶*」下拉式清單、然後按一下帳戶旁的「*管理帳戶*」、即可找到您的BlueXP帳戶ID。您的帳戶ID位於「總覽」索引標籤。若為無法存取網際網路的私人模式網站、請使用 *account-DARKSITE1* 。
-
-
+您需要 BlueXP  備份與還原序號。請從您的銷售訂單中找出此號碼、或聯絡客戶團隊以取得此資訊。
 
 .步驟
+. 尋找您的 BlueXP  帳戶 ID ：
++
+.. 在 BlueXP  主控台右上角、選取 image:icon-settings-option.png["設定圖示會顯示在 BlueXP  網路主控台的右上角。"] > * 身分識別與存取管理 * 。
+.. 在「組織」頁面上、尋找您的帳戶 ID 並加以複製。
++
+如果沒有列出帳戶 ID 、而且您只有組織 ID 、則需要複製組織 ID 的前八個字元、並將其附加至 _account__
+
++
+例如、假設這是您的組織 ID ：
+
++
+ea10e1c6-80cc-4219-8e99-3c3e6b161ba5
+
++
+您的帳戶 ID 如下：
+
++
+account-ea10e1c6
+
++
+
+NOTE: 對於沒有網際網路存取的私人模式網站、請使用 * 帳戶 DARKSITE1* 。
+
+
+
 . 登入 https://mysupport.netapp.com["NetApp 支援網站"^] 然後按一下*系統>軟體授權*。
 . 輸入 BlueXP 備份與還原授權序號。
 +
