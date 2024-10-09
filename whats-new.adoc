@@ -28,7 +28,7 @@ BlueXP  備份與還原現在支援在使用 Podman 引擎的 Red Hat Enterpris
 
 BlueXP  Connector 3.9.40 版支援某些版本的 Red Hat Enterprise Linux 第 8 版和第 9 版、可在 RHEL 8 或 9 主機上手動安裝 Connector 軟體、而不受中所述作業系統以外的位置 https://docs.netapp.com/us-en/bluexp-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["主機需求"^]限制。這些較新的 RHEL 版本需要使用 Podman 引擎、而非 Docker 引擎。以前、 BlueXP  備份與還原在使用 Podman 引擎時有兩項限制。這些限制已移除。
 
-https://review.docs.netapp.com/us-en/bluexp-backup-recovery_br-se-ja/task-restore-backups-ontap.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。
 
 
 
@@ -36,7 +36,7 @@ https://review.docs.netapp.com/us-en/bluexp-backup-recovery_br-se-ja/task-restor
 
 此版本包含改良的目錄索引、可更快完成基準索引。快速索引可讓您更快速地使用「搜尋與還原」功能。
 
-https://review.docs.netapp.com/us-en/bluexp-backup-recovery_br-se-ja/task-restore-backups-ontap.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。
 
 
 
@@ -54,7 +54,7 @@ https://review.docs.netapp.com/us-en/bluexp-backup-recovery_br-se-ja/task-restor
 
 DataLock 功能可保護您的備份檔案、避免在指定的時間內遭到修改或刪除。這有助於保護您的檔案免受勒索軟體攻擊。
 
-如需有關 DataLock 的詳細資訊及如何降低相關成本的秘訣，請 link:concept-cloud-backup-policies.html["備份至物件原則設定"]參閱。
+如需有關 DataLock 的詳細資訊及如何降低相關成本的秘訣，請 https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html["備份至物件原則設定"]參閱。
 
 
 
@@ -80,7 +80,7 @@ endif::aws[]
 
 在此版本中、支援 FlexGroup 資料夾還原是技術預覽。
 
-如需詳細資訊、請 link:task-restore-backups-ontap.html#restore-folders-and-files-using-browse-restore["使用瀏覽安培還原資料夾與檔案"]參閱。
+如需詳細資訊、請 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restore-ontap-data-using-browse-restore["使用瀏覽安培還原資料夾與檔案"]參閱。
 
 如需手動啟用的詳細資料、請 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["BlueXP 備份與還原 2024 年 7 月版本部落格"]參閱。
 

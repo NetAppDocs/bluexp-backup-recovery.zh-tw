@@ -3661,7 +3661,6 @@ ifdef：：AWS []</block>
   <block id="9d5f0e2f1682000ac365243e21301823" category="section-title">還原小於 1 GB 的磁碟區</block>
   <block id="a429eb8c690c0a48131f4ae1267eafd1" category="paragraph">使用此版本、您現在可以還原在 ONTAP 中建立的小於 1 GB 的磁碟區。您可以使用 ONTAP 建立的最小磁碟區大小為 20 MB 。</block>
   <block id="f959c5a51fb8f2a9e9c0063bbb8adb63" category="paragraph">DataLock 功能可保護您的備份檔案、避免在指定的時間內遭到修改或刪除。這有助於保護您的檔案免受勒索軟體攻擊。</block>
-  <block id="4822bd9fd85c6d5438ecd9963b5c6897" category="paragraph">如需有關 DataLock 的詳細資訊及如何降低相關成本的秘訣，請 <block ref="d72e0969f8971a4b91ad44a04438bfb9" category="inline-link-macro-rx"></block>參閱。</block>
   <block id="79cfacda817c1e599649823ffa32c8d7" category="section-title">AWS IAM 角色隨處整合</block>
   <block id="bebfb016f9defe9a78fff65f418f213b" category="paragraph">Amazon Web Services （ AWS ） Identity and Access Management （ IAM ） Roles Anywhere 服務可讓您為工作負載（ AWS 外部）使用 IAM 角色和短期認證、以安全的方式存取 AWS API 、就像您在工作負載上使用 IAM 角色一樣。當您在任何位置使用 IAM 角色的私密金鑰基礎架構和 AWS Token 時、您不需要長期 AWS 存取金鑰和秘密金鑰。這可讓您更頻繁地輪換認證、進而提升安全性。</block>
   <block id="24c6cf6b2747b390a5d9eb672e1d54d4" category="paragraph">在此版本中、 AWS IAM 角色 Anywhere 服務的支援是技術預覽。</block>
@@ -3672,7 +3671,6 @@ ifdef：：AWS []</block>
   <block id="5ab4d79a28b46b39467c24096b99316f" category="section-title">FlexGroup 資料夾或目錄還原功能現已可供使用</block>
   <block id="a821e6c079044462f6ffc9a01ed28fc9" category="paragraph">以前、 FlexVol 磁碟區可以還原、但您無法還原 FlexGroup 資料夾或目錄。使用 ONTAP 9.15.1 P2 、您可以使用「瀏覽與還原」選項來還原 FlexGroup 資料夾。</block>
   <block id="cd4619af82dfe7627dc934e29e85a6e9" category="paragraph">在此版本中、支援 FlexGroup 資料夾還原是技術預覽。</block>
-  <block id="9b7af6cb2e410e55ce793003b7110047" category="paragraph">如需詳細資訊、請 <block ref="07023d18b01371174abc5a157da41b99" category="inline-link-macro-rx"></block>參閱。</block>
   <block id="707304f314bfa71975e8ffb352535092" category="paragraph">如需手動啟用的詳細資料、請<block ref="7de2d0863d92330816fac8b7768edb68" category="inline-link-rx"></block>參閱。</block>
   <block id="0459722050fe78ea88f3bdcad4866ce0" category="paragraph"><block ref="2f5063518a76fb11ac58b566cf1a20ab" category="inline-link-rx"></block>。</block>
   <block id="8678ec2b63284b1fce3f9da35c37df05" category="list-text">您選取的磁碟區必須具有相同的 SnapLock 設定。所有磁碟區都必須啟用 SnapLock Enterprise 或停用 SnapLock 。</block>
@@ -3714,7 +3712,6 @@ ifdef：：AWS []</block>
   <block id="c6bad3b272d5eeec569990b050d88123" category="paragraph">BlueXP  備份與還原現在支援在使用 Podman 引擎的 Red Hat Enterprise Linux （ RHEL ）第 8 版和第 9 版上進行檔案與資料夾還原。這適用於 BlueXP  備份與還原瀏覽與還原方法。</block>
   <block id="f5d370ee9e029c4d62db915f308e04c0" category="paragraph">BlueXP  Connector 3.9.40 版支援某些版本的 Red Hat Enterprise Linux 第 8 版和第 9 版、可在 RHEL 8 或 9 主機上手動安裝 Connector 軟體、而不受中所述作業系統以外的位置<block ref="9b2a96babeed2ab711a4327ec7f34b5c" category="inline-link-rx"></block>限制。這些較新的 RHEL 版本需要使用 Podman 引擎、而非 Docker 引擎。以前、 BlueXP  備份與還原在使用 Podman 引擎時有兩項限制。這些限制已移除。</block>
   <block id="6111aa812639d5e432842ceca200ea78" category="inline-link">深入瞭解如何從備份檔案還原 ONTAP 資料</block>
-  <block id="007a407431de4321913728dae6423904" category="paragraph"><block ref="056f97dce802386385ce3734740613e1" category="inline-link-rx"></block>。</block>
   <block id="3abe4a789c1c33e285d9452cca8c493b" category="section-title">目錄索引速度更快、可改善搜尋與還原</block>
   <block id="9353e94049314c6236b51712848f2572" category="paragraph">此版本包含改良的目錄索引、可更快完成基準索引。快速索引可讓您更快速地使用「搜尋與還原」功能。</block>
   <block id="c6c5d2f22b086f9552706ed983586fbe" category="paragraph">您會在 BlueXP 數位錢包頁面中輸入序號、以啟用服務。達到任一限制時、您都需要續約授權。備份 BYOL 授權適用於與您的 BlueXP  組織或帳戶相關的所有來源系統。</block>
@@ -3756,4 +3753,7 @@ ifdef：：AWS []</block>
   <block id="78d043c8f38ceca4388c8f7251b8d0a4" category="paragraph">在舊版中、服務帳戶需要「儲存管理員」角色、才能讓 BlueXP 備份與還原存取 Google Cloud Storage 貯體。現在您可以建立自訂角色、並減少指派給服務帳戶的權限集。</block>
   <block id="c3fc4078f4f9169223583aa65515bc3a" category="paragraph"><block ref="dc783245fae5a9dea930533d2d02d38a" category="inline-link-rx"></block>。</block>
   <block id="5b932b14c237e03588a415b41b9a0b43" category="list-text">如果您計畫使用 DataLock 和勒索軟體保護、您可以在建立第一個備份原則、並為該叢集啟動 BlueXP 備份和還原時啟用。您可以稍後使用 BlueXP  備份與還原進階設定來啟用或停用勒索軟體掃描。</block>
+  <block id="84142ff06d4e9d4646fc2a3b18cc1d91" category="paragraph"><block ref="a21af64035213e0424a2bf24b7431646" category="inline-link-rx"></block>。</block>
+  <block id="2f080abae9949a746e32fbd78d3382f7" category="paragraph">如需有關 DataLock 的詳細資訊及如何降低相關成本的秘訣，請<block ref="116b2987b0e6fcf4c15ff7c1a1a47ed3" category="inline-link-rx"></block>參閱。</block>
+  <block id="b1b12c3c76c5dc414df3c68e8a811c2a" category="paragraph">如需詳細資訊、請<block ref="ef40acf6b73cf65ed40d9b8f7f6be1c3" category="inline-link-rx"></block>參閱。</block>
 </blocks>
