@@ -2835,7 +2835,6 @@ Cloud Volumes ONTAP</block>
   <block id="b1864ef3e1c982ea79e143744ce2e778" category="paragraph"><block ref="5168b6a061fd7575c70ed688cdecff09" category="inline-link-macro-rx"></block>。</block>
   <block id="28543445b2c93df38084996ffc019a63" category="section-title">是否要建立自己的物件儲存容器</block>
   <block id="44f63148cdcdb30b0f9a4cc99944e0cb" category="paragraph">當您在工作環境的物件儲存區中建立備份檔案時、根據預設、備份與還原服務會為您設定的物件儲存帳戶中的備份檔案建立容器（儲存區或儲存帳戶）。AWS 或 GCP 貯體預設為「 &lt;uuid&gt; 」。Azure Blob 儲存帳戶的名稱為「 netappback.過 &lt;uuid&gt; 」。</block>
-  <block id="f108f3b7f4cf5d3e79e581222e60586a" category="paragraph">如果您想要使用某個字首或指派特殊屬性、可以在物件提供者帳戶中自行建立容器。如果您想要建立自己的容器、則必須先建立容器、然後再啟動啟動精靈。容器必須專門用於儲存 ONTAP Volume 備份檔案、無法用於任何其他用途。備份啟動精靈會自動探索所選帳戶和認證的已佈建容器、以便您選取要使用的容器。</block>
   <block id="e7be09e6760b058dbc55a8f59678d720" category="paragraph">您可以從 BlueXP 或雲端供應商建立儲存庫。</block>
   <block id="0cacb53d99c416f2596b0157ce4f280d" category="paragraph">如果您打算將舊的備份檔案移至歸檔儲存區、或是打算啟用 DataLock 和勒索軟體保護來鎖定備份檔案、並掃描其是否有可能的勒索軟體、則需要使用特定組態設定來建立容器：</block>
   <block id="82ca9ca8a32b3a5b525d7ba630040a08" category="list-text">在叢集上使用 ONTAP 9.10.1 或更新版本的軟體時、 AWS S3 儲存設備目前支援您自己儲存區上的歸檔儲存設備。根據預設、備份會從 S3 _Standard_ 儲存類別開始。確保您使用適當的生命週期規則來建立貯體：</block>
@@ -3756,4 +3755,5 @@ ifdef：：AWS []</block>
   <block id="84142ff06d4e9d4646fc2a3b18cc1d91" category="paragraph"><block ref="a21af64035213e0424a2bf24b7431646" category="inline-link-rx"></block>。</block>
   <block id="2f080abae9949a746e32fbd78d3382f7" category="paragraph">如需有關 DataLock 的詳細資訊及如何降低相關成本的秘訣，請<block ref="116b2987b0e6fcf4c15ff7c1a1a47ed3" category="inline-link-rx"></block>參閱。</block>
   <block id="b1b12c3c76c5dc414df3c68e8a811c2a" category="paragraph">如需詳細資訊、請<block ref="ef40acf6b73cf65ed40d9b8f7f6be1c3" category="inline-link-rx"></block>參閱。</block>
+  <block id="2a26ca1d77691991f2402c219881a81b" category="paragraph">如果您想要使用某個字首或指派特殊屬性、可以在物件提供者帳戶中自行建立容器。如果您想要建立自己的容器、則必須先建立容器、然後再啟動啟動精靈。BlueXP  備份與還原可以使用任何貯體和共用貯體。備份啟動精靈會自動探索所選帳戶和認證的已佈建容器、以便您選取要使用的容器。</block>
 </blocks>
