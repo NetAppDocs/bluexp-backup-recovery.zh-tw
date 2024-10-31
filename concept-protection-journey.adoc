@@ -275,18 +275,18 @@ endif::gcp[]
 
 === 支援網際網路連線能力有限的網站
 
-BlueXP 備份與還原可在網際網路連線能力有限（也稱為限制模式 _ ）的站台中使用、以備份 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。
+BlueXP 備份與還原可在網際網路連線能力有限（也稱為限制模式 _ ）的站台中使用、以備份 Volume 資料。在此案例中、您需要在目的地雲端區域部署 BlueXP  Connector 。
 
 ifdef::aws[]
 
-* 您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。 link:task-backup-to-s3.html["將 Cloud Volumes ONTAP 資料備份至 Amazon S3"]。
+* 您可以將內部部署 ONTAP 系統或安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Amazon S3 。link:task-backup-to-s3.html["將 Cloud Volumes ONTAP 資料備份至 Amazon S3"]。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* 您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。  link:task-backup-to-azure.html["將 Cloud Volumes ONTAP 資料備份至 Azure Blob"]。
+* 您可以將安裝在 Azure 商業地區的內部部署 ONTAP 系統或 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。link:task-backup-to-azure.html["將 Cloud Volumes ONTAP 資料備份至 Azure Blob"]。
 
 
 endif::azure[]

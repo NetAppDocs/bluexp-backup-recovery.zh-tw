@@ -3477,9 +3477,6 @@ ifdef：：AWS []</block>
   <block id="fc2e47deb6b2e0b0b69b4d23d0c52dc0" category="paragraph">* 進階貯體設定 *</block>
   <block id="48aa998a6b6a592f5d7a4dccd6c981e5" category="paragraph">當 BlueXP 備份與還原用於具有完整網際網路連線能力的站台（也稱為標準模式 _ 或 SaaS 模式 _ ）時、您可以在任何由 BlueXP 管理的內部部署 ONTAP 或 Cloud Volumes ONTAP 系統上建立複寫磁碟區、 您也可以在任何支援的雲端供應商的物件儲存設備上建立備份檔案。 <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>。</block>
   <block id="353c8b9b4f3b8d79cf3de34b62dedb85" category="paragraph">如需有效 Connector 位置的清單、請參閱下列雲端供應商備份程序之一、您打算在其中建立備份檔案。在某些限制下、 Connector 必須手動安裝在 Linux 機器上、或部署在特定雲端供應商中。</block>
-  <block id="cd7822bfaba52280932b79873329daf7" category="paragraph">BlueXP 備份與還原可在網際網路連線能力有限（也稱為限制模式 _ ）的站台中使用、以備份 Volume 資料。在這種情況下、您需要在受限區域部署 BlueXP Connector 。</block>
-  <block id="1b2ae8fd4fbb8aea97c2363d0b2cc03f" category="list-text">您可以將資料從安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統備份到 Amazon S3 。 <block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>。</block>
-  <block id="5ffa64fdc5f25941da3f4d7d719fc76d" category="list-text">您可以將安裝在 Azure 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。  <block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>。</block>
   <block id="a93164b5de348a4fb06ecfebdb6861a8" category="paragraph">BlueXP 備份與還原可用於沒有網際網路連線的站台（也稱為 _Private modity_ 或 _dark 站台）、以備份 Volume 資料。在這種情況下、您需要在同一個站台的 Linux 主機上部署 BlueXP Connector 。</block>
   <block id="2a7f31b421ebd440283eff6d94322a3b" category="list-text">您可以將資料從本機內部部署ONTAP 的支援系統備份到當地的NetApp StorageGRID 系統。  <block ref="80288d2da91f9794088785363d31b6b5" category="inline-link-macro-rx"></block>。</block>
   <block id="12df54ded49a677ce2708bf5c0651425" category="list-text">您可以將資料從本機內部部署 ONTAP 系統備份到本機內部部署 ONTAP 系統、或是設定為 S3 物件儲存的 Cloud Volumes ONTAP 系統。 <block ref="033f1a63473843a2d0a7ec99f2bb4e1c" category="inline-link-macro-rx"></block>。
@@ -3571,8 +3568,6 @@ ifdef：：AWS []</block>
   <block id="346753a5d3dc5273a067b86995fbd568" category="paragraph">使用 Podman 引擎時、不支援掃描雲端備份的勒索軟體。如果您使用 DataLock &amp; 勒索軟體功能進行雲端備份、則必須停用勒索軟體掃描。 <block ref="f4c28073f17b68c88ffe0b411369b71f" category="inline-link-macro-rx"></block>。</block>
   <block id="74fcd9275dc8f4544c3f2e6da14c3a0f" category="cell">Docker 命令</block>
   <block id="9865e302853628bbfe9f8357d9e7514f" category="cell">Podman 命令</block>
-  <block id="62fbf3095f1e89aabae3804682809c2b" category="cell"><block ref="3d14b961bb7289e76bff64ac921cba5d" prefix="" category="inline-code"></block></block>
-  <block id="bf7ecaf7643e3be49e45cd82469534f1" category="cell"><block ref="55285eccf27fa61af2e97ac2832bdc01" prefix="" category="inline-code"></block></block>
   <block id="2bd2b4226296570c863270e08d511da0" category="list-text">根據您使用的是 Docker 或 Podman 容器、使用下列其中一個命令將備份複製到 MySQL 泊塢視窗容器：</block>
   <block id="4b049f120edc0f4092d8d8e236ea964b" category="list-text">根據您使用的是 Docker 或 Podman 容器、使用下列其中一個命令進入 MySQL Container Shell ：</block>
   <block id="d5523b519e89c779f9a7f347736d28f5" category="paragraph">如果您在啟用此叢集的 BlueXP 備份與還原時啟用 _DataLock 與勒索軟體保護、則隨需備份也會使用 DataLock 進行設定、保留期將為 30 天。對點對點備份不支援勒索軟體掃描。 <block ref="25ebe908c09aa768262b63d88362088a" category="inline-link-macro-rx"></block>。</block>
@@ -3756,4 +3751,10 @@ ifdef：：AWS []</block>
   <block id="2f080abae9949a746e32fbd78d3382f7" category="paragraph">如需有關 DataLock 的詳細資訊及如何降低相關成本的秘訣，請<block ref="116b2987b0e6fcf4c15ff7c1a1a47ed3" category="inline-link-rx"></block>參閱。</block>
   <block id="b1b12c3c76c5dc414df3c68e8a811c2a" category="paragraph">如需詳細資訊、請<block ref="ef40acf6b73cf65ed40d9b8f7f6be1c3" category="inline-link-rx"></block>參閱。</block>
   <block id="2a26ca1d77691991f2402c219881a81b" category="paragraph">如果您想要使用某個字首或指派特殊屬性、可以在物件提供者帳戶中自行建立容器。如果您想要建立自己的容器、則必須先建立容器、然後再啟動啟動精靈。BlueXP  備份與還原可以使用任何貯體和共用貯體。備份啟動精靈會自動探索所選帳戶和認證的已佈建容器、以便您選取要使用的容器。</block>
+  <block id="3a66ab30f960deed7e2d6dbe5675eebc" category="paragraph">BlueXP 備份與還原可在網際網路連線能力有限（也稱為限制模式 _ ）的站台中使用、以備份 Volume 資料。在此案例中、您需要在目的地雲端區域部署 BlueXP  Connector 。</block>
+  <block id="c042a7ac26c00953bd87e1129908e5c7" category="list-text">您可以將內部部署 ONTAP 系統或安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Amazon S3 。<block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>。</block>
+  <block id="eb908336fca360ed35207a1e198562b2" category="list-text">您可以將安裝在 Azure 商業地區的內部部署 ONTAP 系統或 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。<block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>。</block>
+  <block id="ba69c078d6c88577ac4045721cf8bc4b" category="cell"><block ref="1db7b4242367cddbadaf1e041e531c76" prefix="" category="inline-code"></block></block>
+  <block id="e23da6bf724f3225b25342aa20aab822" category="cell"><block ref="1e8904cbbffb7eff1de96297f70cd53e" prefix="" category="inline-code"></block></block>
+  <block id="7a912606781d54fe98a96090d0cd3c74" category="paragraph">當有五個以上的磁碟區可供備份時、 BlueXP  備份與還原一次只會初始化五個磁碟區。完成後、它會建立下一批五個子工作、以開始下一組工作、並持續到所有磁碟區都初始化為止。</block>
 </blocks>
