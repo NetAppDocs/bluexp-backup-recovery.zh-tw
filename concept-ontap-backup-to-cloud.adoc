@@ -191,6 +191,7 @@ BlueXP 備份與還原支援下列類型的磁碟區：
 * 可讀寫的磁碟區FlexVol
 * 不含更新版本的ONTAP FlexGroup
 * 《企業版》（需使用更新版本的版本）SnapLock ONTAP
+* 內部部署磁碟區的 SnapLock Compliance （需要 ONTAP 9 設備 14 或更新版本）
 * SnapMirror資料保護（DP）目的地磁碟區
 
 
