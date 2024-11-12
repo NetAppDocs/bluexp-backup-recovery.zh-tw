@@ -832,7 +832,6 @@
   <block id="a30f69ab0ec85d427a3e8835713525bd" category="paragraph">"您無權針對所選服務建立案例"</block>
   <block id="e01df0b4dfd95eba2c59333419e4fac6" category="list-text">使用產品內對談</block>
   <block id="639be990cfca56ab4b63685d8bacd437" category="list-text">請至提交非技術案例<block ref="2298f47e4dad19a3156da7ce6116d9b1" category="inline-link-rx"></block></block>
-  <block id="aa254718f2c52dc147bfd8f98b0c4840" category="inline-link">不再是不一樣的Cloud Insights Cloud Secure</block>
   <block id="86fef274eb09e789513af0922e579b5a" category="inline-link">提供來自VMware的反勒索軟體保護ONTAP</block>
   <block id="dc52d5a83e31ec66da3344056a4e4e39" category="paragraph">請注意、舊備份會在DataLock保留期間到期後刪除、而非在備份原則保留期間到期後刪除。</block>
   <block id="5a080c775e60ee1f55b487821cc05ac3" category="paragraph">DataLock設為_Compliance模式、在保留期間內、任何使用者都無法覆寫或刪除備份檔案。已啟用勒索軟體保護。</block>
@@ -942,7 +941,6 @@
   <block id="42f0dfacb9775e138cb12f277162bec2" category="list-text">您可以選擇其中一個系統定義的原則、以提供3個月、1年或7年的備份與保留。</block>
   <block id="cc52989062051281d16ab44b8c24cbef" category="list-text">在第8週、第一週備份會移除、並新增第8週的每週備份（每週最多保留7次備份）。</block>
   <block id="1d7733f94633408426a8b5de97f97f13" category="list-text">在第13個月、第一個每月備份就會移除、並新增第13個月的每月備份（最多保留12個月備份）。</block>
-  <block id="105cf1dd74d7a9079245d031f91df8b0" category="paragraph">此功能無法為來源磁碟區提供保護、只能用於這些來源磁碟區的備份。使用NetApp<block ref="2e57621b97dadc1cef3dd80d75e83676" category="inline-link-rx"></block>或部分<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block> 保護來源磁碟區。</block>
   <block id="c545a26c4ed6190e3a8c71826161a528" category="paragraph">第一次寫入雲端儲存設備時、並不會對備份檔案執行掃描、但會在寫入*下一次*備份檔案時執行掃描。例如、如果您已設定星期二的每週備份排程、則會在星期二14建立備份。然後在星期二建立另一個備份。此時勒索軟體掃描會在備份檔案上執行、從14開始執行。</block>
   <block id="83933361b1e2abf7e7f406666cc9c104" category="list-text">對於AWS：</block>
   <block id="328a2c1e7778e9edaf79d90c51409ac4" category="list-text">如果您有客戶層級的帳戶、可以新增一或多個NSS帳戶。</block>
@@ -3757,16 +3755,6 @@ ifdef：：AWS []</block>
   <block id="ba69c078d6c88577ac4045721cf8bc4b" category="cell"><block ref="1db7b4242367cddbadaf1e041e531c76" prefix="" category="inline-code"></block></block>
   <block id="e23da6bf724f3225b25342aa20aab822" category="cell"><block ref="1e8904cbbffb7eff1de96297f70cd53e" prefix="" category="inline-code"></block></block>
   <block id="7a912606781d54fe98a96090d0cd3c74" category="paragraph">當有五個以上的磁碟區可供備份時、 BlueXP  備份與還原一次只會初始化五個磁碟區。完成後、它會建立下一批五個子工作、以開始下一組工作、並持續到所有磁碟區都初始化為止。</block>
-  <block id="46206fcd0fa4af78eefe04f1bd8d42c6" category="list-text">內部部署磁碟區的 SnapLock Compliance （需要 ONTAP 9 設備 14 或更新版本）</block>
-  <block id="07c8845dbdef949b860ebfc99bd558ac" category="section-title">2024 年 11 月 6 日</block>
-  <block id="a5fd9c132798873e9eb6aafb58e50034" category="section-title">SnapLock Compliance 和 SnapLock Enterprise 保護模式</block>
-  <block id="139da935670a9f985194d3241917c359" category="paragraph">BlueXP  備份與還原現在可以備份使用 SnapLock Compliance 或 SnapLock Enterprise 保護模式設定的 FlexVol 和 FlexGroup 內部部署磁碟區。您的叢集必須執行 ONTAP 9.14 或更新版本、才能獲得此支援。自 ONTAP 9.11.1 版起、就支援使用 SnapLock 企業模式備份 FlexVol Volume 。較早的 ONTAP 版本不支援備份 SnapLock 保護磁碟區。</block>
-  <block id="9ddb3e6714694f5c7f619d474fec8169" category="paragraph">請參閱中支援磁碟區的完整清單<block ref="9e68a582cc487ad29425f5a4796c9e45" category="inline-link-rx"></block>。</block>
-  <block id="fec92c3dfb6a0b3db498488c7f4d2f29" category="section-title">「磁碟區」頁面上的「搜尋與還原程序索引」</block>
-  <block id="20d3b0b7cfe7a9f3dcfdb0faa9398efd" category="paragraph">在使用搜尋與還原之前、您必須在每個要從中還原Volume資料的來源工作環境上啟用「索引」。這可讓 Indexed Catalog 追蹤每個磁碟區的備份檔案。「 Volume 」頁面現在會顯示索引狀態：</block>
-  <block id="cd9b31737e78e0a0a755acc12151f766" category="list-text">索引：已建立磁碟區索引。</block>
-  <block id="02e4eb80c967f3b9add2ba16a690eef2" category="list-text">進行中</block>
-  <block id="838534d879f74e7af515a7de57e72b71" category="list-text">非索引</block>
-  <block id="73d4d0de3c5f56849f3c1a290a6681f2" category="list-text">索引已暫停</block>
-  <block id="cb48cbf342305a9ae53e02e21fcb644c" category="list-text">未啟用</block>
+  <block id="542b4404b0cd2b4cf01b81a3a97b2c20" category="inline-link">資料基礎架構洞見與 Cloud Secure</block>
+  <block id="5212f7d39ed0f1c16c365beda23afc75" category="paragraph">此功能無法為來源磁碟區提供保護、只能用於這些來源磁碟區的備份。使用 NetApp<block ref="17959d7def942fae173290691e2a40ae" category="inline-link-rx"></block> 或部分<block ref="086d55e347fe71de47923b356a73187b" category="inline-link-rx"></block>來保護來源磁碟區。</block>
 </blocks>
