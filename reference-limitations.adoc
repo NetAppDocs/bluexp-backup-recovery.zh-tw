@@ -122,9 +122,3 @@ IMPORTANT: 截至 2024 年 9 月 30 日、此限制已移除。
 * 使用「搜尋與還原」功能、從雲端備份還原檔案或資料夾。
 * 使用「瀏覽與還原」從雲端備份還原磁碟區、然後存取所需的檔案或資料夾。
 
-
-
-
-==== 不支援雲端備份的勒索軟體掃描
-
-使用 Podman 引擎時、不支援掃描雲端備份的勒索軟體。如果您使用 DataLock & 勒索軟體功能進行雲端備份、則必須停用勒索軟體掃描。 link:task-manage-backup-settings-ontap.html#enable-or-disable-ransomware-scans["瞭解如何停用勒索軟體掃描"]。
