@@ -270,69 +270,7 @@ IPspace內的所有叢集間生命體都必須擁有物件存放區的存取權�
 
 
 .步驟
-. 確認下列S3權限（從最新版本開始） https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["BlueXP原則"^]）是IAM角色的一部分、可為Connector提供權限。如果沒有、請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["AWS文件：編輯IAM原則"]。
-+
-[%collapsible]
-====
-[source, json]
-----
-{
-          "Sid": "backupPolicy",
-          "Effect": "Allow",
-          "Action": [
-              "s3:DeleteBucket",
-              "s3:GetLifecycleConfiguration",
-              "s3:PutLifecycleConfiguration",
-              "s3:PutBucketTagging",
-              "s3:ListBucketVersions",
-              "s3:GetObject",
-              "s3:DeleteObject",
-              "s3:PutObject",
-              "s3:ListBucket",
-              "s3:ListAllMyBuckets",
-              "s3:GetBucketTagging",
-              "s3:GetBucketLocation",
-              "s3:GetBucketPolicyStatus",
-              "s3:GetBucketPublicAccessBlock",
-              "s3:GetBucketAcl",
-              "s3:GetBucketPolicy",
-              "s3:PutBucketPolicy",
-              "s3:PutBucketOwnershipControls",
-              "s3:PutBucketPublicAccessBlock",
-              "s3:PutEncryptionConfiguration",
-              "s3:GetObjectVersionTagging",
-              "s3:GetBucketObjectLockConfiguration",
-              "s3:GetObjectVersionAcl",
-              "s3:PutObjectTagging",
-              "s3:DeleteObjectTagging",
-              "s3:GetObjectRetention",
-              "s3:DeleteObjectVersionTagging",
-              "s3:PutBucketObjectLockConfiguration",
-              "s3:DeleteObjectVersion",
-              "s3:GetObjectTagging",
-              "s3:PutBucketVersioning",
-              "s3:PutObjectVersionTagging",
-              "s3:GetBucketVersioning",
-              "s3:BypassGovernanceRetention",
-              "s3:PutObjectRetention",
-              "s3:GetObjectVersion",
-              "athena:StartQueryExecution",
-              "athena:GetQueryResults",
-              "athena:GetQueryExecution",
-              "glue:GetDatabase",
-              "glue:GetTable",
-              "glue:CreateTable",
-              "glue:CreateDatabase",
-              "glue:GetPartitions",
-              "glue:BatchCreatePartition",
-              "glue:BatchDeletePartition"
-          ],
-          "Resource": [
-              "arn:aws:s3:::netapp-backup-*"
-          ]
-      }
-----
-====
+. 確保 Connector 具有必要的權限。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["BlueXP  原則權限"]。
 +
 
 NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如 `arn:aws-cn:s3:::netapp-backup-*`。

@@ -231,6 +231,8 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 
 必須符合下列需求。 StorageGRID請參閱 https://docs.netapp.com/us-en/storagegrid-117/["本文檔StorageGRID"^] 以取得更多資訊。
 
+如需 StorageGRID 的 DataLock 和勒索軟體保護需求的詳細資訊link:concept-cloud-backup-policies.html["備份至物件原則選項"]，請參閱。
+
 支援 StorageGRID 的支援版本:: 支援不支援更新版本的支援。StorageGRID
 +
 --
