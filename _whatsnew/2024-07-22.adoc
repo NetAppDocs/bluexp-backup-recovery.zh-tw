@@ -1,0 +1,45 @@
+= 還原小於 1 GB 的磁碟區
+:allow-uri-read: 
+
+
+
+
+=== 還原小於 1 GB 的磁碟區
+
+使用此版本、您現在可以還原在 ONTAP 中建立的小於 1 GB 的磁碟區。您可以使用 ONTAP 建立的最小磁碟區大小為 20 MB 。
+
+
+
+=== 如何降低 DataLock 成本的秘訣
+
+DataLock 功能可保護您的備份檔案、避免在指定的時間內遭到修改或刪除。這有助於保護您的檔案免受勒索軟體攻擊。
+
+如需有關 DataLock 的詳細資訊及如何降低相關成本的秘訣，請 https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html["備份至物件原則設定"]參閱。
+
+
+
+=== AWS IAM 角色隨處整合
+
+Amazon Web Services （ AWS ） Identity and Access Management （ IAM ） Roles Anywhere 服務可讓您為工作負載（ AWS 外部）使用 IAM 角色和短期認證、以安全的方式存取 AWS API 、就像您在工作負載上使用 IAM 角色一樣。當您在任何位置使用 IAM 角色的私密金鑰基礎架構和 AWS Token 時、您不需要長期 AWS 存取金鑰和秘密金鑰。這可讓您更頻繁地輪換認證、進而提升安全性。
+
+在此版本中、 AWS IAM 角色 Anywhere 服務的支援是技術預覽。
+
+ifdef::aws[]
+
+這適用於link:task-backup-to-s3.html["將 Cloud Volumes ONTAP 備份至 AWS"]。這適用於link:task-backup-onprem-to-aws.html["將內部部署的 ONTAP 資料備份至 AWS"]。
+
+endif::aws[]
+
+請參閱 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["BlueXP 備份與還原 2024 年 7 月版本部落格"]。
+
+
+
+=== FlexGroup 資料夾或目錄還原功能現已可供使用
+
+以前、 FlexVol 磁碟區可以還原、但您無法還原 FlexGroup 資料夾或目錄。使用 ONTAP 9.15.1 P2 、您可以使用「瀏覽與還原」選項來還原 FlexGroup 資料夾。
+
+在此版本中、支援 FlexGroup 資料夾還原是技術預覽。
+
+如需詳細資訊、請 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restore-ontap-data-using-browse-restore["使用瀏覽安培還原資料夾與檔案"]參閱。
+
+如需手動啟用的詳細資料、請 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["BlueXP 備份與還原 2024 年 7 月版本部落格"]參閱。

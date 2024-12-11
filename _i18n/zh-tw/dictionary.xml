@@ -1444,7 +1444,6 @@
   <block id="06ac0cb7b7615ba7b7f08032fcc97c6a" category="summary">在 BlueXP 中註冊適用於 VMware vSphere 主機的 SnapCenter 外掛程式。</block>
   <block id="437ae89009b207d1aafce3d11e58f524" category="doc">註冊 VMware vSphere 主機的 SnapCenter 外掛程式</block>
   <block id="8d69a4a1581a5dfb55d085bec9816e72" category="paragraph">您應該在 BlueXP 中註冊 VMware vSphere 主機的 SnapCenter 外掛程式、以便顯示資料存放區和虛擬機器。只有具有管理存取權的使用者才能登錄 VMware vSphere 主機的 SnapCenter 外掛程式。</block>
-  <block id="f352f7544724f99ab1b27e3e40291b49" category="admonition">您可以在 BlueXP 中註冊多個適用於 VMware vSphere 主機的 SnapCenter 外掛程式。不過、一旦註冊後、您就無法移除適用於 VMware vSphere 主機的 SnapCenter 外掛程式。</block>
   <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">在 SnapCenter Plug-in for VMware vSphere 欄位中、指定 SnapCenter Plug-in for VMware vSphere 主機的 FQDN 或 IP 位址。</block>
   <block id="463d350eb6c9887e5addb9a6561a47ad" category="list-text">在連接埠欄位中、指定 SnapCenter Plug-in for VMware vSphere 主機執行的連接埠編號。</block>
   <block id="1e88a362bd23950ee5a102f645348ac8" category="paragraph">按一下 * 備份與還原 * &gt; * 虛擬機器 * 、即可檢視所有使用 VMware vSphere 主機的已註冊 SnapCenter 外掛程式保護的資料存放區和虛擬機器。</block>
@@ -3769,4 +3768,5 @@ ifdef：：AWS []</block>
   <block id="838534d879f74e7af515a7de57e72b71" category="list-text">非索引</block>
   <block id="73d4d0de3c5f56849f3c1a290a6681f2" category="list-text">索引已暫停</block>
   <block id="cb48cbf342305a9ae53e02e21fcb644c" category="list-text">未啟用</block>
+  <block id="8ce617f9e6329a3aea4d9a3a19e56086" category="list-text">如果備份資料存放區的磁碟區已受到「 Volumes 」（磁碟區）索引標籤（ BlueXP  備份與還原 -&gt; Volumes ）的保護，則無法從「 Virtual Machines 」（虛擬機器）索引標籤（ BlueXP  Backup and recovery -&gt; Virtual Machines ）再次保護相同的資料存放區。</block>
 </blocks>

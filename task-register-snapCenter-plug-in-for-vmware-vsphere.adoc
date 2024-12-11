@@ -16,9 +16,6 @@ summary: 在 BlueXP 中註冊適用於 VMware vSphere 主機的 SnapCenter 外�
 [role="lead"]
 您應該在 BlueXP 中註冊 VMware vSphere 主機的 SnapCenter 外掛程式、以便顯示資料存放區和虛擬機器。只有具有管理存取權的使用者才能登錄 VMware vSphere 主機的 SnapCenter 外掛程式。
 
-
-NOTE: 您可以在 BlueXP 中註冊多個適用於 VMware vSphere 主機的 SnapCenter 外掛程式。不過、一旦註冊後、您就無法移除適用於 VMware vSphere 主機的 SnapCenter 外掛程式。
-
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *。
 . 從*設定*下拉式清單中、按一下* SnapCenter 適用於VMware vSpher*的「*」「外掛程式」。

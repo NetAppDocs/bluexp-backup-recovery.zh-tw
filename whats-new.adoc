@@ -94,12 +94,6 @@ Amazon Web Services （ AWS ） Identity and Access Management （ IAM ） Roles
 
 在此版本中、 AWS IAM 角色 Anywhere 服務的支援是技術預覽。
 
-ifdef::aws[]
-
-這適用於link:task-backup-to-s3.html["將 Cloud Volumes ONTAP 備份至 AWS"]。這適用於link:task-backup-onprem-to-aws.html["將內部部署的 ONTAP 資料備份至 AWS"]。
-
-endif::aws[]
-
 請參閱 https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["BlueXP 備份與還原 2024 年 7 月版本部落格"]。
 
 
