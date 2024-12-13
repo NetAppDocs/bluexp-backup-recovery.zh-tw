@@ -3769,4 +3769,5 @@ ifdef：：AWS []</block>
   <block id="73d4d0de3c5f56849f3c1a290a6681f2" category="list-text">索引已暫停</block>
   <block id="cb48cbf342305a9ae53e02e21fcb644c" category="list-text">未啟用</block>
   <block id="8ce617f9e6329a3aea4d9a3a19e56086" category="list-text">如果備份資料存放區的磁碟區已受到「 Volumes 」（磁碟區）索引標籤（ BlueXP  備份與還原 -&gt; Volumes ）的保護，則無法從「 Virtual Machines 」（虛擬機器）索引標籤（ BlueXP  Backup and recovery -&gt; Virtual Machines ）再次保護相同的資料存放區。</block>
+  <block id="569af965dbd3ebb866de69518b576d23" category="admonition">如果還原作業未完成，請勿再次嘗試還原程序，直到「工作監控」顯示還原作業失敗為止。如果您在「工作監視器」顯示還原作業失敗之前再次嘗試還原程序，還原作業將會再次失敗。當您看到「工作監控」狀態為「失敗」時，可以再次嘗試還原程序。</block>
 </blocks>
