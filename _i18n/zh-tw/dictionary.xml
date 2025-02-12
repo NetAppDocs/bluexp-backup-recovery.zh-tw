@@ -3759,4 +3759,13 @@ ifdef：：AWS []</block>
   <block id="f179e47ab5bf8661b5b27f915bed468d" category="list-text"><block ref="f179e47ab5bf8661b5b27f915bed468d" category="inline-link-rx"></block></block>
   <block id="6990fc7ee6c7db5f6430ee974dfb8cfa" category="paragraph">以下是一些 ONTAP CLI 命令範例，如果您要建立自訂原則，這些命令可能會很有幫助。請注意，您必須在這些命令中使用 _admin_ vserver （儲存 VM ）作為<block ref="f536bcc8fda7ee8ba21dea42b5b1c44d" prefix=" " category="inline-code"></block>。</block>
   <block id="aca1b97d5bf0573ac64cc6e0f6f4dc09" category="cell">簡單的快照原則</block>
+  <block id="f5ccb197277a619c88128af4cd2e1114" category="list-text">BlueXP  備份與還原功能可將 Cloud Volume ONTAP 備份至 AWS 中國地區（包括北京和寧夏）的物件儲存區，但您可能需要先手動修改身分識別與存取管理（ IAM ）原則。</block>
+  <block id="cd10ae990b1a676dcb9da574833197dc" category="inline-link">在AWS中安裝Connector</block>
+  <block id="bfd50db7da0325053eeebfa5cb52b3a4" category="paragraph">如需在 AWS 中建立 Connector 的詳細資訊，請<block ref="ed99b863e2b8e641bb0c2fedb58f3636" category="inline-link-rx"></block>參閱。</block>
+  <block id="fe99cb308e076a8fe35419694145d10e" category="inline-link">BlueXP  備份與還原功能部落格 2023 年 5 月</block>
+  <block id="2753f358d85a358faa8e64a04217f62d" category="paragraph">如需部落格文章中的其他詳細資料，請<block ref="a5e59c531cbb1038287f1b734bd79714" category="inline-link-rx"></block>參閱。</block>
+  <block id="c6e0dd289d2bd12103cead1918541bfb" category="list-text">BlueXP  備份與還原不支援 Microsoft Azure 中國地區。</block>
+  <block id="698b05231bfe12b062cbf4a5381b3d2f" category="inline-link">在Azure中安裝Connector</block>
+  <block id="e65cf67a9fbc4609855f67bb18ecf589" category="paragraph">如需在 Azure 中建立 Connector 的詳細資訊，請<block ref="eb0bd2c194a1c467beaf233333f1c26d" category="inline-link-rx"></block>參閱。</block>
+  <block id="757ec8d082a1a9becacdf32c01678f5b" category="list-text">從來源或目的地取得備份時， SVM-DR 和磁碟區備份與還原功能完全不受任何因素的佔用。唯一的限制是 SVM-DR 不會複寫 SnapMirror 雲端關係。在災難恢復案例中，當 SVM 在次要位置上線時，您必須手動更新 SnapMirror 雲端關係。</block>
 </blocks>

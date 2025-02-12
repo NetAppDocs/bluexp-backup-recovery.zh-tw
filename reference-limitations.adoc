@@ -20,6 +20,19 @@ summary: 已知限制指出本產品版本不支援的功能、或是無法與�
 
 == ONTAP 磁碟區的備份與還原限制
 
+* BlueXP  備份與還原功能可將 Cloud Volume ONTAP 備份至 AWS 中國地區（包括北京和寧夏）的物件儲存區，但您可能需要先手動修改身分識別與存取管理（ IAM ）原則。
++
+如需在 AWS 中建立 Connector 的詳細資訊，請 https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html["在AWS中安裝Connector"^]參閱。
+
++
+如需部落格文章中的其他詳細資料，請https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["BlueXP  備份與還原功能部落格 2023 年 5 月"^]參閱。
+
+* BlueXP  備份與還原不支援 Microsoft Azure 中國地區。
++
+如需在 Azure 中建立 Connector 的詳細資訊，請 https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure-bluexp.html["在Azure中安裝Connector"^]參閱。
+
+
+
 
 
 === 複寫限制
@@ -55,6 +68,7 @@ FlexVol Volume 沒有限制、您可以選取工作環境中的所有 FlexVol Vo
 +
 ** 備份僅支援ONTAP 來自於不支援的支援。
 ** 套用至磁碟區的 Snapshot 原則必須是 BlueXP 備份與還原所認可的其中一項原則、包括每日、每週、每月等 無法辨識預設的「 sm_Created 」原則（用於 * 鏡射所有快照 * ）、而且 DP Volume 不會顯示在可備份的磁碟區清單中。
+** 從來源或目的地取得備份時， SVM-DR 和磁碟區備份與還原功能完全不受任何因素的佔用。唯一的限制是 SVM-DR 不會複寫 SnapMirror 雲端關係。在災難恢復案例中，當 SVM 在次要位置上線時，您必須手動更新 SnapMirror 雲端關係。
 
 
 
