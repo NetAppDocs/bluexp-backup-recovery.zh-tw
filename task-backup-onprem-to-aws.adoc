@@ -374,7 +374,11 @@ link:concept-protection-journey.html#do-you-want-to-create-your-own-object-stora
 
 如果您想要使用預設的Amazon S3加密金鑰來加密在內部叢集和S3儲存區之間傳輸的資料、那麼您就會被設定、因為預設安裝會使用該類型的加密。
 
-如果您想要使用自己的客戶託管金鑰進行資料加密、而不是使用預設金鑰、則必須先設定加密託管金鑰、才能啟動 BlueXP 備份與還原精靈。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-kms.html["請參閱如何使用您自己的金鑰"^]。
+如果您想要使用自己的客戶託管金鑰進行資料加密、而不是使用預設金鑰、則必須先設定加密託管金鑰、才能啟動 BlueXP 備份與還原精靈。
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-setting-up-kms.html["請參閱如何搭配 Cloud Volumes ONTAP 使用您自己的 Amazon 加密金鑰"^]。
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html#configure-encryption-settings["請參閱如何使用您自己的 Amazon 加密金鑰搭配 BlueXP  備份與還原"^]。
 
 
 

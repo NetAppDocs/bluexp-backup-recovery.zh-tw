@@ -55,6 +55,13 @@ FlexVol Volume 沒有限制、您可以選取工作環境中的所有 FlexVol Vo
 
 === 備份至物件限制
 
+* BlueXP  備份與還原不會將磁碟區備份到物件儲存區，這些磁碟區會啟用 NetApp Volume Encryption （ NVE ），並在 ONTAP 中啟用 NetApp Aggregate Encryption （ NAE ）。
++
+有關這些加密類型的說明，請參閱https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["設定NetApp Volume Encryption總覽"^]。
+
+
+
+* 如果使用 SnapMirror 原則中的排程在 SnapMirror 目的地磁碟區上啟用長期保留快照，則會直接在目的地磁碟區上建立快照。在這種情況下，您不應使用 BlueXP  備份與還原來備份這些磁碟區，因為這些快照不會移至物件儲存區。
 * 當您建立或編輯未指派磁碟區給原則的備份原則時、保留的備份數量最多可達 1018 個。將磁碟區指派給原則之後、您可以編輯原則、建立最多 4000 個備份。
 * 備份資料保護（DP）磁碟區時：
 +

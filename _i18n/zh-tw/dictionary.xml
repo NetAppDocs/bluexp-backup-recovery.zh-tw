@@ -446,9 +446,6 @@
   <block id="1bf27db2b6cddc0bbfeb50bd92d954d2" category="inline-link">Amazon Athena互動查詢服務</block>
   <block id="304514e0e009199a95060650dbf9337e" category="inline-link">AWS黏著伺服器無資料整合服務</block>
   <block id="7f55f1ead15a67b08eea9e732f6ed59d" category="list-text">對於儲存在AWS中的備份、它會配置新的S3儲存區和<block ref="d5a117e0ffd0e43cc6657792905f20d6" category="inline-link-rx"></block> 和<block ref="101f211ea2a04b6a9a7d1de9342390c3" category="inline-link-rx"></block>。</block>
-  <block id="8c3d8e8290011affd1cc36d8fb6ca3a8" category="paragraph">若要啟用工作環境的索引：</block>
-  <block id="77b424e494cba30c234da205f975c6ba" category="list-text">如果沒有索引工作環境、請在「還原儀表板」的「搜尋與還原」下、按一下「*啟用工作環境的索引」*、然後針對工作環境按一下「*啟用索引」。</block>
-  <block id="3c672ca6b1c8663911932efdc7cb9761" category="list-text">如果至少有一個工作環境已建立索引、請在「還原儀表板」的「搜尋與還原」下、按一下「*索引設定*」、然後針對工作環境按一下「*啟用索引*」。</block>
   <block id="d76950a27877cc1b2fad2a533be5bd70" category="paragraph">在所有服務均已配置且索引目錄已啟動之後、工作環境會顯示為「作用中」。</block>
   <block id="22a8553a7fcf088b4624bfb22aca2c00" category="inline-image-macro">顯示已啟動索引目錄的工作環境的快照。</block>
   <block id="2e6096622065e7d9092ff099425f8bf0" category="paragraph"><block ref="2e6096622065e7d9092ff099425f8bf0" category="inline-image-macro-rx" type="image"></block></block>
@@ -2578,8 +2575,6 @@ Cloud Volumes ONTAP</block>
   <block id="12486a40437a6b66be9b1d2eaf68dacb" category="list-text">（選用）使用 VPC 端點介面將您的系統設定為私有連線。</block>
   <block id="27481ab02cd2907ee58a87a01de37de2" category="list-text">當您啟動服務時、備份精靈會提示您輸入存取金鑰和秘密金鑰。這些認證資料會傳遞ONTAP 給整個叢集、ONTAP 以便讓支援中心能夠將資料備份並還原至S3儲存區。因此、您必須建立具有下列權限的 IAM 使用者。</block>
   <block id="b4bc25d0b351437deb290fa50a36f062" category="paragraph">請參閱<block ref="eb8d2636cc0b0f2875b50c1561ec0060" category="inline-link-rx"></block>。</block>
-  <block id="e2eb08f750d15308f8411635e75fc5e7" category="inline-link">請參閱如何使用您自己的金鑰</block>
-  <block id="de4ef5a5f97836ab944189954e7907e4" category="paragraph">如果您想要使用自己的客戶託管金鑰進行資料加密、而不是使用預設金鑰、則必須先設定加密託管金鑰、才能啟動 BlueXP 備份與還原精靈。<block ref="4f334d1f128fd0a003f5f48bc9fc4cbc" category="inline-link-rx"></block>。</block>
   <block id="b08fc812a1a1619370d32b6eda413475" category="inline-link">請參閱 Amazon S3 使用 AWS Private Link 的詳細資料</block>
   <block id="13cd6093990a3e2c61bd412a51d79d85" category="list-text">使用Amazon VPC主控台或命令列建立介面端點組態。<block ref="305e52fbffac106a7d23bf32a329bc5d" category="inline-link-rx"></block>。</block>
   <block id="901a404d02799cf2fc58dfa5d97923ad" category="paragraph">如果您備份的 Amazon S3 目的地在 Canvas 上作為工作環境存在、您可以將 ONTAP 叢集拖曳到 Amazon S3 物件儲存設備上。</block>
@@ -3707,4 +3702,59 @@ ifdef：：AWS []</block>
   <block id="757ec8d082a1a9becacdf32c01678f5b" category="list-text">從來源或目的地取得備份時， SVM-DR 和磁碟區備份與還原功能完全不受任何因素的佔用。唯一的限制是 SVM-DR 不會複寫 SnapMirror 雲端關係。在災難恢復案例中，當 SVM 在次要位置上線時，您必須手動更新 SnapMirror 雲端關係。</block>
   <block id="2fb18b7eb7edfd6ac0fa8586ecbd9a12" category="inline-link">瞭解如何使用數位錢包新增授權</block>
   <block id="e2a36029181f04d6208811edf66b0c62" category="paragraph"><block ref="039fd09b60dad6f86188402eac2ef738" category="inline-link-rx"></block>。</block>
+  <block id="9126fc20b93ed61d342990460cdaaa43" category="doc">高效能索引</block>
+  <block id="c31a2ae5c0b165eb1cee78223b508907" category="paragraph">BlueXP  備份與還原引進更新的索引功能，可讓來源工作環境上的資料索引更有效率。新的索引功能包括 UI 更新，還原資料的「搜尋與還原」方法效能提升，全球搜尋功能升級，擴充性更佳。</block>
+  <block id="135dcb5e7fddaabc736ce2d72074e3bf" category="paragraph">以下是改善項目的細目：</block>
+  <block id="2fd910d863c39557d994a40fedd27b38" category="list-text">* 資料夾整合 * ：更新版本會使用包含特定識別碼的名稱將資料夾群組在一起，使索引程序更順暢。</block>
+  <block id="415e39ccfe49c5161a2a27cbc19cbaac" category="list-text">* 硬碟檔案壓縮 * ：更新版本可減少用於建立每個磁碟區索引的檔案數量，簡化程序並免除額外資料庫的需求。</block>
+  <block id="c53ca191fcf89c8c42d05fd203ce3d03" category="list-text">* 以更多工作階段進行橫向擴充 * ：新版本新增更多工作階段來處理索引工作，加速程序。</block>
+  <block id="9ad2108ab54a2f84cdce51c70aedf218" category="list-text">* 支援多個索引容器 * ：新版本使用多個容器來更好地管理及散佈索引工作。</block>
+  <block id="4a3dba07ec28235aef40beaad924f29a" category="list-text">* 分割索引工作流程 * ：新版本將索引程序分為兩個部分，以提升效率。</block>
+  <block id="4524da26c6e536d9203dad25cbe67e46" category="list-text">* 改善的並行處理 * ：新版本可同時刪除或移動目錄，加速索引程序。</block>
+  <block id="4cd005b9bd7832f2f50d7bfa9ef8c5bd" category="paragraph-title">誰能從這項功能中獲益？</block>
+  <block id="c0b0a9d9f7b65ce3e277b13bce1241d3" category="paragraph">所有新客戶都能使用新的索引功能。</block>
+  <block id="eb3dc66c3f5547559da4bd69622b70f1" category="paragraph-title">如何啟用索引？</block>
+  <block id="1928ef25d05266e1052541c930f2737c" category="paragraph">在您使用「搜尋與還原」方法還原資料之前，您必須先在每個準備還原磁碟區或檔案的來源工作環境上啟用「索引」。這可讓「索引型錄」追蹤每個磁碟區和每個備份檔案，讓您的搜尋快速又有效率。</block>
+  <block id="d28994d1a9691ce26fcae71b9a05d1bc" category="paragraph">執行「搜尋與還原」時，選取「啟用索引」選項，即可在來源工作環境上啟用索引。</block>
+  <block id="6b14c6e0d643870ea727335d7739df30" category="inline-link">如何使用搜尋擴大機還原 ONTAP 資料；還原</block>
+  <block id="9031cfd1bcd3de043cd6391f098dc91b" category="paragraph">有關詳細信息，請參閱文檔<block ref="7ae860a58fb7c028461eb3a0f3043711" category="inline-link-rx"></block>。</block>
+  <block id="2d31667baed414ccd330141663dac284" category="paragraph-title">支援的擴充</block>
+  <block id="b2ec30cb49afbacbac6cc89a95133887" category="paragraph">新的索引功能支援下列項目：</block>
+  <block id="3201cddda2c272104ed2ef30674f361a" category="list-text">不到 3 分鐘即可達到全域搜尋效率</block>
+  <block id="5386e74ecf10139fea9af2308674b2f3" category="list-text">多達 50 億個檔案</block>
+  <block id="ed6f4100c4fab2301cff975ad76b4882" category="list-text">每個叢集最多 5000 個磁碟區</block>
+  <block id="1154c1f5439a3f20019e89d49f3ba075" category="list-text">每個磁碟區最多可有 1 ，上限的快照</block>
+  <block id="bca4b5a9086c6c17f64be092486e45ad" category="list-text">基準索引的最長時間少於 7 天。實際時間會因您的環境而異。</block>
+  <block id="783d72b35e6b2ea46fd074f6f0960e45" category="section-title">全球搜尋效能提升</block>
+  <block id="66fba34c17d26bb2c0e9b396915f9a4f" category="paragraph">此版本也包含全球搜尋效能的增強功能。現在您將看到進度指標和更詳細的搜尋結果，包括檔案數和搜尋所需時間。專屬的搜尋和索引容器可確保在五分鐘內完成全域搜尋。</block>
+  <block id="ba7df4741bd77385c236fcf981dd357a" category="paragraph">請注意下列與全域搜尋相關的考量事項：</block>
+  <block id="03602fc4621dad9ee00f9e5d533ff5ea" category="list-text">新索引不會在標示為每小時的快照上執行。</block>
+  <block id="2bacd7c8c96302172c5d0324d784cf03" category="list-text">新的索引功能僅適用於 FlexVols 上的快照，不適用於 FlexGroups 上的快照。</block>
+  <block id="9a817228de7a6ae8f0c7de31a40bf58e" category="list-text">BlueXP  備份與還原不會將磁碟區備份到物件儲存區，這些磁碟區會啟用 NetApp Volume Encryption （ NVE ），並在 ONTAP 中啟用 NetApp Aggregate Encryption （ NAE ）。</block>
+  <block id="c638f77e97a62d0d11f775816222d62a" category="inline-link">設定NetApp Volume Encryption總覽</block>
+  <block id="3553f96cf9281793975488d9cea2ab17" category="paragraph">有關這些加密類型的說明，請參閱<block ref="4e5be28408ee7dfd001133bf87f0a28f" category="inline-link-rx"></block>。</block>
+  <block id="e00d7f7aeae26763ad3c75c98433f2e9" category="list-text">如果使用 SnapMirror 原則中的排程在 SnapMirror 目的地磁碟區上啟用長期保留快照，則會直接在目的地磁碟區上建立快照。在這種情況下，您不應使用 BlueXP  備份與還原來備份這些磁碟區，因為這些快照不會移至物件儲存區。</block>
+  <block id="01413f389bd4cf68af61ca2a62ee7d87" category="paragraph">如果您想要使用自己的客戶託管金鑰進行資料加密、而不是使用預設金鑰、則必須先設定加密託管金鑰、才能啟動 BlueXP 備份與還原精靈。</block>
+  <block id="81d60e20c02d2dc4f1f049ef17d9c0f3" category="inline-link">請參閱如何搭配 Cloud Volumes ONTAP 使用您自己的 Amazon 加密金鑰</block>
+  <block id="88ccd2720227f5c1164c6497d4ae47f6" category="paragraph"><block ref="8ab54e2b609b251be3bd34cf7a9c9391" category="inline-link-rx"></block>。</block>
+  <block id="76cbe937e740eca839bf63ad19034f3f" category="inline-link">請參閱如何使用您自己的 Amazon 加密金鑰搭配 BlueXP  備份與還原</block>
+  <block id="6fdce727e6de4160eacd28b15da69c4f" category="paragraph"><block ref="a3f58d2c0ba0e72062adb488b84ae17c" category="inline-link-rx"></block>。</block>
+  <block id="f92649b1217dc96d6552e63d3b09c966" category="paragraph">如需索引型錄 v2 的相關資訊，請參閱以下關於如何啟用索引型錄的章節。</block>
+  <block id="166abda58938787377e1425ec8d5bfe0" category="paragraph">索引型錄是一個資料庫，可儲存工作環境中所有磁碟區和備份檔案的中繼資料。搜尋與還原功能會使用它來快速尋找包含您要還原之資料的備份檔案。</block>
+  <block id="ace26ef20d7de77728de7522bd26d7de" category="paragraph-title">索引型錄 v2 功能</block>
+  <block id="c63a5bc5fc4b32b1bff45d50374410d4" category="paragraph">2025 年 2 月推出的 Indexed Catalog v2 新功能可讓它更有效率且更容易使用。此版本的效能大幅提升，預設會為所有新客戶啟用。</block>
+  <block id="e45e80a3aa32c47a9d6ef311dd8f2980" category="paragraph">檢閱下列關於 v2 的考量事項：</block>
+  <block id="b98d519952606f96dcc615efa4f4e85c" category="list-text">索引型錄 v2 可在預覽模式中使用。</block>
+  <block id="951398abbe6e1c3079efe911a6951621" category="list-text">如果您是現有的客戶，想要使用 Catalog v2 ，您必須重新為環境重新建立索引。</block>
+  <block id="eb720e0effbb1828841ea62695a758b9" category="list-text">Catalog v2 僅索引具有快照標籤的快照。</block>
+  <block id="2c3a11da75201509ee9fcbd0114229d0" category="list-text">BlueXP  備份與還原不會使用「 Hourly 」 SnapMirror 標籤來索引快照。如果您想要使用「 Hourly 」 SnapMirror 標籤來索引快照，則需要在 v2 處於預覽模式時手動啟用快照。</block>
+  <block id="30de1e9ffcdc3df41ad87fe991035205" category="list-text">BlueXP  備份與還原只會使用目錄 v2 來索引與受 BlueXP  備份與還原保護的工作環境相關的磁碟區和快照。在 BlueXP  平台上發現的其他工作環境將不會建立索引。</block>
+  <block id="cba8da890b429c54fa89c60426136832" category="paragraph">Indexed Catalog v2 支援下列功能：</block>
+  <block id="46428b76e969ff123fba9ae4f0798b31" category="paragraph-title">為工作環境啟用「索引型錄」</block>
+  <block id="e7a2b56d589698a713ae6f0ee11d094a" category="list-title">為工作環境啟用索引的步驟：</block>
+  <block id="365d382b2d9ecca9b0d40171c69b38ff" category="list-text">執行下列其中一項：</block>
+  <block id="a3d610bf46189d3cbce48f595c45499f" category="list-text">如果尚未建立工作環境的索引，請在還原儀表板的 _Search &amp; Restority_ 下，選取 * 啟用工作環境的索引 * 。</block>
+  <block id="4d15abe2ea84fc45daf040e94beae3f3" category="list-text">如果至少有一個工作環境已建立索引，請在「還原儀表板」的「搜尋與還原」下，按一下「 * 索引設定 * 」。</block>
+  <block id="96c51ce828ef9cc79ee2121bdd9dc630" category="list-text">為工作環境選取 * 啟用索引 * 。</block>
+  <block id="09d7c2dac047caa965175fead07159aa" category="section-title">2025 年 21 月 2 日</block>
 </blocks>
