@@ -3208,7 +3208,6 @@ SS3 ONTAP</block>
   <block id="b7cee6af996f21267fdad2eebd5f4c54" category="paragraph">如果您想要使用此選項、可以在建立 Cloud Volumes ONTAP 工作環境時設定年度合約、而 BlueXP 會提示您訂閱 Azure Marketplace 。</block>
   <block id="ab788bf4fa445771d4446e36e923ffe4" category="paragraph">使用GCP時、請聯絡您的NetApp銷售代表以購買年度合約。合約可在Google Cloud Marketplace以私人優惠形式提供。</block>
   <block id="c71d991dee047ce8fa870270654b44c0" category="paragraph">NetApp 與您分享私人優惠後、您可以在 BlueXP 備份與恢復啟動期間、從 Google Cloud Marketplace 訂閱年度方案。</block>
-  <block id="727c837c47e40b96ddd39f15636181fe" category="list-text">管理複寫原則</block>
   <block id="61f06895b4fcad7d6460158ccfc33c17" category="paragraph">BYOL 以 1 TiB 為單位、以條款為基礎（ 1 、 2 或 3 年） _ 和 _ 容量為基礎。您向NetApp支付一段時間使用服務費用、例如1年、如果容量上限為10 TiB。</block>
   <block id="aa4c67fd3731395f4450c9686b20f799" category="section-title">支援「工作監控」中的排程工作</block>
   <block id="314b40130d46a229c3a19dc5e2e23aa4" category="paragraph">BlueXP 備份與還原工作監控先前監控的排程磁碟區對物件儲存區備份與還原工作、但不是透過 UI 或 API 排程的本機 Snapshot 、複寫、備份與還原工作。</block>
@@ -3730,7 +3729,6 @@ ifdef：：AWS []</block>
   <block id="ba7df4741bd77385c236fcf981dd357a" category="paragraph">請注意下列與全域搜尋相關的考量事項：</block>
   <block id="03602fc4621dad9ee00f9e5d533ff5ea" category="list-text">新索引不會在標示為每小時的快照上執行。</block>
   <block id="2bacd7c8c96302172c5d0324d784cf03" category="list-text">新的索引功能僅適用於 FlexVols 上的快照，不適用於 FlexGroups 上的快照。</block>
-  <block id="9a817228de7a6ae8f0c7de31a40bf58e" category="list-text">BlueXP  備份與還原不會將磁碟區備份到物件儲存區，這些磁碟區會啟用 NetApp Volume Encryption （ NVE ），並在 ONTAP 中啟用 NetApp Aggregate Encryption （ NAE ）。</block>
   <block id="c638f77e97a62d0d11f775816222d62a" category="inline-link">設定NetApp Volume Encryption總覽</block>
   <block id="3553f96cf9281793975488d9cea2ab17" category="paragraph">有關這些加密類型的說明，請參閱<block ref="4e5be28408ee7dfd001133bf87f0a28f" category="inline-link-rx"></block>。</block>
   <block id="e00d7f7aeae26763ad3c75c98433f2e9" category="list-text">如果使用 SnapMirror 原則中的排程在 SnapMirror 目的地磁碟區上啟用長期保留快照，則會直接在目的地磁碟區上建立快照。在這種情況下，您不應使用 BlueXP  備份與還原來備份這些磁碟區，因為這些快照不會移至物件儲存區。</block>
@@ -3757,4 +3755,14 @@ ifdef：：AWS []</block>
   <block id="4d15abe2ea84fc45daf040e94beae3f3" category="list-text">如果至少有一個工作環境已建立索引，請在「還原儀表板」的「搜尋與還原」下，按一下「 * 索引設定 * 」。</block>
   <block id="96c51ce828ef9cc79ee2121bdd9dc630" category="list-text">為工作環境選取 * 啟用索引 * 。</block>
   <block id="09d7c2dac047caa965175fead07159aa" category="section-title">2025 年 21 月 2 日</block>
+  <block id="30ba4ee29fda0b7285b4297943459cf9" category="doc">SMB 快照瀏覽</block>
+  <block id="024bc4989e66777454fa98cbaf9a7d3e" category="paragraph">此 BlueXP  備份與還原更新解決了一項問題，使客戶無法在 SMB 環境中瀏覽本機快照。</block>
+  <block id="151a83fcfdad3b420d256dbc19095068" category="section-title">AWS GovCloud 環境更新</block>
+  <block id="c4ff0af994997811a9867969c1b26bf3" category="paragraph">此 BlueXP  備份與還原更新解決了由於 TLS 憑證錯誤而導致 UI 無法連線至 AWS GovCloud 環境的問題。此問題已透過使用 BlueXP  Connector 主機名稱而非 IP 位址來解決。</block>
+  <block id="a758068ed72f0a6858316a7ff791b4ba" category="section-title">備份原則保留限制</block>
+  <block id="7937af8bb9aecdab11a666bfc7946c61" category="paragraph">以前， BlueXP  備份與還原 UI 將備份限制為 999 份，而 CLI 則允許更多複本。現在，您可以將多達 4 ， 000 個磁碟區附加至備份原則，並包含 1 ， 018 個未附加至備份原則的磁碟區。此更新包含其他驗證，可避免超過這些限制。</block>
+  <block id="d5479e738a91b3a64956ed9f9e81bc5a" category="section-title">SnapMirror 雲端重新同步</block>
+  <block id="06476618a5631fabf79c4d5ebe8b60b0" category="paragraph">此更新可確保在刪除 SnapMirror 關係之後，無法從不支援的 ONTAP 版本的 BlueXP  備份與還原啟動 SnapMirror 雲端重新同步。</block>
+  <block id="23bb8a9252b3eccc5dbbed85d71a4b89" category="list-text">備份資料時， BlueXP  備份與還原不會維護 NetApp Volume Encryption （ NVE ）。這表示 NVE 磁碟區上的加密資料會在資料傳輸至目的地時解密，而且不會維持加密。</block>
+  <block id="499d067ffbbd553e23809aa38aa67bfa" category="section-title">2025 年 3 月 17 日</block>
 </blocks>

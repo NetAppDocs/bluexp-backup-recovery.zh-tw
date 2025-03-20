@@ -55,7 +55,7 @@ FlexVol Volume 沒有限制、您可以選取工作環境中的所有 FlexVol Vo
 
 === 備份至物件限制
 
-* BlueXP  備份與還原不會將磁碟區備份到物件儲存區，這些磁碟區會啟用 NetApp Volume Encryption （ NVE ），並在 ONTAP 中啟用 NetApp Aggregate Encryption （ NAE ）。
+* 備份資料時， BlueXP  備份與還原不會維護 NetApp Volume Encryption （ NVE ）。這表示 NVE 磁碟區上的加密資料會在資料傳輸至目的地時解密，而且不會維持加密。
 +
 有關這些加密類型的說明，請參閱https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["設定NetApp Volume Encryption總覽"^]。
 
