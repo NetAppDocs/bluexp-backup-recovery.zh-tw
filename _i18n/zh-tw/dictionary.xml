@@ -3641,7 +3641,6 @@ ifdef：：AWS []</block>
   <block id="3a66ab30f960deed7e2d6dbe5675eebc" category="paragraph">BlueXP 備份與還原可在網際網路連線能力有限（也稱為限制模式 _ ）的站台中使用、以備份 Volume 資料。在此案例中、您需要在目的地雲端區域部署 BlueXP  Connector 。</block>
   <block id="c042a7ac26c00953bd87e1129908e5c7" category="list-text">您可以將內部部署 ONTAP 系統或安裝在 AWS 商業地區的 Cloud Volumes ONTAP 系統中的資料備份到 Amazon S3 。<block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>。</block>
   <block id="eb908336fca360ed35207a1e198562b2" category="list-text">您可以將安裝在 Azure 商業地區的內部部署 ONTAP 系統或 Cloud Volumes ONTAP 系統中的資料備份到 Azure Blob 。<block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>。</block>
-  <block id="ba69c078d6c88577ac4045721cf8bc4b" category="cell"><block ref="1db7b4242367cddbadaf1e041e531c76" prefix="" category="inline-code"></block></block>
   <block id="e23da6bf724f3225b25342aa20aab822" category="cell"><block ref="1e8904cbbffb7eff1de96297f70cd53e" prefix="" category="inline-code"></block></block>
   <block id="7a912606781d54fe98a96090d0cd3c74" category="paragraph">當有五個以上的磁碟區可供備份時、 BlueXP  備份與還原一次只會初始化五個磁碟區。完成後、它會建立下一批五個子工作、以開始下一組工作、並持續到所有磁碟區都初始化為止。</block>
   <block id="542b4404b0cd2b4cf01b81a3a97b2c20" category="inline-link">資料基礎架構洞見與 Cloud Secure</block>
@@ -3765,4 +3764,5 @@ ifdef：：AWS []</block>
   <block id="06476618a5631fabf79c4d5ebe8b60b0" category="paragraph">此更新可確保在刪除 SnapMirror 關係之後，無法從不支援的 ONTAP 版本的 BlueXP  備份與還原啟動 SnapMirror 雲端重新同步。</block>
   <block id="23bb8a9252b3eccc5dbbed85d71a4b89" category="list-text">備份資料時， BlueXP  備份與還原不會維護 NetApp Volume Encryption （ NVE ）。這表示 NVE 磁碟區上的加密資料會在資料傳輸至目的地時解密，而且不會維持加密。</block>
   <block id="499d067ffbbd553e23809aa38aa67bfa" category="section-title">2025 年 3 月 17 日</block>
+  <block id="c11347a85201b35f4b0302aff21bc226" category="cell"><block ref="c9017d174080d415365a112c68422e95" prefix="" category="inline-code"></block></block>
 </blocks>
