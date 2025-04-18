@@ -31,6 +31,7 @@ summary: 已知限制指出本產品版本不支援的功能、或是無法與�
 +
 如需在 Azure 中建立 Connector 的詳細資訊，請 https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure-bluexp.html["在Azure中安裝Connector"^]參閱。
 
+* BlueXP  備份與還原不支援 FlexCache 磁碟區的備份。
 
 
 

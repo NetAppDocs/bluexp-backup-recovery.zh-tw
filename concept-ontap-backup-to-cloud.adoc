@@ -194,6 +194,9 @@ BlueXP 備份與還原支援下列類型的磁碟區：
 * SnapMirror資料保護（DP）目的地磁碟區
 
 
+
+NOTE: BlueXP  備份與還原不支援 FlexCache 磁碟區的備份。
+
 請參閱的章節 link:reference-limitations.html#backup-to-object-limitations["備份與還原限制"] 以瞭解其他需求與限制。
 
 
