@@ -1641,13 +1641,9 @@
   <block id="132598d89b5e84bc5af9cc03e23a4175" category="list-text">如有必要、請更新防火牆規則、以允許 BlueXP 從 ONTAP 備份和恢復連線、透過連接埠 443 、以及從儲存 VM 透過連接埠 53 （ TCP/UDP ）到 DNS 伺服器的名稱解析流量。</block>
   <block id="0767994029638623b0279d117f71bcc7" category="list-text">您必須先向 AWS 訂購隨用隨付（ PAYGO ） BlueXP Marketplace 產品、或是向 NetApp 購買並啟動 BlueXP 備份與恢復 BYOL 授權、才能啟動叢集的 BlueXP 備份與還原。這些授權適用於您的帳戶、可在多個系統上使用。</block>
   <block id="f98bd8688162885c52860bed1262784f" category="paragraph">如果您使用連接埠80（HTTP）來與私有端點通訊、您就能輕鬆完成所有設定。您現在可以在叢集上啟用 BlueXP 備份與還原。</block>
-  <block id="edff5ebe6fa75b91836dac47d7940449" category="section-title">將 BlueXP 備份與還原資料還原至新的 Connector</block>
-  <block id="815289240ead1921d67ba2c1e806a37b" category="paragraph">如果內部部署 Connector 發生災難性故障、您需要安裝新的 Connector 、然後將 BlueXP 備份與還原資料還原至新的 Connector 。</block>
-  <block id="eced51eb44e5e285c2a52b0b05c4b03b" category="paragraph">您需要執行 4 項工作、才能將 BlueXP 備份與還原系統恢復至正常運作狀態：</block>
   <block id="6b7f0194ee0161c1ec6ef481e87fdaa2" category="list-text">還原 BlueXP 備份與還原資料庫</block>
   <block id="a68527cebf1aaeae64bda2645985b661" category="list-text">使用下列命令還原 BlueXP 備份與還原 MySQL DB ：</block>
   <block id="391b3817ffe9fe659a3a443a7fba86f2" category="list-text">使用下列 SQL 命令、確認 BlueXP 備份與還原 MySQL DB 已正確還原：</block>
-  <block id="dc79d96009c6f59868049e029c8bb68e" category="list-text">使用與工作環境相關的 StorageGRID 系統詳細資料、更新 BlueXP 備份與還原資料庫。請務必輸入StorageGRID 完整的網域名稱、以及存取金鑰和儲存金鑰、如下所示：</block>
   <block id="119ce87fb0068eaf943265dcfa7867a2" category="section-title">驗證 BlueXP 備份與還原設定</block>
   <block id="703a23cc0f04926bc0f88cc7699dbb25" category="summary">BlueXP 備份與還原可讓您為內部部署 ONTAP 和 Cloud Volumes ONTAP 系統建立各種組態設定的備份原則。</block>
   <block id="9eea85cb75720c2962892ce404724c85" category="paragraph">BlueXP 備份與還原可讓您針對每個工作環境（叢集）建立多個備份原則、並設定獨特的排程。您可以將不同的備份原則指派給具有不同還原點目標（RPO）的磁碟區。</block>
@@ -1846,8 +1842,6 @@
   <block id="f1a109ae8d953da8e05cf5534df6b22b" category="list-text">從 BlueXP 備份與還原 UI 和 API 啟動的使用者初始化備份與還原作業、以及系統起始的工作（例如持續的備份作業）、現在都可在執行 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統的 * 工作監控 * 標籤中取得。舊版 ONTAP 只會顯示使用者啟動的工作。</block>
   <block id="732b0ab66e04245a9430107793fd1d96" category="paragraph"><block ref="3422a8d7040fc7a0bf0d737d556a20c0" category="inline-link-rx"></block>。</block>
   <block id="5e8c098d325749413b23d5eba5837aad" category="doc">在黑暗的站台中還原 BlueXP 備份與還原資料</block>
-  <block id="39be554c0f9c606fc89e879c11dfe9e9" category="paragraph">請注意、當您在雲端供應商部署 BlueXP Connector 的 SaaS 環境中使用 BlueXP 備份與還原、或是在擁有網際網路存取權的主機系統上使用時、所有重要的 BlueXP 備份與還原組態資料都會在雲端中備份與保護。如果您對 Connector 有任何問題、只要建立新的 Connector 並新增工作環境、備份詳細資料就會自動還原。</block>
-  <block id="71610d9ba03d16f64930e18ad93ed1ff" category="paragraph">備份的資料有兩種類型：</block>
   <block id="3f90954724de2ab33270c2e29ef44d4c" category="list-text">BlueXP 備份與還原資料庫：包含所有磁碟區、備份檔案、備份原則及組態資訊的清單。</block>
   <block id="ae429398e7a8cba2d2c57d308c8ed88a" category="list-text">索引型錄檔案 - 包含用於搜尋與還原功能的詳細索引、可讓您在尋找要還原的 Volume 資料時、快速又有效率地進行搜尋。</block>
   <block id="33cc4fba89a0e27990f9826b52a31440" category="admonition">BlueXP 備份與還原資料庫或索引型錄檔案中從未包含任何 Volume 資料。</block>
@@ -3420,7 +3414,6 @@ ifdef：：AWS []</block>
   <block id="e5c31b44cc452f945aec38b328ab97da" category="section-title">編輯現有的備份至雲端原則</block>
   <block id="d3b3f333837b21ed08dfd04c10e48346" category="section-title">新增備份至雲端原則</block>
   <block id="6c08aad63d31acac8bc5248c2bfd34f2" category="paragraph">如果您的叢集使用ONTAP 的是版本不含更新版本的版本、您可以設定_DataLock和勒索軟體Protection來保護備份、避免遭到刪除和勒索軟體攻擊。_DataLock_ 可保護您的備份檔案、避免遭到修改或刪除、而 _勒索 軟體保護 _ 則會掃描您的備份檔案、以尋找備份檔案中勒索軟體攻擊的證據。</block>
-  <block id="427911e9853111f28c07f559c3b84c6a" category="paragraph">在無法存取網際網路的站台中使用 BlueXP 備份與還原時、稱為 _private 模式 _ 、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 或 ONTAP S3 儲存區。如果您未來的 BlueXP Connector 主機系統發生問題、您可以部署新的 Connector 、並還原關鍵的 BlueXP 備份與還原資料。</block>
   <block id="27b14a69b7d1dfde3096980cc202af91" category="sidebar">建立資料保護涵蓋範圍的報告</block>
   <block id="c1d2d81968b4f89d4185d4baf66ba468" category="sidebar">將ONTAP 資料還原至雲端</block>
   <block id="4c371e6c984a858ae1f9d8d607a2cfd4" category="sidebar">管理ONTAP 還原備份檔案</block>
@@ -3777,7 +3770,6 @@ ifdef：：AWS []</block>
   <block id="e933dec5f784259760ab3c9400fb8e0b" category="section-title">支援第三方 WASBI 物件存放區（預覽）</block>
   <block id="57a83bf4b6d8f755d141ebf2bb282ed3" category="paragraph">BlueXP  備份與還原現在將支援延伸至第三方物件儲存區，主要著重於 WASBI 。這項新的預覽功能可讓您運用任何與 S3 相容的物件儲存區，滿足備份與還原需求。</block>
   <block id="da21b58c44ce1975cb8550ec689df5b3" category="section-title">WASBI 入門</block>
-  <block id="f3afa8b48aa14a1da6a21d82ad964f5d" category="paragraph">若要開始使用此功能，您必須在 BlueXP  UI 中啟用旗標。然後，您可以輸入第三方物件存放區的連線詳細資料，並將其整合至備份與還原工作流程。</block>
   <block id="9b6d9b582a741bc832b2557c16d31b09" category="section-title">預覽模式限制</block>
   <block id="fdf10a1d090d444123d00414152f7943" category="paragraph">在預覽此功能時，請考慮下列限制：</block>
   <block id="7ebc42140a656312f7a985f14e55f3a6" category="list-text">不支援自帶鏟斗（ BYOB ）。</block>
@@ -3789,4 +3781,25 @@ ifdef：：AWS []</block>
   <block id="f98d5407ffd34a829996a4bb36d6e582" category="paragraph">在此預覽期間，我們鼓勵您探索這項新功能，並在完整功能推出之前，提供與協力廠商物件存放區整合的意見反應。</block>
   <block id="c2539a9855f013822344851d0fcb1184" category="admonition">BlueXP  備份與還原不支援 FlexCache 磁碟區的備份。</block>
   <block id="801c0fa0d304ca22d8afec06189bcf93" category="section-title">2025 年 4 月 16 日</block>
+  <block id="0c9e9a971e295d08b39001ef71ddfca9" category="paragraph">若要開始使用第三方儲存設備做為物件存放區，您必須在 BlueXP  Connector 中啟用旗標。然後，您可以輸入第三方物件存放區的連線詳細資料，並將其整合至備份與還原工作流程。</block>
+  <block id="09c224692df6f6a3d6045847d63b5e86" category="list-text">SSH 連接到您的連接器。</block>
+  <block id="d4abc9f6a0f7759f15272b587badc33b" category="list-text">進入 BlueXP  備份與恢復 CBS 伺服器容器：</block>
+  <block id="e5b842eef10876fd5aec5be48ecec9b3" category="list-text">透過 VIM 或任何其他編輯器開啟<block ref="a4f5e59b80d929d30eba10ee00d7450d" prefix=" " category="inline-code"></block>資料夾內的檔案<block ref="2245023265ae4cf87d02c8b6ba991139" prefix=" " category="inline-code"></block>：</block>
+  <block id="14ee6952f3be48ef4395f003ecfdac2c" category="list-text">修改<block ref="05e4358c747c33d991f9217e4b509fcc" prefix=" " category="inline-code"></block>： false 至<block ref="05e4358c747c33d991f9217e4b509fcc" prefix=" " category="inline-code"></block>： true 。</block>
+  <block id="08c4f5aee4f8b6cabdcd558ad1452ad2" category="list-text">儲存變更。</block>
+  <block id="4b891dca63ef1ab4f9daab8d3bd76368" category="list-text">從容器結束。</block>
+  <block id="3dc3e984a5412f225aea00167c9309bf" category="list-text">重新啟動 BlueXP  備份與恢復 CBS 伺服器容器。</block>
+  <block id="15c66d710af89e601163f082e2d62e63" category="paragraph">容器再次開啟後，開啟 BlueXP  備份與還原 UI 。當您開始備份或編輯備份策略時，您會看到新的供應商「 S3 相容」清單，以及 AWS ， Microsoft Azure ， Google Cloud ， StorageGRID 和 ONTAP S3 的其他備份供應商。</block>
+  <block id="78097a3e132faf1442e6668a39b8040c" category="inline-link-macro">支援第三方物件存放區</block>
+  <block id="b1da0655bbf0fa38d6ccffac2f8f51db" category="admonition">BlueXP  備份與還原可將支援延伸至第三方物件存放區做為預覽選項。此預覽功能可讓您運用任何相容 S3 的物件儲存區，滿足備份與還原需求。如需啟用此預覽功能的詳細資訊，請參閱<block ref="01bf6a646623e07aa807ece43107b9ce" category="inline-link-macro-rx"></block>一節。</block>
+  <block id="b60143d8607e2a12a97d5dc98902b3a3" category="paragraph">在無法存取網際網路的站台中使用 BlueXP 備份與還原時、稱為 _private 模式 _ 、 BlueXP 備份與還原組態資料會備份到儲存備份的 StorageGRID 或 ONTAP S3 儲存區。如果 BlueXP  Connector 主機系統發生問題，您可以部署新的 Connector ，並還原重要的 BlueXP  備份與還原資料。</block>
+  <block id="400d95f0927e7eaac4a93498115f8b4f" category="paragraph">當您在雲端供應商部署 BlueXP  Connector 的 SaaS 環境中使用 BlueXP  備份與還原，或在擁有網際網路存取權的主機系統上使用時，所有重要的 BlueXP  備份與還原組態資料都會在雲端中備份與保護。如果您對 Connector 有任何問題、只要建立新的 Connector 並新增工作環境、備份詳細資料就會自動還原。</block>
+  <block id="28f81c5bbd7730901f36546c0e51e06f" category="paragraph">備份的資料有兩種類型：</block>
+  <block id="7aa13416e899895bea151695a08fc22d" category="section-title">將 BlueXP  備份與還原資料還原至新的 BlueXP  Connector</block>
+  <block id="11c11cb03c79f4af018caa66bf0c66d4" category="paragraph">如果內部部署的 BlueXP  Connector 發生災難性故障，您需要安裝新的 Connector ，然後將 BlueXP  備份與還原資料還原至新的 Connector 。</block>
+  <block id="6c9913da2722f6c96e97b9d6aa37bb46" category="paragraph">您必須執行下列工作，才能將 BlueXP  備份與還原系統恢復至正常運作狀態：</block>
+  <block id="da2ba8762d0dcb78945a22c9a375fffa" category="inline-link">DarkSite Cloud Backup ： MySQL 和索引型錄備份與還原</block>
+  <block id="bb10a63044b830cc42091d93b78fd668" category="paragraph">下列資訊適用於從 BlueXP  3.9.xx 開始的私有模式安裝。對於較舊的版本，請使用下列程序<block ref="2da286ce66fc5078574abb0f7864085c" category="inline-link-rx"></block>：。</block>
+  <block id="e29798cefe7dc354983bc30c2c9fccdf" category="paragraph">雖然 IP 位址，使用者名稱和密碼是自訂值，但帳戶名稱不是。帳戶名稱一律為「 account-DARKSITE1 」。</block>
+  <block id="2decbd35e1c4f4abc73df06a5256970a" category="list-text">使用與工作環境相關的 StorageGRID 系統詳細資料，更新 BlueXP  備份與還原資料庫。請務必輸入StorageGRID 完整的網域名稱、以及存取金鑰和儲存金鑰、如下所示：</block>
 </blocks>

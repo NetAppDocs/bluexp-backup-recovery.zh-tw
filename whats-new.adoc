@@ -24,12 +24,6 @@ summary: 瞭解 BlueXP 備份與還原的新功能。
 
 
 
-=== 增強型 Volume Dashboard （預覽）
-
-Volume Dashboard 現在可在 10 秒內完成載入，提供更快，更有效率的介面。此預覽版本可提供給特定客戶，讓他們及早瞭解這些改善項目。
-
-
-
 === UI 改善
 
 此版本可簡化介面，提升您的使用體驗：
@@ -43,6 +37,12 @@ Volume Dashboard 現在可在 10 秒內完成載入，提供更快，更有效�
 
 
 
+=== 增強型 Volume Dashboard （預覽）
+
+Volume Dashboard 現在可在 10 秒內完成載入，提供更快，更有效率的介面。此預覽版本可提供給特定客戶，讓他們及早瞭解這些改善項目。
+
+
+
 === 支援第三方 WASBI 物件存放區（預覽）
 
 BlueXP  備份與還原現在將支援延伸至第三方物件儲存區，主要著重於 WASBI 。這項新的預覽功能可讓您運用任何與 S3 相容的物件儲存區，滿足備份與還原需求。
@@ -51,7 +51,30 @@ BlueXP  備份與還原現在將支援延伸至第三方物件儲存區，主�
 
 ==== WASBI 入門
 
-若要開始使用此功能，您必須在 BlueXP  UI 中啟用旗標。然後，您可以輸入第三方物件存放區的連線詳細資料，並將其整合至備份與還原工作流程。
+若要開始使用第三方儲存設備做為物件存放區，您必須在 BlueXP  Connector 中啟用旗標。然後，您可以輸入第三方物件存放區的連線詳細資料，並將其整合至備份與還原工作流程。
+
+.步驟
+. SSH 連接到您的連接器。
+. 進入 BlueXP  備份與恢復 CBS 伺服器容器：
++
+[listing]
+----
+docker exec -it cloudmanager_cbs sh
+----
+. 透過 VIM 或任何其他編輯器開啟 `default.json`資料夾內的檔案 `config`：
++
+[listing]
+----
+vi default.json
+----
+. 修改 `allow-s3-compatible`： false 至 `allow-s3-compatible`： true 。
+. 儲存變更。
+. 從容器結束。
+. 重新啟動 BlueXP  備份與恢復 CBS 伺服器容器。
+
+
+.結果
+容器再次開啟後，開啟 BlueXP  備份與還原 UI 。當您開始備份或編輯備份策略時，您會看到新的供應商「 S3 相容」清單，以及 AWS ， Microsoft Azure ， Google Cloud ， StorageGRID 和 ONTAP S3 的其他備份供應商。
 
 
 
