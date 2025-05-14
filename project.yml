@@ -38,12 +38,14 @@ sidebar:
       url: "/concept-backup-to-cloud.html"
     - title: 設定授權
       url: "/task-licensing-cloud-backup.html"
-  - title: 監控資料保護
-    entries:
-    - title: 報告資料保護涵蓋範圍
-      url: "/task-report-inventory.html"
-    - title: 監控備份與還原工作的狀態
-      url: "/task-monitor-backup-jobs.html"
+    - title: 啟用預覽功能
+      url: "/task-preview-enable.html"
+    - title: 監控資料保護
+      entries:
+      - title: 報告資料保護涵蓋範圍
+        url: "/task-report-inventory.html"
+      - title: 監控備份與還原工作的狀態
+        url: "/task-monitor-backup-jobs.html"
   - title: 備份及還原ONTAP 資料
     entries:
     - title: 保護您的 ONTAP Volume 資料
@@ -78,6 +80,8 @@ sidebar:
       url: "/task-backup-onprem-to-ontap-s3.html"
     - title: 將內部部署ONTAP 的內部部署資料備份至StorageGRID
       url: "/task-backup-onprem-private-cloud.html"
+    - title: 使用 SnapMirror 將磁碟區移轉至雲端重新同步
+      url: "/task-migrate-volumes-snapmirror-cloud-resync.html"
     - title: 管理ONTAP 還原備份
       url: "/task-manage-backups-ontap.html"
     - title: 從ONTAP 還原備份還原

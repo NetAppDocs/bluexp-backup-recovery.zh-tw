@@ -1,0 +1,96 @@
+---
+sidebar: sidebar 
+permalink: task-preview-enable.html 
+keywords: cloud backup, bluexp backup and recovery, backup, restore, preview, enable, object storage, third-party, MinIO, S3-compatible 
+summary: 您可以監控本機快照、複製和備份的狀態、以將其備份至您所起始或排程的物件儲存工作、以及還原您所起始或排程的工作。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。 
+---
+= 啟用 BlueXP  備份與還原的預覽功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP  備份與還原提供預覽功能，可讓您在新功能完全發佈之前先行測試。這些功能旨在增強您的備份與還原體驗，但可能無法完全支援或穩定。
+
+
+IMPORTANT: 這些功能處於預覽模式，不應在正式作業環境中使用。它們僅供測試和意見回饋之用。
+
+
+
+== 啟用預覽功能
+
+若要在 BlueXP  備份與還原中啟用預覽功能，您必須在 BlueXP  Connector 上設定旗標。此旗標可讓您存取及測試服務中可用的預覽功能。
+
+.步驟
+. 登入 BlueXP  Connector 。
+. 切換至超級使用者。執行命令：
++
+`sudo su`
+
+. 列出 Docker Volume 並識別 CBS Volume 。執行命令：
++
+[listing]
+----
+podman volume ls | grep cbs
+----
++
+預期輸出：
+
++
+[listing]
+----
+local service-manager-2_cloudmanager_cbs_volume
+----
+. 檢查磁碟區以取得掛載點。執行命令：
++
+[listing]
+----
+podman volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
+. 執行命令：
++
+[listing]
+----
+podman volume inspect service-manager-2_cloudmanager_cbs_volume | grep Mountpoint
+----
++
+預期輸出：
+
++
+[listing]
+----
+Mountpoint:
+/var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data
+----
+. 瀏覽至 Docker Volumes 目錄。將目錄變更為上一步所取得的掛載點：
++
+[listing]
+----
+cd /var/lib/docker/volumes/service-manager-2_cloudmanager_cbs_volume/_data/cbs_config
+
+----
+. 找出並編輯 `production-customer.json`檔案。
+. 請確定您位於正確的目錄中，且 `production-customer.json`檔案已存在。
+. 在您偏好的文字編輯器中開啟 `production-customer.json`檔案，並新增下列 JSON 片段，以確保 JSON 結構維持正確：
++
+[listing]
+----
+{
+   "feature-flags":
+    {
+        "volumes-dashboard-v2": true
+     }
+}
+----
+. 將變更儲存至檔案。
+. 重新啟動 BlueXP  備份與還原 Cloud Manager CBS 服務。執行命令：
++
+[listing]
+----
+podman restart cloudmanager_cbs
+----
+
