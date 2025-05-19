@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-licensing-cloud-backup.html 
-keywords: license, licensing, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual 
+keywords: license, licensing, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual, netapp intelligent services 
 summary: 您可以向雲端供應商購買隨用隨付或年度市場訂閱、或是向 NetApp 購買自帶授權、以取得 BlueXP 備份與恢復的授權。您需要有效的授權、才能在工作環境中啟動 BlueXP 備份與還原、建立正式作業資料的備份、以及將備份資料還原至正式作業系統。 
 ---
 = 設定 BlueXP 備份與還原的授權
@@ -14,7 +14,7 @@ summary: 您可以向雲端供應商購買隨用隨付或年度市場訂閱、�
 
 
 [role="lead"]
-您可以向雲端供應商購買隨用隨付（ PAYGO ）或年度市場訂閱、或是向 NetApp 購買自帶授權（ BYOL ）、以取得 BlueXP 備份與恢復的授權。您需要有效的授權、才能在工作環境中啟動 BlueXP 備份與還原、建立正式作業資料的備份、以及將備份資料還原至正式作業系統。
+您可以向雲端供應商購買付費（ PAYGO ）或 * NetApp 智慧型服務 * 的年度市場訂閱，或是向 NetApp 購買自帶授權（ BYOL ），以取得 BlueXP  備份與恢復的授權。您需要有效的授權、才能在工作環境中啟動 BlueXP 備份與還原、建立正式作業資料的備份、以及將備份資料還原至正式作業系統。
 
 在閱讀更多內容之前、請先提供幾個附註：
 
@@ -30,7 +30,7 @@ link:concept-ontap-backup-to-cloud.html#cost["深入瞭解使用 BlueXP 備份�
 
 == 30 天免費試用
 
-如果您在雲端供應商的市場中註冊「隨用隨付」訂閱、則可免費試用 BlueXP 備份與恢復 30 天。免費試用版會在您訂閱市場上市時開始。請注意、如果您在部署 Cloud Volumes ONTAP 系統時支付市場訂閱費用、然後在 10 天之後開始 BlueXP 備份與恢復免費試用版、您將有 20 天的時間可以使用免費試用版。
+如果您在雲端供應商的市場中註冊付費隨用訂閱 * NetApp 智慧型服務 * ，則可免費試用 30 天的 BlueXP  備份與恢復。免費試用版會在您訂閱市場上市時開始。請注意、如果您在部署 Cloud Volumes ONTAP 系統時支付市場訂閱費用、然後在 10 天之後開始 BlueXP 備份與恢復免費試用版、您將有 20 天的時間可以使用免費試用版。
 
 免費試用結束時、您將自動切換至 PAYGO 訂閱、不會中斷。如果您決定不繼續使用 BlueXP 備份與還原、只要 link:task-manage-backups-ontap.html#unregister-bluexp-backup-and-recovery-for-a-working-environment["從工作環境中取消註冊 BlueXP 備份與還原"] 在試用結束之前、您將不會被收取任何費用。
 
@@ -38,7 +38,7 @@ link:concept-ontap-backup-to-cloud.html#cost["深入瞭解使用 BlueXP 備份�
 
 == 使用 BlueXP 備份與還原 PAYGO 訂閱
 
-若為隨用隨付、您只需單一訂閱、就能支付雲端供應商的物件儲存成本和NetApp備份授權成本（每小時）。即使您有免費試用版或自帶授權（ BYOL ）、您仍應訂閱：
+若為隨用隨付、您只需單一訂閱、就能支付雲端供應商的物件儲存成本和NetApp備份授權成本（每小時）。即使您有免費試用版或自帶授權（ BYOL ），您仍應在市場中訂閱 * NetApp Intelligent Services* ：
 
 * 訂閱可確保在免費試用結束後、服務不會中斷。試用結束時、您將根據備份的資料量、每小時收取一次費用。
 * 如果您備份的資料量超過 BYOL 授權允許的數量、則資料備份與還原作業會透過隨用隨付訂閱繼續進行。例如、如果您有10個TiB BYOL授權、則10 TiB以外的所有容量都會透過PAYGO訂閱付費。
@@ -61,21 +61,21 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#
 
 ifdef::aws[]
 
-* AWS ： https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["如需價格詳細資料、請前往BlueXP Marketplace產品"^]。
+* AWS ： https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4["如需定價詳細資料，請前往 NetApp 智慧型服務市場方案"^]。
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* Azure ： https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["如需價格詳細資料、請前往BlueXP Marketplace產品"^]。
+* Azure ： https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview["如需定價詳細資料，請前往 NetApp 智慧型服務市場方案"^]。
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* Google Cloud： https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["如需價格詳細資料、請前往BlueXP Marketplace產品"^]。
+* Google Cloud ： https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project["如需定價詳細資料，請前往 NetApp 智慧型服務市場方案"^]。
 
 
 endif::gcp[]

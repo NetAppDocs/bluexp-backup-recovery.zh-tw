@@ -256,7 +256,6 @@
   <block id="80186f1230af2267e2c2e4d2ab8c030e" category="paragraph">在閱讀更多內容之前、請先提供幾個附註：</block>
   <block id="31f730de563a8876975a231ee55bc4d7" category="list-text">將內部ONTAP 的支援資料備份StorageGRID 到支援區時、您需要BYOL授權、但雲端供應商的儲存空間不需付費。</block>
   <block id="5ef05167488611c5bd4ff0f410595ce4" category="section-title">30 天免費試用</block>
-  <block id="9fddc1f9c7fd56a9a852b0bd4cd2e8e7" category="paragraph">若為隨用隨付、您只需單一訂閱、就能支付雲端供應商的物件儲存成本和NetApp備份授權成本（每小時）。即使您有免費試用版或自帶授權（ BYOL ）、您仍應訂閱：</block>
   <block id="2351127acb653fd60dafc73c8efcb79d" category="inline-link">AWS Marketplace頁面</block>
   <block id="c776759ca58ab152a9abc5e0b4f7ae66" category="list-text">「雲端備份」計畫、可讓您備份Cloud Volumes ONTAP 內部部署ONTAP 的支援資料。</block>
   <block id="54b98a81c2ba2da3e9c721b03a4585b5" category="inline-link">將訂閱與AWS認證資料建立關聯</block>
@@ -1028,8 +1027,6 @@
   <block id="30dae49f6de63e85b78b96b2080bb0bb" category="paragraph">您不一定需要刪除來源Volume。您可以刪除磁碟區的備份關係、並保留來源磁碟區。在此情況下、您可以稍後在磁碟區上「啟動」備份。在這種情況下、會繼續使用原始的基礎備份複本：不會建立新的基礎備份複本、也不會將其匯出至雲端。請注意、如果您確實重新啟動備份關係、磁碟區會被指派預設的備份原則。</block>
   <block id="495f64bce7d9d754a435527baf769353" category="paragraph">此功能僅在系統執行ONTAP 的是更新版本的更新版本時才可使用。</block>
   <block id="057d6c600d485e4ee55de2a7a7001dc5" category="paragraph">選取*受限*選項按鈕、然後輸入可使用的最大頻寬、或選取*無限*表示沒有限制。</block>
-  <block id="8ceedd80ab3ad72f595a01a7d5ea8d33" category="inline-link">如需價格詳細資料、請前往BlueXP Marketplace產品</block>
-  <block id="0b781a3ed3b0bf571ebc9b36f9d4056e" category="list-text">Azure ：<block ref="477b4f8f0e4ff2940c9440f2ccae1310" category="inline-link-rx"></block>。</block>
   <block id="4322c3f27520935653ca079f29ce7835" category="inline-link">BlueXP Marketplace備份產品</block>
   <block id="e0f4a3fe1d4244e87316e2896879d0bb" category="paragraph">在瀏覽與還原中、連接器可安裝在下列位置：</block>
   <block id="e191225ef89ae4b4097edff77c5ad2a5" category="list-text">對於Amazon S3、連接器可部署在AWS或內部部署環境中</block>
@@ -1552,7 +1549,6 @@
   <block id="4061ec52da23891b0496adb9ffaad83d" category="summary">BlueXP 備份與還原支援兩個 S3 歸檔儲存類別、以及大部分地區。</block>
   <block id="8ba1ec37eb572aa700e5b902d0837eaa" category="section-title">支援用於 BlueXP 備份與還原的 S3 歸檔儲存類別</block>
   <block id="186ff50c3b4a485263b55bbfc446288c" category="paragraph">請注意、當您使用此類型的生命週期規則來設定 BlueXP 備份與還原時、在 AWS 帳戶中設定儲存庫時、不得設定任何生命週期規則。</block>
-  <block id="2c3fd6b8f7bf4ec2f8750499b1319ea3" category="summary">您可以向雲端供應商購買隨用隨付（ PAYGO ）或年度市場訂閱、或是向 NetApp 購買自帶授權（ BYOL ）、以取得 BlueXP 備份與恢復的授權。您需要有效的授權、才能在工作環境中啟動 BlueXP 備份與還原、建立正式作業資料的備份、以及將備份資料還原至正式作業系統。</block>
   <block id="f4b04af639ebf32754e26b928989f33f" category="doc">設定 BlueXP 備份與還原的授權</block>
   <block id="b8d8c3ee1f806c295728b3e2e1419d0e" category="list-text">如果您已在雲端供應商的市場中訂閱付費隨用（ PAYGO ）訂閱 Cloud Volumes ONTAP 系統、則您也會自動訂閱 BlueXP 備份與還原。您不需要再次訂閱。</block>
   <block id="96678658f63f300507ecf10ca356941c" category="inline-link-macro">深入瞭解使用 BlueXP 備份與還原的相關成本。</block>
@@ -3188,10 +3184,7 @@ SS3 ONTAP</block>
   <block id="f1f644db5655e70aeceadaa6b299010c" category="list-text">當 BlueXP 在還原磁碟區資料時掃描備份檔案以取得勒索軟體時、您將需要向雲端供應商支付額外的出口成本、才能存取備份檔案的內容。</block>
   <block id="705d7d5204c001ada8d7869c065a6a70" category="list-text">如果您計畫從已移至歸檔物件儲存區的備份檔案還原 Volume 資料、則雲端供應商會收取額外的每 GiB 擷取費用和每項要求費用。</block>
   <block id="832fd1c3441239683a98428c909ca909" category="list-text">如果您計畫在還原磁碟區資料的過程中掃描備份檔案以取得勒索軟體（如果您已為雲端備份啟用 DataLock 和勒索軟體保護功能）、那麼您也會從雲端供應商處獲得額外的出口成本。</block>
-  <block id="aff1f6e6b4bed13be2c27f1b42f5b97f" category="paragraph">如果您在雲端供應商的市場中註冊「隨用隨付」訂閱、則可免費試用 BlueXP 備份與恢復 30 天。免費試用版會在您訂閱市場上市時開始。請注意、如果您在部署 Cloud Volumes ONTAP 系統時支付市場訂閱費用、然後在 10 天之後開始 BlueXP 備份與恢復免費試用版、您將有 20 天的時間可以使用免費試用版。</block>
   <block id="09734c1f0feb893a640f1a5c4dad5854" category="list-text">如果您備份的資料量超過 BYOL 授權允許的數量、則資料備份與還原作業會透過隨用隨付訂閱繼續進行。例如、如果您有10個TiB BYOL授權、則10 TiB以外的所有容量都會透過PAYGO訂閱付費。</block>
-  <block id="a2c77009268b32dd5ee44eefd572a848" category="list-text">AWS ：<block ref="4eba767fa6da020c510fbb6b63a04b03" category="inline-link-rx"></block>。</block>
-  <block id="c42a35e18b9a672d50dd1af0d6eaf448" category="list-text">Google Cloud：<block ref="f4b12042f5e9960850cb7df978f53391" category="inline-link-rx"></block>。</block>
   <block id="cdd7e27784d77ec2073f18280c473cb5" category="paragraph">購買年度合約、每年支付 BlueXP 備份與恢復費用。提供 1 年、 2 年或 3 年的條款。</block>
   <block id="dcaf9868abba1a1ccf50c6343a3d5818" category="paragraph">使用AWS時、可從取得兩份年度合約<block ref="85c21eb306ec4bcbda7252ca6117fc5c" category="inline-link-rx"></block> 對於 Cloud Volumes ONTAP 和內部部署 ONTAP 系統：</block>
   <block id="bd0202b4a5e368ede75c41822527f8dd" category="inline-link">Azure Marketplace 頁面</block>
@@ -3904,4 +3897,12 @@ ifdef：：AWS []</block>
   <block id="22188f18f00fe4800630b34c371548cc" category="list-text">重新啟動 BlueXP  備份與還原 Cloud Manager CBS 服務。執行命令：</block>
   <block id="71df7d09aaee8e6796df0c3d10989fbd" category="section-title">2025 年 13 月 5 日</block>
   <block id="ddfe37c06d76259ae290f107c8524b45" category="sidebar">使用 SnapMirror 將磁碟區移轉至雲端重新同步</block>
+  <block id="0398345426db85860b6d6797a103d944" category="paragraph">您可以向雲端供應商購買付費（ PAYGO ）或 * NetApp 智慧型服務 * 的年度市場訂閱，或是向 NetApp 購買自帶授權（ BYOL ），以取得 BlueXP  備份與恢復的授權。您需要有效的授權、才能在工作環境中啟動 BlueXP 備份與還原、建立正式作業資料的備份、以及將備份資料還原至正式作業系統。</block>
+  <block id="d2521e27956baaaa51c3b1bd1891a247" category="paragraph">如果您在雲端供應商的市場中註冊付費隨用訂閱 * NetApp 智慧型服務 * ，則可免費試用 30 天的 BlueXP  備份與恢復。免費試用版會在您訂閱市場上市時開始。請注意、如果您在部署 Cloud Volumes ONTAP 系統時支付市場訂閱費用、然後在 10 天之後開始 BlueXP 備份與恢復免費試用版、您將有 20 天的時間可以使用免費試用版。</block>
+  <block id="a4afc1eb46bd689c898689a130322269" category="paragraph">若為隨用隨付、您只需單一訂閱、就能支付雲端供應商的物件儲存成本和NetApp備份授權成本（每小時）。即使您有免費試用版或自帶授權（ BYOL ），您仍應在市場中訂閱 * NetApp Intelligent Services* ：</block>
+  <block id="14c403304e8650321be08c9edd75c486" category="inline-link">如需定價詳細資料，請前往 NetApp 智慧型服務市場方案</block>
+  <block id="f0b87199311bf1c15f240b666518084c" category="list-text">AWS ：<block ref="e5469c6686b5a2c86b78502f7ea8c335" category="inline-link-rx"></block>。</block>
+  <block id="782af9afc0728a9389fd837476a88107" category="inline-link">如需定價詳細資料，請前往 NetApp 智慧型服務市場方案</block>
+  <block id="6d641e087ca9cbb2e0778a492ac1066a" category="list-text">Azure ：<block ref="211ed702bd160a1aa192248c846136e5" category="inline-link-rx"></block>。</block>
+  <block id="80720981863bfe0c9cc6702701d24f18" category="list-text">Google Cloud ：<block ref="5aa99f120ab43d5669622268ca1e3fd1" category="inline-link-rx"></block>。</block>
 </blocks>
