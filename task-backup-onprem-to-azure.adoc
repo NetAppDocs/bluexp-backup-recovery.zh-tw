@@ -4,7 +4,7 @@ permalink: task-backup-onprem-to-azure.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, azure, azure blob, government 
 summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份至 Azure Blob 儲存設備。 
 ---
-= 將內部部署的 ONTAP 資料備份至 Azure Blob 儲存設備
+= 使用 BlueXP 備份和還原將本機 ONTAP 資料備份到 Azure Blob 存儲
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資�
 
 
 [role="lead"]
-請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到次要儲存系統和 Azure Blob 儲存設備。
+完成 BlueXP 備份和復原中的幾個步驟，開始將磁碟區資料從本機 ONTAP 系統備份到二級儲存系統和 Azure Blob 儲存體。
 
 
 NOTE: 「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統。
@@ -221,7 +221,7 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.htm
 
 * 支援地區 *
 
-您可以在所有地區、從內部部署系統建立備份到Azure Blob https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]（包括Azure政府區域）。您可以指定在設定服務時儲存備份的區域。
+您可以在所有區域（包括 Azure 政府區域）中建立從本機系統到 Azure Blob 的備份。您可以指定在設定服務時儲存備份的區域。
 
 
 

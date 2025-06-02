@@ -4,7 +4,7 @@ permalink: concept-protection-journey.html
 keywords: backing up, restoring, recovery, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, storage grid, back up volumes, cloud backup, restore volumes, on-premises ontap, onprem, replication, backup and recovery 
 summary: BlueXP 備份與還原服務可讓您建立最多三個來源磁碟區複本、以保護您的資料。在磁碟區上啟用此服務時、您可以選擇許多選項、因此您應該檢閱您的選擇、以便做好準備。 
 ---
-= 規劃您的保護旅程
+= 使用 BlueXP 備份和復原規劃您的保護之旅
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

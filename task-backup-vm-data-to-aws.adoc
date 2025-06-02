@@ -4,7 +4,7 @@ permalink: task-backup-vm-data-to-aws.html
 keywords: back up, backup, backup datastore, aws, Amazon Web Services, backup datastores 
 summary: 將您的資料存放區從內部部署ONTAP 的功能區備份到AWS。 
 ---
-= 將資料存放區備份至Amazon Web Services
+= 使用 BlueXP 備份和還原將資料儲存備份到 Amazon Web Services
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 將您的資料存放區從內部部署ONTAP 的功能區備份到AWS�
 
 
 [role="lead"]
-您可以將一或多個資料存放區備份及歸檔至 Amazon Web Services 、以改善儲存效率和雲端移轉。
+您可以使用 BlueXP 備份和還原將一個或多個資料儲存備份並存檔到 Amazon Web Services，以提高儲存效率和雲端轉換。
 
 如果資料存放區與歸檔原則相關聯、您可以選擇歸檔層。支援的歸檔層為Glacier和Glacier Deep。
 

@@ -4,7 +4,7 @@ permalink: task-create-policies-ontap.html
 keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: 您可以使用 NetApp 提供的預設備份原則來建立備份、也可以建立自訂原則。原則會規範備份類型、備份架構、儲存系統和備份頻率。 
 ---
-= 管理 ONTAP 磁碟區的備份原則
+= 使用 BlueXP 備份和還原管理 ONTAP 磁碟區的備份策略
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以使用 NetApp 提供的預設備份原則來建立備份、也
 
 
 [role="lead"]
-您可以使用 NetApp 提供的預設備份原則來建立備份、也可以建立自訂原則。原則會控制備份頻率、備份時間、以及保留的備份檔案數量。
+使用 BlueXP 備份和恢復，使用 NetApp 提供的預設備份策略來建立備份，或建立自訂策略。原則會控制備份頻率、備份時間、以及保留的備份檔案數量。
 
 當您使用啟動精靈為磁碟區啟用備份與還原服務時、可以從工作環境（ Cloud Volumes ONTAP 或內部部署 ONTAP 系統）中選取預設原則和任何其他原則。如果您想要使用不同於現有原則的原則、可以在使用啟動精靈之前或期間建立原則。
 

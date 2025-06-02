@@ -4,7 +4,7 @@ permalink: task-restore-customplugin-backup.html
 keywords: restore, mount application backups, MongoDB, MySQL, PostgreSQL 
 summary: 您可以將 SAP HANA 資料庫從雲端還原至內部部署的 SnapCenter Server 。 
 ---
-= 還原 MongoDB 、 MySQL 和 PostgreSQL 資料庫
+= 使用 BlueXP 備份和復原功能還原 MongoDB、MySQL 和 PostgreSQL 資料庫
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以將 SAP HANA 資料庫從雲端還原至內部部署的 SnapCe
 
 
 [role="lead"]
-您可以將 MongoDB 、 MySQL 和 PostgreSQL 資料庫還原至任何主機。
+您可以使用 BlueXP 備份和還原將 MongoDB、MySQL 和 PostgreSQL 資料庫還原到任何主機。
 
 *步驟*
 

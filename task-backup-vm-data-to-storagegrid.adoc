@@ -4,7 +4,7 @@ permalink: task-backup-vm-data-to-storagegrid.html
 keywords: back up, backup, backup datastore, storagegrid, backup datastores 
 summary: 從內部部署ONTAP 的地方將資料存放區備份到StorageGRID 原地。 
 ---
-= 將資料存放區備份StorageGRID 至
+= 使用 BlueXP 備份和還原將資料儲存備份到 StorageGRID
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 從內部部署ONTAP 的地方將資料存放區備份到StorageGRID �
 
 
 [role="lead"]
-您可以將適用於 VMware vSphere 主機的 SnapCenter 外掛程式與 BlueXP 整合、將一或多個資料存放區備份至 StorageGRID 。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
+您可以透過將適用於 VMware vSphere 主機的 SnapCenter 外掛程式與 BlueXP 備份和復原集成，將一個或多個資料儲存庫備份到 StorageGRID。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
 
 .開始之前
 確保您已滿足所有需求 link:concept-protect-vm-data.html["需求"] 將資料存放區備份到雲端之前。

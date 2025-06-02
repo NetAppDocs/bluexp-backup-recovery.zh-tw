@@ -4,7 +4,7 @@ permalink: task-backup-onprem-private-cloud.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, StorageGRID 
 summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到 NetApp StorageGRID 系統的物件儲存設備。 
 ---
-= 將內部部署的 ONTAP 資料備份至 StorageGRID
+= 使用 BlueXP 備份和還原將本機 ONTAP 資料備份到 StorageGRID
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資�
 
 
 [role="lead"]
-請完成幾個步驟、開始將內部部署主要 ONTAP 系統的 Volume 資料備份到次要儲存系統、以及 NetApp StorageGRID 系統中的物件儲存設備。
+完成 BlueXP 備份和復原中的幾個步驟，開始將磁碟區資料從本機主 ONTAP 系統備份到二級儲存系統以及 NetApp StorageGRID 系統中的物件儲存。
 
 
 NOTE: 「內部部署 ONTAP 系統」包括 FAS 、 AFF 和 ONTAP Select 系統。
@@ -239,6 +239,10 @@ https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-sn
 若要使用DataLock和勒索軟體保護來進行備份、StorageGRID 您的系統必須執行11.6.0.3版或更新版本。
 
 若要將較舊的備份分層保存至雲端歸檔儲存設備、StorageGRID 您的不穩定系統必須執行11.3版或更新版本。此外、您必須將 StorageGRID 系統探索到 BlueXP Canvas 。
+
+對於使用者檔案存儲，需要管理節點 IP 存取。
+
+始終需要網關 IP 存取。
 
 --
 S3 認證:: 您必須建立S3租戶帳戶、才能控制StorageGRID 對您的支援儲存設備的存取。 https://docs.netapp.com/us-en/storagegrid-117/admin/creating-tenant-account.html["如StorageGRID 需詳細資訊、請參閱《The》（英文）"^]。

@@ -4,7 +4,7 @@ permalink: task-restore-oracle-data.html
 keywords: restore, Azure, Amazon Web services, Oracle database 
 summary: 您可以將Oracle資料庫從雲端還原至內部部署SnapCenter 的支援服務器。 
 ---
-= 還原Oracle資料庫
+= 使用 BlueXP 備份和復原來還原 Oracle 資料庫
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以將Oracle資料庫從雲端還原至內部部署SnapCenter 的
 
 
 [role="lead"]
-您可以將 Oracle 資料庫還原至原始位置或其他位置。對於 RAC 資料庫、資料會還原至建立備份的內部部署節點。
+您可以使用 BlueXP 備份和還原將 Oracle 資料庫還原到原始位置或備用位置。對於 RAC 資料庫、資料會還原至建立備份的內部部署節點。
 
 僅支援具有控制檔還原的完整資料庫。如果檔案記錄未出現在檔案管理系統中、您應該指定包含還原所需的歸檔記錄的位置。
 

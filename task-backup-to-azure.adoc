@@ -4,7 +4,7 @@ permalink: task-backup-to-azure.html
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, azure, azure blob, back up volumes, cloud backup, bluexp, bluexp backup and recovery 
 summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份至 Azure Blob 儲存設備。 
 ---
-= 將 Cloud Volumes ONTAP 資料備份至 Azure Blob 儲存設備
+= 使用 BlueXP 備份和還原將 Cloud Volumes ONTAP 資料備份到 Azure Blob 存儲
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量�
 
 
 [role="lead"]
-請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份至 Azure Blob 儲存設備。
+完成 BlueXP 備份和復原中的幾個步驟，開始將磁碟區資料從 Cloud Volumes ONTAP 系統備份到 Azure Blob 儲存體。
 
 
 
@@ -77,7 +77,7 @@ summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量�
 image:diagram_cloud_backup_cvo_azure.png["顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
 支援 ONTAP 的支援版本:: 最低 ONTAP 9.8 ；建議使用 ONTAP 9.8P13 及更新版本。
-支援的 Azure 地區:: 所有 Azure 區域均支援 BlueXP 備份與還原 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]（包括Azure政府區域）。
+支援的 Azure 地區:: 所有 Azure 區域（包括 Azure 政府區域）都支援 BlueXP 備份和復原。
 +
 --
 根據預設、 BlueXP 備份與還原會以本機備援（ LRS ）來配置 Blob 容器、以達到成本最佳化。如果您想要確保在不同區域之間複寫資料、您可以在 BlueXP 備份與還原啟動之後、將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示 https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["變更儲存帳戶的複寫方式"^]。

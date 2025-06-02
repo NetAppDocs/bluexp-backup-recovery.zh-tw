@@ -4,7 +4,7 @@ permalink: task-backup-vm-data-to-azure.html
 keywords: back up, backup, backup datastore, Microsoft Azure, backup datastores 
 summary: 將資料存放區從內部部署ONTAP 的地方還原備份到Azure。 
 ---
-= 將資料存放區備份至Microsoft Azure
+= 使用 BlueXP 備份和還原將資料儲存體備份到 Microsoft Azure
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 將資料存放區從內部部署ONTAP 的地方還原備份到Azure。
 
 
 [role="lead"]
-您可以將 SnapCenter Plug-in for VMware vSphere 主機與 BlueXP 整合、將一或多個資料存放區備份至 Microsoft Azure 。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
+您可以透過將適用於 VMware vSphere 主機的 SnapCenter 外掛程式與 BlueXP 備份和復原集成，將一個或多個資料儲存區備份到 Microsoft Azure。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
 
 如果資料存放區與歸檔原則相關聯、則會提供一個選項來選取歸檔層。支援的歸檔層為Azure歸檔Blob儲存設備。
 

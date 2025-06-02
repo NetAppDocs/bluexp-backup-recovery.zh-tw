@@ -4,7 +4,7 @@ permalink: task-register-snapcenter-server.html
 keywords: SnapCenter Server, register 
 summary: 請完成幾個步驟來登錄SnapCenter 到此伺服器。 
 ---
-= 註冊SnapCenter 伺服器
+= 註冊 SnapCenter 伺服器以進行 BlueXP 備份和恢復
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 請完成幾個步驟來登錄SnapCenter 到此伺服器。
 
 
 [role="lead"]
-只有具備SnapCenterAdmin角色的使用者、才能登錄SnapCenter 執行哪些主機的支援。您可以在 BlueXP 中註冊多部 SnapCenter 伺服器主機。
+只有具備SnapCenterAdmin角色的使用者、才能登錄SnapCenter 執行哪些主機的支援。您可以在 BlueXP 備份和復原中註冊多個 SnapCenter Server 主機。
 
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。

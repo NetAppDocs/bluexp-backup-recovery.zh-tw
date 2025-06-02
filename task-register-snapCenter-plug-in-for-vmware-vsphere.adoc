@@ -4,7 +4,7 @@ permalink: task-register-snapCenter-plug-in-for-vmware-vsphere.html
 keywords: register, registration, SnapCenter Plug-in for VMware vSphere 
 summary: 在 BlueXP 中註冊適用於 VMware vSphere 主機的 SnapCenter 外掛程式。 
 ---
-= 註冊 VMware vSphere 主機的 SnapCenter 外掛程式
+= 使用 BlueXP 備份和復原註冊適用於 VMware vSphere 主機的 SnapCenter 插件
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 在 BlueXP 中註冊適用於 VMware vSphere 主機的 SnapCenter 外�
 
 
 [role="lead"]
-您應該在 BlueXP 中註冊 VMware vSphere 主機的 SnapCenter 外掛程式、以便顯示資料存放區和虛擬機器。只有具有管理存取權的使用者才能登錄 VMware vSphere 主機的 SnapCenter 外掛程式。
+您應該在 BlueXP 備份和復原中註冊適用於 VMware vSphere 主機的 SnapCenter 插件，以便顯示資料儲存區和虛擬機器。只有具有管理存取權的使用者才能登錄 VMware vSphere 主機的 SnapCenter 外掛程式。
 
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Virtual Machines *。

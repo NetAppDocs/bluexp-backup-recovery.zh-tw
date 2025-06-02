@@ -4,7 +4,7 @@ permalink: task-backup-app-data-to-gcp.html
 keywords: backing up, back up, backup, backup application data, Google Cloud Platform, GCP, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: 請完成幾個步驟、將應用程式資料從ONTAP 功能完善的資料備份到GCP。 
 ---
-= 將內部部署應用程式資料備份到Google Cloud Platform
+= 使用 BlueXP 備份和還原將本機應用程式資料備份到 Google Cloud Platform
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 請完成幾個步驟、將應用程式資料從ONTAP 功能完善的�
 
 
 [role="lead"]
-完成幾個步驟、將應用程式資料從 ONTAP 備份到 Google Cloud Platform 。
+完成 BlueXP 備份和復原中的幾個步驟，將應用程式資料從 ONTAP 備份到 Google Cloud Platform。
 
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。

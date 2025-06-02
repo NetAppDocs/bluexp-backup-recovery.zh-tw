@@ -4,7 +4,7 @@ permalink: reference-google-backup-tiers.html
 keywords: google, storage classes, archive 
 summary: BlueXP 備份與還原支援單一 Google 歸檔儲存類別和大多數地區。 
 ---
-= Google歸檔儲存類別並還原擷取時間
+= 使用 BlueXP 備份和還原的 Google 檔案儲存類別和復原檢索時間
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

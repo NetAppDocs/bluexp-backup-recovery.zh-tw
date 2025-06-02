@@ -4,7 +4,7 @@ permalink: reference-backup-multi-account-azure.html
 keywords: microsoft azure, azure, regions, blob, multiple accounts, multiple regions, backup 
 summary: BlueXP 備份與還原可讓您在 Azure 帳戶中建立不同於來源 Cloud Volumes ONTAP 磁碟區所在位置、與 BlueXP Connector 所在帳戶不同的備份檔案。 
 ---
-= 在Azure中設定多帳戶存取的備份
+= 使用 BlueXP 備份和還原設定 Azure 中的多帳戶存取備份
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

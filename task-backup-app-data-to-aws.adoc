@@ -4,7 +4,7 @@ permalink: task-backup-app-data-to-aws.html
 keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: 完成幾個步驟、將應用程式資料從ONTAP 功能完善的資料備份到AWS。 
 ---
-= 將內部部署應用程式資料備份至Amazon Web Services
+= 使用 BlueXP 備份和還原將本機應用程式資料備份到 Amazon Web Services
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,9 +14,9 @@ summary: 完成幾個步驟、將應用程式資料從ONTAP 功能完善的資�
 
 
 [role="lead"]
-完成幾個步驟、將應用程式資料從 ONTAP 備份到 Amazon Web Services 。
+完成 BlueXP 備份和復原中的幾個步驟，將應用程式資料從 ONTAP 備份到 Amazon Web Services。
 
-BlueXP 支援資料鎖定和勒索軟體保護。如果 ONTAP 叢集是在 ONTAP 9.11.1 或更新版本上執行、而且您尚未設定歸檔儲存設備、則可保護備份免於覆寫、刪除及勒索軟體威脅。
+BlueXP 備份和復原支援資料鎖和勒索軟體保護。如果 ONTAP 叢集是在 ONTAP 9.11.1 或更新版本上執行、而且您尚未設定歸檔儲存設備、則可保護備份免於覆寫、刪除及勒索軟體威脅。
 
 .步驟
 . 在BlueXP UI中、按一下* Protection *>* Backup and recovery *>* Applications*。

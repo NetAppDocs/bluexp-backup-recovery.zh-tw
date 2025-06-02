@@ -4,7 +4,7 @@ permalink: task-manage-app-backups.html
 keywords: manage, Azure, Amazon Web services, Oracle database, Microsoft SQL Server database, backups, policy, monitor, jobs, monitor jobs, SAP HANA database 
 summary: 您可以檢視原則和備份。視資料庫、原則或資源群組的變更而定、您可以從BlueXP UI重新整理更新。 
 ---
-= 管理應用程式保護
+= 使用 BlueXP 備份和還原管理應用程式的保護
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以檢視原則和備份。視資料庫、原則或資源群組�
 
 
 [role="lead"]
-您可以透過檢視原則、檢視備份、檢視資料庫配置、原則和資源群組的變更、以及從 BlueXP UI 監控所有作業、來管理應用程式的保護。
+您可以透過查看策略、查看備份、查看資料庫佈局、策略和資源群組的變更以及監控 BlueXP UI 中的所有操作來管理 BlueXP 備份和還原中應用程式的保護。
 
 
 

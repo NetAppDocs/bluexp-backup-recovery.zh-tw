@@ -4,12 +4,12 @@ permalink: task-migrate-volumes-snapmirror-cloud-resync.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, cloud, snapmirror, migrate, volume migration, resync, 
 summary: 請完成幾個步驟、開始將內部部署 ONTAP 系統的大量資料備份到次要儲存系統和 Google Cloud Storage 。 
 ---
-= 使用 SnapMirror 移轉磁碟區至雲端重新同步
+= 使用 SnapMirror 將磁碟區遷移到 Cloud Resync，並使用 BlueXP 備份和復原
 :allow-uri-read: 
 
 
 [role="lead"]
-SnapMirror 至雲端重新同步功能可簡化 NetApp 環境中磁碟區移轉期間的資料保護與持續運作。當使用 SnapMirror 邏輯複寫（ LRSE ），從內部部署的 NetApp 部署移轉到另一個部署，或移轉到雲端型解決方案（例如 Cloud Volumes ONTAP 或 Cloud Volumes Service ）時， SnapMirror 到雲端重新同步可確保現有的雲端備份保持完整且正常運作。
+BlueXP 備份和復原中的 SnapMirror 到 Cloud Resync 功能簡化了 NetApp 環境中捲遷移期間的資料保護和連續性。當使用 SnapMirror 邏輯複寫（ LRSE ），從內部部署的 NetApp 部署移轉到另一個部署，或移轉到雲端型解決方案（例如 Cloud Volumes ONTAP 或 Cloud Volumes Service ）時， SnapMirror 到雲端重新同步可確保現有的雲端備份保持完整且正常運作。
 
 這項功能不需要耗時且資源密集的重新基準作業，讓備份作業能夠在移轉後繼續進行。此功能在工作負載移轉案例中非常重要，可同時支援 FlexVols 和 FlexGroups ，並可從 ONTAP 9.16.1 版開始使用。
 

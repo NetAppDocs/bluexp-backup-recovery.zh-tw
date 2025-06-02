@@ -4,7 +4,7 @@ permalink: task-report-inventory.html
 keywords: cloud backup, backup and recovery service, backup and recovery, backup, restore, report, inventory, bluexp 
 summary: 有了 BlueXP 備份與還原報告、您就能確保關鍵資料根據組織定義的原則受到保護、並有效支援法規遵循程序的稽核。備份庫存報告可讓您查看特定帳戶、工作環境或 SVM 庫存的所有備份。 
 ---
-= 報告資料保護涵蓋範圍
+= 使用 BlueXP 備份和復原報告資料保護覆蓋範圍
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 有了 BlueXP 備份與還原報告、您就能確保關鍵資料根據
 
 
 [role="lead"]
-有了 BlueXP 備份與還原報告、您就能確保關鍵資料受到組織定義原則的保護、並針對法規遵循需求提供稽核。
+使用 BlueXP 備份和復原報告，確保關鍵資料根據組織定義的策略受到保護，並提供合規性需求的稽核。
 
 BlueXP 備份與還原報告可協助您完成下列工作：
 

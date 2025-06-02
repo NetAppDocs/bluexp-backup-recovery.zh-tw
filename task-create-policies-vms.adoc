@@ -4,7 +4,7 @@ permalink: task-create-policies-vms.html
 keywords: create policy, protection policies, predefined policies, custom policies 
 summary: 建立備份資料存放區的原則 
 ---
-= 建立備份資料存放區的原則
+= 建立使用 BlueXP 備份和還原備份資料儲存的策略
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 建立備份資料存放區的原則
 
 
 [role="lead"]
-您可以建立原則、或使用下列其中一項可在BlueXP中使用的預先定義原則。
+您可以建立一個政策或使用 BlueXP 備份和還原中提供的以下預定義策略之一。
 
 .開始之前
 * 如果您不想編輯預先定義的原則、則應建立原則。

@@ -4,7 +4,7 @@ permalink: task-backup-to-gcp.html
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, gcp, google cloud, back up volumes, cloud backup, bluexp, bluexp backup and recovery 
 summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Google Cloud 儲存設備。 
 ---
-= 將 Cloud Volumes ONTAP 資料備份至 Google Cloud Storage
+= 使用 BlueXP 備份和還原將 Cloud Volumes ONTAP 資料備份到 Google Cloud Storage
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量�
 
 
 [role="lead"]
-請完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Google Cloud Storage 。
+完成 BlueXP 備份和復原中的幾個步驟，開始將磁碟區資料從 Cloud Volumes ONTAP 系統備份到 Google Cloud Storage。
 
 
 
@@ -74,7 +74,7 @@ NOTE: 啟用 BlueXP 備份與還原的服務帳戶不再需要 Storage Admin 角
 image:diagram_cloud_backup_cvo_google.png["顯示 BlueXP 備份與還原如何與來源系統上的磁碟區和備份檔案所在的目的地儲存設備進行通訊的圖表。"]
 
 支援 ONTAP 的支援版本:: 最低 ONTAP 9.8 ；建議使用 ONTAP 9.8P13 及更新版本。
-支援的 GCP 區域:: 所有 GCP 區域均支援 BlueXP 備份與還原 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]。
+支援的 GCP 區域:: 所有 GCP 區域都支援 BlueXP 備份和復原。
 GCP 服務帳戶:: 您必須在 Google Cloud Project 中擁有具有自訂角色的服務帳戶。 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-creating-gcp-service-account.html["瞭解如何建立服務帳戶"^]
 
 

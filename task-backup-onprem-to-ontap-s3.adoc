@@ -4,7 +4,7 @@ permalink: task-backup-onprem-to-ontap-s3.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, ontap s3 
 summary: 請完成幾個步驟、開始備份主要內部部署 ONTAP 系統的 Volume 資料。您可以將備份傳送至次要 ONTAP 儲存系統（複寫的磁碟區）、或傳送至設定為 S3 伺服器（備份檔案）的 ONTAP 系統上的儲存區、或兩者。 
 ---
-= 將內部部署的 ONTAP 資料備份到 ONTAP S3
+= 使用 BlueXP 備份和還原將本機 ONTAP 資料備份到 ONTAP S3
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 請完成幾個步驟、開始備份主要內部部署 ONTAP 系統的 
 
 
 [role="lead"]
-請完成幾個步驟、開始備份主要內部部署 ONTAP 系統的 Volume 資料。您可以將備份傳送至次要 ONTAP 儲存系統（複寫的磁碟區）、或傳送至設定為 S3 伺服器（備份檔案）的 ONTAP 系統上的儲存區、或兩者。
+完成 BlueXP 備份和復原中的幾個步驟，開始從主本機 ONTAP 系統備份磁碟區資料。您可以將備份傳送至次要 ONTAP 儲存系統（複寫的磁碟區）、或傳送至設定為 S3 伺服器（備份檔案）的 ONTAP 系統上的儲存區、或兩者。
 
 主要內部部署 ONTAP 系統可以是 FAS 、 AFF 或 ONTAP Select 系統。次要 ONTAP 系統可以是內部部署的 ONTAP 或 Cloud Volumes ONTAP 系統。物件儲存設備可以位於內部部署的 ONTAP 系統、或是已啟用簡易儲存服務（ S3 ）物件儲存伺服器的 Cloud Volumes ONTAP 系統上。
 

@@ -4,7 +4,7 @@ permalink: task-create-policies-apps.html
 keywords: policy, create, pre-canned polices, custom policies, protection policies 
 summary: 建立您自己的原則來保護應用程式。 
 ---
-= 建立備份應用程式的原則
+= 建立使用 BlueXP 備份和還原來備份應用程式的策略
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 建立您自己的原則來保護應用程式。
 
 
 [role="lead"]
-您應該建立原則、將應用程式資料備份到雲端。
+您應該建立一個策略，使用 BlueXP 備份和還原將應用程式資料備份到雲端。
 
 .開始之前
 * 如果您想要將備份從物件存放區移至歸檔儲存區、請確定您使用的是所需的 ONTAP 版本。

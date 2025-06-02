@@ -4,7 +4,7 @@ permalink: task-manage-backup-settings-ontap.html
 keywords: cloud backup, cloud backup service, storage keys, network bandwidth, auto backup, delete yearly snapshot, export snapshots, ransomware scans, scans 
 summary: 您可以變更許多叢集層級的備份至物件設定、這些設定是在為每個 ONTAP 系統啟動 BlueXP 備份與還原時所設定的。您也可以修改某些套用為「預設」備份設定的設定。這包括變更儲存金鑰、將備份傳輸至物件儲存設備的速度、是否將歷史Snapshot複本匯出為備份檔案等。您也可以針對工作環境啟用或停用勒索軟體掃描。 
 ---
-= 在「進階設定」頁面中管理備份至物件儲存選項
+= 在 BlueXP 備份和還原的進階設定頁面中管理備份到物件儲存選項
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

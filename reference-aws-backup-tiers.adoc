@@ -4,7 +4,7 @@ permalink: reference-aws-backup-tiers.html
 keywords: aws, amazon, s3, storage classes, archive 
 summary: BlueXP 備份與還原支援兩個 S3 歸檔儲存類別、以及大部分地區。 
 ---
-= AWS S3歸檔儲存類別並還原擷取時間
+= 使用 BlueXP 備份和還原的 AWS S3 存檔儲存類別和還原檢索時間
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

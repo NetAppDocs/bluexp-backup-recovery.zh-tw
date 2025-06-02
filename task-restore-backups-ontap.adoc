@@ -4,7 +4,7 @@ permalink: task-restore-backups-ontap.html
 keywords: restoring, restore, restore volumes, restore files, restore folders, cloud backup, file restore, single file restore, folder restore, volume restore, browse and restore, search and restore, restore snapshot, restore replication, restore backup, ONTAP 
 summary: 您可以從建立備份的位置、 Snapshot 複本、複寫磁碟區和 / 或儲存在物件儲存區的備份中、來備份 ONTAP 磁碟區資料。您可以從這些備份位置的任何一個特定時間點還原資料。您可以從備份檔案還原整個 ONTAP 磁碟區、或者如果只需要還原幾個檔案、您可以還原資料夾或個別檔案。 
 ---
-= 從備份檔案還原 ONTAP 資料
+= 使用 BlueXP 備份和還原從備份檔案還原 ONTAP 數據
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以從建立備份的位置、 Snapshot 複本、複寫磁碟區�
 
 
 [role="lead"]
-您可以從建立備份的位置備份 ONTAP Volume 資料：快照複本、複寫磁碟區、以及儲存在物件儲存區的備份。您可以從這些備份位置的任何一個特定時間點還原資料。您可以從備份檔案還原整個 ONTAP 磁碟區、或者如果只需要還原幾個檔案、您可以還原資料夾或個別檔案。
+您可以從建立備份的位置備份 ONTAP Volume 資料：快照複本、複寫磁碟區、以及儲存在物件儲存區的備份。您可以從這些備份位置的任何一個特定時間點還原資料。使用 BlueXP 備份和恢復，可以從備份文件恢復整個 ONTAP 卷，或者如果只需要恢復幾個文件，則可以恢復資料夾或單個文件。
 
 * 您可以將* Volume *（新磁碟區）還原至原始工作環境、使用相同雲端帳戶的不同工作環境、或內部部署ONTAP 的內部系統。
 * 您可以將*資料夾*還原至原始工作環境中的磁碟區、使用相同雲端帳戶的不同工作環境中的磁碟區、或還原至內部部署ONTAP 的S還原 系統上的磁碟區。
@@ -55,7 +55,7 @@ image:screenshot_restore_dashboard.png["「還原儀表板」顯示使用瀏覽"
 
 廣義而言、當您需要從上週或上月還原特定的磁碟區、資料夾或檔案時、_Browse & Restore通常會更好、而且您知道檔案的名稱和位置、以及檔案的最後保存日期。當您需要還原磁碟區、資料夾或檔案、但不記得確切的名稱、磁碟區所在的磁碟區、或是上次的狀態良好的日期時、_Search & Restore通常會更好。
 
-此表提供兩種方法的功能比較。
+表格提供了兩種方法的特徵比較。
 
 [cols="50,50"]
 |===
@@ -349,7 +349,7 @@ BlueXP 備份與還原會根據您選取的備份建立新的磁碟區。
 如果您只需要從 ONTAP Volume 備份還原幾個檔案、您可以選擇還原資料夾或個別檔案、而非還原整個磁碟區。您可以將資料夾和檔案還原至原始工作環境中的現有磁碟區、或還原至使用相同雲端帳戶的不同工作環境。您也可以將資料夾和檔案還原至內部部署ONTAP 的作業系統上的磁碟區。
 
 
-NOTE: 您目前只能從物件儲存區中的備份檔案還原資料夾或個別檔案。目前不支援從本機 Snapshot 複本或位於次要工作環境（複寫磁碟區）的備份檔案還原檔案和資料夾。
+NOTE: 您目前只能從物件儲存區中的備份檔案還原資料夾或個別檔案。目前不支援從本機快照副本或位於輔助工作環境（複製磁碟區）中的備份檔案還原檔案和資料夾。
 
 如果您選取多個檔案、所有檔案都會還原至您選擇的相同目的地Volume。因此、如果您想要將檔案還原至不同的磁碟區、就必須執行多次還原程序。
 
@@ -658,7 +658,7 @@ ifdef::azure[]
 +
 請注意、如果您之前使用的是 BlueXP 備份與還原、但之前已設定 Connector 、則現在您必須將 Azure Synapse Workspace 與 Data Lake Storage Account 權限新增至 BlueXP 使用者角色。搜尋與還原需要它們。
 
-** 連接器必須設定*不含* Proxy伺服器、才能與網際網路進行HTTP通訊。如果您已為Connector設定HTTP Proxy伺服器、則無法使用搜尋與取代功能。
+** 連接器必須設定*不含* Proxy伺服器、才能與網際網路進行HTTP通訊。如果您已為連接器設定了 HTTP 代理伺服器，則無法使用搜尋和還原功能。
 
 
 

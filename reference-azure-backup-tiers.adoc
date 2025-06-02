@@ -4,7 +4,7 @@ permalink: reference-azure-backup-tiers.html
 keywords: microsoft azure, azure, cool, access tier, archive 
 summary: BlueXP 備份與還原支援一個 Azure 歸檔存取層和大部分地區。 
 ---
-= Azure歸檔層與還原擷取時間
+= 使用 BlueXP 備份和還原實作 Azure 存檔層和還原檢索時間
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

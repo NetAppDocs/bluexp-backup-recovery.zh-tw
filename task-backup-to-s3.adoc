@@ -4,7 +4,7 @@ permalink: task-backup-to-s3.html
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, aws, aws s3, amazon s3, s3 bucket, back up volumes, cloud backup 
 summary: 完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Amazon S3 。 
 ---
-= 將 Cloud Volumes ONTAP 資料備份至 Amazon S3
+= 使用 BlueXP 備份和還原將 Cloud Volumes ONTAP 資料備份到 Amazon S3
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資�
 
 
 [role="lead"]
-完成幾個步驟、開始將 Cloud Volumes ONTAP 系統的大量資料備份到 Amazon S3 。
+完成 BlueXP 備份和復原中的幾個步驟，開始將磁碟區資料從 Cloud Volumes ONTAP 系統備份到 Amazon S3。
 
 
 
@@ -176,7 +176,7 @@ NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Re
 如果您Cloud Volumes ONTAP 使用BlueXP 3.9.23版或更新版本建立了這個功能完善的環境、這些權限應該已經成為IAM角色的一部分。否則您必須新增遺失的權限。
 
 --
-支援的 AWS 區域:: 所有 AWS 區域均支援 BlueXP 備份與還原 https://cloud.netapp.com/cloud-volumes-global-regions["支援的地方 Cloud Volumes ONTAP"^]、包括 AWS GovCloud 地區。
+支援的 AWS 區域:: 所有 AWS 區域（包括 AWS GovCloud 區域）都支援 BlueXP 備份和復原。
 在不同的AWS帳戶中建立備份所需的設定:: 根據預設、備份會使用Cloud Volumes ONTAP 與您的作業系統相同的帳戶建立。如果您想要使用不同的AWS帳戶進行備份、您必須：
 +
 --

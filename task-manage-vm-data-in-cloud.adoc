@@ -4,7 +4,7 @@ permalink: task-manage-vm-data-in-cloud.html
 keywords: manage backups, virtual machines, view datastores, view virtual machines, edit 
 summary: 您可以檢視資料存放區和虛擬機器、並編輯SnapCenter VMware vSphere執行個體的VMware vCenter外掛程式。 
 ---
-= 管理資料存放區和虛擬機器資料的保護
+= 使用 BlueXP 備份和還原管理資料儲存和虛擬機器資料的保護
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 您可以檢視資料存放區和虛擬機器、並編輯SnapCenter VMw
 
 
 [role="lead"]
-您可以在備份及還原資料之前、先檢視原則、資料存放區及虛擬機器。視資料庫、原則或資源群組的變更而定、您可以從 BlueXP UI 檢視更新。
+您可以在使用 BlueXP 備份和還原備份和還原資料之前查看策略、資料儲存和虛擬機器。視資料庫、原則或資源群組的變更而定、您可以從 BlueXP UI 檢視更新。
 
 
 
