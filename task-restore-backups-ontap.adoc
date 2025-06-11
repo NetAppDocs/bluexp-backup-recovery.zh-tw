@@ -749,29 +749,13 @@ Indexed Catalog v2 支援下列功能：
 
 
 .為工作環境啟用「索引型錄」
-啟用此功能時、 BlueXP 備份與還原可在 SVM 上為您的磁碟區啟用 SnapDiff v3 、並執行下列動作：
+當您使用 Indexed Catalog v2 時，本服務不會預設單獨的儲存桶。相反，對於儲存在 AWS、Azure、Google Cloud Platform、StorageGRID 或 ONTAP S3 中的備份，該服務會在 Connector 或雲端供應商環境中預設空間。
 
-ifdef::aws[]
+如果您在 v2 版本發布之前啟用了索引目錄，則工作環境會出現以下情況：
 
 * 對於儲存在AWS中的備份、它會配置新的S3儲存區和 https://aws.amazon.com/athena/faqs/["Amazon Athena互動查詢服務"^] 和 https://aws.amazon.com/glue/faqs/["AWS黏著伺服器無資料整合服務"^]。
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * 對於儲存在Azure中的備份、它會配置Azure Synapse工作區和Data Lake檔案系統做為儲存工作區資料的容器。
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * 對於儲存在Google Cloud中的備份、IT會配置新的儲存庫、以及 https://cloud.google.com/bigquery["Google Cloud BigQuery服務"^] 在帳戶/專案層級上進行資源配置。
-
-
-endif::gcp[]
-
 * 對於儲存在 StorageGRID 或 ONTAP S3 中的備份、它會在 Connector 或雲端供應商環境中配置空間。
 
 

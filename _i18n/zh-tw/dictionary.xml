@@ -1544,7 +1544,6 @@
   <block id="64964208f145e571ed736f861e9c039d" category="admonition">至少必須為一個工作環境啟動 BlueXP 備份與還原、而且必須存在初始備份檔案。</block>
   <block id="5b8dbbc2163786a4aed9331d66f16125" category="list-text">BlueXP 備份與還原會顯示所選備份檔案中存在的資料夾與檔案。</block>
   <block id="3909c405c5c3e8aaab7d2079c933cb0f" category="paragraph">如您所見、您真的只需要知道部分名稱、以及 BlueXP 備份與還原會搜尋符合您搜尋條件的所有備份檔案。</block>
-  <block id="cde27c2ee36cb857ffdbfe24fb0f0fef" category="paragraph">啟用此功能時、 BlueXP 備份與還原可在 SVM 上為您的磁碟區啟用 SnapDiff v3 、並執行下列動作：</block>
   <block id="091c3b75fcc63b578a3277a3c06221b8" category="list-text">您已訂閱<block ref="b82eb11d49725bb5c7ee9cfd96e7991d" category="inline-link-rx"></block>或您已購買 <block ref="a7c7886675f758752089ea0caddfb19c" category="inline-link-macro-rx"></block> NetApp 的 BlueXP 備份與恢復 BYOL 授權。</block>
   <block id="afa3805a28538274aaae2473f6106629" category="inline-image-macro">螢幕擷取畫面顯示 BlueXP 備份與還原啟用按鈕、可在您選取工作環境之後使用。</block>
   <block id="a2271679a96260c288cd66073902da0e" category="paragraph"><block ref="a2271679a96260c288cd66073902da0e" category="inline-image-macro-rx" type="image"></block></block>
@@ -1569,7 +1568,6 @@
   <block id="0718118055dc2edc791fa29a90a786fe" category="section-title">支援用於 BlueXP 備份與還原的 Google 歸檔儲存類別</block>
   <block id="c2e5d30cd0abf0804ca8396b9b1f8c56" category="paragraph">請注意、當您使用此類型的生命週期規則來設定 BlueXP 備份與還原時、在 Google 帳戶中設定儲存庫時、不得設定任何生命週期規則。</block>
   <block id="993e951005a20173ae0c8c379739a8f1" category="summary">瞭解 BlueXP 備份與還原的新功能。</block>
-  <block id="fd3d1ba9a2328492349b6ebea92fe728" category="doc">BlueXP 備份與還原的新功能</block>
   <block id="ef08fc33d8b9b410529dc05986b2e248" category="paragraph">API 的新功能可讓您使用 BlueXP 備份與還原、將磁碟區快照備份至 ONTAP S3 。此功能目前僅適用於內部部署 ONTAP 系統。如需詳細指示、請參閱部落格<block ref="8bfab3c14784f20047e4459b814ebfe4" category="inline-link-rx"></block>。</block>
   <block id="bcd4bdef20ff7dec0587f35facdeb7be" category="paragraph">從 Cloud Volumes ONTAP 系統建立備份至 Azure 儲存設備時、 BlueXP 備份與還原預設會將 Blob 容器與本機備援（ LRS ）一起配置、以達到成本最佳化。如果您想要在不同區域之間複寫資料、可以將此設定變更為區域備援（ ZRS ）。請參閱的 Microsoft 指示<block ref="c549763665cfbb93dbccfdbf667aa0f2" category="inline-link-rx"></block>。</block>
   <block id="4788963de19a5204a352f3308b0395d8" category="inline-link">檢閱 BlueXP 備份與還原可以傳送的所有警示</block>
@@ -3949,4 +3947,8 @@ ifdef：：AWS []</block>
   <block id="4d1f1dc63841491797cde0fde7dec31d" category="list-text">選擇您想要還原磁碟區、資料夾或檔案的目標位置，然後選擇*復原*。</block>
   <block id="dc98364e6680ec201dcd1e55df5cf2e1" category="paragraph">磁碟區、資料夾或檔案將會還原、並返回「還原儀表板」、以便您檢閱還原作業的進度。您也可以選擇「*作業監控*」標籤來查看復原進度。</block>
   <block id="791d05d0e9072626d0316ef0a7cf21bc" category="section-title">2025 年 6 月 09 日</block>
+  <block id="0a849c115a4741e75692ddd548e07b4d" category="paragraph">您可以在啟用保護或開始復原程序時啟用或停用此選項。</block>
+  <block id="9bbf67835dcc255a2362d9d5043708ad" category="paragraph">當您使用 Indexed Catalog v2 時，本服務不會預設單獨的儲存桶。相反，對於儲存在 AWS、Azure、Google Cloud Platform、StorageGRID 或 ONTAP S3 中的備份，該服務會在 Connector 或雲端供應商環境中預設空間。</block>
+  <block id="c2da3976b7bba43b7d1d45f7a32a43bd" category="paragraph">如果您在 v2 版本發布之前啟用了索引目錄，則工作環境會出現以下情況：</block>
+  <block id="5323d04b0f0228d9a4b7ec5629ddb280" category="doc">BlueXP 備份與還原的新功能</block>
 </blocks>
