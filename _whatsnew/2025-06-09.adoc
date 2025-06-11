@@ -1,0 +1,40 @@
+= 索引目錄支援更新
+:allow-uri-read: 
+
+
+
+
+=== 索引目錄支援更新
+
+2025 年 2 月，我們推出了更新的索引功能（索引目錄 v2），您可以在「搜尋和還原」資料還原方法中使用此功能。上一版本顯著提升了本地環境中的資料索引效能。在此版本中，索引目錄現已可在 Amazon Web Services、Microsoft Azure 和 Google Cloud Platform (GCP) 環境中使用。
+
+如果您是新客戶，所有新環境均預設啟用索引目錄 v2。如果您是現有客戶，您可以重新索引您的環境以利用索引目錄 v2。
+
+.如何啟用索引？
+在您使用「搜尋與還原」方法還原資料之前，您必須先在每個準備還原磁碟區或檔案的來源工作環境上啟用「索引」。執行搜尋和復原時，選擇“啟用索引”選項。
+
+索引目錄可以追蹤每個捲和備份文件，使您的搜尋快速且有效率。
+
+如需更多資訊、請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restore-ontap-data-using-search-restore["如何使用搜尋擴大機還原 ONTAP 資料；還原"]。
+
+
+
+=== Azure 專用連結終結點與服務終點
+
+通常，BlueXP 備份和復原會與雲端供應商建立私有端點，以處理各種保護任務。此版本引入了一項可選設置，可讓您啟用或停用 BlueXP 備份和恢復自動建立私有端點的功能。如果您希望更好地控制私有端點的建立流程，這項設定可能會對您有所幫助。
+
+如果停用此設置，則必須手動建立專用端點，以確保 BlueXP 備份和復原功能正常運作。如果沒有正確的連接，您可能無法成功執行備份和還原任務。
+
+
+
+=== ONTAP S3 上支援 SnapMirror 到雲端重新同步
+
+上一版本引入了對 SnapMirror 到雲端重新同步 (SM-C Resync) 的支援。此功能簡化了 NetApp 環境中磁碟區遷移期間的資料保護。此版本增加了對 ONTAP S3 以及其他與 S3 相容的提供者（例如 Wasabi 和 MinIO）上的 SM-C Resync 的支援。
+
+
+
+=== 為 StorageGRID 帶來自己的儲存桶
+
+當您在物件儲存中為工作環境建立備份檔案時，BlueXP 備份和復原功能會預設在您設定的物件儲存帳戶中為備份檔案建立容器（儲存桶或儲存帳戶）。之前，您可以覆寫此設置，並為 Amazon S3、Azure Blob Storage 和 Google Cloud Storage 指定您自己的容器。在此版本中，您現在可以自備 StorageGRID 物件儲存容器。
+
+請參閱。 https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["建立您自己的物件儲存容器"]
