@@ -1,0 +1,84 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-policy-create.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp BlueXP backup and recovery保護您的 VMware 工作負載。 
+---
+= 在BlueXP backup and recovery中建立備份資料儲存的策略
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以建立一個政策或使用 BlueXP 備份和還原中提供的以下預定義策略之一。
+
+[]
+====
+*注意* 若要切換到BlueXP backup and recovery工作負載，請參閱link:br-start-switch-ui.html["切換到不同的BlueXP backup and recovery工作負載"] 。
+
+====
+.開始之前
+* 如果您不想編輯預先定義的原則、則應建立原則。
+* 若要將備份從物件存放區移至歸檔儲存區、您應該執行 ONTAP 9.10.1 或更新版本、 Amazon Web Services 或 Microsoft Azure 應該是雲端供應商。
+* 您應該為每個雲端供應商設定歸檔存取層。
+
+
+.關於這項工作
+BlueXP 提供下列預先定義的原則：
+
+|===
+| 原則名稱 | 標籤 | 保留價值 
+
+
+ a| 
+1 年每日 LTR （長期保留）
+ a| 
+每日
+ a| 
+366,36
+
+
+
+ a| 
+5年每日LTR
+ a| 
+每日
+ a| 
+1830年
+
+
+
+ a| 
+7年每週LTR
+ a| 
+每週
+ a| 
+37
+
+
+
+ a| 
+每月10年LTR
+ a| 
+每月
+ a| 
+120
+
+|===
+.步驟
+. 在「虛擬機器」頁面的「設定」下拉式清單中、選取「*原則*」。
+. 選取 * 建立原則 * 。
+. 在「原則詳細資料」區段中、指定原則名稱。
+. 在「保留」區段中、選取其中一種保留類型、然後指定要保留的備份數量。
+. 選取「主要」或「次要」作為備份儲存來源。
+. （可選）如果要在成本最佳化的特定天數後、將備份從物件存放區移至歸檔儲存區、請選取「*將備份層級移至歸檔*」核取方塊、然後輸入備份歸檔的天數。
+. 選擇* Create *（建立*）。
++
+
+NOTE: 您無法編輯或刪除與資料存放區相關聯的原則。
+
+

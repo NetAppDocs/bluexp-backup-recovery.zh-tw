@@ -30,139 +30,128 @@ sidebar:
     entries:
     - title: 新增功能
       url: "/whats-new.html"
-    - title: 已知限制
-      url: "/reference-limitations.html"
+    - title: Microsoft SQL Server 工作負載的已知限制
+      url: "/br-limitations.html"
+    - title: ONTAP磁碟區工作負載的已知限制
+      url: "/br-reference-limitations.html"
   - title: 開始使用
     entries:
     - title: 瞭解 BlueXP 備份與還原
       url: "/concept-backup-to-cloud.html"
-    - title: 設定授權
-      url: "/task-licensing-cloud-backup.html"
-    - title: 啟用預覽功能
-      url: "/task-preview-enable.html"
-    - title: 監控資料保護
+    - title: BlueXP backup and recovery的先決條件
+      url: "/concept-start-prereq.html"
+    - title: 設定 BlueXP 備份與還原的授權
+      url: "/br-start-licensing.html"
+    - title: 在使用BlueXP backup and recovery之前設定備份目標
+      url: "/br-start-setup.html"
+    - title: 登入BlueXP backup and recovery
+      url: "/br-start-login.html"
+    - title: 發現備份目標
+      url: "/br-start-discover-backup-targets.html"
+    - title: 切換到不同的BlueXP backup and recovery工作負載
+      url: "/br-start-switch-ui.html"
+    - title: 配置BlueXP backup and recovery常規設置
+      url: "/br-start-configure.html"
+  - title: 使用BlueXP backup and recovery
+    entries:
+    - title: 在儀表板中查看保護健康狀況
+      url: "/br-use-dashboard.html"
+    - title: 建立策略來管理備份和還原
+      url: "/br-use-policies-create.html"
+    - title: 保護ONTAP磁碟區工作負載
       entries:
-      - title: 報告資料保護涵蓋範圍
-        url: "/task-report-inventory.html"
-      - title: 監控備份與還原工作的狀態
-        url: "/task-monitor-backup-jobs.html"
-  - title: 備份及還原ONTAP 資料
-    entries:
-    - title: 保護您的 ONTAP Volume 資料
-      url: "/concept-ontap-backup-to-cloud.html"
-    - title: 規劃您的保護旅程
-      url: "/concept-protection-journey.html"
-    - title: 管理 ONTAP 磁碟區的原則
-      url: "/task-create-policies-ontap.html"
-    - title: 備份至物件原則選項
-      url: "/concept-cloud-backup-policies.html"
-    - title: 在「進階設定」中管理備份至物件選項
-      url: "/task-manage-backup-settings-ontap.html"
-    - title: 備份Cloud Volumes ONTAP 到Amazon S3
-      flavor: aws
-      url: "/task-backup-to-s3.html"
-    - title: 備份Cloud Volumes ONTAP 到Azure Blob
-      flavor: azure
-      url: "/task-backup-to-azure.html"
-    - title: 備份Cloud Volumes ONTAP 到Google Cloud
-      flavor: gcp
-      url: "/task-backup-to-gcp.html"
-    - title: 將內部部署ONTAP 的不支援資料備份至Amazon S3
-      flavor: aws
-      url: "/task-backup-onprem-to-aws.html"
-    - title: 將內部部署ONTAP 的資料備份到Azure Blob
-      flavor: azure
-      url: "/task-backup-onprem-to-azure.html"
-    - title: 將內部部署ONTAP 的不全資料備份到Google Cloud
-      flavor: gcp
-      url: "/task-backup-onprem-to-gcp.html"
-    - title: 將內部部署 ONTAP 備份至 ONTAP S3
-      url: "/task-backup-onprem-to-ontap-s3.html"
-    - title: 將內部部署ONTAP 的內部部署資料備份至StorageGRID
-      url: "/task-backup-onprem-private-cloud.html"
-    - title: 使用 SnapMirror 將磁碟區移轉至雲端重新同步
-      url: "/task-migrate-volumes-snapmirror-cloud-resync.html"
-    - title: 管理ONTAP 還原備份
-      url: "/task-manage-backups-ontap.html"
-    - title: 從ONTAP 還原備份還原
-      url: "/task-restore-backups-ontap.html"
-  - title: 備份及還原內部部署應用程式資料
-    entries:
-    - title: 保護內部部署的應用程式資料
-      url: "/concept-protect-app-data-to-cloud.html"
-    - title: 註冊SnapCenter 伺服器
-      url: "/task-register-snapcenter-server.html"
-    - title: 建立備份應用程式的原則
-      url: "/task-create-policies-apps.html"
-    - title: 將內部部署應用程式資料備份至Amazon Web Services
-      flavor: aws
-      url: "/task-backup-app-data-to-aws.html"
-    - title: 將內部部署應用程式資料備份到Microsoft Azure
-      flavor: azure
-      url: "/task-backup-app-data-to-azure.html"
-    - title: 將內部部署應用程式資料備份到Google Cloud
-      flavor: gcp
-      url: "/task-backup-app-data-to-gcp.html"
-    - title: 將內部部署的應用程式資料備份StorageGRID 到不受資料保護的地方
-      url: "/task-backup-app-data-to-storagegrid.html"
-    - title: 管理應用程式保護
-      url: "/task-manage-app-backups.html"
-    - title: 還原內部部署應用程式資料
+      - title: 保護ONTAP磁碟區工作負載概述
+        url: "/prev-ontap-protect-overview.html"
+      - title: 規劃ONTAP卷的保護之旅
+        url: "/prev-ontap-protect-journey.html"
+      - title: 管理 ONTAP 磁碟區的原則
+        url: "/prev-ontap-policy-manage.html"
+      - title: ONTAP磁碟區的備份到物件策略選項
+        url: "/prev-ontap-policy-object-options.html"
+      - title: 管理備份到物件策略進階設定選項
+        url: "/prev-ontap-policy-object-advanced-settings.html"
+      - title: 備份Cloud Volumes ONTAP 到Amazon S3
+        url: "/prev-ontap-backup-cvo-aws.html"
+      - title: 備份Cloud Volumes ONTAP 到Azure Blob
+        url: "/prev-ontap-backup-cvo-azure.html"
+      - title: 備份Cloud Volumes ONTAP 到Google Cloud
+        url: "/prev-ontap-backup-cvo-gcp.html"
+      - title: 將內部部署ONTAP 的不支援資料備份至Amazon S3
+        url: "/prev-ontap-backup-onprem-aws.html"
+      - title: 將內部部署ONTAP 的資料備份到Azure Blob
+        url: "/prev-ontap-backup-onprem-azure.html"
+      - title: 將內部部署ONTAP 的不全資料備份到Google Cloud
+        url: "/prev-ontap-backup-onprem-gcp.html"
+      - title: 將內部部署 ONTAP 備份至 ONTAP S3
+        url: "/prev-ontap-backup-onprem-ontaps3.html"
+      - title: 將內部部署ONTAP 的內部部署資料備份至StorageGRID
+        url: "/prev-ontap-backup-onprem-storagegrid.html"
+      - title: 使用 SnapMirror 移轉磁碟區至雲端重新同步
+        url: "/prev-ontap-migrate-resync.html"
+      - title: 管理ONTAP 還原備份
+        url: "/prev-ontap-backup-manage.html"
+      - title: 從ONTAP 還原備份還原
+        url: "/prev-ontap-restore.html"
+    - title: 保護 Microsoft SQL Server 工作負載（預覽版）
       entries:
-      - title: 還原Oracle資料庫
-        url: "/task-restore-oracle-data.html"
-      - title: 還原SQL Server資料庫
-        url: "/task-restore-sql-data.html"
-      - title: 還原 SAP HANA 資料庫
-        url: "/task-restore-hana-backup.html"
-      - title: 還原 MongoDB 、 MySQL 和 PostgreSQL 資料庫
-        url: "/task-restore-customplugin-backup.html"
-  - title: 備份及還原虛擬機器資料
-    entries:
-    - title: 保護您的虛擬機器資料
-      url: "/concept-protect-vm-data.html"
-    - title: 註冊 VMware vSphere 主機的 SnapCenter 外掛程式
-      url: "/task-register-snapCenter-plug-in-for-vmware-vsphere.html"
-    - title: 建立備份資料存放區的原則
-      url: "/task-create-policies-vms.html"
-    - title: 將資料存放區備份至Amazon Web Services
-      flavor: aws
-      url: "/task-backup-vm-data-to-aws.html"
-    - title: 將資料存放區備份至Microsoft Azure
-      flavor: azure
-      url: "/task-backup-vm-data-to-azure.html"
-    - title: 將資料存放區備份到Google Cloud Platform
-      flavor: gcp
-      url: "/task-backup-vm-data-to-gcp.html"
-    - title: 將資料存放區備份StorageGRID 至
-      url: "/task-backup-vm-data-to-storagegrid.html"
-    - title: 管理資料存放區和虛擬機器資料的保護
-      url: "/task-manage-vm-data-in-cloud.html"
-    - title: 還原虛擬機器資料
-      url: "/task-restore-vm-data.html"
-  - title: 使用REST API進行自動化
-    url: "/api-backup-restore.html"
-  - title: 參考資料
-    entries:
-    - title: 支援的AWS歸檔儲存層
-      url: "/reference-aws-backup-tiers.html"
-    - title: 支援的Azure歸檔存取層
-      url: "/reference-azure-backup-tiers.html"
-    - title: 支援的Google歸檔儲存層
-      url: "/reference-google-backup-tiers.html"
-    - title: 在Azure中設定多帳戶存取的備份
-      flavor: azure
-      url: "/reference-backup-multi-account-azure.html"
-    - title: 在黑暗的站台中還原 BlueXP 備份與還原資料庫
-      url: "/reference-backup-cbs-db-in-dark-site.html"
+      - title: 保護 Microsoft SQL Server 工作負載概述
+        url: "/br-use-mssql-protect-overview.html"
+      - title: 如果從SnapCenter匯入，請配置其他項目
+        url: "/concept-start-prereq-snapcenter-import.html"
+      - title: 發現 Microsoft SQL Server 工作負載
+        url: "/br-start-discover.html"
+      - title: 備份 Microsoft SQL Server 工作負載
+        url: "/br-use-mssql-backup.html"
+      - title: 還原 Microsoft SQL Server 工作負載
+        url: "/br-use-mssql-restore.html"
+      - title: 複製 Microsoft SQL Server 工作負載
+        url: "/br-use-mssql-clone.html"
+      - title: 管理 Microsoft SQL Server 庫存
+        url: "/br-use-manage-inventory.html"
+      - title: 管理 Microsoft SQL Server 快照
+        url: "/br-use-manage-snapshots.html"
+      - title: 建立 Microsoft SQL Server 報告
+        url: "/br-use-reports.html"
+    - title: 保護虛擬機器工作負載
+      entries:
+      - title: 保護虛擬機器工作負載概述
+        url: "/prev-vmware-protect-overview.html"
+      - title: 保護虛擬機器工作負載的先決條件
+        url: "/prev-vmware-prereqs.html"
+      - title: 註冊 VMware vSphere 主機的 SnapCenter 外掛程式
+        url: "/prev-vmware-register-snapcenter.html"
+      - title: 建立備份 VMware 資料儲存區的策略
+        url: "/prev-vmware-policy-create.html"
+      - title: 將資料存放區備份至Amazon Web Services
+        url: "/prev-vmware-backup-aws.html"
+      - title: 將資料存放區備份至Microsoft Azure
+        url: "/prev-vmware-backup-azure.html"
+      - title: 將資料存放區備份到Google Cloud Platform
+        url: "/prev-vmware-backup-gcp.html"
+      - title: 將資料存放區備份StorageGRID 至
+        url: "/prev-vmware-backup-storagegrid.html"
+      - title: 管理資料存放區和虛擬機器資料的保護
+        url: "/prev-vmware-manage.html"
+      - title: 還原 VMware 資料儲存區
+        url: "/prev-vmware-restore.html"
+    - title: 監控工作
+      url: "/br-use-monitor-tasks.html"
     - title: 重新啟動 BlueXP 備份與還原
       url: "/reference-restart-backup.html"
-  - title: 知識與支援
+  - title: 使用REST API進行自動化
+    url: "/br-api-backup-restore.html"
+  - title: 參考資料
     entries:
-    - title: 註冊以取得支援
-      url: "/task-support-registration.html"
-    - title: 取得協助
-      url: "/task-get-help.html"
+    - title: SnapCenter中的策略與BlueXP backup and recovery的比較
+      url: "/reference-policy-differences-snapcenter.html"
+    - title: BlueXP backup and recovery角色和權限
+      url: "/reference-roles.html"
+    - title: 支援的AWS歸檔儲存層
+      url: "/prev-reference-aws-archive-storage-tiers.html"
+    - title: 支援的 Azure 存檔儲存層
+      url: "/prev-reference-azure-archive-storage-tiers.html"
+    - title: 支援的 Google Cloud 歸檔儲存層
+      url: "/prev-reference-gcp-archive-storage-tiers.html"
   - title: 法律聲明
     url: "/legal-notices.html"
 product-family:

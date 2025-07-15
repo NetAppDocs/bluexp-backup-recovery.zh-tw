@@ -16,7 +16,7 @@ summary: 您可能需要重新啟動 BlueXP 備份與還原服務。
 [role="lead"]
 您可能需要重新啟動 BlueXP 備份與還原服務。
 
-BlueXP 備份與還原功能內建於 BlueXP Connector 中。您必須依照不同的初始步驟來重新啟動服務、視您是在雲端部署 Connector 、還是在 Linux 系統上手動安裝 Connector 而定。
+BlueXP 備份與還原功能內建於 BlueXP Connector 中。
 
 .步驟
 . 連線至 Connector 執行的 Linux 系統。

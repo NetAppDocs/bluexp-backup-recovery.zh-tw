@@ -1,0 +1,118 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-restore.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp BlueXP backup and recovery保護您的 VMware 工作負載。 
+---
+= 使用BlueXP backup and recovery恢復虛擬機器數據
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用 BlueXP 備份和還原將虛擬機器資料從雲端還原到本機 vCenter。您可以將虛擬機器還原至備份所在的完全相同位置、或是還原至其他位置。如果虛擬機器是使用歸檔原則備份、則您可以設定歸檔還原優先順序。
+
+
+NOTE: 您無法還原跨資料存放區的虛擬機器。
+
+[]
+====
+*注意* 若要切換到BlueXP backup and recovery工作負載，請參閱link:br-start-switch-ui.html["切換到不同的BlueXP backup and recovery工作負載"] 。
+
+====
+.開始之前
+* 確保你已經滿足了所有link:prev-vmware-prereqs.html["虛擬機器保護要求"]在將資料儲存備份到雲端之前。
+* 如果您要還原至其他位置：
++
+** 確保來源和目的地 vCenter 處於連結模式。
+** 請確定來源和目的地叢集詳細資料已新增至 BlueXP Canvas 、並在兩個 SnapCenter Plug-in for VMware vSphere 主機的連結模式 vCenter 中。
+** 確保已新增工作環境（我們）、以對應至 BlueXP Canvas 中的替代位置。
+
+
+
+
+.步驟
+. 在BlueXP UI 中，選擇 *保護* > *備份和還原* > *虛擬機器* > *SnapCenter Plug-in for VMware vSphere*，然後選擇SnapCenter Plug-in for VMware vSphere。
+
+
+
+NOTE: 如果來源虛擬機器移至其他位置（ VMotion ）、且使用者觸發從 BlueXP 還原該虛擬機器、則虛擬機器會還原至備份來源位置。
+
+. 您可以將虛擬機器還原至原始位置、或從資料存放區或虛擬機器還原至其他位置：
+
+
+|===
+| 如果您要還原虛擬機器 ... | 執行此動作... 
+
+
+ a| 
+移至資料存放區的原始位置
+ a| 
+. 選擇“操作”圖標image:icon-action.png["行動"]與要復原的資料儲存相對應的，然後按一下「查看詳細資料」。
+. 選擇與要還原的備份相對應的*還原*。
+. 選擇要從備份中還原的虛擬機，然後選擇「下一步」。
+. 確保選擇了*Original*，然後選擇*Continue*。
+. 如果使用設定了存檔設定的政策來保護虛擬機，請選擇*存檔還原優先權*，然後選擇*下一步*。
++
+Amazon Web Services支援的歸檔還原優先順序高、標準且低、Microsoft Azure支援的歸檔還原優先順序高且標準。
+
+. 查看詳細資訊並選擇*恢復*。
+
+
+
+
+ a| 
+移至資料存放區的替代位置
+ a| 
+. 選擇“操作”圖標image:icon-action.png["行動"]對應您要恢復的資料存儲，然後選擇*查看詳細資料*。
+. 選擇與要還原的備份相對應的*還原*。
+. 選擇要從備份中還原的虛擬機，然後選擇「下一步」。
+. 選取 * 替代 * 。
+. 選取替代的 vCenter Server 、 ESXi 主機、資料存放區和網路。
+. 恢復後為虛擬機器提供名稱並選擇*繼續*。
+. 如果使用設定了存檔設定的政策來保護虛擬機，請選擇*存檔還原優先權*，然後選擇*下一步*。
++
+Amazon Web Services支援的歸檔還原優先順序高、標準且低、Microsoft Azure支援的歸檔還原優先順序高且標準。
+
+. 查看詳細資訊並選擇*恢復*。
+
+
+
+
+ a| 
+從虛擬機器移至原始位置
+ a| 
+. 選擇“操作”圖標image:icon-action.png["行動"]對應要還原的虛擬機器並選擇*還原*。
+. 選取您要用來還原虛擬機器的備份。
+. 確保選擇了*Original*，然後選擇*Continue*。
+. 如果使用設定了存檔設定的政策來保護虛擬機，請選擇*存檔還原優先權*，然後選擇*下一步*。
++
+Amazon Web Services支援的歸檔還原優先順序高、標準且低、Microsoft Azure支援的歸檔還原優先順序高且標準。
+
+. 查看詳細資訊並選擇*恢復*。
+
+
+
+
+ a| 
+移至虛擬機器的替代位置
+ a| 
+. 選擇“操作”圖標image:icon-action.png["行動"]對應要還原的虛擬機器並選擇*還原*。
+. 選取您要用來還原虛擬機器的備份。
+. 選取 * 替代 * 。
+. 選取替代的 vCenter Server 、 ESXi 主機、資料存放區和網路。
+. 恢復後為虛擬機器提供名稱並選擇*繼續*。
+. 如果使用設定了存檔設定的政策來保護虛擬機，請選擇*存檔還原優先權*，然後選擇*下一步*。
++
+Amazon Web Services支援的歸檔還原優先順序高、標準且低、Microsoft Azure支援的歸檔還原優先順序高且標準。
+
+. 查看詳細資訊並選擇*恢復*。
+
+
+|===
+
+NOTE: 如果還原作業未完成，請勿再次嘗試還原程序，直到「工作監控」顯示還原作業失敗為止。如果您在「工作監視器」顯示還原作業失敗之前再次嘗試還原程序，還原作業將會再次失敗。當您看到「工作監控」狀態為「失敗」時，可以再次嘗試還原程序。

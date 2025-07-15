@@ -1,0 +1,249 @@
+---
+sidebar: sidebar 
+permalink: br-start-configure.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 完成幾個步驟來設定BlueXP backup and recovery。 
+---
+= 配置BlueXP backup and recovery設定
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+設定BlueXP後，請設定備份和復原設置，包括新增主機資源憑證、匯入SnapCenter資源、設定日誌目錄以及設定 VMware vCenter 設定。您應該在主動開始備份和還原資料之前執行此操作。
+
+* <<為主機資源新增憑證>>為您從SnapCenter匯入的 Windows 和 SQL Server 主機新增憑證。（僅限 Microsoft SQL Server 工作負載）
+* <<維護 VMware vCenter 設定>>。
+* <<匯入並管理SnapCenter主機資源>>。（僅限 Microsoft SQL Server 工作負載）
+* <<在 Windows 主機的快照中設定日誌目錄>>。
+
+
+*必要的BlueXP角色* 備份和還原超級管理員、備份和還原備份管理員、備份和還原復原管理員。了解link:reference-roles.html["備份和恢復角色和權限"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的 BlueXP 存取角色"^] 。
+
+
+
+== 為主機資源新增憑證
+
+新增要從SnapCenter匯入的主機資源的憑證。主機憑證用於發現新的工作負載並套用備份策略。
+
+如果還沒有憑證，可以建立它們。這些憑證必須具有存取和管理主機工作負載所需的權限。
+
+您需要配置以下類型的憑證：
+
+* Microsoft SQL Server 憑證
+* SnapCenter Windows 主機憑證
+
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇“*設定*”。
++
+image:../media/screen-br-settings-all.png["顯示選項的設定選項"]
+
+. 選擇“*Credentials*”的向下箭頭。
++
+image:../media/screen-br-settings-credentials.png["設定選項"]
+
+. 選擇*新增憑證*。
++
+image:../media/screen-br-settings-credentials-add.png["新增憑證的設定選項"]
+
+. 輸入憑證資料。根據您選擇的身份驗證模式，會出現不同的欄位。選擇「資訊」*i* 可查看有關欄位的更多資訊。
++
+** *憑證名稱*：輸入憑證的名稱。
+** *驗證模式*：選擇*Windows*或*Microsoft SQL*。
++
+
+TIP: 您需要輸入 Windows 和 Microsoft SQL Server 的憑證，因此您需要新增兩組憑證。
+
+
+
+. 如果您選擇了「*Windows*」：
++
+** *連接器*：輸入BlueXP連接器 IP 位址。
+** *網域和使用者名稱*：輸入憑證的 NetBIOS 或網域 FQDN 和使用者名稱。
+** *密碼*：輸入憑證的密碼。
+
+
+. 如果您選擇了「Microsoft SQL」：
++
+** *主機*：選擇發現的 SQL Server 主機位址。
+** *SQL Server 執行個體*：選擇已發現的 SQL Server 執行個體。
+
+
+. 選取*「Add*」。
+
+
+
+
+=== 編輯主機資源的憑證
+
+您稍後可以編輯從SnapCenter匯入的主機資源的密碼。
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇“*設定*”。
+. 選擇向下的箭頭以展開“*Credentials*”部分。
++
+image:../media/screen-br-settings-credentials-edit.png["設定選項"]
+
+. 選擇“操作”圖標image:../media/icon-action.png["操作選項"] > *編輯憑證*。
++
+** *密碼*：輸入憑證的密碼。
+
+
+. 選擇*保存*。
+
+
+
+
+== 維護 VMware vCenter 設定
+
+提供 VMware vCenter 憑證以發現要備份的 VMware vCenter Server 工作負載。如果您沒有現有憑證，則可以建立憑證並賦予其存取和管理 VMware vCenter Server 工作負載所需的權限。
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇“*設定*”。
++
+image:../media/screen-br-settings-all.png["顯示選項的設定選項"]
+
+. 選擇向下的箭頭以展開 *VMware vCenter* 部分。
++
+image:../media/screen-br-settings-vmware-open.png["顯示 VMware vCenter 設定的「設定」選項"]
+
+. 選取*新增vCenter*。
+. 輸入 VMware vCenter Server 資訊。
++
+** *vCenter FQDN 或 IP 位址*：輸入 VMware vCenter Server 的 FQDN 名稱或 IP 位址。
+** *使用者名稱*和*密碼*：輸入 VMware vCenter Server 的使用者名稱和密碼。
+** *連接埠*：輸入 VMware vCenter Server 的連接埠號碼。
+** *協定*：選擇*HTTP*或*HTTPS*。
+
+
+. 選取*「Add*」。
+
+
+
+
+== 匯入並管理SnapCenter主機資源
+
+如果您之前使用SnapCenter備份資源，則可以在BlueXP backup and recovery中匯入和管理這些資源。使用此選項，您可以匯入SnapCenter伺服器資訊來註冊多個 Snapcenter 伺服器並發現資料庫工作負載。
+
+這是一個由兩個部分組成的過程：
+
+* 匯入SnapCenter Server 應用程式和主機資源
+* 管理選定的SnapCenter主機資源
+
+
+
+
+=== 匯入SnapCenter Server 應用程式和主機資源
+
+第一步是從SnapCenter匯入主機資源，並在BlueXP backup and recovery清單頁面中顯示這些資源。此時，這些資源尚未由BlueXP backup and recovery管理。
+
+
+TIP: 匯入SnapCenter主機資源後， BlueXP backup and recovery不會接管保護管理。為此，您必須在BlueXP backup and recovery中明確選擇管理這些資源。
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇“*設定*”。
++
+image:../media/screen-br-settings-all.png["顯示選項的設定選項"]
+
+. 選擇向下箭頭以展開「從SnapCenter匯入」部分。
++
+image:../media/screen-br-settings-import-snapcenter.png["用於匯入SnapCenter伺服器資源的設定選項"]
+
+. 選擇*從SnapCenter匯入*以匯入SnapCenter資源。
++
+image:../media/screen-br-settings-import-snapcenter-details.png["用於匯入SnapCenter伺服器資源的設定選項"]
+
+. 輸入* SnapCenter應用程式憑證*：
++
+.. * SnapCenter FQDN 或 IP 位址*：輸入SnapCenter應用程式本身的 FQDN 或 IP 位址。
+.. *連接埠*：輸入SnapCenter伺服器的連接埠號碼。
+.. *使用者名稱*和*密碼*：輸入SnapCenter伺服器的使用者名稱和密碼。
+.. *連接器*：選擇SnapCenter的BlueXP連接器。
+
+
+. 輸入* SnapCenter伺服器主機憑證*：
++
+.. *現有憑證*：如果選擇此選項，您可以使用已新增的現有憑證。請輸入憑證名稱。
+.. *新增憑證*：如果您沒有現有的SnapCenter主機憑證，則可以新增憑證。輸入憑證名稱、驗證模式、使用者名稱和密碼。
+
+
+. 選擇“*導入*”來驗證您的條目並註冊SnapCenter伺服器。
++
+
+NOTE: 如果SnapCenter伺服器已註冊，您可以更新現有的註冊詳細資訊。
+
+
+
+.結果
+清單頁面顯示匯入的SnapCenter資源。
+
+image:../media/screen-br-inventory-manage-option.png["顯示匯入的SnapCenter資源和管理選項的庫存頁面"]
+
+
+
+=== 管理SnapCenter主機資源
+
+匯入SnapCenter資源後，請在BlueXP backup and recovery中管理這些主機資源。選擇管理這些匯入的資源後， BlueXP backup and recovery可以備份和還原您從SnapCenter匯入的資源。您不再需要在SnapCenter伺服器中管理這些資源。
+
+.步驟
+. 匯入SnapCenter資源後，在出現的「清單」頁面上，選擇您匯入的、希望從現在開始由BlueXP backup and recovery管理的SnapCenter資源。
+. 選擇“操作”圖標image:../media/icon-action.png["操作選項"] > *管理* 管理資源。
++
+image:../media/screen-br-inventory-manage-host.png["顯示匯入的SnapCenter資源和管理選項的庫存頁面"]
+
+. 選擇*在BlueXP中管理*。
++
+清單頁面在主機名稱下顯示 *Managed*，表示所選主機資源現在由BlueXP backup and recovery管理。
+
+
+
+
+
+=== 編輯匯入的SnapCenter資源
+
+您稍後可以重新匯入SnapCenter資源或編輯匯入的SnapCenter資源以更新註冊詳細資訊。
+
+您只能變更SnapCenter伺服器的連接埠和密碼詳細資料。
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇“*設定*”。
+. 選擇“從SnapCenter匯入”的向下箭頭。
++
+從SnapCenter匯入頁面顯示所有先前的匯入。
+
++
+image:../media/screen-br-settings-import-snapcenter-edit.png["用於匯入SnapCenter Server 資源的設定選項，顯示先前匯入的資源"]
+
+. 選擇“操作”圖標image:../media/icon-action.png["操作選項"] > *編輯*以更新資源。
+. 根據需要更新SnapCenter密碼和連接埠詳細資訊。
+. 選取 * 匯入 * 。
+
+
+
+
+== 在 Windows 主機的快照中設定日誌目錄
+
+在為 Windows 主機建立原則之前，您應該在 Windows 主機的快照中設定日誌目錄。日誌目錄用於儲存備份過程中產生的日誌。
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇 *Inventory*。
++
+image:../media/screen-br-inventory-viewdetails-option.png["顯示工作負載和查看詳細資訊選項的庫存頁面"]
+
+. 在清單頁面中，選擇一個工作負載，然後選擇操作圖標image:../media/icon-action.png["操作選項"] > *查看詳情*顯示工作量詳情。
+. 從顯示 Microsoft SQL Server 的庫存詳細資料頁面中，選擇「主機」標籤。
++
+image:../media/screen-br-inventory-hosts-actionmenu.png["清單詳細資料頁面顯示「Microsoft SQL Server 主機」標籤和「操作」選單"]
+
+. 在清單詳細資料頁面中，選擇一個主機並選擇操作圖標image:../media/icon-action.png["操作選項"] > *配置日誌目錄*。
++
+image:../media/screen-br-inventory-configure-log.png["配置日誌螢幕"]
+
+. 瀏覽或輸入日誌目錄的路徑。
+. 選擇*保存*。
+

@@ -1,0 +1,127 @@
+---
+sidebar: sidebar 
+permalink: br-start-setup.html 
+keywords: bluexp, backup, back up, restore, recovery, aws, azure 
+summary: 在使用BlueXP backup and recovery之前，請執行幾個步驟來設定備份目標。 
+---
+= 在使用BlueXP backup and recovery之前設定備份目標
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+在使用BlueXP backup and recovery之前，請執行幾個步驟來設定備份目標。
+
+開始之前、請先檢閱link:concept-start-prereq.html["先決條件"]以確保您的環境已準備就緒。
+
+
+
+== 準備備備份目的地
+
+準備以下一個或多個備份目標：
+
+* NetAppStorageGRID。
++
+請參閱 https://docs.netapp.com/us-en/bluexp-storagegrid/task-discover-storagegrid.html["了解StorageGRID"^]。
+
++
+參考 https://docs.netapp.com/us-en/storagegrid-117/index.html["本文檔StorageGRID"^]有關StorageGRID的詳細資訊。
+
+* 亞馬遜網路服務。請參閱 https://docs.netapp.com/us-en/bluexp-s3-storage/index.html["Amazon S3 文檔"^]。
++
+執行下列操作以準備將 AWS 作為備份目標：
+
++
+** 在 AWS 中設定帳戶。
+** 在 AWS 中配置 S3 權限，列於下一節。
+** 如需在 BlueXP  中管理 AWS 儲存設備的詳細資訊 https://docs.netapp.com/us-en/bluexp-setup-admin/task-viewing-amazon-s3.html["管理您的Amazon S3儲存庫"^]、請參閱。
+
+
+
+
+* 微軟 Azure。
++
+** 請參閱 https://docs.netapp.com/us-en/bluexp-azure-netapp-files/index.html["本文檔 Azure NetApp Files"^]。
+** 在 Azure 中設定帳戶。
+** 配置 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions.html["Azure權限"^]在 Azure 中。
+** 有關在BlueXP中管理 Azure 儲存體的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-blob-storage/task-view-azure-blob-storage.html["管理 Azure 儲存帳戶"^] 。
+
+
+
+
+在備份目標本身配置選項後，您稍後可以在BlueXP backup and recovery服務中將其配置為備份目標。有關如何在BlueXP backup and recovery中配置備份目標的詳細信息，請參閱link:br-start-discover-backup-targets.html["發現備份目標"] 。
+
+
+
+== 設定S3權限
+
+您需要設定兩組 AWS S3 權限：
+
+* 連接器建立及管理S3儲存區的權限。
+* 內部部署ONTAP 的內部資源集區的權限、讓IT能夠讀取資料並將資料寫入S3儲存區。
+
+
+.步驟
+. 確保 Connector 具有必要的權限。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["BlueXP  原則權限"]。
++
+
+NOTE: 在 AWS 中國地區建立備份時、您需要將 IAM 原則中所有 _Resource_ 區段下的 AWS 資源名稱「 arn 」從「 AWS 」變更為「 AWS-CN 」、例如 `arn:aws-cn:s3:::netapp-backup-*`。
+
+. 當您啟動服務時、備份精靈會提示您輸入存取金鑰和秘密金鑰。這些認證資料會傳遞ONTAP 給整個叢集、ONTAP 以便讓支援中心能夠將資料備份並還原至S3儲存區。因此、您必須建立具有下列權限的 IAM 使用者。
++
+請參閱 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html["AWS 文件：建立角色、將權限委派給 IAM 使用者"^]。
+
++
+[%collapsible]
+====
+[source, json]
+----
+{
+    "Version": "2012-10-17",
+     "Statement": [
+        {
+           "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListBucket",
+                "s3:ListAllMyBuckets",
+                "s3:GetBucketLocation",
+                "s3:PutEncryptionConfiguration"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup-*",
+            "Effect": "Allow",
+            "Sid": "backupPolicy"
+        },
+        {
+            "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject",
+                "s3:ListAllMyBuckets",
+                "s3:PutObjectTagging",
+                "s3:GetObjectTagging",
+                "s3:RestoreObject",
+                "s3:GetBucketObjectLockConfiguration",
+                "s3:GetObjectRetention",
+                "s3:PutBucketObjectLockConfiguration",
+                "s3:PutObjectRetention"
+            ],
+            "Resource": "arn:aws:s3:::netapp-backup*/*",
+            "Effect": "Allow"
+        }
+    ]
+}
+----
+====
+

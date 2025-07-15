@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: br-use-reports.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+summary: 在BlueXP backup and recovery中，您可以建立報表來查看備份狀態，包括備份數量、成功備份數量和失敗備份數量。您還可以查看每個備份的詳細信息，包括備份類型、用於備份的儲存系統以及備份時間。 
+---
+= 在BlueXP backup and recovery中為 Microsoft SQL Server 工作負載建立報告
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+在BlueXP backup and recovery中，您可以為 Microsoft SQL Server 工作負載建立報告，以查看備份狀態，包括備份數量、成功備份數量和失敗備份數量。您還可以查看每個備份的詳細信息，包括備份類型、用於備份的儲存系統以及備份時間。
+
+
+
+== 建立報告
+
+*必要的BlueXP角色* 組織管理員、資料夾或專案管理員、備份和還原超級管理員、備份和還原備份管理員、備份和還原復原管理員、備份和還原複製管理員。了解link:reference-roles.html["備份和恢復角色和權限"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的 BlueXP 存取角色"^] 。
+
+. 從BlueXP backup and recovery選單中，選擇「*報告*」標籤。
+. 選取 * 建立報告 * 。
++
+image:../media/screen-br-reports.png["建立新報告截圖"]
+
+. 輸入報告範圍詳細資料：
++
+** *報告名稱*：輸入報告的唯一名稱。
+** *報表類型*：選擇您想要按帳戶還是按工作量（Microsoft SQL Server）報表。
+** *選擇主機*：如果您按工作負載選擇，請選擇要為其產生報告的主機。
+** *選擇內容*：選擇報告包含所有備份的摘要還是每個備份的詳細資訊。（如果您選擇“按帳戶”）
+
+
+. 輸入報告範圍：選擇您希望報告包含過去一天、過去 7 天、過去 30 天、上個季度或去年的資料。
+. 輸入報告發送詳情：如果您希望透過電子郵件發送報告，請勾選「透過電子郵件發送報告」。輸入您希望接收報告的電子郵件地址。
++
+在「設定」頁面中設定電子郵件通知。有關配置電子郵件通知的詳細信息，請參閱link:br-use-settings-advanced.html["設定"] 。
+
+

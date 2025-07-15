@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: br-start-login.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 您使用NetApp BlueXP登入BlueXP backup and recovery服務。 
+---
+= 登入BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您使用NetApp BlueXP登入BlueXP backup and recovery服務。
+
+BlueXP backup and recovery使用基於角色的存取控制 (RBAC) 來管理每個使用者對特定操作的存取權限。
+
+如需每個角色可執行之動作的詳細資訊，請參閱link:reference-roles.html["BlueXP backup and recovery使用者角色"]。
+
+若要登入 BlueXP  、您可以使用 NetApp 支援網站認證、或使用電子郵件和密碼登入 NetApp 雲端。 https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["深入瞭解登入"^]。
+
+.步驟
+. 開啟網頁瀏覽器並前往 https://console.bluexp.netapp.com/["BlueXP主控台"^]。
++
+出現 NetApp BlueXP 登入頁面。
+
+. 登入 BlueXP 。
+. 從BlueXP左側導覽中，選擇 *保護* > *備份和還原*。
++
+** 如果您是首次登入此服務，且尚未建立工作環境，系統會顯示「歡迎使用全新BlueXP backup and recovery」登入頁面，其中會顯示「新增工作環境」選項。有關向BlueXP添加工作環境的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["BlueXP標準模式入門"^] 。
++
+image:screen-br-landing-no-we.png["無需工作環境的BlueXP blueXP 備份和還原的登陸頁面截圖"]
+
+** 如果這是您第一次登入此服務，並且您已經在BlueXP中擁有工作環境，但尚未發現任何資源，則會出現「歡迎使用新的BlueXP backup and recovery」登入頁面並顯示*發現資源*選項。
++
+image:screen-br-landing-unified.png["BlueXP blueXP 備份和還原的登入頁面截圖"]
+
+
+
+. 如果您還沒有這樣做，請選擇*發現和管理*選項。
++
+有關 Microsoft SQL Server 工作負載，請參閱link:br-start-discover.html["發現 Microsoft SQL Server 工作負載"] 。
+
+

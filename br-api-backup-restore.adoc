@@ -1,0 +1,187 @@
+---
+sidebar: sidebar 
+permalink: br-api-backup-restore.html 
+keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis 
+summary: 透過 Web UI 提供的 BlueXP 備份與還原功能、也可透過 RESTful API 取得。 
+---
+= 使用BlueXP backup and recoveryREST API 實現自動化
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+透過 Web UI 提供的 BlueXP 備份與還原功能、也可透過 RESTful API 取得。
+
+BlueXP 備份與還原中定義了十種端點類別：
+
+* 備份：管理雲端和內部部署資源的備份作業、並擷取備份資料的詳細資料
+* 目錄：根據查詢（搜尋與還原）來管理已建立索引的檔案目錄搜尋。
+* 雲端：從BlueXP擷取各種雲端供應商資源的相關資訊
+* 工作：管理BlueXP資料庫上的工作詳細資料項目
+* 授權：從BlueXP擷取工作環境的授權有效性
+* 勒索軟體掃描：對特定備份檔案進行勒索軟體掃描
+* 還原：可讓您執行磁碟區、檔案及資料夾層級的還原作業
+* SFR -從備份檔案擷取檔案、以執行單一檔案層級的還原作業（瀏覽與還原）
+* StorageGRID - 擷取 StorageGRID 伺服器的詳細資料、並可讓您探索 StorageGRID 伺服器
+* 工作環境：管理備份原則、並設定與工作環境相關的目的地物件存放區
+
+
+
+
+== 快速入門
+
+若要開始使用 BlueXP 備份與還原 API 、您必須取得使用者權杖、 BlueXP 帳戶 ID 及 BlueXP Connector ID 。
+
+撥打API呼叫時、您將在「授權」標頭中新增使用者權杖、並在X-agent-id標頭中新增BlueXP Connector ID。您應該在API中使用BlueXP帳戶ID。
+
+.步驟
+. 從NetApp BlueXP網站取得使用者權杖。
++
+請務必從下列連結產生重新整理權杖：https://services.cloud.netapp.com/refresh-token/。重新整理權杖是一個英數字元字串、可用來產生使用者權杖。
+
++
+[source, http]
+----
+curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/token?=' \
+--header 'Content-Type: application/json' \
+-d '{
+    "grant_type": "refresh_token",
+    "refresh_token": "JxaVHn9cGkX92aPVCkhat3zxxxxxwsC9qMl_pLHkZtsVA",
+    "client_id": "Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC"
+}'
+----
++
+
+NOTE: BlueXP網站的使用者權杖有到期日。API 回應包含「 Expire_in 」欄位、指出權杖過期的時間。若要重新整理權杖、您需要再次呼叫此API。
+
+. 取得您的BlueXP帳戶ID。
++
+[source, http]
+----
+GET 'https://api.bluexp.netapp.com/tenancy/account' -H 'authority: api.bluexp.netapp.com'
+Header:
+-H 'accept: application/json'
+-H 'accept-language: en-GB,en;q=0.9'
+-H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR………
+----
++
+此API會傳回如下回應。您可以剖析*的輸出、以擷取帳戶ID。[帳戶PublicId]*。
+
++
+ [{"accountPublicId":"account-i6vJXvZW","accountName":"rashidn","isSaas":true,"isGov":false,"isPrivatePreviewEnabled":false,"is3rdPartyServicesEnabled":false,"accountSerial":"96064469711530003565","userRole":"Role-1"}………
+. 取得內含BlueXP Connector ID的X-agent-id。
++
+[source, http]
+----
+GET curl 'https://api.services.cloud.netapp.com/occm/list-occms/account-OOnAR4ZS?excludeStandalone=true&source=saas' \
+Header:
+  -H 'authority: api.services.cloud.netapp.com' \
+  -H 'accept: application/json' \
+  -H 'accept-language: en-GB,en;q=0.9' \
+  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5…………
+----
++
+此API會傳回如下回應。您可以剖析* occm.[0].[agent].[agentId]*的輸出來擷取代理程式ID。
+
++
+ {"occms":[{"account":"account-OOnAR4ZS","accountName":"cbs","occm":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","status":"ready","occmName":"cbsgcpdevcntsg-asia","primaryCallbackUri":"http://34.93.197.21","manualOverrideUris":[],"automaticCallbackUris":["http://34.93.197.21","http://34.93.197.21/occmui","https://34.93.197.21","https://34.93.197.21/occmui","http://10.138.0.16","http://10.138.0.16/occmui","https://10.138.0.16","https://10.138.0.16/occmui","http://localhost","http://localhost/occmui","http://localhost:1337","http://localhost:1337/occmui","https://localhost","https://localhost/occmui","https://localhost:1337","https://localhost:1337/occmui"],"createDate":"1652120369286","agent":{"useDockerInfra":true,"network":"default","name":"cbsgcpdevcntsg-asia","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Zclients","provider":"gcp","systemId":"a3aa3578-bfee-4d16-9e10-
+
+
+
+
+== 使用API的範例
+
+以下範例顯示在 Azure 雲端的 East-US-2 地區、透過新原則在工作環境中啟用 BlueXP 備份與還原的 API 呼叫、該原則設定了每日、每小時和每週的標籤、將天後歸檔設定為 180 天。請注意、這只會在工作環境中啟用備份、但不會備份任何磁碟區。
+
+.API要求
+您會發現我們使用的是BlueXP帳戶ID `account-DpTFcxN3`、BlueXP Connector ID `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`和使用者權杖 `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` 在此命令中。
+
+[source, http]
+----
+curl --location --request POST 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v3/backup/working-environment/VsaWorkingEnvironment-99hPYEgk' \
+--header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g' \
+--data-raw '{
+    "provider":"AZURE",
+    "backup-policy": {
+      "archive-after-days": 180,
+      "rule": [
+        {
+          "label": "hourly",
+          "retention": "2"
+        },
+        {
+          "label": "daily",
+          "retention": "30"
+        },
+        {
+          "label": "weekly",
+          "retention": "52"
+        }
+      ]
+    },
+    "ip-space": "Default",
+    "region": "eastus2",
+    "azure": {
+      "resource-group": "rn-test-backup-rg",
+      "subscription": "3beb4dd0-25d4-464f-9bb0-303d7cf5c0c2"
+    }
+  }'
+----
+.回應是您可以監控的工作ID。
+[source, text]
+----
+{
+ "job-id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a"
+}
+----
+.監控回應。
+[source, http]
+----
+curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v1/job/1b34b6f6-8f43-40fb-9a52-485b0dfe893a' \
+--header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…hE9ss2NubK6wZRHUdSaORI7JvcOorUhJ8srqdiUiW6MvuGIFAQIh668of2M3dLbhVDBe8BBMtsa939UGnJx7Qz6Eg'
+----
+.回應：
+[source, text]
+----
+{
+    "job": [
+        {
+            "id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a",
+            "type": "backup-working-environment",
+            "status": "PENDING",
+            "error": "",
+            "time": 1651852160000
+        }
+    ]
+}
+----
+.監控直到「狀態」為「已完成」。
+[source, text]
+----
+{
+    "job": [
+        {
+            "id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a",
+            "type": "backup-working-environment",
+            "status": "COMPLETED",
+            "error": "",
+            "time": 1651852160000
+        }
+    ]
+}
+----
+
+
+== API 參考
+
+每個 BlueXP  備份和恢復 API 的文檔均可從 https://docs.netapp.com/us-en/bluexp-automation/cbs/overview.html["BlueXP  自動化"^]獲得。

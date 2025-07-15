@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: br-use-kubernetes-protect-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: 您可以保護從本機ONTAP系統到 Amazon Web Services、Microsoft Azure、Google Cloud Platform 和StorageGRID 的Kubernetes 應用程式和應用程式數據，確保您的資料受到保護。 
+---
+= 管理 Kubernetes 工作負載概覽
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+透過在BlueXP backup and recovery中管理 Kubernetes 工作負載，您可以在一處集中管理和保護您的 Kubernetes 叢集和應用程式。您可以管理 Kubernetes 叢集託管的資源和應用程序，還可以管理 Kubernetes 工作負載的保護設定。
+
+
+NOTE: 本文件以技術預覽形式提供。在預覽期間，不建議將 Kubernetes 功能用於生產工作負載。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。
+
+您可以完成與管理 Kubernetes 工作負載相關的下列任務：
+
+* link:br-start-discover.html#discover-kubernetes-workloads["發現 Kubernetes 工作負載"]。
+* link:br-use-manage-kubernetes-clusters.html["管理Kubernetes叢集"]。
+* link:br-use-protect-kubernetes-applications.html["新增和保護 Kubernetes 應用程式"]。
+* link:br-use-manage-kubernetes-applications.html["管理 Kubernetes 應用程式"]。
+* link:br-use-restore-kubernetes-applications.html["恢復 Kubernetes 應用程式"]。
+

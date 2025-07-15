@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: br-reference-limitations.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 已知限制指出本產品版本不支援的功能、或是無法與產品正確互通的功能。請仔細檢閱這些限制。 
+---
+= BlueXP backup and recoveryONTAP磁碟區的已知限制
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+已知限制標識了此版本的BlueXP backup and recovery不支援的功能，或無法與其正確互通的功能。請仔細檢閱這些限制。
+
+* BlueXP  備份與還原功能可將 Cloud Volume ONTAP 備份至 AWS 中國地區（包括北京和寧夏）的物件儲存區，但您可能需要先手動修改身分識別與存取管理（ IAM ）原則。
++
+如需在 AWS 中建立 Connector 的詳細資訊，請 https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html["在AWS中安裝Connector"^]參閱。
+
++
+如需部落格文章中的其他詳細資料，請https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["BlueXP  備份與還原功能部落格 2023 年 5 月"^]參閱。
+
+* BlueXP  備份與還原不支援 Microsoft Azure 中國地區。
++
+如需在 Azure 中建立 Connector 的詳細資訊，請 https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure-bluexp.html["在Azure中安裝Connector"^]參閱。
+
+* BlueXP  備份與還原不支援 FlexCache 磁碟區的備份。
+
+
+
+
+== ONTAP磁碟區的複製限制
+
+* 您一次只能選取一個 FlexGroup Volume 進行複寫。您需要為每個 FlexGroup 磁碟區分別啟動備份。
++
+FlexVol Volume 沒有限制、您可以選取工作環境中的所有 FlexVol Volume 、並指派相同的備份原則。
+
+* 中支援下列功能 https://docs.netapp.com/us-en/bluexp-replication/index.html["BlueXP 複寫服務"]，但在使用 BlueXP 備份和恢復的複製功能時不需要：
++
+** 不支援串聯組態、從磁碟區 A 複寫到磁碟區 B 、從磁碟區 B 複寫到磁碟區 C支援包括從磁碟區 A 複寫到磁碟區 B
+** 不支援在 ONTAP 系統的 FSX 之間複寫資料。
+** 不支援建立磁碟區一次性複寫。
+
+
+* 從內部部署 ONTAP 系統建立複製時、如果目標 Cloud Volumes ONTAP 系統上的 ONTAP 版本為 9.8 、 9.9 或 9.11 、則只允許鏡射資料保險箱原則。
+
+
+
+
+== ONTAP磁碟區的備份到物件限制
+
+* 備份資料時， BlueXP  備份與還原不會維護 NetApp Volume Encryption （ NVE ）。這表示 NVE 磁碟區上的加密資料會在資料傳輸至目的地時解密，而且不會維持加密。
++
+有關這些加密類型的說明，請參閱https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["設定NetApp Volume Encryption總覽"^]。
+
+
+
+* 如果使用 SnapMirror 原則中的排程在 SnapMirror 目的地磁碟區上啟用長期保留快照，則會直接在目的地磁碟區上建立快照。在這種情況下，您不應使用 BlueXP  備份與還原來備份這些磁碟區，因為這些快照不會移至物件儲存區。
+* 備份資料時， BlueXP  備份與還原不會維護 NetApp Volume Encryption （ NVE ）。這表示 NVE 磁碟區上的加密資料會在資料傳輸至目的地時解密，而且不會維持加密。
++
+有關這些加密類型的說明，請參閱https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["設定NetApp Volume Encryption總覽"^]。
+
+
+
+* 如果使用 SnapMirror 原則中的排程在 SnapMirror 目的地磁碟區上啟用長期保留快照，則會直接在目的地磁碟區上建立快照。在這種情況下，您不應使用 BlueXP  備份與還原來備份這些磁碟區，因為這些快照不會移至物件儲存區。
+* 當您建立或編輯未指派磁碟區給原則的備份原則時、保留的備份數量最多可達 1018 個。將磁碟區指派給原則之後、您可以編輯原則、建立最多 4000 個備份。
+* 備份資料保護（DP）磁碟區時：
++
+** 與SnapMirror標籤「app_nistent」和「all_source_snapshot」的關係將不會備份到雲端。
+** 如果您在SnapMirror目的地磁碟區上建立Snapshot的本機複本（無論使用的是SnapMirror標籤）、這些Snapshot將不會作為備份移至雲端。此時、您需要建立一個 Snapshot 原則、並將所需的標籤貼到來源 DP Volume 、以便 BlueXP 備份和還原進行備份。
+
+
+* FlexGroup Volume 備份無法移至歸檔儲存設備。
+* 如果叢集執行的是 ONTAP 9.13.1 或更新版本、 FlexGroup Volume 備份可以使用 DataLock 和勒索軟體保護。
+* SVM-DR磁碟區備份受到下列限制的支援：
++
+** 備份僅支援ONTAP 來自於不支援的支援。
+** 套用至磁碟區的 Snapshot 原則必須是 BlueXP 備份與還原所認可的其中一項原則、包括每日、每週、每月等 無法辨識預設的「 sm_Created 」原則（用於 * 鏡射所有快照 * ）、而且 DP Volume 不會顯示在可備份的磁碟區清單中。
+** 從來源或目的地取得備份時， SVM-DR 和磁碟區備份與還原功能完全不受任何因素的佔用。唯一的限制是 SVM-DR 不會複寫 SnapMirror 雲端關係。在災難恢復案例中，當 SVM 在次要位置上線時，您必須手動更新 SnapMirror 雲端關係。
+
+
+
+
+* 支援MetroCluster ：
++
+** 當您使用 ONTAP 9.12.1 GA 或更新版本時、連接至主要系統時支援備份。整個備份組態會傳輸到次要系統、以便在切換後自動繼續備份到雲端。您不需要在次要系統上設定備份（事實上、您受到限制、無法這麼做）。
+** 當您使用 ONTAP 9.12.0 及更早版本時、只有 ONTAP 次要系統支援備份。
+** 目前不支援還原磁碟區的備份FlexGroup 。
+
+
+* 資料保護磁碟區不支援使用*立即備份*按鈕進行臨機操作磁碟區備份。
+* 不支援SM至BC組態。
+* ONTAP 不支援從單一磁碟區到多個物件存放區的 SnapMirror 關係排除、因此 BlueXP 備份與還原不支援此組態。
+* 目前Amazon S3、Azure和StorageGRID 支援物件存放區上的WORM /法規遵循模式。這稱為 DataLock 功能、必須使用 BlueXP 備份與還原設定來管理、而非使用雲端供應商介面。
+
+
+
+
+== ONTAP磁碟區的復原限制
+
+這些限制同時適用於「搜尋與還原」和「瀏覽與還原」還原檔案與資料夾的方法、除非特別提出。
+
+* 瀏覽與還原一次最多可還原100個個別檔案。
+* 搜尋與還原一次可還原1個檔案。
+* 使用ONTAP 支援更新版本的版本時、瀏覽與還原及搜尋與還原功能可還原資料夾及其中的所有檔案與子資料夾。
++
+當使用ONTAP 版本高於9.11.1但在9.13.0之前的版本時、還原作業只能還原選取的資料夾和該資料夾中的檔案、而不會還原子資料夾或子資料夾中的檔案。
+
++
+使用ONTAP 9.11.1版之前的版本時、不支援資料夾還原。
+
+* 僅當叢集執行 ONTAP 9.13.1 以上版本時、才支援儲存在歸檔儲存設備中的資料還原目錄 / 資料夾。
+* 僅當叢集執行 ONTAP 9.13.1 以上版本時、才支援使用 DataLock 保護的資料還原目錄 / 資料夾。
+* 目前不支援從複製和 / 或本機快照還原目錄 / 資料夾。
+* 不FlexGroup 支援從支援的範圍內將資料從支援的資料區還原為FlexVol 資料區、或FlexVol 將資料區還原FlexGroup 為資料區。
+* 要還原的檔案必須使用與目的地Volume上語言相同的語言。如果語言不同、您將會收到錯誤訊息。
+* 從Azure歸檔儲存設備還原資料至StorageGRID 支援的系統不支援_高_還原優先順序。
+* 如果您備份 DP 磁碟區、然後決定中斷與該磁碟區的 SnapMirror 關係、則除非您同時刪除 SnapMirror 關係或反轉 SnapMirror 方向、否則無法將檔案還原至該磁碟區。
+* 快速還原限制：
++
+** 目的地位置必須是使用 ONTAP 9.13.0 或更新版本的 Cloud Volumes ONTAP 系統。
+** 歸檔儲存設備中的備份不支援此功能。
+** 只有在建立雲端備份的來源系統執行 ONTAP 9.12.1 或更新版本時、才支援 FlexGroup Volume 。
+** 只有在建立雲端備份的來源系統執行 ONTAP 9.11.0 或更新版本時、才支援 SnapLock Volume 。
+
+
+

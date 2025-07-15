@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: br-start-trial.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 開始或結束BlueXP backup and recovery的免費試用。在雲端供應商市場註冊NetApp智慧服務的按使用量付費訂閱後，即可享有 30 天的免費試用。 
+---
+= 開始免費試用BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果您在雲端供應商的市場中註冊付費隨用訂閱 * NetApp 智慧型服務 * ，則可免費試用 30 天的 BlueXP  備份與恢復。免費試用版會在您訂閱市場上市時開始。請注意、如果您在部署 Cloud Volumes ONTAP 系統時支付市場訂閱費用、然後在 10 天之後開始 BlueXP 備份與恢復免費試用版、您將有 20 天的時間可以使用免費試用版。
+
+免費試用結束時、您將自動切換至 PAYGO 訂閱、不會中斷。如果您決定不再繼續使用BlueXP backup and recovery，只需結束免費試用。
+
+登入BlueXP後，您可以開始BlueXP backup and recovery的免費試用。
+
+.步驟
+. 從BlueXP左側導覽中，選擇 *保護* > *備份和還原*。
+. 如果這是您第一次登入此服務，您已經在BlueXP中擁有工作環境，但尚未開始免費試用，則會出現「歡迎使用新的BlueXP backup and recovery」登入頁面並顯示*開始免費試用*選項。
++
+image:screen-br-landing-unified-start-trial.png["BlueXP備份和恢復的登陸頁面截圖（無需免費試用）"]
+
+
+
+
+
+== 接下來呢？
+
+開始免費試用後，您可以發現工作負載並建立策略來備份工作負載。
+
+如果這是您第一次登入此服務，您已經在BlueXP中擁有工作環境，並且您開始了免費試用，但尚未發現任何資源，則會出現「歡迎使用新的BlueXP backup and recovery」登入頁面並顯示*發現資源*的選項。
+
+有關發現工作負載的詳細信息，請參閱link:br-start-discover.html["探索工作負載"] 。
+
+image:screen-br-landing-unified.png["BlueXP blueXP 備份和還原的登入頁面截圖"]
+
+
+
+== 結束免費試用
+
+您可以隨時結束免費試用。結束免費試用後，您將無需支付服務費用。
+
+.步驟
+. 從BlueXP左側導覽中，選擇 *保護* > *備份和還原*。
++
+image:screen-br-landing-unified.png["BlueXP blueXP 備份和還原的登入頁面截圖"]
+
+. 從「歡迎使用新的BlueXP backup and recovery」登入頁面，選擇*查看詳細資訊 - 免費試用*或從頁面右上角選擇*免費試用*。
++
+image:screen-br-landing-unified-end-trial.png["BlueXP blueXP 備份和恢復免費試用版登陸頁面截圖"]
+
+. 選擇*結束免費試用*。
+. 在結束免費試用確認對話方塊中，輸入*結束試用*。
+. 選取 * 結束 * 。
+

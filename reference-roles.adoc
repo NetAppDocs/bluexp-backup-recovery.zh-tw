@@ -1,0 +1,287 @@
+---
+sidebar: sidebar 
+permalink: reference-roles.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, roles, permissions, access control, role-based access control, rbac 
+summary: BlueXP backup and recovery使用角色來管理每個使用者對特定功能和操作的存取權限 
+---
+= BlueXP backup and recovery基於角色的存取功能
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recovery採用角色來管理每個使用者對特定功能和操作的存取權限。
+
+本服務使用特定於BlueXP backup and recovery的以下角色。
+
+* *備份和還原超級管理員*：在BlueXP backup and recovery中執行任何操作。
+* *備份管理*：在BlueXP backup and recovery中執行備份到本機快照、複製到二級儲存以及備份到物件儲存的操作。
+* *恢復管理員*：使用BlueXP backup and recovery恢復工作負載。
+* *複製管理員*：使用BlueXP backup and recovery應用程式和資料。
+* *備份和還原檢視器*：查看BlueXP backup and recovery中的信息，但不執行任何操作。
+
+
+有關所有BlueXP訪問角色的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["BlueXP  設定與管理文件"^] 。
+
+下表列出了每個BlueXP backup and recovery角色可以執行的動作。
+
+[cols="20,20,15,15a,15a,15a"]
+|===
+| 功能與行動 | 備份和恢復超級管理員 | 備份管理 | 復原管理員 | 複製管理員 | 檢視者 
+
+
+| 新增、編輯或刪除主機 | 是的 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 安裝插件 | 是的 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 新增憑證（主機、實例、vCenter） | 是的 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 檢視儀表板和所有索引標籤 | 是的 | 是的  a| 
+是的
+ a| 
+是的
+ a| 
+是的
+
+
+
+| 開始免費試用 | 是的 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 開始探索工作負載 | 否 | 是的  a| 
+是的
+ a| 
+是的
+ a| 
+否
+
+
+
+| 查看許可證資訊 | 是的 | 是的  a| 
+是的
+ a| 
+是的
+ a| 
+是的
+
+
+
+| 啟動許可證 | 是的 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 查看主機 | 是的 | 是的  a| 
+是的
+ a| 
+是的
+ a| 
+是的
+
+
+
+6+| *時間表*: 
+
+
+| 啟動計劃 | 是的 | 是的  a| 
+是的
+ a| 
+是的
+ a| 
+否
+
+
+
+| 暫停時間表 | 是的 | 是的  a| 
+是的
+ a| 
+是的
+ a| 
+否
+
+
+
+6+| *政策與保護*： 
+
+
+| 查看保護計劃 | 是的 | 是的  a| 
+是的
+ a| 
+是的
+ a| 
+是的
+
+
+
+| 建立、修改或刪除保護 | 是的 | 是的  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 恢復工作負載 | 是的 | 否  a| 
+是的
+ a| 
+否
+ a| 
+否
+
+
+
+| 建立克隆、分割克隆或刪除克隆 | 是的 | 否  a| 
+否
+ a| 
+是的
+ a| 
+否
+
+
+
+| 建立、修改或刪除策略 | 是的 | 是的  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+6+| *報告*： 
+
+
+| 檢視報告 | 是的 | 是的  a| 
+是的
+ a| 
+是的
+ a| 
+是的
+
+
+
+| 建立報告 | 是的 | 是的  a| 
+是的
+ a| 
+是的
+ a| 
+否
+
+
+
+| 刪除報告 | 是的 | 否  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+6+| *從SnapCenter匯入並管理主機*： 
+
+
+| 查看導入的SnapCenter數據 | 是的 | 是的  a| 
+是的
+ a| 
+是的
+ a| 
+是的
+
+
+
+| 從SnapCenter匯入數據 | 是的 | 是的  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+| 管理（遷移）主機 | 是的 | 是的  a| 
+否
+ a| 
+否
+ a| 
+否
+
+
+
+6+| *配置設定*： 
+
+
+| 設定記錄目錄 | 是的 | 是的  a| 
+是的
+ a| 
+否
+ a| 
+否
+
+
+
+| 關聯或刪除實例憑證 | 是的 | 是的  a| 
+是的
+ a| 
+否
+ a| 
+否
+
+
+
+6+| *桶*： 
+
+
+| 檢視儲存庫 | 是的 | 是的  a| 
+是的
+ a| 
+是的
+ a| 
+是的
+
+
+
+| 建立、編輯或刪除儲存桶 | 是的 | 是的  a| 
+否
+ a| 
+否
+ a| 
+否
+
+|===

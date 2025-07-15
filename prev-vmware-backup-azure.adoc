@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-backup-azure.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp BlueXP backup and recovery保護您的 VMware 工作負載。 
+---
+= 使用 BlueXP 備份和還原將資料儲存體備份到 Microsoft Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以透過將適用於 VMware vSphere 主機的 SnapCenter 外掛程式與 BlueXP 備份和復原集成，將一個或多個資料儲存區備份到 Microsoft Azure。這將有助於VM管理員輕鬆快速地備份及歸檔資料、以提升儲存效率並加速雲端移轉。
+
+如果資料存放區與歸檔原則相關聯、則會提供一個選項來選取歸檔層。支援的歸檔層為Azure歸檔Blob儲存設備。
+
+[]
+====
+*注意* 若要切換到BlueXP backup and recovery工作負載，請參閱link:br-start-switch-ui.html["切換到不同的BlueXP backup and recovery工作負載"] 。
+
+====
+.開始之前
+確保你已經滿足了所有link:prev-vmware-prereqs.html["虛擬機器保護要求"]在將資料儲存備份到雲端之前。
+
+.步驟
+. 在BlueXP UI 中，選擇 *保護* > *備份和還原* > *虛擬機器*。
+. 選擇image:icon-action.png["行動"]對應您要備份的資料儲存並選擇*啟動備份*。
+. 在指派策略頁面中，選擇策略並選擇*下一步*。
+. 新增工作環境。
++
+設定您要 BlueXP 探索的叢集管理 LIF 。在新增其中一個資料存放區的工作環境之後、可將其重複用於位於同ONTAP 一個叢集上的所有其他資料存放區。
+
++
+.. 選擇與 SVM 對應的 *新增工作環境*。
+.. 在「新增工作環境」精靈中：
++
+... 指定叢集管理 LIF 的 IP 位址。
+... 指定ONTAP 叢集使用者的認證資料。
+
+
+.. 選擇“*新增工作環境*”。
+
+
+. 選擇* Microsoft Azure *將其設定為雲端供應商。
++
+.. 指定Azure訂閱ID。
+.. 選取您要建立備份的區域。
+.. 建立新的資源群組或使用現有的資源群組。
+.. 指定新增為工作環境的叢集管理 LIF IP 位址。
+.. 選取歸檔層。
++
+建議設定存檔層，因為這是一次性活動，以後將不允許您進行設定。
+
+
+
+. 查看詳細資訊並選擇*啟動備份*。
+

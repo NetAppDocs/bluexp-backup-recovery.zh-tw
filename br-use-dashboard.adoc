@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: br-use-dashboard.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, bluexp, backup, recovery, dashboard, view, health, status, alerts, notifications 
+summary: 監控工作負載的運作狀況可確保您了解工作負載保護的問題，並採取措施解決這些問題。查看備份和復原的狀態，並回應BlueXP備份和還原儀表板上出現的任何警報。您可以查看保護摘要、復原摘要、系統摘要等資訊。 
+---
+= 在BlueXP backup and recovery儀表板上查看保護健康狀況
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+監控工作負載的運作狀況可確保您了解工作負載保護的問題，並採取措施解決這些問題。在BlueXP backup and recovery儀表板上查看備份和還原的狀態。您可以查看系統摘要、保護摘要、作業摘要、復原摘要等資訊。
+
+*必要的BlueXP角色* 組織管理員、資料夾或專案管理員、備份和還原超級管理員、備份和還原備份管理員、備份和還原復原管理員、備份和還原複製管理員或備份和還原檢視者角色。了解link:reference-roles.html["備份和恢復角色和權限"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的 BlueXP 存取角色"^] 。
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇 *Dashboard*。
++
+image:screen-br-dashboard2.png["BlueXP backup and recovery儀表板"]
+
+
+
+
+
+== 查看整體系統摘要
+
+系統摘要提供以下資訊：
+
+* 發現的主機或虛擬機器的數量
+* 已發現的 Kubernetes 叢集數量
+* 物件儲存上的備份目標數量
+* vCenter 數量
+* ONTAP中的儲存叢集數量
+
+
+
+
+== 查看保護摘要
+
+查看保護摘要中的以下資訊：
+
+* 受保護和不受保護的資料庫的總數。
++
+
+TIP: 受保護的資料庫是指已指派備份策略的資料庫。不受保護的資料庫是指未分配備份策略的資料庫。
+
+* 成功、出現警告或失敗的備份次數。
+* 備份服務發現的總容量以及受保護的容量與不受保護的容量。將滑鼠懸停在「*i*」圖示上即可查看詳細資訊。
+
+
+
+
+== 查看職位摘要
+
+在作業摘要中查看已完成、正在執行或失敗的作業總數。
+
+.步驟
+. 對於每個作業分佈，變更篩選器以根據天數顯示失敗、正在執行和完成的摘要，例如過去 30 天、過去 7 天、過去 24 小時或過去 1 年。
+. 透過選擇「檢視作業監控」來查看失敗、正在運作和已完成的作業的詳細資訊。
+
+
+
+
+== 查看還原摘要
+
+查看還原摘要中的以下資訊：
+
+* 執行的恢復作業總數
+* 已恢復的容量總量
+* 在本機儲存、二級儲存和物件儲存上執行的還原作業數量。將滑鼠懸停在圖表上即可查看詳細資訊。
+

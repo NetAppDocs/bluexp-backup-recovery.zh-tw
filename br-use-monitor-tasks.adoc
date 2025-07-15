@@ -1,0 +1,193 @@
+---
+sidebar: sidebar 
+permalink: br-use-monitor-tasks.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, jobs 
+summary: 使用 BlueXP 備份和恢復，監控您啟動的本機快照、複製和備份到物件儲存作業的狀態，以及您啟動的復原作業。 
+---
+= 監控BlueXP backup and recovery中的作業
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用BlueXP backup and recovery，監控您啟動的本機快照、複製和備份到物件儲存作業的狀態，以及您啟動的復原作業。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。
+
+*必要的BlueXP角色* 組織管理員、資料夾或專案管理員、備份和還原超級管理員、備份和還原備份管理員、備份和還原復原管理員、備份和還原複製管理員或備份和還原檢視者角色。了解link:reference-roles.html["備份和恢復角色和權限"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的 BlueXP 存取角色"^] 。
+
+
+
+== 在工作監控器上檢視工作狀態
+
+您可以在「作業監控」標籤中查看所有快照、複製、備份到物件儲存和復原作業的清單及其目前狀態。這包括 Cloud Volumes ONTAP 、內部部署 ONTAP 、應用程式和虛擬機器的作業。每個作業或工作都有唯一的ID和狀態。
+
+狀態可以是：
+
+* 成功
+* 進行中
+* 已佇列
+* 警告
+* 失敗
+
+
+您從BlueXP backup and recoveryUI 和 API 啟動的快照、複製、備份到物件儲存以及復原作業均可在「作業監控」標籤中使用。
+
+
+NOTE: 如果您已將 ONTAP 系統升級至 9.13.x 、但在「工作監控」中沒有看到持續排程的備份作業、則需要重新啟動 BlueXP 備份與還原服務。 link:reference-restart-backup.html["瞭解如何重新啟動 BlueXP 備份與還原"]。
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇「*監控*」標籤。
+. 若要顯示其他欄位（工作環境、SVM、使用者名稱、工作負載、政策名稱、快照標籤），請選擇加號。
+
+
+
+
+=== 搜尋並篩選工作清單
+
+您可以使用多個篩選器來篩選「作業監控」頁面上的操作，例如政策、快照標籤、操作類型（保護、復原、保留或其他）和保護類型（本機快照、複製或備份到雲端）。
+
+根據預設、「工作監控」頁面會顯示過去 24 小時的保護和恢復工作。您可以使用時間範圍篩選器變更時間範圍。
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇「*監控*」標籤。
+. 若要以不同方式排序結果、請選取每個欄標題、依狀態、開始時間、資源名稱等進行排序。
+. 如果您正在尋找特定工作、請選取 * 進階搜尋與篩選 * 區域以開啟「搜尋」面板。
++
+使用此面板輸入任意資源的自由文字搜尋、例如「 Volume 1 」或「 Application 3 」。您也可以根據下拉式功能表中的項目來篩選工作清單。
+
++
+大部分篩選條件都是不言自明的。「工作負載」篩選器可讓您檢視下列類別中的工作：
+
++
+** ONTAP磁碟區（Cloud Volumes ONTAP和本機ONTAP磁碟區）
+** Microsoft SQL Server
+** 虛擬機器
+** Kubernetes
+
+
++
+[TIP]
+====
+** 只有在您第一次選取「工作環境」時、才能在特定的「SVM」中搜尋資料。
+** 只有在您選取「保護」的「類型」時、才能使用「保護類型」篩選器進行搜尋。
+
+
+====
+. 若要立即更新頁面、請選取 image:button_refresh.png["重新整理"] 按鈕。否則、此頁面會每 15 分鐘重新整理一次、以便您永遠看到最新的工作狀態結果。
+
+
+
+
+=== 檢視工作詳細資料
+
+您可以檢視與特定已完成工作相對應的詳細資料。您可以以 JSON 格式匯出特定工作的詳細資料。
+
+您可以檢視工作類型（排程或隨需）、 SnapMirror 備份類型（初始或定期）的開始和結束時間、持續時間、從工作環境傳輸到物件儲存的資料量、平均傳輸率、原則名稱、啟用保留鎖定、執行勒索軟體掃描等詳細資料。 保護來源詳細資料和保護目標詳細資料。
+
+復原作業顯示詳細信息，例如備份目標提供者（Amazon Web Services、Microsoft Azure、Google Cloud、本機）、S3 儲存桶名稱、SVM 名稱、來源磁碟區名稱、目標磁碟區、快照標籤、還原的物件數、檔案名稱、檔案大小、上次修改日期和完整檔案路徑。
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇「*監控*」標籤。
+. 選取工作名稱。
+. 選取「動作」功能表 image:icon-action.png["動作圖示"] 然後選取 * 檢視詳細資料 * 。
+. 展開每個區段以查看詳細資料。
+
+
+
+
+=== 將工作監控結果下載為報告
+
+您可以在修改後、將「工作監控」主頁的內容下載為報告。BlueXP 備份與還原會產生並下載 .CSV 檔案、您可以視需要檢閱並傳送給其他群組。CSV檔案最多包含10、000列資料。
+
+您可以從「工作監控詳細資料」資訊下載包含單一工作詳細資料的 JSON 檔案。
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇「*監控*」標籤。
+. 若要下載所有作業的 CSV 文件，請選擇「下載」按鈕並在下載目錄中找到該文件。
+. 若要下載單一工作的 JSON 檔案、請選取「動作」功能表 image:icon-action.png["動作圖示"] 對於作業、請選取 * 下載 JSON 檔案 * 、然後在您的下載目錄中找到檔案。
+
+
+
+
+== 檢閱保留（備份生命週期）工作
+
+監控保留（或 _ 備份生命週期 _ ）流程有助於您確保稽核完整性、責任歸屬及備份安全。為了協助您追蹤備份生命週期、您可能想要識別所有備份複本的到期日。
+
+備份生命週期工作會追蹤所有已刪除的 Snapshot 複本、或是要刪除的佇列中的所有 Snapshot 複本。從 ONTAP 9.13 開始、您可以在「工作監控」頁面上查看所有稱為「保留」的工作類型。
+
+「保留」工作類型會擷取在受 BlueXP 備份與還原保護的磁碟區上所起始的所有 Snapshot 刪除工作。
+
+.步驟
+. 從BlueXP backup and recovery選單中，選擇「*監控*」標籤。
+. 選取 * 進階搜尋與篩選 * 區域以開啟「搜尋」面板。
+. 選取「保留」作為工作類型。
+
+
+
+
+== 檢閱 BlueXP 通知中心的備份與還原警示
+
+BlueXP 通知中心會追蹤您已啟動的備份和還原工作進度、以便您確認作業是否成功。
+
+除了在通知中心中檢視警示外、您還可以設定 BlueXP 以電子郵件方式傳送特定類型的通知作為警示、讓您即使未登入系統、也能得知重要的系統活動。 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["深入瞭解通知中心、以及如何傳送警示電子郵件以進行備份與還原工作"^]。
+
+通知中心會顯示許多 Snapshot 、複寫、備份至雲端和還原事件、但只有某些事件會觸發電子郵件警示：
+
+[cols="1,2,1,1"]
+|===
+| 作業類型 | 活動 | 警示層級 | 電子郵件已傳送 
+
+
+| 啟動 | 工作環境的備份與還原啟動失敗 | 錯誤 | 是的 
+
+
+| 啟動 | 工作環境的備份與還原編輯失敗 | 錯誤 | 是的 
+
+
+| 本地快照 | BlueXP backup and recovery快照建立作業失敗 | 錯誤 | 是的 
+
+
+| 複寫 | BlueXP 備份與還原臨機操作複寫工作失敗 | 錯誤 | 是的 
+
+
+| 複寫 | BlueXP 備份與還原複寫會暫停工作失敗 | 錯誤 | 否 
+
+
+| 複寫 | BlueXP  備份與還原複寫會中斷工作失敗 | 錯誤 | 否 
+
+
+| 複寫 | BlueXP 備份與還原複寫重新同步工作失敗 | 錯誤 | 否 
+
+
+| 複寫 | BlueXP 備份與還原複寫會停止工作失敗 | 錯誤 | 否 
+
+
+| 複寫 | BlueXP 備份與還原複寫回復重新同步工作失敗 | 錯誤 | 是的 
+
+
+| 複寫 | BlueXP 備份與還原複寫刪除工作失敗 | 錯誤 | 是的 
+|===
+
+NOTE: 從 ONTAP 9.13.0 開始、 Cloud Volumes ONTAP 和內部部署 ONTAP 系統的所有警示都會出現。對於具有 Cloud Volumes ONTAP 9.13.0 和內部部署 ONTAP 的系統、只會出現「還原工作已完成但有警告」的相關警示。
+
+根據預設、 BlueXP  組織和帳戶管理員會收到所有「重大」和「建議」警示的電子郵件。根據預設、所有其他使用者和收件者都不會收到任何通知電子郵件。電子郵件可傳送給任何屬於您NetApp雲端帳戶一部分的BlueXP使用者、或傳送給任何其他需要注意備份與還原活動的收件者。
+
+若要接收 BlueXP 備份與還原電子郵件警示、您必須在「警示與通知設定」頁面中選取通知嚴重性類型「重大」、「警告」和「錯誤」。
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["瞭解如何傳送備份與還原工作的警示電子郵件"^]。
+
+.步驟
+. 從 BlueXP 功能表列中、選取（image:icon_bell.png["通知鈴聲"]）。
+. 檢閱通知。
+
+
+
+
+== 檢閱 BlueXP 時間表中的作業活動
+
+您可以在 BlueXP 時間表中檢視備份與還原作業的詳細資料、以供進一步調查。BlueXP 時間表提供每個事件的詳細資料、無論是使用者啟動或系統啟動、並顯示在 UI 或透過 API 啟動的動作。
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["瞭解時間表與通知中心之間的差異"^]。

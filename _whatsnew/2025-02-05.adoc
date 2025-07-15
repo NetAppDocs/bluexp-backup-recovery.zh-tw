@@ -1,0 +1,20 @@
+= BlueXP backup and recovery預覽版
+:allow-uri-read: 
+
+
+
+
+=== BlueXP backup and recovery預覽版
+
+BlueXP backup and recovery的預覽版本提供了更新的使用者介面，讓您能夠使用BlueXP backup and recovery服務中熟悉的 3-2-1 保護策略來管理 Microsoft SQL Server 工作負載。使用此新版本，您可以將這些工作負載備份到主存儲，複製到輔助存儲，然後備份到雲端物件儲存。
+
+
+NOTE: 本文件以技術預覽形式提供。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。
+
+此版本的BlueXP backup and recovery預覽版 2025 包括以下更新。
+
+* 重新設計的使用者介面為管理備份和復原任務提供了更直覺的體驗。
+* 預覽版可讓您備份和還原 Microsoft SQL Server 資料庫。（未來版本將添加對其他工作負載的支援。）
+* 此版本整合了SnapCenter功能，使您能夠透過BlueXP backup and recovery使用者介面使用 3-2-1 資料保護策略來管理和保護您的SnapCenter資源。
+* 此版本可讓您將SnapCenter工作負載匯入BlueXP backup and recovery。
+

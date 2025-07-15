@@ -1,0 +1,148 @@
+---
+sidebar: sidebar 
+permalink: prev-ontap-migrate-resync.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database, migrate volumes, SnapMirror to Cloud Resync, ONTAP, NetApp, NetApp ONTAP, NetApp Cloud Volumes ONTAP, NetApp Cloud Volumes Service, FlexVols, FlexGroups 
+summary: BlueXP 備份和復原中的 SnapMirror 到 Cloud Resync 功能簡化了 NetApp 環境中捲遷移期間的資料保護和連續性。 
+---
+= 在BlueXP backup and recovery中使用SnapMirror將磁碟區遷移到 Cloud Resync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP 備份和復原中的 SnapMirror 到 Cloud Resync 功能簡化了 NetApp 環境中捲遷移期間的資料保護和連續性。當使用 SnapMirror 邏輯複寫（ LRSE ），從內部部署的 NetApp 部署移轉到另一個部署，或移轉到雲端型解決方案（例如 Cloud Volumes ONTAP 或 Cloud Volumes Service ）時， SnapMirror 到雲端重新同步可確保現有的雲端備份保持完整且正常運作。
+
+[]
+====
+*注意* 若要切換到BlueXP backup and recovery工作負載，請參閱link:br-start-switch-ui.html["切換到不同的BlueXP backup and recovery工作負載"] 。
+
+====
+這項功能不需要耗時且資源密集的重新基準作業，讓備份作業能夠在移轉後繼續進行。此功能在工作負載移轉案例中非常重要，可同時支援 FlexVols 和 FlexGroups ，並可從 ONTAP 9.16.1 版開始使用。
+
+SnapMirror to Cloud Resync 可維持跨環境的備份持續運作，進而提升營運效率，並降低混合式和多雲端資料管理的複雜度。
+
+
+
+== BlueXP backup and recoverySnapMirror到 Cloud Resync 的工作原理
+
+如果您完成技術更新，或是將磁碟區從一個 ONTAP 叢集移轉到另一個叢集，備份必須持續運作而不中斷。BlueXP  備份與還原 SnapMirror 至雲端重新同步可確保雲端備份在 Volume 移轉後仍保持一致，進而協助達成此目標。
+
+範例如下：
+
+假設您有一個內部部署 Volume Vol1a 。此磁碟區有三個快照： S1 ， S2 和 S3 。這些快照就像還原點一樣。使用 SnapMirror to Cloud （ SM-C ），已將 vol1 備份至雲端物件儲存區端點。不過，到目前為止，只有 S1 和 S2 已備份到物件儲存區。
+
+現在，您想要將 vol1 移轉至另一個 ONTAP 叢集。為達成此目標，您可以建立 SnapMirror 邏輯複寫（ LRSE ）與新的雲端 Volume Vol1b 的關係。這會將所有三個快照（ S1 ， S2 和 S3 ）從 Vol1a 傳輸到 Vol1b 。
+
+移轉完成後，您將進行下列設定：
+
+* 原始的 SM-C 關係（ Vol1a →物件儲存區）將會刪除。
+* LRSE 關係（ Vol1a → Vol1b ）也會刪除。
+* Vol1b 現在是您的作用中 Volume 。
+
+
+此時，您想要繼續將 Vol1b 備份到同一個雲端端點。但您不需要從頭開始完整備份（需要時間和資源），而是使用 SnapMirror to Cloud Resync 。
+
+以下是重新同步的運作方式：
+
+* 系統會檢查 Vol1a 與物件存放區之間的通用快照。在這種情況下，兩者都有 S2 。
+* 因為這份共享快照，系統只需傳輸 S2 和 S3 之間的遞增變更。
+
+
+這表示只有在 S2 傳送到物件儲存區之後新增的資料，而非整個磁碟區。
+
+這項程序可避免重新傳送已備份的資料，節省頻寬，並確保移轉後的備份鏈能順暢地繼續運作。
+
+image:diagram-snapmirror-cloud-resync-migration.png["BlueXP  備份與還原 SnapMirror 至雲端重新同步"]
+
+
+
+== 程序附註
+
+* 目的地 ONTAP 叢集必須執行 ONTAP 9.16.1 版或更新版本。
+* 舊來源 ONTAP 叢集必須使用 BlueXP  備份與還原加以保護。
+* 移轉與技術更新不會使用 BlueXP  備份與還原來執行。應由專業服務團隊或合格的儲存管理員執行。
+* NetApp 移轉團隊負責在來源和目的地 ONTAP 叢集之間建立 SnapMirror 關係，以利 Volume 移轉。
+* 確保技術更新期間的移轉是以 SnapMirror 型移轉為基礎。
+* 目前不支援使用 SVM-Migrate ， SVM-DR 或 HeadSwap 方法移轉後的 SnapMirror 至雲端重新同步。
+
+
+
+
+== 如何使用 SnapMirror 移轉磁碟區至雲端重新同步
+
+使用 SnapMirror 移轉磁碟區至雲端重新同步涉及下列主要步驟，詳述如下：
+
+* * 遵循移轉前檢查清單 * ：在開始移轉之前， NetApp 技術更新團隊可確保符合下列先決條件，以避免資料遺失，並確保移轉程序順暢。
+* * 遵循移轉後的檢查清單 * ：移轉之後， NetApp 技術更新團隊會確保完成下列步驟，以建立保護並準備重新同步。
+* * 執行 SnapMirror 至雲端重新同步 * ：移轉之後， NetApp 技術更新團隊會執行 SnapMirror 至雲端重新同步作業，從新移轉的磁碟區恢復雲端備份。
+
+
+image:diagram-snapmirror-cloud-resync-migration-steps.png["使用 SnapMirror 移轉磁碟區至雲端重新同步的步驟"]
+
+
+
+=== 遵循移轉前檢查清單
+
+在開始移轉之前， NetApp 技術更新團隊會確保符合下列先決條件，以避免資料遺失，並確保移轉程序順暢。
+
+. 確保所有要移轉的磁碟區都使用 BlueXP  備份與還原來保護。
+. 記錄 Volume 執行個體 UUID 。在開始移轉之前，請記下所有磁碟區的執行個體 UUID 。這些識別碼對於稍後的對應和重新同步作業非常重要。
+. 在刪除任何 SnapMirror 關係之前，請先拍攝每個磁碟區的最後快照，以保留最新狀態。
+. 記錄 SnapMirror 原則。記錄目前附加至每個磁碟區關係的 SnapMirror 原則。稍後在 SnapMirror 至雲端重新同步程序期間將需要此功能。
+. 刪除 SnapMirror 雲端與物件存放區的關係。
+. 與新的 ONTAP 叢集建立標準的 SnapMirror 關係，將磁碟區移轉至新的目標 ONTAP 叢集。
+
+
+
+
+=== 遵循移轉後檢查清單
+
+移轉之後， NetApp 技術更新團隊會確保完成下列步驟，以建立保護並準備重新同步。
+
+. 記錄目的地 ONTAP 叢集中所有移轉磁碟區的新 Volume 執行個體 UUID 。
+. 確認新的 ONTAP 叢集中已正確設定舊 ONTAP 叢集中所有可用的必要 SnapMirror 原則。
+. 將新的 ONTAP 叢集新增為 BlueXP  畫布中的工作環境。
+
+
+
+
+=== 執行 SnapMirror 至雲端重新同步
+
+移轉之後， NetApp 技術更新團隊會執行 SnapMirror 至雲端重新同步作業，從新移轉的磁碟區恢復雲端備份。
+
+. 將新的 ONTAP 叢集新增為 BlueXP  畫布中的工作環境。
+. 請查看 BlueXP  備份與還原磁碟區頁面，以確保舊來源工作環境的詳細資料可供使用。
+. 從 BlueXP  備份與還原磁碟區頁面，選取 * 備份設定 * 。
+. 從功能表中選取 * 重新同步備份 * 。
+. 在「重新同步工作環境」頁面中，執行下列動作：
++
+.. * 新的來源工作環境 * ：輸入新的 ONTAP 叢集，其中的磁碟區已移轉。
+.. * 現有目標物件存放區 * ：選取目標物件存放區，其中包含來自舊來源工作環境的備份。
+
+
+. 選取 * 下載 CSV 範本 * 以下載 Resync Details Excel 工作表。使用此表單輸入要移轉的磁碟區詳細資料。在 CSV 檔案中，輸入下列詳細資料：
++
+** 來源叢集的舊 Volume 執行個體 UUID
+** 來自目的地叢集的新 Volume 執行個體 UUID
+** 要套用至新關係的 SnapMirror 原則。
+
+
+. 選取 * 上傳磁碟區對應詳細資料 * 下的 * 上傳 * ，將完整的 CSV 表上傳至 BlueXP  備份與還原 UI 。
+. 輸入重新同步作業所需的供應商和網路組態資訊。
+. 選取 * 提交 * 以開始驗證程序。
++
+BlueXP  備份與還原會驗證選取用於重新同步的每個磁碟區至少有一個通用快照。如此可確保磁碟區已準備就緒，可執行 SnapMirror 至雲端重新同步作業。
+
+. 檢閱驗證結果，包括新的來源磁碟區名稱，以及每個磁碟區的重新同步狀態。
+. 檢查 Volume 資格。系統會檢查磁碟區是否符合重新同步的資格。如果某個 Volume 不符合資格，則表示找不到一般快照。
++
+
+IMPORTANT: 為了確保磁碟區仍符合 SnapMirror 至雲端重新同步作業的資格，請在移轉前階段刪除任何 SnapMirror 關係之前，先對每個磁碟區擷取最後的快照。這會保留資料的最新狀態。
+
+. 選取 * 重新同步 * 以開始重新同步作業。系統使用通用快照僅傳輸增量變更，確保備份持續運作。
+. 在「工作監控」頁面中監控 resyn 程序。
+
