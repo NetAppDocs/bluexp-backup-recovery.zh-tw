@@ -10,7 +10,7 @@ BlueXP  備份與還原現在支援在使用 Podman 引擎的 Red Hat Enterpris
 
 BlueXP  Connector 3.9.40 版支援某些版本的 Red Hat Enterprise Linux 第 8 版和第 9 版、可在 RHEL 8 或 9 主機上手動安裝 Connector 軟體、而不受中所述作業系統以外的位置 https://docs.netapp.com/us-en/bluexp-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["主機需求"^]限制。這些較新的 RHEL 版本需要使用 Podman 引擎、而非 Docker 引擎。以前、 BlueXP  備份與還原在使用 Podman 引擎時有兩項限制。這些限制已移除。
 
-https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。
+https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-restore.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。
 
 
 
@@ -18,4 +18,4 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.
 
 此版本包含改良的目錄索引、可更快完成基準索引。快速索引可讓您更快速地使用「搜尋與還原」功能。
 
-https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。
+https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-restore.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。

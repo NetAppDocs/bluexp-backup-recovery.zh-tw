@@ -92,7 +92,6 @@
   <block id="57739bc049ff58f3d3db6f5281e84b85" category="section-title">備份所在位置</block>
   <block id="e6c344acbe141c46bf8617b9d43d0c2f" category="inline-link">Amazon S3 封鎖公共存取功能</block>
   <block id="33bfcd052df4f75c25d08493f7b03ba3" category="inline-link">封鎖對Blob資料的公開存取</block>
-  <block id="fab27e4b9f13b45f921fe1c7f42ffac1" category="section-title">備份複本會與您的NetApp帳戶建立關聯</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">功能</block>
   <block id="978691ecd52f4541232e2bc2d3a0519b" category="list-text">將單一備份原則套用至叢集中的所有磁碟區、或將不同的備份原則指派給具有獨特還原點目標的磁碟區。</block>
   <block id="2e266f5c456f5f6206428071c74410a6" category="list-text">備份資料會以 AES-256 位元加密的閒置和 TLS 1.2 HTTPS 傳輸連線加以保護。</block>
@@ -2184,7 +2183,6 @@ ifdef：：AWS []</block>
   <block id="bebfb016f9defe9a78fff65f418f213b" category="paragraph">Amazon Web Services （ AWS ） Identity and Access Management （ IAM ） Roles Anywhere 服務可讓您為工作負載（ AWS 外部）使用 IAM 角色和短期認證、以安全的方式存取 AWS API 、就像您在工作負載上使用 IAM 角色一樣。當您在任何位置使用 IAM 角色的私密金鑰基礎架構和 AWS Token 時、您不需要長期 AWS 存取金鑰和秘密金鑰。這可讓您更頻繁地輪換認證、進而提升安全性。</block>
   <block id="24c6cf6b2747b390a5d9eb672e1d54d4" category="paragraph">在此版本中、 AWS IAM 角色 Anywhere 服務的支援是技術預覽。</block>
   <block id="75a3bff844d1c7ffb01e7ef22ab82b4d" category="inline-link-macro">將 Cloud Volumes ONTAP 備份至 AWS</block>
-  <block id="4e6ae608536b374d1b71a28785ef9a8b" category="inline-link-macro">將內部部署的 ONTAP 資料備份至 AWS</block>
   <block id="ddc7fe4301c8a4aa6a14e1843c25f30b" category="inline-link">BlueXP 備份與還原 2024 年 7 月版本部落格</block>
   <block id="f1db3a8ee789ee9607754f5f8a9871b1" category="paragraph">請參閱<block ref="7de2d0863d92330816fac8b7768edb68" category="inline-link-rx"></block>。</block>
   <block id="5ab4d79a28b46b39467c24096b99316f" category="section-title">FlexGroup 資料夾或目錄還原功能現已可供使用</block>
@@ -2226,11 +2224,7 @@ ifdef：：AWS []</block>
   <block id="0ca08a23718c0a91743dd6c0146ca353" category="paragraph">若要為 Cloud Volumes ONTAP 啟用下列關鍵工作流程、必須將 NetApp 支援網站認證與您的 BlueXP  組織建立關聯：</block>
   <block id="c81c8e01f5d906ae1ab0c5c606f06b05" category="paragraph">將 NSS 認證與您的 BlueXP  組織建立關聯、不同於與 BlueXP  使用者登入相關聯的 NSS 帳戶。</block>
   <block id="8166996cb4a59c147200d89a061bb49c" category="paragraph">這些 NSS 認證會與您的特定 BlueXP  組織 ID 相關聯。屬於 BlueXP  組織的使用者可從 * 支援 &gt; NSS 管理 * 存取這些認證。</block>
-  <block id="447432dc1956c6ca8ef783da40afa0ba" category="paragraph">這適用於<block ref="36745b46d10b0daef886af9c3561dc82" category="inline-link-macro-rx"></block>。這適用於<block ref="28610eddc6cc2d865303aa5fe254d6ff" category="inline-link-macro-rx"></block>。</block>
   <block id="5b932b14c237e03588a415b41b9a0b43" category="list-text">如果您計畫使用 DataLock 和勒索軟體保護、您可以在建立第一個備份原則、並為該叢集啟動 BlueXP 備份和還原時啟用。您可以稍後使用 BlueXP  備份與還原進階設定來啟用或停用勒索軟體掃描。</block>
-  <block id="84142ff06d4e9d4646fc2a3b18cc1d91" category="paragraph"><block ref="a21af64035213e0424a2bf24b7431646" category="inline-link-rx"></block>。</block>
-  <block id="2f080abae9949a746e32fbd78d3382f7" category="paragraph">如需有關 DataLock 的詳細資訊及如何降低相關成本的秘訣，請<block ref="116b2987b0e6fcf4c15ff7c1a1a47ed3" category="inline-link-rx"></block>參閱。</block>
-  <block id="b1b12c3c76c5dc414df3c68e8a811c2a" category="paragraph">如需詳細資訊、請<block ref="ef40acf6b73cf65ed40d9b8f7f6be1c3" category="inline-link-rx"></block>參閱。</block>
   <block id="2a26ca1d77691991f2402c219881a81b" category="paragraph">如果您想要使用某個字首或指派特殊屬性、可以在物件提供者帳戶中自行建立容器。如果您想要建立自己的容器、則必須先建立容器、然後再啟動啟動精靈。BlueXP  備份與還原可以使用任何貯體和共用貯體。備份啟動精靈會自動探索所選帳戶和認證的已佈建容器、以便您選取要使用的容器。</block>
   <block id="3a66ab30f960deed7e2d6dbe5675eebc" category="paragraph">BlueXP 備份與還原可在網際網路連線能力有限（也稱為限制模式 _ ）的站台中使用、以備份 Volume 資料。在此案例中、您需要在目的地雲端區域部署 BlueXP  Connector 。</block>
   <block id="e23da6bf724f3225b25342aa20aab822" category="cell"><block ref="1e8904cbbffb7eff1de96297f70cd53e" prefix="" category="inline-code"></block></block>
@@ -2242,7 +2236,6 @@ ifdef：：AWS []</block>
   <block id="3c97d3b45dd14b2958c1e0e304230aa0" category="paragraph">此 BlueXP  備份與還原版本包含下列更新。</block>
   <block id="517624d736bd2a385ee8cda71584112f" category="section-title">SnapLock Compliance 和 SnapLock Enterprise 保護模式</block>
   <block id="139da935670a9f985194d3241917c359" category="paragraph">BlueXP  備份與還原現在可以備份使用 SnapLock Compliance 或 SnapLock Enterprise 保護模式設定的 FlexVol 和 FlexGroup 內部部署磁碟區。您的叢集必須執行 ONTAP 9.14 或更新版本、才能獲得此支援。自 ONTAP 9.11.1 版起、就支援使用 SnapLock 企業模式備份 FlexVol Volume 。較早的 ONTAP 版本不支援備份 SnapLock 保護磁碟區。</block>
-  <block id="9ddb3e6714694f5c7f619d474fec8169" category="paragraph">請參閱中支援磁碟區的完整清單<block ref="9e68a582cc487ad29425f5a4796c9e45" category="inline-link-rx"></block>。</block>
   <block id="fec92c3dfb6a0b3db498488c7f4d2f29" category="section-title">「磁碟區」頁面上的「搜尋與還原程序索引」</block>
   <block id="20d3b0b7cfe7a9f3dcfdb0faa9398efd" category="paragraph">在使用搜尋與還原之前、您必須在每個要從中還原Volume資料的來源工作環境上啟用「索引」。這可讓 Indexed Catalog 追蹤每個磁碟區的備份檔案。「 Volume 」頁面現在會顯示索引狀態：</block>
   <block id="cd9b31737e78e0a0a755acc12151f766" category="list-text">索引：已建立磁碟區索引。</block>
@@ -2303,7 +2296,6 @@ ifdef：：AWS []</block>
   <block id="1928ef25d05266e1052541c930f2737c" category="paragraph">在您使用「搜尋與還原」方法還原資料之前，您必須先在每個準備還原磁碟區或檔案的來源工作環境上啟用「索引」。這可讓「索引型錄」追蹤每個磁碟區和每個備份檔案，讓您的搜尋快速又有效率。</block>
   <block id="d28994d1a9691ce26fcae71b9a05d1bc" category="paragraph">執行「搜尋與還原」時，選取「啟用索引」選項，即可在來源工作環境上啟用索引。</block>
   <block id="6b14c6e0d643870ea727335d7739df30" category="inline-link">如何使用搜尋擴大機還原 ONTAP 資料；還原</block>
-  <block id="9031cfd1bcd3de043cd6391f098dc91b" category="paragraph">有關詳細信息，請參閱文檔<block ref="7ae860a58fb7c028461eb3a0f3043711" category="inline-link-rx"></block>。</block>
   <block id="2d31667baed414ccd330141663dac284" category="paragraph-title">支援的擴充</block>
   <block id="b2ec30cb49afbacbac6cc89a95133887" category="paragraph">新的索引功能支援下列項目：</block>
   <block id="3201cddda2c272104ed2ef30674f361a" category="list-text">不到 3 分鐘即可達到全域搜尋效率</block>
@@ -2388,7 +2380,6 @@ ifdef：：AWS []</block>
   <block id="9de9a72e99be1fee8dc0790411738dd4" category="paragraph">這項功能不需要耗時且資源密集的重新基準作業，讓備份作業能夠在移轉後繼續進行。此功能在工作負載移轉案例中非常重要，可同時支援 FlexVols 和 FlexGroups ，並可從 ONTAP 9.16.1 版開始使用。</block>
   <block id="9c69774894ac0ae0f2bbae9b12964cfe" category="paragraph">SnapMirror to Cloud Resync 可維持跨環境的備份持續運作，進而提升營運效率，並降低混合式和多雲端資料管理的複雜度。</block>
   <block id="5746bb5eeaa153936151cb52823109e6" category="inline-link">使用 SnapMirror 移轉磁碟區至雲端重新同步</block>
-  <block id="3a55cfa97f4682f930352f0f81220899" category="paragraph">如需如何執行重新同步作業的詳細資訊，請參閱<block ref="207dcf1aaf014b22c1836348f392f25c" category="inline-link-rx"></block>。</block>
   <block id="d7aa9347c7a241e0b5959147e0834507" category="section-title">支援第三方 MinIO 物件存放區（預覽）</block>
   <block id="74f850f0e7d77a9dfb658a6664c11580" category="paragraph">BlueXP  備份與還原現在將支援延伸至第三方物件儲存區，主要著重於 MinIO 。這項新的預覽功能可讓您運用任何與 S3 相容的物件儲存區，滿足備份與還原需求。</block>
   <block id="fba2533d6fb852f662ab27cb8831c6c2" category="paragraph">使用此預覽版本，我們希望能在完整功能推出之前，確保與協力廠商物件儲存區緊密整合。我們鼓勵您探索這項新功能，並提供意見回饋，以協助提升服務品質。</block>
@@ -2400,7 +2391,6 @@ ifdef：：AWS []</block>
   <block id="7f4d22b3de45045172408ddd711a85a1" category="paragraph">* 快速入門 *</block>
   <block id="5955ccac697a810563b00d68d2e643a8" category="paragraph">若要開始使用此預覽功能，您必須在 BlueXP  Connector 上啟用旗標。接著，您可以在備份區段中選擇 * 協力廠商相容 * 物件存放區，在保護工作流程中輸入 MinIO 協力廠商物件存放區的連線詳細資料。</block>
   <block id="3e49d780723839a4238980f0ed8f0e54" category="inline-link">啟用 BlueXP  備份與還原的預覽功能</block>
-  <block id="e4d99443f32762da8fffc177c52518aa" category="paragraph">如需如何啟用預覽功能的指示，請參閱<block ref="918e5958ca0f0d47162ab1a4f8ffabd1" category="inline-link-rx"></block>。</block>
   <block id="21ade0a59a521983cc4ace159928965c" category="section-title">BlueXP  備份與還原 SnapMirror 至雲端重新同步的運作方式</block>
   <block id="5f6d83d4b0c669ea7f7bd4da5824cd65" category="paragraph">如果您完成技術更新，或是將磁碟區從一個 ONTAP 叢集移轉到另一個叢集，備份必須持續運作而不中斷。BlueXP  備份與還原 SnapMirror 至雲端重新同步可確保雲端備份在 Volume 移轉後仍保持一致，進而協助達成此目標。</block>
   <block id="4d947fe0b5c4693f487f4fd1a4295c99" category="paragraph">範例如下：</block>
@@ -2542,16 +2532,13 @@ ifdef：：AWS []</block>
   <block id="109a536d105313ba22a3a245fbe42d66" category="paragraph">如果您是新客戶，所有新環境均預設啟用索引目錄 v2。如果您是現有客戶，您可以重新索引您的環境以利用索引目錄 v2。</block>
   <block id="ed568c90c2ab6e924749399e3a2572f7" category="paragraph">在您使用「搜尋與還原」方法還原資料之前，您必須先在每個準備還原磁碟區或檔案的來源工作環境上啟用「索引」。執行搜尋和復原時，選擇“啟用索引”選項。</block>
   <block id="53b903d5c7d704138f78087fb044d909" category="paragraph">索引目錄可以追蹤每個捲和備份文件，使您的搜尋快速且有效率。</block>
-  <block id="b135d75112998c5959ea2e656baaca04" category="paragraph">如需更多資訊、請參閱<block ref="7ae860a58fb7c028461eb3a0f3043711" category="inline-link-rx"></block>。</block>
   <block id="a5e1a06a60e331b5d516136e96719929" category="section-title">Azure 專用連結終結點與服務終點</block>
-  <block id="a6f1ad5d9fc5adf781d978f4d43bae4c" category="paragraph">通常，BlueXP 備份和復原會與雲端供應商建立私有端點，以處理各種保護任務。此版本引入了一項可選設置，可讓您啟用或停用 BlueXP 備份和恢復自動建立私有端點的功能。如果您希望更好地控制私有端點的建立流程，這項設定可能會對您有所幫助。</block>
   <block id="8ee64b87fd8e5fd67f5f38194c7faf59" category="paragraph">如果停用此設置，則必須手動建立專用端點，以確保 BlueXP 備份和復原功能正常運作。如果沒有正確的連接，您可能無法成功執行備份和還原任務。</block>
   <block id="fad4c67d1d97874133e7a367fe5038fd" category="section-title">ONTAP S3 上支援 SnapMirror 到雲端重新同步</block>
   <block id="8e0a943cdbcd7f9c7f29128489119715" category="paragraph">上一版本引入了對 SnapMirror 到雲端重新同步 (SM-C Resync) 的支援。此功能簡化了 NetApp 環境中磁碟區遷移期間的資料保護。此版本增加了對 ONTAP S3 以及其他與 S3 相容的提供者（例如 Wasabi 和 MinIO）上的 SM-C Resync 的支援。</block>
   <block id="fa551b5810fe894fcd21bf7c8ffc98d1" category="section-title">為 StorageGRID 帶來自己的儲存桶</block>
   <block id="f2ff9aeba193e347e07d88061902be70" category="paragraph">當您在物件儲存中為工作環境建立備份檔案時，BlueXP 備份和復原功能會預設在您設定的物件儲存帳戶中為備份檔案建立容器（儲存桶或儲存帳戶）。之前，您可以覆寫此設置，並為 Amazon S3、Azure Blob Storage 和 Google Cloud Storage 指定您自己的容器。在此版本中，您現在可以自備 StorageGRID 物件儲存容器。</block>
   <block id="e6e5a011626c6db86099687e0a358c1f" category="inline-link">建立您自己的物件儲存容器</block>
-  <block id="68c8f46b97e6aeb1e429ccce285cfda1" category="paragraph">請參閱。<block ref="7a95086a5f98875b2249d837314b5c45" category="inline-link-rx"></block></block>
   <block id="8cc135257549041a5024c6e351c58dfb" category="paragraph">如果您計畫使用與「 NetApp-backup-xxxxxx 」不同的儲存區首碼、則需要修改 Connector IAM 角色的 S3 權限。</block>
   <block id="73c86e71b090fff443b784dff449590a" category="list-text">在叢集上使用 ONTAP 9.11.1 或更高版本軟體時，AWS 儲存支援 DataLock 和勒索軟體保護；使用 ONTAP 9.12.1 或更高版本軟體時，Azure 儲存支援 DataLock 和勒索軟體保護。</block>
   <block id="18a05ed293e5a9815ac509be9947a561" category="paragraph">如您所見，還原儀表板提供了兩種從備份檔案還原資料的不同方法：*瀏覽和還原*和*搜尋和還原*。</block>
@@ -2564,7 +2551,6 @@ ifdef：：AWS []</block>
   <block id="2990ab511029f6c10e696e43177d4fdd" category="list-text">找到您想要用於還原資料的備份檔案並選擇*復原*。</block>
   <block id="4d1f1dc63841491797cde0fde7dec31d" category="list-text">選擇您想要還原磁碟區、資料夾或檔案的目標位置，然後選擇*復原*。</block>
   <block id="791d05d0e9072626d0316ef0a7cf21bc" category="section-title">2025 年 6 月 09 日</block>
-  <block id="0a849c115a4741e75692ddd548e07b4d" category="paragraph">您可以在啟用保護或開始復原程序時啟用或停用此選項。</block>
   <block id="9bbf67835dcc255a2362d9d5043708ad" category="paragraph">當您使用 Indexed Catalog v2 時，本服務不會預設單獨的儲存桶。相反，對於儲存在 AWS、Azure、Google Cloud Platform、StorageGRID 或 ONTAP S3 中的備份，該服務會在 Connector 或雲端供應商環境中預設空間。</block>
   <block id="c2da3976b7bba43b7d1d45f7a32a43bd" category="paragraph">如果您在 v2 版本發布之前啟用了索引目錄，則工作環境會出現以下情況：</block>
   <block id="5323d04b0f0228d9a4b7ec5629ddb280" category="doc">BlueXP 備份與還原的新功能</block>
@@ -3098,16 +3084,12 @@ ifdef：：AWS []</block>
   <block id="eb77981f2e476b76c513faaacd09914a" category="paragraph">透過在BlueXP backup and recovery中管理 Kubernetes 工作負載，您可以在一處集中管理和保護您的 Kubernetes 叢集和應用程式。您可以管理 Kubernetes 叢集託管的資源和應用程序，還可以管理 Kubernetes 工作負載的保護設定。</block>
   <block id="dd0f352a678f8f7a3bd4045615456919" category="admonition">本文件以技術預覽形式提供。在預覽期間，不建議將 Kubernetes 功能用於生產工作負載。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。</block>
   <block id="e94d9102ade906ff7fd5fc370d68c0d8" category="paragraph">您可以完成與管理 Kubernetes 工作負載相關的下列任務：</block>
-  <block id="f0338e38e7978ec30d1f5eb9b845e843" category="inline-link-macro">發現 Kubernetes 工作負載</block>
-  <block id="0022038e456ea404ab796f4b75f7e6ea" category="list-text"><block ref="1aaecb747e58be0aa9e10461fda65c97" category="inline-link-macro-rx"></block>。</block>
   <block id="384b71db954a7a463c759208283e47c4" category="inline-link-macro">管理Kubernetes叢集</block>
   <block id="75750592598a2163e070809696d795f5" category="list-text"><block ref="4c3d4ee32af52a5715d89ae7d8ef89d4" category="inline-link-macro-rx"></block>。</block>
   <block id="bd0d9feacbc44891c493b82f74939311" category="inline-link-macro">新增和保護 Kubernetes 應用程式</block>
-  <block id="d0b5709d97bbe5098abd93c7e694cb77" category="list-text"><block ref="3e35e8d4173c71043e7b66d0d706f7de" category="inline-link-macro-rx"></block>。</block>
   <block id="7ce6b1278baad78a64a18c8640136c77" category="inline-link-macro">管理 Kubernetes 應用程式</block>
   <block id="1c39e480280e05e6e2669259a50ce500" category="list-text"><block ref="dc144ac0d06e909a8d08dc882910af82" category="inline-link-macro-rx"></block>。</block>
   <block id="343af147af834c1b9b9a351344e425f2" category="inline-link-macro">恢復 Kubernetes 應用程式</block>
-  <block id="1af35924e4dcf46a6e48f4acc678dff6" category="list-text"><block ref="7769ce529a2e3eb709e04d840fce1c3b" category="inline-link-macro-rx"></block>。</block>
   <block id="57425d1304f6091f6a1ef42a0adfc0ba" category="summary">BlueXP backup and recovery可讓您管理執行掛鉤，以便在應用程式保護作業之前或之後採取行動。</block>
   <block id="e8dfbdb38e4ccb6248a9493ac24c8181" category="doc">管理 Kubernetes 工作負載的BlueXP backup and recovery執行掛鉤模板</block>
   <block id="cf1efa56f611411b6426b3cf4ae8b4ea" category="paragraph">執行鉤子是一種自訂操作，您可以將其配置為與託管 Kubernetes 應用程式的資料保護操作一起運行。例如、如果您有資料庫應用程式、您可以使用執行掛勾來暫停快照之前的所有資料庫交易、並在快照完成後繼續交易。如此可確保應用程式一致的快照。建立執行鉤子範本時，您可以指定鉤子的類型、要執行的腳本以及用於確定該鉤子適用哪些容器的篩選條件。然後，您可以使用該模板將執行鉤子與您的應用程式關聯。</block>
@@ -3944,9 +3926,6 @@ ifdef：：AWS []</block>
   <block id="8a340071e94008e324032801daab45d8" category="paragraph">備份複本儲存在BlueXP在雲端帳戶中建立的物件存放區中。每個叢集或工作環境都有一個物件存儲， BlueXP對物件存儲的命名如下： <block ref="395f30b009fd80d4c1cba9bc07db445d" prefix=" " category="inline-code"></block> 。請勿刪除此物件存放區。</block>
   <block id="ff20fb34d64300f8525105ebee562e00" category="list-text">在 AWS 中， BlueXP支援<block ref="b38667957fcdf9b9da65b213e7fb2492" category="inline-link-rx"></block>在 S3 儲存桶上。 endif::aws[]</block>
   <block id="1af6f75abfa248fb172917c8f8cd1975" category="list-text">在Azure中、BlueXP會使用新的或現有的資源群組、以及Blob容器的儲存帳戶。BlueXP <block ref="a7068b8d2b60241ce77a1051f3a66ed5" category="inline-link-rx"></block>預設情況下。 endif::azure[]</block>
-  <block id="065c13346a6a1b4ec88ebda80e48a910" category="inline-link">BlueXP帳戶</block>
-  <block id="36e79c272f0fce1f66a6c0c2474f01e9" category="paragraph">備份副本與<block ref="804faa4f81a5cffbc00a90ef504a2fbd" category="inline-link-rx"></block> BlueXP連接器所在的位置。</block>
-  <block id="5618e21a98c314ffca80dd956757bb83" category="paragraph">如果同一個BlueXP帳戶中有多個連接器，則每個連接器都會顯示相同的備份清單。</block>
   <block id="f91faf1a13607ac0db1201bfb304b328" category="section-title">可能對您使用BlueXP backup and recovery有幫助的術語</block>
   <block id="4631dd7356561dcd994558a79249bcaa" category="paragraph">了解一些與保護相關的術語可能會對您有所幫助。</block>
   <block id="661b3d31f95036ff86eec46ca498f96e" category="list-text">*保護*： BlueXP backup and recovery中的保護意味著確保使用保護策略定期將快照和不可變備份發生到不同的安全域。</block>
@@ -4228,17 +4207,8 @@ ifdef：：AWS []</block>
   <block id="b06c9fd76246f4cfb339125284b25aa5" category="list-text">如果您選擇保留計數為 3 的「每月」標籤，則快照保留期為 90 天。</block>
   <block id="efdf2d46dfa5c7a9f73d28bb893f836f" category="list-text">如果您選擇保留計數為 1 的 *每年* 標籤，則快照保留期為 365 天。</block>
   <block id="a60142749401298f0a788c8439772777" category="section-title">什麼是保留截止日期 (RUD) 以及如何計算？</block>
-  <block id="eeada300415ab437a13601d2e69f066a" category="paragraph">保留截止日期 (RUD) 根據快照保留期確定。</block>
-  <block id="6984bab6fc7fe177ce259ff499fada58" category="list-text">保留截止日期是透過將快照保留期與緩衝區相加來計算的。</block>
-  <block id="95ff93ddc0c74a02cf692e476561a39d" category="list-text">緩衝為轉移時間緩衝（6天）+成本最佳化緩衝（8天），共14天。</block>
-  <block id="ac3a820fa3f3116f54715975be367471" category="list-text">最短保留期限為 30 天 + 14 天。</block>
   <block id="c0dc453646abf19770644c4988b76265" category="paragraph">以下是一些範例：</block>
-  <block id="19606e2b227c881953690cfcbb2621ad" category="list-text">如果您建立的每月備份排程有12個保留項目、則備份會在刪除之前鎖定12個月（加上14天）（由下一個備份檔案取代）。</block>
   <block id="19703e6040b3a90f1ca1c6525c9432f8" category="list-text">如果您建立的備份策略會建立 30 個每日備份、7 個每週備份和 12 個每月備份，則有三個鎖定的保留期：</block>
-  <block id="32e9736765675e582a92ea22621346f6" category="list-text">「每日 30 次」備份將保留 44 天（30 天加上 14 天緩衝期），</block>
-  <block id="08725775ceb79bf9dd25c482670a47a4" category="list-text">「7 週」備份保留 9 週（7 週加 14 天），且</block>
-  <block id="f0d1e71c852348fd449a59d2b4456479" category="list-text">「12 個月」備份將保留 12 個月（加 14 天）。</block>
-  <block id="bf7c437191fdcde55e7d7e2fc049c230" category="list-text">如果您建立24個保留項目的每小時備份排程、您可能會認為備份會鎖定24小時。不過、由於這低於30天的最少時間、因此每個備份都會被鎖定並保留44天（30天加上14天的緩衝）。</block>
   <block id="16ec215ee395a25e960a53b7cdcdc794" category="admonition">舊備份將在 DataLock 保留期到期後刪除，而不是在備份策略保留期到期後刪除。</block>
   <block id="b31b5b22923a2871f33f5a4b77d6be83" category="paragraph">DataLock 保留設定將覆蓋備份策略中的策略保留設定。這可能會影響您的儲存成本、因為備份檔案將會儲存在物件存放區中一段較長的時間。</block>
   <block id="010f0e105bcb6f73ab6c815fef84dd1c" category="section-title">啟用 DataLock 和勒索軟體保護</block>
@@ -4532,11 +4502,35 @@ ifdef：：AWS []</block>
   <block id="79cf38f604ea494dd925df57b6a906b6" category="sidebar">保護虛擬機器工作負載</block>
   <block id="7706cc052aa7120ddac8475709793258" category="sidebar">保護虛擬機器工作負載概述</block>
   <block id="9ce88727019b612743000c7bcc2bfd23" category="sidebar">保護虛擬機器工作負載的先決條件</block>
-  <block id="6a1574cd5135a4d659f7c25fd4102feb" category="sidebar">建立備份 VMware 資料儲存區的策略</block>
-  <block id="6cc90c7021ed31cf57b48ce2a8946fd6" category="sidebar">還原 VMware 資料儲存區</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="sidebar">監控工作</block>
   <block id="3e8569bed0b50d0e3ac8dd96195c94f1" category="sidebar">SnapCenter中的策略與BlueXP backup and recovery的比較</block>
   <block id="f1518f15324a3922da2c43bf2d8a6950" category="sidebar">BlueXP backup and recovery角色和權限</block>
   <block id="62967cdcfc7912e3c1a9b3870580fe3f" category="sidebar">支援的 Azure 存檔儲存層</block>
   <block id="6af2225d62ab9c4b0de4dfa7f9e852f5" category="sidebar">支援的 Google Cloud 歸檔儲存層</block>
+  <block id="c4b08eb240d5acefc7787d3c1f4dc211" category="paragraph">如需有關 DataLock 的詳細資訊及如何降低相關成本的秘訣，請<block ref="d90fde943a025df225ab32a40384dd6a" category="inline-link-rx"></block>參閱。</block>
+  <block id="19b4ad2674c96d56da6480ae5941dbcc" category="paragraph">這適用於<block ref="3511a6172016ee8cfe1d338bd0065ef8" category="inline-link-macro-rx"></block>。</block>
+  <block id="7409daf66203b2febe12a1f1d0810390" category="paragraph">如需詳細資訊、請<block ref="d9a7b0453d5c88d7a03a4a533a91ebbd" category="inline-link-rx"></block>參閱。</block>
+  <block id="dd1d86ea4419b25992a75d6434e263f5" category="paragraph"><block ref="f93ca486f4a1aabddf8ac5ec83073dce" category="inline-link-rx"></block>。</block>
+  <block id="852a449d8705172593dae97c83ea01cf" category="paragraph">請參閱中支援磁碟區的完整清單<block ref="7145d27b15b026f49ce31235923b6206" category="inline-link-rx"></block>。</block>
+  <block id="581f1a24c9473eb02495cf214eff5f16" category="paragraph">有關詳細信息，請參閱文檔<block ref="7032ad075c5740af58977615413f7319" category="inline-link-rx"></block>。</block>
+  <block id="3363af40fef96c985a6160ac6cebf40f" category="paragraph">如需如何執行重新同步作業的詳細資訊，請參閱<block ref="26011448910fe4558756af892237733b" category="inline-link-rx"></block>。</block>
+  <block id="4818e0e89efe2955c1288f2df1d064bb" category="inline-link">啟用搜尋和還原索引</block>
+  <block id="48fe5c0defd01f149e20ad998ea50bc8" category="paragraph">如需詳細資訊、請<block ref="08c33d3978c0be0f60606e54818e9704" category="inline-link-rx"></block>參閱。</block>
+  <block id="39b551835fb0f105ce0b01ab6a4b0330" category="paragraph">通常， BlueXP backup and recovery會與雲端提供者建立一個私有端點來處理保護任務。此版本引入了一項可選設置，可讓您啟用或停用 BlueXP 備份和恢復自動建立私有端點的功能。如果您希望更好地控制私有端點的建立流程，這項設定可能會對您有所幫助。</block>
+  <block id="2211c8a4939111428200ceec5f271f42" category="paragraph">您可以在啟用保護或開始復原程序時啟用或停用此選項。</block>
+  <block id="030908b5781e3d39669f22cf9e8c02c4" category="paragraph">請參閱。<block ref="f1ca93d1640a6fbcba487063d3fdcf11" category="inline-link-rx"></block></block>
+  <block id="b9d8a93fed4f12013570bf6f643cb331" category="section-title">備份副本與您的BlueXP組織相關聯</block>
+  <block id="d135d1b6a10879ca27887c632f4576d7" category="inline-link">瞭解 BlueXP  身分識別與存取管理</block>
+  <block id="80a8421050b068560b8a6a9ede26cb9b" category="paragraph">備份副本與BlueXP Connector 所在的BlueXP組織相關聯。 <block ref="00bb451fd39671f4aa08ee6cf3130758" category="inline-link-rx"></block> 。</block>
+  <block id="3fe11e28eeacfe638604d387a3e527ee" category="paragraph">如果同一個BlueXP組織中有多個連接器，則每個連接器都會顯示相同的備份清單。</block>
+  <block id="33f34f378ec48f478eda58fa96594aa4" category="paragraph">保留截止日期 (RUD) 根據快照保留期確定。保留截止日期是透過將快照保留期與緩衝區相加來計算的。</block>
+  <block id="0b918c8e643ab519717fd0eec681371c" category="list-text">緩衝為轉移時間緩衝（3天）+成本最佳化緩衝（28天），共31天。</block>
+  <block id="10040237b3e7b790c7f0c1983647279e" category="list-text">最短保留截止日期為 30 天 + 31 天緩衝期 = 61 天。</block>
+  <block id="f84724515a26602458b4cabf395689b0" category="list-text">如果您建立的每月備份排程有12個保留項目、則備份會在刪除之前鎖定12個月（加上31天）（由下一個備份檔案取代）。</block>
+  <block id="dc1987905977bd763b00c2a0741b977b" category="list-text">「每日 30 次」備份將保留 61 天（30 天加上 31 天緩衝期），</block>
+  <block id="dda5e0548944d946d7ab9e81fdd1296f" category="list-text">「7 週」備份保留 11 週（7 週加 31 天），且</block>
+  <block id="b8400c37ab80692ef1ca26e1fa71d6f7" category="list-text">「12 個月」備份將保留 12 個月（加 31 天）。</block>
+  <block id="52d355afb10d30259b33c1f1c1cd46c8" category="list-text">如果您建立24個保留項目的每小時備份排程、您可能會認為備份會鎖定24小時。不過、由於這低於30天的最少時間、因此每個備份都會被鎖定並保留61天（30天加上31天的緩衝）。</block>
+  <block id="776ec5ed6f61de56be98c037c8ca01c9" category="sidebar">建立備份虛擬機器資料的策略</block>
+  <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">恢復虛擬機器資料和資料存儲</block>
 </blocks>

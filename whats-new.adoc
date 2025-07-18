@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: whats-new.html 
-keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, backup, restore, bluexp, bluexp backup and recovery, protection' 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, backup, restore, bluexp, bluexp backup and recovery, protection, sql server, workloads, volumes, snapshots' 
 summary: 瞭解 BlueXP 備份與還原的新功能。 
 ---
 = BlueXP 備份與還原的新功能
@@ -78,13 +78,13 @@ NOTE: 本文檔是關於保護微軟 SQL SERVER 工作負載的，作為技術�
 
 索引目錄可以追蹤每個捲和備份文件，使您的搜尋快速且有效率。
 
-如需更多資訊、請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restore-ontap-data-using-search-restore["如何使用搜尋擴大機還原 ONTAP 資料；還原"]。
+如需詳細資訊、請 https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-restore.html["啟用搜尋和還原索引"]參閱。
 
 
 
 === Azure 專用連結終結點與服務終點
 
-通常，BlueXP 備份和復原會與雲端供應商建立私有端點，以處理各種保護任務。此版本引入了一項可選設置，可讓您啟用或停用 BlueXP 備份和恢復自動建立私有端點的功能。如果您希望更好地控制私有端點的建立流程，這項設定可能會對您有所幫助。
+通常， BlueXP backup and recovery會與雲端提供者建立一個私有端點來處理保護任務。此版本引入了一項可選設置，可讓您啟用或停用 BlueXP 備份和恢復自動建立私有端點的功能。如果您希望更好地控制私有端點的建立流程，這項設定可能會對您有所幫助。
 
 您可以在啟用保護或開始復原程序時啟用或停用此選項。
 
@@ -102,7 +102,7 @@ NOTE: 本文檔是關於保護微軟 SQL SERVER 工作負載的，作為技術�
 
 當您在物件儲存中為工作環境建立備份檔案時，BlueXP 備份和復原功能會預設在您設定的物件儲存帳戶中為備份檔案建立容器（儲存桶或儲存帳戶）。之前，您可以覆寫此設置，並為 Amazon S3、Azure Blob Storage 和 Google Cloud Storage 指定您自己的容器。在此版本中，您現在可以自備 StorageGRID 物件儲存容器。
 
-請參閱。 https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["建立您自己的物件儲存容器"]
+請參閱。 https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-protect-journey.html["建立您自己的物件儲存容器"]
 
 
 
@@ -120,7 +120,7 @@ SnapMirror 至雲端重新同步功能可簡化 NetApp 環境中磁碟區移轉�
 
 SnapMirror to Cloud Resync 可維持跨環境的備份持續運作，進而提升營運效率，並降低混合式和多雲端資料管理的複雜度。
 
-如需如何執行重新同步作業的詳細資訊，請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-migrate-volumes-snapmirror-cloud-resync.html["使用 SnapMirror 移轉磁碟區至雲端重新同步"]。
+如需如何執行重新同步作業的詳細資訊，請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-migrate-resync.html["使用 SnapMirror 移轉磁碟區至雲端重新同步"]。
 
 
 
@@ -148,8 +148,6 @@ IMPORTANT: 此功能不應用於正式作業。
 * 快速入門 *
 
 若要開始使用此預覽功能，您必須在 BlueXP  Connector 上啟用旗標。接著，您可以在備份區段中選擇 * 協力廠商相容 * 物件存放區，在保護工作流程中輸入 MinIO 協力廠商物件存放區的連線詳細資料。
-
-如需如何啟用預覽功能的指示，請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-preview-enable.html["啟用 BlueXP  備份與還原的預覽功能"]。
 
 
 
@@ -287,7 +285,7 @@ BlueXP  備份與還原引進更新的索引功能，可讓來源工作環境�
 
 執行「搜尋與還原」時，選取「啟用索引」選項，即可在來源工作環境上啟用索引。
 
-有關詳細信息，請參閱文檔 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restore-ontap-data-using-search-restore["如何使用搜尋擴大機還原 ONTAP 資料；還原"]。
+有關詳細信息，請參閱文檔 https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-restore.html["如何使用搜尋擴大機還原 ONTAP 資料；還原"]。
 
 .支援的擴充
 新的索引功能支援下列項目：
@@ -346,7 +344,7 @@ NOTE: 本文件以技術預覽形式提供。透過此預覽方案、 NetApp 保
 
 BlueXP  備份與還原現在可以備份使用 SnapLock Compliance 或 SnapLock Enterprise 保護模式設定的 FlexVol 和 FlexGroup 內部部署磁碟區。您的叢集必須執行 ONTAP 9.14 或更新版本、才能獲得此支援。自 ONTAP 9.11.1 版起、就支援使用 SnapLock 企業模式備份 FlexVol Volume 。較早的 ONTAP 版本不支援備份 SnapLock 保護磁碟區。
 
-請參閱中支援磁碟區的完整清單 https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html["瞭解 BlueXP 備份與還原"]。
+請參閱中支援磁碟區的完整清單 https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["瞭解 BlueXP 備份與還原"]。
 
 
 
@@ -376,7 +374,7 @@ BlueXP  備份與還原現在支援在使用 Podman 引擎的 Red Hat Enterpris
 
 BlueXP  Connector 3.9.40 版支援某些版本的 Red Hat Enterprise Linux 第 8 版和第 9 版、可在 RHEL 8 或 9 主機上手動安裝 Connector 軟體、而不受中所述作業系統以外的位置 https://docs.netapp.com/us-en/bluexp-setup-admin/task-prepare-private-mode.html#step-3-review-host-requirements["主機需求"^]限制。這些較新的 RHEL 版本需要使用 Podman 引擎、而非 Docker 引擎。以前、 BlueXP  備份與還原在使用 Podman 引擎時有兩項限制。這些限制已移除。
 
-https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。
+https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-restore.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。
 
 
 
@@ -384,4 +382,4 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.
 
 此版本包含改良的目錄索引、可更快完成基準索引。快速索引可讓您更快速地使用「搜尋與還原」功能。
 
-https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。
+https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-restore.html["深入瞭解如何從備份檔案還原 ONTAP 資料"]。

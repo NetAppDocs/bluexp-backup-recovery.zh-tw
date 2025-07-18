@@ -12,7 +12,7 @@ SnapMirror 至雲端重新同步功能可簡化 NetApp 環境中磁碟區移轉�
 
 SnapMirror to Cloud Resync 可維持跨環境的備份持續運作，進而提升營運效率，並降低混合式和多雲端資料管理的複雜度。
 
-如需如何執行重新同步作業的詳細資訊，請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-migrate-volumes-snapmirror-cloud-resync.html["使用 SnapMirror 移轉磁碟區至雲端重新同步"]。
+如需如何執行重新同步作業的詳細資訊，請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-migrate-resync.html["使用 SnapMirror 移轉磁碟區至雲端重新同步"]。
 
 
 
@@ -40,5 +40,3 @@ IMPORTANT: 此功能不應用於正式作業。
 * 快速入門 *
 
 若要開始使用此預覽功能，您必須在 BlueXP  Connector 上啟用旗標。接著，您可以在備份區段中選擇 * 協力廠商相容 * 物件存放區，在保護工作流程中輸入 MinIO 協力廠商物件存放區的連線詳細資料。
-
-如需如何啟用預覽功能的指示，請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-preview-enable.html["啟用 BlueXP  備份與還原的預覽功能"]。

@@ -120,7 +120,7 @@ sidebar:
         url: "/prev-vmware-prereqs.html"
       - title: 註冊 VMware vSphere 主機的 SnapCenter 外掛程式
         url: "/prev-vmware-register-snapcenter.html"
-      - title: 建立備份 VMware 資料儲存區的策略
+      - title: 建立備份虛擬機器資料的策略
         url: "/prev-vmware-policy-create.html"
       - title: 將資料存放區備份至Amazon Web Services
         url: "/prev-vmware-backup-aws.html"
@@ -132,7 +132,7 @@ sidebar:
         url: "/prev-vmware-backup-storagegrid.html"
       - title: 管理資料存放區和虛擬機器資料的保護
         url: "/prev-vmware-manage.html"
-      - title: 還原 VMware 資料儲存區
+      - title: 恢復虛擬機器資料和資料存儲
         url: "/prev-vmware-restore.html"
     - title: 監控工作
       url: "/br-use-monitor-tasks.html"
