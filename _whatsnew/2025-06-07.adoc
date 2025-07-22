@@ -23,7 +23,7 @@
 您可以透過完成此步驟註冊預覽 https://forms.office.com/pages/responsepage.aspx?id=oBEJS5uSFUeUS8A3RRZbOojtBW63mDRDv3ZK50MaTlJUNjdENllaVTRTVFJGSDQ2MFJIREcxN0EwQi4u&route=shorturl["預覽註冊表"^] 。
 
 
-NOTE: 本文檔是關於保護微軟 SQL SERVER 工作負載的，作為技術預覽提供。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。
+NOTE: 本文檔旨在介紹如何保護 Microsoft SQL Server 工作負載，目前僅提供技術預覽版。 NetAppNetApp在正式發布之前修改此預覽版產品詳細資訊、內容和時間表的權利。
 
 此版本的BlueXP backup and recovery包括以下更新：
 

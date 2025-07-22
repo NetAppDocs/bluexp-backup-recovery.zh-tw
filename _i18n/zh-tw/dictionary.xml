@@ -773,7 +773,6 @@
   <block id="4014cba1d3679d7444ccb96338d9ee36" category="list-text"><block ref="8e0864f8129f5d2b658668b9103e83a5" prefix="" category="inline-code"></block></block>
   <block id="139e90f4554bdc4681ca70203e695cd5" category="list-text"><block ref="28e5f48e9f12d4928897b706c15e527a" prefix="" category="inline-code"></block></block>
   <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link-macro">Azure NetApp Files</block>
-  <block id="b0cee72642f5457a71ddd0b49efb6d93" category="inline-link-macro">適用於 Google Cloud Cloud Volumes Service</block>
   <block id="67b74e19355f9340daf7f62ceb8233d5" category="list-text">連接埠1433必須開啟、以便連接器與Azure Synapse SQL服務之間進行通訊。</block>
   <block id="8042f6982b79849d158e3d7ac9190cc2" category="cell">如果檔案已刪除或重新命名、而且使用者不知道原始檔案名稱、則不會處理檔案還原</block>
   <block id="f45d40d2c3943b450f3c1c0ff3ac37f4" category="inline-link">如需詳細資料、請參閱DataLock和勒索軟體保護部落格</block>
@@ -1078,7 +1077,6 @@
   <block id="52ba8ac12050d2494572b940a0d65b25" category="list-text"><block ref="52ba8ac12050d2494572b940a0d65b25" category="inline-link-rx"></block></block>
   <block id="9d06990508d25d367d9158c6558eb9c8" category="list-text"><block ref="9d06990508d25d367d9158c6558eb9c8" category="inline-link-macro-rx"></block></block>
   <block id="2e0c742f4616eb27b5b7646aa790edfe" category="list-text"><block ref="2e0c742f4616eb27b5b7646aa790edfe" category="inline-link-macro-rx"></block></block>
-  <block id="cf14bff66a8b72d3675db8ffe0f02ee3" category="list-text"><block ref="cf14bff66a8b72d3675db8ffe0f02ee3" category="inline-link-macro-rx"></block></block>
   <block id="e8d4092baef6680c6a35d5228ae31de2" category="paragraph"><block ref="e8d4092baef6680c6a35d5228ae31de2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="0dfcbbbe02d3e96f8ad78782e8772587" category="paragraph">這是系統產生的ID、會對應至您的電子郵件。在「* nssn*管理*」頁面上、您可以從顯示電子郵件 <block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block> 功能表。</block>
   <block id="fc79de85a483938f72fbcb9822ec0ae3" category="list-text">如果您需要重新整理登入認證憑證權杖、也可以在中使用*更新認證*選項 <block ref="5151db0ded96d46f40ae09b5e5b167a1" category="inline-image-macro-rx" type="image"></block> 功能表。</block>
@@ -2556,7 +2554,6 @@ ifdef：：AWS []</block>
   <block id="5323d04b0f0228d9a4b7ec5629ddb280" category="doc">BlueXP 備份與還原的新功能</block>
   <block id="0a3f9b34ec4d0b6be00b165816b91f34" category="doc">BlueXP backup and recovery預覽版</block>
   <block id="935441eb9ed33d9e6fa5111dbffa79e2" category="paragraph">BlueXP backup and recovery的預覽版本提供了更新的使用者介面，讓您能夠使用BlueXP backup and recovery服務中熟悉的 3-2-1 保護策略來管理 Microsoft SQL Server 工作負載。使用此新版本，您可以將這些工作負載備份到主存儲，複製到輔助存儲，然後備份到雲端物件儲存。</block>
-  <block id="0fa2dfbaaa2a16717a0ff0de216d77f1" category="admonition">本文件以技術預覽形式提供。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。</block>
   <block id="38a73da2187d1ecdb4beee24980f481e" category="paragraph">此版本的BlueXP backup and recovery預覽版 2025 包括以下更新。</block>
   <block id="faf3668cbd6cfbf3e64bbd3b39c4fa15" category="list-text">重新設計的使用者介面為管理備份和復原任務提供了更直覺的體驗。</block>
   <block id="5761e8c204fd9a3c1d366d7bd26227e4" category="list-text">預覽版可讓您備份和還原 Microsoft SQL Server 資料庫。（未來版本將添加對其他工作負載的支援。）</block>
@@ -2572,7 +2569,6 @@ ifdef：：AWS []</block>
   <block id="312aa67cbd2d7a037dd47a1f882d9f0d" category="paragraph">此版本的BlueXP backup and recovery提供了更新的使用者介面，可讓您使用BlueXP backup and recovery服務中熟悉的 3-2-1 保護策略來管理 Microsoft SQL Server 工作負載。使用此新版本，您可以將這些工作負載備份到主存儲，複製到輔助存儲，然後備份到雲端物件儲存。</block>
   <block id="b8307a4d76527581a7b59e0e8b710824" category="inline-link">預覽註冊表</block>
   <block id="240b59983b641b146915b794a0fa4966" category="paragraph">您可以透過完成此步驟註冊預覽<block ref="b33811e9e55ab63ce9fecada8cb8558a" category="inline-link-rx"></block> 。</block>
-  <block id="0aa114cf5979a3879018cab8149d4fc8" category="admonition">本文檔是關於保護微軟 SQL SERVER 工作負載的，作為技術預覽提供。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。</block>
   <block id="55305f14da02876048cbec8f433b6e31" category="paragraph">此版本的BlueXP backup and recovery包括以下更新：</block>
   <block id="14c22a8793139c8c0e5b2ca06437ae76" category="list-text">*3-2-1 備份功能*：此版本整合了SnapCenter功能，讓您能夠透過BlueXP backup and recovery使用者介面使用 3-2-1 資料保護策略來管理和保護您的SnapCenter資源。</block>
   <block id="ad80e2efcb583c36651da40966b7c8aa" category="list-text">*從SnapCenter匯入*：您可以將SnapCenter備份資料和原則匯入BlueXP backup and recovery。</block>
@@ -3082,7 +3078,6 @@ ifdef：：AWS []</block>
   <block id="4c931104d6ff5fdc2a76bdfc6fba4662" category="summary">您可以保護從本機ONTAP系統到 Amazon Web Services、Microsoft Azure、Google Cloud Platform 和StorageGRID 的Kubernetes 應用程式和應用程式數據，確保您的資料受到保護。</block>
   <block id="ff1a3fbe6f92249e286b8a93cf5b5d2e" category="doc">管理 Kubernetes 工作負載概覽</block>
   <block id="eb77981f2e476b76c513faaacd09914a" category="paragraph">透過在BlueXP backup and recovery中管理 Kubernetes 工作負載，您可以在一處集中管理和保護您的 Kubernetes 叢集和應用程式。您可以管理 Kubernetes 叢集託管的資源和應用程序，還可以管理 Kubernetes 工作負載的保護設定。</block>
-  <block id="dd0f352a678f8f7a3bd4045615456919" category="admonition">本文件以技術預覽形式提供。在預覽期間，不建議將 Kubernetes 功能用於生產工作負載。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。</block>
   <block id="e94d9102ade906ff7fd5fc370d68c0d8" category="paragraph">您可以完成與管理 Kubernetes 工作負載相關的下列任務：</block>
   <block id="384b71db954a7a463c759208283e47c4" category="inline-link-macro">管理Kubernetes叢集</block>
   <block id="75750592598a2163e070809696d795f5" category="list-text"><block ref="4c3d4ee32af52a5715d89ae7d8ef89d4" category="inline-link-macro-rx"></block>。</block>
@@ -3854,7 +3849,6 @@ ifdef：：AWS []</block>
   <block id="5165c2fbcef4d5b16f189feb7569b43b" category="paragraph">有關使用先前的BlueXP backup and recoveryUI 的說明，請參閱以下主題：</block>
   <block id="219b1d964760a35bc8ac924733ed0211" category="summary">BlueXP backup and recovery服務為本地和雲端的NetApp資料庫和執行個體提供高效、安全且經濟實惠的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
   <block id="21a4e084cb9eeae89f7b12a3531b652c" category="paragraph">BlueXP backup and recovery服務為ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫（預覽版）以及 VMware 工作負載提供高效率、安全且經濟實惠的資料保護。</block>
-  <block id="febde7c28d4412c94050819c2bc00eca" category="admonition">有關保護 MICROSOFT SQL SERVER 工作負載的文件以技術預覽的形式提供。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。</block>
   <block id="5ddad1ad8421fb041436bd24f4aea0c5" category="section-title">BlueXP backup and recovery功能</block>
   <block id="930ffc736eba485afa459142d19e0a4e" category="paragraph">使用BlueXP backup and recovery實現以下目標：</block>
   <block id="5940e90d8d923e2308627f8e190412e8" category="list-text">ONTAP磁碟區工作負載：</block>
@@ -3906,7 +3900,6 @@ ifdef：：AWS []</block>
   <block id="9504b35cbb481ca2332f36aedcf456c8" category="list-text">ONTAP 磁碟區</block>
   <block id="58f149a832a0f214528ef836d6898835" category="list-text">用於實體、VMware 虛擬機器檔案系統 (VMFS) 和 VMware 虛擬機器磁碟 (VMDK) NFS（預覽版）的 Microsoft SQL Server 執行個體和資料庫</block>
   <block id="ed11408803c4c1aca5fbebbc43d88458" category="list-text">VMware資料存放區</block>
-  <block id="713cbd93b2ba47b4561b53a841624b51" category="list-text">更多資訊即將推出</block>
   <block id="5ab0c2c7c8110afd8e099464217e8718" category="list-title">支援的工作環境</block>
   <block id="60bbb47f4c25fbe48c0eaa18d9174d22" category="list-text">本地ONTAP SAN（iSCSI 協定）和 NAS（使用 NFS 和 CIFS 協定），採用ONTAP 9.8 及更高版本</block>
   <block id="d97ad1eba4f90ab1f835497c1e04b99f" category="list-text">適用於 AWS 的Cloud Volumes ONTAP 9.8 或更高版本（使用 SAN 和 NAS）</block>
@@ -4533,4 +4526,10 @@ ifdef：：AWS []</block>
   <block id="52d355afb10d30259b33c1f1c1cd46c8" category="list-text">如果您建立24個保留項目的每小時備份排程、您可能會認為備份會鎖定24小時。不過、由於這低於30天的最少時間、因此每個備份都會被鎖定並保留61天（30天加上31天的緩衝）。</block>
   <block id="776ec5ed6f61de56be98c037c8ca01c9" category="sidebar">建立備份虛擬機器資料的策略</block>
   <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">恢復虛擬機器資料和資料存儲</block>
+  <block id="a2e3a30df706bb24099d5e00888df71a" category="admonition">本文檔作為技術預覽提供。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。</block>
+  <block id="6e23fbb0baad6a7a72bd41e60b71f566" category="admonition">本文檔旨在介紹如何保護 Microsoft SQL Server 工作負載，目前僅提供技術預覽版。 NetAppNetApp在正式發布之前修改此預覽版產品詳細資訊、內容和時間表的權利。</block>
+  <block id="1e016758a8b3495be7c3ee2b6b26aab6" category="admonition">本文檔作為技術預覽提供。在預覽期間，不建議將 Kubernetes 功能用於生產工作負載。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。</block>
+  <block id="b75b69427facaf94889fb25900eb710a" category="admonition">本文檔作為技術預覽提供。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。</block>
+  <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetApp Volumes</block>
+  <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
 </blocks>
