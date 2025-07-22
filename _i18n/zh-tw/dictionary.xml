@@ -4532,4 +4532,5 @@ ifdef：：AWS []</block>
   <block id="b75b69427facaf94889fb25900eb710a" category="admonition">本文檔作為技術預覽提供。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。</block>
   <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetApp Volumes</block>
   <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
+  <block id="5e58a6444bf20b49389e233ebf6021d5" category="admonition">此功能從 2025 年 5 月發布的BlueXP backup and recovery版本 4.0.3 開始提供。</block>
 </blocks>

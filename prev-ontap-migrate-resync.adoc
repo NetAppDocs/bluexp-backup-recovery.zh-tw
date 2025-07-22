@@ -16,15 +16,18 @@ summary: BlueXP 備份和復原中的 SnapMirror 到 Cloud Resync 功能簡化�
 [role="lead"]
 BlueXP 備份和復原中的 SnapMirror 到 Cloud Resync 功能簡化了 NetApp 環境中捲遷移期間的資料保護和連續性。當使用 SnapMirror 邏輯複寫（ LRSE ），從內部部署的 NetApp 部署移轉到另一個部署，或移轉到雲端型解決方案（例如 Cloud Volumes ONTAP 或 Cloud Volumes Service ）時， SnapMirror 到雲端重新同步可確保現有的雲端備份保持完整且正常運作。
 
+這項功能不需要耗時且資源密集的重新基準作業，讓備份作業能夠在移轉後繼續進行。此功能在工作負載移轉案例中非常重要，可同時支援 FlexVols 和 FlexGroups ，並可從 ONTAP 9.16.1 版開始使用。
+
+
+NOTE: 此功能從 2025 年 5 月發布的BlueXP backup and recovery版本 4.0.3 開始提供。
+
+SnapMirror to Cloud Resync 可維持跨環境的備份持續運作，進而提升營運效率，並降低混合式和多雲端資料管理的複雜度。
+
 []
 ====
 *注意* 若要切換到BlueXP backup and recovery工作負載，請參閱link:br-start-switch-ui.html["切換到不同的BlueXP backup and recovery工作負載"] 。
 
 ====
-這項功能不需要耗時且資源密集的重新基準作業，讓備份作業能夠在移轉後繼續進行。此功能在工作負載移轉案例中非常重要，可同時支援 FlexVols 和 FlexGroups ，並可從 ONTAP 9.16.1 版開始使用。
-
-SnapMirror to Cloud Resync 可維持跨環境的備份持續運作，進而提升營運效率，並降低混合式和多雲端資料管理的複雜度。
-
 
 
 == BlueXP backup and recoverySnapMirror到 Cloud Resync 的工作原理
