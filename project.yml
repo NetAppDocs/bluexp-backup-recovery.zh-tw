@@ -1,7 +1,6 @@
 ---
 settings:
   name: BlueXP backup and recovery
-  platform: cloud
   internal:
     pdf_enabled: true
   prod:
