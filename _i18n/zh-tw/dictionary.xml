@@ -4497,7 +4497,6 @@ ifdef：：AWS []</block>
   <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetApp Volumes</block>
   <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
   <block id="5e58a6444bf20b49389e233ebf6021d5" category="admonition">此功能從 2025 年 5 月發布的BlueXP backup and recovery版本 4.0.3 開始提供。</block>
-  <block id="6902ada6aa5bd3c4c129d87093d48e07" category="doc">Kubernetes 工作負載支援作為公共技術預覽</block>
   <block id="36442e954ef2484603f79c5f3abc842b" category="paragraph">此版本的BlueXP backup and recovery引入了對發現和管理 Kubernetes 工作負載的支援：</block>
   <block id="200a1ca96330b8c7561607ba3e8efa76" category="list-text">發現由NetApp ONTAP支援的 Red Hat OpenShift 和開源 Kubernetes 集群，無需共享 kubeconfig 檔案。</block>
   <block id="bc97cde5f3a6fe336563401fb4b522a7" category="list-text">使用統一的控制平面發現、管理和保護跨多個 Kubernetes 叢集的應用程式。</block>
@@ -4590,4 +4589,6 @@ ifdef：：AWS []</block>
   <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">保護 Kubernetes 工作負載（預覽版）</block>
   <block id="c3c3199204503d3bbd5d4dce7eabf238" category="sidebar">保護 Kubernetes 工作負載概述</block>
   <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">管理 Kubernetes 工作負載的執行鉤子模板</block>
+  <block id="5d8fc779baf0d068c296ee5013b2224f" category="doc">Kubernetes 工作負載支援預覽版</block>
+  <block id="f4270282e09abd3774ba339dc49af208" category="paragraph">有關保護 Kubernetes 工作負載的詳細信息，請參閱<block ref="44b634c6507d9116150094fb69849fd2" category="inline-link-rx"></block> 。</block>
 </blocks>

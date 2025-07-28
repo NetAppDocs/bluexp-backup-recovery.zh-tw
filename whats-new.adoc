@@ -24,7 +24,7 @@ summary: 瞭解 BlueXP 備份與還原的新功能。
 
 
 
-=== Kubernetes 工作負載支援作為公共技術預覽
+=== Kubernetes 工作負載支援預覽版
 
 此版本的BlueXP backup and recovery引入了對發現和管理 Kubernetes 工作負載的支援：
 
@@ -36,6 +36,8 @@ summary: 瞭解 BlueXP 備份與還原的新功能。
 * 使用在 Kubernetes 上運行的容器和虛擬機器。
 * 使用執行掛鉤和模板建立應用程式一致的備份。
 
+
+有關保護 Kubernetes 工作負載的詳細信息，請參閱 https://docs.netapp.com/us-en/bluexp-backup-recovery/br-use-kubernetes-protect-overview.html["保護 Kubernetes 工作負載概述"] 。
 
 
 
