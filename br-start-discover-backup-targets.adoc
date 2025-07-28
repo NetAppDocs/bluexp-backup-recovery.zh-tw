@@ -34,7 +34,9 @@ image:screen-br-inventory-offsite-backup-targets.png["異地備份目標標籤"]
 
 . 選擇*發現備份目標*。
 . 選擇下列備份目標類型之一：*Amazon Web Services (AWS) S3*、*Microsoft Azure Blob Storage*、* StorageGRID* 或 * ONTAP S3*。
-. 輸入資訊。根據您選擇的備份目標類型，資訊會有所不同。
+. 在「選擇憑證位置」部分中，選擇憑證所在的位置，然後選擇如何關聯憑證。
+. 選擇*下一步*。
+. 輸入憑證資訊。根據您選擇的備份目標類型和憑證位置，資訊會有所不同。
 +
 ** 對於AWS：
 +

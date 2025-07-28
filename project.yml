@@ -133,6 +133,22 @@ sidebar:
         url: "/prev-vmware-manage.html"
       - title: 恢復虛擬機器資料和資料存儲
         url: "/prev-vmware-restore.html"
+    - title: 保護 Kubernetes 工作負載（預覽版）
+      entries:
+      - title: 保護 Kubernetes 工作負載概述
+        url: "/br-use-kubernetes-protect-overview.html"
+      - title: 發現 Kubernetes 工作負載
+        url: br-start-discover-kubernetes.html
+      - title: 新增和保護 Kubernetes 應用程式
+        url: "/br-use-protect-kubernetes-applications.html"
+      - title: 恢復 Kubernetes 應用程式
+        url: "/br-use-restore-kubernetes-applications.html"
+      - title: 管理Kubernetes叢集
+        url: "/br-use-manage-kubernetes-clusters.html"
+      - title: 管理 Kubernetes 應用程式
+        url: "/br-use-manage-kubernetes-applications.html"
+      - title: 管理 Kubernetes 工作負載的執行鉤子模板
+        url: "/br-use-manage-execution-hook-templates.html"
     - title: 監控工作
       url: "/br-use-monitor-tasks.html"
     - title: 重新啟動 BlueXP 備份與還原

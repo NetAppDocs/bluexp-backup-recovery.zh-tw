@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: br-use-manage-kubernetes-applications.html 
 keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
-summary: BlueXP backup and recovery可讓您管理工作負載主機資訊、資料庫資訊和執行個體資訊。您可以查看、編輯和刪除庫存的保護設定。 
+summary: BlueXP backup and recovery可讓您取消保護並刪除 Kubernetes 應用程式和相關資源。 
 ---
 = 管理 Kubernetes 應用程式
 :hardbreaks:
@@ -14,35 +14,21 @@ summary: BlueXP backup and recovery可讓您管理工作負載主機資訊、資
 
 
 [role="lead"]
-BlueXP backup and recovery可讓您管理 Kubernetes 應用程式及其相關資源。您可以建立、檢視、編輯和刪除 Kubernetes 應用程式的保護設定。
+BlueXP backup and recovery可讓您取消保護並刪除 Kubernetes 應用程式和相關資源。
 
 .所需的BlueXP角色
 組織管理員或SnapCenter管理員。link:reference-roles.html["了解BlueXP backup and recovery存取角色"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的 BlueXP 存取角色"^] 。
 
 
 
-== 編輯 Kubernetes 應用程式
-
-如果與應用程式相關的資源發生了變化，您可以修改現有 Kubernetes 應用程式的設定。
-
-.步驟
-. 在BlueXP backup and recovery中，選擇 *Inventory* > *Applications*。
-. 在應用程式清單中，選擇要編輯的應用程式並選擇相關的操作選單。
-. 選擇*編輯*。
-. 對應用程式定義進行任何必要的更改，例如名稱或包含的資源。
-. 完成後，選擇*下一步*。
-. 對保護設定進行任何必要的更改。
-. 完成後，選擇*完成*。
-
-
-
-
 == 取消保護 Kubernetes 應用程式
 
-如果您不再需要保護某個應用程序，可以取消保護。取消保護後， BlueXP backup and recovery將停止保護應用程序，但會保留所有相關的備份和快照，直到其過期。
+如果您不再需要保護某個應用程序，可以取消保護。取消保護後， BlueXP backup and recovery將停止保護該應用程序，但會保留所有相關的備份和快照。
 
 .步驟
-. 在BlueXP backup and recovery中，選擇 *Inventory* > *Applications*。
+. 在BlueXP backup and recovery中，選擇 *Inventory*。
+. 選擇一個 Kubernetes 實例，然後選擇「檢視」以查看與該實例關聯的資源。
+. 選擇“*應用程式*”標籤。
 . 在應用程式清單中，選擇要取消保護的應用程式並選擇相關的操作選單。
 . 選擇*取消保護*。
 . 閱讀通知，準備好後，選擇*取消保護*。
@@ -52,16 +38,18 @@ BlueXP backup and recovery可讓您管理 Kubernetes 應用程式及其相關資
 
 == 刪除 Kubernetes 應用程式
 
-如果您不再需要某個應用程序，可以將其刪除。刪除應用程式後， BlueXP backup and recovery將停止對該應用程式的保護，並且（如果您選擇這樣做）也會刪除所有關聯的備份和快照。
+如果您不再需要某個應用程序，可以將其刪除。刪除應用程式後， BlueXP backup and recovery將停止保護該應用程序，並刪除所有關聯的備份和快照。
 
 .步驟
-. 在BlueXP backup and recovery中，選擇 *Inventory* > *Applications*。
+. 在BlueXP backup and recovery中，選擇 *Inventory*。
+. 選擇一個 Kubernetes 實例，然後選擇「檢視」以查看與該實例關聯的資源。
+. 選擇“*應用程式*”標籤。
 . 在應用程式清單中，選擇要刪除的應用程式並選擇相關的操作選單。
 . 選擇*刪除*。
-. 或者，啟用*刪除快照和備份*以刪除應用程式的所有快照和備份。
+. 啟用*刪除快照和備份*以刪除應用程式的所有快照和備份。
 +
 
-CAUTION: 如果您這樣做，您將無法再使用這些快照和備份還原應用程式。
+CAUTION: 您將無法再使用這些快照和備份還原應用程式。
 
 . 確認操作並選擇*刪除*。
 

@@ -612,7 +612,6 @@
   <block id="7e177185e7eddff33dd8f3aeb7551132" category="paragraph">如果您是擁有NSS帳戶的NetApp客戶、您只需透過BlueXP註冊即可獲得支援。</block>
   <block id="5226d4ec1f4f81b740cbbd27635b441f" category="list-text">請務必複製上述序號欄位使用的BlueXP帳戶序號（960xxxx）。這將加速帳戶處理。</block>
   <block id="c9df4195a305212ffd7b56d24f67129d" category="summary">NetApp以多種方式提供對BlueXP的支援。我們全年無休提供豐富的免費自助支援選項、例如知識庫（KB）文章和社群論壇。您的支援註冊包括透過網路票證提供遠端技術支援。</block>
-  <block id="7c5661ab6b39ee901cea00a6e7020a49" category="paragraph">NetApp以多種方式支援BlueXP及其雲端服務。我們全年無休提供豐富的免費自助支援選項、例如知識庫（KB）文章和社群論壇。您的支援註冊包括透過網路票證提供遠端技術支援。</block>
   <block id="9a3db1abe5491d0eb9bb5d125981356c" category="paragraph">請搜尋BlueXP知識庫、找出有助於疑難排解問題的文章。</block>
   <block id="00c5fef3bb9d593ae96bf5d2ee60354a" category="paragraph">歡迎加入BlueXP社群、以追蹤後續討論或建立新討論。</block>
   <block id="a4a6c2ea0078252eac2d74ef3e6c917c" category="paragraph">您目前正在檢視的BlueXP文件。</block>
@@ -1124,8 +1123,6 @@
   <block id="3b0a91a5ea7b77db2fb83f740b7d1303" category="list-text">選取 * 建立報告 * 。</block>
   <block id="28164bf9e881ddc9e7ff74744bfce180" category="paragraph">註冊這兩種類型的序號、即可開啟支援服務單和自動建立個案。如下列所述、將 NetApp 支援網站 （ NSS ）帳戶新增至 BlueXP 即可完成登錄。</block>
   <block id="0c788a722f31f8f0cf36539ee04615cf" category="list-text">選取 * 新增 NSS 認證 * 、然後遵循 NetApp 支援網站 （ NSS ）驗證提示。</block>
-  <block id="10c56875db7a47f791d653e5d5bff0e9" category="inline-image-macro">螢幕擷取畫面會顯示帳戶序號和綠色核取方塊、以及註冊支援的文字。</block>
-  <block id="3d183819a15163ef2e2e7d9d764254a9" category="paragraph"><block ref="3d183819a15163ef2e2e7d9d764254a9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bdd862f49d428a850400bcf2f53cdaf2" category="paragraph">如果您是現有的 NetApp 客戶、擁有現有的授權和序號、但沒有 NSS_ 帳戶、則需要建立一個 NSS 帳戶、並將其與您的 BlueXP 登入建立關聯。</block>
   <block id="0499bba105f8a891a2c671f1ba99dd34" category="list-text">完成下的步驟、將新的 NSS 帳戶與 BlueXP 登入建立關聯 <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>。</block>
   <block id="5cdee814e2d9ba3490a8f16d00c65759" category="paragraph">擁有 NetApp 支援網站 帳戶後、請完成下的步驟、將帳戶與 BlueXP 登入建立關聯 <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>。</block>
@@ -2744,7 +2741,6 @@ ifdef：：AWS []</block>
   <block id="6e9928eb22c01e32a268322a930590b5" category="paragraph"><block ref="6e9928eb22c01e32a268322a930590b5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5d93632dd21f2b862652e38274ab25f3" category="list-text">選擇*發現備份目標*。</block>
   <block id="abd59a7e6214ae0bc1f2eb0e1d451616" category="list-text">選擇下列備份目標類型之一：*Amazon Web Services (AWS) S3*、*Microsoft Azure Blob Storage*、* StorageGRID* 或 * ONTAP S3*。</block>
-  <block id="9b1e0dd4ace755c537f9972ef8ebdfcc" category="list-text">輸入資訊。根據您選擇的備份目標類型，資訊會有所不同。</block>
   <block id="b6c8346e3af7fef18cf0ce7935a8df2d" category="list-text">*憑證名稱*：輸入 AWS 憑證名稱。</block>
   <block id="de89622fdc09e747a68f2d59e8e93aeb" category="list-text">*存取金鑰*：輸入 AWS 金鑰。</block>
   <block id="7ae5b4d35ef4eee6d24f3cb1687c3bce" category="list-text">*金鑰*：輸入 AWS 金鑰。</block>
@@ -3077,7 +3073,6 @@ ifdef：：AWS []</block>
   <block id="b92ff61eb96a6335a8c3f7f10988723a" category="list-text">在本機儲存、二級儲存和物件儲存上執行的還原作業數量。將滑鼠懸停在圖表上即可查看詳細資訊。</block>
   <block id="4c931104d6ff5fdc2a76bdfc6fba4662" category="summary">您可以保護從本機ONTAP系統到 Amazon Web Services、Microsoft Azure、Google Cloud Platform 和StorageGRID 的Kubernetes 應用程式和應用程式數據，確保您的資料受到保護。</block>
   <block id="ff1a3fbe6f92249e286b8a93cf5b5d2e" category="doc">管理 Kubernetes 工作負載概覽</block>
-  <block id="eb77981f2e476b76c513faaacd09914a" category="paragraph">透過在BlueXP backup and recovery中管理 Kubernetes 工作負載，您可以在一處集中管理和保護您的 Kubernetes 叢集和應用程式。您可以管理 Kubernetes 叢集託管的資源和應用程序，還可以管理 Kubernetes 工作負載的保護設定。</block>
   <block id="e94d9102ade906ff7fd5fc370d68c0d8" category="paragraph">您可以完成與管理 Kubernetes 工作負載相關的下列任務：</block>
   <block id="384b71db954a7a463c759208283e47c4" category="inline-link-macro">管理Kubernetes叢集</block>
   <block id="75750592598a2163e070809696d795f5" category="list-text"><block ref="4c3d4ee32af52a5715d89ae7d8ef89d4" category="inline-link-macro-rx"></block>。</block>
@@ -3110,7 +3105,6 @@ ifdef：：AWS []</block>
   <block id="f098e888afa8ccb3f1ad3337c3b6eea1" category="list-text">快照後掛勾已執行</block>
   <block id="59b50be8e9e2ed1b0e1bccae54c76036" category="list-text">執行備份前掛勾</block>
   <block id="1f374d287bf615eef6eb9afd92b862f2" category="list-text">執行備份後掛勾</block>
-  <block id="e807d528474129e76f18c5ce17a2c3d6" category="admonition">上述順序範例僅適用於執行不使用現有快照的備份時。</block>
   <block id="b74efcc6eafe1d8dec6ade34cfa13365" category="admonition">在正式作業環境中啟用執行攔截指令碼之前、請務必先進行測試。您可以使用'kubecl exec'命令來方便地測試指令碼。在正式作業環境中啟用執行掛勾之後、請測試所產生的快照和備份、以確保它們一致。您可以將應用程式複製到暫用命名空間、還原快照或備份、然後測試應用程式、藉此完成此作業。</block>
   <block id="3094ed24e92fa43f93a063b74aba1810" category="admonition">如果快照前執行攔截器新增，變更或移除 Kubernetes 資源，則這些變更會包含在快照或備份中，以及任何後續還原作業中。</block>
   <block id="f99748fb4b1cf592516b60937743c52d" category="section-title">關於自訂執行掛勾的重要注意事項</block>
@@ -3135,7 +3129,6 @@ ifdef：：AWS []</block>
   <block id="0cb7c5b441857e03f08093031a6339f7" category="list-text">展開*執行鉤子模板*部分。</block>
   <block id="2a088015f75a0a613f092e9e8f5f7ecc" category="list-text">選擇*建立執行鉤子模板*。</block>
   <block id="6c2bb6397009eba196d81d9b0513c7af" category="list-text">輸入執行掛鉤的名稱。</block>
-  <block id="9c9a0aa3db923b616c1a56b0a66bf10b" category="list-text">選擇鉤子類型。例如，還原後鉤子將在還原作業完成後執行。</block>
   <block id="568e240ce60c5111628400e9a73d1b19" category="list-text">在「*腳本*」文字方塊中，輸入要作為執行鉤子範本的一部分執行的可執行 Shell 腳本。您也可以選擇「上傳腳本*」來上傳腳本檔案。</block>
   <block id="2d25ab95e435f153440ab9d3233adfc9" category="paragraph">模板已建立並出現在*執行掛鉤模板*部分的模板清單中。</block>
   <block id="11855fa3782bd3579091c4ab1eb9cfd1" category="summary">BlueXP backup and recovery可讓您管理工作負載主機資訊、資料庫資訊和執行個體資訊。您可以查看、編輯和刪除庫存的保護設定。</block>
@@ -3217,26 +3210,12 @@ ifdef：：AWS []</block>
   <block id="c4c777723be13a16e4277a51201e6ecb" category="paragraph">現在您可以備份您的 Microsoft SQL Server 執行個體和資料庫，以確保您的資料受到立即保護。</block>
   <block id="4853389deec9b1ee2dd392ded61fb375" category="list-text">選擇“*實例*”或“*資料庫*”選項卡。</block>
   <block id="70c2224d92fad32ea2b3d68fcf62837b" category="list-text">選擇實例或資料庫。</block>
-  <block id="e0969aab9a754fbeb65c97a743ecf3e8" category="paragraph">BlueXP backup and recovery可讓您管理 Kubernetes 應用程式及其相關資源。您可以建立、檢視、編輯和刪除 Kubernetes 應用程式的保護設定。</block>
-  <block id="2473107ecc76d85d95c0613ff136ac38" category="section-title">編輯 Kubernetes 應用程式</block>
-  <block id="1298ad3fdec77ca1e805bb223dca6095" category="paragraph">如果與應用程式相關的資源發生了變化，您可以修改現有 Kubernetes 應用程式的設定。</block>
-  <block id="b1259a1c3d1d04e664d36ffe13213f17" category="list-text">在BlueXP backup and recovery中，選擇 *Inventory* &gt; *Applications*。</block>
-  <block id="eddc20dd71d8c9752bbca2d735f01f8b" category="list-text">在應用程式清單中，選擇要編輯的應用程式並選擇相關的操作選單。</block>
-  <block id="071ef8ace6c74c9a1515550077974172" category="list-text">選擇*編輯*。</block>
-  <block id="63e3dd274252241ed3ae7de72811c358" category="list-text">對應用程式定義進行任何必要的更改，例如名稱或包含的資源。</block>
-  <block id="1babd014dacd7ec3dc5797b9becacd63" category="list-text">完成後，選擇*下一步*。</block>
-  <block id="98efd82b79ad45368c5ef167a1c76c07" category="list-text">對保護設定進行任何必要的更改。</block>
-  <block id="91a8fa3f6989d0babb6d08cdbd5720cd" category="list-text">完成後，選擇*完成*。</block>
   <block id="cff401a662fcb28482f083d31d6cafe6" category="section-title">取消保護 Kubernetes 應用程式</block>
-  <block id="172487ea9d46d90e7d631e11625255b4" category="paragraph">如果您不再需要保護某個應用程序，可以取消保護。取消保護後， BlueXP backup and recovery將停止保護應用程序，但會保留所有相關的備份和快照，直到其過期。</block>
   <block id="b48b4006b16497af09b539c62263032c" category="list-text">在應用程式清單中，選擇要取消保護的應用程式並選擇相關的操作選單。</block>
   <block id="36f0283cb14ad41f5a35341825d6cb8f" category="list-text">選擇*取消保護*。</block>
   <block id="8896e71a8de95cbfa7c12f414c5bf926" category="list-text">閱讀通知，準備好後，選擇*取消保護*。</block>
   <block id="f0b8c712a2979155a90a4d45542f57f1" category="section-title">刪除 Kubernetes 應用程式</block>
-  <block id="64bb5e30da0ef718081b849fa6220af5" category="paragraph">如果您不再需要某個應用程序，可以將其刪除。刪除應用程式後， BlueXP backup and recovery將停止對該應用程式的保護，並且（如果您選擇這樣做）也會刪除所有關聯的備份和快照。</block>
   <block id="e9f066e195a46d59f447e0e9faed2a72" category="list-text">在應用程式清單中，選擇要刪除的應用程式並選擇相關的操作選單。</block>
-  <block id="e321c0c05a076cc3a5dc34f5defbe33c" category="list-text">或者，啟用*刪除快照和備份*以刪除應用程式的所有快照和備份。</block>
-  <block id="d1b66833603a5e5aeb679ed3da88713c" category="admonition">如果您這樣做，您將無法再使用這些快照和備份還原應用程式。</block>
   <block id="2c498f050391660a19bd7982f3f63e5f" category="list-text">確認操作並選擇*刪除*。</block>
   <block id="aa9ddc26c88ec2cf667e9e13add116ed" category="summary">BlueXP backup and recovery可讓您發現和管理您的 Kubernetes 集群，以便您可以保護叢集託管的資源。</block>
   <block id="87534497274da3072815e676c271a1d9" category="section-title">編輯 Kubernetes 叢集訊息</block>
@@ -3244,7 +3223,6 @@ ifdef：：AWS []</block>
   <block id="c05213ade621f320091205852d0404f9" category="list-text">在BlueXP backup and recovery中，選擇 *Inventory* &gt; *Clusters*。</block>
   <block id="8eb32ceb6b7d95adcdd8d5829f98c044" category="list-text">在群集清單中，選擇要編輯的群集並選擇相關的操作選單。</block>
   <block id="539e1806cdbd1431ba6cb6b4b84fc393" category="list-text">選擇*編輯集群*。</block>
-  <block id="cf2d600cead59452b16e14068d2cde33" category="list-text">對叢集名稱進行任何必要的更改。</block>
   <block id="f23e3ed54ae928c06add368fe4fe5a66" category="section-title">刪除 Kubernetes 集群</block>
   <block id="284b1d184c099b9f362ef253708bf5a8" category="paragraph">如果您不再需要保護 Kubernetes 叢集託管的資源，可以將其從BlueXP backup and recovery中移除。移除叢集並不會刪除叢集或其資源；它只會將叢集從BlueXP清單中移除。在移除叢集之前，您需要停用保護並從BlueXP backup and recovery中刪除關聯的應用程式。</block>
   <block id="884dae5f1c15db330f66f8e2866510c1" category="list-text">選擇*刪除群集*。</block>
@@ -3715,18 +3693,14 @@ ifdef：：AWS []</block>
   <block id="03335a80c0921aa8da8f7e365d892176" category="paragraph">*如何知道您正在使用哪個 UI？ *新的 UI 使用與先前的 UI 不同的選單結構。</block>
   <block id="a69bdeacbeaa4d505c045535794fede1" category="paragraph">新的使用者介面： <block ref="5ec9ba2d6c07e18e4f6caf9c1d51cc8e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c7aa3a54e5fdb6213cad90c7044afd96" category="paragraph">之前的UI： <block ref="fa2e599941b781bf3a65ea0199d76803" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f180b22cf0fe1951fec3aeedc5e4c0ae" category="paragraph">BlueXP backup and recovery可讓您管理工作負載主機資訊、資料庫資訊和執行個體資訊。您可以查看、編輯和刪除庫存的保護設定。</block>
   <block id="5f630cc239007de25f5a99cae937f7b6" category="section-title">新增並保護新的 Kubernetes 應用程式</block>
   <block id="8e104d608697694db956a64bbb7f44d6" category="paragraph">保護 Kubernetes 應用程式的第一步是在BlueXP backup and recovery中建立應用程式。在建立應用程式時，您可以讓BlueXP感知 Kubernetes 叢集上正在執行的應用程式。</block>
   <block id="1ededf46b716bee183793af35442a908" category="list-text">選擇*建立應用程式*。</block>
   <block id="f446f13c3f03f5e706e59025856f1357" category="list-text">輸入應用程式的名稱。</block>
-  <block id="213c6ac9f0b7732c6e07fdb1130eec26" category="list-text">選擇以下任意欄位來搜尋您想要保護的資源：</block>
   <block id="10c36ac54e8d8af7b07be76efa014c6d" category="list-text">關聯集群</block>
   <block id="ba8e99e47d2b3859bc28a87f721af62d" category="list-text">關聯的命名空間</block>
   <block id="b6af2b8fdca63591236d48930018b8db" category="list-text">資源類型</block>
   <block id="635c4235a331a9bc9e0197a493f38268" category="list-text">標籤選擇器</block>
-  <block id="1437507207cef97741c707e6cdca5446" category="list-text">（可選）選擇「叢集範圍資源」****，以選擇任何叢集等級範圍且未包含在應用程式中的資源。如果包含這些資源，它們會在建立應用程式時新增到應用程式中。</block>
-  <block id="b4fbd0589f942f7f4b9d49d16ec396e6" category="list-text">選擇*搜尋*以根據您的搜尋條件尋找資源。</block>
   <block id="de183577631c168afe44797528dcd1b6" category="list-text">BlueXP顯示符合您的搜尋條件的資源清單。</block>
   <block id="aa49cc3a36d2c16ec191533800daa634" category="list-text">如果清單包含您想要保護的資源，請選擇「*下一步*」。</block>
   <block id="e9caf784881cf54a35354c0cac59319c" category="list-text">在「*策略*」區域中，選擇現有的保護策略來保護應用程式或建立新策略。</block>
@@ -3738,13 +3712,11 @@ ifdef：：AWS []</block>
   <block id="104d1a34e290d2de5a494845fa1be7b8" category="list-text">在應用程式清單中，選擇您想要保護的應用程式並選擇相關的操作選單。</block>
   <block id="20d541172ecc7e2d477ce2738120938c" category="list-text">選取 * 保護 * 。</block>
   <block id="6eeabb5a1fdc64db00294aa16e2efc65" category="list-text">在「*前言和後記*」區域中，啟用並設定任何要在備份作業之前或之後執行的前言或後記執行鉤子。您可以配置執行鉤子的類型、它使用的模板、參數和標籤選擇器。</block>
-  <block id="142661662e2986b0019be862c0461dea" category="paragraph">BlueXP根據您的設定啟用對應用程式的保護，並且您可以在備份和還原的*監控*區域中監控進度。</block>
   <block id="53932eb694521eb34987ea9c43f0a292" category="section-title">立即備份 Kubernetes 應用程式</block>
   <block id="4b6c3c6a317300967177891eec6ba8fd" category="paragraph">手動建立 Kubernetes 應用程式的備份，為未來的備份和快照建立基線，或確保最新資料受到保護。</block>
   <block id="ef4da1dbc592e89fff8af00102b37ff3" category="list-text">在應用程式清單中，選擇要備份的應用程式並選擇相關的操作選單。</block>
   <block id="46b6ecff43461a732d3eda912df73a42" category="list-text">選擇*立即備份*。</block>
   <block id="793c79d603a2a6eb42272304c6135f12" category="list-text">確保選擇了正確的應用程式名稱。</block>
-  <block id="754dbe33c97d1eab966f4afbcc17281a" category="list-text">從策略清單中選擇一個保護策略。</block>
   <block id="ff4d762e1ab6dd75731a4f97e66ec902" category="list-text">選取 * 備份 * 。</block>
   <block id="13aa7d37adedbada3ba62d0025ffd669" category="summary">在BlueXP backup and recovery中，您可以建立報表來查看備份狀態，包括備份數量、成功備份數量和失敗備份數量。您還可以查看每個備份的詳細信息，包括備份類型、用於備份的儲存系統以及備份時間。</block>
   <block id="4ffac2ad8d1b6f043c1b6d9001f3e6f6" category="doc">在BlueXP backup and recovery中為 Microsoft SQL Server 工作負載建立報告</block>
@@ -3764,17 +3736,12 @@ ifdef：：AWS []</block>
   <block id="fb197ee87a0f850dc3b7bb98fe408518" category="inline-link-macro">設定</block>
   <block id="33d5eea2cdcc60026d006f7ddcce9495" category="paragraph">在「設定」頁面中設定電子郵件通知。有關配置電子郵件通知的詳細信息，請參閱<block ref="d31e50b2f0a34cda84cb4d51887db3bf" category="inline-link-macro-rx"></block> 。</block>
   <block id="d43afa987ad0de9723ba949b8f0a04a1" category="summary">BlueXP backup and recovery可讓您復原已使用保護策略保護的應用程式。</block>
-  <block id="1f392f3f733a11cc3493b55c6be17d19" category="paragraph">BlueXP backup and recovery可讓您復原已使用保護策略保護的應用程式。要恢復應用程序，該應用程式的保護狀態必須為“受保護”，並且必須具有關聯的保護策略。您可以使用還原點來還原應用程序，該還原點由本機快照、輔助快照和物件儲存備份組成。您可以使用本機、輔助或物件儲存存檔來還原應用程式。</block>
-  <block id="03bf994f880d919cb2e0cfede0e2f660" category="list-text">選擇一個 Kubernetes 工作負載，然後在該工作負載的「主機」欄位中選擇「檢視」。</block>
   <block id="b2c71ce0eb7f82adff3580d86f20d76d" category="list-text">在應用程式清單中，選擇要還原的應用程式並選擇相關的操作選單。</block>
   <block id="553b5cd5dac97c088cf126dd86d0a9fb" category="list-text">選擇*查看和恢復*。</block>
   <block id="5a870c22146ba310e89eaf52f510bdc8" category="paragraph">出現還原點清單。</block>
   <block id="c42e645eedd858c3f07be6b12b14117e" category="list-text">開啟您要使用的還原點的操作選單，然後選擇*還原*。</block>
   <block id="de62775a71fc2bf7a13d7530ae24a7ed" category="floating-title">常規設定</block>
-  <block id="c6e3b7d6e6d837a3fe004e3967838f08" category="list-text">選擇要從中復原的來源（本機、輔助或物件儲存）。</block>
   <block id="d7560bb34437cec51e7e4319ee098f83" category="list-text">從「*集群*」清單中選擇目標集群。</block>
-  <block id="b1e7fff726dadc201adbdc2bf9650bb2" category="list-text">選擇恢復目標命名空間（原始或新的）。</block>
-  <block id="c15ed67de3c2ba4c15392050d9a04910" category="paragraph">請注意，不支援恢復到不同的叢集和原始命名空間。</block>
   <block id="0ea90fe06c37ce54f4695cefd1980f66" category="floating-title">資源選擇</block>
   <block id="74f41c06ce4ca2bd3dc7e2b83148072b" category="list-text">選擇是否要恢復與應用程式相關的所有資源，或使用篩選器選擇要復原的特定資源：</block>
   <block id="6ead82e0fb87f1d2639b05d1f514c487" category="open-title">恢復所有資源</block>
@@ -3789,7 +3756,6 @@ ifdef：：AWS []</block>
   <block id="b5c9051aafb85384e02d47693c3be179" category="list-text">對結果滿意後，選擇*下一步*。</block>
   <block id="8d7c9cf5b15032c441cad2d538d90368" category="floating-title">目標設定</block>
   <block id="5d49eb458c546b4f70a99f4b37bbcc20" category="list-text">選擇恢復到預設儲存類別或其他儲存類別。</block>
-  <block id="59f8aa9e3a0e112d49baa4279aa55fc3" category="list-text">或者，如果您選擇還原到其他儲存類別，請選擇一個與每個來源儲存類別相符的目標儲存類別。目標儲存類別必須在目標叢集上可用。</block>
   <block id="c98c13337e16cd6efd0d5944bba7c3be" category="summary">一些進階設定可能有助於維護您的備份和復原環境。您可以設定進階設定來管理清單、刪除備份、取消註冊資源、刪除關係、取消保護資源以停止服務費用、設定SnapMirror關係的最大傳輸速率、將快照副本匯出到物件儲存、啟用自動年度快照刪除、啟用維護模式以及更新應用程式外掛程式。</block>
   <block id="d8532f86141af810dd005a564080075a" category="doc">在BlueXP backup and recovery中配置進階設定</block>
   <block id="576dfff4a076aeb9d45b7d615d1074a3" category="paragraph">透過以下方式配置BlueXP backup and recovery進階設定：</block>
@@ -3993,7 +3959,6 @@ ifdef：：AWS []</block>
   <block id="89c5399d4b0ad654b2008a7c0f2b69cf" category="list-text"><block ref="89c5399d4b0ad654b2008a7c0f2b69cf" category="inline-link-macro-rx"></block></block>
   <block id="a83f1ed3639378d8a5c8766fc08ab842" category="section-title">在 BlueXP  中</block>
   <block id="44b43220cddd60410d9468a032ce4216" category="inline-link-macro">BlueXP backup and recovery基於角色的存取功能</block>
-  <block id="8a04748ea8a87567c4b5b798c1560ba7" category="list-text">BlueXP使用者應具備在 Microsoft SQL Server 工作負載上執行操作所需的角色和權限。要發現資源，您必須擁有BlueXP backup and recovery超級管理員角色。請參閱<block ref="a05625c69ff931c9860060259f76b925" category="inline-link-macro-rx"></block>有關在BlueXP backup and recovery中執行操作所需的角色和權限的詳細資訊。</block>
   <block id="b7ab05a2d5f81c9f2d4db3c8f5d660e2" category="list-text">一個BlueXP組織，至少擁有一個活動的BlueXP連接器，用於連接到本地ONTAP叢集或Cloud Volumes ONTAP。請參閱下面的「初始預覽設定流程」。</block>
   <block id="116655111d41d0456e3b0ef0d3855cd4" category="list-text">至少有一個有NetApp本機ONTAP或Cloud Volumes ONTAP叢集的BlueXP工作環境。</block>
   <block id="1814746c026b2253f1fd4e1ea066cea1" category="list-text">BlueXP連接器</block>
@@ -4463,7 +4428,6 @@ ifdef：：AWS []</block>
   <block id="f2673d4a3fe0162a501d43f5168ae950" category="section-title">2025 年 14 月 7 日</block>
   <block id="6cdd743b39af79062eb92fec70569354" category="section-title">2025 年 13 月 2 日</block>
   <block id="8fb577f7388be9dbd876c13b3fce7c69" category="sidebar">BlueXP backup and recovery服務為本地和雲端的資料庫提供高效、安全且經濟實惠的資料保護。</block>
-  <block id="8b11af28439113b2496a02172e80198b" category="sidebar">管理備份和復原策略</block>
   <block id="4cd511c4b46eedfc6c0c344f09eba377" category="sidebar">建立策略來管理備份和還原</block>
   <block id="79ea3ea9942b969dda927a2d7853b651" category="sidebar">保護ONTAP磁碟區工作負載</block>
   <block id="9123d1b1585355faf99db6ce88c0b806" category="sidebar">保護ONTAP磁碟區工作負載概述</block>
@@ -4533,4 +4497,97 @@ ifdef：：AWS []</block>
   <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetApp Volumes</block>
   <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
   <block id="5e58a6444bf20b49389e233ebf6021d5" category="admonition">此功能從 2025 年 5 月發布的BlueXP backup and recovery版本 4.0.3 開始提供。</block>
+  <block id="6902ada6aa5bd3c4c129d87093d48e07" category="doc">Kubernetes 工作負載支援作為公共技術預覽</block>
+  <block id="36442e954ef2484603f79c5f3abc842b" category="paragraph">此版本的BlueXP backup and recovery引入了對發現和管理 Kubernetes 工作負載的支援：</block>
+  <block id="200a1ca96330b8c7561607ba3e8efa76" category="list-text">發現由NetApp ONTAP支援的 Red Hat OpenShift 和開源 Kubernetes 集群，無需共享 kubeconfig 檔案。</block>
+  <block id="bc97cde5f3a6fe336563401fb4b522a7" category="list-text">使用統一的控制平面發現、管理和保護跨多個 Kubernetes 叢集的應用程式。</block>
+  <block id="8671fb87efe354c05f9373edb6889d96" category="list-text">將 Kubernetes 應用程式的備份和還原資料移動操作卸載到NetApp ONTAP。</block>
+  <block id="be6ced50bfb2300cc42f3b12987b1359" category="list-text">協調本地和基於物件儲存的應用程式備份。</block>
+  <block id="780f81400ecdaedf5afa343aa9bd9abf" category="list-text">將整個應用程式和單一資源備份並還原到任何 Kubernetes 叢集。</block>
+  <block id="a914111953cd6ee9c63146474d7745de" category="list-text">使用在 Kubernetes 上運行的容器和虛擬機器。</block>
+  <block id="87418d35e5df78aab70f2540a73bdaf6" category="list-text">使用執行掛鉤和模板建立應用程式一致的備份。</block>
+  <block id="0222d44a84ea3563d85d453d801f6427" category="list-text">在「選擇憑證位置」部分中，選擇憑證所在的位置，然後選擇如何關聯憑證。</block>
+  <block id="f3ade6a9606e111612431ac1a3ff68e2" category="list-text">輸入憑證資訊。根據您選擇的備份目標類型和憑證位置，資訊會有所不同。</block>
+  <block id="cce6a1d73324f1a96e9e21a346062b73" category="doc">在BlueXP backup and recovery中發現 Kubernetes 工作負載</block>
+  <block id="70f7f628eae3e8e1ca1f6342c3a27f75" category="paragraph">BlueXP backup and recovery服務需要先發現 Kubernetes 工作負載，您才能使用該服務。</block>
+  <block id="f0338e38e7978ec30d1f5eb9b845e843" category="section-title">發現 Kubernetes 工作負載</block>
+  <block id="c988aaf24f6241e980dd65e46002172d" category="paragraph">在備份和復原清單中，您可以發現環境中正在執行的 Kubernetes 工作負載。發現工作負載會將 Kubernetes 叢集新增至BlueXP backup and recovery，使您能夠將應用程式新增至該叢集並保護該叢集託管的資源。</block>
+  <block id="4420c8b02efc1be4f7fbf08201ed7b57" category="list-text">如果您是第一次發現 Kubernetes 工作負載，請在BlueXP backup and recovery中，選擇 Kubernetes 工作負載類型下的 *發現和管理*。</block>
+  <block id="8b317f478daa269f84cd6cdd4931b972" category="list-text">如果您已經發現 Kubernetes 工作負載，請在BlueXP backup and recovery中選擇 *Inventory* &gt; *Workloads*，然後選擇 *Discover resources*。</block>
+  <block id="e7c444e4a1d2f156d71a907145c8a598" category="list-text">選擇 *Kubernetes* 工作負載類型。</block>
+  <block id="96c35fcba67cbf6710845bcca4668cc2" category="list-text">輸入叢集名稱並選擇與叢集一起使用的連接器。</block>
+  <block id="39b0136210d9abd099b81781cc0a17db" category="list-text">按照出現的命令列說明進行操作：</block>
+  <block id="3b47301a2201ba1175e2a109a103127b" category="list-text">建立Trident保護命名空間</block>
+  <block id="ed6eabebedff09350cdabab556887c62" category="list-text">建立 Kubernetes 機密</block>
+  <block id="6c27e11d1144953d7877449d5adc966d" category="list-text">新增 Helm 儲存庫</block>
+  <block id="c1a343fd7e28cea1253758e1b64a4d0d" category="list-text">安裝Trident Protect 和Trident Protect 連接器</block>
+  <block id="6534a731be9c6bfffa9e33daa4b11427" category="paragraph">這些步驟確保BlueXP backup and recovery可以與叢集互動。</block>
+  <block id="9bac5e7d53677c1fdcf7d275fd58ed60" category="list-text">完成這些步驟後，選擇*發現*。</block>
+  <block id="6b3946603d5588826f1cd3f2695b8542" category="paragraph">該集群已新增至清單。</block>
+  <block id="95f06f6ac101b19d86ae2a17fb3eb848" category="list-text">在關聯的 Kubernetes 工作負載中選擇「檢視」以查看該工作負載的應用程式、叢集和命名空間清單。</block>
+  <block id="f9fa15d7e7327a0679589b0b4bf63d45" category="paragraph">若要顯示BlueXP backup and recovery儀表板，請依照下列步驟操作。</block>
+  <block id="0023e6c28000b2b0e540612bd4511db3" category="list-text">從頂部選單中選擇*儀表板*。</block>
+  <block id="2388fac091ce6515773e162ce2488e2f" category="paragraph">透過在BlueXP backup and recovery中管理 Kubernetes 工作負載，您可以在一個地方發現、管理和保護您的 Kubernetes 叢集和應用程式。您可以管理託管在 Kubernetes 叢集上的資源和應用程式。您還可以建立保護策略並將其與 Kubernetes 工作負載關聯，所有這些都使用單一介面完成。</block>
+  <block id="d1b6f4df1f42df470c1bfa384687e106" category="paragraph">下圖展示了 Kubernetes 工作負載的備份和還原的元件和基本架構，以及如何將資料的不同副本儲存在不同位置：</block>
+  <block id="47cae08dce34f06a5f1a2add5c4d92c4" category="inline-image-macro">Kubernetes 工作負載備份與復原架構圖</block>
+  <block id="2c3fb17cb3de300689b53969785defa5" category="paragraph"><block ref="2c3fb17cb3de300689b53969785defa5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="aeb2143cef16a3403bebfefb50c96248" category="paragraph">BlueXP backup and recovery為管理 Kubernetes 工作負載提供了以下好處：</block>
+  <block id="2f2ca5d33d51345d8cec8b57e1d131d5" category="list-text">單一控制平面，用於保護跨多個 Kubernetes 叢集運行的應用程式。這些應用程式可以包括在 Kubernetes 叢集上執行的容器或虛擬機器。</block>
+  <block id="ed200d27f38aee4afdff8b4619cdf2ae" category="list-text">與NetApp SnapMirror本機集成，為所有備份和恢復工作流程提供儲存卸載功能。</block>
+  <block id="1a46229aa405bed39558957f4cb25619" category="list-text">Kubernetes 應用程式的永久增量備份，轉換為更低的復原點目標 (RPO) 和復原時間目標 (RTO)。</block>
+  <block id="0022038e456ea404ab796f4b75f7e6ea" category="list-text"><block ref="1aaecb747e58be0aa9e10461fda65c97" category="inline-link-macro-rx"></block> 。</block>
+  <block id="d0b5709d97bbe5098abd93c7e694cb77" category="list-text"><block ref="3e35e8d4173c71043e7b66d0d706f7de" category="inline-link-macro-rx"></block> 。</block>
+  <block id="1af35924e4dcf46a6e48f4acc678dff6" category="list-text"><block ref="7769ce529a2e3eb709e04d840fce1c3b" category="inline-link-macro-rx"></block> 。</block>
+  <block id="52740a2d44d8a6ec2b73bcb636dfbd8b" category="list-text">在BlueXP中，前往 *保護* &gt; *備份和還原*。</block>
+  <block id="157e2474b5e10c9143fb5843d68a82e1" category="list-text">（可選）選擇一種鉤子類型。例如，還原後鉤子會在還原作業完成後執行。</block>
+  <block id="fba2fea1f9e53916416ed24e92b83509" category="summary">BlueXP backup and recovery可讓您取消保護並刪除 Kubernetes 應用程式和相關資源。</block>
+  <block id="e7841ceb28d947e1589702d3cc8fc671" category="paragraph">如果您不再需要保護某個應用程序，可以取消保護。取消保護後， BlueXP backup and recovery將停止保護該應用程序，但會保留所有相關的備份和快照。</block>
+  <block id="4db291743c7cb716f5e5cc7be76bce50" category="list-text">選擇一個 Kubernetes 實例，然後選擇「檢視」以查看與該實例關聯的資源。</block>
+  <block id="404131d2e90ac877b08c54d35e0c976e" category="list-text">選擇“*應用程式*”標籤。</block>
+  <block id="4e37736ae1844ec4d0132bb364554433" category="paragraph">如果您不再需要某個應用程序，可以將其刪除。刪除應用程式後， BlueXP backup and recovery將停止保護該應用程序，並刪除所有關聯的備份和快照。</block>
+  <block id="ef50a59af25c08fa4e4c545948dd656e" category="list-text">啟用*刪除快照和備份*以刪除應用程式的所有快照和備份。</block>
+  <block id="c62ed3fc24c6a092f0236d0ce18f8adf" category="admonition">您將無法再使用這些快照和備份還原應用程式。</block>
+  <block id="52a963c135feb74f5fa42fa2a2e78c47" category="admonition">要發現 Kubernetes 集群，請參閱<block ref="0ea93fbc4698ff0eba11bdb2bfa8224d" category="inline-link-macro-rx"></block> 。</block>
+  <block id="9d5bb9ed8ea1b49d007ac97a59fc2f73" category="list-text">對叢集名稱進行任何必要的更改。叢集名稱需要與您在發現過程中使用 Helm 命令的名稱相符。</block>
+  <block id="17becfe4990286d1ec69c6fa596d27d3" category="paragraph">BlueXP backup and recovery讓您輕鬆發現 Kubernetes 集群，無需生成和上傳 kubeconfig 檔案。您只需從BlueXP使用者介面複製簡單的命令，即可連接 Kubernetes 叢集並安裝所需的軟體。</block>
+  <block id="e2d84a068107d6310a638f342af1a416" category="inline-link-macro">發現 Kubernetes 工作負載</block>
+  <block id="0ff42294892cbc24c39a0f81d88f902b" category="paragraph">在新增和保護 Kubernetes 應用程式之前，您需要<block ref="69f5fa0b5f42b753171e9fa8fbef9c66" category="inline-link-macro-rx"></block> 。</block>
+  <block id="1bce142d5bcf9869d1f052a522fa5822" category="list-text">或者，選擇以下任意欄位來搜尋您想要保護的資源：</block>
+  <block id="dc997bda771b80d1666f7d07ffd6b7d7" category="list-text">（可選）選擇「叢集範圍資源」以選擇任何在叢集層級範圍限定的資源。如果包含這些資源，它們會在建立應用程式時新增到應用程式中。</block>
+  <block id="812f9cbafb4aa2378e7470b20baa1fef" category="list-text">或者，選擇“*搜尋*”以根據您的搜尋條件尋找資源。</block>
+  <block id="cd052ad0ede3d8d23a3b065ef26168d8" category="admonition">BlueXP不會儲存搜尋參數或結果；這些參數用於在選定的 Kubernetes 叢集中搜尋可以包含在應用程式中的資源。</block>
+  <block id="375665cdd163819cd9ddcb1def13c5da" category="list-text">（可選）在「*策略*」區域中，選擇現有保護策略來保護應用程序，或建立新策略。如果不選擇策略，則建立的應用程式將不帶保護策略。您可以稍後新增策略。</block>
+  <block id="6bd8ef6649ea59b964673233a7cdd855" category="paragraph">BlueXP會根據您的設定啟用應用程式保護，您可以在備份和還原的「監控」區域中監控進度。一旦您啟用應用程式保護， BlueXP就會建立該應用程式的完整備份。任何未來的增量備份都將根據您在與該應用程式關聯的保護策略中定義的計劃建立。</block>
+  <block id="be9a2f94b85d3bc8821f79138f4c1385" category="paragraph">BlueXP會建立應用程式的備份，並在備份和還原的「監控」區域中顯示進度。此備份是根據與應用程式關聯的保護策略建立的。</block>
+  <block id="5a5da37e66cddefa275e61455c6ce599" category="paragraph">BlueXP backup and recovery可讓您復原已受保護策略保護的應用程式。要恢復應用程序，應用程式需要至少有一個可用的恢復點。復原點由本機快照或物件儲存備份（或兩者）組成。您可以使用本機、輔助或物件儲存存檔來還原應用程式。</block>
+  <block id="0b829a26d220bb63e030d1042081a086" category="list-text">選擇要從中復原的來源（本機或物件儲存）。</block>
+  <block id="f01f0a18d4bc038c4ed2929f4450ed7d" category="list-text">選擇還原目標命名空間。</block>
+  <block id="75e31fe436b541e95871c54827070e6e" category="paragraph">您可以還原到原始命名空間，也可以還原到新的命名空間。</block>
+  <block id="a9f292136fbf924f6d8d675318db6235" category="admonition">顯示的資源是叢集上目前存在的資源。</block>
+  <block id="12c3c958b266fff57134abb1c9649419" category="list-text">或者，如果您選擇還原到不同的儲存類，請選擇一個目標儲存類別來符合每個來源儲存類別。</block>
+  <block id="cb1b8938f12c99c7787423a78f4db357" category="list-text">Kubernetes 工作負載（預覽版）：</block>
+  <block id="1c1c6b4c5003945f6d28242d24286ee6" category="list-text">在一個地方管理和保護您的 Kubernetes 應用程式和資源。</block>
+  <block id="3f06fb8fe2ecccdacfaa2644488d935d" category="list-text">使用保護策略來建立增量備份。</block>
+  <block id="116fc6c4cddb8e42e7260e6817cd901f" category="list-text">將應用程式和資源恢復到相同或不同的叢集和命名空間。</block>
+  <block id="f9e2b15491897c12214f857779daa042" category="list-text">BlueXP使用者應具備在 Microsoft SQL Server 和 Kubernetes 工作負載上執行作業所需的角色和權限。要發現資源，您必須擁有BlueXP backup and recovery超級管理員角色。請參閱<block ref="a05625c69ff931c9860060259f76b925" category="inline-link-macro-rx"></block>有關在BlueXP backup and recovery中執行操作所需的角色和權限的詳細資訊。</block>
+  <block id="fdbad3e808e9a1c02fc7bb3048776f74" category="section-title">用於保護 Kubernetes 應用程式</block>
+  <block id="35efe147e51e11d3e82b92163214c36a" category="paragraph">您需要特定的要求來發現 Kubernetes 資源並保護您的 Kubernetes 應用程式。</block>
+  <block id="b4c31e66ff0b9146f1e9eb96caaa088b" category="paragraph">有關BlueXP要求，請參閱<block ref="254e85327e361b35a0db5eec424af630" category="inline-xref-macro-rx"></block> 。</block>
+  <block id="4894ae84725aa8a3354a8774b1566f5f" category="list-text">主ONTAP系統（ONTAP 9.16.1 或更高版本）</block>
+  <block id="806a86b605f4d90fb902dc0738b93a29" category="list-text">Kubernetes 叢集 - 支援的 Kubernetes 發行版和版本包括：</block>
+  <block id="7cc1edf2116d94e97b8f4a69079de132" category="list-text">Anthos On-Prem (VMware) 和 Anthos on Bare Metal 1.16</block>
+  <block id="f39d8c359b3284c30097b65ae4e0dccf" category="list-text">Kubernetes 1.27 - 1.33</block>
+  <block id="d858eab1cb0b74aa1e6d052d7c06bd76" category="list-text">OpenShift 4.10 - 4.18</block>
+  <block id="42113cf11e30b764619d3a98db65262d" category="list-text">Rancher Kubernetes Engine 2（RKE2）v1.26.7+rke2r1、v1.28.5+rke2r1</block>
+  <block id="59aaea4a07522d3cb111c0d446b7e7e3" category="list-text">NetApp Trident 24.10 或更高版本</block>
+  <block id="f186f228bc71cb57a140bcc20f23c216" category="list-text">NetApp Trident Protect 25.07 或更高版本（在 Kubernetes 工作負載發現期間安裝）</block>
+  <block id="2c2fbc0a1685b20c95a5f489ce3868b3" category="list-text">NetApp Trident Protect Connector 25.07 或更高版本（在 Kubernetes 工作負載發現期間安裝）</block>
+  <block id="362363dccd2cc68b02c87c4b9e577f91" category="list-text">確保 Kubernetes 叢集、 Trident保護連接器和Trident保護代理程式之間的出站方向的 TCP 連接埠 443 未經過濾。</block>
+  <block id="bbbc9b55f08bfe80f146b5207bdb7728" category="paragraph">NetApp以多種方式為BlueXP及其雲端服務提供支援。我們提供全天候 (24/7) 的大量免費自助支援選項，例如知識庫 (KB) 文章和社群論壇。您的支援註冊包含透過網路工單取得的遠端技術支援。</block>
+  <block id="759d32287efdf88cd8ac71dccc0ecf8d" category="inline-image-macro">螢幕截圖顯示了帳戶序號、綠色複選框和文字「已註冊支援」。</block>
+  <block id="4c441b388bebcddf8c08fb782095b864" category="paragraph"><block ref="4c441b388bebcddf8c08fb782095b864" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="67c66b3b8df7b2dee0354dd9f9fcec17" category="section-title">2025年7月28日</block>
+  <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">保護 Kubernetes 工作負載（預覽版）</block>
+  <block id="c3c3199204503d3bbd5d4dce7eabf238" category="sidebar">保護 Kubernetes 工作負載概述</block>
+  <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">管理 Kubernetes 工作負載的執行鉤子模板</block>
 </blocks>
