@@ -57,7 +57,7 @@ indexpage:
     - title: 發現 Kubernetes 工作負載
       url: br-start-discover-kubernetes.html
     - title: 新增和保護 Kubernetes 應用程式
-      url: link:br-use-protect-kubernetes-applications.html
+      url: br-use-protect-kubernetes-applications.html
     - title: 管理Kubernetes叢集
       url: br-use-manage-kubernetes-clusters.html
     - title: 管理 Kubernetes 應用程式

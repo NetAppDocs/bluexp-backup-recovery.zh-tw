@@ -138,7 +138,7 @@ sidebar:
       - title: 保護 Kubernetes 工作負載概述
         url: "/br-use-kubernetes-protect-overview.html"
       - title: 發現 Kubernetes 工作負載
-        url: br-start-discover-kubernetes.html
+        url: "/br-start-discover-kubernetes.html"
       - title: 新增和保護 Kubernetes 應用程式
         url: "/br-use-protect-kubernetes-applications.html"
       - title: 恢復 Kubernetes 應用程式
