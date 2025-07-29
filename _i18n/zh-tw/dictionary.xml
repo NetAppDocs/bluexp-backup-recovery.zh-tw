@@ -4534,7 +4534,6 @@ ifdef：：AWS []</block>
   <block id="2f2ca5d33d51345d8cec8b57e1d131d5" category="list-text">單一控制平面，用於保護跨多個 Kubernetes 叢集運行的應用程式。這些應用程式可以包括在 Kubernetes 叢集上執行的容器或虛擬機器。</block>
   <block id="ed200d27f38aee4afdff8b4619cdf2ae" category="list-text">與NetApp SnapMirror本機集成，為所有備份和恢復工作流程提供儲存卸載功能。</block>
   <block id="1a46229aa405bed39558957f4cb25619" category="list-text">Kubernetes 應用程式的永久增量備份，轉換為更低的復原點目標 (RPO) 和復原時間目標 (RTO)。</block>
-  <block id="0022038e456ea404ab796f4b75f7e6ea" category="list-text"><block ref="1aaecb747e58be0aa9e10461fda65c97" category="inline-link-macro-rx"></block> 。</block>
   <block id="d0b5709d97bbe5098abd93c7e694cb77" category="list-text"><block ref="3e35e8d4173c71043e7b66d0d706f7de" category="inline-link-macro-rx"></block> 。</block>
   <block id="1af35924e4dcf46a6e48f4acc678dff6" category="list-text"><block ref="7769ce529a2e3eb709e04d840fce1c3b" category="inline-link-macro-rx"></block> 。</block>
   <block id="52740a2d44d8a6ec2b73bcb636dfbd8b" category="list-text">在BlueXP中，前往 *保護* &gt; *備份和還原*。</block>
@@ -4591,4 +4590,5 @@ ifdef：：AWS []</block>
   <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">管理 Kubernetes 工作負載的執行鉤子模板</block>
   <block id="5d8fc779baf0d068c296ee5013b2224f" category="doc">Kubernetes 工作負載支援預覽版</block>
   <block id="f4270282e09abd3774ba339dc49af208" category="paragraph">有關保護 Kubernetes 工作負載的詳細信息，請參閱<block ref="44b634c6507d9116150094fb69849fd2" category="inline-link-rx"></block> 。</block>
+  <block id="d30235bcb420e82027cadb3cffab450f" category="list-text"><block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block> 。</block>
 </blocks>

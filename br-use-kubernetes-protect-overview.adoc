@@ -32,7 +32,7 @@ NOTE: 本文檔作為技術預覽提供。在預覽期間，不建議將 Kuberne
 
 您可以完成與管理 Kubernetes 工作負載相關的下列任務：
 
-* link:br-start-discover.html#discover-kubernetes-workloads["發現 Kubernetes 工作負載"] 。
+* link:br-start-discover-kubernetes.html["發現 Kubernetes 工作負載"] 。
 * link:br-use-manage-kubernetes-clusters.html["管理Kubernetes叢集"]。
 * link:br-use-protect-kubernetes-applications.html["新增和保護 Kubernetes 應用程式"] 。
 * link:br-use-manage-kubernetes-applications.html["管理 Kubernetes 應用程式"]。
