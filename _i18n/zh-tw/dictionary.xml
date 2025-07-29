@@ -4591,4 +4591,5 @@ ifdef：：AWS []</block>
   <block id="5d8fc779baf0d068c296ee5013b2224f" category="doc">Kubernetes 工作負載支援預覽版</block>
   <block id="f4270282e09abd3774ba339dc49af208" category="paragraph">有關保護 Kubernetes 工作負載的詳細信息，請參閱<block ref="44b634c6507d9116150094fb69849fd2" category="inline-link-rx"></block> 。</block>
   <block id="d30235bcb420e82027cadb3cffab450f" category="list-text"><block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block> 。</block>
+  <block id="339f6d69f0298e3d4bbd943ba3211c6c" category="list-text">Kubernetes 工作負載（預覽版）</block>
 </blocks>
