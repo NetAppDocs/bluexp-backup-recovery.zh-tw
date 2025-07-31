@@ -4592,4 +4592,74 @@ ifdef：：AWS []</block>
   <block id="f4270282e09abd3774ba339dc49af208" category="paragraph">有關保護 Kubernetes 工作負載的詳細信息，請參閱<block ref="44b634c6507d9116150094fb69849fd2" category="inline-link-rx"></block> 。</block>
   <block id="d30235bcb420e82027cadb3cffab450f" category="list-text"><block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block> 。</block>
   <block id="339f6d69f0298e3d4bbd943ba3211c6c" category="list-text">Kubernetes 工作負載（預覽版）</block>
+  <block id="9c288f5720b39b68330ff6558f4d728b" category="inline-link">BlueXP自動化，用於BlueXP backup and recovery</block>
+  <block id="b0d36ddf3864894974cfcf7f668e9b9c" category="paragraph">每個BlueXP backup and recoveryAPI 的文件可從以下位置取得<block ref="d997d711dd0ca8a2419efc218eebd515" category="inline-link-rx"></block>。</block>
+  <block id="92ab15f0eb1b97b8c4bdb14a10948af8" category="inline-link">建立服務存取權令牌</block>
+  <block id="7ee1b8532fd572ee3c5a1cd48ff05db9" category="admonition">如果您使用服務帳戶，則應使用服務存取令牌而不是使用者令牌。 「client_id」的值（「Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC」）是固定值，無法變更。在這種情況下，請按照此處的說明進行操作：<block ref="baaa234cb07675a6b3437f1c7177f86d" category="inline-link-rx"></block> 。</block>
+  <block id="0ad47815ac126d3e59945dd94620559b" category="summary">在沒有網路存取的網站（稱為「私人模式」）中使用BlueXP backup and recovery時， BlueXP backup and recovery設定資料將備份到儲存備份的StorageGRID或ONTAP S3 儲存桶中。如果您將來遇到BlueXP Connector 主機系統問題，您可以部署新的 Connector 並還原關鍵的BlueXP backup and recovery資料。</block>
+  <block id="1590a700aeef97b74c78e0edddc666d6" category="doc">在暗站中恢復BlueXP backup and recovery配置數據</block>
+  <block id="b60143d8607e2a12a97d5dc98902b3a3" category="paragraph">在沒有網路存取的網站（稱為_私人模式_）中使用BlueXP backup and recovery時， BlueXP backup and recovery設定資料將備份到儲存備份的StorageGRID或ONTAP S3 儲存桶中。如果您遇到BlueXP Connector 主機系統問題，您可以部署新的 Connector 並還原關鍵的BlueXP backup and recovery資料。</block>
+  <block id="701ba6e125e8ce791098165f107eb472" category="admonition">此過程僅適用於ONTAP磁碟區資料。</block>
+  <block id="400d95f0927e7eaac4a93498115f8b4f" category="paragraph">當您在 SaaS 環境中使用BlueXP backup and recovery時，其中BlueXP連接器部署在您的雲端供應商處，或在您自己的具有網際網路存取的主機系統上，所有重要的BlueXP backup and recovery設定資料都會在雲端備份和保護。如果您的連接器出現問題，只需建立新的連接器並新增您的工作環境，備份詳細資訊就會自動還原。</block>
+  <block id="28f81c5bbd7730901f36546c0e51e06f" category="paragraph">備份的資料有兩種類型：</block>
+  <block id="3f90954724de2ab33270c2e29ef44d4c" category="list-text">BlueXP backup and recovery資料庫 - 包含所有磁碟區、備份檔案、備份策略和設定資訊的清單。</block>
+  <block id="ae429398e7a8cba2d2c57d308c8ed88a" category="list-text">索引目錄檔案 - 包含用於搜尋和復原功能的詳細索引，可讓您在尋找要復原的磁碟區資料時搜尋非常快速且有效。</block>
+  <block id="c9cfba3160309eb4416746c049e4b9da" category="paragraph">這些資料每天午夜備份一次，每個檔案最多保留 7 份副本。如果連接器管理多個本機ONTAP工作環境，則BlueXP backup and recovery檔案將位於首先啟動的工作環境的儲存桶中。</block>
+  <block id="33cc4fba89a0e27990f9826b52a31440" category="admonition">BlueXP backup and recovery資料庫或索引目錄檔案中從未包含任何磁碟區資料。</block>
+  <block id="7aa13416e899895bea151695a08fc22d" category="section-title">將BlueXP backup and recovery資料還原到新的BlueXP連接器</block>
+  <block id="11c11cb03c79f4af018caa66bf0c66d4" category="paragraph">如果您的本機BlueXP連接器發生災難性故障，您將需要安裝新的連接器，然後將BlueXP backup and recovery資料還原到新的連接器。</block>
+  <block id="6c9913da2722f6c96e97b9d6aa37bb46" category="paragraph">您需要執行下列任務才能讓BlueXP backup and recovery系統還原工作狀態：</block>
+  <block id="49ec960387a7762f70c9454eff39ff67" category="list-text">安裝新的BlueXP連接器</block>
+  <block id="6b7f0194ee0161c1ec6ef481e87fdaa2" category="list-text">恢復BlueXP backup and recovery資料庫</block>
+  <block id="bac8f03e2f29846dbab5b2b784213272" category="list-text">恢復索引目錄文件</block>
+  <block id="f7610e9182682c46b21a456bb9f88633" category="list-text">將所有本機ONTAP系統和StorageGRID系統重新發現到BlueXP UI</block>
+  <block id="f19661624edbf73361ae75955e672733" category="paragraph">一旦您確認系統恢復正常運作，我們建議您建立新的備份檔案。</block>
+  <block id="d59db7846bd10b6d60d21543df9faa9e" category="paragraph-title">你需要什麼</block>
+  <block id="e4cf85fe9c170bcb24ec06be023db892" category="paragraph">您需要從儲存備份檔案的StorageGRID或ONTAP S3 儲存桶存取最新的資料庫和索引備份：</block>
+  <block id="e53202674690c06ddcfdb1f7eb32a51c" category="list-text">BlueXP backup and recoveryMySQL資料庫文件</block>
+  <block id="0d106b3c1ec4b5f2dce1ea9aa708a3db" category="paragraph">該檔案位於儲存桶中的以下位置<block ref="004f71688c8fd4622d305c92c30ed7bf" prefix=" " category="inline-code"></block>，它被命名為<block ref="76dfdaa4fa2f1fa24f016f6559440652" prefix=" " category="inline-code"></block>。</block>
+  <block id="9187ca15364232be9ebf6b59d5bc6421" category="list-text">索引目錄備份 zip 文件</block>
+  <block id="a4981f0083fe431764b930206324bfe8" category="paragraph">該檔案位於儲存桶中的以下位置<block ref="9abc3fd112ebf9d8d228e5c5b3b930a4" prefix=" " category="inline-code"></block>，它被命名為<block ref="5f3198716099b7e0c9df490b9dd7b132" prefix=" " category="inline-code"></block>。</block>
+  <block id="f0f8593cf8d423b69e3ba1407f6f5b05" category="section-title">在新的本機 Linux 主機上安裝新的連接器</block>
+  <block id="65432ae2b80d2de48c0eff9f34726b87" category="inline-link">恢復備份資料庫後，將連接器軟體升級至最新版本</block>
+  <block id="a454364b080d416ad203233987bc1148" category="paragraph">安裝新的BlueXP連接器時，請確保下載與原始連接器上安裝的相同版本的軟體。 BlueXP backup and recovery資料庫結構的定期變更可能會導致較新的軟體版本與原始資料庫備份不相容。你可以<block ref="2e0a24ee8438c92516f1c39f0bf156f8" category="inline-link-rx"></block>。</block>
+  <block id="fb91cab4ff80a23255e3962dd363d180" category="inline-link">在新的本機 Linux 主機上安裝BlueXP Connector</block>
+  <block id="6c962f0e820a4789f1eba2c1a38f944d" category="list-text"><block ref="6c962f0e820a4789f1eba2c1a38f944d" category="inline-link-rx"></block></block>
+  <block id="ecbcbb16fdbff1b3b59d0639b270e056" category="list-text">使用您剛剛建立的管理員使用者憑證登入BlueXP 。</block>
+  <block id="b47ed0a876023d6bae71fb57f4671fc8" category="list-text">將 MySQL 備份從備份位置複製到新的連接器主機。下面我們將使用範例檔案名稱「CBS_DB_Backup_23_05_2023.sql」。</block>
+  <block id="2bd2b4226296570c863270e08d511da0" category="list-text">根據您使用的是 Docker 還是 Podman 容器，使用以下命令之一將備份複製到 MySQL docker 容器：</block>
+  <block id="4b049f120edc0f4092d8d8e236ea964b" category="list-text">根據您使用的是 Docker 還是 Podman 容器，使用以下命令之一進入 MySQL 容器 shell：</block>
+  <block id="ea88528cf92a2583181519ef77cd0928" category="list-text">在容器shell中，部署「env」。</block>
+  <block id="fb4d2049eb8a30a41f47794ab189550a" category="list-text">您將需要 MySQL DB 密碼，因此請複製鍵“MYSQL_ROOT_PASSWORD”的值。</block>
+  <block id="a68527cebf1aaeae64bda2645985b661" category="list-text">使用以下命令還原BlueXP backup and recoveryMySQL DB：</block>
+  <block id="391b3817ffe9fe659a3a443a7fba86f2" category="list-text">使用下列 SQL 指令驗證BlueXP backup and recoveryMySQL DB 是否已正確還原：</block>
+  <block id="1a411806f1f54597b7259137d2e753db" category="paragraph">輸入密碼。</block>
+  <block id="3ec8f556a760c1ea438f0c8012517d09" category="paragraph">檢查顯示的捲是否與原始環境中存在的捲相同。</block>
+  <block id="56dd14a7bf28acd20f0a0435a86d17e0" category="list-text">將 Indexed Catalog 備份 zip 檔案（我們將使用範例檔案名稱「Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip」）從備份位置複製到「/opt/application/netapp/cbs」資料夾中的新連接器主機。</block>
+  <block id="39ba61f148a69dbb1215b6b10c98b11a" category="list-text">使用下列命令解壓縮「Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip」檔案：</block>
+  <block id="3b3267745861675e9a5e88b689b4cda8" category="list-text">執行 *ls* 命令以確保已建立資料夾“catalogdb1”，其下有子資料夾“changes”和“snapshots”。</block>
+  <block id="47088be6cbcb439bd7241ec72edf3a91" category="section-title">發現您的ONTAP叢集和StorageGRID系統</block>
+  <block id="202fec1254d856dde5dee6e53f5eb9e9" category="inline-link">探索所有本地ONTAP工作環境</block>
+  <block id="b805aeaea109186b2d372f733c8143b0" category="list-text"><block ref="9b634f22874d44b1e001e536ff14de06" category="inline-link-rx"></block>在您之前的環境中可用。這包括您用作 S3 伺服器的ONTAP系統。</block>
+  <block id="f8fe3d533b3c8ec77c886cdbfcbd8c60" category="inline-link">發現您的StorageGRID系統</block>
+  <block id="9859429ce021a771d55011bbad61663d" category="list-text"><block ref="95020d92addc538671ad8a553222768a" category="inline-link-rx"></block> 。</block>
+  <block id="8a817b57889a6e642ad7fb06e7b26c80" category="section-title">設定StorageGRID環境詳細信息</block>
+  <block id="95405ad3ad814456093255e6d36ee69e" category="inline-link">BlueXP API</block>
+  <block id="dd356e8ea63119f95e3666d6db68f47e" category="paragraph">添加與您的ONTAP工作環境關聯的StorageGRID系統的詳細信息，因為它們是在原始連接器設定上使用<block ref="84b7c1fcfbca071b9004578261b65308" category="inline-link-rx"></block>。</block>
+  <block id="da2ba8762d0dcb78945a22c9a375fffa" category="inline-link">DarkSite 雲端備份：MySQL 和索引目錄備份和還原</block>
+  <block id="bb10a63044b830cc42091d93b78fd668" category="paragraph">以下資訊適用於從BlueXP 3.9.xx 開始的私人模式安裝。對於舊版本，請使用以下步驟：<block ref="2da286ce66fc5078574abb0f7864085c" category="inline-link-rx"></block> 。</block>
+  <block id="241380d8d42b823d8bd7c25c9fc3014f" category="paragraph">您需要對將資料備份到StorageGRID 的每個系統執行這些步驟。</block>
+  <block id="3f1b9decb18d57a001f26c7273adeddc" category="list-text">使用以下 oauth/token API 提取授權令牌。</block>
+  <block id="cd6c5272ababe8075a9145908c571172" category="paragraph">雖然 IP 位址、使用者名稱和密碼是自訂值，但帳戶名稱不是。帳戶名稱始終為“account-DARKSITE1”。此外，使用者名稱必須使用電子郵件格式的名稱。</block>
+  <block id="f2b2dd8a7061a4f2836de5feda40a45e" category="paragraph">此 API 將傳回以下回應。您可以如下所示檢索授權令牌。</block>
+  <block id="74e96d8b9d4abdf183199553dd665e53" category="list-text">使用 tenancy/external/resource API 提取工作環境 ID 和 X-Agent-Id。</block>
+  <block id="69473e9fe37da40f59b6a4abb9d0b124" category="paragraph">此 API 將傳回以下回應。  「resourceIdentifier」下的值表示_WorkingEnvironment Id_，「agentId」下的值表示_x-agent-id_。</block>
+  <block id="2decbd35e1c4f4abc73df06a5256970a" category="list-text">使用與工作環境相關的StorageGRID系統的詳細資訊更新BlueXP backup and recovery資料庫。確保輸入StorageGRID的完全限定網域名稱以及存取金鑰和儲存金鑰，如下所示：</block>
+  <block id="119ce87fb0068eaf943265dcfa7867a2" category="section-title">驗證BlueXP backup and recovery設置</block>
+  <block id="e828f5871c88d64ebf2a764153246360" category="list-text">選擇每個ONTAP工作環境，然後按一下右側面板中備份和還原服務旁的「檢視備份」。</block>
+  <block id="36c688567530141607520ff8f371abad" category="paragraph">您應該能夠看到為您的捲創建的所有備份。</block>
+  <block id="ca58572920332b0113296b57e60a56de" category="list-text">在「恢復儀表板」的「搜尋與復原」部分下，按一下「*索引設定*」。</block>
+  <block id="98c648bc34880f7f4d457836f8d482d7" category="paragraph">確保先前啟用了索引編目的工作環境仍保持啟用狀態。</block>
+  <block id="080b8dd3f3323a86a22c3af13ee1c495" category="list-text">在「搜尋和復原」頁面中，執行一些目錄搜尋以確認索引目錄復原已成功完成。</block>
+  <block id="14873f48c9db88415c7c75e61a0ddd00" category="sidebar">在暗站中恢復配置數據</block>
 </blocks>

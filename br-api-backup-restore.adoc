@@ -32,11 +32,20 @@ BlueXP 備份與還原中定義了十種端點類別：
 
 
 
+== API 參考
+
+每個BlueXP backup and recoveryAPI 的文件可從以下位置取得 https://docs.netapp.com/us-en/bluexp-automation/cbs/overview.html["BlueXP自動化，用於BlueXP backup and recovery"^]。
+
+
+
 == 快速入門
 
 若要開始使用 BlueXP 備份與還原 API 、您必須取得使用者權杖、 BlueXP 帳戶 ID 及 BlueXP Connector ID 。
 
 撥打API呼叫時、您將在「授權」標頭中新增使用者權杖、並在X-agent-id標頭中新增BlueXP Connector ID。您應該在API中使用BlueXP帳戶ID。
+
+
+NOTE: 如果您使用服務帳戶，則應使用服務存取令牌而不是使用者令牌。 「client_id」的值（「Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC」）是固定值，無法變更。在這種情況下，請按照此處的說明進行操作： https://docs.netapp.com/us-en/bluexp-automation/platform/create_service_token.html["建立服務存取權令牌"^] 。
 
 .步驟
 . 從NetApp BlueXP網站取得使用者權杖。
@@ -180,8 +189,3 @@ curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpT
     ]
 }
 ----
-
-
-== API 參考
-
-每個 BlueXP  備份和恢復 API 的文檔均可從 https://docs.netapp.com/us-en/bluexp-automation/cbs/overview.html["BlueXP  自動化"^]獲得。
