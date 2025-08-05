@@ -3587,11 +3587,7 @@ ifdef：：AWS []</block>
   <block id="c6dc8fc5264ca3745831ad65554a2b72" category="list-text">輸入策略名稱。</block>
   <block id="42daba30535e3d2a9dc6be74b0a10189" category="list-text">*備份架構*部分：選擇向下箭頭並選擇備份的架構，例如磁軌、級聯和磁碟到磁碟。</block>
   <block id="bb2503172f7a2d3bf8f64d30f8db109b" category="list-text">*本機快照*：所選磁碟區上的本機快照。本機快照是資料保護策略的重要組成部分，用於擷取特定時間點的資料狀態。它會建立工作負載所在生產卷的唯讀時間點副本。由於快照僅記錄自上次快照以來檔案的更改，因此佔用的儲存空間極少，且效能開銷幾乎可以忽略不計。您可以使用本機快照來還原資料遺失或損壞，以及建立備份以用於災難復原。</block>
-  <block id="404347b12f0f61e72da6a2792d7aabdc" category="list-text">*3-2-1 扇出*：主儲存（磁碟）到二級儲存（磁碟）到雲端（物件儲存）。跨不同儲存系統建立多個資料副本，例如ONTAP到ONTAP以及ONTAP到物件儲存的配置。這可以是雲端超大規模物件存儲，也可以是私有物件儲存StorageGRID。這些配置有助於實現最佳資料保護和災難復原。</block>
-  <block id="8a7049fd632cea84baf97f1708d54a0e" category="list-text">*3-2-1 級聯*：主儲存（磁碟）到二級儲存（磁碟），再到主儲存（磁碟）到雲端儲存（物件儲存）。這可以是雲端超大規模物件存儲，也可以是私有物件儲存StorageGRID。這會在多個系統之間建立資料複製鏈，以確保冗餘和可靠性。</block>
-  <block id="60b5d0388d094754cc3c7c1594a3eb2c" category="list-text">*磁碟到磁碟*：主儲存（磁碟）到二級儲存（磁碟）。 ONTAPONTAPONTAP資料保護策略在兩個ONTAP系統之間複製數據，以確保高可用性和災難復原。這通常使用SnapMirror實現，它支援同步和非同步複製。此方法可確保您的資料在多個位置持續更新且可用，從而提供強大的資料遺失保護。</block>
   <block id="32726057a180b606f3393a3235c80796" category="list-text">*磁碟到物件儲存*：主儲存（磁碟）到雲端（物件儲存）。這會將資料從ONTAP系統複製到物件儲存系統，例如 AWS S3、Azure Blob Storage 或StorageGRID。這通常使用SnapMirror Cloud 實現，它透過在初始基線傳輸後僅傳輸更改的資料區塊來提供永久增量備份。這可以是雲端超大規模物件存儲，也可以是私有物件儲存StorageGRID。此方法非常適合長期資料保留和歸檔，為資料保護提供經濟高效且可擴展的解決方案。</block>
-  <block id="36306ce9bafc58366de243c3047dde70" category="list-text">*磁碟到磁碟扇出*：主儲存（磁碟）到輔助儲存（磁碟）以及主儲存（磁碟）到輔助儲存（磁碟）。</block>
   <block id="da35c57efd612e967c7ee5f6ae122173" category="admonition">您可以為磁碟到磁碟扇出選項配置多個輔助設定。</block>
   <block id="6e2bd59b02565b32b4f5f494be2d3b3c" category="paragraph">提供本地快照的資訊。</block>
   <block id="e9d8287a41228c8441743b04206c47e0" category="list-text">選擇「新增計劃」選項，選擇一個或多個快照計劃。最多可新增 5 個計劃。</block>
@@ -3608,7 +3604,6 @@ ifdef：：AWS []</block>
   <block id="cd0a52a7955baba5717b6d22930ce27c" category="list-text">*啟用快照鎖定*：選擇是否啟用防篡改快照。啟用此選項可確保快照在指定的保留期限到期之前無法刪除或變更。此功能對於保護您的資料免受勒索軟體攻擊並確保資料完整性至關重要。</block>
   <block id="96dbfe4652a6b876c6cb53e74da71da7" category="list-text">*快照鎖定期限*：輸入您想要鎖定快照的天數、月數或年數。</block>
   <block id="71eec9b2b57a1b041e6be9fdbb7e9d77" category="section-title">為輔助設定建立策略（複製到輔助儲存）</block>
-  <block id="2441a0477bdce99c1bdec0b8887a9042" category="paragraph">提供複製到輔助儲存的資訊。本機快照設定的計畫資訊會顯示在輔助設定中。這些設定不適用於 Kubernetes 工作負載。</block>
   <block id="334741c071e30fd510f26dae69ca8081" category="list-text">*備份*：選擇每小時、每天、每週、每月或每年的頻率。</block>
   <block id="25dc47e7051f405808b9f9bda4500952" category="list-text">*備份目標*：選擇二級儲存上用於備份的目標系統。</block>
   <block id="a14908893407f655cc108e2629a2bb98" category="list-text">*保留*：輸入要保留的快照數量。</block>
@@ -4662,4 +4657,9 @@ ifdef：：AWS []</block>
   <block id="98c648bc34880f7f4d457836f8d482d7" category="paragraph">確保先前啟用了索引編目的工作環境仍保持啟用狀態。</block>
   <block id="080b8dd3f3323a86a22c3af13ee1c495" category="list-text">在「搜尋和復原」頁面中，執行一些目錄搜尋以確認索引目錄復原已成功完成。</block>
   <block id="14873f48c9db88415c7c75e61a0ddd00" category="sidebar">在暗站中恢復配置數據</block>
+  <block id="24969ec002d0ba9569d4144f971b6ced" category="list-text">*3-2-1 扇出*：（不適用於 Kubernetes 工作負載）主儲存（磁碟）到二級儲存（磁碟）到雲端（物件儲存）。跨不同的儲存系統建立資料的多個副本，例如ONTAP到ONTAP以及ONTAP到物件儲存配置。這可以是雲端超大規模物件儲存或私有物件儲存 - StorageGRID。這些配置有助於實現最佳的資料保護和災難復原。</block>
+  <block id="d0bd3e27000ec2ce6c223970575684d0" category="list-text">*3-2-1 級聯*：（不適用於 Kubernetes 工作負載）主儲存（磁碟）到輔助儲存（磁碟）以及主儲存（磁碟）到雲端儲存（物件儲存）。這可以是雲端超大規模物件儲存或私有物件儲存 - StorageGRID。這會在多個系統之間建立資料複製鏈，以確保冗餘和可靠性。</block>
+  <block id="047b5386a7c666d31be5990a4869e7da" category="list-text">*磁碟到磁碟*：（不適用於 Kubernetes 工作負載）主儲存（磁碟）到輔助儲存（磁碟）。 ONTAP到ONTAP資料保護策略在兩個ONTAP系統之間複製數據，以確保高可用性和災難復原。這通常是使用SnapMirror實現的，它支援同步和非同步複製。此方法可確保您的資料持續更新並可在多個位置使用，從而提供強大的資料遺失保護。</block>
+  <block id="68348a4aedf069fed0da1ef391e470d8" category="list-text">*磁碟到磁碟扇出*：（不適用於 Kubernetes 工作負載）主儲存（磁碟）到輔助儲存（磁碟）以及主儲存（磁碟）到輔助儲存（磁碟）。</block>
+  <block id="52406c3fd83be5518f3dd4d7253e4388" category="paragraph">提供複製到輔助儲存的資訊。本機快照設定的計畫資訊會顯示在輔助設定中。這些設定不適用於 Kubernetes 工作負載。</block>
 </blocks>
