@@ -3809,7 +3809,6 @@ ifdef：：AWS []</block>
   <block id="66e26e427b5784b7adb6655a0b49e57f" category="paragraph">*注意* 此功能使用的是舊版BlueXP backup and recoveryUI。如需切換至BlueXP backup and recoveryUI 版本，請參閱<block ref="906891f55c4c6af31e4cf82ce54f93d9" category="inline-link-macro-rx"></block> 。</block>
   <block id="5165c2fbcef4d5b16f189feb7569b43b" category="paragraph">有關使用先前的BlueXP backup and recoveryUI 的說明，請參閱以下主題：</block>
   <block id="219b1d964760a35bc8ac924733ed0211" category="summary">BlueXP backup and recovery服務為本地和雲端的NetApp資料庫和執行個體提供高效、安全且經濟實惠的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
-  <block id="21a4e084cb9eeae89f7b12a3531b652c" category="paragraph">BlueXP backup and recovery服務為ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫（預覽版）以及 VMware 工作負載提供高效率、安全且經濟實惠的資料保護。</block>
   <block id="5ddad1ad8421fb041436bd24f4aea0c5" category="section-title">BlueXP backup and recovery功能</block>
   <block id="930ffc736eba485afa459142d19e0a4e" category="paragraph">使用BlueXP backup and recovery實現以下目標：</block>
   <block id="5940e90d8d923e2308627f8e190412e8" category="list-text">ONTAP磁碟區工作負載：</block>
@@ -3857,7 +3856,6 @@ ifdef：：AWS []</block>
   <block id="37265d8bc5bb9d770dbba2833c18f913" category="paragraph">當您使用 GCP 時，您可以向NetApp要求私人優惠，然後在BlueXP backup and recovery啟動期間從 Google Cloud Marketplace 訂閱時選擇該方案。 endif::gcp[]</block>
   <block id="c8ee5c80af66e9ba0b237679d3ee2962" category="section-title">支援的資料來源、工作環境和備份目標</block>
   <block id="cec0c370d9c2ef0dbbf7f89c16ef1a90" category="paragraph-title">支援的工作負載資料來源</block>
-  <block id="8e9099358934a1f0118f70592242de0e" category="paragraph">此服務保護以下基於應用程式的工作負載：</block>
   <block id="9504b35cbb481ca2332f36aedcf456c8" category="list-text">ONTAP 磁碟區</block>
   <block id="58f149a832a0f214528ef836d6898835" category="list-text">用於實體、VMware 虛擬機器檔案系統 (VMFS) 和 VMware 虛擬機器磁碟 (VMDK) NFS（預覽版）的 Microsoft SQL Server 執行個體和資料庫</block>
   <block id="ed11408803c4c1aca5fbebbc43d88458" category="list-text">VMware資料存放區</block>
@@ -4662,4 +4660,6 @@ ifdef：：AWS []</block>
   <block id="047b5386a7c666d31be5990a4869e7da" category="list-text">*磁碟到磁碟*：（不適用於 Kubernetes 工作負載）主儲存（磁碟）到輔助儲存（磁碟）。 ONTAP到ONTAP資料保護策略在兩個ONTAP系統之間複製數據，以確保高可用性和災難復原。這通常是使用SnapMirror實現的，它支援同步和非同步複製。此方法可確保您的資料持續更新並可在多個位置使用，從而提供強大的資料遺失保護。</block>
   <block id="68348a4aedf069fed0da1ef391e470d8" category="list-text">*磁碟到磁碟扇出*：（不適用於 Kubernetes 工作負載）主儲存（磁碟）到輔助儲存（磁碟）以及主儲存（磁碟）到輔助儲存（磁碟）。</block>
   <block id="52406c3fd83be5518f3dd4d7253e4388" category="paragraph">提供複製到輔助儲存的資訊。本機快照設定的計畫資訊會顯示在輔助設定中。這些設定不適用於 Kubernetes 工作負載。</block>
+  <block id="5f62fed28c117ffda0827b12f19c440d" category="paragraph">BlueXP backup and recovery服務為ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫（預覽版）、VMware 工作負載和 Kubernetes 工作負載（預覽版）提供高效率、安全且經濟高效的資料保護。</block>
+  <block id="b884440e8464e067fc1993b8e7564b2c" category="paragraph">此服務保護以下工作負載：</block>
 </blocks>
