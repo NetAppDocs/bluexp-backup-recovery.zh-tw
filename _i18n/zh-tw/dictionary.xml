@@ -2799,7 +2799,6 @@ ifdef：：AWS []</block>
   <block id="c7b4d968f2d50c900d950efc28b21602" category="summary">BlueXP backup and recovery服務需要先發現工作負載，您才能使用該服務。</block>
   <block id="4ed9d079b0f878e88f1e524c5e40334b" category="doc">發現 Microsoft SQL Server 工作負載並可選擇從BlueXP backup and recovery的SnapCenter匯入</block>
   <block id="88867c168356c4e4806b5412f199a98e" category="paragraph">BlueXP backup and recovery服務需要先發現 Microsoft SQL Server 工作負載，您才能使用該服務。如果您已安裝SnapCenter ，則可以選擇從SnapCenter匯入備份資料和原則。</block>
-  <block id="9b4181d03263555437f8a40593f311f0" category="paragraph">*必備的BlueXP角色* 備份和還原超級管理員。了解<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block> 。 <block ref="c46fcff617e849cb6f8ded33051f7905" category="inline-link-rx"></block> 。</block>
   <block id="da39a7712232603b7b60f32ff70cea25" category="section-title">發現 Microsoft SQL Server 工作負載並選擇性地匯入SnapCenter資源</block>
   <block id="b329a8668afc5358ec61c1d17bcc1160" category="paragraph">在發現過程中， BlueXP backup and recovery會分析組織內工作環境中的 Microsoft SQL Server 執行個體和資料庫。</block>
   <block id="0e991171704ddccf2cbcd439d58f5def" category="paragraph">BlueXP backup and recovery可評估 Microsoft SQL Server 應用程式。該服務會評估現有保護級別，包括目前備份保護策略、快照副本以及備份和還原選項。</block>
@@ -4662,4 +4661,6 @@ ifdef：：AWS []</block>
   <block id="52406c3fd83be5518f3dd4d7253e4388" category="paragraph">提供複製到輔助儲存的資訊。本機快照設定的計畫資訊會顯示在輔助設定中。這些設定不適用於 Kubernetes 工作負載。</block>
   <block id="5f62fed28c117ffda0827b12f19c440d" category="paragraph">BlueXP backup and recovery服務為ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫（預覽版）、VMware 工作負載和 Kubernetes 工作負載（預覽版）提供高效率、安全且經濟高效的資料保護。</block>
   <block id="b884440e8464e067fc1993b8e7564b2c" category="paragraph">此服務保護以下工作負載：</block>
+  <block id="a7834976a2cbdc12ddeb76acc0345f2d" category="inline-link-macro">備份和恢復資料服務角色和權限</block>
+  <block id="092238820de0395a7d97ae63a784ea7f" category="paragraph">*所需的BlueXP角色* 此任務需要資料服務備份和還原超級管理員角色。了解<block ref="48e53f0dd24db48908da75d62a8f8086" category="inline-link-macro-rx"></block>。<block ref="c46fcff617e849cb6f8ded33051f7905" category="inline-link-rx"></block> 。</block>
 </blocks>

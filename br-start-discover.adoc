@@ -16,7 +16,7 @@ summary: BlueXP backup and recovery服務需要先發現工作負載，您才能
 [role="lead"]
 BlueXP backup and recovery服務需要先發現 Microsoft SQL Server 工作負載，您才能使用該服務。如果您已安裝SnapCenter ，則可以選擇從SnapCenter匯入備份資料和原則。
 
-*必備的BlueXP角色* 備份和還原超級管理員。了解link:reference-roles.html["備份和恢復角色和權限"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的 BlueXP 存取角色"^] 。
+*所需的BlueXP角色* 此任務需要資料服務備份和還原超級管理員角色。了解link:reference-roles.html["備份和恢復資料服務角色和權限"]。 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的 BlueXP 存取角色"^] 。
 
 
 
