@@ -21,7 +21,7 @@ summary: 監控工作負載的運作狀況可確保您了解工作負載保護�
 .步驟
 . 從BlueXP backup and recovery選單中，選擇 *Dashboard*。
 +
-image:screen-br-dashboard2.png["BlueXP backup and recovery儀表板"]
+image:screen-br-dashboard3.png["BlueXP backup and recovery儀表板"]
 
 
 

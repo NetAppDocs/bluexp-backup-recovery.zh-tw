@@ -153,7 +153,9 @@ image:../media/screen-br-inventory.png["庫存頁面"]
 
 === 如果您尚未安裝SnapCenter ，請新增 vCenter 並發現資源
 
-如果您尚未安裝SnapCenter ，請新增 vCenter 訊息，並讓BlueXP backup and recovery發現工作負載。在每個BlueXP連接器中，選擇要發現工作負載的工作環境。
+如果您尚未安裝SnapCenter ，您可以新增 vCenter 資訊並讓BlueXP backup and recovery發現工作負載。在每個BlueXP連接器中，選擇您想要發現工作負載的工作環境。
+
+如果您有 VMware 環境，這是可選的。
 
 .步驟
 . 從BlueXP左側導覽中，選擇 *保護* > *備份和還原*。

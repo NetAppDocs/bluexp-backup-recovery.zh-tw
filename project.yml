@@ -93,7 +93,7 @@ sidebar:
         url: "/prev-ontap-backup-manage.html"
       - title: 從ONTAP 還原備份還原
         url: "/prev-ontap-restore.html"
-    - title: 保護 Microsoft SQL Server 工作負載（預覽版）
+    - title: 保護 Microsoft SQL Server 工作負載
       entries:
       - title: 保護 Microsoft SQL Server 工作負載概述
         url: "/br-use-mssql-protect-overview.html"

@@ -50,15 +50,18 @@ BlueXP backup and recovery可讓您將 Microsoft SQL Server 執行個體和資�
 
 
 | AWS 中的 Cloud Volumes ONTAP | AWS 中的 Cloud Volumes ONTAP
-內部部署 ONTAP 的作業系統 | Amazon S3 
+內部部署 ONTAP 的作業系統 | 亞馬遜 S3 ONTAP S3 
 
 
 | Azure 中的 Cloud Volumes ONTAP | Azure 中的 Cloud Volumes ONTAP
-內部部署 ONTAP 的作業系統 | Azure Blob 
+內部部署 ONTAP 的作業系統 | Azure Blob ONTAP S3 
 
 
 | 內部部署 ONTAP 的作業系統 | Cloud Volumes ONTAP
-內部部署 ONTAP 的作業系統 | Amazon S3 Azure Blob NetApp StorageGRID ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
+內部部署 ONTAP 的作業系統 | Amazon S3 Azure Blob NetApp StorageGRID ONTAP S3 
+
+
+| Amazon FSX for NetApp ONTAP 產品 | Amazon FSX for NetApp ONTAP 產品 | 不適用 ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
 |===
 .支援的還原目的地
 您可以將 Microsoft SQL Server 執行個體和資料庫從駐留在主儲存或輔助工作環境（複製磁碟區）或物件儲存（備份檔案）中的備份還原到下列工作環境。Snapshot 複本位於來源工作環境中、只能還原至相同的系統。
@@ -72,15 +75,18 @@ BlueXP backup and recovery可讓您將 Microsoft SQL Server 執行個體和資�
 
 
 | Amazon S3 | AWS 中的 Cloud Volumes ONTAP
-內部部署 ONTAP 的作業系統 | AWS 本機ONTAP系統中的 Cloud Volumes 
+內部部署 ONTAP 的作業系統 | AWS 本機ONTAP系統ONTAP S3 中的雲端磁碟區 
 
 
 | Azure Blob | Azure 中的 Cloud Volumes ONTAP
-內部部署 ONTAP 的作業系統 | Azure 本地ONTAP系統中的Cloud Volumes ONTAP ifdef::gcp[] endif::gcp[] 
+內部部署 ONTAP 的作業系統 | Azure 中的Cloud Volumes ONTAP本地ONTAP系統ONTAP S3 ifdef::gcp[] endif::gcp[] 
 
 
 | StorageGRID | Cloud Volumes ONTAP
-內部部署 ONTAP 的作業系統 | 內部部署 ONTAP 的作業系統 
+內部部署 ONTAP 的作業系統 | 本地ONTAP系統ONTAP S3 
+
+
+| Amazon FSX for NetApp ONTAP 產品 | Amazon FSX for NetApp ONTAP 產品 | 不適用 
 |===
 
 NOTE: 「本地ONTAP系統」包括FAS和AFF系統。

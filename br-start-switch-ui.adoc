@@ -18,7 +18,7 @@ summary: 您可以在不同的BlueXP backup and recovery工作負載之間切換
 
 *您如何知道您正在使用哪個 UI？ *
 
-Microsoft SQL Server 工作負載的工作列如下所示： image:screen-br-menu-unified.png["BlueXP backup and recovery的新 UI 螢幕截圖"]
+Microsoft SQL Server 和 Kubernetes（預覽版）工作負載的工作列如下所示：image:screen-br-menu-unified.png["BlueXP backup and recovery的新 UI 螢幕截圖"]
 
 ONTAP磁碟區和 VMware 工作負載的選單列如下所示： image:screen-br-menu-legacy.png["上一個BlueXP backup and recovery的UI 螢幕截圖"]
 

@@ -24,13 +24,85 @@ summary: 驗證您的運作環境、 BlueXP連接器和BlueXP帳戶是否已準�
 
 
 
-== 用於備份到對象存儲
+== 備份到物件儲存的先決條件
 
 若要使用物件儲存作為備份目標，您需要一個擁有 AWS S3、Microsoft Azure Blob、 StorageGRID或ONTAP的帳戶並配置適當的存取權限。
 
-* link:prev-ontap-protect-overview.html["保護您的 ONTAP Volume 資料"]
-* link:br-use-mssql-protect-overview.html["保護您的 Microsoft SQL Server 資料庫"]
-* link:prev-vmware-protect-overview.html["保護虛擬機器工作負載"]
+看link:br-start-setup.html["在使用BlueXP backup and recovery之前設定備份目標"]有關如何設定備份目標的詳細資訊。
+
+
+
+== Microsoft SQL Server 工作負載需求
+
+若要使用BlueXP backup and recoverySQL Server 工作負載，您需要滿足下列主機系統、空間和大小調整先決條件。
+
+[cols="33,66a"]
+|===
+| 項目 | 需求 
+
+
+| 作業系統  a| 
+Microsoft Windows 有關受支援版本的最新信息，請參閱 https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp 互通性對照表工具"^] 。
+
+
+
+| Microsoft SQL Server 版本  a| 
+VMware 虛擬機器檔案系統 (VMFS) 和 VMware 虛擬機器磁碟 (VMDK) NFS 支援 2012 及更高版本。
+
+
+
+| SnapCenter伺服器版本  a| 
+如果您要將現有資料從SnapCenter匯入BlueXP backup and recovery，則需要SnapCenter Server 5.0 或更高版本。
+
+
+NOTE: 如果您已經擁有SnapCenter，請先檢查以確保在從SnapCenter匯入之前已滿足先決條件。請參閱。 link:concept-start-prereq-snapcenter-import.html["從SnapCenter匯入資源的先決條件"]
+
+
+
+| SQL Server 主機上插件的最小 RAM  a| 
+1GB
+
+
+
+| SQL Server 主機上插件的最小安裝和日誌空間  a| 
+5GB
+
+分配足夠的磁碟空間，並監控日誌資料夾的儲存空間消耗。所需的日誌空間取決於執行的備份數量和資料保護操作的頻率。如果空間不足，則不會為操作建立日誌。
+
+
+
+| 必要的軟體套件  a| 
+* ASP.NET Core Runtime 8.0.12 託管包（以及所有後續 8.0.x 修補程式）
+* PowerShell Core 7.4.2
+
+
+如需支援版本的最新資訊，請參閱 https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp 互通性對照表工具"^]。
+
+|===
+
+
+== Kubernetes 工作負載需求
+
+您需要特定的要求來發現 Kubernetes 資源並保護您的 Kubernetes 應用程式。
+
+有關BlueXP要求，請參閱<<在 BlueXP  中>> 。
+
+* 主ONTAP系統（ONTAP 9.16.1 或更高版本）
+* Kubernetes 叢集 - 支援的 Kubernetes 發行版和版本包括：
++
+** Anthos On-Prem (VMware) 和 Anthos on Bare Metal 1.16
+** Kubernetes 1.27 - 1.33
+** OpenShift 4.10 - 4.18
+** Rancher Kubernetes Engine 2（RKE2）v1.26.7+rke2r1、v1.28.5+rke2r1
+
+
+* NetApp Trident 24.10 或更高版本
+* NetApp Trident Protect 25.07 或更高版本（在 Kubernetes 工作負載發現期間安裝）
+* NetApp Trident Protect Connector 25.07 或更高版本（在 Kubernetes 工作負載發現期間安裝）
++
+** 確保 Kubernetes 叢集、 Trident保護連接器和Trident保護代理程式之間的出站方向的 TCP 連接埠 443 未經過濾。
+
+
 
 
 
@@ -93,78 +165,3 @@ endif::gcp[]
 
 
 NOTE: 「本地ONTAP系統」包括FAS和AFF系統。
-
-
-
-== Microsoft SQL Server 主機需求
-
-若要使用BlueXP backup and recoverySQL Server 工作負載，您需要滿足下列主機系統、空間和大小調整先決條件。
-
-[cols="33,66a"]
-|===
-| 項目 | 需求 
-
-
-| 作業系統  a| 
-Microsoft Windows 有關受支援版本的最新信息，請參閱 https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp 互通性對照表工具"^] 。
-
-
-
-| Microsoft SQL Server 版本  a| 
-VMware 虛擬機器檔案系統 (VMFS) 和 VMware 虛擬機器磁碟 (VMDK) NFS 支援 2012 及更高版本。
-
-
-
-| SnapCenter伺服器版本  a| 
-如果您要將現有資料從SnapCenter匯入BlueXP backup and recovery，則需要SnapCenter Server 5.0 或更高版本。
-
-
-NOTE: 如果您已經擁有SnapCenter，請先檢查以確保在從SnapCenter匯入之前已滿足先決條件。請參閱。 link:concept-start-prereq-snapcenter-import.html["從SnapCenter匯入資源的先決條件"]
-
-
-
-| SQL Server 主機上插件的最小 RAM  a| 
-1GB
-
-
-
-| SQL Server 主機上插件的最小安裝和日誌空間  a| 
-5GB
-
-分配足夠的磁碟空間，並監控日誌資料夾的儲存空間消耗。所需的日誌空間取決於執行的備份數量和資料保護操作的頻率。如果空間不足，則不會為操作建立日誌。
-
-
-
-| 必要的軟體套件  a| 
-* ASP.NET Core Runtime 8.0.12 託管包（以及所有後續 8.0.x 修補程式）
-* PowerShell Core 7.4.2
-
-
-如需支援版本的最新資訊，請參閱 https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["NetApp 互通性對照表工具"^]。
-
-|===
-
-
-== 用於保護 Kubernetes 應用程式
-
-您需要特定的要求來發現 Kubernetes 資源並保護您的 Kubernetes 應用程式。
-
-有關BlueXP要求，請參閱<<在 BlueXP  中>> 。
-
-* 主ONTAP系統（ONTAP 9.16.1 或更高版本）
-* Kubernetes 叢集 - 支援的 Kubernetes 發行版和版本包括：
-+
-** Anthos On-Prem (VMware) 和 Anthos on Bare Metal 1.16
-** Kubernetes 1.27 - 1.33
-** OpenShift 4.10 - 4.18
-** Rancher Kubernetes Engine 2（RKE2）v1.26.7+rke2r1、v1.28.5+rke2r1
-
-
-* NetApp Trident 24.10 或更高版本
-* NetApp Trident Protect 25.07 或更高版本（在 Kubernetes 工作負載發現期間安裝）
-* NetApp Trident Protect Connector 25.07 或更高版本（在 Kubernetes 工作負載發現期間安裝）
-+
-** 確保 Kubernetes 叢集、 Trident保護連接器和Trident保護代理程式之間的出站方向的 TCP 連接埠 443 未經過濾。
-
-
-

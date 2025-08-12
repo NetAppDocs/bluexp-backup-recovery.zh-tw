@@ -14,10 +14,10 @@ summary: BlueXP backup and recovery服務為本地和雲端的NetApp資料庫和
 
 
 [role="lead"]
-BlueXP backup and recovery服務為ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫（預覽版）、VMware 工作負載和 Kubernetes 工作負載（預覽版）提供高效率、安全且經濟高效的資料保護。
+BlueXP backup and recovery服務為ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫、VMware 工作負載和 Kubernetes 工作負載（預覽版）提供高效率、安全且經濟的資料保護。
 
 
-NOTE: 本文檔作為技術預覽提供。透過此預覽方案、 NetApp 保留在「一般供應」之前修改產品詳細資料、內容和時間表的權利。
+NOTE: 其中一些文件作為技術預覽提供。對於此預覽版產品， NetApp保留在正式發布之前修改產品詳細資訊、內容和時間表的權利。
 
 
 
@@ -31,16 +31,17 @@ NOTE: 本文檔作為技術預覽提供。透過此預覽方案、 NetApp 保留
 ** 建立區塊級、增量永久備份，儲存在另一個ONTAP叢集上以及雲端中的物件儲存中。
 
 
-* Microsoft SQL Server 工作負載（預覽版）：
+* Microsoft SQL Server 工作負載：
 +
-** 從本機ONTAP或Cloud Volumes ONTAP系統備份 Microsoft SQL Server 執行個體和資料庫。
-** 將 Microsoft SQL Server 資料庫還原到相同或備用主機，從而為資料復原提供靈活性。
+** 從本機ONTAP、 Cloud Volumes ONTAP或Amazon FSx for NetApp ONTAP備份 Microsoft SQL Server 執行個體和資料庫。
+** 還原 Microsoft SQL Server 資料庫。
+** 克隆 Microsoft SQL Server 資料庫。
 
 
-* VMware 工作負載：
+* 虛擬機器工作負載：
 +
 ** 將資料儲存備份至 Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform 和StorageGRID ，並將虛擬機器還原回SnapCenter Plug-in for VMware vSphere。
-** 使用BlueXP backup and recovery將虛擬機器資料從雲端還原到本機 vCenter。您可以將虛擬機器還原至備份所在的完全相同位置、或是還原至其他位置。
+** 使用BlueXP backup and recovery將虛擬機器資料從雲端還原到本機 vCenter。
 
 
 * Kubernetes 工作負載（預覽版）：
@@ -124,6 +125,9 @@ ifdef::gcp[]
 
 服務費用是支付給 NetApp 的、同時涵蓋 _ 建立 _ 備份到物件儲存設備的成本、以及 _ 還原 _ 磁碟區或檔案的成本。您只需為物件儲存中保護的資料付費，該費用會根據備份到物件儲存的ONTAP磁碟區的來源邏輯使用容量（ ONTAP效率之前）計算。此容量也稱為前端TB（FTB）。
 
+
+NOTE: 對於 Microsoft SQL Server，當您啟動將快照複製到輔助ONTAP目標或物件儲存時，會產生費用。
+
 有三種方式可以支付備份服務費用：
 
 * 第一個選項是向雲端供應商訂閱、讓您每月付費。
@@ -190,7 +194,7 @@ ifdef::gcp[]
 此服務保護以下工作負載：
 
 * ONTAP 磁碟區
-* 用於實體、VMware 虛擬機器檔案系統 (VMFS) 和 VMware 虛擬機器磁碟 (VMDK) NFS（預覽版）的 Microsoft SQL Server 執行個體和資料庫
+* 用於實體、VMware 虛擬機器檔案系統 (VMFS) 和 VMware 虛擬機器磁碟 (VMDK) NFS 的 Microsoft SQL Server 執行個體和資料庫
 * VMware資料存放區
 * Kubernetes 工作負載（預覽版）
 
@@ -213,7 +217,7 @@ ifdef::gcp[]
 
 
 
-== BlueXP backup and recovery使用適用於 Microsoft SQL Server 的SnapCenter插件
+== BlueXP backup and recovery使用 Microsoft SQL Server 插件
 
 BlueXP backup and recovery會在託管 Microsoft SQL Server 的伺服器上安裝適用於 Microsoft SQL Server 的外掛程式。該外掛程式是主機端元件，可對 Microsoft SQL Server 資料庫和執行個體進行應用程式感知的資料保護管理。
 

@@ -30,7 +30,7 @@ indexpage:
       url: prev-ontap-policy-object-options.html
     - title: 恢復ONTAP磁碟區工作負載
       url: prev-ontap-restore.html
-  - title: 保護 Microsoft SQL Server 工作負載（預覽版）
+  - title: 保護 Microsoft SQL Server 工作負載
     links:
     - title: 保護 Microsoft SQL Server 工作負載概述
       url: br-use-mssql-protect-overview.html

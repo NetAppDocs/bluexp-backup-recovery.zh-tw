@@ -44,45 +44,6 @@ image:screen-br-inventory-sql.png["BlueXP backup and recovery的庫存詳情頁�
 
 
 
-== 管理主機
-
-您可以管理在工作環境中發現的主機。您可以單獨管理它們，也可以將它們作為群組進行管理。
-
-
-TIP: 您只能管理「主機」欄位中顯示「未管理」狀態的主機。如果狀態為“已管理”，則表示該主機已由BlueXP backup and recovery管理。
-
-在您管理BlueXP backup and recovery中的主機後， SnapCenter不再管理這些主機上的資源。
-
-*所需的BlueXP角色* 組織管理員、資料夾或專案管理員，或備份和還原超級管理員。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的 BlueXP 存取角色"^] 。
-
-.步驟
-. 從選單中選擇*庫存*。
-+
-image:screen-br-inventory.png["BlueXP backup and recovery的庫存螢幕截圖"]
-
-. 選擇一個工作負載來查看保護詳情。
-. 選擇“操作”圖標image:../media/icon-action.png["操作選項"] > *查看詳情*。
-+
-image:screen-br-inventory-sql.png["BlueXP backup and recovery的庫存詳情頁面截圖"]
-
-. 選擇“*主機*”標籤。
-. 選擇一個或多個主機。如果選擇多個主機，將出現「批次操作」選項，您可以在其中選擇「管理（最多 5 個主機）」。
-. 選擇“操作”圖標image:../media/icon-action.png["操作選項"] > *管理*。
-+
-image:screen-br-inventory-details-manage-hosts.png["管理主機頁面"]
-
-. 查看主機依賴關係：
-+
-** 如果未顯示 vCenter，請選擇鉛筆圖示以新增或編輯 vCenter 詳細資訊。
-** 如果您新增了 vCenter，您也必須透過選擇「註冊 vCenter」來註冊 vCenter。
-
-
-. 選擇*驗證設定*來測試您的設定。
-. 選擇*管理*來管理主機。
-
-
-
-
 == 配置發現主機的日誌目錄
 
 在備份工作負載之前，請設定已發現主機的活動日誌路徑。這有助於您追蹤操作狀態。

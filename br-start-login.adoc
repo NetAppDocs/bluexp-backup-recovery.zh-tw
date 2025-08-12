@@ -22,6 +22,10 @@ BlueXP backup and recovery使用基於角色的存取控制 (RBAC) 來管理每�
 
 若要登入 BlueXP  、您可以使用 NetApp 支援網站認證、或使用電子郵件和密碼登入 NetApp 雲端。 https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["深入瞭解登入"^]。
 
+*所需的BlueXP角色* 組織管理員、資料夾或專案管理員、備份和還原超級管理員、備份和還原復原管理員角色。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的 BlueXP 存取角色"^] 。
+
+如果這是您第一次造訪BlueXP backup and recovery並新增連接器，則您必須具有組織管理員或備份和還原超級管理員角色。
+
 .步驟
 . 開啟網頁瀏覽器並前往 https://console.bluexp.netapp.com/["BlueXP主控台"^]。
 +
@@ -34,10 +38,11 @@ BlueXP backup and recovery使用基於角色的存取控制 (RBAC) 來管理每�
 +
 image:screen-br-landing-no-we.png["無需工作環境的BlueXP blueXP 備份和還原的登陸頁面截圖"]
 
-** 如果這是您第一次登入此服務，並且您已經在BlueXP中擁有工作環境，但尚未發現任何資源，則會出現「歡迎使用新的BlueXP backup and recovery」登入頁面並顯示*發現資源*選項。
+** 如果這是您第一次登入此服務，您已經在BlueXP中擁有工作環境，但尚未開始免費試用，則會出現「歡迎使用新的BlueXP backup and recovery」登入頁面並顯示*查看免費試用版*的選項。
 +
-image:screen-br-landing-unified.png["BlueXP blueXP 備份和還原的登入頁面截圖"]
+image:screen-br-landing-unified-trial.png["BlueXP備份和恢復的登陸頁面截圖（無需免費試用）"]
 
+** 如果這是您第一次登入此服務，並且您已經在BlueXP中擁有工作環境，但尚未發現任何資源，則會出現「歡迎使用新的BlueXP backup and recovery」登入頁面，並顯示*發現和管理*選項。
 
 
 . 如果您還沒有這樣做，請選擇*發現和管理*選項。
