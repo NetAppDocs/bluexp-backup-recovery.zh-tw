@@ -3595,7 +3595,6 @@ ifdef：：AWS []</block>
   <block id="5e4be38dc556e235a6420a92a206702f" category="inline-link-macro">配置日誌目錄</block>
   <block id="c787ed2d7e5bc557b61149e67595840c" category="list-text">*啟用日誌備份*：（不適用於 Kubernetes 工作負載）勾選備份日誌的選項，並設定日誌備份的頻率和保留時間。為此，您必須已設定日誌備份。請參閱。 <block ref="c4a2a21123ec8dd6e71a040e68355146" category="inline-link-macro-rx"></block></block>
   <block id="6f55153177e57b6d7eb7c4cad4a859a7" category="list-text">*提供者*：（僅限 Kubernetes 工作負載）選擇託管 Kubernetes 應用程式資源的儲存提供者。</block>
-  <block id="71109c8bd1c0018c7479893b1fd7e6a0" category="list-text">*備份目標*：（僅限 Kubernetes 工作負載）選擇備份的目標系統。這是用於儲存快照的儲存系統。請確保該目標在您的備份環境中可存取。</block>
   <block id="747b35b746df7e37e6b643aa0c244e28" category="list-text">或者，選擇計劃右側的「*進階*」來設定SnapMirror標籤並啟用快照鎖定（不適用於 Kubernetes 工作負載）。</block>
   <block id="146a0850e1031071bccdee12df305d5a" category="list-text">* SnapMirror標籤*：標籤用於標記根據關係的保留規則傳輸指定的快照。為快照新增標籤會將其標記為SnapMirror複製的目標。</block>
   <block id="8036e5e1e57026168bfeac2027f9cc84" category="list-text">*小時偏移*：輸入快照與每小時起始時間的偏移分鐘數。例如，如果您輸入 *15*，快照將在每小時 15 分鐘後拍攝。</block>
@@ -3697,7 +3696,6 @@ ifdef：：AWS []</block>
   <block id="635c4235a331a9bc9e0197a493f38268" category="list-text">標籤選擇器</block>
   <block id="de183577631c168afe44797528dcd1b6" category="list-text">BlueXP顯示符合您的搜尋條件的資源清單。</block>
   <block id="aa49cc3a36d2c16ec191533800daa634" category="list-text">如果清單包含您想要保護的資源，請選擇「*下一步*」。</block>
-  <block id="e9caf784881cf54a35354c0cac59319c" category="list-text">在「*策略*」區域中，選擇現有的保護策略來保護應用程式或建立新策略。</block>
   <block id="4049c9e3b9c424f5991c5f917ad92c40" category="inline-link-macro">執行鉤子模板</block>
   <block id="5e97a71c79e2f24deabf91daa3d20cd1" category="list-text">在「*腳本和後記*」區域中，啟用並設定任何要在備份作業之前或之後執行的腳本或後記執行掛鉤。若要啟用腳本或後記，您必須已建立至少一個<block ref="3059f3d40a47ddab4d322199b8601d95" category="inline-link-macro-rx"></block> 。</block>
   <block id="96cff17e81239eeaa49df92ce0b9e6a1" category="paragraph">應用程式已建立並顯示在 Kubernetes 清單的「應用程式」標籤中的應用程式清單中。 BlueXPBlueXP根據您的設定啟用應用程式保護，您可以在備份和還原的「監控」區域中監控進度。</block>
@@ -4546,7 +4544,6 @@ ifdef：：AWS []</block>
   <block id="dc997bda771b80d1666f7d07ffd6b7d7" category="list-text">（可選）選擇「叢集範圍資源」以選擇任何在叢集層級範圍限定的資源。如果包含這些資源，它們會在建立應用程式時新增到應用程式中。</block>
   <block id="812f9cbafb4aa2378e7470b20baa1fef" category="list-text">或者，選擇“*搜尋*”以根據您的搜尋條件尋找資源。</block>
   <block id="cd052ad0ede3d8d23a3b065ef26168d8" category="admonition">BlueXP不會儲存搜尋參數或結果；這些參數用於在選定的 Kubernetes 叢集中搜尋可以包含在應用程式中的資源。</block>
-  <block id="375665cdd163819cd9ddcb1def13c5da" category="list-text">（可選）在「*策略*」區域中，選擇現有保護策略來保護應用程序，或建立新策略。如果不選擇策略，則建立的應用程式將不帶保護策略。您可以稍後新增策略。</block>
   <block id="6bd8ef6649ea59b964673233a7cdd855" category="paragraph">BlueXP會根據您的設定啟用應用程式保護，您可以在備份和還原的「監控」區域中監控進度。一旦您啟用應用程式保護， BlueXP就會建立該應用程式的完整備份。任何未來的增量備份都將根據您在與該應用程式關聯的保護策略中定義的計劃建立。</block>
   <block id="be9a2f94b85d3bc8821f79138f4c1385" category="paragraph">BlueXP會建立應用程式的備份，並在備份和還原的「監控」區域中顯示進度。此備份是根據與應用程式關聯的保護策略建立的。</block>
   <block id="5a5da37e66cddefa275e61455c6ce599" category="paragraph">BlueXP backup and recovery可讓您復原已受保護策略保護的應用程式。要恢復應用程序，應用程式需要至少有一個可用的恢復點。復原點由本機快照或物件儲存備份（或兩者）組成。您可以使用本機、輔助或物件儲存存檔來還原應用程式。</block>
@@ -4663,4 +4660,8 @@ ifdef：：AWS []</block>
   <block id="b884440e8464e067fc1993b8e7564b2c" category="paragraph">此服務保護以下工作負載：</block>
   <block id="a7834976a2cbdc12ddeb76acc0345f2d" category="inline-link-macro">備份和恢復資料服務角色和權限</block>
   <block id="092238820de0395a7d97ae63a784ea7f" category="paragraph">*所需的BlueXP角色* 此任務需要資料服務備份和還原超級管理員角色。了解<block ref="48e53f0dd24db48908da75d62a8f8086" category="inline-link-macro-rx"></block>。<block ref="c46fcff617e849cb6f8ded33051f7905" category="inline-link-rx"></block> 。</block>
+  <block id="2cf6a2d8c1cb12d031a59d63b2674c2d" category="list-text">*備份目標*：（僅限 Kubernetes 工作負載）選擇託管 Kubernetes 應用程式資源的儲存桶。快照將儲存在此儲存桶中。確保儲存桶在您的備份環境中可存取。</block>
+  <block id="4d3ca3588667d04ddbd4f318cdd7677e" category="inline-link-macro">新增保護策略</block>
+  <block id="2769be0838f5e6f63e01200eeeec1910" category="list-text">（可選）在「*策略*」區域中，選擇現有保護策略來保護應用程序，或建立新策略。如果不選擇策略，則建立的應用程式將不帶保護策略。你可以<block ref="99c823f28a98717f81cda4eb0c448db5" category="inline-link-macro-rx"></block>之後。</block>
+  <block id="f58eabeb108df6c5973f0ece276c562f" category="list-text">在「*策略*」區域中，選擇現有的保護策略來保護應用程式或建立新策略。參考<block ref="3739f9f9696bd133d77df1c4736a8480" category="inline-link-macro-rx"></block>有關建立保護策略的詳細資訊。</block>
 </blocks>
