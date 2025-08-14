@@ -14,7 +14,7 @@ summary: 使用BlueXP backup and recovery，您可以變更備份計畫、啟用
 
 
 [role="lead"]
-使用 BlueXP 備份和恢復，透過變更備份計畫、啟用/停用磁碟區備份、暫停備份、刪除備份等，管理 Cloud Volumes ONTAP 和本機 ONTAP 系統的備份。這涵蓋所有類型的備份，包括快照副本、複製磁碟區以及物件儲存中的備份檔案。您也可以取消註冊BlueXP backup and recovery。
+使用BlueXP backup and recovery，透過變更備份計畫、啟用/停用磁碟區備份、暫停備份、刪除備份、強制刪除備份等，管理Cloud Volumes ONTAP和本地ONTAP系統的備份。這包括所有類型的備份，包括快照副本、複製磁碟區和物件儲存中的備份檔案。您也可以取消註冊BlueXP backup and recovery。
 
 
 CAUTION: 請勿直接在儲存系統或雲端供應商環境中管理或變更備份檔案。這可能會毀損檔案、並導致不受支援的組態。
@@ -371,7 +371,20 @@ CAUTION: 如果您打算刪除具有備份的工作環境或叢集、則必須�
 image:screenshot_backup_settings_button.png["螢幕擷取畫面會顯示「備份設定」按鈕、您可以在選取工作環境之後使用該按鈕。"]
 
 . 選擇image:icon-actions-horizontal.gif["動作圖示"]對於您想要刪除所有備份的工作環境，然後選擇*刪除所有備份*。
-. 在確認對話方塊中，輸入工作環境的名稱並選擇*刪除*。
++
+image:screenshot_backup_delete_all_backups-working-env.png["顯示「刪除所有備份」選項的螢幕截圖"]
+
+. 在確認對話方塊中，輸入工作環境的名稱。
+. 選擇“進階設定”。
+. *強制刪除備份*：指示是否要強制刪除所有備份。
++
+在某些極端情況下，您可能希望BlueXP backup and recovery不再存取備份。例如，如果服務不再有權存取備份儲存桶或備份受到 DataLock 保護但您不再需要它們，則可能會發生這種情況。以前，您無法自行刪除這些內容，而需要致電NetApp支援。在此版本中，您可以使用選項強制刪除備份（在磁碟區和工作環境層級）。
+
++
+
+CAUTION: 請謹慎使用此選項，並且僅在極端清理需要時使用。即使這些備份未被從物件儲存中刪除， BlueXP backup and recovery也將無法再存取這些備份。您需要前往雲端提供者並手動刪除備份。
+
+. 選擇*刪除*。
 
 
 
@@ -392,7 +405,16 @@ image:screenshot_backup_view_backups_button.png["螢幕截圖顯示了單一磁�
 +
 image:screenshot_backup_delete_all_backups.png["顯示「刪除所有備份」選項的螢幕截圖"]
 
-. 輸入卷名並指明是否要強制刪除所有備份。
+. 輸入卷名稱。
+. 選擇“進階設定”。
+. *強制刪除備份*：指示是否要強制刪除所有備份。
++
+在某些極端情況下，您可能希望BlueXP backup and recovery不再存取備份。例如，如果服務中沒有下級有權存取備份儲存桶或備份受到 DataLock 保護但您不再需要它們，則可能會發生這種情況。以前，您無法自行刪除這些內容，而需要致電NetApp支援。在此版本中，您可以使用選項強制刪除備份（在磁碟區和工作環境層級）。
+
++
+
+CAUTION: 請謹慎使用此選項，並且僅在極端清理需要時使用。即使這些備份未被從物件儲存中刪除， BlueXP backup and recovery也將無法再存取這些備份。您需要前往雲端提供者並手動刪除備份。
+
 . 選擇*刪除*。
 
 
