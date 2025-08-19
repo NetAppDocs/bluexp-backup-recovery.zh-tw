@@ -4043,7 +4043,6 @@ ifdef：：AWS []</block>
   <block id="0e7df5d1c44a98734ad463aca5107c4e" category="list-text">您可以選擇將備份分層至AWS S3 Glacier或S3 Glacier Deep Archive儲存設備。<block ref="9ababc464a82d6f1db77ecd4b1df297b" category="inline-link-macro-rx"></block>。</block>
   <block id="4023fc8cad184a96ff951576eb9b8edb" category="paragraph">您選擇的歸檔策略設定將在StorageGRID中產生資訊生命週期管理 (ILM) 策略，並將設定新增為「規則」。</block>
   <block id="972e0ef2d514c88b857934a12f7afa97" category="summary">BlueXP 備份和復原中的 SnapMirror 到 Cloud Resync 功能簡化了 NetApp 環境中捲遷移期間的資料保護和連續性。</block>
-  <block id="985b48d30460fe47147847a8b5a8b89d" category="doc">在BlueXP backup and recovery中使用SnapMirror將磁碟區遷移到 Cloud Resync</block>
   <block id="907302bb1fd4581066b79f7dab5fff74" category="section-title">BlueXP backup and recoverySnapMirror到 Cloud Resync 的工作原理</block>
   <block id="d683b5a068fd3bc0acd433ee36b8e172" category="paragraph">若要了解提供的預設備份策略，請參閱<block ref="586d9517f9118e1d4d7dcfa262c8e08f" category="inline-link-macro-rx"></block> 。</block>
   <block id="7aa02d1490041a6267fc77bf9b4232c2" category="paragraph">您可以建立策略來管理快照副本、複製和備份到物件儲存：</block>
@@ -4683,4 +4682,17 @@ ifdef：：AWS []</block>
   <block id="2cc9cb7cd5398e9028f9c98c0685d1a6" category="paragraph">在某些極端情況下，您可能希望BlueXP backup and recovery不再存取備份。例如，如果服務中沒有下級有權存取備份儲存桶或備份受到 DataLock 保護但您不再需要它們，則可能會發生這種情況。以前，您無法自行刪除這些內容，而需要致電NetApp支援。在此版本中，您可以使用選項強制刪除備份（在磁碟區和工作環境層級）。</block>
   <block id="aa029ba3399a1aa8daaa58567b0e0a96" category="section-title">計劃層級</block>
   <block id="46ab31129184c1b6b0ef3989168fee15" category="paragraph">使用SnapCenter，您可以在附加到資源的多個政策中設定多個保留值。但是， BlueXP backup and recovery僅支援與資源相關的所有策略使用單一保留值。</block>
+  <block id="64d100d00b61364f5c3f3456b1dbbc90" category="paragraph">確保滿足以下先決條件：</block>
+  <block id="dfc6646fc34ce265f46c4e38da4e74d3" category="list-text">必須使用BlueXP backup and recovery保護舊的來源ONTAP叢集。</block>
+  <block id="afc84816829f9211a8bcb4ef3cdef8e0" category="list-text">SnapMirror到 Cloud Resync 功能從 2025 年 5 月發布的BlueXP backup and recovery版本 4.0.3 開始提供。</block>
+  <block id="d89b5c3996c2c493e8038816381da875" category="list-text">物件儲存中的最新備份必須是跨舊來源、新來源和物件儲存的公共快照。公共快照不能早於備份到物件儲存的最新快照。</block>
+  <block id="db62eeba01b9529a3e55dd7f235c2184" category="list-text">在開始重新同步操作之前，必須在新ONTAP叢集上建立在舊ONTAP上使用的快照和SnapMirror策略。如果要在重新同步過程中使用任何策略，則也必須建立該策略。重新同步操作不會建立策略。</block>
+  <block id="6a08ac0900dfba7c4eb26a6326b2b0dd" category="list-text">確保應用於遷移卷SnapMirror關係的SnapMirror策略包含雲端關係使用的相同標籤。為避免問題，請使用管理磁碟區和所有快照的精確鏡像的策略。</block>
+  <block id="09a30f0e3a3c79015421558886b76635" category="admonition">應該使用磁碟區實例 UUID，而不是磁碟區 ID。磁碟區實例 UUID 是唯一標識符，在遷移過程中保持一致，而磁碟區 ID 可能會在遷移後發生變化。</block>
+  <block id="a3e605055ea4117757586cf8c5cb4a06" category="list-text">在備份設定頁面中，選擇*查看全部*。</block>
+  <block id="5baf811797f2b09cafb9c8d0b606f3fd" category="list-text">從新來源右側的操作...選單中，選擇*重新同步備份*。</block>
+  <block id="c3de5afc2b623a5e734ef52904e31122" category="paragraph">BlueXP backup and recovery驗證選擇重新同步的每個磁碟區是否是最新快照，並且至少有一個通用快照。這可確保磁碟區已準備好進行SnapMirror到 Cloud Resync 操作。</block>
+  <block id="b98c88f62c4834a257b2a73ee9fbb4dd" category="list-text">檢查容量是否合格。系統檢查磁碟區是否符合重新同步的條件。如果磁碟區不符合條件，則表示它不是最新的快照或未找到通用快照。</block>
+  <block id="c856ee3b535d4aa35b19af5253f54e81" category="list-text">選擇*重新同步*以開始重新同步操作。系統使用最新且通用的快照僅傳輸增量更改，確保備份的連續性。</block>
+  <block id="8d2d3fb9cf8aa026f491048ab9fdf368" category="list-text">在作業監視器頁面中監視重新同步過程。</block>
 </blocks>
