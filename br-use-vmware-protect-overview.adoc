@@ -14,13 +14,27 @@ summary: 使用NetApp BlueXP backup and recovery保護您的 VMware 工作負載
 
 
 [role="lead"]
-使用BlueXP backup and recovery保護您的 VMware 工作負載。 BlueXPBlueXP backup and recovery為虛擬機器、資料儲存區和 VMDK 提供快速、節省空間、崩潰一致性和虛擬機器一致性的備份和還原作業。
+使用BlueXP backup and recovery保護您的 VMware VM 和資料儲存。 BlueXP backup and recovery提供快速、節省空間、崩潰一致和 VM 一致的備份和復原作業。您可以將 VMware 工作負載備份到 Amazon Web Services S3 或StorageGRID ，並將 VMware 工作負載還原至本機 VMware 主機。
 
-您可以將資料存放區備份至 Amazon Web Services S3 、 Microsoft Azure Blob 、 Google Cloud Platform 和 StorageGRID 、並將虛擬機器還原至內部部署的 SnapCenter Plug-in for VMware vSphere 主機。
+
+NOTE: 此版本的BlueXP backup and recovery僅支援 VMware vCenter，且無法發現vVols或vVols上的 VM。
+
+使用BlueXP backup and recovery原來實施 3-2-1 策略，其中您在 2 個不同的儲存系統上擁有 3 個來源資料副本，並在雲端中擁有 1 個副本。  3-2-1 方法的優點包括：
+
+* 多個資料複本可提供多層保護、抵禦內部（內部）和外部網路安全威脅。
+* 多種媒體類型可確保容錯移轉在某種媒體類型的實體或邏輯故障情況下可行。
+* 現場副本有助於快速恢復，而異地副本則可在現場副本受損時使用。
+
 
 []
 ====
-*注意* 此功能使用的是舊版BlueXP backup and recoveryUI。如需切換至BlueXP backup and recoveryUI 版本，請參閱link:br-start-switch-ui.html["切換到以前的BlueXP backup and recoveryUI"] 。
+*注意* 若要切換到BlueXP backup and recoveryUI 版本，請參閱link:br-start-switch-ui.html["切換到以前的BlueXP backup and recoveryUI"] 。
 
 ====
-有關使用先前的BlueXP backup and recoveryUI 的說明，請參閱以下主題：
+您可以使用BlueXP backup and recovery原來執行與 VMware 工作負載相關的下列任務：
+
+* link:br-use-vmware-discovery.html["發現 VMware 工作負載"]
+* link:br-use-vmware-protection-groups.html["為 VMware 工作負載建立和管理保護群組"]
+* link:br-use-vmware-backup.html["備份 VMware 工作負載"]
+* link:br-use-vmware-restore.html["復原 VMware 工作負載"]
+

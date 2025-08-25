@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database, dark site, private mode, restore database, backup and recovery, BlueXP Connector 
-summary: 在沒有網路存取的網站（稱為「私人模式」）中使用BlueXP backup and recovery時， BlueXP backup and recovery設定資料將備份到儲存備份的StorageGRID或ONTAP S3 儲存桶中。如果您將來遇到BlueXP Connector 主機系統問題，您可以部署新的 Connector 並還原關鍵的BlueXP backup and recovery資料。 
+summary: 當您在沒有網路存取的網站（稱為「私人模式」）中使用BlueXP backup and recovery時， BlueXP backup and recovery設定資料將備份到儲存備份的StorageGRID或ONTAP S3 儲存桶中。如果您將來遇到BlueXP Connector 主機系統問題，您可以部署新的 Connector 並還原關鍵的BlueXP backup and recovery資料。 
 ---
 = 在暗站中恢復BlueXP backup and recovery配置數據
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 在沒有網路存取的網站（稱為「私人模式」）中使用Bl
 
 
 [role="lead"]
-在沒有網路存取的網站（稱為_私人模式_）中使用BlueXP backup and recovery時， BlueXP backup and recovery設定資料將備份到儲存備份的StorageGRID或ONTAP S3 儲存桶中。如果您遇到BlueXP Connector 主機系統問題，您可以部署新的 Connector 並還原關鍵的BlueXP backup and recovery資料。
+當您在沒有網路存取的網站（稱為_私人模式_）中使用BlueXP backup and recovery時， BlueXP backup and recovery設定資料將備份到儲存備份的StorageGRID或ONTAP S3 儲存桶中。如果您遇到BlueXP Connector 主機系統問題，您可以部署新的 Connector 並還原關鍵的BlueXP backup and recovery資料。
 
 
 NOTE: 此過程僅適用於ONTAP磁碟區資料。

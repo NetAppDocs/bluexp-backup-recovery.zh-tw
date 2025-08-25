@@ -2888,7 +2888,6 @@ ifdef：：AWS []</block>
   <block id="a4cb4d9746fef9b2063e1e5da1c75c29" category="paragraph">NetApp與您分享私人優惠後，您可以在BlueXP backup and recovery啟用期間從 Google Cloud Marketplace 訂閱時選擇年度方案。 endif::gcp[]</block>
   <block id="474d47e21fe92a33663dbddcf78590b4" category="summary">您使用NetApp BlueXP登入BlueXP backup and recovery服務。</block>
   <block id="aeb10fc890c802b7dd8fae9cff0a209e" category="doc">登入BlueXP backup and recovery</block>
-  <block id="24950a849c9d9aedd14419065a71d6d1" category="paragraph">BlueXP backup and recovery使用基於角色的存取控制 (RBAC) 來管理每個使用者對特定操作的存取權限。</block>
   <block id="666cc2b78f16f8ece01853cc11f9d11a" category="inline-link-macro">BlueXP backup and recovery使用者角色</block>
   <block id="31675b9e04540d4b854fca05b62b0163" category="paragraph">如需每個角色可執行之動作的詳細資訊，請參閱<block ref="e48ad5b94ef60d879078857b9c9c4497" category="inline-link-macro-rx"></block>。</block>
   <block id="8e917942a77709dfd28c155f42a97553" category="inline-link">深入瞭解登入</block>
@@ -2969,7 +2968,6 @@ ifdef：：AWS []</block>
   <block id="b855e251d5df357e144fbf0e53db0c36" category="paragraph">*您如何知道您正在使用哪個 UI？ *</block>
   <block id="96ec5c3621495d866bf12104959de6fc" category="inline-image-macro">BlueXP backup and recovery的新 UI 螢幕截圖</block>
   <block id="47b2e1fa9a85c125a53c3e5c9a3e0e98" category="inline-image-macro">上一個BlueXP backup and recovery的UI 螢幕截圖</block>
-  <block id="db417fd26ca3425ad12946f4a0f2ff53" category="paragraph">ONTAP磁碟區和 VMware 工作負載的選單列如下所示： <block ref="fa2e599941b781bf3a65ea0199d76803" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fe22a10f6ea181611d52a0d5759f39db" category="section-title">切換到不同的工作負載</block>
   <block id="4373918dc26735d4da68b24b4eaf9a01" category="paragraph">您可以在BlueXP backup and recoveryUI 中切換到不同的工作負載。</block>
   <block id="6796afb2b33620293536ad9e235fd848" category="list-text">從頁面右上角，選擇*切換工作負載*下拉清單。</block>
@@ -3009,7 +3007,6 @@ ifdef：：AWS []</block>
   <block id="c642a1d421742bab764af6e7ce29cee9" category="list-text">ONTAP中的儲存叢集數量</block>
   <block id="5b39a8b0cd985252363064e17a37e57b" category="section-title">查看保護摘要</block>
   <block id="7d16325b089791a7fec8a4ec1b1328d3" category="paragraph">查看保護摘要中的以下資訊：</block>
-  <block id="285e1429845071f628c6f8239a013cfa" category="list-text">受保護和不受保護的資料庫的總數。</block>
   <block id="c3427cdd69e34b450f0471fa4bc0f6bc" category="admonition">受保護的資料庫是指已指派備份策略的資料庫。不受保護的資料庫是指未分配備份策略的資料庫。</block>
   <block id="b3887310c2624c2fea5b40d259f69d85" category="list-text">成功、出現警告或失敗的備份次數。</block>
   <block id="d1cc4762aa621a5e420e818f9fb01417" category="list-text">備份服務發現的總容量以及受保護的容量與不受保護的容量。將滑鼠懸停在「*i*」圖示上即可查看詳細資訊。</block>
@@ -3508,7 +3505,6 @@ ifdef：：AWS []</block>
   <block id="08dde8a49187490703817f0bb0ca2c66" category="list-text">建立複製到輔助儲存的策略</block>
   <block id="79553f51abb935dd34c66050ba8bd085" category="list-text">為對象儲存設定建立策略</block>
   <block id="560d0289c18f590a486568880a11504c" category="list-text">配置進階策略設定</block>
-  <block id="110202b139c8c8a25346f036c902b4c8" category="list-text">編輯政策</block>
   <block id="af5b784334cc5cfd8f61f1fa34d0aca5" category="list-text">刪除原則</block>
   <block id="07e3a352f6fabbcfb1aa57866d9cc826" category="list-text">從BlueXP backup and recovery選單中，選擇 *策略*。</block>
   <block id="efecaf049bb3027a5a57f92953795d16" category="inline-image-macro">政策頁面</block>
@@ -3528,13 +3524,10 @@ ifdef：：AWS []</block>
   <block id="e0b5eb9f9d2446a8058c07e393201d73" category="paragraph">有關快照鎖定的一般信息，請參閱<block ref="8b0c087cbf38ba7d67f735ef687ec456" category="inline-link-rx"></block> 。</block>
   <block id="678bf77479fcbfef4dc290f0d62e98ff" category="list-text">在「策略」頁面中，選擇「建立新策略」。</block>
   <block id="15b12387004ff245bfdfd55c084d652c" category="inline-image-macro">新策略創建的螢幕截圖</block>
-  <block id="600dcd5a0627f86042966557f6c1d641" category="paragraph"><block ref="600dcd5a0627f86042966557f6c1d641" category="inline-image-macro-rx" type="image"></block></block>
   <block id="385b9aea2790f1bf9fe2b79fdafc5b1e" category="list-text">在「策略」頁面中，提供以下資訊。</block>
   <block id="dcf438c461663e08d25441c21a02eb89" category="list-text">*詳細資訊*部分：</block>
-  <block id="99228d8dc56ea01edce282c124fbc4db" category="list-text">此版本預設選擇“Microsoft SQL Server”工作負載類型。</block>
   <block id="c6dc8fc5264ca3745831ad65554a2b72" category="list-text">輸入策略名稱。</block>
   <block id="42daba30535e3d2a9dc6be74b0a10189" category="list-text">*備份架構*部分：選擇向下箭頭並選擇備份的架構，例如磁軌、級聯和磁碟到磁碟。</block>
-  <block id="bb2503172f7a2d3bf8f64d30f8db109b" category="list-text">*本機快照*：所選磁碟區上的本機快照。本機快照是資料保護策略的重要組成部分，用於擷取特定時間點的資料狀態。它會建立工作負載所在生產卷的唯讀時間點副本。由於快照僅記錄自上次快照以來檔案的更改，因此佔用的儲存空間極少，且效能開銷幾乎可以忽略不計。您可以使用本機快照來還原資料遺失或損壞，以及建立備份以用於災難復原。</block>
   <block id="32726057a180b606f3393a3235c80796" category="list-text">*磁碟到物件儲存*：主儲存（磁碟）到雲端（物件儲存）。這會將資料從ONTAP系統複製到物件儲存系統，例如 AWS S3、Azure Blob Storage 或StorageGRID。這通常使用SnapMirror Cloud 實現，它透過在初始基線傳輸後僅傳輸更改的資料區塊來提供永久增量備份。這可以是雲端超大規模物件存儲，也可以是私有物件儲存StorageGRID。此方法非常適合長期資料保留和歸檔，為資料保護提供經濟高效且可擴展的解決方案。</block>
   <block id="da35c57efd612e967c7ee5f6ae122173" category="admonition">您可以為磁碟到磁碟扇出選項配置多個輔助設定。</block>
   <block id="6e2bd59b02565b32b4f5f494be2d3b3c" category="paragraph">提供本地快照的資訊。</block>
@@ -3542,13 +3535,9 @@ ifdef：：AWS []</block>
   <block id="ea26bb825f76fc9d9f25830201533996" category="list-text">*快照頻率*：選擇每小時、每天、每週、每月或每年的頻率。 Kubernetes工作負載不支援每年的頻率。</block>
   <block id="b144c9152bc25d1fc7d07fee5de2ecc6" category="list-text">*快照保留*：輸入要保留的快照數量。</block>
   <block id="5e4be38dc556e235a6420a92a206702f" category="inline-link-macro">配置日誌目錄</block>
-  <block id="c787ed2d7e5bc557b61149e67595840c" category="list-text">*啟用日誌備份*：（不適用於 Kubernetes 工作負載）勾選備份日誌的選項，並設定日誌備份的頻率和保留時間。為此，您必須已設定日誌備份。請參閱。 <block ref="c4a2a21123ec8dd6e71a040e68355146" category="inline-link-macro-rx"></block></block>
   <block id="6f55153177e57b6d7eb7c4cad4a859a7" category="list-text">*提供者*：（僅限 Kubernetes 工作負載）選擇託管 Kubernetes 應用程式資源的儲存提供者。</block>
   <block id="747b35b746df7e37e6b643aa0c244e28" category="list-text">或者，選擇計劃右側的「*進階*」來設定SnapMirror標籤並啟用快照鎖定（不適用於 Kubernetes 工作負載）。</block>
   <block id="146a0850e1031071bccdee12df305d5a" category="list-text">* SnapMirror標籤*：標籤用於標記根據關係的保留規則傳輸指定的快照。為快照新增標籤會將其標記為SnapMirror複製的目標。</block>
-  <block id="8036e5e1e57026168bfeac2027f9cc84" category="list-text">*小時偏移*：輸入快照與每小時起始時間的偏移分鐘數。例如，如果您輸入 *15*，快照將在每小時 15 分鐘後拍攝。</block>
-  <block id="aab634dec47a0327e1d19e8f140b1ff5" category="list-text">*啟用靜默時間*：選擇是否啟用靜默時間。靜默時間是指不拍攝快照的時間段，允許進行維護或其他操作，而不會受到備份過程的干擾。這有助於在高峰使用時段或維護時段減輕系統負載。</block>
-  <block id="cd0a52a7955baba5717b6d22930ce27c" category="list-text">*啟用快照鎖定*：選擇是否啟用防篡改快照。啟用此選項可確保快照在指定的保留期限到期之前無法刪除或變更。此功能對於保護您的資料免受勒索軟體攻擊並確保資料完整性至關重要。</block>
   <block id="96dbfe4652a6b876c6cb53e74da71da7" category="list-text">*快照鎖定期限*：輸入您想要鎖定快照的天數、月數或年數。</block>
   <block id="71eec9b2b57a1b041e6be9fdbb7e9d77" category="section-title">為輔助設定建立策略（複製到輔助儲存）</block>
   <block id="334741c071e30fd510f26dae69ca8081" category="list-text">*備份*：選擇每小時、每天、每週、每月或每年的頻率。</block>
@@ -3591,16 +3580,12 @@ ifdef：：AWS []</block>
   <block id="2ca92844b86f2b62c13c213099bda95a" category="list-text">*僅複製備份*：選擇僅複製備份（一種 Microsoft SQL Server 備份），讓您可以使用其他備份應用程式備份您的資源。</block>
   <block id="10c4d775a10f9f702a7cc573a8b32f48" category="list-text">*可用性群組設定*：選擇首選備份副本或指定特定副本。如果您擁有 SQL Server 可用性群組並希望控制用於備份的副本，則此設定非常有用。</block>
   <block id="132e6bd0e046e23aee25c117b1e9812c" category="list-text">*最大傳輸速率*：如需不設定頻寬使用限制，請選擇「無限制」。如需限制傳輸速率，請選擇“有限制”，並選擇指派給將備份上傳到物件儲存的網路頻寬（1 到 1,000 Mbps 之間）。預設情況下， ONTAP可以使用無限頻寬將備份資料從工作環境中的磁碟區傳輸到物件儲存。如果您發現備份流量影響了正常的用戶工作負載，請考慮減少傳輸過程中使用的網路頻寬。</block>
-  <block id="ec9b9920140e56313d3b026541532555" category="list-text">*備份重試*：若要在發生故障或中斷時重試作業，請選擇*故障時啟用作業重試*。輸入快照和備份作業的最大重試次數以及重試時間間隔。重試次數必須小於 10。如果您想確保在發生故障或中斷時重試備份作業，此設定非常有用。</block>
   <block id="ebc38593846bd56262189cdea41159c0" category="admonition">如果快照頻率設定為 1 小時，則最大延遲以及重試次數不應超過 45 分鐘。</block>
-  <block id="aac8fe9a7b8c3de675f0a551b63cabd1" category="list-text">*備份驗證*：選擇是否啟用備份驗證，以及是立即啟用還是稍後啟用。此功能可確保備份有效並可成功復原。我們建議您啟用此選項以確保備份的完整性。預設情況下，如果配置了輔助存儲，則備份驗證將從輔助存儲運行。如果未配置輔助存儲，則備份驗證將從主存儲運行。</block>
   <block id="94acea0f5c2d16ea31dc3b32ac56be06" category="inline-image-macro">BlueXP backup and recovery策略的備份驗證設定畫面截圖</block>
   <block id="0d3d467d9c9b1d1ac6401af1552d1ff2" category="paragraph"><block ref="0d3d467d9c9b1d1ac6401af1552d1ff2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5c9b86ff3ed09d60fd7e04707b95622a" category="paragraph">此外，配置以下選項：</block>
   <block id="73abde911f425febebd71ee70b614dd9" category="list-text">*每日*、*每週*、*每月*或*每年*驗證：如果您選擇*稍後*作為備份驗證，請選擇備份驗證的頻率。這可確保定期檢查備份的完整性，並確保備份能夠成功復原。</block>
   <block id="f1d2410a944bd4992da0594068ed18a8" category="list-text">*備份標籤*：輸入備份的標籤。此標籤用於在系統中識別備份，並可用於追蹤和管理備份。</block>
-  <block id="76dac83462d8977a9c2b8b0dbca9541c" category="list-text">*資料庫一致性檢查*：選擇是否啟用資料庫一致性檢查。此選項可確保資料庫在備份前處於一致狀態，這對於確保資料完整性至關重要。</block>
-  <block id="fa08c9ef233239f746696deef92ed56b" category="list-text">*驗證日誌備份*：選擇是否要驗證日誌備份。選取驗證伺服器。如果您選擇了磁碟到磁碟或 3-2-1 備份，請同時選擇驗證儲存位置。此選項可確保日誌備份有效且可成功恢復，這對於維護資料庫的完整性至關重要。</block>
   <block id="5974a63c4cecc4432e5393e90081c541" category="list-text">網路：選擇用於備份作業的網路介面。如果您有多個網路接口，並且想要控制使用哪個接口進行備份，這將非常有用。</block>
   <block id="72d60858fb2b96d58274c5434a6b3440" category="list-text">*私有端點配置*：如果您使用私有端點作為物件存儲，請選擇用於備份作業的私有端點配置。如果您希望確保備份透過私人網路連接安全傳輸，此功能非常有用。</block>
   <block id="b993cc2cb4bdad71390267cbdbd3dbad" category="list-text">*通知*：選擇是否啟用備份作業的電子郵件通知。如果您希望在備份作業開始、完成或失敗時收到通知，此功能非常有用。</block>
@@ -3748,18 +3733,13 @@ ifdef：：AWS []</block>
   <block id="b7b284ffcc14ef04cba0609819bc5974" category="list-text">選擇**更新**。</block>
   <block id="a5424dd10dd2e3be3a885a1ed3c02cdb" category="summary">使用NetApp BlueXP backup and recovery保護您的 VMware 工作負載。</block>
   <block id="f796cbd79ca11e2909969222c0b6a77d" category="doc">使用BlueXP backup and recovery概述保護 VMware 工作負載</block>
-  <block id="9c05788904434e779dc26b1d9f6d6456" category="paragraph">使用BlueXP backup and recovery保護您的 VMware 工作負載。 BlueXPBlueXP backup and recovery為虛擬機器、資料儲存區和 VMDK 提供快速、節省空間、崩潰一致性和虛擬機器一致性的備份和還原作業。</block>
   <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">您可以將資料存放區備份至 Amazon Web Services S3 、 Microsoft Azure Blob 、 Google Cloud Platform 和 StorageGRID 、並將虛擬機器還原至內部部署的 SnapCenter Plug-in for VMware vSphere 主機。</block>
   <block id="af61874354a940a408aa59fc2a353b7c" category="inline-link-macro">切換到以前的BlueXP backup and recoveryUI</block>
-  <block id="66e26e427b5784b7adb6655a0b49e57f" category="paragraph">*注意* 此功能使用的是舊版BlueXP backup and recoveryUI。如需切換至BlueXP backup and recoveryUI 版本，請參閱<block ref="906891f55c4c6af31e4cf82ce54f93d9" category="inline-link-macro-rx"></block> 。</block>
-  <block id="5165c2fbcef4d5b16f189feb7569b43b" category="paragraph">有關使用先前的BlueXP backup and recoveryUI 的說明，請參閱以下主題：</block>
   <block id="219b1d964760a35bc8ac924733ed0211" category="summary">BlueXP backup and recovery服務為本地和雲端的NetApp資料庫和執行個體提供高效、安全且經濟實惠的資料保護。備份會自動產生、並儲存在公有雲或私有雲帳戶的物件存放區中。</block>
   <block id="5ddad1ad8421fb041436bd24f4aea0c5" category="section-title">BlueXP backup and recovery功能</block>
   <block id="930ffc736eba485afa459142d19e0a4e" category="paragraph">使用BlueXP backup and recovery實現以下目標：</block>
-  <block id="5940e90d8d923e2308627f8e190412e8" category="list-text">ONTAP磁碟區工作負載：</block>
   <block id="2565579856adf676ae32e330c247eaf5" category="list-text">建立本機快照、複製到二級存儲，並將ONTAP磁碟區從本機ONTAP或Cloud Volumes ONTAP系統備份到公有或私有雲帳戶中的物件儲存。</block>
   <block id="316cc7c6ce94033b53fda593f26e3d57" category="list-text">建立區塊級、增量永久備份，儲存在另一個ONTAP叢集上以及雲端中的物件儲存中。</block>
-  <block id="f159b66cf2f7365489d513e547dd48d0" category="list-text">將資料儲存備份至 Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform 和StorageGRID ，並將虛擬機器還原回SnapCenter Plug-in for VMware vSphere。</block>
   <block id="44c669dcd757f74c8d868cde66bbadac" category="section-title">使用BlueXP backup and recovery的好處</block>
   <block id="ed058c6afaa6d55d9032558597031ccf" category="paragraph">BlueXP backup and recovery有以下優勢：</block>
   <block id="69c4a7f9c8daffe7c66421bbb98ac486" category="list-text">**高效**： BlueXP backup and recovery執行區塊級永久增量複製，顯著減少了需要複製和儲存的資料量。這有助於最大限度地降低網路流量和儲存成本。</block>
@@ -3797,7 +3777,6 @@ ifdef：：AWS []</block>
   <block id="c8ee5c80af66e9ba0b237679d3ee2962" category="section-title">支援的資料來源、工作環境和備份目標</block>
   <block id="cec0c370d9c2ef0dbbf7f89c16ef1a90" category="paragraph-title">支援的工作負載資料來源</block>
   <block id="9504b35cbb481ca2332f36aedcf456c8" category="list-text">ONTAP 磁碟區</block>
-  <block id="ed11408803c4c1aca5fbebbc43d88458" category="list-text">VMware資料存放區</block>
   <block id="5ab0c2c7c8110afd8e099464217e8718" category="list-title">支援的工作環境</block>
   <block id="60bbb47f4c25fbe48c0eaa18d9174d22" category="list-text">本地ONTAP SAN（iSCSI 協定）和 NAS（使用 NFS 和 CIFS 協定），採用ONTAP 9.8 及更高版本</block>
   <block id="d97ad1eba4f90ab1f835497c1e04b99f" category="list-text">適用於 AWS 的Cloud Volumes ONTAP 9.8 或更高版本（使用 SAN 和 NAS）</block>
@@ -3805,8 +3784,6 @@ ifdef：：AWS []</block>
   <block id="4d82a1ec1af02725042c8c785564ee7a" category="list-text">Amazon FSX for NetApp ONTAP 產品</block>
   <block id="d17b3abdd113c99dd97a58c22430220e" category="list-title">支援備份目標</block>
   <block id="736ca911d7d143d01bd8cbfe0d4afbca" category="list-text">Amazon Web Services （ AWS ） S3</block>
-  <block id="6a51ed7bcacdfb13f78abc1e0f69c201" category="list-text">Microsoft Azure Blob</block>
-  <block id="97961700280df7e97434bb488aee8673" category="paragraph">BlueXP backup and recovery會在託管 Microsoft SQL Server 的伺服器上安裝適用於 Microsoft SQL Server 的外掛程式。該外掛程式是主機端元件，可對 Microsoft SQL Server 資料庫和執行個體進行應用程式感知的資料保護管理。</block>
   <block id="fa9b9e83c02fc7ada864618f933caa44" category="paragraph">啟用BlueXP backup and recovery後，本服務會對您的資料執行完整備份。初始備份後，所有其他備份均為增量備份。如此可將網路流量維持在最低。</block>
   <block id="504927eafa9845be671b630ab35b5fe6" category="paragraph">下圖顯示了組件之間的關係。</block>
   <block id="f4fad7bda109e5959fd31089dbb58bde" category="inline-image-macro">此圖展示了BlueXP backup and recovery如何使用 3-2-1 保護策略</block>
@@ -3819,7 +3796,6 @@ ifdef：：AWS []</block>
   <block id="f91faf1a13607ac0db1201bfb304b328" category="section-title">可能對您使用BlueXP backup and recovery有幫助的術語</block>
   <block id="4631dd7356561dcd994558a79249bcaa" category="paragraph">了解一些與保護相關的術語可能會對您有所幫助。</block>
   <block id="661b3d31f95036ff86eec46ca498f96e" category="list-text">*保護*： BlueXP backup and recovery中的保護意味著確保使用保護策略定期將快照和不可變備份發生到不同的安全域。</block>
-  <block id="1787981ab8b4962c0ce851610d9b9e0d" category="list-text">*工作負載*： BlueXP backup and recovery中的工作負載可以包括 Microsoft SQL Server 執行個體和資料庫、VMware 資料儲存區或ONTAP磁碟區。</block>
   <block id="a360a8dae91555caa28f2085f644a956" category="summary">驗證您的運作環境、 BlueXP連接器和BlueXP帳戶是否已準備就緒，即可開始使用BlueXP backup and recovery。要使用BlueXP backup and recovery，您需要滿足以下先決條件。</block>
   <block id="9b71e2f071cfce0bcb6aaf05e7722154" category="section-title">確保安裝SnapCenter插件的主機需求</block>
   <block id="5d81a9c26b95fdbbbd94a3fc025eed88" category="inline-link-macro">BlueXP backup and recovery先決條件</block>
@@ -3901,7 +3877,6 @@ ifdef：：AWS []</block>
   <block id="34c47cd4f14da734755f6694935a175d" category="list-text">對於 Azure Blob，連接器可以部署在您的地方。</block>
   <block id="ba780b6a1a4c1c3c2dd22e2a654e32c2" category="list-text">對於StorageGRID，連接器必須部署在您的場所；無論是否有網路存取。</block>
   <block id="f11d659b2497c3836db933d95773f939" category="admonition">「本地ONTAP系統」包括FAS和AFF系統。</block>
-  <block id="38601d08e67d696e9a90a6fc1d51c86e" category="paragraph">若要使用BlueXP backup and recoverySQL Server 工作負載，您需要滿足下列主機系統、空間和大小調整先決條件。</block>
   <block id="7d74f3b92b19da5e606d737d339a9679" category="cell">項目</block>
   <block id="43574ab73a6cbc674506ff003387dcb1" category="cell">作業系統</block>
   <block id="9ed4a475dd3705157a9fed8811f63ce2" category="inline-link">NetApp 互通性對照表工具</block>
@@ -4354,10 +4329,6 @@ ifdef：：AWS []</block>
   <block id="4dba655852206fd33ef2ae210d0f09ea" category="sidebar">備份 Microsoft SQL Server 工作負載</block>
   <block id="a86a44463f171d5cbfffdac926d2c5f7" category="sidebar">還原 Microsoft SQL Server 工作負載</block>
   <block id="c82b8b73ed613da47a71b640f8e94c5d" category="sidebar">複製 Microsoft SQL Server 工作負載</block>
-  <block id="ab69e074c29de9ea026c02628c3ac05c" category="sidebar">保護虛擬機器工作負載</block>
-  <block id="c07f32b29d23df4f4b3125c85d8b32ac" category="sidebar">保護虛擬機器工作負載概述</block>
-  <block id="db9c90cd86a25bccd17673c8c8e8ea8e" category="sidebar">建立備份虛擬機器工作負載的策略</block>
-  <block id="e912f6251092fa984cd8a427a0057382" category="sidebar">恢復虛擬機器工作負載</block>
   <block id="09092e90e42e51dde4c6cb831f40c41e" category="sidebar">Microsoft SQL Server 工作負載的已知限制</block>
   <block id="adc285d73b2f7cdf2384ca8c91570878" category="sidebar">ONTAP磁碟區工作負載的已知限制</block>
   <block id="ada29ec64f251f29514285defc574a33" category="sidebar">BlueXP backup and recovery的先決條件</block>
@@ -4370,7 +4341,6 @@ ifdef：：AWS []</block>
   <block id="c00b274754a2d13242a61b1534660a37" category="sidebar">管理 Microsoft SQL Server 庫存</block>
   <block id="41e1a34ea3ba2b687b86e55ec1a7955d" category="sidebar">管理 Microsoft SQL Server 快照</block>
   <block id="c8ffa42e0e508862d020665c979eb5c0" category="sidebar">建立 Microsoft SQL Server 報告</block>
-  <block id="79cf38f604ea494dd925df57b6a906b6" category="sidebar">保護虛擬機器工作負載</block>
   <block id="7706cc052aa7120ddac8475709793258" category="sidebar">保護虛擬機器工作負載概述</block>
   <block id="9ce88727019b612743000c7bcc2bfd23" category="sidebar">保護虛擬機器工作負載的先決條件</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="sidebar">監控工作</block>
@@ -4475,7 +4445,6 @@ ifdef：：AWS []</block>
   <block id="75e31fe436b541e95871c54827070e6e" category="paragraph">您可以還原到原始命名空間，也可以還原到新的命名空間。</block>
   <block id="a9f292136fbf924f6d8d675318db6235" category="admonition">顯示的資源是叢集上目前存在的資源。</block>
   <block id="12c3c958b266fff57134abb1c9649419" category="list-text">或者，如果您選擇還原到不同的儲存類，請選擇一個目標儲存類別來符合每個來源儲存類別。</block>
-  <block id="cb1b8938f12c99c7787423a78f4db357" category="list-text">Kubernetes 工作負載（預覽版）：</block>
   <block id="1c1c6b4c5003945f6d28242d24286ee6" category="list-text">在一個地方管理和保護您的 Kubernetes 應用程式和資源。</block>
   <block id="3f06fb8fe2ecccdacfaa2644488d935d" category="list-text">使用保護策略來建立增量備份。</block>
   <block id="116fc6c4cddb8e42e7260e6817cd901f" category="list-text">將應用程式和資源恢復到相同或不同的叢集和命名空間。</block>
@@ -4507,9 +4476,7 @@ ifdef：：AWS []</block>
   <block id="b0d36ddf3864894974cfcf7f668e9b9c" category="paragraph">每個BlueXP backup and recoveryAPI 的文件可從以下位置取得<block ref="d997d711dd0ca8a2419efc218eebd515" category="inline-link-rx"></block>。</block>
   <block id="92ab15f0eb1b97b8c4bdb14a10948af8" category="inline-link">建立服務存取權令牌</block>
   <block id="7ee1b8532fd572ee3c5a1cd48ff05db9" category="admonition">如果您使用服務帳戶，則應使用服務存取令牌而不是使用者令牌。 「client_id」的值（「Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC」）是固定值，無法變更。在這種情況下，請按照此處的說明進行操作：<block ref="baaa234cb07675a6b3437f1c7177f86d" category="inline-link-rx"></block> 。</block>
-  <block id="0ad47815ac126d3e59945dd94620559b" category="summary">在沒有網路存取的網站（稱為「私人模式」）中使用BlueXP backup and recovery時， BlueXP backup and recovery設定資料將備份到儲存備份的StorageGRID或ONTAP S3 儲存桶中。如果您將來遇到BlueXP Connector 主機系統問題，您可以部署新的 Connector 並還原關鍵的BlueXP backup and recovery資料。</block>
   <block id="1590a700aeef97b74c78e0edddc666d6" category="doc">在暗站中恢復BlueXP backup and recovery配置數據</block>
-  <block id="b60143d8607e2a12a97d5dc98902b3a3" category="paragraph">在沒有網路存取的網站（稱為_私人模式_）中使用BlueXP backup and recovery時， BlueXP backup and recovery設定資料將備份到儲存備份的StorageGRID或ONTAP S3 儲存桶中。如果您遇到BlueXP Connector 主機系統問題，您可以部署新的 Connector 並還原關鍵的BlueXP backup and recovery資料。</block>
   <block id="701ba6e125e8ce791098165f107eb472" category="admonition">此過程僅適用於ONTAP磁碟區資料。</block>
   <block id="400d95f0927e7eaac4a93498115f8b4f" category="paragraph">當您在 SaaS 環境中使用BlueXP backup and recovery時，其中BlueXP連接器部署在您的雲端供應商處，或在您自己的具有網際網路存取的主機系統上，所有重要的BlueXP backup and recovery設定資料都會在雲端備份和保護。如果您的連接器出現問題，只需建立新的連接器並新增您的工作環境，備份詳細資訊就會自動還原。</block>
   <block id="28f81c5bbd7730901f36546c0e51e06f" category="paragraph">備份的資料有兩種類型：</block>
@@ -4634,7 +4601,6 @@ ifdef：：AWS []</block>
   <block id="bb62b16690f5eb4fc0e122e119a91a50" category="paragraph"><block ref="bb62b16690f5eb4fc0e122e119a91a50" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8075ed641c15c71cd286b712adcd85b1" category="list-text">如果這是您第一次登入此服務，並且您已經在BlueXP中擁有工作環境，但尚未發現任何資源，則會出現「歡迎使用新的BlueXP backup and recovery」登入頁面，並顯示*發現和管理*選項。</block>
   <block id="7149d60911c70edb03703fc8f99c14fa" category="paragraph">參考<block ref="0db19b6ddcce18b44468167f72be8ec8" category="inline-link-rx"></block>有關StorageGRID的詳細資訊。</block>
-  <block id="31a6e93e3798d6e32486e85c94f4c445" category="paragraph">Microsoft SQL Server 和 Kubernetes（預覽版）工作負載的工作列如下所示：<block ref="5ec9ba2d6c07e18e4f6caf9c1d51cc8e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d9e1e4a7e3d0e29f7908164bc829cdcb" category="paragraph"><block ref="d9e1e4a7e3d0e29f7908164bc829cdcb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d71d92c939fa3dff105d8f357c507f76" category="cell">亞馬遜 S3 ONTAP S3</block>
   <block id="b27a33d7ae0534b6066058a1d206de6c" category="cell">Azure Blob ONTAP S3</block>
@@ -4649,24 +4615,15 @@ ifdef：：AWS []</block>
   <block id="febcf1de845ae5c111f7fe2fdf9a0023" category="list-text">*勒索軟體掃描*：選擇是否要在每個儲存桶上啟用勒索軟體掃描。這需要對物件儲存進行 DataLock 鎖定。輸入掃描頻率（以天為單位）。此選項適用於 AWS 和 Microsoft Azure 物件儲存。請注意，此選項可能會產生額外費用，具體取決於雲端提供者。</block>
   <block id="3d476264ca621aa7fb53c694b7f73e38" category="list-text">* SnapMirror和快照格式*：（選用）在管理 Microsoft SQL Server 工作負載備份的政策中輸入您自己的快照名稱。輸入格式和自訂文字。如果您選擇備份到二級存儲，您還可以添加SnapMirror卷前綴和後綴。</block>
   <block id="69fdf061d21ee7cf76fbfb7008f2338a" category="paragraph"><block ref="69fdf061d21ee7cf76fbfb7008f2338a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="c03ab2cafee88facbca614f17c3c08a3" category="paragraph">BlueXP backup and recovery服務為ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫、VMware 工作負載和 Kubernetes 工作負載（預覽版）提供高效率、安全且經濟的資料保護。</block>
-  <block id="99d2c5cc2d55701a7753e4cd62fa26b3" category="admonition">其中一些文件作為技術預覽提供。對於此預覽版產品， NetApp保留在正式發布之前修改產品詳細資訊、內容和時間表的權利。</block>
-  <block id="3fa86600a578b85fb3e25ef2bade57f7" category="list-text">Microsoft SQL Server 工作負載：</block>
   <block id="671ccbf99c0713f4f0b10eb83e8f6fe3" category="list-text">從本機ONTAP、 Cloud Volumes ONTAP或Amazon FSx for NetApp ONTAP備份 Microsoft SQL Server 執行個體和資料庫。</block>
   <block id="89cb0f021426c550658eb8d932ca5bc6" category="list-text">還原 Microsoft SQL Server 資料庫。</block>
   <block id="6d14e8c351d9540a9e7e8a55e63daee2" category="list-text">克隆 Microsoft SQL Server 資料庫。</block>
-  <block id="c145ca053ede6b9644628ee9fe41dffd" category="list-text">虛擬機器工作負載：</block>
-  <block id="0f9064a4cbc973bbc5e114d0088fded1" category="list-text">使用BlueXP backup and recovery將虛擬機器資料從雲端還原到本機 vCenter。</block>
   <block id="9b84371e23a14f93e2d9314a2599ac9a" category="admonition">對於 Microsoft SQL Server，當您啟動將快照複製到輔助ONTAP目標或物件儲存時，會產生費用。</block>
   <block id="42b12d53290c6e592a4d774a432752d6" category="list-text">用於實體、VMware 虛擬機器檔案系統 (VMFS) 和 VMware 虛擬機器磁碟 (VMDK) NFS 的 Microsoft SQL Server 執行個體和資料庫</block>
-  <block id="a0f528847ba517b6d5e9b7c895aa2879" category="section-title">BlueXP backup and recovery使用 Microsoft SQL Server 插件</block>
   <block id="9f9f536306a1c9407f83a98c118d352f" category="doc">從外掛程式服務匯入BlueXP backup and recovery的先決條件</block>
   <block id="54ea220a36be12c2cd55837d5084ccf2" category="paragraph">如果您要將資源從 Microsoft SQL Server 的SnapCenter外掛程式服務匯入BlueXP backup and recovery，則需要設定更多項目。</block>
   <block id="1991b7717eb9a4ce1668d0140bc90a61" category="paragraph">若要從 Microsoft SQL Server 適用的SnapCenter外掛程式匯入資源，請確保符合安裝適用於 Microsoft SQL Server 的SnapCenter外掛程式的主機需求。</block>
   <block id="05e7a5201131047cf35d26a62e1a0a4d" category="section-title">備份到物件儲存的先決條件</block>
-  <block id="60909e185928e88ef4384c60b53ac74b" category="paragraph">看<block ref="4d28092ae019690199710c13c5a3f7eb" category="inline-link-macro-rx"></block>有關如何設定備份目標的詳細資訊。</block>
-  <block id="773be597b82b6fc623090f4ca7acad30" category="section-title">Microsoft SQL Server 工作負載需求</block>
-  <block id="727c8c2204924c94609f684e20e710ef" category="section-title">Kubernetes 工作負載需求</block>
   <block id="845653726765e6e72b97b87ebc083420" category="doc">BlueXP backup and recovery身分和存取管理功能</block>
   <block id="af45dce32c393d74375fcf6543060be0" category="paragraph">BlueXP backup and recovery採用身分識別和存取管理 (IAM) 來管理每個使用者對特定功能和操作的存取權限。</block>
   <block id="d341f0c47f4b7ad5cc1b4c9bb210cfda" category="section-title">2025年8月12日</block>
@@ -4695,4 +4652,278 @@ ifdef：：AWS []</block>
   <block id="b98c88f62c4834a257b2a73ee9fbb4dd" category="list-text">檢查容量是否合格。系統檢查磁碟區是否符合重新同步的條件。如果磁碟區不符合條件，則表示它不是最新的快照或未找到通用快照。</block>
   <block id="c856ee3b535d4aa35b19af5253f54e81" category="list-text">選擇*重新同步*以開始重新同步操作。系統使用最新且通用的快照僅傳輸增量更改，確保備份的連續性。</block>
   <block id="8d2d3fb9cf8aa026f491048ab9fdf368" category="list-text">在作業監視器頁面中監視重新同步過程。</block>
+  <block id="f7919ff057187672b74306b219aadaa0" category="doc">支援在預覽版中保護 VMware 工作負載</block>
+  <block id="5e8801556a1a15a279f09b79ad9c4141" category="paragraph">此版本增加了對保護 VMware 工作負載的預覽支援。將 VMware VM 和資料儲存區從本機ONTAP系統備份到 Amazon Web Services 和StorageGRID。</block>
+  <block id="b7aad0efced7f2a5664d2d5fcafeac91" category="admonition">有關保護 VMware 工作負載的文件以技術預覽的形式提供。對於此預覽版產品， NetApp保留在正式發布之前修改產品詳細資訊、內容和時間表的權利。</block>
+  <block id="302d2ff1b066da852d5f32d8e00c49e0" category="inline-link-macro">了解有關使用BlueXP backup and recovery保護 VMware 工作負載的更多信息</block>
+  <block id="9894d07c427c9fef3be75f8d985262b2" category="paragraph"><block ref="5f2dd8c93665ae25c3f244e872639cff" category="inline-link-macro-rx"></block> 。</block>
+  <block id="e4fadb4a8e44a20b9cae72da5f43dd1c" category="section-title">AWS、Azure 和 GCP 的高效能索引現已正式發布</block>
+  <block id="d2437297e3bf3cd7adfa86f57b8629f0" category="paragraph">2025 年 2 月，我們宣布推出針對 AWS、Azure 和 GCP 的高效能索引 (Indexed Catalog v2) 預覽版。此功能現已普遍可用（GA）。 2025 年 6 月，我們預設向所有新客戶提供該服務。透過此版本，所有客戶都可以獲得支援。高效能索引提高了受物件儲存保護的工作負載的備份和復原作業的效能。</block>
+  <block id="5ced283cbe92781b3a48240fd1fde5cd" category="paragraph">預設啟用：</block>
+  <block id="234f6b906c6e6adf3ab5f1a4906d5366" category="list-text">如果您是新客戶，則預設啟用高效能索引。</block>
+  <block id="3b98c4910d4638f409d4421b51847611" category="list-text">如果您是現有客戶，您可以前往 UI 的「復原」部分來啟用重新索引。</block>
+  <block id="ce498dfd4d5b300770c8609e8d1940e2" category="doc">BlueXP backup and recoveryVMware 工作負載的已知限制</block>
+  <block id="5dbc4346070765340347ff44ed21c84d" category="paragraph">BlueXP backup and recovery中的 VMware 工作負載預覽版不支援以下操作：</block>
+  <block id="eace16d66cdd93ad876c620db7456077" category="list-text">山</block>
+  <block id="1281764038ea27ade56d7d2b8be22798" category="list-text">解除安裝</block>
+  <block id="25e66e51214e8342374fa891a42988b3" category="list-text">恢復至備用位置</block>
+  <block id="635e272d16a4b652a6ff48968baf8726" category="list-text">恢復 VMDK</block>
+  <block id="00c5709c4d9ca9f8035d5d0e33f2421e" category="list-text">附加 VMDK</block>
+  <block id="097b06a0d5de05867037a2fdc678ef17" category="list-text">分離 VMDK</block>
+  <block id="ef18d76ed6c710e78abb28c0e09b3e30" category="list-text">vVol 支持</block>
+  <block id="2cc658d562a11cd1528c2219f2d25da7" category="list-text">NVMe 支持</block>
+  <block id="98dc7ecfe4c87955d5fb8b98b895eac7" category="list-text">電子郵件集成</block>
+  <block id="7c007efb4505aa1063c750565e9e0eac" category="list-text">編輯政策</block>
+  <block id="2af86af91c3987a4d2353d4ec7912d76" category="list-text">編輯保護群組</block>
+  <block id="0b781a1bfcfc82e8ce2c41a12166f555" category="list-text">基於角色的存取控制 (RBAC) 支持</block>
+  <block id="5d348ef49e7ed560fb940988e8d4f7eb" category="paragraph">BlueXP backup and recovery使用身分和存取管理來控制每個使用者對特定操作的存取權限。</block>
+  <block id="f9e71ed1d4200b67c1a3bd22600d9cbe" category="inline-link-macro">發現 VMware 工作負載</block>
+  <block id="8eec52ebd7892b36424f0c784c1a70dc" category="list-text">有關 VMware 工作負載，請參閱<block ref="4c90ef6c5dc037251bf65afdeeb1ee6c" category="inline-link-macro-rx"></block>。</block>
+  <block id="e5dd8794e7e239a004607625309c03bb" category="list-text">有關 Kubernetes 工作負載，請參閱<block ref="bdf340f843cf54500673f62df22d5070" category="inline-link-macro-rx"></block>。</block>
+  <block id="02be71f5aa538142021b27f366e28734" category="paragraph">Microsoft SQL Server、VMware 工作負載（不含SnapCenter Plug-in for VMware vSphere 的預覽版）和 Kubernetes（預覽版）工作負載的工作列如下所示：<block ref="5ec9ba2d6c07e18e4f6caf9c1d51cc8e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="5b7ecc81df0c12b042e90d8b438b511e" category="paragraph">ONTAP磁碟區和 VMware 工作負載（具有SnapCenter Plug-in for VMware vSphere）的功能表列如下所示：<block ref="fa2e599941b781bf3a65ea0199d76803" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b94f4dc49b7af7496f7a6c5082dcfc50" category="list-text">受保護和不受保護的資料庫、虛擬機器和資料儲存區的總數。</block>
+  <block id="df2702a7744f8225fba6ed43ccaa93b7" category="list-text">編輯策略（不適用於 VMware 預覽版工作負載）</block>
+  <block id="bb3ff59182a5902d30640dc3a2cc6681" category="paragraph"><block ref="bb3ff59182a5902d30640dc3a2cc6681" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8cdae3804d86d7917d39808a23bc302f" category="list-text">工作負載類型：選擇「Microsoft SQL Server」、VMware 或 Kubernetes。</block>
+  <block id="b2ba8b5a519744f308bb1fe099fca96c" category="admonition">若要查看要避免的角色列表，請參閱懸停提示。</block>
+  <block id="f2ca5fbc8e99004ecb47057021601cd2" category="list-text">*本機快照*：所選磁碟區上的本機快照（Microsoft SQL Server）。本機快照是資料保護策略的關鍵組成部分，可以擷取特定時間點的資料狀態。這將建立工作負載正在運行的生產卷的唯讀、時間點副本。快照佔用的儲存空間極小，且產生的效能開銷可以忽略不計，因為它僅記錄自上次快照以來檔案的變更。您可以使用本機快照來還原資料遺失或損壞，以及為災難復原目的建立備份。</block>
+  <block id="493975af5e13fbc5d62bd5541a437be6" category="paragraph">對於 VMware 工作負載，這會在主儲存系統上的資料儲存或 VMware 上配置本機快照。</block>
+  <block id="8aaf0953e5fd5d5ffafc343282223bc6" category="paragraph">對於 VMware 工作負載，此功能在 VMware 預覽版中無法使用。</block>
+  <block id="dd3964688f448cf4c53372241aa29860" category="paragraph">對於 VMware 工作負載，這會在主資料儲存或虛擬機器上配置本機快照，並從主磁碟儲存複製到輔助磁碟儲存以及從主儲存複製到雲端物件儲存。</block>
+  <block id="f260fb21bc5bc536dbe37c5499027093" category="paragraph">對於 VMware 工作負載，這會在主儲存上的資料儲存區或虛擬機器上配置本機快照，以及從主磁碟儲存到輔助磁碟儲存再到雲端物件儲存的級聯。</block>
+  <block id="25979dfae534db8e00ebdd633f01363f" category="paragraph">對於 VMware 工作負載，這會在主儲存系統上的資料儲存或 VMware 上配置本機快照，然後將資料從主磁碟儲存系統複製到輔助磁碟儲存系統。</block>
+  <block id="01bec1ecce16d176197624a69b31324a" category="paragraph">對於 VMWare 工作負載，這會在主資料儲存或虛擬機器上配置本機快照，並從主磁碟儲存到雲端物件儲存進行複製。</block>
+  <block id="63b46edf6d861b9b0fa883d434749d6c" category="paragraph">對於 VMware 工作負載，這會將主磁碟儲存配置為輔助磁碟存儲，並將主磁碟儲存複製到輔助磁碟儲存。</block>
+  <block id="606d7c15448b4efbac98875bfee945b2" category="list-text">*啟用日誌備份*：（適用於 Microsoft SQL Server 工作負載。不適用於 VMware 或 Kubernetes 工作負載）選取備份日誌的選項並設定日誌備份的頻率和保留期。為此，您必須已經配置了日誌備份。看<block ref="c4a2a21123ec8dd6e71a040e68355146" category="inline-link-macro-rx"></block> 。</block>
+  <block id="18c07bbe1867bce1f9e6bea1effc24d5" category="list-text">*與小時的偏移量*：輸入快照與小時開始時間的偏移分鐘數。例如，如果您輸入 *15*，快照將在整點 15 分拍攝。僅適用於每小時計劃。</block>
+  <block id="5dd0d85f6dc2f17f22d05e3e80ac2efe" category="list-text">*啟用靜音時間*：選擇是否要啟用靜音時間。靜默時間是指不拍攝快照的時間段，以便進行維護或其他操作而不受備份過程的干擾。這對於減少高峰使用時間或維護時段的系統負載很有用。僅適用於每小時計劃。</block>
+  <block id="8697779f7f227c4dd369a6c5b02cbad6" category="list-text">*啟用快照鎖定*：選擇是否要啟用防篡改快照。啟用此選項可確保快照在指定的保留期到期之前無法刪除或變更。此功能採用SnapLock技術，對於保護您的資料免受勒索軟體攻擊和確保資料完整性至關重要。</block>
+  <block id="d0d41deaff8d80d9bdf6d53eaab27a7e" category="list-text">*備份重試*：（不適用於 VMware Preview 工作負載）若要在發生故障或中斷時重試作業，請選擇*啟用故障期間作業重試*。輸入快照和備份作業重試的最大次數以及重試時間間隔。重新計票數必須少於 10。如果您想要確保在發生故障或中斷時重試備份作業，此設定很有用。</block>
+  <block id="d3e01ad5d4c898032205d39244a2e9c6" category="list-text">*啟用 VM 一致性快照*：（僅適用於 VMware 工作負載）選擇是否要啟用 VM 一致性快照。這樣可以確保新建立的快照與快照時虛擬機器的狀態一致。這對於確保備份能夠成功復原並且資料處於一致狀態很有用。這不適用於現有快照。</block>
+  <block id="09c246c3035ccbc9444cfad2e53204e9" category="list-text">*備份驗證*：（不適用於 VMware Preview 工作負載）選擇是否要啟用備份驗證，以及是否立即進行備份驗證或稍後進行備份驗證。此功能可確保備份有效並可成功復原。我們建議您啟用此選項以確保備份的完整性。預設情況下，如果配置了輔助存儲，則備份驗證從輔助存儲運行。如果未配置輔助存儲，則備份驗證從主存儲運行。</block>
+  <block id="7c59502dacab0ce14cebe830c4b4457a" category="list-text">*資料庫一致性檢查*：（不適用於 VMware Preview 工作負載）選擇是否要啟用資料庫一致性檢查。此選項可確保資料庫在備份之前處於一致狀態，這對於確保資料完整性至關重要。</block>
+  <block id="9ea086202e0c7b66ec4c31f3fc172885" category="list-text">*驗證日誌備份*：（不適用於 VMware Preview 工作負載）選擇是否要驗證日誌備份。選擇驗證伺服器。如果您選擇磁碟到磁碟或 3-2-1，也請選擇驗證儲存位置。此選項可確保日誌備份有效並可成功恢復，這對於維護資料庫的完整性非常重要。</block>
+  <block id="1470ccbb595a6e1ea5dd612430fb52fd" category="list-text">*獨立磁碟*：（適用於 VMware 預覽版工作負載）選取此項目可將任何具有包含暫存資料的獨立磁碟的資料儲存包含在備份中。獨立磁碟是未包含在 VMware 快照中的 VM 磁碟。</block>
+  <block id="ecee2fc394ac60057e7928bb6138339d" category="admonition">此功能不適用於 VMware Preview 工作負載。</block>
+  <block id="320097c9a6942d1d00ed4b77d2bc667a" category="doc">使用BlueXP backup and recoveryVMware 工作負載</block>
+  <block id="62a9a163cd6e3bd6fd065b8896387676" category="paragraph">將 VMware VM 和資料儲存區從本機ONTAP系統備份到 Amazon Web Services 或StorageGRID ，以確保您的資料受到保護。備份會自動產生並儲存在您的公有或私有雲帳戶的物件儲存中。</block>
+  <block id="ca8b66f70346713494ab99731b150019" category="inline-link-macro">使用BlueXP backup and recovery為 VMware 工作負載建立和管理保護群組</block>
+  <block id="e5c3d958658557048763c573e8d1180c" category="list-text">建立保護組來管理一組資源的備份和還原作業。看<block ref="6b6337992d6c9f860b0d7092a0ad98bb" category="inline-link-macro-rx"></block>了解更多。</block>
+  <block id="d1d463ff9c63c3a608699538a57e53d7" category="paragraph"><block ref="d1d463ff9c63c3a608699538a57e53d7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0c1d62f4779d7aef54687bd64095f6b0" category="list-text">選擇「*保護群組*」、「*資料儲存*」或「*虛擬機器*」標籤。</block>
+  <block id="05e315e32ce2a8854a177760a86cc15a" category="inline-image-macro">BlueXP backup and recovery的「保護群組」標籤螢幕截圖</block>
+  <block id="e20488d78125970756596ea1d902e1f6" category="paragraph"><block ref="e20488d78125970756596ea1d902e1f6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ee73fa99742e9e3aeb7d0ac2cf688922" category="list-text">選擇要備份的保護群組、資料儲存區或虛擬機器。</block>
+  <block id="f1b66ad4f8c1237281cd067f02db83f7" category="inline-image-macro">立即備份BlueXP backup and recovery的螢幕截圖</block>
+  <block id="d3031257feb3c6cebf321c0f2d5cb776" category="paragraph"><block ref="d3031257feb3c6cebf321c0f2d5cb776" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2acfb0be8da66026203d2891fe18d378" category="admonition">應用於備份的策略與指派給保護群組、資料儲存區或虛擬機器的策略相同。</block>
+  <block id="212b757a4be8f411176f5dd51a72e22e" category="doc">使用BlueXP backup and recovery發現 VMware 工作負載</block>
+  <block id="fb025cf2880557a7d78cf995c6737f62" category="paragraph">BlueXP backup and recovery服務需要先發現在ONTAP系統上執行的 VMware 資料儲存和虛擬機，以便您使用該服務。如果您已安裝SnapCenter Plug-in for VMware vSphere匯入備份資料和政策。</block>
+  <block id="9b4181d03263555437f8a40593f311f0" category="paragraph">*所需的BlueXP角色* 備份和還原超級管理員。了解<block ref="c66026e4383ae9f791b566ffeb2b3bc3" category="inline-link-macro-rx"></block>。<block ref="c46fcff617e849cb6f8ded33051f7905" category="inline-link-rx"></block> 。</block>
+  <block id="dcd2ed119bd25caa1d2e5fbbadd0e260" category="section-title">發現 VMware 工作負載並選擇性地匯入SnapCenter資源</block>
+  <block id="ab2c59d9e88814e9fe89561334221761" category="paragraph">在發現期間， BlueXP backup and recovery會分析您組織內的 VMware 工作負載，並評估和匯入現有的保護策略、快照副本以及備份和復原選項。</block>
+  <block id="eaa057da9e075c2c0a96c7a4826a1c68" category="paragraph">您可以將 VMware NFS 和 VMFS 資料儲存區和虛擬機器從其本機SnapCenter Plug-in for VMware vSphere匯入BlueXP backup and recovery庫存。</block>
+  <block id="b7cef5a55414592254e586c5f2bf8f92" category="admonition">此版本的BlueXP backup and recovery僅支援 VMware vCenter，且無法發現vVols或vVols上的 VM。</block>
+  <block id="989b9ad7511f544f3c23fd3a047e87c5" category="paragraph">在匯入過程中， BlueXP backup and recovery執行下列任務：</block>
+  <block id="bd8db3845afb35c10e4abfbdf5709291" category="list-text">啟用對 vCenter 伺服器的安全 SSH 存取。</block>
+  <block id="185cb7fdc708526b5ebd6d1314c2c6e2" category="list-text">在 vCenter 伺服器中的所有資源群組上啟動維護模式。</block>
+  <block id="030b5183a6edda3d1aa3c64fd339918c" category="list-text">準備 vCenter 的元資料並在BlueXP中將其標記為未管理。</block>
+  <block id="f3cd1cfa60b70ab3833f6ec373ec8327" category="list-text">配置資料庫存取。</block>
+  <block id="ed39d64277006cf603e473c457526c25" category="list-text">發現 VMware vCenter、資料儲存區和虛擬機器。</block>
+  <block id="cacf184d61110918ea81e29a46df1f55" category="list-text">從SnapCenter Plug-in for VMware vSphere現有的保護策略、快照副本以及備份和還原選項。</block>
+  <block id="a39dd2ffd9348f81422b41a3fdbc86e8" category="list-text">在BlueXP backup and recovery清單頁面中顯示已發現的資源。</block>
+  <block id="c9c2a5297eb39b1fb7e1589b15fea1ff" category="list-text">如果您已經擁有SnapCenter Plug-in for VMware vSphere，請使用BlueXP backup and recovery和BlueXP backup and recoveryUI 將SnapCenter資源匯入 BlueXP 備份和復原。</block>
+  <block id="3aaaf39627c7d9743ac9c4b769a63106" category="admonition">如果您已有SnapCenter插件，請確保在從SnapCenter匯入之前已滿足先決條件。例如，您應該先在BlueXP Canvas 中為所有本機SnapCenter叢集儲存體建立工作環境，然後再從SnapCenter匯入。看<block ref="29f325191bf25e28eb924274ef794dd1" category="inline-link-macro-rx"></block> 。</block>
+  <block id="99c7d0784ca3abf0a66853480a0b1378" category="list-text">如果您還沒有SnapCenter插件，您仍然可以透過手動新增 vCenter 並執行發現來發現工作環境中的工作負載。</block>
+  <block id="e3ee523018b6799a0939043eefc9098c" category="section-title">如果尚未安裝SnapCenter插件，請新增 vCenter 並發現資源</block>
+  <block id="66aeebd47fcac65201475790eef9c5b3" category="paragraph">如果您尚未安裝適用於 VMware 的SnapCenter插件，請新增 vCenter 資訊並讓BlueXP backup and recovery發現工作負載。在每個BlueXP連接器中，選擇您想要發現工作負載的工作環境。</block>
+  <block id="7248204ed2d72c7c934127b7789c6157" category="list-text">*工作負載類型*：選擇*VMware*。</block>
+  <block id="8d2f5acbe9ae8a7ad87b9b825c0e5f29" category="list-text">*vCenter 設定*：新增新的 vCenter。若要新增新的 vCenter，請輸入 vCenter FQDN 或 IP 位址、使用者名稱、密碼、連接埠和協定。</block>
+  <block id="1b7ab9fadabd410c692af601b6da1bd2" category="list-text">*主機註冊*：VMware 不需要。</block>
+  <block id="f2c3faebcf5ded48c2cc729adbe796fe" category="section-title">如果已安裝SnapCenter插件，請將適用於 VMware 資源的SnapCenter插件匯入BlueXP backup and recovery</block>
+  <block id="e1058ecbbe41acccc2ff499cee3a58df" category="paragraph">如果您已安裝適用於 VMware 的SnapCenter插件，請依照下列步驟將SnapCenter插件資源匯入BlueXP backup and recovery。  BlueXP服務可以發現 vCenter 中的 ESXi 主機、資料儲存區和虛擬機，並從插件中排程時間表；您不必重新建立所有這些資訊。</block>
+  <block id="d7df5d5a7771d8964d3ad312a019f2a7" category="list-text">在發現期間，選擇一個選項從SnapCenter插件匯入資源。</block>
+  <block id="d0a37c5f3a756f70f149387e5e024455" category="list-text">發現後，從「清單」頁面中選擇一個選項來匯入SnapCenter插件資源。</block>
+  <block id="80f2241d6b54392704c6e590eef6a3b3" category="list-text">發現後，從「設定」選單中選擇一個選項來匯入SnapCenter插件資源。有關詳細信息，請參閱<block ref="aec7e2b36c0f4f301ce9875327a06a8d" category="inline-link-macro-rx"></block> 。  VMware 不支援此功能。</block>
+  <block id="e68d5688d8ed4428f4698c24ecebe981" category="paragraph">本節描述了一個由兩部分組成的過程：</block>
+  <block id="bf772e2b65377c8a186a36be4307df66" category="list-text">從SnapCenter插件匯入 vCenter 元資料。導入的 vCenter 資源尚未由BlueXP backup and recovery管理。</block>
+  <block id="61c8373e903cff0c3b055775352486f2" category="list-text">在BlueXP backup and recovery中啟動選定 vCenter、VM 和資料儲存區的管理。啟動管理後， BlueXP backup and recovery會在清單頁面上將 vCenter 標記為“已管理”，並能夠備份和還原您匯入的資源。在BlueXP backup and recovery中啟動管理後，您將不再在SnapCenter外掛程式中管理這些資源。</block>
+  <block id="53624320c75e524d23062b211afde11a" category="section-title">從SnapCenter插件匯入 vCenter 元數據</block>
+  <block id="fc184ffe3822cb125839cae1157c4ec4" category="paragraph">第一步是從SnapCenter插件匯入 vCenter 元資料。此時，資源尚未由BlueXP backup and recovery管理。</block>
+  <block id="e3d7491dc31b2e27790138f49698e324" category="admonition">從SnapCenter外掛程式匯入 vCenter 元資料後， BlueXP backup and recovery不會自動接手保護管理。為此，您必須明確選擇在BlueXP backup and recovery中管理匯入的資源。這可確保您已準備好透過BlueXP backup and recovery備份這些資源。</block>
+  <block id="e225b1998b1b7ab53d184970a4487c08" category="inline-image-macro">BlueXP backup and recovery的庫存螢幕截圖，顯示了 VMware 工作負載</block>
+  <block id="65cd305beed2013bd8b486a3443f7eae" category="paragraph"><block ref="65cd305beed2013bd8b486a3443f7eae" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a9235637ac03ea3815dbb11128aefa80" category="list-text">從庫存頁面的頂部選單中，選擇*發現資源*。</block>
+  <block id="f253b95a390137185aeebe4841189106" category="inline-image-macro">用於匯入SnapCenter插件資源的設定選項</block>
+  <block id="b97dc91e0fd7acf5e67d77d669169a2c" category="paragraph"><block ref="b97dc91e0fd7acf5e67d77d669169a2c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4fa4bcc2a1f0d681fb390d96f9891a59" category="list-text">在「匯入自」欄位中，選擇「* SnapCenter Plug-in for VMware*」。</block>
+  <block id="45ff731338448b957095de0f0c3fcd1f" category="list-text">輸入*VMware vCenter 憑證*：</block>
+  <block id="01a91017e242d9d1244c2d80c1caebf0" category="list-text">*vCenter IP/主機名稱*：輸入要匯入BlueXP backup and recovery的vCenter 的 FQDN 或 IP 位址。</block>
+  <block id="83232179998a0e4df8a7fec8b01b073d" category="list-text">*vCenter 連接埠號碼*：輸入 vCenter 的連接埠號碼。</block>
+  <block id="bf44275a582b218f2c18fd73a1b49f7d" category="list-text">*vCenter 使用者名稱* 和 *密碼*：輸入 vCenter 的使用者名稱和密碼。</block>
+  <block id="b5aeca1d93828bbceb645dcae8293b41" category="list-text">*連接器*：為 vCenter 選擇BlueXP連接器。</block>
+  <block id="f8ccd2c36b2459b541ae637dac832e19" category="list-text">輸入* SnapCenter插件主機憑證*：</block>
+  <block id="60b1a925906e7fb4348924a6fdd9149b" category="list-text">*新增憑證*：如果您沒有現有的SnapCenter插件主機憑證，則可以新增憑證。輸入憑證名稱、身份驗證模式、使用者名稱和密碼。</block>
+  <block id="7c2e72fe3815fa111632e0f221695e03" category="list-text">選擇“*導入*”來驗證您的條目並註冊SnapCenter插件。</block>
+  <block id="f8af72f5d223caaa5e61fd95094871b3" category="admonition">如果SnapCenter插件已註冊，您可以更新現有的註冊詳細資訊。</block>
+  <block id="b98ffbf63d72e640786eb3001968af8c" category="paragraph">庫存頁面顯示 vCenter 在BlueXP backup and recovery中處於未管理狀態，直到您明確選擇管理它。</block>
+  <block id="3139b9fe004d3f9be3e1838b9259905b" category="inline-image-macro">清單頁面顯示匯入的 vCenter 為未受管狀態</block>
+  <block id="40742df8ab25c25821240bbd1bad9724" category="paragraph"><block ref="40742df8ab25c25821240bbd1bad9724" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="25c0a491dae6caf57d57d941f0eb08d9" category="section-title">管理從SnapCenter插件匯入的資源</block>
+  <block id="7d2e4eb456ace040abed68fc5559d320" category="paragraph">從適用於 VMware 的SnapCenter外掛程式匯入 vCenter 元資料後，管理BlueXP backup and recovery中的資源。在您選擇管理這些資源後， BlueXP backup and recovery能夠備份和還原您匯入的資源。在BlueXP backup and recovery中啟動管理後，您將不再在SnapCenter外掛程式中管理這些資源。</block>
+  <block id="45ebed52f768aa21b719b17f00354080" category="paragraph">選擇管理資源後，資源、虛擬機器和政策將從 VMware 的SnapCenter插件匯入。資源組、策略和快照從外掛程式遷移並在BlueXP backup and recovery中進行管理。</block>
+  <block id="4b8f8dd3cdfd4ddf935167b3ed112e37" category="list-text">從SnapCenter插件匯入 VMware 資源後，從頂部選單中選擇 *Inventory*。</block>
+  <block id="bb036501b1cf1b1b8cfa054777bf30b6" category="list-text">從庫存頁面中，選擇您希望從現在開始使用BlueXP backup and recovery管理的匯入的 vCenter。</block>
+  <block id="78dcaf3b9b67d48ba4541833105cb9b7" category="inline-image-macro">顯示已匯入 vCenter 資源的清單頁面</block>
+  <block id="56de8651dcd91ab7be24c38517cb21ea" category="paragraph"><block ref="56de8651dcd91ab7be24c38517cb21ea" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3bad3af408bb48efcddbf97415e11709" category="list-text">在清單 &gt; 工作負載頁面中，選擇操作圖標<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>&gt; *管理* 顯示管理 vCenter 頁面。</block>
+  <block id="148cd597c69806c2cd61aebff1b2f683" category="inline-image-macro">在BlueXP頁面中管理 vCenter</block>
+  <block id="55151bba08a4065d2b9fe02c15c603f4" category="paragraph"><block ref="55151bba08a4065d2b9fe02c15c603f4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4513150785c046bfbcd37a0b9dcb7a35" category="list-text">選取「您想繼續遷移嗎？」複選框並選擇*遷移*。</block>
+  <block id="13be03aaa1d065e4e2a3d1cb64d9f254" category="paragraph">清單頁面顯示新管理的 vCenter 資源。</block>
+  <block id="f2bd66e56f219a469d86593a4260942d" category="inline-image-macro">顯示託管 vCenter 資源的清單頁面</block>
+  <block id="2d8efbbc6ba3519accaf9cc306cb8096" category="paragraph"><block ref="2d8efbbc6ba3519accaf9cc306cb8096" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fbf0c9d029994ad43dd1b2f7c4e2e91f" category="paragraph">使用BlueXP backup and recovery保護您的 VMware VM 和資料儲存。 BlueXP backup and recovery提供快速、節省空間、崩潰一致和 VM 一致的備份和復原作業。您可以將 VMware 工作負載備份到 Amazon Web Services S3 或StorageGRID ，並將 VMware 工作負載還原至本機 VMware 主機。</block>
+  <block id="689fc518c441a0603a46474822810422" category="paragraph">使用BlueXP backup and recovery原來實施 3-2-1 策略，其中您在 2 個不同的儲存系統上擁有 3 個來源資料副本，並在雲端中擁有 1 個副本。  3-2-1 方法的優點包括：</block>
+  <block id="63911c026a31240fc571d59053f4d6e5" category="paragraph">您可以使用BlueXP backup and recovery原來執行與 VMware 工作負載相關的下列任務：</block>
+  <block id="4c90ef6c5dc037251bf65afdeeb1ee6c" category="list-text"><block ref="4c90ef6c5dc037251bf65afdeeb1ee6c" category="inline-link-macro-rx"></block></block>
+  <block id="fa3a5087c48da1a523ef45fa2253ea19" category="inline-link-macro">為 VMware 工作負載建立和管理保護群組</block>
+  <block id="d56582b18b2c53315e597c8a39e49a92" category="list-text"><block ref="d56582b18b2c53315e597c8a39e49a92" category="inline-link-macro-rx"></block></block>
+  <block id="d20800ec3a640eb8116268213843541a" category="inline-link-macro">備份 VMware 工作負載</block>
+  <block id="90d96ca607527070c551836800704494" category="list-text"><block ref="90d96ca607527070c551836800704494" category="inline-link-macro-rx"></block></block>
+  <block id="268753a57af5b661ea9d0957e56b2a45" category="list-text"><block ref="268753a57af5b661ea9d0957e56b2a45" category="inline-link-macro-rx"></block></block>
+  <block id="953cfdd52d2ad54416d42d4e37305d6a" category="summary">在BlueXP backup and recovery中為 VMware 工作負載建立和管理保護群組。</block>
+  <block id="dfadb287a92482d24b34b55bed0b6dac" category="paragraph">建立保護組來管理一組工作負載的備份和還原作業。保護群組是您想要一起保護的資源（例如虛擬機器和資料儲存區）的邏輯分組。</block>
+  <block id="fa0338ac5f2c4b70da78d26842635d39" category="paragraph">您可以執行與保護群組相關的以下任務：</block>
+  <block id="36a1fea6f9834cf631ec250966041abe" category="list-text">建立保護組。</block>
+  <block id="df90ddd3d253f4d52c457a563325a173" category="list-text">查看保護詳情。</block>
+  <block id="f710d48f4e4bcee1159eb8476c761956" category="inline-link-macro">立即備份 VMware 工作負載</block>
+  <block id="3d5278f5bd3ffe2b4cded72fffe73d2b" category="list-text">立即備份保護組。看<block ref="887743b22b352bdbc6f2d55fc0901200" category="inline-link-macro-rx"></block> 。</block>
+  <block id="29881d0b044ceba86593dcfef30e0573" category="list-text">暫停和恢復保護組的備份計畫。</block>
+  <block id="75fd7259089ff0f83a33c40dd073fef1" category="list-text">刪除保護組。</block>
+  <block id="65c7327c98e288c3f5e4a2ae048a02df" category="paragraph">將您想要保護的工作負載分組到一個保護群組。您可以為想要一起備份和還原的一組工作負載建立一個保護群組。</block>
+  <block id="e34d18f5b9c4b93c459ba1ffd9cb5f28" category="paragraph"><block ref="e34d18f5b9c4b93c459ba1ffd9cb5f28" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="99ea4945ef61f5a29b7463a5d1480fe7" category="list-text">選擇要包含在保護群組中的虛擬機器或資料庫。</block>
+  <block id="224efd4fdb5f19c474ab2b6ea6b4132b" category="section-title">暫停保護組的備份計劃</block>
+  <block id="8ea08fb46b36f3cd2195756f05e3b2d7" category="paragraph">暫停保護組將暫停該保護組的計畫備份。如果您想暫時停止該群組中工作負載的備份，您可能需要暫停該保護群組。</block>
+  <block id="67671aa34b0789a08ab7d6954bfb7122" category="paragraph">當您暫停保護群組時，保護狀態將變更為「維護中」。您可以隨時還原備份計畫。</block>
+  <block id="e18d539be2570002127583bafd748cad" category="list-text">選擇“操作”圖標<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>&gt; *暫停保護組*。</block>
+  <block id="e1bdaded4d7fd6d9209905a6b9ce591a" category="list-text">查看確認訊息並選擇*暫停*。</block>
+  <block id="35cb887f0e8f9745e2706572c1f317f3" category="section-title">恢復保護組的備份計劃</block>
+  <block id="47528987ec0e2628e46f13b3689f57c4" category="paragraph">復原已暫停的保護群組將重新啟動該保護群組的計畫備份。</block>
+  <block id="210bcda1bf39432c961f91813aed7699" category="paragraph">當您暫停保護群組時，保護狀態將從「維護中」變更為當您恢復保護群組時「受保護」。您可以隨時還原備份計畫。</block>
+  <block id="d6155b3f873b51384359a4bf55b9f95a" category="list-text">選擇“操作”圖標<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>&gt; *恢復保護群組*。</block>
+  <block id="5b760b98c14fddaa18f5b88edb9ca3f6" category="list-text">查看確認訊息並選擇*恢復*。</block>
+  <block id="bc36e4718e22660ffc6a870feaf65f3a" category="paragraph">如果計劃有效，系統將驗證計劃，並將保護狀態變更為「已保護」。如果計劃無效，系統將顯示錯誤訊息並且不會恢復保護群組。</block>
+  <block id="c7739db7f9496e0f0baeef6bd5551fb9" category="paragraph">刪除保護群組會刪除該保護群組以及所有相關的備份計畫。如果不再需要某個保護群組，您可能需要將其刪除。</block>
+  <block id="9aac72589a1ae47f1f060cc775fa3da0" category="list-text">選擇要刪除的保護組。</block>
+  <block id="030b45f70db5214ea3237560f793e3a3" category="list-text">選擇“操作”圖標<block ref="2137b8853c2ddb346939b7d46bf562c2" category="inline-image-macro-rx" type="image"></block>&gt; *刪除*。</block>
+  <block id="725673b0a06edab1f72366f95cac31d6" category="list-text">查看有關刪除相關備份的確認訊息並確認刪除。</block>
+  <block id="f52c624842cb06f58bfcd6e0e5601936" category="doc">使用BlueXP backup and recoveryVMware 工作負載</block>
+  <block id="2d6b1140fe115de3abe5ec4fcc3f96f2" category="paragraph">使用BlueXP backup and recovery從快照副本、複製到二級儲存的工作負載備份或儲存在物件儲存中的備份還原 VMware 工作負載。</block>
+  <block id="ce5b3e5e52619a3c4bbedee0586f057a" category="list-text">從主位置還原（本地快照）</block>
+  <block id="a34a8fde09044472852b8ae530184af7" category="list-text">從二級儲存上的複製資源恢復</block>
+  <block id="a1b1d3e1eb4d41f3b8f52d69b7033868" category="list-text">從物件儲存備份還原</block>
+  <block id="ba48c3305320f5df1a8db5cbd6fed75a" category="paragraph">您可以將資料還原到以下點：</block>
+  <block id="c149f6b4ccbdba8011de4b1e3579b42f" category="list-text">恢復到原始位置</block>
+  <block id="1c2671aa5134c1ef3727312b995fec09" category="list-text">當您從本機備份檔案還原工作負載時， BlueXP backup and recovery會使用備份中的資料建立一個_新_資源。</block>
+  <block id="0f4570eee3ca580a8c827d191240eb2b" category="paragraph">從「恢復」頁面（也稱為「搜尋和恢復」）*，您可以恢復資源，即使您不記得確切的名稱、它所在的位置或它最後處於良好狀態的日期。您可以使用過濾器搜尋快照。</block>
+  <block id="4967eb3bddc1aeeafa7fa83be9252bb4" category="section-title">從恢復選項恢復工作負載資料（搜尋和恢復）</block>
+  <block id="600582313b42616fbf96d317e8033ef9" category="paragraph">使用復原選項還原 VMware 工作負載。您可以按名稱或使用篩選器來搜尋快照。</block>
+  <block id="09301202252afe8945e2ae06ed435714" category="paragraph"><block ref="09301202252afe8945e2ae06ed435714" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="71032b474c00a68ab57e3f805cdf5d61" category="list-text">從名稱搜尋欄位右側的下拉清單中，選擇「*虛擬機器*」。</block>
+  <block id="2aceb93307f82c2d88347faa7eaa4e71" category="list-text">輸入要還原的資源的名稱，或篩選要還原的資源所在的 vCenter、資料中心或資料儲存。</block>
+  <block id="7dd676e6cf5a1d7d0e7086f82a5a3719" category="paragraph">出現符合您的搜尋條件的快照清單。</block>
+  <block id="f45e745d214ab653b3dcb97727b2a617" category="inline-image-macro">顯示要還原的快照清單的螢幕截圖。</block>
+  <block id="04e62e972aaeeaf6622cad73a1bb3594" category="paragraph"><block ref="04e62e972aaeeaf6622cad73a1bb3594" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3fca73cfa6e5a82be82156106e4db553" category="paragraph">出現恢復位置選項清單。</block>
+  <block id="b021353eca19a8ccf460e55c72d3a26d" category="inline-image-macro">顯示恢復選項頁面的螢幕截圖。</block>
+  <block id="05fbf2b3792bca904b5defac8e5c919f" category="paragraph"><block ref="05fbf2b3792bca904b5defac8e5c919f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="eb58d19c210547f2e0cbe6a7689d6a12" category="list-text">選擇要還原快照的還原位置：</block>
+  <block id="c318ddc11c1d9b56e2cfda2af9351a42" category="list-text">本機：將快照還原到原始位置。</block>
+  <block id="e4e4935a5dbb6b2200b975d599e683e4" category="list-text">二級儲存：將快照還原到二級儲存位置。</block>
+  <block id="dde4605b1517896bb91ab0500e44ec76" category="paragraph">如果選擇二級存儲，請輸入來源和目標位置資訊以及日誌的來源和二級位置。</block>
+  <block id="33a039fcca21669940ad7ee10455c43d" category="list-text">物件儲存：將快照還原到物件儲存位置。</block>
+  <block id="6fa9a019160376f2b85947c9116180fb" category="paragraph">如果選擇物件存儲，請在恢復之前檢查是否要再次掃描快照。</block>
+  <block id="6517ca79d199404323c47b0aff4b5fed" category="inline-image-macro">顯示物件儲存的復原選項頁面的螢幕截圖。</block>
+  <block id="f31e0ca6ded5830ab1a1385250fcc603" category="paragraph"><block ref="f31e0ca6ded5830ab1a1385250fcc603" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="39e791cd576f013480b8ac3c88fcd655" category="list-text">選擇「*完成*」或「*下一步*」繼續進入「恢復目標設定」頁面。</block>
+  <block id="94697b58b65e2562f9eac2c0fef08c35" category="paragraph">接下來，您可以選擇目標設定以及恢復前和恢復後選項。</block>
+  <block id="5adf47e3ae580cc745d0e52b93597d43" category="paragraph"><block ref="5adf47e3ae580cc745d0e52b93597d43" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="23de539bf06cfaf2cd9dc515802272ce" category="section-title">目的地選擇</block>
+  <block id="5dd0bd8435aec915fe085d771534ba47" category="list-text">選擇目標設定以及恢復前和恢復後選項。</block>
+  <block id="abfc7c0c366258e23e15cd12a5f89811" category="open-title">恢復到原始位置</block>
+  <block id="0bff45ae654663c7b091c0f6dd70d653" category="paragraph">在「還原目標詳細資料」頁面中，輸入以下資訊：</block>
+  <block id="f841432c2e7b95f0e1480a64c27a957d" category="list-text">*啟用快速復原*：選擇此選項可執行快速復原作業。恢復的捲和資料將立即可用。請勿在需要高效能的磁碟區上使用此功能，因為在快速復原過程中，存取資料的速度可能會比平常慢。</block>
+  <block id="6ca1e0675a4f2fa0425b153f38956afe" category="list-text">*預先恢復選項*：輸入應在復原作業之前執行的腳本的完整路徑以及該腳本所採用的任何參數。</block>
+  <block id="ea2aae05e390bc85fbb0d97c87c463b9" category="list-text">*重新啟動 VM*：選擇此選項可在還原作業完成後以及套用還原後腳本後重新啟動 VM。</block>
+  <block id="8dee103972185c1aba0e0c814961a8db" category="list-text">*通知*部分：</block>
+  <block id="d705348f84095bf9f266942da2cf2b84" category="list-text">*啟用電子郵件通知*：選擇此選項可接收有關復原作業的電子郵件通知，並指示您想要接收的通知類型。</block>
+  <block id="c8f730ad9d8597b4dfcdd623d5a511aa" category="paragraph">不適用於 VMware 預覽版。</block>
+  <block id="74b448f981801b63038a919bc9d742f8" category="paragraph">組織管理員、資料夾或專案管理員、備份和還原超級管理員、備份和還原復原管理員角色。<block ref="c46fcff617e849cb6f8ded33051f7905" category="inline-link-rx"></block> 。</block>
+  <block id="f55a81040334ea83030ea0b7566bf724" category="paragraph">BlueXP backup and recovery服務為ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫、VMware 工作負載（預覽版）和 Kubernetes 工作負載（預覽版）提供高效率、安全且經濟高效的資料保護。</block>
+  <block id="65054de523f7d3a953cb8abea5ceb422" category="admonition">有關保護 VMware 和 Kubernetes 工作負載的文件以技術預覽的形式提供。對於此預覽版產品， NetApp保留在正式發布之前修改產品詳細資訊、內容和時間表的權利。</block>
+  <block id="3b9135fa974c68d619894497e2801b13" category="list-text">* ONTAP磁碟區工作負載*：</block>
+  <block id="3aeb29f81d221a24906f3f35115b8490" category="list-text">使用BlueXP backup and recovery以及SnapCenter。</block>
+  <block id="9dc83174d71dfdff6c796190c3dbb058" category="inline-link-macro">保護ONTAP卷</block>
+  <block id="abcd22928fd59d995b5a6963e1d6ab70" category="list-text">請參閱<block ref="9aac37a163f0c49d3343b243347ef88d" category="inline-link-macro-rx"></block> 。</block>
+  <block id="ee7710a5af5d07df880c2c007b67faa7" category="list-text">*Microsoft SQL Server 工作負載*：</block>
+  <block id="498d74104b639713e76c5fe1438ed1df" category="list-text">無需SnapCenter即可使用BlueXP backup and recovery。</block>
+  <block id="da8c1ac7631a3731bc377387b2ab2a43" category="list-text">請參閱<block ref="f095463814b2c4a573628d3f753afa9a" category="inline-link-macro-rx"></block> 。</block>
+  <block id="34cd7eb5bb582ffae3f30f17c145150f" category="list-text">VMware 工作負載（使用新 UI 預覽，無需SnapCenter Plug-in for VMware vSphere）*：</block>
+  <block id="f04cfbb4bfdd3cd9036922d25ec5b48a" category="list-text">使用BlueXP backup and recovery保護您的 VMware VM 和資料儲存。</block>
+  <block id="49ce1089a31878d01e3cf0cfff6ec95e" category="list-text">將 VMware 工作負載備份到 Amazon Web Services S3 或StorageGRID （預覽版）。</block>
+  <block id="f24990c11b82173bf714c5c0ddeb194e" category="list-text">將 VMware 資料從雲端還原到本機 vCenter。</block>
+  <block id="30a07a986df042c997ea1c239ea8ae65" category="list-text">無需SnapCenter Plug-in for VMware vSphere即可使用BlueXP backup and recovery。</block>
+  <block id="5f1f4aaebaf623a5d33c8d6da504aec5" category="inline-link-macro">保護 VMware 工作負載</block>
+  <block id="e4f723ac59f54885d902bd6a04536b55" category="list-text">請參閱<block ref="d745d5ccb3cf0872b9a86c3887ddad65" category="inline-link-macro-rx"></block> 。</block>
+  <block id="3e6d14001804fbc004cf88b3856a2939" category="list-text">VMware 工作負載（使用SnapCenter Plug-in for VMware vSphere）</block>
+  <block id="ba09cb4fb9d29df0e0fba819c4f6f57a" category="list-text">將虛擬機器和資料儲存備份到 Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform 和StorageGRID ，並將虛擬機器還原回SnapCenter Plug-in for VMware vSphere。</block>
+  <block id="51b80593e638bcb66d62015b00b78c41" category="list-text">使用BlueXP backup and recovery將虛擬機器資料從雲端還原到本機 vCenter。您可以將虛擬機器還原到與備份完全相同的位置或其他位置。</block>
+  <block id="d3ed186e49ff2eb1e2f758a81fb48f5d" category="list-text">將BlueXP backup and recovery與適用SnapCenter Plug-in for VMware vSphere一起使用。</block>
+  <block id="90dea69f07cd41705feda176fee8105f" category="list-text">請參閱<block ref="4e4c09988a18e486f48f555be9441a4c" category="inline-link-macro-rx"></block> 。</block>
+  <block id="3066f1ebade966cf5d09fd225d9c82df" category="list-text">Kubernetes 工作負載（預覽版）</block>
+  <block id="55b1b5c13e7a6ccad00374a8fbfd29d6" category="inline-link-macro">保護 Kubernetes 工作負載</block>
+  <block id="6650dc66d56f0cab512245298e4ee364" category="list-text">請參閱<block ref="b833c553f8b19b50a2155e8dd40c8baa" category="inline-link-macro-rx"></block> 。</block>
+  <block id="5c1924f6230f429d87dfb7fd242478ba" category="list-text">VMware 虛擬機器與資料儲存區</block>
+  <block id="fd986c9449acb5abd97bea849d50dc49" category="list-text">Microsoft Azure Blob（預覽版不適用於 VMware 工作負載）</block>
+  <block id="2892aac222ad56500a9c836677137630" category="list-text">ONTAP S3（預覽版不適用於 VMware 工作負載）</block>
+  <block id="bfc869416b72c1003c9d7a26bf1c63e4" category="list-text">*工作負載*： BlueXP backup and recovery中的工作負載可以包括ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫；VMware VM 和資料儲存區；或 Kubernetes 叢集和應用程式。</block>
+  <block id="7126662a353f79c46a7ccefe46dc4c0a" category="inline-link-macro">保護您的ONTAP卷數據</block>
+  <block id="1d638e05920fe33426fac4dc6285a639" category="list-text"><block ref="1d638e05920fe33426fac4dc6285a639" category="inline-link-macro-rx"></block></block>
+  <block id="ef53d2e08e79af10a2e451632255842d" category="section-title">保護 Microsoft SQL Server 工作負載的要求</block>
+  <block id="2435a02f2711ad9657062039419fd251" category="paragraph">若要使用BlueXP backup and recoveryMicrosoft SQL Server 工作負載，您需要滿足下列主機系統、空間和大小先決條件。</block>
+  <block id="573531ec152a1cc1709422d00088088e" category="section-title">保護 VMware 工作負載的要求</block>
+  <block id="4ccfae37bea4d344c283e2a68013c9c1" category="paragraph">您需要特定的要求來發現和保護您的 VMware 工作負載。</block>
+  <block id="1269e07e6a9265be5844ea32a0494a7f" category="paragraph">軟體支援</block>
+  <block id="2d5a6b46412544fb6ac242fbc736934e" category="list-text">支援的 NFS 版本：NFS 3 和 NFS 4.1</block>
+  <block id="40f1a54f3602033103d74e381708e352" category="list-text">支援的 VMware ESXi Server 版本：7.0U1 以上</block>
+  <block id="c7d133a7d1fcc4fc9f8bf51535dc3ef0" category="list-text">支援的 VMware vCenter vSphere 版本：7.0U1 及以上</block>
+  <block id="f3c396a6341d422a1f0e7a503896ed29" category="list-text">IP 位址：IPv4 和 IPv6</block>
+  <block id="a1712dda84152f55cce278e06e3fb2b9" category="list-text">VMware TLS：1.2、1.3</block>
+  <block id="dc735211c86b33a749d2c86bb8b39e80" category="paragraph">*保護 VMware 工作負載的連線和連接埠需求*</block>
+  <block id="3672cca688eb0474cd3fee2add1a2067" category="cell">連接埠類型</block>
+  <block id="99ddf0e823c1be51589f68696f62cf56" category="cell">預配置連接埠</block>
+  <block id="2cb2843b629d315325aac076907ec4b9" category="cell">VMware ESXi 伺服器連接埠</block>
+  <block id="62e8cb73d81843582e583ccefca95a44" category="paragraph">443（HTTPS），雙向。來賓檔案復原功能使用此連接埠。</block>
+  <block id="7c1239972879fe0b69b4bb6d5c9a743e" category="cell">VMware vSphere vCenter Server 連接埠</block>
+  <block id="4899207d672fe13ff2c710bcb5cec3e0" category="paragraph">如果您正在保護 vVol VM，則必須使用連接埠 443。</block>
+  <block id="131b9f1c14d26ba7a0cce7389e7679a9" category="cell">儲存叢集或儲存虛擬機器端口</block>
+  <block id="fe2ba23f2f581d1ab01848e05711292a" category="paragraph">443（HTTPS），雙向。 80（HTTP），雙向。此連接埠用於虛擬設備與儲存虛擬機器或包含儲存虛擬機器的叢集之間的通訊。</block>
+  <block id="6def2be93b1fef441b3ca8a2641cc837" category="paragraph">*保護 VMware 工作負載的基於角色的存取控制 (RBAC) 要求*</block>
+  <block id="5a87933ace950bfd22e0597a2e342c27" category="paragraph">vCenter 管理員帳號必須具有所需的 vCenter 權限。</block>
+  <block id="444268068dcfb1a62c19cda69301e76f" category="inline-link">SnapCenter Plug-in for VMware vSphere vCenter 權限</block>
+  <block id="2c5eb2a50ef564fa05d6cc4a6c86af8f" category="paragraph">有關所需 vCenter 權限的列表，請參閱<block ref="9044a834d03d45a613d887c1c4d3ddd1" category="inline-link-rx"></block>。</block>
+  <block id="d3cbd09d6a0974ee6a694826a8598eb6" category="section-title">保護 Kubernetes 應用程式的要求</block>
+  <block id="40e80975f18e076da51a2f87004f77ab" category="summary">當您在沒有網路存取的網站（稱為「私人模式」）中使用BlueXP backup and recovery時， BlueXP backup and recovery設定資料將備份到儲存備份的StorageGRID或ONTAP S3 儲存桶中。如果您將來遇到BlueXP Connector 主機系統問題，您可以部署新的 Connector 並還原關鍵的BlueXP backup and recovery資料。</block>
+  <block id="b1e27f8c2d43223a85b44c94d6a02cc0" category="paragraph">當您在沒有網路存取的網站（稱為_私人模式_）中使用BlueXP backup and recovery時， BlueXP backup and recovery設定資料將備份到儲存備份的StorageGRID或ONTAP S3 儲存桶中。如果您遇到BlueXP Connector 主機系統問題，您可以部署新的 Connector 並還原關鍵的BlueXP backup and recovery資料。</block>
+  <block id="0428e48e7f58929099e52febd0558232" category="section-title">2025年8月25日</block>
+  <block id="b9d888f58b09c4007db0247286e392b5" category="section-title">2025年8月11日</block>
+  <block id="0d8cae156f9904fac41e4f76eb3502db" category="sidebar">保護 VMware 工作負載（預覽版）</block>
+  <block id="79d4e4bc94bda2b257f4190786069be1" category="sidebar">保護 VMware 工作負載概述</block>
+  <block id="fe5216e8c6ca199aaa9802985fb31c17" category="sidebar">VMware 工作負載的已知限制</block>
+  <block id="f4aa5ca6921e92380246ea7a562973a9" category="sidebar">保護 VMware 工作負載（無需 VMware SnapCenter外掛程式即可預覽）</block>
+  <block id="b1b8c22062b7762d4a3c459e880dee3b" category="sidebar">保護 VMware 工作負載（使用適用於 VMware 的SnapCenter外掛程式）</block>
+  <block id="5e8c098d325749413b23d5eba5837aad" category="sidebar">在暗站中恢復BlueXP backup and recovery數據</block>
 </blocks>

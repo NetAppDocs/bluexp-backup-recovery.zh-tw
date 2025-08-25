@@ -14,10 +14,10 @@ summary: BlueXP backup and recovery服務為本地和雲端的NetApp資料庫和
 
 
 [role="lead"]
-BlueXP backup and recovery服務為ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫、VMware 工作負載和 Kubernetes 工作負載（預覽版）提供高效率、安全且經濟的資料保護。
+BlueXP backup and recovery服務為ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫、VMware 工作負載（預覽版）和 Kubernetes 工作負載（預覽版）提供高效率、安全且經濟高效的資料保護。
 
 
-NOTE: 其中一些文件作為技術預覽提供。對於此預覽版產品， NetApp保留在正式發布之前修改產品詳細資訊、內容和時間表的權利。
+NOTE: 有關保護 VMware 和 Kubernetes 工作負載的文件以技術預覽的形式提供。對於此預覽版產品， NetApp保留在正式發布之前修改產品詳細資訊、內容和時間表的權利。
 
 
 
@@ -25,30 +25,47 @@ NOTE: 其中一些文件作為技術預覽提供。對於此預覽版產品， N
 
 使用BlueXP backup and recovery實現以下目標：
 
-* ONTAP磁碟區工作負載：
+* * ONTAP磁碟區工作負載*：
 +
 ** 建立本機快照、複製到二級存儲，並將ONTAP磁碟區從本機ONTAP或Cloud Volumes ONTAP系統備份到公有或私有雲帳戶中的物件儲存。
 ** 建立區塊級、增量永久備份，儲存在另一個ONTAP叢集上以及雲端中的物件儲存中。
+** 使用BlueXP backup and recovery以及SnapCenter。
+** 請參閱link:prev-ontap-protect-overview.html["保護ONTAP卷"] 。
 
 
-* Microsoft SQL Server 工作負載：
+* *Microsoft SQL Server 工作負載*：
 +
 ** 從本機ONTAP、 Cloud Volumes ONTAP或Amazon FSx for NetApp ONTAP備份 Microsoft SQL Server 執行個體和資料庫。
 ** 還原 Microsoft SQL Server 資料庫。
 ** 克隆 Microsoft SQL Server 資料庫。
+** 無需SnapCenter即可使用BlueXP backup and recovery。
+** 請參閱link:br-use-mssql-protect-overview.html["保護 Microsoft SQL Server 工作負載"] 。
 
 
-* 虛擬機器工作負載：
+* VMware 工作負載（使用新 UI 預覽，無需SnapCenter Plug-in for VMware vSphere）*：
 +
-** 將資料儲存備份至 Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform 和StorageGRID ，並將虛擬機器還原回SnapCenter Plug-in for VMware vSphere。
-** 使用BlueXP backup and recovery將虛擬機器資料從雲端還原到本機 vCenter。
+** 使用BlueXP backup and recovery保護您的 VMware VM 和資料儲存。
+** 將 VMware 工作負載備份到 Amazon Web Services S3 或StorageGRID （預覽版）。
+** 將 VMware 資料從雲端還原到本機 vCenter。
+** 無需SnapCenter Plug-in for VMware vSphere即可使用BlueXP backup and recovery。
+** 請參閱link:br-use-vmware-protect-overview.html["保護 VMware 工作負載"] 。
 
 
-* Kubernetes 工作負載（預覽版）：
+* VMware 工作負載（使用SnapCenter Plug-in for VMware vSphere）
++
+** 將虛擬機器和資料儲存備份到 Amazon Web Services S3、Microsoft Azure Blob、Google Cloud Platform 和StorageGRID ，並將虛擬機器還原回SnapCenter Plug-in for VMware vSphere。
+** 使用BlueXP backup and recovery將虛擬機器資料從雲端還原到本機 vCenter。您可以將虛擬機器還原到與備份完全相同的位置或其他位置。
+** 將BlueXP backup and recovery與適用SnapCenter Plug-in for VMware vSphere一起使用。
+** 請參閱link:prev-vmware-protect-overview.html["保護 VMware 工作負載"] 。
+
+
+* Kubernetes 工作負載（預覽版）
 +
 ** 在一個地方管理和保護您的 Kubernetes 應用程式和資源。
 ** 使用保護策略來建立增量備份。
 ** 將應用程式和資源恢復到相同或不同的叢集和命名空間。
+** 無需SnapCenter即可使用BlueXP backup and recovery。
+** 請參閱link:br-use-kubernetes-protect-overview.html["保護 Kubernetes 工作負載"] 。
 
 
 
@@ -195,7 +212,7 @@ ifdef::gcp[]
 
 * ONTAP 磁碟區
 * 用於實體、VMware 虛擬機器檔案系統 (VMFS) 和 VMware 虛擬機器磁碟 (VMDK) NFS 的 Microsoft SQL Server 執行個體和資料庫
-* VMware資料存放區
+* VMware 虛擬機器與資料儲存區
 * Kubernetes 工作負載（預覽版）
 
 
@@ -210,16 +227,10 @@ ifdef::gcp[]
 
 .支援備份目標
 * Amazon Web Services （ AWS ） S3
-* Microsoft Azure Blob
+* Microsoft Azure Blob（預覽版不適用於 VMware 工作負載）
 * StorageGRID
-* SS3 ONTAP
+* ONTAP S3（預覽版不適用於 VMware 工作負載）
 
-
-
-
-== BlueXP backup and recovery使用 Microsoft SQL Server 插件
-
-BlueXP backup and recovery會在託管 Microsoft SQL Server 的伺服器上安裝適用於 Microsoft SQL Server 的外掛程式。該外掛程式是主機端元件，可對 Microsoft SQL Server 資料庫和執行個體進行應用程式感知的資料保護管理。
 
 
 
@@ -273,7 +284,5 @@ endif::gcp[]
 了解一些與保護相關的術語可能會對您有所幫助。
 
 * *保護*： BlueXP backup and recovery中的保護意味著確保使用保護策略定期將快照和不可變備份發生到不同的安全域。
-
-
-* *工作負載*： BlueXP backup and recovery中的工作負載可以包括 Microsoft SQL Server 執行個體和資料庫、VMware 資料儲存區或ONTAP磁碟區。
+* *工作負載*： BlueXP backup and recovery中的工作負載可以包括ONTAP磁碟區、Microsoft SQL Server 執行個體和資料庫；VMware VM 和資料儲存區；或 Kubernetes 叢集和應用程式。
 

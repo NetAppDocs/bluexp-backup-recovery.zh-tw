@@ -1,0 +1,195 @@
+---
+sidebar: sidebar 
+permalink: br-use-vmware-discovery.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 使用NetApp BlueXP backup and recovery保護您的 VMware 工作負載。 
+---
+= 使用BlueXP backup and recovery發現 VMware 工作負載
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+BlueXP backup and recovery服務需要先發現在ONTAP系統上執行的 VMware 資料儲存和虛擬機，以便您使用該服務。如果您已安裝SnapCenter Plug-in for VMware vSphere匯入備份資料和政策。
+
+*所需的BlueXP角色* 備份和還原超級管理員。了解link:reference-roles.html["備份和恢復角色和權限"]。 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的 BlueXP 存取角色"^] 。
+
+
+
+== 發現 VMware 工作負載並選擇性地匯入SnapCenter資源
+
+在發現期間， BlueXP backup and recovery會分析您組織內的 VMware 工作負載，並評估和匯入現有的保護策略、快照副本以及備份和復原選項。
+
+您可以將 VMware NFS 和 VMFS 資料儲存區和虛擬機器從其本機SnapCenter Plug-in for VMware vSphere匯入BlueXP backup and recovery庫存。
+
+
+NOTE: 此版本的BlueXP backup and recovery僅支援 VMware vCenter，且無法發現vVols或vVols上的 VM。
+
+在匯入過程中， BlueXP backup and recovery執行下列任務：
+
+* 啟用對 vCenter 伺服器的安全 SSH 存取。
+* 在 vCenter 伺服器中的所有資源群組上啟動維護模式。
+* 準備 vCenter 的元資料並在BlueXP中將其標記為未管理。
+* 配置資料庫存取。
+* 發現 VMware vCenter、資料儲存區和虛擬機器。
+* 從SnapCenter Plug-in for VMware vSphere現有的保護策略、快照副本以及備份和還原選項。
+* 在BlueXP backup and recovery清單頁面中顯示已發現的資源。
+
+
+發現以下列方式發生：
+
+* 如果您已經擁有SnapCenter Plug-in for VMware vSphere，請使用BlueXP backup and recovery和BlueXP backup and recoveryUI 將SnapCenter資源匯入 BlueXP 備份和復原。
++
+
+NOTE: 如果您已有SnapCenter插件，請確保在從SnapCenter匯入之前已滿足先決條件。例如，您應該先在BlueXP Canvas 中為所有本機SnapCenter叢集儲存體建立工作環境，然後再從SnapCenter匯入。看link:concept-start-prereq-snapcenter-import.html["從SnapCenter匯入資源的先決條件"] 。
+
+* 如果您還沒有SnapCenter插件，您仍然可以透過手動新增 vCenter 並執行發現來發現工作環境中的工作負載。
+
+
+
+
+=== 如果尚未安裝SnapCenter插件，請新增 vCenter 並發現資源
+
+如果您尚未安裝適用於 VMware 的SnapCenter插件，請新增 vCenter 資訊並讓BlueXP backup and recovery發現工作負載。在每個BlueXP連接器中，選擇您想要發現工作負載的工作環境。
+
+.步驟
+. 從BlueXP左側導覽中，選擇 *保護* > *備份和還原*。
++
+如果這是您第一次登入此服務，您已經在BlueXP中擁有工作環境，但尚未發現任何資源，則會出現「歡迎使用新的BlueXP backup and recovery」登入頁面並顯示*發現資源*選項。
+
++
+image:screen-br-landing-discover-import-buttons.png["BlueXP blueXP 備份與還原（未發現資源）的登陸頁面截圖"]
+
+. 選擇*發現資源*。
++
+image:screen-br-discover-workloads.png["發現工作負載資源螢幕截圖"]
+
+. 輸入下列資訊：
++
+.. *工作負載類型*：選擇*VMware*。
+.. *vCenter 設定*：新增新的 vCenter。若要新增新的 vCenter，請輸入 vCenter FQDN 或 IP 位址、使用者名稱、密碼、連接埠和協定。
++
+
+TIP: 如果您要輸入 vCenter 訊息，請同時輸入 vCenter 設定和主機註冊資訊。如果您在此處新增或輸入了 vCenter 訊息，則接下來也需要在「進階設定」中新增插件資訊。
+
+.. *主機註冊*：VMware 不需要。
+
+
+. 選擇* Discover（探索）*。
++
+
+TIP: 此程序可能需要幾分鐘的時間。
+
+. 繼續高級設定。
+
+
+
+
+=== 如果已安裝SnapCenter插件，請將適用於 VMware 資源的SnapCenter插件匯入BlueXP backup and recovery
+
+如果您已安裝適用於 VMware 的SnapCenter插件，請依照下列步驟將SnapCenter插件資源匯入BlueXP backup and recovery。  BlueXP服務可以發現 vCenter 中的 ESXi 主機、資料儲存區和虛擬機，並從插件中排程時間表；您不必重新建立所有這些資訊。
+
+您可以透過以下方式執行此操作：
+
+* 在發現期間，選擇一個選項從SnapCenter插件匯入資源。
+* 發現後，從「清單」頁面中選擇一個選項來匯入SnapCenter插件資源。
+* 發現後，從「設定」選單中選擇一個選項來匯入SnapCenter插件資源。有關詳細信息，請參閱link:br-start-configure.html["配置BlueXP backup and recovery"] 。  VMware 不支援此功能。
+
+
+本節描述了一個由兩部分組成的過程：
+
+. 從SnapCenter插件匯入 vCenter 元資料。導入的 vCenter 資源尚未由BlueXP backup and recovery管理。
+. 在BlueXP backup and recovery中啟動選定 vCenter、VM 和資料儲存區的管理。啟動管理後， BlueXP backup and recovery會在清單頁面上將 vCenter 標記為“已管理”，並能夠備份和還原您匯入的資源。在BlueXP backup and recovery中啟動管理後，您將不再在SnapCenter外掛程式中管理這些資源。
+
+
+
+
+==== 從SnapCenter插件匯入 vCenter 元數據
+
+第一步是從SnapCenter插件匯入 vCenter 元資料。此時，資源尚未由BlueXP backup and recovery管理。
+
+
+TIP: 從SnapCenter外掛程式匯入 vCenter 元資料後， BlueXP backup and recovery不會自動接手保護管理。為此，您必須明確選擇在BlueXP backup and recovery中管理匯入的資源。這可確保您已準備好透過BlueXP backup and recovery備份這些資源。
+
+.步驟
+. 從BlueXP左側導覽中，選擇 *保護* > *備份和還原*。
+. 從頂部選單中選擇*庫存*。
++
+image:screen-vm-inventory.png["BlueXP backup and recovery的庫存螢幕截圖，顯示了 VMware 工作負載"]
+
+. 從庫存頁面的頂部選單中，選擇*發現資源*。
+. 從BlueXP backup and recovery發現工作負載資源頁面中，選擇*從SnapCenter匯入*。
++
+image:../media/screen-vm-discover-import-snapcenter.png["用於匯入SnapCenter插件資源的設定選項"]
+
+. 在「匯入自」欄位中，選擇「* SnapCenter Plug-in for VMware*」。
+. 輸入*VMware vCenter 憑證*：
++
+.. *vCenter IP/主機名稱*：輸入要匯入BlueXP backup and recovery的vCenter 的 FQDN 或 IP 位址。
+.. *vCenter 連接埠號碼*：輸入 vCenter 的連接埠號碼。
+.. *vCenter 使用者名稱* 和 *密碼*：輸入 vCenter 的使用者名稱和密碼。
+.. *連接器*：為 vCenter 選擇BlueXP連接器。
+
+
+. 輸入* SnapCenter插件主機憑證*：
++
+.. *現有憑證*：如果選擇此選項，您可以使用已新增的現有憑證。請選擇憑證名稱。
+.. *新增憑證*：如果您沒有現有的SnapCenter插件主機憑證，則可以新增憑證。輸入憑證名稱、身份驗證模式、使用者名稱和密碼。
+
+
+. 選擇“*導入*”來驗證您的條目並註冊SnapCenter插件。
++
+
+NOTE: 如果SnapCenter插件已註冊，您可以更新現有的註冊詳細資訊。
+
+
+
+.結果
+庫存頁面顯示 vCenter 在BlueXP backup and recovery中處於未管理狀態，直到您明確選擇管理它。
+
+image:../media/screen-vm-inventory.png["清單頁面顯示匯入的 vCenter 為未受管狀態"]
+
+
+
+==== 管理從SnapCenter插件匯入的資源
+
+從適用於 VMware 的SnapCenter外掛程式匯入 vCenter 元資料後，管理BlueXP backup and recovery中的資源。在您選擇管理這些資源後， BlueXP backup and recovery能夠備份和還原您匯入的資源。在BlueXP backup and recovery中啟動管理後，您將不再在SnapCenter外掛程式中管理這些資源。
+
+選擇管理資源後，資源、虛擬機器和政策將從 VMware 的SnapCenter插件匯入。資源組、策略和快照從外掛程式遷移並在BlueXP backup and recovery中進行管理。
+
+.步驟
+. 從SnapCenter插件匯入 VMware 資源後，從頂部選單中選擇 *Inventory*。
+. 從庫存頁面中，選擇您希望從現在開始使用BlueXP backup and recovery管理的匯入的 vCenter。
++
+image:../media/screen-vm-inventory.png["顯示已匯入 vCenter 資源的清單頁面"]
+
+. 選擇“操作”圖標image:../media/icon-action.png["操作選項"] > *查看詳情*顯示工作量詳情。
+. 在清單 > 工作負載頁面中，選擇操作圖標image:../media/icon-action.png["操作選項"]> *管理* 顯示管理 vCenter 頁面。
++
+image:../media/screen-vm-discover-import-manage.png["在BlueXP頁面中管理 vCenter"]
+
+. 選取「您想繼續遷移嗎？」複選框並選擇*遷移*。
+
+
+.結果
+清單頁面顯示新管理的 vCenter 資源。
+
+image:../media/screen-vm-inventory-managed.png["顯示託管 vCenter 資源的清單頁面"]
+
+
+
+==== 繼續前往BlueXP backup and recovery儀表板
+
+. 若要顯示BlueXP backup and recovery儀表板，請從頂部選單中選擇「*儀表板*」。
+. 檢查資料保護的運作狀況。處於風險或受保護的工作負載的數量會根據新發現、受保護和備份的工作負載的數量而增加。
++
+image:screen-br-dashboard2.png["BlueXP backup and recovery儀表板"]
+
++
+link:br-use-dashboard.html["了解儀表板顯示的內容"]。
+
+

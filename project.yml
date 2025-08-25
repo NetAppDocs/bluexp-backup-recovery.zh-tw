@@ -29,10 +29,12 @@ sidebar:
     entries:
     - title: 新增功能
       url: "/whats-new.html"
-    - title: Microsoft SQL Server 工作負載的已知限制
-      url: "/br-limitations.html"
     - title: ONTAP磁碟區工作負載的已知限制
       url: "/br-reference-limitations.html"
+    - title: Microsoft SQL Server 工作負載的已知限制
+      url: "/br-limitations.html"
+    - title: VMware 工作負載的已知限制
+      url: "/br-limitations-vmware.html"
   - title: 開始使用
     entries:
     - title: 瞭解 BlueXP 備份與還原
@@ -113,7 +115,19 @@ sidebar:
         url: "/br-use-manage-snapshots.html"
       - title: 建立 Microsoft SQL Server 報告
         url: "/br-use-reports.html"
-    - title: 保護虛擬機器工作負載
+    - title: 保護 VMware 工作負載（無需 VMware SnapCenter外掛程式即可預覽）
+      entries:
+      - title: 保護 VMware 工作負載概述
+        url: "/br-use-vmware-protect-overview.html"
+      - title: 發現 VMware 工作負載
+        url: "/br-use-vmware-discovery.html"
+      - title: 為 VMware 工作負載建立和管理保護群組
+        url: "/br-use-vmware-protection-groups.html"
+      - title: 備份 VMware 工作負載
+        url: "/br-use-vmware-backup.html"
+      - title: 復原 VMware 工作負載
+        url: "/br-use-vmware-restore.html"
+    - title: 保護 VMware 工作負載（使用適用於 VMware 的SnapCenter外掛程式）
       entries:
       - title: 保護虛擬機器工作負載概述
         url: "/prev-vmware-protect-overview.html"
@@ -163,6 +177,8 @@ sidebar:
       url: "/reference-policy-differences-snapcenter.html"
     - title: BlueXP backup and recovery角色和權限
       url: "/reference-roles.html"
+    - title: 在暗站中恢復BlueXP backup and recovery數據
+      url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: 支援的AWS歸檔儲存層
       url: "/prev-reference-aws-archive-storage-tiers.html"
     - title: 支援的 Azure 存檔儲存層
