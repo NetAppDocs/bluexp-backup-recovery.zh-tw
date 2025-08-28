@@ -16,6 +16,8 @@ summary: 使用 BlueXP 備份和恢復，監控您啟動的本機快照、複製
 [role="lead"]
 使用BlueXP backup and recovery，監控您啟動的本機快照、複製和備份到物件儲存作業的狀態，以及您啟動的復原作業。您可以看到已完成、正在進行或失敗的工作、以便診斷和修正問題。使用 BlueXP 通知中心、您可以透過電子郵件傳送通知、即使您未登入系統、也能得知重要的系統活動。使用 BlueXP 時間軸、您可以查看透過 UI 或 API 啟動的所有動作詳細資料。
 
+BlueXP backup and recovery會保留作業資訊 15 天，之後會被清除並且不再顯示在作業監視器中。
+
 *必要的BlueXP角色* 組織管理員、資料夾或專案管理員、備份和還原超級管理員、備份和還原備份管理員、備份和還原復原管理員、備份和還原複製管理員或備份和還原檢視者角色。了解link:reference-roles.html["備份和恢復角色和權限"] 。  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["了解所有服務的 BlueXP 存取角色"^] 。
 
 
