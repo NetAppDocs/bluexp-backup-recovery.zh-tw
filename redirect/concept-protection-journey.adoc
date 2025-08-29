@@ -1,6 +1,6 @@
 ---
 permalink: concept-protection-journey.html 
-redirect: prev-ontap-protect-journey.html 
+redirect: bluexp-backup-recovery/prev-ontap-protect-journey.html 
 ---
 = 
 :allow-uri-read: 

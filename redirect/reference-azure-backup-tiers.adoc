@@ -1,6 +1,6 @@
 ---
 permalink: reference-azure-backup-tiers.html 
-redirect: prev-reference-azure-archive-storage-tiers.html 
+redirect: bluexp-backup-recovery/prev-reference-azure-archive-storage-tiers.html 
 ---
 = 
 :allow-uri-read: 

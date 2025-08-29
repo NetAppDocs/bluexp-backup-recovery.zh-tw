@@ -1,6 +1,6 @@
 ---
 permalink: task-migrate-volumes-snapmirror-cloud-resync.html 
-redirect: prev-ontap-migrate-resync.html 
+redirect: bluexp-backup-recovery/prev-ontap-migrate-resync.html 
 ---
 = 
 :allow-uri-read: 

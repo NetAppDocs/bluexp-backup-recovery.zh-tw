@@ -1,6 +1,6 @@
 ---
 permalink: task-backup-to-gcp.html 
-redirect: prev-ontap-backup-cvo-gcp.html 
+redirect: bluexp-backup-recovery/prev-ontap-backup-cvo-gcp.html 
 ---
 = 
 :allow-uri-read: 

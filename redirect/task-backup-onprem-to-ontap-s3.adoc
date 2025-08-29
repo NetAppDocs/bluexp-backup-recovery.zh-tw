@@ -1,6 +1,6 @@
 ---
 permalink: task-backup-onprem-to-ontap-s3.html 
-redirect: prev-ontap-backup-onprem-ontaps3.html 
+redirect: bluexp-backup-recovery/prev-ontap-backup-onprem-ontaps3.html 
 ---
 = 
 :allow-uri-read: 

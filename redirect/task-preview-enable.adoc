@@ -1,6 +1,6 @@
 ---
 permalink: task-preview-enable.html 
-redirect: index.html 
+redirect: bluexp-backup-recovery/index.html 
 ---
 = 
 :allow-uri-read: 

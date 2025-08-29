@@ -1,6 +1,6 @@
 ---
 permalink: task-create-policies-ontap.html 
-redirect: prev-ontap-policy-manage.html 
+redirect: bluexp-backup-recovery/prev-ontap-policy-manage.html 
 ---
 = 
 :allow-uri-read: 

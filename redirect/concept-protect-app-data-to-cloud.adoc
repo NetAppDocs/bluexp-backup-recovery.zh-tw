@@ -1,6 +1,6 @@
 ---
 permalink: concept-protect-app-data-to-cloud.html 
-redirect: index.html 
+redirect: bluexp-backup-recovery/index.html 
 ---
 = 
 :allow-uri-read: 

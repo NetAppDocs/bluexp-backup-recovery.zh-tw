@@ -1,6 +1,6 @@
 ---
 permalink: task-register-snapCenter-plug-in-for-vmware-vsphere.html 
-redirect: prev-vmware-register-snapcenter.html 
+redirect: bluexp-backup-recovery/prev-vmware-register-snapcenter.html 
 ---
 = 
 :allow-uri-read: 

@@ -1,6 +1,6 @@
 ---
 permalink: task-restore-oracle-data.html 
-redirect: index.html 
+redirect: bluexp-backup-recovery/index.html 
 ---
 = 
 :allow-uri-read: 

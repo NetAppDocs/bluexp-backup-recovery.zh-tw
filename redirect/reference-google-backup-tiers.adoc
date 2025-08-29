@@ -1,6 +1,6 @@
 ---
 permalink: reference-google-backup-tiers.html 
-redirect: prev-reference-gcp-archive-storage-tiers.html 
+redirect: bluexp-backup-recovery/prev-reference-gcp-archive-storage-tiers.html 
 ---
 = 
 :allow-uri-read: 

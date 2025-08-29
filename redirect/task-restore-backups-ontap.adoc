@@ -1,6 +1,6 @@
 ---
 permalink: task-restore-backups-ontap.html 
-redirect: prev-ontap-restore.html 
+redirect: bluexp-backup-recovery/prev-ontap-restore.html 
 ---
 = 
 :allow-uri-read: 

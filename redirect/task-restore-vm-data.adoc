@@ -1,6 +1,6 @@
 ---
 permalink: task-restore-vm-data.html 
-redirect: prev-vmware-restore.html 
+redirect: bluexp-backup-recovery/prev-vmware-restore.html 
 ---
 = 
 :allow-uri-read: 
