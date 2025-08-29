@@ -1,0 +1,8 @@
+---
+permalink: reference-aws-backup-tiers.html 
+redirect: prev-reference-aws-archive-storage-tiers.html 
+---
+= 
+:allow-uri-read: 
+
+

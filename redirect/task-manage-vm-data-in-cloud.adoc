@@ -1,0 +1,8 @@
+---
+permalink: task-manage-vm-data-in-cloud.html 
+redirect: prev-vmware-manage.html 
+---
+= 
+:allow-uri-read: 
+
+

@@ -1,0 +1,8 @@
+---
+permalink: task-report-inventory.html 
+redirect: index.html 
+---
+= 
+:allow-uri-read: 
+
+

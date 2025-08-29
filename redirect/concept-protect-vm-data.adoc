@@ -1,0 +1,8 @@
+---
+permalink: concept-protect-vm-data.html 
+redirect: prev-vmware-prereqs.html 
+---
+= 
+:allow-uri-read: 
+
+

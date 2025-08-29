@@ -1,0 +1,8 @@
+---
+permalink: task-migrate-volumes-snapmirror-cloud-resync.html 
+redirect: prev-ontap-migrate-resync.html 
+---
+= 
+:allow-uri-read: 
+
+
